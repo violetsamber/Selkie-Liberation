@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1353;
+		nextID=1433;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=193;
+		nextID=195;
 	};
 	class Camera
 	{
-		pos[]={2193.1477,420.79788,10590.996};
-		dir[]={0.27683625,-0.5875653,0.76042747};
-		up[]={0.20102127,0.80913246,0.55217487};
-		aside[]={0.93972582,5.4293196e-08,-0.34210941};
+		pos[]={20283.096,43.350361,20293.516};
+		dir[]={-0.80875719,-0.49975297,-0.31013};
+		up[]={-0.46662793,0.86616302,-0.17893568};
+		aside[]={-0.35804662,5.1455572e-08,0.93371469};
 	};
 };
 binarizationWanted=0;
@@ -38,7 +38,6 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"A3_Modules_F",
 	"A3_Characters_F",
-	"ace_explosives",
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_BagFence",
 	"A3_Structures_F_Civ_Camping",
@@ -73,7 +72,8 @@ addons[]=
 	"A3_Structures_F_Mark_VR_Shapes",
 	"14th_aux_mod",
 	"A3_Structures_F_Mil_Cargo",
-	"A3_Boat_F_Jets_Carrier_01"
+	"A3_Boat_F_Jets_Carrier_01",
+	"OPTRE_UNSC_Units_Army"
 };
 class AddonsMetaData
 {
@@ -110,155 +110,154 @@ class AddonsMetaData
 		};
 		class Item4
 		{
-			className="ace_explosives";
-			name="ACE3 - Explosives";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item5
-		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item5
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item6
 		{
 			className="A3_Structures_F_EPA";
 			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item7
 		{
 			className="ace_sitting";
 			name="ACE3 - Sitting";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item9
+		class Item8
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item10
+		class Item9
 		{
 			className="A3_Structures_F_EPB";
 			name="Arma 3 Adapt Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item10
 		{
 			className="A3_expEden";
 			name="O&T Expansion Eden - main configuration";
 			author="Trager";
 			url="https://steamcommunity.com/workshop/filedetails/?id=1923321700";
 		};
-		class Item12
+		class Item11
 		{
 			className="ace_interaction";
 			name="ACE3 - Interaction";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
+		class Item12
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item14
+		class Item13
 		{
 			className="OPTRE_Corvette";
 			name="OPTRE_Vehicles_Cryopod";
 		};
-		class Item15
+		class Item14
 		{
 			className="OPTRE_Buildings_Camp";
 			name="OPTRE_Buildings_Camp";
 			author="Sanchez & Nightovizard";
 		};
-		class Item16
+		class Item15
 		{
 			className="OPTRE_UNSC_Structure_CityObjects";
 			name="OPTRE_UNSC_Structure_CityObjects";
 		};
-		class Item17
+		class Item16
 		{
 			className="OPTRE_Ins_Object_class";
 			name="OPTRE_Ins_Object_class";
 		};
-		class Item18
+		class Item17
 		{
 			className="OPTRE_Vehicles";
 			name="OPTRE_Vehicles_HEV";
 			author="Article 2 Studios";
 		};
-		class Item19
+		class Item18
 		{
 			className="OPTRE_ACE_Compat";
 			name="OPTRE_ACE_Compat";
 			author="Article 2 Studios";
 		};
-		class Item20
+		class Item19
 		{
 			className="OPTRE_UNSC_Structure_Military_Crate";
 			name="OPTRE_UNSC_Structure_Military_Crate";
 			author="Kenny";
 			url="https://www.reddit.com/r/OperationTrebuchet/";
 		};
-		class Item21
+		class Item20
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item21
 		{
 			className="OPTRE_UNSC_Structure_Secundus";
 			name="OPTRE_UNSC_Structure_Secundus";
 		};
-		class Item23
+		class Item22
 		{
 			className="OPTRE_BW_Buildings";
 			name="OPTRE_BW_DoorConsole";
 		};
-		class Item24
+		class Item23
 		{
 			className="Purple_Team_Armor";
 			name="Purple_Team_Armor";
 		};
-		class Item25
+		class Item24
 		{
 			className="A3_Structures_F_Mark";
 			name="Arma 3 Marksmen - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item25
 		{
 			className="14th_aux_mod";
 			name="14th_aux_mod";
 			author="Stellarynn";
 		};
-		class Item27
+		class Item26
 		{
 			className="A3_Boat_F_Jets";
 			name="Arma 3 Jets - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item27
+		{
+			className="OPTRE_UNSC_Units";
+			name="OPTRE_UNSC_Units_Army";
+			author="Article 2 Studios";
 		};
 	};
 };
@@ -295,7 +294,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=37;
+		items=31;
 		class Item0
 		{
 			dataType="Marker";
@@ -898,899 +897,6 @@ class Mission
 		};
 		class Item9
 		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20246.867,15.83443,20301.686};
-						angles[]={6.2531939,6.0991402,0.022996427};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						rank="COLONEL";
-						init="removeallWeapons this; removebackpack this; this setVariable ['ace_medical_medicClass', 1]; this setVariable ['ACE_isEngineer', 1];";
-						name="commandant";
-						description="Platoon Leader (Commander)";
-						isPlayer=1;
-						isPlayable=1;
-					};
-					id=10;
-					type="B_officer_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20248.211,15.842343,20300.918};
-						angles[]={6.2531939,6.1139932,0.022996427};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						rank="CAPTAIN";
-						init="removeallWeapons this; removebackpack this;";
-						description="Platoon Sergeant";
-						isPlayable=1;
-					};
-					id=11;
-					type="B_Soldier_SL_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=9;
-			atlOffset=-9.5367432e-07;
-		};
-		class Item10
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=11;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20240.539,15.605236,20298.563};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						description="Squad 1 Leader";
-						isPlayable=1;
-					};
-					id=13;
-					type="B_Soldier_SL_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20238.918,15.568263,20298.375};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="Squad 1 Medic";
-						isPlayable=1;
-					};
-					id=14;
-					type="B_medic_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20242.359,15.649146,20298.746};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 1 Engineer";
-						isPlayable=1;
-					};
-					id=15;
-					type="B_engineer_F";
-					atlOffset=-1.9073486e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20239.738,15.538137,20296.836};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="Squad 1 Team 1 Leader";
-						isPlayable=1;
-					};
-					id=16;
-					type="B_Soldier_TL_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20238.934,15.494024,20295.854};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 1 Team 1 Rifleman";
-						isPlayable=1;
-					};
-					id=17;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.02;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20239.793,15.475491,20294.672};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 1 Team 1 Rifleman";
-						isPlayable=1;
-					};
-					id=18;
-					type="B_Soldier_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.01;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20238.969,15.431231,20293.701};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 1 Team 1 Rifleman";
-						isPlayable=1;
-					};
-					id=19;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20241.703,15.588896,20297.16};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="Squad 1 Team 2 Leader";
-						isPlayable=1;
-					};
-					id=20;
-					type="B_Soldier_TL_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item8
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20241.379,15.551037,20296.107};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 1 Team 2 Rifleman";
-						isPlayable=1;
-					};
-					id=21;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item9
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20242.129,15.540949,20295.219};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 1 Team 2 Rifleman";
-						isPlayable=1;
-					};
-					id=22;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item10
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20241.438,15.498009,20294.191};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 1 Team 2 Rifleman";
-						isPlayable=1;
-					};
-					id=23;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.99000001;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=12;
-			atlOffset=-9.5367432e-07;
-		};
-		class Item11
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=11;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20245.594,15.7034,20298.232};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						description="Squad 2 Leader";
-						isPlayable=1;
-					};
-					id=25;
-					type="B_Soldier_SL_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20243.973,15.662716,20298.045};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="Squad 2 Medic";
-						isPlayable=1;
-					};
-					id=26;
-					type="B_medic_F";
-					atlOffset=-1.9073486e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20247.414,15.75057,20298.416};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 2 Engineer";
-						isPlayable=1;
-					};
-					id=27;
-					type="B_engineer_F";
-					atlOffset=-1.9073486e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20244.789,15.6352,20296.506};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="Squad 2 Team 1 Leader";
-						isPlayable=1;
-					};
-					id=28;
-					type="B_Soldier_TL_F";
-					atlOffset=-1.9073486e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20243.988,15.589671,20295.523};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 2 Team 1 Rifleman";
-						isPlayable=1;
-					};
-					id=29;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.02;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20244.848,15.575089,20294.344};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 2 Team 1 Rifleman";
-						isPlayable=1;
-					};
-					id=30;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.01;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20244.02,15.531176,20293.373};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 2 Team 1 Rifleman";
-						isPlayable=1;
-					};
-					id=31;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20246.754,15.689398,20296.83};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="Squad 2 Team 2 Leader";
-						isPlayable=1;
-					};
-					id=32;
-					type="B_Soldier_TL_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item8
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20246.43,15.651378,20295.777};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 2 Team 2 Rifleman";
-						isPlayable=1;
-					};
-					id=33;
-					type="B_Soldier_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item9
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20247.184,15.64335,20294.891};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 2 Team 2 Rifleman";
-						isPlayable=1;
-					};
-					id=34;
-					type="B_Soldier_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item10
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20246.492,15.599707,20293.863};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Squad 2 Team 2 Rifleman";
-						isPlayable=1;
-					};
-					id=35;
-					type="B_Soldier_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.99000001;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=24;
-			atlOffset=-9.5367432e-07;
-		};
-		class Item12
-		{
 			dataType="Logic";
 			class PositionInfo
 			{
@@ -1803,7 +909,7 @@ class Mission
 			type="HeadlessClient_F";
 			atlOffset=-1.9073486e-06;
 		};
-		class Item13
+		class Item10
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1816,7 +922,7 @@ class Mission
 			id=37;
 			type="HeadlessClient_F";
 		};
-		class Item14
+		class Item11
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1830,421 +936,7 @@ class Mission
 			type="HeadlessClient_F";
 			atlOffset=-9.5367432e-07;
 		};
-		class Item15
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=4;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20249.938,15.829455,20299.135};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="LIEUTENANT";
-						description="MedEvac Pilot";
-						isPlayable=1;
-					};
-					id=40;
-					type="B_Helipilot_F";
-					atlOffset=-1.9073486e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.94999999;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20250.184,15.785164,20297.393};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="SERGEANT";
-						description="MedEvac Co-Pilot";
-						isPlayable=1;
-					};
-					id=41;
-					type="B_Helipilot_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20250.363,15.741826,20295.738};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="MedEvac Medic";
-						isPlayable=1;
-					};
-					id=42;
-					type="B_medic_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20250.543,15.701198,20294.119};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="MedEvac Medic";
-						isPlayable=1;
-					};
-					id=43;
-					type="B_medic_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=39;
-			atlOffset=-1.9073486e-06;
-		};
-		class Item16
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=3;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20252.18,15.896846,20299.455};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="LIEUTENANT";
-						description="Logistics Pilot";
-						isPlayable=1;
-					};
-					id=45;
-					type="B_Helipilot_F";
-					atlOffset=-1.9073486e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.01;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20252.512,15.844556,20297.354};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="Logistics Engineer";
-						isPlayable=1;
-					};
-					id=46;
-					type="B_engineer_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.03;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20252.605,15.795952,20295.594};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						description="Logistics Demolition Expert";
-						isPlayable=1;
-					};
-					id=47;
-					type="B_soldier_exp_F";
-					atlOffset=-9.5367432e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.03;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=44;
-			atlOffset=-1.9073486e-06;
-		};
-		class Item17
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20254.352,15.963043,20299.791};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="LIEUTENANT";
-						description="CAS Pilot";
-						isPlayable=1;
-					};
-					id=49;
-					type="B_Helipilot_F";
-					atlOffset=-1.9073486e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20254.711,15.905256,20297.477};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="LIEUTENANT";
-						description="CAS Pilot";
-						isPlayable=1;
-					};
-					id=50;
-					type="B_Helipilot_F";
-					atlOffset=-1.9073486e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.03;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=48;
-			atlOffset=-1.9073486e-06;
-		};
-		class Item18
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={20256.488,16.034313,20300.125};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						description="UAV and Intelligence";
-						isPlayable=1;
-					};
-					id=52;
-					type="B_soldier_UAV_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.02;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=51;
-		};
-		class Item19
+		class Item12
 		{
 			dataType="Marker";
 			position[]={20248.398,17.237415,20288.705};
@@ -2253,7 +945,7 @@ class Mission
 			id=60;
 			atlOffset=1.7332201;
 		};
-		class Item20
+		class Item13
 		{
 			dataType="Marker";
 			position[]={2172.2734,272.3519,10828.927};
@@ -2263,7 +955,7 @@ class Mission
 			id=61;
 			atlOffset=0.68438721;
 		};
-		class Item21
+		class Item14
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2297,13 +989,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item22
+		class Item15
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={2172.9709,272.57312,10828.796};
-				angles[]={0,3.1273584,0};
+				angles[]={0,1.5746628,-0};
 			};
 			side="Empty";
 			class Attributes
@@ -2331,13 +1023,13 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item23
+		class Item16
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2160.1565,273.11664,10820.733};
-				angles[]={0,3.1657021,0};
+				position[]={2160.1565,273.11664,10828.97};
+				angles[]={0,1.5643642,-0};
 			};
 			side="Empty";
 			class Attributes
@@ -2346,7 +1038,7 @@ class Mission
 			};
 			id=65;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=1.4489746;
+			atlOffset=1.4490356;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2365,7 +1057,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item24
+		class Item17
 		{
 			dataType="Marker";
 			position[]={2358.9824,17.157227,10870.595};
@@ -2433,7 +1125,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item25
+		class Item18
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -2476,7 +1168,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item26
+		class Item19
 		{
 			dataType="Layer";
 			name="Capture Points";
@@ -3246,7 +1938,7 @@ class Mission
 			id=156;
 			atlOffset=10.708702;
 		};
-		class Item27
+		class Item20
 		{
 			dataType="Layer";
 			name="Military Points";
@@ -3466,7 +2158,7 @@ class Mission
 			id=183;
 			atlOffset=195.57573;
 		};
-		class Item28
+		class Item21
 		{
 			dataType="Layer";
 			name="Capitals";
@@ -3582,7 +2274,7 @@ class Mission
 			id=184;
 			atlOffset=28.845682;
 		};
-		class Item29
+		class Item22
 		{
 			dataType="Layer";
 			name="Factories";
@@ -3805,7 +2497,7 @@ class Mission
 			id=185;
 			atlOffset=32.196217;
 		};
-		class Item30
+		class Item23
 		{
 			dataType="Layer";
 			name="Radio Towers";
@@ -4333,7 +3025,7 @@ class Mission
 			id=186;
 			atlOffset=121.89767;
 		};
-		class Item31
+		class Item24
 		{
 			dataType="Layer";
 			name="Opfor Points";
@@ -5575,7 +4267,7 @@ class Mission
 			id=221;
 			atlOffset=45.694508;
 		};
-		class Item32
+		class Item25
 		{
 			dataType="Layer";
 			name="Boatspawns";
@@ -5910,7 +4602,7 @@ class Mission
 			id=234;
 			atlOffset=123.02029;
 		};
-		class Item33
+		class Item26
 		{
 			dataType="Layer";
 			name="Airspawns";
@@ -5966,7 +4658,7 @@ class Mission
 			id=235;
 			atlOffset=-4.8230095;
 		};
-		class Item34
+		class Item27
 		{
 			dataType="Layer";
 			name="Camp Ant";
@@ -6608,7 +5300,7 @@ class Mission
 			id=800;
 			atlOffset=-0.035209656;
 		};
-		class Item35
+		class Item28
 		{
 			dataType="Layer";
 			name="Serve While Hot";
@@ -13452,19 +12144,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2282.8203,301.8291,10867.979};
-								angles[]={0,4.7244673,-0};
+								position[]={2282.8201,301.82864,10867.979};
+								angles[]={0,4.7244663,0};
 							};
 							side="Empty";
 							class Attributes
 							{
-								init="this addAction " \n "[ " \n " ""Medic"", " \n " { " \n "  player setUnitTrait [""Medic"", true]; " \n " }, " \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "]; " \n " " \n "this addAction " \n "[ " \n " ""Engineer"", " \n " { " \n "  player setUnitTrait [""Engineer"", true]; " \n " }, " \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "]; " \n " " \n "this addAction " \n "[ " \n " ""Remove Medic"", " \n " { " \n "  player setUnitTrait [""Medic"", false]; " \n " }, " \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "]; " \n " " \n "this addAction " \n "[ " \n " ""Engineer"", " \n " { " \n "  player setUnitTrait [""Engineer"", false]; " \n " }, " \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "];";
+								init="this addAction " \n "[ " \n " ""Medic"", " \n " { " \n "  player setUnitTrait [""Medic"", true]; " \n " }, " \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "]; " \n " " \n "this addAction " \n "[ " \n " ""Engineer"", " \n " { " \n "  player setUnitTrait [""Engineer"", true]; " \n " }, " \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "]; " \n " " \n "this addAction " \n "[ " \n " ""Remove Medic"", " \n " { " \n "  player setUnitTrait [""Medic"", false]; " \n " }, " \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "]; " \n " " \n "this addAction " \n "[ " \n " ""Remove Engineer"", " \n " { " \n "  player setUnitTrait [""Engineer"", false]; " \n " }, " \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "];" \n "" \n "this addAction" \n "[" \n " ""Add Zeus""," \n " {" \n "  player call KPLIB_fnc_requestZeus; " \n " }," \n " nil, " \n " 1.5, " \n " true, " \n " true, " \n " """", " \n " ""true"", " \n " 2, " \n " false, " \n " """", " \n " """" " \n "];" \n "" \n "";
 								createAsLocalObject=1;
 								disableSimulation=1;
 							};
 							id=1310;
 							type="OPTRE_RS_ConsoleDoor";
-							atlOffset=367.60345;
+							atlOffset=367.603;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -15040,7 +13732,7 @@ class Mission
 			id=1350;
 			atlOffset=303.27026;
 		};
-		class Item36
+		class Item29
 		{
 			dataType="Layer";
 			name="Aircraft Carrier";
@@ -15237,6 +13929,4287 @@ class Mission
 			};
 			id=1351;
 			atlOffset=23.173468;
+		};
+		class Item30
+		{
+			dataType="Layer";
+			name="SelkieComp";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Layer";
+					name="SelkieComp";
+					class Entities
+					{
+						items=12;
+						class Item0
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={20242.906,15.995648,20303.182};
+								angles[]={0,0.011190021,-0};
+							};
+							name="violets_zeus";
+							id=1357;
+							type="ModuleCurator_F";
+							atlOffset=0.20188427;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ModuleCurator_F_Owner";
+									expression="_this setVariable ['Owner',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="zeus_2";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ModuleCurator_F_Forced";
+									expression="_this setVariable ['Forced',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ModuleCurator_F_Name";
+									expression="_this setVariable ['Name',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ModuleCurator_F_Addons";
+									expression="_this setVariable ['Addons',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=3;
+										};
+									};
+								};
+								nAttributes=4;
+							};
+						};
+						class Item1
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={20242.934,15.925447,20301.221};
+								angles[]={0,0.011190021,-0};
+							};
+							id=1358;
+							type="ModuleCurator_F";
+							atlOffset=0.19049263;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ModuleCurator_F_Owner";
+									expression="_this setVariable ['Owner',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ModuleCurator_F_Forced";
+									expression="_this setVariable ['Forced',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ModuleCurator_F_Name";
+									expression="_this setVariable ['Name',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ModuleCurator_F_Addons";
+									expression="_this setVariable ['Addons',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=3;
+										};
+									};
+								};
+								nAttributes=4;
+							};
+						};
+						class Item2
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={20240.947,15.891948,20301.268};
+								angles[]={0,0.011190021,-0};
+							};
+							id=1359;
+							type="ModuleCurator_F";
+							atlOffset=0.19724464;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ModuleCurator_F_Owner";
+									expression="_this setVariable ['Owner',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ModuleCurator_F_Forced";
+									expression="_this setVariable ['Forced',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ModuleCurator_F_Name";
+									expression="_this setVariable ['Name',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ModuleCurator_F_Addons";
+									expression="_this setVariable ['Addons',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=3;
+										};
+									};
+								};
+								nAttributes=4;
+							};
+						};
+						class Item3
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={20240.891,15.823916,20299.391};
+								angles[]={0,0.011190021,-0};
+							};
+							id=1360;
+							type="ModuleCurator_F";
+							atlOffset=0.18686867;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ModuleCurator_F_Owner";
+									expression="_this setVariable ['Owner',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ModuleCurator_F_Forced";
+									expression="_this setVariable ['Forced',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ModuleCurator_F_Name";
+									expression="_this setVariable ['Name',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ModuleCurator_F_Addons";
+									expression="_this setVariable ['Addons',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=3;
+										};
+									};
+								};
+								nAttributes=4;
+							};
+						};
+						class Item4
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=6;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.5,15.811078,20304.021};
+										angles[]={0,0.01118756,0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										name="commandant";
+										description="Platoon CO@Selkie Actual";
+										isPlayable=1;
+									};
+									id=1363;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.062000275;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male07ENG";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.545,15.81622,20303.881};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										name="zeus_4";
+										description="Platoon XO@Selkie Actual";
+										isPlayable=1;
+									};
+									id=1364;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.076680183;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male01GRE";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item2
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.488,15.82183,20302.967};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Platoon JTAC@Selkie Actual";
+										isPlayable=1;
+									};
+									id=1365;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.042321205;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male09ENG";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item3
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.408,15.819016,20302.953};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										name="zeus_3";
+										description="Platoon Corpsmaid@Selkie Actual";
+										isPlayable=1;
+									};
+									id=1366;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.01991272;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male07ENG";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item4
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.43,15.824193,20301.963};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflamaid@Selkie Actual";
+										isPlayable=1;
+									};
+									id=1367;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.014485359;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male09ENG";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.564,15.827659,20301.912};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Selkie Actual";
+										isPlayable=1;
+									};
+									id=1368;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.0066213608;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male09ENG";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=1362;
+							atlOffset=-0.062000275;
+						};
+						class Item5
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=6;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.836,15.820685,20303.959};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										description="Team Leader@Tiger 1-1";
+										isPlayable=1;
+									};
+									id=1370;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.10423565;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male06GRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.99000001;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20248.879,15.827147,20303.906};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Assistant Team Leader@Tiger 1-1";
+										isPlayable=1;
+									};
+									id=1371;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.12020397;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male05GRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item2
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.807,15.826606,20302.979};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Corpsmaid@Tiger 1-1";
+										isPlayable=1;
+									};
+									id=1372;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.068234444;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04GRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item3
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20248.982,15.832112,20302.801};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Tiger 1-1";
+										isPlayable=1;
+									};
+									id=1373;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.084446907;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male08ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item4
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20248.871,15.835616,20301.934};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Tiger 1-1";
+										isPlayable=1;
+									};
+									id=1374;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.052358627;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male05GRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.03;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.73,15.830943,20301.996};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Tiger 1-1";
+										isPlayable=1;
+									};
+									id=1375;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.032675743;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=1369;
+							atlOffset=-0.10423565;
+						};
+						class Item6
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=6;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.07,15.838237,20303.939};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										description="Team Leader@Panther 2-1";
+										isPlayable=1;
+									};
+									id=1377;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.1377182;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male06GRE";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.99000001;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.031,15.834832,20302.998};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Corpsmaid@Panther 2-1";
+										isPlayable=1;
+									};
+									id=1378;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.11187172;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male06GRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item2
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.918,15.83961,20302.986};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Panther 2-1";
+										isPlayable=1;
+									};
+									id=1379;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.12977028;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENGFRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item3
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.928,15.843646,20301.996};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Panther 2-1";
+										isPlayable=1;
+									};
+									id=1380;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.096288681;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item4
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20249.99,15.839986,20301.975};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Panther 2-1";
+										isPlayable=1;
+									};
+									id=1381;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.074943542;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male07ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.99000001;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.963,15.84335,20303.928};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Assistant Team Leader@Panther 2-1";
+										isPlayable=1;
+									};
+									id=1382;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.15543938;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male06GRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.99000001;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=1376;
+							atlOffset=-0.1377182;
+						};
+						class Item7
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=6;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.072,15.843488,20300.277};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										description="Team Leader@Cabbit 2-2";
+										isPlayable=1;
+									};
+									id=1384;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.02263546;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male06GRE";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.99000001;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.934,15.846837,20300.311};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Assistant Team Leader@Cabbit 2-2";
+										isPlayable=1;
+									};
+									id=1385;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.042681694;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENGFRE";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.99000001;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item2
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.033,15.845084,20299.336};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Corpsmaid@Cabbit 2-2";
+										isPlayable=1;
+									};
+									id=1386;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.0074968338;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male06GRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item3
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.918,15.848622,20299.324};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Cabbit 2-2";
+										isPlayable=1;
+									};
+									id=1387;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.011621475;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENGFRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item4
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20250.928,15.850511,20298.332};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Cabbit 2-2";
+										isPlayable=1;
+									};
+									id=1388;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.01879406;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20249.992,15.84793,20298.311};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Cabbit 2-2";
+										isPlayable=1;
+									};
+									id=1389;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.04110527;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male07ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.99000001;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=1383;
+							atlOffset=-0.02263546;
+						};
+						class Item8
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=4;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20253.059,15.852517,20302.137};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										description="Assistant Team Leader@Lynx 1-3";
+										isPlayable=1;
+									};
+									id=1391;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.14704323;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male08ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.98000002;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20253.113,15.853459,20301.039};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Lynx 1-3";
+										isPlayable=1;
+									};
+									id=1392;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.11460686;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male01GRE";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item2
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20253.023,15.853837,20299.889};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Lynx 1-3";
+										isPlayable=1;
+									};
+									id=1393;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.07750988;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male08ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.03;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item3
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20252.025,15.85101,20299.865};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Lynx 1-3";
+										isPlayable=1;
+									};
+									id=1394;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.053702354;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male10ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=1390;
+							atlOffset=-0.14704323;
+						};
+						class Item9
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=2;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20252.145,15.84979,20304.203};
+										angles[]={0,0.01118756,0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										description="Pilot@Calico 1-1";
+										isPlayable=1;
+									};
+									id=1396;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.18799877;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ENH_unitTraits_medic";
+											expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['Medic', _value]] remoteExec ['setUnitTrait', _this]}";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="ENH_unitTraits_engineer";
+											expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['Engineer', _value]] remoteExec ['setUnitTrait', _this]}";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute4
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male05ENG";
+												};
+											};
+										};
+										class Attribute5
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=6;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20252.949,15.85496,20304.148};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										name="zeus_2";
+										description="Pilot@Calico 1-2";
+										isPlayable=1;
+									};
+									id=1397;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.20209408;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ENH_unitTraits_medic";
+											expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['Medic', _value]] remoteExec ['setUnitTrait', _this]}";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="ENH_unitTraits_engineer";
+											expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['Engineer', _value]] remoteExec ['setUnitTrait', _this]}";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute4
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male11ENG";
+												};
+											};
+										};
+										class Attribute5
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=6;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=1395;
+							atlOffset=-0.18799877;
+						};
+						class Item10
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=2;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20252.098,15.84957,20303.279};
+										angles[]={0,0.011186208,-0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										description="Pilot@Calico 2-1";
+										isPlayable=1;
+									};
+									id=1399;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.15928936;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ENH_unitTraits_medic";
+											expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['Medic', _value]] remoteExec ['setUnitTrait', _this]}";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="ENH_unitTraits_engineer";
+											expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['Engineer', _value]] remoteExec ['setUnitTrait', _this]}";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male07ENG";
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20252.928,15.853843,20303.16};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Pilot@Calico 2-2";
+										isPlayable=1;
+									};
+									id=1400;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.17300892;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ENH_unitTraits_medic";
+											expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['Medic', _value]] remoteExec ['setUnitTrait', _this]}";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="ENH_unitTraits_engineer";
+											expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['Engineer', _value]] remoteExec ['setUnitTrait', _this]}";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="attachMarker";
+											expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										class Attribute4
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male03ENG";
+												};
+											};
+										};
+										class Attribute5
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=6;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=1398;
+							atlOffset=-0.15928936;
+						};
+						class Item11
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=30;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.27,15.828452,20300.375};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1402;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.070067406;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male01ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.03;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.238,15.831027,20300.467};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1403;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.047602654;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item2
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.154,15.833779,20300.445};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1404;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.029957771;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male08ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.98000002;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item3
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20248.031,15.836507,20300.342};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1405;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.015602112;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04ENGB";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item4
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20249.074,15.839591,20300.27};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1406;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=-0.0031223297;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20249.053,15.842408,20299.295};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1407;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.028668404;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENGFRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item6
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.992,15.839377,20299.336};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1408;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.048832893;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENGFRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.95999998;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item7
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.051,15.836747,20299.35};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1409;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.06746006;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item8
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.15,15.833989,20299.385};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1410;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.084366798;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male08ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.95999998;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item9
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.254,15.832639,20299.359};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1411;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.10439587;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male05ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item10
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.217,15.836539,20298.389};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1412;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.13728237;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male05GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.03;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item11
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.064,15.838269,20298.232};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1413;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.12405872;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male01GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item12
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.029,15.839753,20298.307};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1414;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.10120964;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male01ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item13
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20248.025,15.842544,20298.305};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1415;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.081125259;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male06GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item14
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20249.066,15.84558,20298.23};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1416;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.062401772;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male03GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item15
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.111,15.82182,20297.32};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1417;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.1560173;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male01ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.03;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item16
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.078,15.824395,20297.412};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1418;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.13366508;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item17
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.996,15.827147,20297.391};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1419;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.11594105;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male08ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.98000002;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item18
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.873,15.829875,20297.287};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1420;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.10149002;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04ENGB";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item19
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20248.914,15.832959,20297.215};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1421;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.082714081;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.01;
+												};
+											};
+										};
+										class Attribute3
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										nAttributes=4;
+									};
+								};
+								class Item20
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20248.895,15.835776,20296.24};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1422;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.11423016;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENGFRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item21
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.834,15.832746,20296.281};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1423;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.13442993;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male02ENGFRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.95999998;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item22
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.893,15.830115,20296.295};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1424;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.1530571;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male04GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.04;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item23
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.99,15.827357,20296.33};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1425;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.17004871;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male08ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.95999998;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item24
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.096,15.826007,20296.305};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1426;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.18999386;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male05ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item25
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.059,15.829907,20295.334};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1427;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.22290802;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male05GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.03;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item26
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20245.906,15.831637,20295.178};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1428;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.20965672;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male01GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item27
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20246.871,15.833121,20295.252};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1429;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.1868;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male01ENG";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0.97000003;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item28
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20247.865,15.835912,20295.25};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1430;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.16680717;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male06GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+								class Item29
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={20248.906,15.838948,20295.176};
+										angles[]={0,0.011190021,-0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										description="Riflemaid@Unslotted";
+										isPlayable=1;
+									};
+									id=1431;
+									type="OPTRE_UNSC_Army_Soldier_Unarmed_OLI";
+									atlOffset=0.14801884;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ObjectCollision";
+											expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Male03GRE";
+												};
+											};
+										};
+										class Attribute2
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=3;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=1401;
+							atlOffset=0.070067406;
+						};
+					};
+					id=1353;
+					atlOffset=-0.037651062;
+				};
+			};
+			id=1432;
+			atlOffset=-0.037651062;
 		};
 	};
 	class Connections
