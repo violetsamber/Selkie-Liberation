@@ -46,11 +46,10 @@ militia_squad = [
 	"OPTRE_Jackal_F",
 	"OPTRE_Jackal_F",
 	"OPTRE_Jackal_Major_F",
-	"OPTRE_Jackal_Infantry2_F",
-	"OPTRE_Jackal_Infantry2_F",
-	"OPTRE_Jackal_Infantry2_F",
-	"OPTRE_Jackal_Infantry_F",
-	"OPTRE_Jackal_Infantry_F",
+	"OPTRE_Jackal_F",
+	"OPTRE_Jackal_F",
+	"OPTRE_Jackal_F",
+	"OPTRE_Jackal_Sharpshooter_F",
 	"OPTRE_Jackal_Sharpshooter_F"
 ];
 
