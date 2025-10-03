@@ -167,7 +167,3 @@ opfor_air = [
     "CUP_B_F35B_Stealth_BAF",                                           // F-35B Lightning II (Stealth)
     "CUP_B_GR9_DYN_GB"                                                  // Harrier GR.9
 ];
-
-opfor_boat = [
-    
-];

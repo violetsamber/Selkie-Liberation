@@ -142,7 +142,3 @@ opfor_air = [
     "uns_Mig21_CAP",                                                    // Mig-21 Fishbed F (CAP)
     "uns_Mig21_CAS"                                                     // Mig-21 Fishbed F (CAS)
 ];
-
-opfor_boat = [
-    
-];

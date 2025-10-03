@@ -88,7 +88,6 @@ if (_classname in militia_vehicles) then {
 
 // Add MPKilled and GetIn EHs and enable damage again
 _newvehicle addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
-sleep 0.1;
 _newvehicle allowDamage true;
 _newvehicle setDamage 0;
 

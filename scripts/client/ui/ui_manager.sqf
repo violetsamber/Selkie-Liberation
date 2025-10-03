@@ -15,6 +15,8 @@ KP_liberation_supplies = 0;
 KP_liberation_ammo = 0;
 KP_liberation_fuel = 0;
 KP_liberation_air_vehicle_building_near = false;
+KP_liberation_spartan_building_near = false;
+KP_liberation_ODST_building_near = false;
 KP_liberation_recycle_building_near = false;
 
 waitUntil { !isNil "synchro_done" };
@@ -59,7 +61,7 @@ while {true} do {
         _showResources = true;
 
         private _nearestFob = player getVariable "KPLIB_fobPos";
-        ([_nearestFob] call KPLIB_fnc_getFobResources) params ["", "_supplies", "_ammo", "_fuel", "_hasAir", "_hasRecycling"];
+        ([_nearestFob] call KPLIB_fnc_getFobResources) params ["", "_supplies", "_ammo", "_fuel", "_hasAir", "_hasSpartan", "_hasODST", "_hasRecycling"];
 
         if (KP_liberation_resources_global || {_visibleMap}) then {
             // Overwrite FOB name in global mode
@@ -75,6 +77,8 @@ while {true} do {
         };
         // TODO this is used by build scripts, move to relevant places
         KP_liberation_air_vehicle_building_near = _hasAir;
+        KP_liberation_spartan_building_near = _hasSpartan;
+        KP_liberation_ODST_building_near = _hasODST;
         KP_liberation_recycle_building_near = _hasRecycling;
     } else {
         _showResources = false;
@@ -82,6 +86,8 @@ while {true} do {
         KP_liberation_ammo = 0;
         KP_liberation_fuel = 0;
         KP_liberation_air_vehicle_building_near = false;
+        KP_liberation_spartan_building_near = false;
+        KP_liberation_ODST_building_near = false;
         KP_liberation_recycle_building_near = false;
     };
 
@@ -135,39 +141,39 @@ while {true} do {
                 (_overlay displayCtrl (517)) ctrlShow false;
             };
 
-            _nearest_active_sector = [GRLIB_sector_size] call KPLIB_fnc_getNearestSector;
-            if ( _nearest_active_sector != "" ) then {
-                _zone_size = GRLIB_capture_size;
-                if ( _nearest_active_sector in sectors_bigtown ) then {
-                    _zone_size = GRLIB_capture_size * 1.4;
-                };
+            // _nearest_active_sector = [GRLIB_sector_size] call KPLIB_fnc_getNearestSector;
+            // if ( _nearest_active_sector != "" ) then {
+            //     _zone_size = GRLIB_capture_size;
+            //     if ( _nearest_active_sector in sectors_bigtown ) then {
+            //         _zone_size = GRLIB_capture_size * 1.4;
+            //     };
 
-                "zone_capture" setmarkerposlocal (markerpos _nearest_active_sector);
-                _colorzone = "ColorGrey";
-                if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly ) then { _colorzone = GRLIB_color_friendly };
-                if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_enemy ) then { _colorzone = GRLIB_color_enemy };
-                if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_resistance ) then { _colorzone = "ColorCivilian" };
-                "zone_capture" setmarkercolorlocal _colorzone;
+            //     "zone_capture" setmarkerposlocal (markerpos _nearest_active_sector);
+            //     _colorzone = "ColorGrey";
+            //     if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly ) then { _colorzone = GRLIB_color_friendly };
+            //     if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_enemy ) then { _colorzone = GRLIB_color_enemy };
+            //     if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_resistance ) then { _colorzone = "ColorCivilian" };
+            //     "zone_capture" setmarkercolorlocal _colorzone;
 
-                _ratio = [_nearest_active_sector] call KPLIB_fnc_getBluforRatio;
-                _barwidth = 0.084 * safezoneW * _ratio;
-                _bar = _overlay displayCtrl (244);
-                _bar ctrlSetPosition [(ctrlPosition _bar) select 0,(ctrlPosition _bar) select 1,_barwidth,(ctrlPosition _bar) select 3];
-                _bar ctrlCommit ([0, 2] select ctrlShown _bar);
+            //     _ratio = [_nearest_active_sector] call KPLIB_fnc_getBluforRatio;
+            //     _barwidth = 0.084 * safezoneW * _ratio;
+            //     _bar = _overlay displayCtrl (244);
+            //     _bar ctrlSetPosition [(ctrlPosition _bar) select 0,(ctrlPosition _bar) select 1,_barwidth,(ctrlPosition _bar) select 3];
+            //     _bar ctrlCommit ([0, 2] select ctrlShown _bar);
 
-                (_overlay displayCtrl (205)) ctrlSetText (markerText _nearest_active_sector);
-                {(_overlay displayCtrl (_x)) ctrlShow true;} forEach _sectorcontrols;
-                if (_nearest_active_sector in blufor_sectors) then {
-                    (_overlay displayCtrl (205)) ctrlSetTextColor [0,0.3,1.0,1];
-                } else {
-                    (_overlay displayCtrl (205)) ctrlSetTextColor [0.85,0,0,1];
-                };
+            //     (_overlay displayCtrl (205)) ctrlSetText (markerText _nearest_active_sector);
+            //     {(_overlay displayCtrl (_x)) ctrlShow true;} forEach _sectorcontrols;
+            //     if (_nearest_active_sector in blufor_sectors) then {
+            //         (_overlay displayCtrl (205)) ctrlSetTextColor [0,0.3,1.0,1];
+            //     } else {
+            //         (_overlay displayCtrl (205)) ctrlSetTextColor [0.85,0,0,1];
+            //     };
 
-                "zone_capture" setMarkerSizeLocal [ _zone_size,_zone_size ];
-            } else {
-                {(_overlay displayCtrl (_x)) ctrlShow false;} forEach _sectorcontrols;
-                "zone_capture" setmarkerposlocal markers_reset;
-            };
+            //     "zone_capture" setMarkerSizeLocal [ _zone_size,_zone_size ];
+            // } else {
+            {(_overlay displayCtrl (_x)) ctrlShow false;} forEach _sectorcontrols;
+            "zone_capture" setmarkerposlocal markers_reset;
+            // };
         };
     };
 

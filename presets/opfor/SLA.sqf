@@ -140,7 +140,3 @@ opfor_choppers = [
 
 // Enemy fixed-wings that will need to spawn in the air.
 opfor_air = [];
-
-opfor_boat = [
-    
-];

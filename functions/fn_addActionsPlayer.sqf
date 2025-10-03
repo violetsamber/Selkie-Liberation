@@ -40,7 +40,7 @@ _player addAction [
 
 // HALO
 _player addAction [
-    ["<t color='#80FF80'>", localize "STR_HALO_ACTION", "</t><img size='2' image='res\ui_redeploy.paa'/>"] joinString "",
+    ["<t color='#80FF80'>", localize "STR_HALO_ACTION", "</t><img size='2' image='\A3\ui_f\data\map\markers\military\end_CA.paa'/>"] joinString "",
     "scripts\client\spawn\do_halo.sqf",
     nil,
     -710,

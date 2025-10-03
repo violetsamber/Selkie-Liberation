@@ -139,9 +139,9 @@ If you want to change a preset, it's recommended to set all four presets to 0 an
 28 = SFP (Woodland)
 29 = SFP (Desert)
 30 = LDF (Contact DLC)
-31 = SOG (SOGPF DLC)
-32 = Vietcong (SOGPF DLC) */
-KP_liberation_preset_blufor = 0;
+31 = SOGPF
+32 = OPTRE */
+KP_liberation_preset_blufor = 32;
 
 /* OPFOR preset:
 0  = Custom (default vanilla CSAT)
@@ -165,9 +165,9 @@ KP_liberation_preset_blufor = 0;
 18 = CUP Chernarus Defense Force
 19 = CUP British Armed Forces (Desert)
 20 = CUP British Armed Forces (Woodland)
-21 = PAVN (SOGPF DLC)
-22 = SOG (SOGPF DLC)*/
-KP_liberation_preset_opfor = 0;
+21 = SOGPF
+22 = OPTRE */
+KP_liberation_preset_opfor = 22;
 
 /* Resistance preset:
 0  = Custom (default vanilla FIA)
@@ -179,8 +179,9 @@ KP_liberation_preset_opfor = 0;
 6  = Unsung
 7  = CUP Takistani Locals
 8  = CUP National Party of Chernarus
-9  = SOGPF */
-KP_liberation_preset_resistance = 0;
+9  = SOGPF
+10 = OPTRE */
+KP_liberation_preset_resistance = 10;
 
 /* Civilians preset:
 0  = Custom (default vanilla)
@@ -191,8 +192,9 @@ KP_liberation_preset_resistance = 0;
 5  = Unsung
 6  = CUP Takistani Civilians
 7  = CUP Chernarussian Civilians
-8  = SOGPF */
-KP_liberation_preset_civilians = 0;
+8  = SOGPF
+9  = OPTRE */
+KP_liberation_preset_civilians = 9;
 
 /* Which arsenal preset should be used?
 0  = Use the default blacklist method (defined below)
@@ -213,7 +215,7 @@ KP_liberation_preset_civilians = 0;
 15 = AAF arsenal preset
 16 = LDF arsenal preset
 17 = SOGPF arsenal preset 
-18 = Vietcong arsenal preset*/
+18 = OPTRE */
 KP_liberation_arsenal = 0;
 
 /* - Fuel consumption settings.
@@ -241,20 +243,20 @@ GRLIB_color_enemy = "ColorOPFOR";                                       // Enemy
 GRLIB_color_enemy_bright = "ColorRED";                                  // Enemy sector marker color (activated).
 
 GRLIB_fob_range = 125;                                                  // Build range around the main FOB building.
-GRLIB_halo_altitude = 2500;                                             // Altitude in metres for the HALO jump.
+GRLIB_halo_altitude = 2500;                                             // Altitude in metres for the Droppod (this is actually fully overwritten elsewhere, sorry).
 GRLIB_secondary_missions_costs = [15, 10, 8, 5];                        // Intel price for the secondary missions [FOB hunting, Convoy ambush, SAR, Humanitarian Aid].
 KP_liberation_civ_supplies_impact = 5;									// The percentage increase received when completing a Humanitarian Aid secondary objective
 GRLIB_secondary_objective_impact = 0.6;                                 // The percentage impact against enemy combat readiness for a successful FOB hunt.
 GRLIB_recycling_percentage = 0.5;                                       // Percentage of resources you get back from recycling.
 KP_liberation_production_interval = 30;                                 // Time in minutes until a production process is finished, when resources multiplier is set to 1.
 
-GRLIB_sector_size = 1000;                                               // Range to activate a sector.
+GRLIB_sector_size = 1000;                                                // Range to activate a sector. (This is normally 1000, but Madrigal is very small so I brought it down, otherwise you're always activating at least 2 sectors.)
 GRLIB_capture_size = 175;                                               // Range to capture a sector.
-GRLIB_defended_buildingpos_part = 0.3;                                  // Multiplier for defenders in buildings.
+GRLIB_defended_buildingpos_part = 0.2;                                  // Multiplier for defenders in buildings.
 GRLIB_battlegroup_size = 6;                                             // Size of enemy battlegroups.
 GRLIB_vulnerability_timer = 1200;                                       // Time in seconds how long a captured sector is vulnerable to enemy troops.
 GRLIB_radiotower_size = 2500;                                           // Radio Tower scanning range.
-GRLIB_surrender_chance = 80;                                            // Chance that enemy infantry will surrender after heavy losses are encountered.
+GRLIB_surrender_chance = 0;                                            // Chance that enemy infantry will surrender after heavy losses are encountered. (Lorewise Sangheilli would never surrender, but since it's the only reliable way to get intel I haven't lowered the chance to 0.)
 
 GRLIB_civilians_amount = 10;                                            // Civilian count multiplier.
 GRLIB_cleanup_delay = 1200;                                             // Time in seconds until bodies of dead soldiers are cleaned up.
@@ -264,8 +266,8 @@ GRLIB_sector_cap = 180;                                                 // Cap f
 GRLIB_battlegroup_cap = 150;                                            // Cap for enemy battlegroups.
 GRLIB_patrol_cap = 150;                                                 // Cap for enemy patrols.
 
-KP_liberation_cr_kill_penalty = 6;                                      // Civil Reputation penalty for killing a civilian.
-KP_liberation_cr_building_penalty = 3;                                  // Civil Reputation penalty for destroying/damaging a building.
+KP_liberation_cr_kill_penalty = 5;                                      // Civil Reputation penalty for killing a civilian.
+KP_liberation_cr_building_penalty = 1;                                  // Civil Reputation penalty for destroying/damaging a building. (I recommend you keep this low, OPTRE weapons bring down buildings very easily.)
 KP_liberation_cr_vehicle_penalty = 2;                                   // Civil Reputation penalty for stealing a civilian vehicle.
 KP_liberation_cr_resistance_penalty = 5;                                // Civil Reputation penalty for killing a friendly resistance soldier.
 KP_liberation_cr_sector_gain = 5;                                       // Civil Reputation gain for liberate a sector.
@@ -753,7 +755,14 @@ KPLIB_transportConfigs = [
     ["vn_b_wheeled_m54_02", -5, [0,-0.8,0.18], [0,-2.5,0.18]],
     ["vn_o_wheeled_z157_01", -5.5, [0,-1.2,0.18], [0,-2.9,0.18]],
     ["vn_b_air_ch47_03_01", -8, [0,3.9,-2.0], [0,2.2,-2.0], [0,0.5,-2.0], [0,-1.2,-2.0]],
-    ["vnx_b_air_ac119_03_01",-10,[0,5.6,-2.1],[0,4,-2.1],[0,2.4,-2.1],[0,0.8,-2.1],[0,-0.8,-2.1],[0,-2.4,-2.1],[0,5.6,-0.8],[0,4,-0.8],[0,2.4,-0.8],[0,0.8,-0.8],[0,-0.8,-0.8],[0,-2.4,-0.8]]
+    ["vnx_b_air_ac119_03_01",-10,[0,5.6,-2.1],[0,4,-2.1],[0,2.4,-2.1],[0,0.8,-2.1],[0,-0.8,-2.1],[0,-2.4,-2.1],[0,5.6,-0.8],[0,4,-0.8],[0,2.4,-0.8],[0,0.8,-0.8],[0,-0.8,-0.8],[0,-2.4,-0.8]],
+    ["OPTRE_m1087_stallion_unsc", -6.5, [0,-0.8,0.4], [0,-2.4,0.4], [0,-4.0,0.4]],
+    ["OPTRE_m1087_stallion_cover_unsc", -6.5, [0,-0.8,0.4], [0,-2.4,0.4], [0,-4.0,0.4]],
+    ["OPTRE_m1015_mule_ins", -6.5, [0,0.3,0.05], [0,-1.3,0.05], [0,-2.9,0.05]],
+    ["OPTRE_M12_FAV", -7.5, [0,-1.8,-0.4]],
+    ["OPTRE_Pelican_armed", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]],
+    ["OPTRE_Pelican_armed_70mm", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]],
+    ["OPTRE_Pelican_unarmed", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]]
 ];
 
 /* Various other settings.
@@ -798,7 +807,8 @@ KPLIB_aiResupplySources = [
     "uns_M113_ENG",
     "uns_M35A2_ammo",
     "uns_motorpool1_repair",
-    "vn_b_wheeled_m54_ammo"
+    "vn_b_wheeled_m54_ammo",
+    "OPTRE_m1087_stallion_unsc_resupply"
 ];
 
 // Everything that can resupply other vehicles.
@@ -842,7 +852,8 @@ vehicle_repair_sources = [
     "uns_M113_ENG",
     "uns_M35A2_repair",
     "uns_motorpool1_repair",
-    "vn_b_wheeled_m54_repair"
+    "vn_b_wheeled_m54_repair",
+    "OPTRE_m1087_stallion_unsc_repair"
 ];
 
 vehicle_rearm_sources = [
@@ -884,7 +895,8 @@ vehicle_rearm_sources = [
     "sfp_tgb40_ammo",
     "uns_M113_ENG",
     "uns_M35A2_ammo",
-    "vn_b_wheeled_m54_ammo"
+    "vn_b_wheeled_m54_ammo",
+    "OPTRE_m1087_stallion_unsc_resupply"
 ];
 
 vehicle_refuel_sources = [
@@ -933,7 +945,8 @@ vehicle_refuel_sources = [
     "Land_vn_b_prop_fuelbladder_03",
     "Land_vn_b_prop_fuelbladder_04",
     "Land_vn_usaf_fueltank_75_01",
-    "Land_vn_b_prop_fueldrum_01"
+    "Land_vn_b_prop_fueldrum_01",
+    "OPTRE_m1087_stallion_unsc_refuel"
 ];
 
 // Classnames of boats, so they can be built on water.
@@ -969,7 +982,12 @@ boats_names = [
     "vn_b_boat_12_01",
     "vn_b_boat_13_01",
     "vn_b_boat_05_01",
-    "vn_b_boat_06_01"
+    "vn_b_boat_06_01",
+    "optre_catfish_mg_f",
+    "optre_catfish_aa_f",
+    "optre_catfish_gauss_f",
+    "optre_catfish_atgm_f",
+    "optre_catfish_unarmed_f"
 ];
 
 // Classnames of artillery vehicles, which should be added to the support module
@@ -1096,14 +1114,13 @@ KP_liberation_suppMod_artyVeh = [
     "vn_b_army_static_mortar_m2",
     "vn_b_army_static_mortar_m29",
     "vn_b_army_static_m101_02",
-    "vn_b_armor_m125_01"
+    "vn_b_armor_m125_01",
+    "OPTRE_M875_SPH"
 ];
 
 // Objects which are spawned as intel objects for pickup
 KPLIB_intelObjectClasses = [
-    "Land_File_research_F",
-    "Land_Document_01_F",
-    "Land_vn_file2_f"
+    "OPTRE_Civilian_DataPad_BlurText"
 ];
 
 // Classnames of buildings inside military sectors, which are valid to hold intel items

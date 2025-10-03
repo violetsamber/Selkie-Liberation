@@ -149,7 +149,3 @@ opfor_choppers = [
 opfor_air = [
     "CUP_O_Su25_Dyn_RU"                                                 // Su-25T Frogfoot
 ];
-
-opfor_boat = [
-    
-];

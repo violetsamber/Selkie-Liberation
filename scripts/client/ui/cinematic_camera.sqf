@@ -68,10 +68,10 @@ while { cinematic_camera_started } do {
         };
 
         _cinematic_camera camSetTarget _camtarget;
-        private _startpos = [ ((getpos _camtarget) select 0) - 60, ((getpos _camtarget) select 1) + 350, 5 ];
-        private _endpos = [ ((getpos _camtarget) select 0) - 60, ((getpos _camtarget) select 1) - 230, 5 ];
-        private _startfov = 0.5;
-        private _endfov = 0.5;
+        private _startpos = [ ((getpos _camtarget) select 0) - 100, ((getpos _camtarget) select 1) + 350, 700 ];
+        private _endpos = [ ((getpos _camtarget) select 0) - 100, ((getpos _camtarget) select 1) - 230, 900 ];
+        private _startfov = 0.7;
+        private _endfov = 0.7;
 
         if ( !first_camera_round ) then {
             _startfov = 0.8;
@@ -250,7 +250,7 @@ while { cinematic_camera_started } do {
                 if ( isPlayer _camtarget ) then { _unitname = name _camtarget };
                 private _nearest_sector = "";
                 if ( _position distance startbase < 300 ) then {
-                    _nearest_sector = "Operation Base";
+                    _nearest_sector = "Serve While Hot";
                 } else {
                     _nearest_sector = [300, _position ] call KPLIB_fnc_getNearestSector;
                     if ( _nearest_sector != "" ) then {

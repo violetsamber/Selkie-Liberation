@@ -23,7 +23,7 @@ waitUntil {introDone};
 waitUntil {!isNil "cinematic_camera_stop"};
 waitUntil {cinematic_camera_stop};
 
-private _basenamestr = "Operation Base";
+private _basenamestr = "Serve While Hot";
 
 KP_liberation_respawn_time = time;
 KP_liberation_respawn_mobile_done = false;
@@ -135,7 +135,7 @@ while {true} do {
                 if (((KPLIB_respawnPositionsList select (lbCurSel DEPLOY_LIST_IDC)) select 0) == _basenamestr) then {
                     _startdist = 200;
                     _enddist = 300;
-                    _alti = 30;
+                    _alti = 850;
                 };
                 // Disable if sector is under attack
                 if (!KPLIB_respawnOnAttackedSectors && {_objectpos in KPLIB_sectorsUnderAttack}) then {

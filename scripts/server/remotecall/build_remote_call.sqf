@@ -75,7 +75,7 @@ if ((_price_s > 0) || (_price_a > 0) || (_price_f > 0)) then {
 
     } forEach _storage_areas;
 
-    if ( _localtype == 8 ) then {
+    if ( _localtype == 9 ) then {
         stats_blufor_soldiers_recruited = stats_blufor_soldiers_recruited + 10;
     } else {
         if ( _typename isKindOf "Man" ) then {

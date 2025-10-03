@@ -8,6 +8,8 @@ _vehtomark = [];
 _support_to_skip = [
     KP_liberation_recycle_building,
     KP_liberation_air_vehicle_building,
+    KP_liberation_spartan_building,
+    KP_liberation_ODST_building,
     "B_Slingload_01_Repair_F",
     "B_Slingload_01_Fuel_F",
     "B_Slingload_01_Ammo_F"

@@ -99,6 +99,14 @@ switch (KP_liberation_preset_opfor) do {
             "scripts\fob_templates\vn\template5.sqf"
         ];
     };
+    case 22: {
+        KPLIB_fob_templates = [
+             "scripts\fob_templates\optre\template1.sqf",
+             "scripts\fob_templates\optre\template2.sqf",
+             "scripts\fob_templates\optre\template3.sqf"
+
+        ];
+    };
     default {
         KPLIB_fob_templates = [
             "scripts\fob_templates\default\template1.sqf",
@@ -138,10 +146,9 @@ if (KP_liberation_restart > 0) then {
     execVM "scripts\server\game\server_restart.sqf";
 };
 
-
 ["KPLIB_ResetBattleGroups", {
     {
-        if (_x getVariable ["KPLIB_isBattleGroup", false]) then {
+        if (_x getVariable ["KPLIB_isBattleGroup",false]) then {
             [_x] call battlegroup_ai;
         }
     } foreach allGroups;

@@ -182,15 +182,21 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         sleep 0.25;
     } forEach _vehtospawn;
 
+    //TODO Change how building ai spawning works
     if (_building_ai_max > 0) then {
+        //Get all buildings withing _building_range
         _allbuildings = (nearestObjects [_sectorpos, ["House"], _building_range]) select {alive _x};
+        //For each of the buildings get their positions
         _buildingpositions = [];
         {
-            _buildingpositions = _buildingpositions + ([_x] call BIS_fnc_buildingPositions);
+            _buildingpositions = _buildingpositions + [([_x] call BIS_fnc_buildingPositions)];
         } forEach _allbuildings;
-        if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector found %3 building positions", (markerText _sector), _sector, (count _buildingpositions)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
-        if (count _buildingpositions > _minimum_building_positions) then {
-            _managed_units = _managed_units + ([_infsquad, _building_ai_max, _buildingpositions, _sector] call KPLIB_fnc_spawnBuildingSquad);
+
+        _largestBuildings = [_buildingpositions,[],{count _x},"DESCEND", {count _x > 4}] call BIS_fnc_sortBy;
+
+        if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector found %3 building positions", (markerText _sector), _sector, (count _largestBuildings)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
+        if (count _largestBuildings > 1) then {
+            _managed_units = _managed_units + ([_infsquad, 100, _largestBuildings, _sector] call KPLIB_fnc_spawnBuildingSquadModified);
         };
     };
 

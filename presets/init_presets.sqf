@@ -39,8 +39,8 @@ switch (KP_liberation_preset_blufor) do {
     case 28: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\sfp_wdl.sqf";};
     case 29: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\sfp_des.sqf";};
     case 30: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\enoch.sqf";};
-	case 31: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\sog.sqf";};
-    case 32: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\vn.sqf";};
+    case 31: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\vn.sqf";};
+    case 32: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\optre.sqf";};
     default  {[] call compileFinal preprocessFileLineNumbers "presets\blufor\custom.sqf";};
 };
 
@@ -66,7 +66,7 @@ switch (KP_liberation_preset_opfor) do {
     case 19: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\CUP_BAF_Desert.sqf";};
     case 20: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\CUP_BAF_Woodland.sqf";};
     case 21: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\vn.sqf";};
-	case 22: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\sog.sqf";};
+    case 22: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\optre.sqf";};
     default  {[] call compileFinal preprocessFileLineNumbers "presets\opfor\custom.sqf";};
 };
 
@@ -79,7 +79,8 @@ switch (KP_liberation_preset_resistance) do {
     case  6: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\unsung.sqf";};
     case  7: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\CUP_TakiLocals.sqf";};
     case  8: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\CUP_NAPA.sqf";};
-	case  9: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\vn.sqf";};
+    case  9: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\vn.sqf";};
+    case  9: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\optre.sqf";};
     default  {[] call compileFinal preprocessFileLineNumbers "presets\resistance\custom.sqf";};
 };
 
@@ -92,16 +93,17 @@ switch (KP_liberation_preset_civilians) do {
     case  6: {[] call compileFinal preprocessFileLineNumbers "presets\civilians\CUP_TakiCivs.sqf";};
     case  7: {[] call compileFinal preprocessFileLineNumbers "presets\civilians\CUP_ChernoCivs.sqf";};
     case  8: {[] call compileFinal preprocessFileLineNumbers "presets\civilians\vn.sqf";};
+    case  9: {[] call compileFinal preprocessFileLineNumbers "presets\civilians\optre.sqf";};
     default  {[] call compileFinal preprocessFileLineNumbers "presets\civilians\custom.sqf";};
 };
 
 // Prices for the blufor infantry squads (supplies, ammo, fuel)
 KPLIB_b_allSquads = [
     [blufor_squad_inf_light,100,0,0],
-    [blufor_squad_inf,150,0,0],
-    [blufor_squad_at,200,25,0],
-    [blufor_squad_aa,200,25,0],
-    [blufor_squad_recon,200,0,0],
+    [blufor_squad_inf,100,0,0],
+    [blufor_squad_at,100,15,0],
+    [blufor_squad_aa,100,15,0],
+    [blufor_squad_recon,100,0,0],
     [blufor_squad_para,150,0,0]
 ];
 
@@ -189,7 +191,25 @@ GRLIB_ignore_colisions_when_building = [
     "vn_flag_sog",
     "vn_flag_usa",
     "vn_flag_usarmy",
-    "vn_flag_usmc"
+    "vn_flag_usmc",
+    "OPTRE_RS_ConsoleDoor",
+    "Land_OPTRE_field_bunk_open",
+    "Land_OPTRE_field_bunk_double",
+    "Land_OPTRE_generator",
+    "Land_OPTRE_FridgeONI_Drab",
+    "Land_OPTRE_FridgeONI",
+    "Land_OPTRE_Holotable",
+    "OPTRE_holotable_sm",
+    "OPTRE_holotable_sm_wd",
+    "OPTRE_holotable_sm_dt",
+    "OPTRE_holotable_sm_at",
+    "OPTRE_serverrack",
+    "Land_OPTRE_IV_Drip",
+    "Land_OPTRE_Stretcher",
+    "OPTRE_CTF_Flag_UNSCBlue",
+    "OPTRE_CTF_Flag_GreenArmy",
+    "OPTRE_CTF_Flag_UNSCWhite",
+    "OPTRE_CTF_Flag_UNSCRed"
 ];
 
 /*
@@ -203,6 +223,7 @@ air_vehicles                                = air_vehicles                      
 static_vehicles                             = static_vehicles                           select {[( _x select 0)] call KPLIB_fnc_checkClass};
 buildings                                   = buildings                                 select {[( _x select 0)] call KPLIB_fnc_checkClass};
 support_vehicles                            = support_vehicles                          select {[( _x select 0)] call KPLIB_fnc_checkClass};
+spartan_units                               = spartan_units                             select {[( _x select 0)] call KPLIB_fnc_checkClass};
 blufor_squad_inf_light                      = blufor_squad_inf_light                    select {[_x] call KPLIB_fnc_checkClass};
 blufor_squad_inf                            = blufor_squad_inf                          select {[_x] call KPLIB_fnc_checkClass};
 blufor_squad_at                             = blufor_squad_at                           select {[_x] call KPLIB_fnc_checkClass};
@@ -246,6 +267,7 @@ KPLIB_b_air_classes                         = air_vehicles                      
 KPLIB_b_static_classes                      = static_vehicles                           apply {toLower (_x select 0)};
 KPLIB_b_buildings_classes                   = buildings                                 apply {toLower (_x select 0)};
 KPLIB_b_support_classes                     = support_vehicles                          apply {toLower (_x select 0)};
+KPLIB_b_spartan_classes                     = spartan_units                             apply {toLower (_x select 0)};
 KPLIB_transport_classes                     = KPLIB_transportConfigs                    apply {toLower (_x select 0)};
 
 KPLIB_b_infantry_classes append (blufor_squad_inf_light + blufor_squad_inf + blufor_squad_at + blufor_squad_aa + blufor_squad_recon + blufor_squad_para);
@@ -263,11 +285,11 @@ KPLIB_o_squadAir    = [opfor_squad_leader, opfor_medic, opfor_machinegunner, opf
 /*
     Liberation specific collections
 */
-KPLIB_buildList         = [[], infantry_units, light_vehicles, heavy_vehicles, air_vehicles, static_vehicles, buildings, support_vehicles, KPLIB_b_allSquads];
+KPLIB_buildList         = [[], infantry_units, light_vehicles, heavy_vehicles, air_vehicles, static_vehicles, buildings, support_vehicles, spartan_units, KPLIB_b_allSquads];
 KPLIB_crates            = [KP_liberation_supply_crate, KP_liberation_ammo_crate, KP_liberation_fuel_crate];
 KPLIB_airSlots          = [KP_liberation_heli_slot_building, KP_liberation_plane_slot_building];
 KPLIB_storageBuildings  = [KP_liberation_small_storage_building, KP_liberation_large_storage_building];
-KPLIB_upgradeBuildings  = [KP_liberation_recycle_building, KP_liberation_air_vehicle_building, KP_liberation_heli_slot_building, KP_liberation_plane_slot_building];
+KPLIB_upgradeBuildings  = [KP_liberation_recycle_building, KP_liberation_spartan_building, KP_liberation_ODST_building, KP_liberation_air_vehicle_building, KP_liberation_heli_slot_building, KP_liberation_plane_slot_building];
 KPLIB_aiResupplySources append [Respawn_truck_typename, huron_typename, Arsenal_typename];
 
 KPLIB_crates            = KPLIB_crates              apply {toLower _x};
@@ -350,7 +372,7 @@ military_alphabet = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "G
 // Misc variables
 markers_reset = [99999,99999,0];
 zeropos = [0,0,0];
-KPLIB_sarWreck = "Land_Wreck_Heli_Attack_01_F";
+KPLIB_sarWreck = "OPTRE_Objects_Wreck_Pelican_Static1";
 KPLIB_sarFire = "test_EmptyObjectForFireBig";
 
 KPLIB_initPresets = true;

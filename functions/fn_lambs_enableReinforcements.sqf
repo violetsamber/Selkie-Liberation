@@ -20,5 +20,5 @@ if (isNull _grp) exitwith {
     ["Attempted to set LAMBS Reinforcements on null group.", "ERROR"] remoteExecCall ["KPLIB_fnc_log", 2];
 };
 
-(leader _grp) setVariable ["lambs_danger_dangerRadio", true, true];
+(leader _grp) setVariable ["lambs_danger_dangerRadio", true,true];
 _grp setVariable ["lambs_danger_enableGroupReinforce", true, true];

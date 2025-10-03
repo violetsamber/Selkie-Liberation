@@ -9,6 +9,9 @@ _base_position = markerpos _spawn_marker;
 _base_objects = [];
 _base_objectives = [];
 _base_defenders = [];
+_base_turrets = [];
+_base_object_number = 0;
+_base_objective_number = 0;
 
 ([] call (compile preprocessFileLineNumbers (selectRandom KPLIB_fob_templates))) params [
     "_objects_to_build",
@@ -40,6 +43,11 @@ private _nextobject = objNull;
     _nextobject setpos _nextpos;
 
     _base_objects pushBack _nextobject;
+    
+    if(_nextobject isKindOf "StaticWeapon") then {
+        createVehicleCrew _nextobject;
+    };
+
 } forEach _objects_to_build;
 
 sleep 1;
@@ -64,6 +72,11 @@ sleep 1;
     _nextobject lock 2;
 
     _base_objectives pushBack _nextobject;
+
+    if(_nextobject isKindOf "StaticWeapon") then {
+        createVehicleCrew _nextobject;
+    };
+
 } forEach _objectives_to_build;
 
 sleep 1;

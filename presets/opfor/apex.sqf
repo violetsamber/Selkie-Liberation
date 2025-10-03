@@ -144,7 +144,3 @@ opfor_air = [
     "O_Plane_CAS_02_dynamicLoadout_F",                                  // To-199 Neophron (CAS)
     "O_Plane_Fighter_02_F"                                              // To-201 Shikra
 ];
-
-opfor_boat = [
-    "O_T_Boat_Armed_01_hmg_F"
-];

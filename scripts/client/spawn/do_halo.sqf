@@ -35,30 +35,12 @@ if ( dialog ) then {
 
 if ( dojump > 0 ) then {
     GRLIB_last_halo_jump = time;
-    halo_position = halo_position getPos [random 250, random 360];
-    halo_position = [ halo_position select 0, halo_position select 1, GRLIB_halo_altitude + (random 200) ];
+    halo_position = halo_position getPos [random 10, random 360];
+    halo_position = [ halo_position select 0, halo_position select 1, GRLIB_halo_altitude];
     halojumping = true;
     sleep 0.1;
-    cutRsc ["fasttravel", "PLAIN", 1];
-    playSound "parasound";
-    sleep 2;
-    _backpack = backpack player;
-    if ( _backpack != "" && _backpack != "B_Parachute" ) then {
-        _backpackcontents = backpackItems player;
-        removeBackpack player;
-        sleep 0.1;
-    };
-    player addBackpack "B_Parachute";
-
-    player setpos halo_position;
-
+    [halo_position,[player],"frigate",30,2,-1,4000,3500,1500,400,200,true,true,600,true] remoteExec["OPTRE_fnc_HEV",2];
     sleep 4;
     halojumping = false;
-    waitUntil { !alive player || isTouchingGround player };
-    if ( _backpack != "" && _backpack != "B_Parachute" ) then {
-        sleep 2;
-        player addBackpack _backpack;
-        clearAllItemsFromBackpack player;
-        { player addItemToBackpack _x } foreach _backpackcontents;
-    };
+    
 };

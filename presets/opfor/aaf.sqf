@@ -164,7 +164,3 @@ opfor_air = [
     "I_Plane_Fighter_03_dynamicLoadout_F",                              // L-159
     "I_Plane_Fighter_04_F"                                              // Gripen
 ];
-
-opfor_boat = [
-    "I_Boat_Armed_01_minigun_F"
-];

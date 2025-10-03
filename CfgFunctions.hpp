@@ -78,6 +78,7 @@ class KPLIB {
         class setVehicleSeized          {};
         class sortStorage               {};
         class spawnBuildingSquad        {};
+        class spawnBuildingSquadModified{};
         class spawnCivilians            {};
         class spawnGuerillaGroup        {};
         class spawnMilitaryPostSquad    {};

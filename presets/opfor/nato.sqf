@@ -147,7 +147,3 @@ opfor_air = [
     "B_Plane_CAS_01_dynamicLoadout_F",                                  // A-10D Thunderbolt II (CAS)
     "B_Plane_Fighter_01_F"                                              // F/A-181 Black Wasp II
 ];
-
-opfor_boat = [
-    
-];

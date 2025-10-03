@@ -135,7 +135,3 @@ opfor_choppers = [
 opfor_air = [
     "len_l39_nva"                                                       // Aero L-39
 ];
-
-opfor_boat = [
-    
-];

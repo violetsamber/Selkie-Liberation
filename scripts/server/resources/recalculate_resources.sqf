@@ -32,6 +32,10 @@ while {true} do {
         private _planeSlots = {(typeOf _x) == KP_liberation_plane_slot_building;} count _fob_buildings;
         private _hasAirBuilding = {(typeOf _x) == KP_liberation_air_vehicle_building;} count _fob_buildings;
         if (_hasAirBuilding > 0) then {_hasAirBuilding = true;} else {_hasAirBuilding = false;};
+        private _hasSpartanBuilding = {(typeOf _x) == KP_liberation_spartan_building;} count _fob_buildings;
+        if (_hasSpartanBuilding > 0) then {_hasSpartanBuilding = true;} else {_hasSpartanBuilding = false;};
+        private _hasODSTBuilding = {(typeOf _x) == KP_liberation_ODST_building;} count _fob_buildings;
+        if (_hasODSTBuilding > 0) then {_hasODSTBuilding = true;} else {_hasODSTBuilding = false;};
         private _hasRecBuilding = {(typeOf _x) == KP_liberation_recycle_building;} count _fob_buildings;
         if (_hasRecBuilding > 0) then {_hasRecBuilding = true;} else {_hasRecBuilding = false;};
 
@@ -50,7 +54,7 @@ while {true} do {
             } forEach (attachedObjects _x);
         } forEach _storage_areas;
 
-        _local_fob_resources pushBack [_x, _supplyValue, _ammoValue, _fuelValue, _hasAirBuilding, _hasRecBuilding];
+        _local_fob_resources pushBack [_x, _supplyValue, _ammoValue, _fuelValue, _hasAirBuilding, _hasSpartanBuilding, _hasODSTBuilding, _hasRecBuilding];
         _local_supplies_global = _local_supplies_global + _supplyValue;
         _local_ammo_global = _local_ammo_global + _ammoValue;
         _local_fuel_global = _local_fuel_global + _fuelValue;

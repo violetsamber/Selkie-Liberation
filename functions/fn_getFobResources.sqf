@@ -6,7 +6,7 @@
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
-        Gets the FOB resource data in format [<POSITION>, <SUPPLIES>, <AMMO>, <FUEL>, <HAS_AIR_BUILD>, <HAS_REC_WORKSHOP>].
+        Gets the FOB resource data in format [<POSITION>, <SUPPLIES>, <AMMO>, <FUEL>, <HAS_AIR_BUILD>, <HAS_SPARTAN_BUILD>, <HAS_OSDT_BUILD>, <HAS_REC_WORKSHOP>].
 
     Parameter(s):
         _fob - Position of FOB to get resources of [POSITION, defaults to [0, 0, 0]]
@@ -15,7 +15,7 @@
         FOB resource data [ARRAY]
 */
 
-#define NO_RESULT [[0, 0, 0], 0, 0, 0, false, false]
+#define NO_RESULT [[0, 0, 0], 0, 0, 0, false, false, false, false]
 
 params [
     ["_fob", [0, 0, 0], [[]], [2, 3]]
