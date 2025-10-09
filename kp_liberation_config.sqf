@@ -140,8 +140,9 @@ If you want to change a preset, it's recommended to set all four presets to 0 an
 29 = SFP (Desert)
 30 = LDF (Contact DLC)
 31 = SOGPF
-32 = OPTRE */
-KP_liberation_preset_blufor = 32;
+32 = OPTRE 
+33 = ACMA */
+KP_liberation_preset_blufor = 33;
 
 /* OPFOR preset:
 0  = Custom (default vanilla CSAT)

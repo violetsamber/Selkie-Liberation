@@ -41,6 +41,7 @@ switch (KP_liberation_preset_blufor) do {
     case 30: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\enoch.sqf";};
     case 31: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\vn.sqf";};
     case 32: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\optre.sqf";};
+    case 33: {[] call compileFinal preprocessFileLineNumbers "presets\blufor\acma.sqf";};
     default  {[] call compileFinal preprocessFileLineNumbers "presets\blufor\custom.sqf";};
 };
 
