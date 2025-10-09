@@ -5,6 +5,7 @@
 #define SECTOR_TICK_TIME            5
 // delay in minutes from which addional time will be added
 #define ADDITIONAL_TICKETS_DELAY    5
+#define MAX_BUILDING_UNITS 100
 
 params ["_sector"];
 
@@ -26,6 +27,10 @@ private _squad1 = [];
 private _squad2 = [];
 private _squad3 = [];
 private _squad4 = [];
+private _squad10 = [];
+private _squad11 = [];
+private _squad12 = [];
+private _squad13 = [];
 private _minimum_building_positions = 5;
 private _sector_despawn_tickets = BASE_TICKETS;
 private _maximum_additional_tickets = (KP_liberation_delayDespawnMax * 60 / SECTOR_TICK_TIME);
@@ -47,6 +52,10 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
         _squad1 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         _squad2 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad10 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad11 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad12 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad13 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         if (GRLIB_unitcap >= 1) then {_squad3 = ([_infsquad] call KPLIB_fnc_getSquadComp);};
         if (GRLIB_unitcap >= 1.5) then {_squad4 = ([_infsquad] call KPLIB_fnc_getSquadComp);};
 
@@ -82,6 +91,11 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
         _squad1 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         if (GRLIB_unitcap >= 1.25) then {_squad2 = ([_infsquad] call KPLIB_fnc_getSquadComp);};
+        _squad10 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad11 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad12 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad13 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+
 
         if ((random 100) > (66 / GRLIB_difficulty_modifier)) then {_vehtospawn pushback (selectRandom militia_vehicles);};
         if ((random 100) > (33 / GRLIB_difficulty_modifier)) then {_vehtospawn pushback (selectRandom militia_vehicles);};
@@ -113,9 +127,14 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
     if (_sector in sectors_military) then {
         _squad1 = ([] call KPLIB_fnc_getSquadComp);
         _squad2 = ([] call KPLIB_fnc_getSquadComp);
+        _squad10 = ([] call KPLIB_fnc_getSquadComp);
+        _squad11 = ([] call KPLIB_fnc_getSquadComp);
+        _squad12 = ([] call KPLIB_fnc_getSquadComp);
+        _squad13 = ([] call KPLIB_fnc_getSquadComp);
         if (GRLIB_unitcap >= 1.5) then {_squad3 = ([] call KPLIB_fnc_getSquadComp);};
 
         _vehtospawn = [([] call KPLIB_fnc_getAdaptiveVehicle),([] call KPLIB_fnc_getAdaptiveVehicle)];
+
         if ((random 100) > (33 / GRLIB_difficulty_modifier)) then {
             _vehtospawn pushback ([] call KPLIB_fnc_getAdaptiveVehicle);
             _squad4 = ([] call KPLIB_fnc_getSquadComp);
@@ -133,8 +152,13 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
         _squad1 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         if (GRLIB_unitcap >= 1.25) then {_squad2 = ([_infsquad] call KPLIB_fnc_getSquadComp);};
+        _squad10 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad11 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad12 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad13 = ([_infsquad] call KPLIB_fnc_getSquadComp);
 
         if ((random 100) > 66) then {_vehtospawn pushback ([] call KPLIB_fnc_getAdaptiveVehicle);};
+        if ((random 100) > 33) then {_vehtospawn pushback (selectRandom militia_vehicles);};
         if ((random 100) > 33) then {_vehtospawn pushback (selectRandom militia_vehicles);};
 
         _spawncivs = false;
@@ -158,7 +182,12 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         _squad1 = ([] call KPLIB_fnc_getSquadComp);
         if (combat_readiness > 30) then {_squad2 = ([] call KPLIB_fnc_getSquadComp);};
         if (GRLIB_unitcap >= 1.5) then {_squad3 = ([] call KPLIB_fnc_getSquadComp);};
+        _squad10 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad11 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad12 = ([_infsquad] call KPLIB_fnc_getSquadComp);
+        _squad13 = ([_infsquad] call KPLIB_fnc_getSquadComp);
 
+        if((random 100) > 95) then {_vehtospawn pushback ([] call KPLIB_fnc_getAdaptiveVehicle);};
         if((random 100) > 95) then {_vehtospawn pushback ([] call KPLIB_fnc_getAdaptiveVehicle);};
 
         _spawncivs = false;
@@ -168,7 +197,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
     _vehtospawn = _vehtospawn select {!(isNil "_x")};
 
-    if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector calculated -> _infsquad: %3 - _squad1: %4 - _squad2: %5 - _squad3: %6 - _squad4: %7 - _vehtospawn: %8 - _building_ai_max: %9", (markerText _sector), _sector, _infsquad, (count _squad1), (count _squad2), (count _squad3), (count _squad4), (count _vehtospawn), _building_ai_max], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
+    if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector calculated -> _infsquad: %3 - _squad1: %4 - _squad2: %5 - _squad3: %6 - _squad4: %7 - _vehtospawn: %8 - _building_ai_max: %9 _squad10: %10 _squad11: %11 _squad12: %12 _squad13: %13 ", (markerText _sector), _sector, _infsquad, (count _squad1), (count _squad2), (count _squad3), (count _squad4), (count _vehtospawn), _building_ai_max, (count _squad10), (count _squad11), (count _squad12), (count _squad13)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
 
     if (_building_ai_max > 0 && GRLIB_adaptive_opfor) then {
         _building_ai_max = round (_building_ai_max * ([] call KPLIB_fnc_getOpforFactor));
@@ -182,7 +211,6 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         sleep 0.25;
     } forEach _vehtospawn;
 
-    //TODO Change how building ai spawning works
     if (_building_ai_max > 0) then {
         //Get all buildings withing _building_range
         _allbuildings = (nearestObjects [_sectorpos, ["House"], _building_range]) select {alive _x};
@@ -196,7 +224,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
         if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector found %3 building positions", (markerText _sector), _sector, (count _largestBuildings)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
         if (count _largestBuildings > 1) then {
-            _managed_units = _managed_units + ([_infsquad, 100, _largestBuildings, _sector] call KPLIB_fnc_spawnBuildingSquadModified);
+            _managed_units = _managed_units + ([_infsquad, MAX_BUILDING_UNITS, _largestBuildings, _sector] call KPLIB_fnc_spawnBuildingSquadModified);
         };
     };
 
@@ -225,6 +253,31 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         [_grp, _sectorpos] spawn add_defense_waypoints;
         _managed_units = _managed_units + (units _grp);
     };
+
+    if (count _squad10 > 0) then {
+        _grp = [_sector, _squad10] call KPLIB_fnc_spawnRegularSquad;
+        [_grp, _sectorpos] spawn add_defense_waypoints;
+        _managed_units = _managed_units + (units _grp);
+    };
+
+    if (count _squad11 > 0) then {
+        _grp = [_sector, _squad11] call KPLIB_fnc_spawnRegularSquad;
+        [_grp, _sectorpos] spawn add_defense_waypoints;
+        _managed_units = _managed_units + (units _grp);
+    };
+
+    if (count _squad12 > 0) then {
+        _grp = [_sector, _squad12] call KPLIB_fnc_spawnRegularSquad;
+        [_grp, _sectorpos] spawn add_defense_waypoints;
+        _managed_units = _managed_units + (units _grp);
+    };
+
+    if (count _squad13 > 0) then {
+        _grp = [_sector, _squad13] call KPLIB_fnc_spawnRegularSquad;
+        [_grp, _sectorpos] spawn add_defense_waypoints;
+        _managed_units = _managed_units + (units _grp);
+    };
+
 
     if (_spawncivs && GRLIB_civilian_activity > 0) then {
         _managed_units = _managed_units + ([_sector] call KPLIB_fnc_spawnCivilians);

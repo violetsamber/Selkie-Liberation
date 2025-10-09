@@ -10,7 +10,7 @@
 opfor_officer = 	  "Selkie_UNSC_Army_Officer_WoodlandB";
 opfor_squad_leader =  "Selkie_UNSC_Army_SquadLeader_WoodlandB";				
 opfor_team_leader =   "Selkie_UNSC_Army_TeamLead_WoodlandB";								
-opfor_sentry =        "Selkie_UNSC_Army_RiflemaidB_WoodlandB";										
+opfor_sentry =        "Selkie_UNSC_Army_RiflemaidB_WoodlandB";								
 opfor_rifleman =      "Selkie_UNSC_Army_RiflemaidA_WoodlandB";									        
 opfor_rpg =           "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";						                        
 opfor_grenadier =     "Selkie_UNSC_Army_GrenadierMA37_WoodlandB";							    	    
@@ -23,7 +23,8 @@ opfor_at =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";
 opfor_aa =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";									            
 opfor_medic =         "Selkie_UNSC_Army_Medic_WoodlandB";							        		
 opfor_engineer =      "Selkie_UNSC_Army_Engineer_WoodlandB";						            		
-opfor_paratrooper =   "OPTRE_UNSC_ODST_Soldier_TeamLeader";						    
+opfor_paratrooper =   "OPTRE_UNSC_ODST_Soldier_TeamLeader";
+opfor_breacher =      "Selkie_UNSC_Army_Breacher_WoodlandB"; //Custom
 
 // Enemy vehicles used by secondary objectives.
 opfor_mrap =              "Selkie_UNSC_Army_Hog_Transport_WoodlandB";
@@ -44,12 +45,11 @@ Therefore, adding the same value twice or three times means they are more likely
 Think of them like garrison or military police forces, which are more meant to control the local population instead of fighting enemy armies. */
 militia_squad = [
 	"Selkie_UNSC_Army_RiflemaidA_WoodlandB",
-	"Selkie_UNSC_Army_RiflemaidA_WoodlandB",
-	"Selkie_UNSC_Army_RiflemaidA_WoodlandB",
-	"Selkie_UNSC_Army_RiflemaidB_WoodlandB",
-	"Selkie_UNSC_Army_RiflemaidB_WoodlandB",
 	"Selkie_UNSC_Army_RiflemaidB_WoodlandB",
 	"Selkie_UNSC_Army_Marksmaid_WoodlandB",
+	"Selkie_UNSC_Army_Marksmaid_WoodlandB",
+	"Selkie_UNSC_Army_Breacher_WoodlandB",
+	"Selkie_UNSC_Army_Breacher_WoodlandB",
 	"Selkie_UNSC_Army_Medic_WoodlandB",
 	"Selkie_UNSC_Army_TeamLead_WoodlandB"
 ];
