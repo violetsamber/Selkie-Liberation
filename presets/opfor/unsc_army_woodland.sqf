@@ -116,7 +116,7 @@ opfor_troup_transports = [
 	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
 	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
 	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
-	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
+	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland"
 ];
 
 // Enemy rotary-wings that will need to spawn in flight.
