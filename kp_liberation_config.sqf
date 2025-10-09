@@ -166,8 +166,9 @@ KP_liberation_preset_blufor = 32;
 19 = CUP British Armed Forces (Desert)
 20 = CUP British Armed Forces (Woodland)
 21 = SOGPF
-22 = OPTRE */
-KP_liberation_preset_opfor = 22;
+22 = OPTRE
+23 = UNSC_ARMY_WOODLAND */
+KP_liberation_preset_opfor = 23;
 
 /* Resistance preset:
 0  = Custom (default vanilla FIA)
