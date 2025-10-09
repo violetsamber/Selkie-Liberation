@@ -251,7 +251,7 @@ GRLIB_secondary_objective_impact = 0.6;                                 // The p
 GRLIB_recycling_percentage = 0.5;                                       // Percentage of resources you get back from recycling.
 KP_liberation_production_interval = 30;                                 // Time in minutes until a production process is finished, when resources multiplier is set to 1.
 
-GRLIB_sector_size = 500;                                                // Range to activate a sector. (This is normally 1000, but Madrigal is very small so I brought it down, otherwise you're always activating at least 2 sectors.)
+GRLIB_sector_size = 750;                                                // Range to activate a sector. (This is normally 1000, but Madrigal is very small so I brought it down, otherwise you're always activating at least 2 sectors.)
 GRLIB_capture_size = 175;                                               // Range to capture a sector.
 GRLIB_defended_buildingpos_part = 0.2;                                  // Multiplier for defenders in buildings.
 GRLIB_battlegroup_size = 6;                                             // Size of enemy battlegroups.
