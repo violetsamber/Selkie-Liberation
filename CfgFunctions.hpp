@@ -55,6 +55,7 @@ class KPLIB {
         class getSectorOwnership        {};
         class getSectorRange            {};
         class getSquadComp              {};
+        class getSquadCompTransport     {};
         class getStoragePositions       {};
         class getUnitPositionId         {};
         class getUnitsCount             {};

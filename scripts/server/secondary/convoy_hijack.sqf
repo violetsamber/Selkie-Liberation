@@ -78,7 +78,7 @@ _waypoint setWaypointCompletionRadius 50;
 private _troops_group = createGroup [GRLIB_side_enemy, true];
 {
     [_x, _spawnpos, _troops_group, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
-} foreach ([] call KPLIB_fnc_getSquadComp);
+} foreach ([] call KPLIB_fnc_getSquadCompTransport);
 {_x moveInCargo _troop_vehicle} foreach (units _troops_group);
 
 private _convoy_marker = createMarkerLocal [ format [ "convoymarker%1", round time], getpos _transport_vehicle ];
