@@ -27,7 +27,7 @@ opfor_paratrooper =   "OPTRE_UNSC_ODST_Soldier_TeamLeader";
 opfor_breacher =      "Selkie_UNSC_Army_Breacher_WoodlandB"; //Custom
 
 // Enemy vehicles used by secondary objectives.
-opfor_mrap =              "Selkie_UNSC_Army_Hog_Transport_WoodlandB";
+opfor_mrap =              "OPTRE_M813_TT";
 opfor_mrap_armed =        "Selkie_UNSC_Army_Hog_LAAG_WoodlandB";                                 
 opfor_transport_helo =    "Selkie_UNSC_Army_Pelican_Unarmed_Woodland";						
 opfor_transport_truck =   "OPTRE_m1087_stallion_cover_unsc";
