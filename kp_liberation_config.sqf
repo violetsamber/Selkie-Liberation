@@ -764,7 +764,10 @@ KPLIB_transportConfigs = [
     ["OPTRE_M12_FAV", -7.5, [0,-1.8,-0.4]],
     ["OPTRE_Pelican_armed", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]],
     ["OPTRE_Pelican_armed_70mm", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]],
-    ["OPTRE_Pelican_unarmed", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]]
+    ["OPTRE_Pelican_unarmed", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]],
+    ["Selkie_UNSC_Army_Pelican_Unarmed_Woodland", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]],
+    ["Selkie_UNSC_Army_Pelican_Armed_Woodland", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]],
+    ["14TH_D77H_TCI_ARMED", -7.5, [0,6,-2.4],[0,4.4,-2.4],[0,2.8,-2.4]]
 ];
 
 /* Various other settings.
