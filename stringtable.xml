@@ -2756,7 +2756,7 @@
             <Czech>Jste si jistý že chcete zabalit FOB?</Czech>
         </Key>
         <Key ID="STR_HALO_PARAM">
-            <Original>SOEIV Insertion</Original>
+            <Original>SOEIV INSERTION</Original>
             <French>Saut SOEIV</French>
             <German>SOEIV-Sprung</German>
             <Spanish>Salto SOEIV</Spanish>
@@ -2868,7 +2868,7 @@
             <Czech>Nemůžete použít HALO skok, musíte počkat %1 minut</Czech>
         </Key>
         <Key ID="STR_HALO_ACTION">
-            <Original>-- SOEIV Insertion</Original>
+            <Original>-- SOEIV INSERTION</Original>
             <French>-- SAUT HALO</French>
             <German>-- HALO-SPRUNG</German>
             <Spanish>-- SALTO HALO</Spanish>
@@ -2882,7 +2882,7 @@
             <Czech>-- HALO SKOK</Czech>
         </Key>
         <Key ID="STR_HALO_TITLE">
-            <Original>SOEIV Insertion</Original>
+            <Original>SOEIV INSERTION</Original>
             <French>SAUT HALO</French>
             <German>HALO-SPRUNG</German>
             <Spanish>SALTO HALO</Spanish>
