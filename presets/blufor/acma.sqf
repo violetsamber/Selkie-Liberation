@@ -30,7 +30,7 @@ KP_liberation_spartan_building = "Land_OPTRE_hard_tent_urban";          // The b
 KP_liberation_ODST_building = "OPTRE_RS_ConsoleDoor";            // The building defined to allow ODST call-ins.
 KP_liberation_heli_slot_building = "Land_HelipadSquare_F";              // The helipad used to increase the GLOBAL rotary-wing cap.
 KP_liberation_plane_slot_building = "Land_TentHangar_V1_F";             // The hangar used to increase the GLOBAL fixed-wing cap.
-KP_liberation_supply_crate = "CargoNet_01_box_F";                       // This defines the supply crates, as in resources.
+KP_liberation_supply_crate = "Land_FoodSacks_01_cargo_brown_F";         // This defines the supply crates, as in resources.
 KP_liberation_ammo_crate = "B_CargoNet_01_ammo_F";                      // This defines the ammunition crates.
 KP_liberation_fuel_crate = "CargoNet_01_barrels_F";                     // This defines the fuel crates.
 

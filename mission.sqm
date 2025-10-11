@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1437;
+		nextID=1464;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=293;
+		nextID=307;
 	};
 	class Camera
 	{
-		pos[]={2446.4912,302.15253,9087.583};
-		dir[]={0.01262182,-0.2850228,-0.95847976};
-		up[]={0.0037535382,0.95849907,-0.28508392};
-		aside[]={-0.99996006,1.671724e-07,-0.013169195};
+		pos[]={2359.9048,664.98016,10531.798};
+		dir[]={-0.18815732,-0.64629674,0.73952788};
+		up[]={-0.15936431,0.76306909,0.62636071};
+		aside[]={0.96912462,6.2631443e-08,0.2465736};
 	};
 };
 binarizationWanted=0;
@@ -5316,7 +5316,7 @@ class Mission
 					name="Serve While Hot";
 					class Entities
 					{
-						items=181;
+						items=179;
 						class Item0
 						{
 							dataType="Object";
@@ -13523,56 +13523,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2365.9146,253.19513,10867.811};
-								angles[]={0,0.00017029048,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this addAction [""Go to FOB"",{player setPosATL (getPosATL FOBTeleport)}];";
-								createAsLocalObject=1;
-								disableSimulation=1;
-							};
-							id=1345;
-							type="OPTRE_RS_ConsoleDoor";
-							atlOffset=1.5258789e-05;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item176
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={2357.6523,0.92100763,10879.905};
 								angles[]={0,0.15252741,0};
 							};
@@ -13617,7 +13567,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item177
+						class Item176
 						{
 							dataType="Object";
 							class PositionInfo
@@ -13651,7 +13601,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item178
+						class Item177
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -13664,69 +13614,7 @@ class Mission
 							id=1348;
 							atlOffset=319.0372;
 						};
-						class Item179
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={2369.9763,253.01486,10870.477};
-								angles[]={0,3.1371441,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								name="FrigateTeleport";
-								disableSimulation=1;
-							};
-							id=1349;
-							type="Land_VR_Shape_01_cube_1m_F";
-							atlOffset=0.24075317;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ObjectCollision";
-									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=3;
-							};
-						};
-						class Item180
+						class Item178
 						{
 							dataType="Object";
 							class PositionInfo
@@ -13777,11 +13665,11 @@ class Mission
 						};
 					};
 					id=1169;
-					atlOffset=321.48944;
+					atlOffset=321.46103;
 				};
 			};
 			id=1350;
-			atlOffset=321.48944;
+			atlOffset=321.46103;
 		};
 		class Item29
 		{
