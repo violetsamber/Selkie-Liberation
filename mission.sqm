@@ -1,7 +1,7 @@
 version=54;
 class EditorData
 {
-	moveGridStep=1;
+	moveGridStep=0.25;
 	angleGridStep=0.2617994;
 	scaleGridStep=100;
 	autoGroupingDist=10;
@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1435;
+		nextID=1437;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=209;
+		nextID=293;
 	};
 	class Camera
 	{
-		pos[]={1596.3077,166.93524,8713.625};
-		dir[]={0.39269015,-0.29248694,-0.87193412};
-		up[]={0.1201084,0.95626616,-0.26669106};
-		aside[]={-0.91180962,2.4295878e-07,-0.410647};
+		pos[]={2446.4912,302.15253,9087.583};
+		dir[]={0.01262182,-0.2850228,-0.95847976};
+		up[]={0.0037535382,0.95849907,-0.28508392};
+		aside[]={-0.99996006,1.671724e-07,-0.013169195};
 	};
 };
 binarizationWanted=0;
@@ -273,6 +273,9 @@ class ScenarioData
 {
 	author="Wyqer";
 };
+class CustomAttributes
+{
+};
 class Mission
 {
 	class Intel
@@ -294,7 +297,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=31;
+		items=32;
 		class Item0
 		{
 			dataType="Marker";
@@ -948,7 +951,7 @@ class Mission
 		class Item13
 		{
 			dataType="Marker";
-			position[]={2172.2734,272.3519,10828.927};
+			position[]={2172.2734,272.3519,10913.761};
 			name="huronmarker";
 			text="Spartan 01";
 			type="b_air";
@@ -994,7 +997,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2172.9709,272.57312,10828.796};
+				position[]={2172.9709,272.57312,10913.63};
 				angles[]={0,1.5746628,0};
 			};
 			side="Empty";
@@ -1028,7 +1031,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2160.1565,273.11664,10828.97};
+				position[]={2160.1565,273.11664,10913.804};
 				angles[]={0,1.5643642,0};
 			};
 			side="Empty";
@@ -1038,7 +1041,7 @@ class Mission
 			};
 			id=65;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=1.4490356;
+			atlOffset=1.4490051;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5313,7 +5316,7 @@ class Mission
 					name="Serve While Hot";
 					class Entities
 					{
-						items=180;
+						items=181;
 						class Item0
 						{
 							dataType="Object";
@@ -7095,8 +7098,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2300.5776,253.51575,10870.765};
-								angles[]={0,1.5759743,0};
+								position[]={2297.5413,253.4678,10867.951};
 							};
 							side="Empty";
 							class Attributes
@@ -7107,7 +7109,7 @@ class Mission
 							};
 							id=1209;
 							type="Land_Door_Locked_lg";
-							atlOffset=318.71533;
+							atlOffset=318.64386;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -7144,19 +7146,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2300.583,256.2804,10870.759};
-								angles[]={0,1.5759743,0};
+								position[]={2297.6709,253.48117,10873.57};
+								angles[]={0,3.1415927,0};
 							};
 							side="Empty";
 							class Attributes
 							{
-								init=" this addAction  " \n "[  " \n " ""Starboard Landing Pad"",  " \n " {  " \n "  player setPosASL (getPosASL StarboardLandingPad),  " \n "  player setDir 270, " \n "  sleep 0.01,  " \n "  player SwitchAction ""PlayerStand"",  " \n " },  " \n " nil,  " \n " 1.5,  " \n " true,  " \n " true,  " \n " """",  " \n " ""true"",  " \n " 2,  " \n " false,  " \n " """",  " \n " """"  " \n "];";
+								init=" this addAction  " \n "[  " \n " ""Port Landing Pad"",  " \n " {  " \n "  player setPosASL (getPosASL PortLandingPad),  " \n "  player setDir 270, " \n "  sleep 0.01,  " \n "  player SwitchAction ""PlayerStand"",  " \n " },  " \n " nil,  " \n " 1.5,  " \n " true,  " \n " true,  " \n " """",  " \n " ""true"",  " \n " 2,  " \n " false,  " \n " """",  " \n " """"  " \n "];";
 								createAsLocalObject=1;
 								disableSimulation=1;
 							};
 							id=1210;
 							type="Land_Door_Locked_lg";
-							atlOffset=2.5166321;
+							atlOffset=318.73099;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -11336,7 +11338,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2171.76,272.48718,10810.19};
+								position[]={2172.467,272.48718,10810.19};
 								angles[]={0,3.1467648,0};
 							};
 							side="Empty";
@@ -11347,7 +11349,7 @@ class Mission
 							};
 							id=1294;
 							type="Land_VR_Block_02_F";
-							atlOffset=335.95917;
+							atlOffset=335.96631;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -11565,7 +11567,7 @@ class Mission
 							};
 							id=1298;
 							type="Land_secundus_hallway_stairs";
-							atlOffset=367.46036;
+							atlOffset=48.4935;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -12022,7 +12024,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2172.3972,272.48718,10932.638};
+								position[]={2172.9065,272.48718,10932.638};
 								angles[]={0,3.1467648,0};
 							};
 							side="Empty";
@@ -12033,7 +12035,7 @@ class Mission
 							};
 							id=1308;
 							type="Land_VR_Block_02_F";
-							atlOffset=337.26352;
+							atlOffset=337.26993;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -13724,13 +13726,62 @@ class Mission
 								nAttributes=3;
 							};
 						};
+						class Item180
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={2172.917,272.17194,10924.571};
+								angles[]={0,1.5759799,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								name="PortLandingPad";
+								createAsLocalObject=1;
+								disableSimulation=1;
+							};
+							id=1436;
+							type="Land_HelipadEmpty_F";
+							atlOffset=0.50442505;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
 					id=1169;
-					atlOffset=303.27026;
+					atlOffset=321.48944;
 				};
 			};
 			id=1350;
-			atlOffset=303.27026;
+			atlOffset=321.48944;
 		};
 		class Item29
 		{
@@ -18210,6 +18261,22 @@ class Mission
 			};
 			id=1432;
 			atlOffset=-0.037651062;
+		};
+		class Item31
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2298.2424,253.70375,10870.75};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=1435;
+			type="OPTRE_hallway_intersection_t";
+			atlOffset=318.76965;
 		};
 	};
 	class Connections
