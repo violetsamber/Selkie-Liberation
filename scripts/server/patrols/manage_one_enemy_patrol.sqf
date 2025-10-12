@@ -1,5 +1,5 @@
-private [ "_spawnsector", "_grp", "_usable_sectors", "_spawntype", "_enemyNumber", "_vehdriver", "_spawnpos", "_civveh", "_sectors_patrol",
-        "_patrol_startpos", "_waypoint", "_grpspeed", "_sectors_patrol_random", "_sectorcount", "_nextsector", "_nearestroad" ];
+private [ "_spawnsector", "_grp", "_usable_sectors", "_spawntype", "_enemyNumber", "_vehdriver", "_spawnpos", "_spawnDir", "_enemyVic", "_sectors_patrol",
+        "_patrol_startpos", "_waypoint", "_grpspeed", "_sectors_patrol_random", "_sectorcount", "_nextsector", "_nearestroad", "_seatCount", "_vicClassName", "_roadInfo", "_vicUnit" ];
 
 _enemyVic = objNull;
 
@@ -23,8 +23,8 @@ while { GRLIB_endgame == 0 } do {
         _spawnsector = selectRandom _usable_sectors;
 
         _grp = createGroup [GRLIB_side_enemy, true];
-        if ( random 100 < 33) then {
-            _enemyNumber = 1 + (floor (random 2));
+        if ( random 100 < 1) then {
+            _enemyNumber = 6 + (floor (random 4));
             while { count units _grp < _enemyNumber } do {
                 [selectRandom militia_squad, markerPos _spawnsector, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
             };
@@ -37,18 +37,57 @@ while { GRLIB_endgame == 0 } do {
                 sleep 1;
             };
 
-            _spawnpos = getpos _nearestroad;
+            _roadInfo = getRoadInfo _nearestroad;
 
-            [selectRandom militia_squad, _spawnpos, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
-            _enemyVic = (selectRandom patrol_vehicles) createVehicle _spawnpos;
-            _enemyVic setpos _spawnpos;
+            //Gets the direction from the start of the road to the end of the road
+            _spawnDir = (_roadInfo select 6) getDir (_roadInfo select 7); 
+            _spawnpos = getPos _nearestroad;
+
+            _vicClassName = selectRandom patrol_vehicles;
+            _seatCount = ([_vicClassName, true] call BIS_fnc_crewCount);
+            _seatCount = 0 max _seatCount;
+            _seatCount = (8 min _seatCount) - 1;
+
+            for "_i" from 0 to _seatCount do 
+            { 
+                [selectRandom militia_squad, _spawnpos, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
+            };
+
+            _enemyVic = (_vicClassName) createVehicle _spawnpos;
+            _enemyVic setPos _spawnpos;
+            _enemyVic setDir _spawnDir;
             _enemyVic addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
             _enemyVic addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != GRLIB_side_enemy ) && ( side (_this select 3) != GRLIB_side_friendly )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ];
-            ((units _grp) select 0) moveInDriver _enemyVic;
-            ((units _grp) select 0) disableAI "FSM";
+
             //((units _grp) select 0) disableAI "AUTOCOMBAT";
             _grpspeed = "LIMITED";
 
+            _vicUnit = objNull;
+            for "_i" from 0 to _seatCount do 
+            {
+                _vicUnit = ((units _grp) select _i);
+                if (_i == 0) then
+                {
+                    _vicUnit moveInDriver _enemyVic;
+                };
+
+                if(_i == 1) then
+                {
+                    
+                    _vicUnit moveInGunner _enemyVic;
+
+                    if(gunner _enemyVic != _vicUnit) then
+                    {
+                        _vicUnit moveInCargo _enemyVic;
+                    };
+                };
+
+                if(_i > 1) then
+                {
+                    _vicUnit moveInCargo _enemyVic;
+                };
+            };
+            
         };
 
         { _x addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != GRLIB_side_enemy ) && ( side (_this select 3) != GRLIB_side_friendly )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ]; } foreach units _grp;
@@ -82,8 +121,8 @@ while { GRLIB_endgame == 0 } do {
             };
             _waypoint setWaypointType "MOVE";
             _waypoint setWaypointSpeed _grpspeed;
-            _waypoint setWaypointBehaviour "SAFE";
-            _waypoint setWaypointCombatMode "BLUE";
+            _waypoint setWaypointBehaviour "AWARE";
+            _waypoint setWaypointCombatMode "YELLOW";
             _waypoint setWaypointCompletionRadius 100;
         } foreach _sectors_patrol_random;
 
