@@ -6,6 +6,8 @@
 // delay in minutes from which addional time will be added
 #define ADDITIONAL_TICKETS_DELAY    5
 #define MAX_BUILDING_UNITS 100
+#define MAX_BUILDING_RANGE_STANDARD 120
+#define MAX_BUILDING_RANGE_LARGE 200
 
 params ["_sector"];
 
@@ -75,7 +77,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         };
 
         _building_ai_max = round (50 * _popfactor);
-        _building_range = 200;
+        _building_range = MAX_BUILDING_RANGE_LARGE;
         _local_capture_size = _local_capture_size * 1.4;
 
         if (KP_liberation_civ_rep < 0) then {
@@ -114,7 +116,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         };
 
         _building_ai_max = round ((floor (18 + (round (combat_readiness / 10 )))) * _popfactor);
-        _building_range = 120;
+        _building_range = MAX_BUILDING_RANGE_STANDARD;
 
         if (KP_liberation_civ_rep < 0) then {
             _iedcount = round ((ceil (random 4)) * (round ((KP_liberation_civ_rep * -1) / 33)) * GRLIB_difficulty_modifier);
@@ -144,7 +146,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         _spawncivs = false;
 
         _building_ai_max = round ((floor (18 + (round (combat_readiness / 4 )))) * _popfactor);
-        _building_range = 120;
+        _building_range = MAX_BUILDING_RANGE_STANDARD;
     };
 
     if (_sector in sectors_factory) then {
@@ -168,7 +170,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         };
 
         _building_ai_max = round ((floor (18 + (round (combat_readiness / 10 )))) * _popfactor);
-        _building_range = 120;
+        _building_range = MAX_BUILDING_RANGE_STANDARD;
 
         if (KP_liberation_civ_rep < 0) then {
             _iedcount = round ((ceil (random 3)) * (round ((KP_liberation_civ_rep * -1) / 33)) * GRLIB_difficulty_modifier);
