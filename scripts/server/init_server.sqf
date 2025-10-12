@@ -17,6 +17,7 @@ check_victory_conditions = compileFinal preprocessFileLineNumbers "scripts\serve
 
 // Patrol
 manage_one_civilian_patrol = compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_one_civilian_patrol.sqf";
+manage_one_enemy_patrol = compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_one_enemy_patrol.sqf";
 manage_one_patrol = compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_one_patrol.sqf";
 reinforcements_manager = compileFinal preprocessFileLineNumbers "scripts\server\patrols\reinforcements_manager.sqf";
 send_paratroopers = compileFinal preprocessFileLineNumbers "scripts\server\patrols\send_paratroopers.sqf";
@@ -57,6 +58,7 @@ execVM "scripts\server\game\synchronise_eco.sqf";
 execVM "scripts\server\game\zeus_synchro.sqf";
 execVM "scripts\server\offloading\show_fps.sqf";
 execVM "scripts\server\patrols\civilian_patrols.sqf";
+execVM "scripts\server\patrols\enemy_patrols.sqf";
 execVM "scripts\server\patrols\manage_patrols.sqf";
 execVM "scripts\server\patrols\reinforcements_resetter.sqf";
 if (KP_liberation_ailogistics) then {execVM "scripts\server\resources\manage_logistics.sqf";};

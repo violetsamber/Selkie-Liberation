@@ -261,6 +261,8 @@ GRLIB_radiotower_size = 2500;                                           // Radio
 GRLIB_surrender_chance = 0;                                            // Chance that enemy infantry will surrender after heavy losses are encountered. (Lorewise Sangheilli would never surrender, but since it's the only reliable way to get intel I haven't lowered the chance to 0.)
 
 GRLIB_civilians_amount = 10;                                            // Civilian count multiplier.
+GRLIB_enemy_patrols_amount = 10;
+GRLIB_enemy_patrols_activity = 1;
 GRLIB_cleanup_delay = 1200;                                             // Time in seconds until bodies of dead soldiers are cleaned up.
 
 GRLIB_blufor_cap = 100;                                                 // Cap for BLUFOR.
@@ -1219,6 +1221,7 @@ GRLIB_endgame = 0;
 KP_liberation_production_interval = ceil (KP_liberation_production_interval / GRLIB_resources_multiplier);
 GRLIB_battlegroup_size = GRLIB_battlegroup_size * (sqrt GRLIB_unitcap) * (sqrt GRLIB_csat_aggressivity);
 GRLIB_civilians_amount = GRLIB_civilians_amount * GRLIB_civilian_activity;
+GRLIB_enemy_patrols_amount = GRLIB_enemy_patrols_amount * GRLIB_enemy_patrols_activity;
 GRLIB_blufor_cap = (GRLIB_blufor_cap * GRLIB_unitcap) min 100;
 GRLIB_sector_cap = GRLIB_sector_cap * GRLIB_unitcap;
 GRLIB_battlegroup_cap = GRLIB_battlegroup_cap * GRLIB_unitcap;
