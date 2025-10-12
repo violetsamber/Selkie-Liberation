@@ -24,7 +24,6 @@ opfor_aa =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";
 opfor_medic =         "Selkie_UNSC_Army_Medic_WoodlandB";							        		
 opfor_engineer =      "Selkie_UNSC_Army_Engineer_WoodlandB";						            		
 opfor_paratrooper =   "OPTRE_UNSC_ODST_Soldier_TeamLeader";
-opfor_breacher =      "Selkie_UNSC_Army_Breacher_WoodlandB"; //Custom
 
 // Enemy vehicles used by secondary objectives.
 opfor_mrap =              "OPTRE_M813_TT";
@@ -138,4 +137,20 @@ opfor_air = [
 
 opfor_boat = [
 	"optre_catfish_mg_f"
+];
+
+//----NEW VARIBLES----
+opfor_breacher =      "Selkie_UNSC_Army_Breacher_WoodlandB";
+
+// Patrol vehicles
+patrol_vehicles = [
+	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
+	"OPTRE_m1087_stallion_cover_unsc",
+	"OPTRE_m1087_stallion_unsc"
+];
+
+// Patrol vehicles transport
+patrol_transport_vehicles = [
+	"OPTRE_m1087_stallion_cover_unsc",
+	"OPTRE_m1087_stallion_unsc"
 ];
