@@ -1,5 +1,5 @@
 private [ "_spawnsector", "_grp", "_usable_sectors", "_spawntype", "_enemyNumber", "_vehdriver", "_spawnpos", "_spawnDir", "_enemyVic", "_sectors_patrol",
-        "_patrol_startpos", "_waypoint", "_grpspeed", "_sectors_patrol_random", "_sectorcount", "_nextsector", "_nearestroad", "_seatCount", "_vicClassName", "_roadInfo", "_vicUnit" ];
+        "_patrol_startpos", "_waypoint", "_grpspeed", "_sectors_patrol_random", "_sectorcount", "_nextsector", "_nearestroad", "_seatCount", "_vicClassName", "_roadInfo", "_vicUnit", "_cargoIndex" ];
 
 _enemyVic = objNull;
 
@@ -23,7 +23,7 @@ while { GRLIB_endgame == 0 } do {
         _spawnsector = selectRandom _usable_sectors;
 
         _grp = createGroup [GRLIB_side_enemy, true];
-        if ( random 100 < 1) then {
+        if ( random 100 < 33) then {
             _enemyNumber = 6 + (floor (random 4));
             while { count units _grp < _enemyNumber } do {
                 [selectRandom militia_squad, markerPos _spawnsector, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
@@ -48,20 +48,22 @@ while { GRLIB_endgame == 0 } do {
             _seatCount = 0 max _seatCount;
             _seatCount = (8 min _seatCount) - 1;
 
+            _enemyVic = (_vicClassName) createVehicle _spawnpos;
+            _enemyVic setPos _spawnpos;
+            _enemyVic setDir _spawnDir;
+            _enemyVic addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
+
+            _grpspeed = "NORMAL";
+            
+
             for "_i" from 0 to _seatCount do 
             { 
                 [selectRandom militia_squad, _spawnpos, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
             };
 
-            _enemyVic = (_vicClassName) createVehicle _spawnpos;
-            _enemyVic setPos _spawnpos;
-            _enemyVic setDir _spawnDir;
-            _enemyVic addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
-            _enemyVic addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != GRLIB_side_enemy ) && ( side (_this select 3) != GRLIB_side_friendly )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ];
-
-            _grpspeed = "LIMITED";
-
             _vicUnit = objNull;
+            _cargoIndex = 0;
+
             for "_i" from 0 to _seatCount do 
             {
                 _vicUnit = ((units _grp) select _i);
@@ -77,13 +79,29 @@ while { GRLIB_endgame == 0 } do {
 
                     if(gunner _enemyVic != _vicUnit) then
                     {
+                        _vicUnit assignAsCargoIndex [_enemyVic, _cargoIndex];
                         _vicUnit moveInCargo _enemyVic;
+                        _cargoIndex = _cargoIndex + 1;
                     };
                 };
 
-                if(_i > 1) then
+                if(_i == 2) then
                 {
+                    _vicUnit moveInCommander _enemyVic;
+
+                    if(commander _enemyVic != _vicUnit) then
+                    {
+                        _vicUnit assignAsCargoIndex [_enemyVic, _cargoIndex];
+                        _vicUnit moveInCargo _enemyVic;
+                        _cargoIndex = _cargoIndex + 1;
+                    };
+                };
+
+                if(_i > 2) then
+                {
+                    _vicUnit assignAsCargoIndex [_enemyVic, _cargoIndex];
                     _vicUnit moveInCargo _enemyVic;
+                    _cargoIndex = _cargoIndex + 1;
                 };
             };
             
@@ -142,14 +160,12 @@ while { GRLIB_endgame == 0 } do {
 
         if ( count (units _grp) > 0 ) then {
             if (count ([getpos leader _grp, 4000] call KPLIB_fnc_getNearbyPlayers) == 0) then {
-
-                if ( !(isNull _enemyVic) ) then {
-                     if ( { ( alive _x ) && (side group _x == GRLIB_side_enemy ) } count (crew _enemyVic) == 0 ) then {
-                        deleteVehicle _enemyVic
-                    };
-                };
-
-                { deletevehicle _x } foreach units _grp;
+                    {
+                        if ( vehicle _x != _x ) then {
+                            [(vehicle _x)] call KPLIB_fnc_cleanOpforVehicle;
+                        };
+                        deleteVehicle _x;
+                    } foreach (units _grp);
             };
         };
     };
