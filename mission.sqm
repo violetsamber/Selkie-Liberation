@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=100;
 	autoGroupingDist=10;
-	toggles=522;
+	toggles=10;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=1464;
+		nextID=1537;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=307;
+		nextID=419;
 	};
 	class Camera
 	{
-		pos[]={2359.9048,664.98016,10531.798};
-		dir[]={-0.18815732,-0.64629674,0.73952788};
-		up[]={-0.15936431,0.76306909,0.62636071};
-		aside[]={0.96912462,6.2631443e-08,0.2465736};
+		pos[]={1757.9689,252.66966,7677.7598};
+		dir[]={0.32741708,-0.69094443,-0.64452463};
+		up[]={0.31293768,0.7229023,-0.61602503};
+		aside[]={-0.89156747,-2.3795292e-07,-0.45291021};
 	};
 };
 binarizationWanted=0;
@@ -297,7 +297,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=32;
+		items=33;
 		class Item0
 		{
 			dataType="Marker";
@@ -13665,11 +13665,11 @@ class Mission
 						};
 					};
 					id=1169;
-					atlOffset=321.46103;
+					atlOffset=313.54758;
 				};
 			};
 			id=1350;
-			atlOffset=321.46103;
+			atlOffset=313.54758;
 		};
 		class Item29
 		{
@@ -18165,6 +18165,51 @@ class Mission
 			id=1435;
 			type="OPTRE_hallway_intersection_t";
 			atlOffset=318.76965;
+		};
+		class Item32
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1479.0309,170.38647,7570.7441};
+				angles[]={0,4.3073854,0};
+			};
+			areaSize[]={20,0,30};
+			areaIsRectangle=1;
+			flags=1;
+			id=1479;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=-0.42391968;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 	class Connections
