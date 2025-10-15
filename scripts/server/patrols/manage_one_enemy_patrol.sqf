@@ -3,7 +3,7 @@ private [ "_spawnsector", "_grp", "_usable_sectors", "_spawntype", "_enemyNumber
 
 _enemyVic = objNull;
 
-sleep (300 + (random 300));
+sleep (150 + (random 150));
 _spawnsector = "";
 
 if ( isNil "active_sectors" ) then { active_sectors = [] };
@@ -23,12 +23,14 @@ while { GRLIB_endgame == 0 } do {
         _spawnsector = selectRandom _usable_sectors;
 
         _grp = createGroup [GRLIB_side_enemy, true];
+
+        //TODO change all to infantry vehicles, this system does not work great for patrolling squads
         if ( random 100 < 33) then {
             _enemyNumber = 6 + (floor (random 4));
             while { count units _grp < _enemyNumber } do {
                 [selectRandom militia_squad, markerPos _spawnsector, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
             };
-            _grpspeed = "LIMITED";
+            _grpspeed = "NORMAL";
         } else {
 
             _nearestroad = objNull;
@@ -170,5 +172,5 @@ while { GRLIB_endgame == 0 } do {
         };
     };
 
-    sleep 150 + (random (150));
+    sleep 300 + (random (300));
 };
