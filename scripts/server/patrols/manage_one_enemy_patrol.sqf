@@ -3,7 +3,7 @@ private [ "_spawnsector", "_grp", "_usable_sectors", "_spawntype", "_enemyNumber
 
 _enemyVic = objNull;
 
-sleep (150 + (random 150));
+sleep (300 + (random 300));
 _spawnsector = "";
 
 if ( isNil "active_sectors" ) then { active_sectors = [] };
@@ -17,7 +17,7 @@ while { GRLIB_endgame == 0 } do {
             _usable_sectors pushback _x;
         }
 
-    } foreach ((sectors_bigtown + sectors_capture + sectors_factory) - (active_sectors));
+    } foreach ((sectors_bigtown + sectors_capture + sectors_factory) - (blufor_sectors));
 
     if ( count _usable_sectors > 0 ) then {
         _spawnsector = selectRandom _usable_sectors;
