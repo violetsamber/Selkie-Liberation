@@ -17,7 +17,7 @@ while { GRLIB_endgame == 0 } do {
             _usable_sectors pushback _x;
         }
 
-    } foreach ((sectors_bigtown + sectors_capture + sectors_factory) - (blufor_sectors));
+    } foreach ((sectors_bigtown + sectors_capture + sectors_factory) - (blufor_sectors + active_sectors));
 
     if ( count _usable_sectors > 0 ) then {
         _spawnsector = selectRandom _usable_sectors;
@@ -25,7 +25,7 @@ while { GRLIB_endgame == 0 } do {
         _grp = createGroup [GRLIB_side_enemy, true];
 
         //TODO change all to infantry vehicles, this system does not work great for patrolling squads
-        if ( random 100 < 33) then {
+        if ( random 100 < 5) then {
             _enemyNumber = 6 + (floor (random 4));
             while { count units _grp < _enemyNumber } do {
                 [selectRandom militia_squad, markerPos _spawnsector, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;

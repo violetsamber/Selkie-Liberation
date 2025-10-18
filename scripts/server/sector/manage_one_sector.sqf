@@ -5,6 +5,7 @@
 #define SECTOR_TICK_TIME            5
 // delay in minutes from which addional time will be added
 #define ADDITIONAL_TICKETS_DELAY    5
+
 #define MAX_BUILDING_UNITS 100
 #define MAX_BUILDING_RANGE_STANDARD 120
 #define MAX_BUILDING_RANGE_LARGE 200
@@ -25,7 +26,7 @@ private _local_capture_size = GRLIB_capture_size;
 private _iedcount = 0;
 private _vehtospawn = [];
 private _managed_units = [];
-private _squad1 = [];
+private _squad1 = []; //TODO Refactor squds to be a single array of squads
 private _squad2 = [];
 private _squad3 = [];
 private _squad4 = [];
@@ -96,7 +97,6 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         _squad10 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         _squad11 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         _squad12 = ([_infsquad] call KPLIB_fnc_getSquadComp);
-        _squad13 = ([_infsquad] call KPLIB_fnc_getSquadComp);
 
 
         if ((random 100) > (66 / GRLIB_difficulty_modifier)) then {_vehtospawn pushback (selectRandom militia_vehicles);};

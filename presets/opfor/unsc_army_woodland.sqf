@@ -147,11 +147,15 @@ patrol_vehicles = [
 	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
 	"Selkie_UNSC_Army_Hog_Gauss_WoodlandB",
 	"OPTRE_m1087_stallion_cover_unsc",
+	"OPTRE_m1087_stallion_cover_unsc",
+	"OPTRE_m1087_stallion_unsc",
 	"OPTRE_m1087_stallion_unsc",
 	"OPTRE_M813_TT",
+	"OPTRE_M813_TT",
+	"OPTRE_M12_FAV",
 	"OPTRE_M12_FAV",
 	"OPTRE_M12_FAV_APC",
-	"OPTRE_M274_ATV"
+	"OPTRE_M12_FAV_APC",
 ];
 
 // Patrol vehicles transport
