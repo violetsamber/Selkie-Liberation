@@ -155,7 +155,7 @@ patrol_vehicles = [
 	"OPTRE_M12_FAV",
 	"OPTRE_M12_FAV",
 	"OPTRE_M12_FAV_APC",
-	"OPTRE_M12_FAV_APC",
+	"OPTRE_M12_FAV_APC"
 ];
 
 // Patrol vehicles transport
