@@ -77,6 +77,7 @@ class KPLIB {
         class setLoadout                {};
         class setVehicleCaptured        {};
         class setVehicleSeized          {};
+        class setCombatReadiness        {};
         class sortStorage               {};
         class spawnBuildingSquad        {};
         class spawnBuildingSquadModified{};
