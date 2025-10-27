@@ -2,6 +2,8 @@ params [
     ["_grp", grpNull, [grpNull]]
 ];
 
+//TODO Change this
+
 if (isNull _grp) exitWith {};
 
 private _objPos = [getPos (leader _grp)] call KPLIB_fnc_getNearestBluforObjective;

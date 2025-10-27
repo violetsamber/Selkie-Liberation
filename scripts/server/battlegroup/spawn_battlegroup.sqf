@@ -41,6 +41,8 @@ if !(_spawn_marker isEqualTo "") then {
         _grp setVariable ["KPLIB_isBattleGroup",true];
         };
     } else {
+
+        //TODO Rework this lazy mess to be smarter
         private _vehicle_pool = [opfor_battlegroup_vehicles, opfor_battlegroup_vehicles_low_intensity] select (combat_readiness < 50);
 
         while {count _selected_opfor_battlegroup < _target_size} do {
@@ -50,6 +52,8 @@ if !(_spawn_marker isEqualTo "") then {
         private ["_nextgrp", "_vehicle"];
         {
             _nextgrp = createGroup [GRLIB_side_enemy, true];
+
+            //TODO Rework to spawn the vehicle empty and spawn in each unit to bypass the issue where groups are not correct
             _vehicle = [markerpos _spawn_marker, _x] call KPLIB_fnc_spawnVehicle;
 
             sleep 0.5;
