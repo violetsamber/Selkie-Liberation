@@ -140,7 +140,8 @@ waitUntil {
     (_base_objectives select {alive _x}) isEqualTo []
 };
 
-combat_readiness = round (combat_readiness * GRLIB_secondary_objective_impact);
+[round(combat_readiness * 0.85)] call KPLIB_fnc_setCombatReadiness;
+
 stats_secondary_objectives = stats_secondary_objectives + 1;
 sleep 1;
 [] spawn KPLIB_fnc_doSave;

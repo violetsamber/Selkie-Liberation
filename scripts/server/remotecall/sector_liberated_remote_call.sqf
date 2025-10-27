@@ -9,7 +9,7 @@ switch (true) do {
     case (_liberated_sector in sectors_tower):      {_combat_readiness_increase = floor (random 4);};
 };
 
-combat_readiness = combat_readiness + _combat_readiness_increase;
+[_combat_readiness_increase] call KPLIB_fnc_addCombatReadiness;
 if (combat_readiness > 100.0 && GRLIB_difficulty_modifier <= 2.0) then {combat_readiness = 100.0};
 stats_readiness_earned = stats_readiness_earned + _combat_readiness_increase;
 

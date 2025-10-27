@@ -6,6 +6,7 @@ class KPLIB {
         class addActionsPlayer          {};
         class addObjectInit             {};
         class addRopeAttachEh           {};
+        class addCombatReadiness        {};
         class allowCrewInImmobile       {};
         class checkClass                {};
         class checkCrateValue           {};
@@ -77,7 +78,6 @@ class KPLIB {
         class setLoadout                {};
         class setVehicleCaptured        {};
         class setVehicleSeized          {};
-        class setCombatReadiness        {};
         class sortStorage               {};
         class spawnBuildingSquad        {};
         class spawnBuildingSquadModified{};
