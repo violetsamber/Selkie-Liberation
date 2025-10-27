@@ -79,7 +79,7 @@ if !(_spawn_marker isEqualTo "") then {
     sleep 3;
 
     //Reduce combat readiness
-    [-(round ((count _bg_groups) + (random (count _bg_groups))))] call KPLIB_fnc_addCombatReadiness;
+    [-(round (count _bg_groups + random (count _bg_groups)))] call KPLIB_fnc_addCombatReadiness;
     stats_hostile_battlegroups = stats_hostile_battlegroups + 1;
 
     {

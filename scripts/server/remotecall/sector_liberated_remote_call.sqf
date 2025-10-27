@@ -10,7 +10,6 @@ switch (true) do {
 };
 
 [_combat_readiness_increase] call KPLIB_fnc_addCombatReadiness;
-if (combat_readiness > 100.0 && GRLIB_difficulty_modifier <= 2.0) then {combat_readiness = 100.0};
 stats_readiness_earned = stats_readiness_earned + _combat_readiness_increase;
 
 [_liberated_sector, 0] remoteExecCall ["remote_call_sector"];
