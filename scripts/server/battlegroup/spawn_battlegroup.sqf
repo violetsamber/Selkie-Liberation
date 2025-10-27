@@ -32,7 +32,7 @@ if !(_spawn_marker isEqualTo "") then {
 
         for "_i" from 1 to _squadNumber do {
         // Create infantry groups with up to 8 units per squad
-        private _grp = createGroup [kplib_side_enemy, true];
+        private _grp = createGroup [GRLIB_side_enemy, true];
         for "_i" from 0 to 7 do {
             [selectRandom _infClasses, markerPos _spawn_marker, _grp] call KPLIB_fnc_createManagedUnit;
         };
