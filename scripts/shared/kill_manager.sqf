@@ -31,9 +31,8 @@ if (isServer) then {
         // Increase combat readiness for kills near a capital.
         private _nearby_bigtown = sectors_bigtown select {!(_x in blufor_sectors) && (_unit distance (markerpos _x) < 250)};
         if (count _nearby_bigtown > 0) then {
-            combat_readiness = combat_readiness + (0.5 * GRLIB_difficulty_modifier);
-            stats_readiness_earned = stats_readiness_earned + (0.5 * GRLIB_difficulty_modifier);
-            if (combat_readiness > 100.0 && GRLIB_difficulty_modifier < 2) then {combat_readiness = 100.0};
+            [0.5] call KPLIB_fnc_addCombatReadiness;
+            stats_readiness_earned = stats_readiness_earned + (0.5);
         };
 
         // Weights adjustments depending on what vehicle the BLUFOR killer used

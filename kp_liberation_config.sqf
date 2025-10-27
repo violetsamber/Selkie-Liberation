@@ -269,6 +269,7 @@ GRLIB_blufor_cap = 100;                                                 // Cap f
 GRLIB_sector_cap = 180;                                                 // Cap for sector defenders.
 GRLIB_battlegroup_cap = 150;                                            // Cap for enemy battlegroups.
 GRLIB_patrol_cap = 150;                                                 // Cap for enemy patrols.
+GRLIB_combat_readiness_cap = 300;                                       // Cap for combat readiness
 
 KP_liberation_cr_kill_penalty = 5;                                      // Civil Reputation penalty for killing a civilian.
 KP_liberation_cr_building_penalty = 1;                                  // Civil Reputation penalty for destroying/damaging a building. (I recommend you keep this low, OPTRE weapons bring down buildings very easily.)
