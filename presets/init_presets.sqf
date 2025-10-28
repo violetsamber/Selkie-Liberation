@@ -290,6 +290,16 @@ KPLIB_o_squadInf_Transport    = [opfor_squad_leader, opfor_medic, opfor_heavygun
 KPLIB_o_squadTank_Transport   = [opfor_squad_leader, opfor_medic, opfor_machinegunner, opfor_rifleman, opfor_rifleman, opfor_marksman, opfor_at, opfor_at];
 KPLIB_o_squadAir_Transport    = [opfor_squad_leader, opfor_medic, opfor_machinegunner, opfor_rifleman, opfor_rifleman, opfor_marksman, opfor_aa, opfor_aa];
 
+KPLIB_o_bg_squadStd    = [opfor_bg_squad_leader, opfor_bg_medic, opfor_bg_machinegunner, opfor_bg_rifleman, opfor_bg_rifleman, opfor_bg_marksman, opfor_bg_grenadier, opfor_bg_rpg];
+KPLIB_o_bg_squadInf    = [opfor_bg_squad_leader, opfor_bg_medic, opfor_bg_heavygunner, opfor_bg_rifleman, opfor_bg_rifleman, opfor_bg_marksman, opfor_bg_sharpshooter, opfor_bg_sniper];
+KPLIB_o_bg_squadTank   = [opfor_bg_squad_leader, opfor_bg_medic, opfor_bg_machinegunner, opfor_bg_rifleman, opfor_bg_rifleman, opfor_bg_marksman, opfor_bg_at, opfor_bg_at];
+KPLIB_o_bg_squadAir    = [opfor_bg_squad_leader, opfor_bg_medic, opfor_bg_machinegunner, opfor_bg_rifleman, opfor_bg_rifleman, opfor_bg_marksman, opfor_bg_aa, opfor_bg_aa];
+
+KPLIB_o_bg_squadStd_Transport    = [opfor_bg_squad_leader, opfor_bg_medic, opfor_bg_machinegunner, opfor_bg_rifleman, opfor_bg_rifleman, opfor_bg_marksman, opfor_bg_grenadier, opfor_bg_rpg];
+KPLIB_o_bg_squadInf_Transport    = [opfor_bg_squad_leader, opfor_bg_medic, opfor_bg_heavygunner, opfor_bg_rifleman, opfor_bg_rifleman, opfor_bg_marksman, opfor_bg_sharpshooter, opfor_bg_sniper];
+KPLIB_o_bg_squadTank_Transport   = [opfor_bg_squad_leader, opfor_bg_medic, opfor_bg_machinegunner, opfor_bg_rifleman, opfor_bg_rifleman, opfor_bg_marksman, opfor_bg_at, opfor_bg_at];
+KPLIB_o_bg_squadAir_Transport    = [opfor_bg_squad_leader, opfor_bg_medic, opfor_bg_machinegunner, opfor_bg_rifleman, opfor_bg_rifleman, opfor_bg_marksman, opfor_bg_aa, opfor_bg_aa];
+
 /*
     Liberation specific collections
 */
@@ -310,6 +320,7 @@ KPLIB_aiResupplySources = KPLIB_aiResupplySources   apply {toLower _x};
     Classname collections
 */
 // All land vehicle classnames
+//TODO Add new arrays to this
 KPLIB_allLandVeh_classes = [[], [huron_typename]] select (huron_typename isKindOf "Air");;
 {
     KPLIB_allLandVeh_classes append _x;
@@ -357,8 +368,46 @@ KPLIB_o_allVeh_classes = KPLIB_o_allVeh_classes apply {toLower _x};
 KPLIB_o_allVeh_classes = KPLIB_o_allVeh_classes arrayIntersect KPLIB_o_allVeh_classes;
 
 // All regular opfor soldier classnames
-KPLIB_o_inf_classes = [opfor_sentry, opfor_rifleman, opfor_grenadier, opfor_squad_leader, opfor_team_leader, opfor_marksman, opfor_machinegunner, opfor_heavygunner, opfor_medic, opfor_rpg, opfor_at, opfor_aa, opfor_officer, opfor_sharpshooter, opfor_sniper,opfor_engineer];
+KPLIB_o_inf_classes = [
+    opfor_sentry, 
+    opfor_rifleman, 
+    opfor_grenadier, 
+    opfor_squad_leader, 
+    opfor_team_leader, 
+    opfor_marksman, 
+    opfor_machinegunner, 
+    opfor_heavygunner, 
+    opfor_medic, 
+    opfor_rpg, 
+    opfor_at, 
+    opfor_aa, 
+    opfor_officer, 
+    opfor_sharpshooter, 
+    opfor_sniper,
+    opfor_engineer
+];
+
+KPLIB_o_inf_bg_classes = [
+    opfor_bg_sentry, 
+    opfor_bg_rifleman, 
+    opfor_bg_grenadier, 
+    opfor_bg_squad_leader, 
+    opfor_bg_team_leader, 
+    opfor_bg_marksman, 
+    opfor_bg_machinegunner, 
+    opfor_bg_heavygunner, 
+    opfor_bg_medic, 
+    opfor_bg_rpg, 
+    opfor_bg_at, 
+    opfor_bg_aa, 
+    opfor_bg_officer, 
+    opfor_bg_sharpshooter, 
+    opfor_bg_sniper,
+    opfor_bg_engineer
+];
+
 KPLIB_o_inf_classes = KPLIB_o_inf_classes apply {toLower _x};
+KPLIB_o_inf_bg_classes = KPLIB_o_inf_bg_classes apply {toLower _x};
 
 /*
     Vehicle type permission arrays

@@ -23,6 +23,8 @@ if !(_spawn_marker isEqualTo "") then {
     };
 
     if (_infOnly) then {
+        //TODO Refactor this so it actually makes squads that make sense
+
         // Infantry units to choose from
         private _infClasses = [KPLIB_o_inf_classes, militia_squad] select (combat_readiness < 50);
 
