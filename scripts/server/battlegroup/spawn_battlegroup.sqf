@@ -60,10 +60,8 @@ if !(_spawn_marker isEqualTo "") then {
             "Selkie_UNSC_Marines_Bison_Unarmed_Halo3",
             "OPTRE_m1087_stallion_cover_unsc",
             "OPTRE_m1087_stallion_cover_unsc",
-            "OPTRE_m1087_stallion_cover_unsc",
             "OPTRE_m1087_stallion_unsc",
             "OPTRE_m1087_stallion_unsc",
-            "OPTRE_m1087_stallion_unsc"
         ];
         _target_size = count _selected_opfor_battlegroup;
 
