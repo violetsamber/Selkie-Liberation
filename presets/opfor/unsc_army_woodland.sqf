@@ -109,8 +109,93 @@ opfor_battlegroup_vehicles_low_intensity = [
 	"OPTRE_M808B_UNSC"
 ];
 
+//--LIGHT--
+opfor_vehicles_light_low_intensity = [
+	"Selkie_UNSC_Army_Hog_Gauss_WoodlandB",
+	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
+	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
+	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB"
+];
+opfor_vehicles_light_high_intensity = [
+	"Selkie_UNSC_Army_Hog_Gauss_WoodlandB",
+	"Selkie_UNSC_Army_Hog_Gauss_WoodlandB",
+	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
+	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB"
+];
+
+//--MEDIUM--
+opfor_vehicles_medium_low_intensity = [
+	"OPTRE_M493_M37_RCWS",
+];
+opfor_vehicles_medium_high_intensity = [
+	"OPTRE_M413_MGS_UNSC",
+	"OPTRE_M493_M37_RCWS",
+	"OPTRE_M493_AIE_RCWS"
+];
+
+//--HEAVY--
+opfor_vehicles_heavy_low_intensity = [
+	"OPTRE_M808B_UNSC"
+];
+opfor_vehicles_heavy_high_intensity = [
+	"OPTRE_M808B_UNSC"
+];
+
+//----BATTLEGROUPS----
+
+//--LIGHT--
+opfor_vehicles_battlegroup_light_low_intensity = [
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_Gauss_Halo3"
+];
+opfor_vehicles_battlegroup_light_high_intensity = [
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_Gauss_Halo3",
+	"Selkie_UNSC_Marines_Hog_Gauss_Halo3"
+];
+
+//--MEDIUM--
+opfor_vehicles_battlegroup_medium_low_intensity = [
+	"OPTRE_M493_M37_RCWS"
+];
+
+opfor_vehicles_battlegroup_medium_high_intensity = [
+	"OPTRE_M413_MGS_UNSC",
+	"OPTRE_M493_M37_RCWS",
+	"OPTRE_M493_AIE_RCWS"
+];
+
+//--HEAVY--
+opfor_vehicles_battlegroup_heavy_low_intensity = [
+	"OPTRE_M808B_UNSC"
+];
+
+opfor_vehicles_battlegroup_heavy_high_intensity = [
+	"OPTRE_M808B_UNSC",
+	"Selkie_UNSC_Marines_Bison_50mm_Halo3",
+	"Selkie_UNSC_Marines_Bison_105mm_Halo3",
+];
+
+opfor_troup_ground_transports_battlegroup = [
+	"Selkie_UNSC_Marines_Bison_Unarmed_Halo3",
+	"Selkie_UNSC_Marines_Hog_Unarmed_Halo3",
+	"Selkie_UNSC_Marines_Hog_Transport_Halo3",
+	"OPTRE_M12_FAV_APC",
+	"OPTRE_m1087_stallion_cover_unsc",
+	"OPTRE_m1087_stallion_unsc"
+];
+
+opfor_troup_air_transports_battlegroup = [
+	"Selkie_UNSC_Marines_Pelican_Unarmed_Halo3"
+];
+
 /* All vehicles that spawn within battlegroups (see the above 2 arrays) and also hold 8 soldiers as passengers.
 If something in this array can't hold all 8 soldiers then buggy behaviours may occur.    */
+
+//TODO split this into ground and air
 opfor_troup_transports = [
 	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
 	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
@@ -156,10 +241,4 @@ patrol_vehicles = [
 	"OPTRE_M12_FAV",
 	"OPTRE_M12_FAV_APC",
 	"OPTRE_M12_FAV_APC"
-];
-
-// Patrol vehicles transport
-patrol_transport_vehicles = [
-	"OPTRE_m1087_stallion_cover_unsc",
-	"OPTRE_m1087_stallion_unsc"
 ];
