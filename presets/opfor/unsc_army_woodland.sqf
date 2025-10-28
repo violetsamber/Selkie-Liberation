@@ -23,6 +23,27 @@ opfor_at =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";
 opfor_aa =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";									            
 opfor_medic =         "Selkie_UNSC_Army_Medic_WoodlandB";							        		
 opfor_engineer =      "Selkie_UNSC_Army_Engineer_WoodlandB";						            		
+
+// Enemy infantry classes
+opfor_bg_officer = 	     "Selkie_UNSC_Marines_Officer_Halo2";
+opfor_bg_squad_leader =  "Selkie_UNSC_Marines_SquadLeader_Halo2";				
+opfor_bg_team_leader =   "Selkie_UNSC_Marines_TeamLeader_Halo2";								
+opfor_bg_sentry =        "Selkie_UNSC_Marines_Riflemaid_BR55_Halo2";								
+opfor_bg_rifleman =      "Selkie_UNSC_Marines_Riflemaid_BR55_Halo2";									        
+opfor_bg_rpg =           "Selkie_UNSC_Marines_MissileSpecialist_Halo2";						                        
+opfor_bg_grenadier =     "Selkie_UNSC_Marines_Grenadier_Halo2";							    	    
+opfor_bg_machinegunner = "Selkie_UNSC_Marines_Autoriflemaid_Halo2";						    		
+opfor_bg_heavygunner =   "Selkie_UNSC_Marines_HeavyGunner_Halo2";							        	
+opfor_bg_marksman =      "Selkie_UNSC_Marines_Marksmaid_Halo2";			    				
+opfor_bg_sharpshooter =  "Selkie_UNSC_Marines_Marksmaid_Halo2";						
+opfor_bg_sniper =        "Selkie_UNSC_Marines_Sniper_Halo2";									
+opfor_bg_at =            "Selkie_UNSC_Marines_MissileSpecialist_Halo2";									        	
+opfor_bg_aa =            "Selkie_UNSC_Marines_MissileSpecialist_Halo2";									            
+opfor_bg_medic =         "Selkie_UNSC_Marines_Corpsmaid_Halo2";						        		
+opfor_bg_engineer =      "Selkie_UNSC_Marines_Engineer_Halo2";
+
+//Paratroopers
+//TODO Expand to have actual compositions
 opfor_paratrooper =   "OPTRE_UNSC_ODST_Soldier_TeamLeader";
 
 // Enemy vehicles used by secondary objectives.
