@@ -23,7 +23,7 @@ opfor_at =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";
 opfor_aa =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";									            
 opfor_medic =         "Selkie_UNSC_Army_Medic_WoodlandB";							        		
 opfor_engineer =      "Selkie_UNSC_Army_Engineer_WoodlandB";						            		
-opfor_paratrooper =   "OPTRE_UNSC_ODST_Soldier_TeamLeader";
+opfor_paratrooper =   "Selkie_UNSC_ODST_Riflemaid_MA5";
 
 // Enemy vehicles used by secondary objectives.
 opfor_mrap =              "OPTRE_M813_TT";
@@ -63,8 +63,6 @@ militia_vehicles = [
 
 // All enemy vehicles that can spawn as sector defenders and patrols at high enemy combat readiness (aggression levels).
 opfor_vehicles = [
-	"OPTRE_M808B_UNSC",
-	"OPTRE_M808B_UNSC",
 	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
 	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
 	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
@@ -75,9 +73,7 @@ opfor_vehicles = [
 opfor_vehicles_low_intensity = [
 	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
 	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"OPTRE_M808B_UNSC"
-
+	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB"
 ];
 
 // All enemy vehicles that can spawn as battlegroups, either assaulting or as reinforcements, at high enemy combat readiness (aggression levels).
@@ -87,11 +83,11 @@ opfor_battlegroup_vehicles = [
 	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
 	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
 	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"OPTRE_M808B_UNSC",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Bison_105mm_Halo3",
 	"OPTRE_M808B_UNSC",
 	"OPTRE_M808B_UNSC"
 ];
@@ -101,10 +97,10 @@ opfor_battlegroup_vehicles_low_intensity = [
 	"Selkie_UNSC_Army_Pelican_Armed_Woodland",
 	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
 	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
-	"Selkie_UNSC_Army_Hog_LAAG_WoodlandB",
+	"Selkie_UNSC_Marines_Hog_Gauss_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+	"Selkie_UNSC_Marines_Hog_LAAG_Halo3",
 	"OPTRE_M808B_UNSC",
 	"OPTRE_M808B_UNSC"
 ];
@@ -113,26 +109,30 @@ opfor_battlegroup_vehicles_low_intensity = [
 If something in this array can't hold all 8 soldiers then buggy behaviours may occur.    */
 opfor_troup_transports = [
 	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
-	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
-	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
-	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland"
+	"Selkie_UNSC_Army_Pelican_Armed_Woodland",
+	"Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
+	"Selkie_UNSC_Marines_Pelican_Armed_Halo3",
+	"OPTRE_m1087_stallion_cover_unsc",
+	"OPTRE_m1087_stallion_unsc",
+	"Selkie_UNSC_Marines_Bison_Unarmed_Halo3",
+	"Selkie_UNSC_Marines_Hog_Transport_Halo3"
 ];
 
 // Enemy rotary-wings that will need to spawn in flight.
 opfor_choppers = [
-	"Selkie_UNSC_Army_Pelican_Armed_Woodland",
-	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
-	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
-	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
-	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
-	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB"
+	"Selkie_UNSC_Marines_Pelican_Armed_Halo3",
+	"Selkie_UNSC_Marines_Hornet_Halo3",
+	"Selkie_UNSC_Marines_Hornet_Halo3",
+	"Selkie_UNSC_Marines_Hornet_Halo3",
+	"Selkie_UNSC_Marines_Hornet_Halo3",
+	"Selkie_UNSC_Marines_Hornet_Halo3"
 ];
 
 // Enemy fixed-wings that will need to spawn in the air.
 opfor_air = [
 	"OPTRE_YSS_1000_A",
-	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB",
-	"Selkie_UNSC_Army_Falcon_Armed_WoodlandB"
+	"Selkie_UNSC_Marines_Hornet_Halo3",
+	"Selkie_UNSC_Marines_Hornet_Halo3"
 ];
 
 opfor_boat = [
@@ -162,4 +162,8 @@ patrol_vehicles = [
 patrol_transport_vehicles = [
 	"OPTRE_m1087_stallion_cover_unsc",
 	"OPTRE_m1087_stallion_unsc"
+];
+
+opfor_battlegroup_list = [
+
 ];

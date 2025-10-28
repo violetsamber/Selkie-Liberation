@@ -40,12 +40,32 @@ if !(_spawn_marker isEqualTo "") then {
         [_grp] call battlegroup_ai;
         _grp setVariable ["KPLIB_isBattleGroup",true];
         };
-    } else {
-        private _vehicle_pool = [opfor_battlegroup_vehicles, opfor_battlegroup_vehicles_low_intensity] select (combat_readiness < 50);
 
-        while {count _selected_opfor_battlegroup < _target_size} do {
-            _selected_opfor_battlegroup pushback (selectRandom _vehicle_pool);
-        };
+        [_spawn_marker, [markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective, 3] call KPLIB_fnc_odstDrop;
+
+    } else {
+        // private _vehicle_pool = [opfor_battlegroup_vehicles, opfor_battlegroup_vehicles_low_intensity] select (combat_readiness < 50);
+        // while {count _selected_opfor_battlegroup < _target_size} do {
+        //     _selected_opfor_battlegroup pushback (selectRandom _vehicle_pool);
+        // };
+
+        _selected_opfor_battlegroup = [
+            "OPTRE_M808B_UNSC",
+            "Selkie_UNSC_Marines_Hornet_Halo3",
+            "Selkie_UNSC_Marines_Hornet_Halo3",
+            "Selkie_UNSC_Marines_Bison_105mm_Halo3",
+            "Selkie_UNSC_Marines_Hog_Gauss_Halo3",
+            "Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+            "Selkie_UNSC_Marines_Hog_LAAG_Halo3",
+            "Selkie_UNSC_Marines_Bison_Unarmed_Halo3",
+            "OPTRE_m1087_stallion_cover_unsc",
+            "OPTRE_m1087_stallion_cover_unsc",
+            "OPTRE_m1087_stallion_cover_unsc",
+            "OPTRE_m1087_stallion_unsc",
+            "OPTRE_m1087_stallion_unsc",
+            "OPTRE_m1087_stallion_unsc"
+        ];
+        _target_size = count _selected_opfor_battlegroup;
 
         private ["_nextgrp", "_vehicle"];
         {
@@ -67,13 +87,15 @@ if !(_spawn_marker isEqualTo "") then {
             };
         } forEach _selected_opfor_battlegroup;
 
+        [_spawn_marker, [markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective, 3] call KPLIB_fnc_odstDrop;
+
         if (GRLIB_csat_aggressivity > 0.5) then {
             [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_boat;
         };
 
-        if (GRLIB_csat_aggressivity > 0.9) then {
-            [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_air;
-        };
+        // if (GRLIB_csat_aggressivity > 0.9) then {
+        //     [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_air;
+        // };
     };
 
     sleep 3;
