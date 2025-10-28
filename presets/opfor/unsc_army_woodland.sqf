@@ -128,7 +128,7 @@ opfor_vehicles_medium_low_intensity = [
 	"OPTRE_M493_M37_RCWS",
 ];
 opfor_vehicles_medium_high_intensity = [
-	"OPTRE_M413_MGS_UNSC",
+	"Selkie_UNSC_Army_Bison_105mm_WoodlandB",
 	"OPTRE_M493_M37_RCWS",
 	"OPTRE_M493_AIE_RCWS"
 ];
@@ -163,7 +163,7 @@ opfor_vehicles_battlegroup_medium_low_intensity = [
 ];
 
 opfor_vehicles_battlegroup_medium_high_intensity = [
-	"OPTRE_M413_MGS_UNSC",
+	"Selkie_UNSC_Marines_Bison_105mm_Halo3",
 	"OPTRE_M493_M37_RCWS",
 	"OPTRE_M493_AIE_RCWS"
 ];
