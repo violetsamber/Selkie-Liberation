@@ -29,6 +29,7 @@ private _units = [];
 for "_i" from 1 to _teamCount do 
 {
 	private _group = [markerpos _spawnMarker, GRLIB_side_enemy, (_team)] call BIS_fnc_spawnGroup;
+	[_group, 500, 15] spawn lambs_wp_fnc_taskRush;
 	_units append units _group;
 };
 
