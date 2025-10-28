@@ -55,18 +55,12 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
 
     while {(count (waypoints _transGrp)) != 0} do {deleteWaypoint ((waypoints _transGrp) select 0);};
 
-    _transVehWp = _transGrp addWaypoint [_objPos, 100];
-    _transVehWp setWaypointType "SAD";
+    _transVehWp = _transGrp addWaypoint [_start_pos, 10];
+    _transVehWp setWaypointType "MOVE";
     _transVehWp setWaypointSpeed "NORMAL";
     _transVehWp setWaypointBehaviour "COMBAT";
     _transVehWp setWaypointCombatMode "RED";
     _transVehWp setWaypointCompletionRadius 30;
-
-    _transVehWp = _transGrp addWaypoint [_objPos, 100];
-    _transVehWp setWaypointType "SAD";
-
-    _transVehWp = _transGrp addWaypoint [_objPos, 100];
-    _transVehWp setWaypointType "CYCLE";
 
     sleep 10;
 
