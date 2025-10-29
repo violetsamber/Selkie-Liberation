@@ -1,0 +1,10 @@
+name = "KP-Liberation"
+author = "Violets, [GREUH] Zbug & McKeewa, KP Liberation Dev Team, FatRefrigerator"
+prefix = "kplib"
+mainprefix = "z"
+
+[version]
+major = 0
+minor = 97
+patch = 0
+build = 0
