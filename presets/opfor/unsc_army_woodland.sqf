@@ -23,7 +23,7 @@ opfor_at =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";
 opfor_aa =            "Selkie_UNSC_Army_MissileSpecialist_WoodlandB";									            
 opfor_medic =         "Selkie_UNSC_Army_Medic_WoodlandB";							        		
 opfor_engineer =      "Selkie_UNSC_Army_Engineer_WoodlandB";						            		
-opfor_paratrooper =   "Selkie_UNSC_ODST_Riflemaid_MA5";
+opfor_paratrooper =   "Selkie_UNSC_Army_RiflemaidB_WoodlandB";
 
 // Enemy vehicles used by secondary objectives.
 opfor_mrap =              "OPTRE_M813_TT";
@@ -107,15 +107,26 @@ opfor_battlegroup_vehicles_low_intensity = [
 
 /* All vehicles that spawn within battlegroups (see the above 2 arrays) and also hold 8 soldiers as passengers.
 If something in this array can't hold all 8 soldiers then buggy behaviours may occur.    */
-opfor_troup_transports = [
+
+opfor_troup_transports_land = [
+	"OPTRE_m1087_stallion_cover_unsc",
+	"OPTRE_m1087_stallion_unsc",
+	"Selkie_UNSC_Marines_Bison_Unarmed_Halo3"
+];
+
+opfor_troup_transports_air = [
 	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
 	"Selkie_UNSC_Army_Pelican_Armed_Woodland",
 	"Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
-	"Selkie_UNSC_Marines_Pelican_Armed_Halo3",
-	"OPTRE_m1087_stallion_cover_unsc",
-	"OPTRE_m1087_stallion_unsc",
-	"Selkie_UNSC_Marines_Bison_Unarmed_Halo3",
-	"Selkie_UNSC_Marines_Hog_Transport_Halo3"
+	"Selkie_UNSC_Marines_Pelican_Armed_Halo3"
+];
+
+opfor_troup_transports  = [];
+{
+    opfor_troup_transports append _x;
+} forEach [
+    opfor_troup_transports_land,
+	opfor_troup_transports_air
 ];
 
 // Enemy rotary-wings that will need to spawn in flight.

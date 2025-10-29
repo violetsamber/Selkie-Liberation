@@ -13,10 +13,10 @@ private _spawnsector = ([sectors_airspawn, [_targetpos], {(markerpos _x) distanc
 private _newvehicle = objNull;
 private _pilot_group = grpNull;
 if (isNull _chopper_type) then {
-    _chopper_type = selectRandom opfor_choppers;
+    _chopper_type = selectRandom opfor_troup_transports_air;
 
     while {!(_chopper_type in opfor_troup_transports)} do {
-        _chopper_type = selectRandom opfor_choppers;
+        _chopper_type = selectRandom opfor_troup_transports_air;
     };
 
     _newvehicle = createVehicle [_chopper_type, markerpos _spawnsector, [], 0, "FLY"];
@@ -110,23 +110,15 @@ sleep 0.2;
 
 _newvehicle flyInHeight 100;
 
-_waypoint = _pilot_group addWaypoint [_targetpos, 200];
-_waypoint setWaypointBehaviour "COMBAT";
-_waypoint setWaypointCombatMode "RED";
-_waypoint setWaypointType "SAD";
-_waypoint = _pilot_group addWaypoint [_targetpos, 200];
-_waypoint setWaypointBehaviour "COMBAT";
-_waypoint setWaypointCombatMode "RED";
-_waypoint setWaypointType "SAD";
-_waypoint = _pilot_group addWaypoint [_targetpos, 200];
-_waypoint setWaypointBehaviour "COMBAT";
-_waypoint setWaypointCombatMode "RED";
-_waypoint setWaypointType "SAD";
-_waypoint = _pilot_group addWaypoint [_targetpos, 200];
-_waypoint setWaypointType "SAD";
-_waypoint = _pilot_group addWaypoint [_targetpos, 200];
-_waypoint setWaypointType "SAD";
-_pilot_group setCurrentWaypoint [_pilot_group, 1];
+// [_pilot_group, markerpos _spawnsector, 200, "MOVE", "CARELESS", "FULL", "STAG COLUMN", "this spawn "]
+
+_waypoint = _pilot_group addWaypoint [markerpos _spawnsector, 200];
+_waypoint setWaypointBehaviour "CARELESS";
+_waypoint setWaypointCombatMode "BLUE";
+_waypoint setWaypointType "MOVE";
+_waypoint setWaypointStatements ["true", "[group this] call KPLIB_fnc_deleteGroup"];
+_waypoint setWaypointCompletionRadius 250;    
+
 _waypoint = _para_group addWaypoint [_targetpos, 100];
 _waypoint setWaypointType "SAD";
 _waypoint = _para_group addWaypoint [_targetpos, 100];
@@ -138,3 +130,5 @@ _waypoint setWaypointType "SAD";
 _waypoint = _para_group addWaypoint [_targetpos, 100];
 _waypoint setWaypointType "SAD";
 _pilot_group setCurrentWaypoint [_para_group, 1];
+
+[_para_group, 500, 15] spawn lambs_wp_fnc_taskRush;

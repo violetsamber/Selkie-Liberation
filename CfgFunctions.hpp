@@ -90,6 +90,7 @@ class KPLIB {
         class spawnVehicle              {};
         class swapInventory             {};
         class odstDrop                  {};
+        class deleteGroup               {};
     };
     class functions_curator {
         file = "functions\curator";
