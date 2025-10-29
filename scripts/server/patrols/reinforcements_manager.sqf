@@ -1,3 +1,5 @@
+//reinforcements_manager.sqf
+
 params ["_targetsector"];
 
 if (combat_readiness > 15) then {
