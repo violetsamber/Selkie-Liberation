@@ -39,9 +39,7 @@ while {(count (units _para_group)) < 8} do {
     [opfor_paratrooper, markerPos _spawnsector, _para_group] call KPLIB_fnc_createManagedUnit;
 };
 
-{
-    _x moveInCargo _newvehicle;
-} forEach (units _para_group);
+{removeBackpack _x; _x addBackPack "B_parachute"; _x moveInCargo _newvehicle;} forEach (units _para_group);
 
 while {(count (waypoints _pilot_group)) != 0} do {deleteWaypoint ((waypoints _pilot_group) select 0);};
 while {(count (waypoints _para_group)) != 0} do {deleteWaypoint ((waypoints _para_group) select 0);};
@@ -97,7 +95,7 @@ _newvehicle flyInHeight 100;
 {
     unassignVehicle _x;
     moveout _x;
-    sleep 0.1;
+    sleep 0.5;
 } forEach (units _para_group);
 
 _newvehicle flyInHeight 100;
@@ -115,22 +113,28 @@ _newvehicle flyInHeight 100;
 _waypoint = _pilot_group addWaypoint [_targetpos, 200];
 _waypoint setWaypointBehaviour "COMBAT";
 _waypoint setWaypointCombatMode "RED";
-_waypoint setWaypointType "MOVE";
+_waypoint setWaypointType "SAD";
+_waypoint = _pilot_group addWaypoint [_targetpos, 200];
+_waypoint setWaypointBehaviour "COMBAT";
+_waypoint setWaypointCombatMode "RED";
+_waypoint setWaypointType "SAD";
+_waypoint = _pilot_group addWaypoint [_targetpos, 200];
+_waypoint setWaypointBehaviour "COMBAT";
+_waypoint setWaypointCombatMode "RED";
+_waypoint setWaypointType "SAD";
+_waypoint = _pilot_group addWaypoint [_targetpos, 200];
+_waypoint setWaypointType "SAD";
+_waypoint = _pilot_group addWaypoint [_targetpos, 200];
+_waypoint setWaypointType "SAD";
 _pilot_group setCurrentWaypoint [_pilot_group, 1];
-
 _waypoint = _para_group addWaypoint [_targetpos, 100];
 _waypoint setWaypointType "SAD";
-
 _waypoint = _para_group addWaypoint [_targetpos, 100];
 _waypoint setWaypointType "SAD";
-
 _waypoint = _para_group addWaypoint [_targetpos, 100];
 _waypoint setWaypointType "SAD";
-
 _waypoint = _para_group addWaypoint [_targetpos, 100];
 _waypoint setWaypointType "SAD";
-
 _waypoint = _para_group addWaypoint [_targetpos, 100];
 _waypoint setWaypointType "SAD";
-
 _pilot_group setCurrentWaypoint [_para_group, 1];
