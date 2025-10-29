@@ -51,6 +51,10 @@ if !(_spawn_marker isEqualTo "") then {
 
         _selected_opfor_battlegroup = [
             "OPTRE_M808B_UNSC",
+            "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
+            "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
+            "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
+            "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
             "Selkie_UNSC_Marines_Hornet_Halo3",
             "Selkie_UNSC_Marines_Hornet_Halo3",
             "Selkie_UNSC_Marines_Bison_105mm_Halo3",

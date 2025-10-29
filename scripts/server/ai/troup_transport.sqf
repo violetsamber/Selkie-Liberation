@@ -58,9 +58,10 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
     _transVehWp = _transGrp addWaypoint [_start_pos, 10];
     _transVehWp setWaypointType "MOVE";
     _transVehWp setWaypointSpeed "NORMAL";
-    _transVehWp setWaypointBehaviour "COMBAT";
-    _transVehWp setWaypointCombatMode "RED";
-    _transVehWp setWaypointCompletionRadius 30;
+    _transVehWp setWaypointBehaviour "CARELESS";
+    _transVehWp setWaypointCombatMode "BLUE";
+    _transVehWp setWaypointStatements ["true", "[group this] call KPLIB_fnc_deleteGroup"];
+    _transVehWp setWaypointCompletionRadius 30;    
 
     sleep 10;
 
