@@ -36,7 +36,7 @@ class liberation_repackage_fob {
         y = 0.39 * safezoneH + safezoneY;
         w = 0.3 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_FOB_REPACKAGE_TITLE;
+        text = QUOTE($STR_FOB_REPACKAGE_TITLE);
     };
     class ButtonClose: StdButton {
         idc = 101;
@@ -55,7 +55,7 @@ class liberation_repackage_fob {
         h = (0.03 * safezoneH);
         y = (0.45 * safezoneH + safezoneY);
         colorText[] = {0.9, 0.9, 0.9, 1};
-        text = $STR_FOB_REPACKAGE_CONFIRM;
+        text = QUOTE($STR_FOB_REPACKAGE_CONFIRM);
     };
     class BoxButton: StdButton {
         idc = 120;
@@ -64,7 +64,7 @@ class liberation_repackage_fob {
         w = (0.08 * safezoneW) - (BORDERSIZE);
         h = (0.045 * safezoneH);
         sizeEx = 0.023 * safezoneH;
-        text = $STR_FOBBOX;
+        text = QUOTE($STR_FOBBOX);
         action = "dorepackage = 1;";
     };
     class TruckButton: StdButton {
@@ -74,7 +74,7 @@ class liberation_repackage_fob {
         w = (0.08 * safezoneW) - (BORDERSIZE);
         h = (0.045 * safezoneH);
         sizeEx = 0.023 * safezoneH;
-        text = $STR_FOBTRUCK;
+        text = QUOTE($STR_FOBTRUCK);
         action = "dorepackage = 2;";
     };
     class CancelButton: StdButton {
@@ -84,7 +84,7 @@ class liberation_repackage_fob {
         w = (0.08 * safezoneW);
         h = (0.045 * safezoneH);
         sizeEx = 0.023 * safezoneH;
-        text = $STR_RECYCLING_CANCEL;
+        text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0";
     };
 };

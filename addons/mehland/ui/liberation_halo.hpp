@@ -45,7 +45,7 @@ class liberation_halo {
         y = 0.14 * safezoneH + safezoneY;
         w = 0.6 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_HALO_TITLE;
+        text = QUOTE($STR_HALO_TITLE);
     };
     class JumpButton: StdButton {
         idc = 202;
@@ -54,7 +54,7 @@ class liberation_halo {
         w = (0.1 * safezoneW);
         h = (0.05 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_HALO_PARAM;
+        text = QUOTE($STR_HALO_PARAM);
         action = "dojump = 1;";
     };
     class CancelButton: StdButton {
@@ -64,7 +64,7 @@ class liberation_halo {
         w = (0.1 * safezoneW);
         h = (0.05 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_RECYCLING_CANCEL;
+        text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0;";
     };
 };

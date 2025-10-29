@@ -41,7 +41,7 @@ class liberation_recycle {
         y = 0.39 * safezoneH + safezoneY;
         w = 0.3 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_RECYCLING;
+        text = QUOTE($STR_RECYCLING);
     };
     class ButtonClose: StdButton {
         idc = 101;
@@ -138,7 +138,7 @@ class liberation_recycle {
         w = (0.1 * safezoneW) - (BORDERSIZE);
         h = (0.045 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_RECYCLING_PROCEED;
+        text = QUOTE($STR_RECYCLING_PROCEED);
         action = "dorecycle = 1;";
     };
     class CancelButton: StdButton {
@@ -148,7 +148,7 @@ class liberation_recycle {
         w = (0.1 * safezoneW);
         h = (0.045 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_RECYCLING_CANCEL;
+        text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0";
     };
 

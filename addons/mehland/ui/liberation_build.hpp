@@ -46,7 +46,7 @@ class liberation_build {
         y = 0.19 * safezoneH + safezoneY;
         w = 0.3 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_BUILD_TITLE;
+        text = QUOTE($STR_BUILD_TITLE);
     };
     class ButtonClose: StdButton {
         idc = 101;
@@ -291,7 +291,7 @@ class liberation_build {
         w = (0.1 * safezoneW);
         h = (0.045 * safezoneH);
         sizeEx = 0.03 * safezoneH;
-        text = $STR_BUILD_BUTTON;
+        text = QUOTE($STR_BUILD_BUTTON);
         action = "dobuild = 1;";
     };
     class BuildMannedButton: StdButton {
@@ -301,7 +301,7 @@ class liberation_build {
         w = (0.1 * safezoneW);
         h = (0.045 * safezoneH);
         sizeEx = 0.02 * safezoneH;
-        text = $STR_BUILD_CREW;
+        text = QUOTE($STR_BUILD_CREW);
         action = "dobuild = 1; manned = true;";
     };
     class LinkedSector {

@@ -62,7 +62,7 @@ class liberation_logistic {
         y = 0.14 * safezoneH + safezoneY;
         w = 0.6 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_LOGISTIC_HEADER;
+        text = QUOTE($STR_LOGISTIC_HEADER);
     };
     class ButtonClose: StdButton {
         idc = 75801;
@@ -89,7 +89,7 @@ class liberation_logistic {
         y = (0.7128 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.055 * safezoneW) + BORDERSIZE;
         h = (0.045 * safezoneH);
-        text = $STR_ADD;
+        text = QUOTE($STR_ADD);
         action = "addLogiGroup = 1";
     };
     class ButtonDeleteLogisticGroup: StdButton {
@@ -99,7 +99,7 @@ class liberation_logistic {
         y = (0.7128 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.055 * safezoneW) + BORDERSIZE;
         h = (0.045 * safezoneH);
-        text = $STR_DEL;
+        text = QUOTE($STR_DEL);
         action = "deleteLogiGroup = 1";
     };
     class LogisticName: StdText {
@@ -118,7 +118,7 @@ class liberation_logistic {
         y = (0.23 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_LOGISTIC_STATUS;
+        text = QUOTE($STR_LOGISTIC_STATUS);
     };
     class Status: StatusLabel {
         idc = 75807;
@@ -133,7 +133,7 @@ class liberation_logistic {
         y = (0.26 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_PRODUCTION_TIMER;
+        text = QUOTE($STR_PRODUCTION_TIMER);
     };
     class Time: TimeLabel {
         idc = 75809;
@@ -148,7 +148,7 @@ class liberation_logistic {
         y = (0.29 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_LOGISTIC_DESTINATION;
+        text = QUOTE($STR_LOGISTIC_DESTINATION);
     };
     class Destination: DestinationLabel {
         idc = 758011;
@@ -165,7 +165,7 @@ class liberation_logistic {
         y = (0.34 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_LOGISTIC_LOADEDDETAIL;
+        text = QUOTE($STR_LOGISTIC_LOADEDDETAIL);
     };
     class TruckCountLabel: StdText {
         idc = 758013;
@@ -173,7 +173,7 @@ class liberation_logistic {
         y = (0.37 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_LOGISTIC_TRUCKCOUNT;
+        text = QUOTE($STR_LOGISTIC_TRUCKCOUNT);
     };
     class TruckCount: TruckCountLabel {
         idc = 758014;
@@ -188,7 +188,7 @@ class liberation_logistic {
         y = (0.4 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_MANPOWER;
+        text = QUOTE($STR_MANPOWER);
     };
     class LoadedSupply: LoadedSupplyLabel {
         idc = 758016;
@@ -203,7 +203,7 @@ class liberation_logistic {
         y = (0.43 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_AMMO;
+        text = QUOTE($STR_AMMO);
     };
     class LoadedAmmo: LoadedAmmoLabel {
         idc = 758018;
@@ -218,7 +218,7 @@ class liberation_logistic {
         y = (0.46 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_FUEL;
+        text = QUOTE($STR_FUEL);
     };
     class LoadedFuel: LoadedFuelLabel {
         idc = 758020;
@@ -233,8 +233,8 @@ class liberation_logistic {
         y = (0.49 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.0725 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_LOGSTIC_BUYTRUCK;
-        tooltip = $STR_LOGISTIC_TT_BUYTRUCK;
+        text = QUOTE($STR_LOGSTIC_BUYTRUCK);
+        tooltip = QUOTE($STR_LOGISTIC_TT_BUYTRUCK);
         action = "buyLogiTruck = 1";
     };
     class ButtonSellTRuck: StdButton {
@@ -243,8 +243,8 @@ class liberation_logistic {
         y = (0.49 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.0725 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_LOGSTIC_SELLTRUCK;
-        tooltip = $STR_LOGISTIC_TT_SELLTRUCK;
+        text = QUOTE($STR_LOGSTIC_SELLTRUCK);
+        tooltip = QUOTE($STR_LOGISTIC_TT_SELLTRUCK);
         action = "sellLogiTruck = 1";
     };
     class ATitle: StdText {
@@ -255,7 +255,7 @@ class liberation_logistic {
         y = (0.54 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_LOGISTIC_LABELA;
+        text = QUOTE($STR_LOGISTIC_LABELA);
     };
     class ACombo: StdCombo {
         idc = 758024;
@@ -271,7 +271,7 @@ class liberation_logistic {
         y = (0.6 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = 0.05 * safezoneW;
         text = "";
-        tooltip = $STR_LOGISTIC_TT_SUPPLY;
+        tooltip = QUOTE($STR_LOGISTIC_TT_SUPPLY);
         action = "";
         autocomplete = "";
     };
@@ -281,7 +281,7 @@ class liberation_logistic {
         y = (0.6 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = 0.05 * safezoneW;
         text = "";
-        tooltip = $STR_LOGISTIC_TT_AMMO;
+        tooltip = QUOTE($STR_LOGISTIC_TT_AMMO);
         action = "";
         autocomplete = "";
     };
@@ -291,7 +291,7 @@ class liberation_logistic {
         y = (0.6 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = 0.05 * safezoneW;
         text = "";
-        tooltip = $STR_LOGISTIC_TT_FUEL;
+        tooltip = QUOTE($STR_LOGISTIC_TT_FUEL);
         action = "";
         autocomplete = "";
     };
@@ -303,7 +303,7 @@ class liberation_logistic {
         y = (0.63 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_LOGISTIC_LABELB;
+        text = QUOTE($STR_LOGISTIC_LABELB);
     };
     class BCombo: StdCombo {
         idc = 758029;
@@ -319,7 +319,7 @@ class liberation_logistic {
         y = (0.69 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = 0.05 * safezoneW;
         text = "";
-        tooltip = $STR_LOGISTIC_TT_SUPPLY;
+        tooltip = QUOTE($STR_LOGISTIC_TT_SUPPLY);
         action = "";
         autocomplete = "";
     };
@@ -329,7 +329,7 @@ class liberation_logistic {
         y = (0.69 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = 0.05 * safezoneW;
         text = "";
-        tooltip = $STR_LOGISTIC_TT_AMMO;
+        tooltip = QUOTE($STR_LOGISTIC_TT_AMMO);
         action = "";
         autocomplete = "";
     };
@@ -339,7 +339,7 @@ class liberation_logistic {
         y = (0.69 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = 0.05 * safezoneW;
         text = "";
-        tooltip = $STR_LOGISTIC_TT_FUEL;
+        tooltip = QUOTE($STR_LOGISTIC_TT_FUEL);
         action = "";
         autocomplete = "";
     };
@@ -370,7 +370,7 @@ class liberation_logistic {
         y = (0.7128 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.021 * safezoneH);
-        text = $STR_LOGISTIC_CONFIRM;
+        text = QUOTE($STR_LOGISTIC_CONFIRM);
         action = "saveConvoySettings = 1";
     };
     class ButtonAbortLogistic: StdButton {
@@ -380,7 +380,7 @@ class liberation_logistic {
         y = (0.7368 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.021 * safezoneH);
-        text = $STR_LOGISTIC_CANCEL;
+        text = QUOTE($STR_LOGISTIC_CANCEL);
         action = "convoyStandby = 1";
     };
     class LogisticMap: kndr_MapControl {
@@ -396,7 +396,7 @@ class liberation_logistic {
         y = 0.77 * safezoneH + safezoneY;
         w = 0.09 * safezoneW;
         h = 0.035 * safezoneH;
-        text = $STR_CLOSE;
+        text = QUOTE($STR_CLOSE);
         action = "closeDialog 0";
     };
 };
