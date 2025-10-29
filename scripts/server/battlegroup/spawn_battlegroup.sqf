@@ -41,7 +41,13 @@ if !(_spawn_marker isEqualTo "") then {
         _grp setVariable ["KPLIB_isBattleGroup",true];
         };
 
-        [_spawn_marker, [markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective, 3] call KPLIB_fnc_odstDrop;
+        _selected_opfor_battlegroup = [
+            "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
+            "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
+            "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
+            "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3"
+        ];
+        _target_size = count _selected_opfor_battlegroup;
 
     } else {
         // private _vehicle_pool = [opfor_battlegroup_vehicles, opfor_battlegroup_vehicles_low_intensity] select (combat_readiness < 50);
@@ -69,8 +75,23 @@ if !(_spawn_marker isEqualTo "") then {
         ];
         _target_size = count _selected_opfor_battlegroup;
 
-        private ["_nextgrp", "_vehicle"];
+        [_spawn_marker] spawn
         {
+            params ["_spawn_marker"];
+            [_spawn_marker, [markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective, 3] call KPLIB_fnc_odstDrop; 
+        };
+
+        if (GRLIB_csat_aggressivity > 0.5) then {
+            [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_boat;
+        };
+
+        // if (GRLIB_csat_aggressivity > 0.9) then {
+        //     [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_air;
+        // };
+    };
+
+    private ["_nextgrp", "_vehicle"];
+    {
             _nextgrp = createGroup [GRLIB_side_enemy, true];
             _vehicle = [markerpos _spawn_marker, _x] call KPLIB_fnc_spawnVehicle;
 
@@ -87,18 +108,7 @@ if !(_spawn_marker isEqualTo "") then {
                     [_vehicle] spawn troup_transport;
                 };
             };
-        } forEach _selected_opfor_battlegroup;
-
-        [_spawn_marker, [markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective, 3] call KPLIB_fnc_odstDrop;
-
-        if (GRLIB_csat_aggressivity > 0.5) then {
-            [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_boat;
-        };
-
-        // if (GRLIB_csat_aggressivity > 0.9) then {
-        //     [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_air;
-        // };
-    };
+    } forEach _selected_opfor_battlegroup;
 
     sleep 3;
 

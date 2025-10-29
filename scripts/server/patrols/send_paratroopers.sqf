@@ -34,8 +34,9 @@ if (isNull _chopper_type) then {
 };
 
 private _para_group = createGroup [GRLIB_side_enemy, true];
+private _maxCargo = count fullCrew [_newvehicle, "cargo", true];
 
-while {(count (units _para_group)) < 8} do {
+while {(count (units _para_group)) < _maxCargo} do {
     [opfor_paratrooper, markerPos _spawnsector, _para_group] call KPLIB_fnc_createManagedUnit;
 };
 
@@ -49,6 +50,8 @@ sleep 0.2;
 sleep 0.2;
 
 _newvehicle flyInHeight 100;
+
+_targetpos = [_targetpos, 100] call KPLIB_fnc_getRandomPointInCircle;
 
 _waypoint = _pilot_group addWaypoint [_targetpos, 25];
 _waypoint setWaypointType "MOVE";

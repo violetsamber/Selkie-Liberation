@@ -61,6 +61,7 @@ class KPLIB {
         class getUnitPositionId         {};
         class getUnitsCount             {};
         class getWeaponComponents       {};
+        class getRandomPointInCircle    {};
         class handlePlacedZeusObject    {};
         class hasPermission             {};
         class initSectors               {};
