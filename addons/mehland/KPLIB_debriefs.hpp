@@ -10,8 +10,8 @@
 */
 
 class End1 {
-    title =	"QUOTE($STR_SORRY)";
+    title =	QUOTE($STR_SORRY);
     subtitle = "";
-    description = "QUOTE($STR_COMMANDER_NOT_AUTHORIZED)";
+    description = QUOTE($STR_COMMANDER_NOT_AUTHORIZED);
     pictureBackground = "";
 };
