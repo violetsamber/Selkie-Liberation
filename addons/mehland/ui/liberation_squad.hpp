@@ -55,7 +55,7 @@ class liberation_squad {
         y = 0.19 * safezoneH + safezoneY;
         w = 0.6 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_SQUAD_MANAGEMENT;
+        text = QUOTE($STR_SQUAD_MANAGEMENT);
     };
     class SquadList: StdListBox {
         idc = 101;
@@ -73,8 +73,8 @@ class liberation_squad {
         w = (0.12 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_RESUPPLY;
-        tooltip = $STR_RESUPPLY_TOOLTIP;
+        text = QUOTE($STR_RESUPPLY);
+        tooltip = QUOTE($STR_RESUPPLY_TOOLTIP);
         action = "GRLIB_squadaction = 1";
     };
     class RemoveButton: StdButton {
@@ -84,8 +84,8 @@ class liberation_squad {
         w = (0.12 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_REMOVE_MEMBER;
-        tooltip = $STR_REMOVE_MEMBER_TOOLTIP;
+        text = QUOTE($STR_REMOVE_MEMBER);
+        tooltip = QUOTE($STR_REMOVE_MEMBER_TOOLTIP);
         action = "GRLIB_squadaction = 2";
     };
     class ReplaceButton: StdButton {
@@ -95,8 +95,8 @@ class liberation_squad {
         w = (0.12 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_DEPLOY_ON_MEMBER;
-        tooltip = $STR_DEPLOY_ON_MEMBER_TOOLTIP;
+        text = QUOTE($STR_DEPLOY_ON_MEMBER);
+        tooltip = QUOTE($STR_DEPLOY_ON_MEMBER_TOOLTIP);
         action = "GRLIB_squadaction = 3";
     };
     class ConfirmButton: StdButton {
@@ -106,7 +106,7 @@ class liberation_squad {
         w = (0.055 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_CONFIRM;
+        text = QUOTE($STR_CONFIRM);
         action = "GRLIB_squadconfirm = 1";
     };
     class CancelButton: StdButton {
@@ -116,7 +116,7 @@ class liberation_squad {
         w = (0.055 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_RECYCLING_CANCEL;
+        text = QUOTE($STR_RECYCLING_CANCEL);
         action = "GRLIB_squadconfirm = 0";
     };
     class ButtonClose: StdButton {

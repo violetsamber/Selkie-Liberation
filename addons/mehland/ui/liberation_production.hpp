@@ -60,7 +60,7 @@ class liberation_production {
         y = 0.14 * safezoneH + safezoneY;
         w = 0.6 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_PRODUCTION_HEADER;
+        text = QUOTE($STR_PRODUCTION_HEADER);
     };
     class ButtonClose: StdButton {
         idc = 75801;
@@ -98,7 +98,7 @@ class liberation_production {
         y = (0.23 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_PRODUCTION_TYPE;
+        text = QUOTE($STR_PRODUCTION_TYPE);
     };
     class SectorType: SectorTypeLabel {
         idc = 75804;
@@ -113,7 +113,7 @@ class liberation_production {
         y = (0.26 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_PRODUCTION_PRODUCING;
+        text = QUOTE($STR_PRODUCTION_PRODUCING);
     };
     class SectorProd: SectorProdLabel {
         idc = 75805;
@@ -128,7 +128,7 @@ class liberation_production {
         y = (0.29 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_PRODUCTION_STORAGE;
+        text = QUOTE($STR_PRODUCTION_STORAGE);
     };
     class SectorStorage: SectorStorageLabel {
         idc = 75806;
@@ -143,7 +143,7 @@ class liberation_production {
         y = (0.32 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_PRODUCTION_TIMER;
+        text = QUOTE($STR_PRODUCTION_TIMER);
     };
     class SectorTimer: SectorTimerLabel {
         idc = 75807;
@@ -160,7 +160,7 @@ class liberation_production {
         y = (0.37 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_PRODUCTION_FACILITIES;
+        text = QUOTE($STR_PRODUCTION_FACILITIES);
     };
     class FacilitiesSupply: StdText {
         idc = 75808;
@@ -169,7 +169,7 @@ class liberation_production {
         y = (0.4 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_MANPOWER;
+        text = QUOTE($STR_MANPOWER);
     };
     class FacilitiesAmmo: StdText {
         idc = 75809;
@@ -178,7 +178,7 @@ class liberation_production {
         y = (0.43 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_AMMO;
+        text = QUOTE($STR_AMMO);
     };
     class FacilitiesFuel: StdText {
         idc = 758010;
@@ -187,7 +187,7 @@ class liberation_production {
         y = (0.46 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_FUEL;
+        text = QUOTE($STR_FUEL);
     };
     class StorageTitle: StdText {
         idc = -1;
@@ -197,7 +197,7 @@ class liberation_production {
         y = (0.51 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_PRODUCTION_STORAGEDETAIL;
+        text = QUOTE($STR_PRODUCTION_STORAGEDETAIL);
     };
     class StorageSupplyLabel: StdText {
         idc = -1;
@@ -205,7 +205,7 @@ class liberation_production {
         y = (0.54 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_MANPOWER;
+        text = QUOTE($STR_MANPOWER);
     };
     class StorageSupply: StorageSupplyLabel {
         idc = 758011;
@@ -220,7 +220,7 @@ class liberation_production {
         y = (0.57 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_AMMO;
+        text = QUOTE($STR_AMMO);
     };
     class StorageAmmo: StorageAmmoLabel {
         idc = 758012;
@@ -235,7 +235,7 @@ class liberation_production {
         y = (0.6 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.07 * safezoneW);
         h = (0.02 * safezoneH);
-        text = $STR_FUEL;
+        text = QUOTE($STR_FUEL);
     };
     class StorageFuel: StorageFuelLabel {
         idc = 758013;
@@ -252,7 +252,7 @@ class liberation_production {
         y = (0.65 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.02 * safezoneH);
-        text = $STR_PRODUCTION_PRODUCE;
+        text = QUOTE($STR_PRODUCTION_PRODUCE);
     };
     class ProduceToolBox {
         idc = 758014;
@@ -273,7 +273,7 @@ class liberation_production {
         h = (0.03 * safezoneH);
         rows = 1;
         columns = 3;
-        strings[] = {$STR_MANPOWER,$STR_AMMO,$STR_FUEL};
+        strings[] = {QUOTE($STR_MANPOWER),QUOTE($STR_AMMO),QUOTE($STR_FUEL)};
         values[] = {0,1,2};
         onToolBoxSelChanged = "new_production = (_this select 1)";
     };
@@ -284,7 +284,7 @@ class liberation_production {
         y = (0.7128 * safezoneH + safezoneY) - (0.75 * BORDERSIZE);
         w = (0.153 * safezoneW) + BORDERSIZE;
         h = (0.045 * safezoneH);
-        text = $STR_CONFIRM;
+        text = QUOTE($STR_CONFIRM);
         action = "saveSectorSetting = 1";
     };
     class SectorMap: kndr_MapControl {
@@ -300,7 +300,7 @@ class liberation_production {
         y = 0.77 * safezoneH + safezoneY;
         w = 0.09 * safezoneW;
         h = 0.035 * safezoneH;
-        text = $STR_CLOSE;
+        text = QUOTE($STR_CLOSE);
         action = "closeDialog 0";
     };
 };

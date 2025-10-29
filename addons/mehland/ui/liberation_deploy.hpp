@@ -47,7 +47,7 @@ class liberation_deploy {
         y = 0.11 * safezoneH + safezoneY;
         w = 0.15 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_DEPLOY_TITLE;
+        text = QUOTE($STR_DEPLOY_TITLE);
     };
     class LabelDeploy: StdText {
         x = (0.15 * safezoneW + safezoneX);
@@ -55,7 +55,7 @@ class liberation_deploy {
         h = (0.03 * safezoneH);
         y = 0.23 * safezoneH + safezoneY;
         sizeEx = 0.018 * safezoneH;
-        text = $STR_SPAWN_POINT;
+        text = QUOTE($STR_SPAWN_POINT);
     };
     class DeployList: StdListBox {
         idc = 201;
@@ -72,7 +72,7 @@ class liberation_deploy {
         h = (0.03 * safezoneH);
         y = 0.16 * safezoneH + safezoneY;
         sizeEx = 0.018 * safezoneH;
-        text = $STR_LOADOUT;
+        text = QUOTE($STR_LOADOUT);
     };
     class LoadoutsCombo: StdCombo {
         idc = 203;
@@ -89,7 +89,7 @@ class liberation_deploy {
         w = (0.15 * safezoneW);
         h = (0.05 * safezoneH);
         sizeEx = 0.05 * safezoneH;
-        text = $STR_DEPLOY_BUTTON;
+        text = QUOTE($STR_DEPLOY_BUTTON);
         action = "deploy = 1";
     };
     class MapButton: StdButton {

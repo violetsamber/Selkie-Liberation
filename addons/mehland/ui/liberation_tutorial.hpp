@@ -53,7 +53,7 @@ class liberation_tutorial {
         y = 0.19 * safezoneH + safezoneY;
         w = 0.15 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_TUTO_TITLE;
+        text = QUOTE($STR_TUTO_TITLE);
     };
     class HeaderTuto: Header {
         idc = 514;
@@ -77,7 +77,7 @@ class liberation_tutorial {
         w = (0.15 * safezoneW);
         h = (0.05 * safezoneH);
         sizeEx = 0.05 * safezoneH;
-        text = $STR_TUTO_GOTIT;
+        text = QUOTE($STR_TUTO_GOTIT);
         action = "howtoplay = 0";
     };
     class TutoControlGroup {

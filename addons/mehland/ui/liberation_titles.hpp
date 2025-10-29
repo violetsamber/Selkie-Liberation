@@ -70,7 +70,7 @@ class RscTitles {
             w = 0.3 * safezoneW;
             y = 0.65 * safezoneH + safezoneY;
             h = 0.1 * safezoneH;
-            text = $STR_MISSION_VERSION;
+            text = QUOTE($STR_MISSION_VERSION);
         };
         class VersionLabelShadow: VersionLabel {
             shadow = 2;
@@ -107,7 +107,7 @@ class RscTitles {
             sizeEx = 0.03;
             x = 0; y = 0.75;
             w = 1.0;  h = 0.1;
-            text = $STR_DEPLOY_IN_PROGRESS;
+            text = QUOTE($STR_DEPLOY_IN_PROGRESS);
         };
     };
     class KPLIB_overlay {

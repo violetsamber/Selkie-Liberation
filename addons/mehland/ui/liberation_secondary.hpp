@@ -72,7 +72,7 @@ class liberation_secondary {
         y = 0.19 * safezoneH + safezoneY;
         w = 0.6 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_SECONDARY_OBJECTIVES_TITLE;
+        text = QUOTE($STR_SECONDARY_OBJECTIVES_TITLE);
     };
     class MissionsList: StdListBox {
         idc = 101;
@@ -159,7 +159,7 @@ class liberation_secondary {
         w = (0.1 * safezoneW);
         h = (0.05 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_SECONDARY_OBJECTIVES_START;
+        text = QUOTE($STR_SECONDARY_OBJECTIVES_START);
         action = "dostartsecondary = 1;";
     };
     class CancelButton: StdButton {
@@ -169,7 +169,7 @@ class liberation_secondary {
         w = (0.1 * safezoneW);
         h = (0.05 * safezoneH);
         sizeEx = 0.025 * safezoneH;
-        text = $STR_RECYCLING_CANCEL;
+        text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0;";
     };
 };

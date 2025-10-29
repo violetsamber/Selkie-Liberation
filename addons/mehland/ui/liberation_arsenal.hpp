@@ -39,7 +39,7 @@ class liberation_arsenal {
         y = 0.09 * safezoneH + safezoneY;
         w = 0.16 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_ARSENAL_TITLE;
+        text = QUOTE($STR_ARSENAL_TITLE);
     };
     class LoadoutList: StdListBox {
         idc = 201;
@@ -57,7 +57,7 @@ class liberation_arsenal {
         w = (0.14 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.03 * safezoneH;
-        text = $STR_LOAD_LOADOUT;
+        text = QUOTE($STR_LOAD_LOADOUT);
         action = "load_loadout = 1;";
     };
     class EditButton: StdButton {
@@ -67,7 +67,7 @@ class liberation_arsenal {
         w = (0.14 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.03 * safezoneH;
-        text = $STR_EDIT_LOADOUT;
+        text = QUOTE($STR_EDIT_LOADOUT);
         action = "edit_loadout = 1;";
     };
     class RespawnButton: StdButton {
@@ -77,7 +77,7 @@ class liberation_arsenal {
         w = (0.14 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.024 * safezoneH;
-        text = $STR_MAKE_RESPAWN_LOADOUT;
+        text = QUOTE($STR_MAKE_RESPAWN_LOADOUT);
         action = "respawn_loadout = 1;";
     };
     class PlayersCombo: StdCombo {
@@ -95,7 +95,7 @@ class liberation_arsenal {
         w = (0.14 * safezoneW);
         h = (0.04 * safezoneH);
         sizeEx = 0.024 * safezoneH;
-        text = $STR_LOAD_PLAYER_LOADOUT;
+        text = QUOTE($STR_LOAD_PLAYER_LOADOUT);
         action = "load_from_player = lbCurSel 203;";
     };
     class ButtonClose: StdButton {

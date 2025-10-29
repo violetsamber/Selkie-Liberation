@@ -98,7 +98,7 @@ class KPGUI_PRE_CloseCross {
     tooltipColorText[] = {1, 1, 1, 1};
     tooltipColorBox[] = {1, 1, 1, 1};
     tooltipColorShade[] = {0, 0, 0, 0.65};
-    tooltip = "$STR_DISP_CLOSE";
+    tooltip = "QUOTE($STR_DISP_CLOSE)";
     idc = -1;
     x = 0;
     y = 0;

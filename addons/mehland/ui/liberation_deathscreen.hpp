@@ -41,6 +41,6 @@ class blackscreen {
     shadow = 1;
     x = 0.3 * safezoneW + safezoneX; y= 0.25 * safezoneH + safezoneY;
     w = 0.4 * safezoneW; h = 0.07 * safezoneH;
-    text = $STR_REVIVE_LABEL;
+    text = QUOTE($STR_REVIVE_LABEL);
   };
 };

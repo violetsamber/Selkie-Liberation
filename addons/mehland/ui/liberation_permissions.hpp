@@ -32,7 +32,7 @@ class liberation_permissions {
         y = 0.14 * safezoneH + safezoneY;
         w = 0.6 * safezoneW + ( 2 * BORDERSIZE);
         h = 0.05 * safezoneH - (BORDERSIZE);
-        text = $STR_PERMISSIONS_TITLE;
+        text = QUOTE($STR_PERMISSIONS_TITLE);
     };
     class ButtonClose: StdButton {
         idc = 750;
@@ -80,7 +80,7 @@ class liberation_permissions {
         y = 0.77 * safezoneH + safezoneY;
         w = 0.09 * safezoneW;
         h = 0.035 * safezoneH;
-        text = $STR_SAVE_CHANGES;
+        text = QUOTE($STR_SAVE_CHANGES);
         action = "save_changes = 1";
     };
     class ButtonCancel: StdButton {
@@ -89,7 +89,7 @@ class liberation_permissions {
         y = 0.77 * safezoneH + safezoneY;
         w = 0.09 * safezoneW;
         h = 0.035 * safezoneH;
-        text = $STR_RECYCLING_CANCEL;
+        text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0";
     };
 };

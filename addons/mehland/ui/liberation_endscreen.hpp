@@ -19,12 +19,12 @@ class liberation_endscreen {
         y = (0.17 * safezoneH + safezoneY);
         w = (0.6 * safezoneW);
         h = (0.1 * safezoneH);
-        text = $STR_VICTORY_TITLE;
+        text = QUOTE($STR_VICTORY_TITLE);
     };
     class SubTitle: Title {
         sizeEx = 0.04 * safezoneH;
         y = (0.24 * safezoneH + safezoneY);
-        text = $STR_VICTORY_TEXT;
+        text = QUOTE($STR_VICTORY_TEXT);
     };
     class SubSubTitle: Title {
         idc = 690;

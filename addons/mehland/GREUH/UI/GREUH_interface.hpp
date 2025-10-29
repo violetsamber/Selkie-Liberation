@@ -240,7 +240,7 @@ class GREUH_Menu {
 		y = ((BASE_Y + 0.01) * safezoneH) + safezoneY;
 		w = 0.2 * safezoneW + ( 2 * BORDERSIZE);
 		h = 0.05 * safezoneH - (BORDERSIZE);
-		text = $STR_GREUH_EXTENDED_OPTIONS;
+		text = QUOTE($STR_GREUH_EXTENDED_OPTIONS);
 		colorBackground[] = COLOR_LIGHTGRAY;
 	};
 	class GREUH_ButtonGeneric {
@@ -287,7 +287,7 @@ class GREUH_Menu {
 		w = 0.2 * safezoneW;
 		colorText[] = COLOR_LIGHTGRAY;
 		colorBackground[] = COLOR_RED_DISABLED;
-		text = $STR_GREUH_DISABLED;
+		text = QUOTE($STR_GREUH_DISABLED);
 	};
 	class GREUH_RegularLabel : GREUH_Label {
 		colorBackground[] = COLOR_NOALPHA;
@@ -309,7 +309,7 @@ class GREUH_Menu {
 	class GREUH_SquadLabel : GREUH_Label {
 		idc = 510;
 		y = ((BASE_Y + 0.07) * safezoneH) + safezoneY;
-		text = $STR_GREUH_SQUAD_MANAGEMENT;
+		text = QUOTE($STR_GREUH_SQUAD_MANAGEMENT);
 	};
 	class GREUH_SquadList : RscListBox {
 		idc = 515;
@@ -324,25 +324,25 @@ class GREUH_Menu {
 	};
 	class GREUH_ButtonJoin : GREUH_ButtonSquad {
 		idc = 511;
-		text = $STR_GREUH_JOIN;
+		text = QUOTE($STR_GREUH_JOIN);
 		action = "squadaction = 'join';";
 		y = ((BASE_Y + 0.11) * safezoneH) + safezoneY;
 	};
 	class GREUH_ButtonNew : GREUH_ButtonSquad {
 		idc = 512;
-		text = $STR_GREUH_CREATE;
+		text = QUOTE($STR_GREUH_CREATE);
 		action = "squadaction = 'create';";
 		y = ((BASE_Y + 0.15) * safezoneH) + safezoneY;
 	};
 	class GREUH_ButtonRename : GREUH_ButtonSquad {
 		idc = 513;
-		text = $STR_GREUH_RENAME;
+		text = QUOTE($STR_GREUH_RENAME);
 		action = "squadaction = 'rename';";
 		y = ((BASE_Y + 0.19) * safezoneH) + safezoneY;
 	};
 	class GREUH_ButtonLeader : GREUH_ButtonSquad {
 		idc = 514;
-		text = $STR_GREUH_LEADER;
+		text = QUOTE($STR_GREUH_LEADER);
 		action = "squadaction = 'leader';";
 		y = ((BASE_Y + 0.23) * safezoneH) + safezoneY;
 	};
@@ -377,13 +377,13 @@ class GREUH_Menu {
 	class GREUH_ButtonName_Rename : GREUH_ButtonName {
 		idc = 525;
 		x = 0.4875 * safezoneW + safezoneX;
-		text = $STR_GREUH_RENAME;
+		text = QUOTE($STR_GREUH_RENAME);
 		action = "squadname = ctrlText 527;";
 	};
 	class GREUH_ButtonName_Abort : GREUH_ButtonName {
 		idc = 526;
 		x = (0.4875 * safezoneW + safezoneX) + ((0.2 * safezoneW) / 5);
-		text = $STR_GREUH_CANCEL;
+		text = QUOTE($STR_GREUH_CANCEL);
 		action = "squadaction = '';";
 	};
 	class GREUH_Squad_TextField : GREUH_ButtonName {
@@ -430,13 +430,13 @@ class GREUH_Menu {
 	class GREUH_ButtonLeader_Choose : GREUH_ButtonLeaderGen {
 		idc = 565;
 		x = 0.4875 * safezoneW + safezoneX;
-		text = $STR_GREUH_CHOOSE;
+		text = QUOTE($STR_GREUH_CHOOSE);
 		action = "choose_squadleader = lbCurSel 567;";
 	};
 	class GREUH_ButtonLeader_Abort : GREUH_ButtonLeaderGen {
 		idc = 566;
 		x = (0.4875 * safezoneW + safezoneX) + ((0.2 * safezoneW) / 5);
-		text = $STR_GREUH_CANCEL;
+		text = QUOTE($STR_GREUH_CANCEL);
 		action = "squadaction = ''";
 	};
 	class GREUH_Squad_Combo : RscCombo {
@@ -454,18 +454,18 @@ class GREUH_Menu {
 	class GREUH_PlatoonLabel : GREUH_Label {
 		idc = 610;
 		y = ((BASE_Y + 0.31) * safezoneH) + safezoneY;
-		text = $STR_GREUH_PLATOON_SQUAD_AWARENESS;
+		text = QUOTE($STR_GREUH_PLATOON_SQUAD_AWARENESS);
 	};
 	class GREUH_LabelPlatoon : GREUH_RegularLabel {
 		idc = 611;
 		y = ((BASE_Y + 0.35) * safezoneH) + safezoneY;
-		text = $STR_GREUH_SHOW_PLATOON_OVERLAY;
+		text = QUOTE($STR_GREUH_SHOW_PLATOON_OVERLAY);
 	};
 	class GREUH_LabelPlatoonActive : GREUH_RegularLabel {
 		idc = 612;
 		style = ST_RIGHT;
 		colorText[] = COLOR_BRIGHTGREEN;
-		text = $STR_GREUH_ACTIVE;
+		text = QUOTE($STR_GREUH_ACTIVE);
 		x = 0.2 * safezoneW + safezoneX;
 		w = 0.1 * safezoneW;
 		y = ((BASE_Y + 0.35) * safezoneH) + safezoneY;
@@ -475,7 +475,7 @@ class GREUH_Menu {
 		w = ((0.08 * safezoneW) / 4);
 		y = ((BASE_Y + 0.35) * safezoneH) + safezoneY;
 		x = 0.305 * safezoneW + safezoneX;
-		text = $STR_GREUH_YES;
+		text = QUOTE($STR_GREUH_YES);
 		action = "show_platoon = true";
 	};
 	class GREUH_PlatoonNo : GREUH_ButtonGeneric {
@@ -483,7 +483,7 @@ class GREUH_Menu {
 		w = ((0.08 * safezoneW) / 4);
 		y = ((BASE_Y + 0.35) * safezoneH) + safezoneY;
 		x = (0.32 + BORDERSIZE) * safezoneW + safezoneX;
-		text = $STR_GREUH_NO;
+		text = QUOTE($STR_GREUH_NO);
 		action = "show_platoon = false";
 	};
 	class GREUH_ViewZone : GREUH_DefaultZone {
@@ -494,7 +494,7 @@ class GREUH_Menu {
 	class GREUH_ViewDistance : GREUH_Label {
 		idc = 711;
 		y = ((BASE_Y + 0.47) * safezoneH) + safezoneY;
-		text = $STR_GREUH_ADJUST_VIEW_DISTANCE;
+		text = QUOTE($STR_GREUH_ADJUST_VIEW_DISTANCE);
 	};
 	class GREUH_Slider {
 		idc = 712;
@@ -504,7 +504,7 @@ class GREUH_Menu {
 		w = 0.12 * safezoneW;
 		y = ((BASE_Y + 0.515) * safezoneH) + safezoneY;
 		h = 0.025 * safezoneH;
-		text = $STR_GREUH_VIEW_DISTANCE;
+		text = QUOTE($STR_GREUH_VIEW_DISTANCE);
 		color[] = { 1, 1, 1, 1 };
 		coloractive[] = { 1, 1, 1, 1 };
 		onSliderPosChanged = "desiredviewdistance_inf = (sliderPosition 712)";
@@ -527,7 +527,7 @@ class GREUH_Menu {
 		y = ((BASE_Y + 0.505) * safezoneH) + safezoneY;
 		h = 0.03 * safezoneH;
 		colorBackground[] = COLOR_NOALPHA;
-		text = $STR_GREUH_INFANTRY;
+		text = QUOTE($STR_GREUH_INFANTRY);
 	};
 	class GREUH_SliderVeh {
 		idc = 722;
@@ -537,7 +537,7 @@ class GREUH_Menu {
 		w = 0.12 * safezoneW;
 		y = ((BASE_Y + 0.545) * safezoneH) + safezoneY;
 		h = 0.025 * safezoneH;
-		text = $STR_GREUH_VIEW_DISTANCE;
+		text = QUOTE($STR_GREUH_VIEW_DISTANCE);
 		color[] = { 1, 1, 1, 1 };
 		coloractive[] = { 1, 1, 1, 1 };
 		onSliderPosChanged = "desiredviewdistance_veh = (sliderPosition 722)";
@@ -560,7 +560,7 @@ class GREUH_Menu {
 		y = ((BASE_Y + 0.535) * safezoneH) + safezoneY;
 		h = 0.03 * safezoneH;
 		colorBackground[] = COLOR_NOALPHA;
-		text = $STR_GREUH_VEHICLES;
+		text = QUOTE($STR_GREUH_VEHICLES);
 	};
 	class GREUH_SliderObj {
 		idc = 732;
@@ -570,7 +570,7 @@ class GREUH_Menu {
 		w = 0.12 * safezoneW;
 		y = ((BASE_Y + 0.575) * safezoneH) + safezoneY;
 		h = 0.025 * safezoneH;
-		text = $STR_GREUH_VIEW_DISTANCE;
+		text = QUOTE($STR_GREUH_VIEW_DISTANCE);
 		color[] = { 1, 1, 1, 1 };
 		coloractive[] = { 1, 1, 1, 1 };
 		onSliderPosChanged = "desiredviewdistance_obj = (sliderPosition 732)";
@@ -593,7 +593,7 @@ class GREUH_Menu {
 		y = ((BASE_Y + 0.565) * safezoneH) + safezoneY;
 		h = 0.03 * safezoneH;
 		colorBackground[] = COLOR_NOALPHA;
-		text = $STR_GREUH_OBJECTS;
+		text = QUOTE($STR_GREUH_OBJECTS);
 	};
 	class GREUH_FPSLabel : GREUH_Label {
 		idc = 724;
@@ -604,7 +604,7 @@ class GREUH_Menu {
 		h = 0.03 * safezoneH;
 		colorBackground[] = COLOR_NOALPHA;
 		sizeEx = 0.018 * safezoneH;
-		text = $STR_GREUH_ADJUST_VIEW_DISTANCE_TO_KEEP_FPS_ABOVE;
+		text = QUOTE($STR_GREUH_ADJUST_VIEW_DISTANCE_TO_KEEP_FPS_ABOVE);
 	};
 	class GREUH_FPSEdit {
 		idc = 960;
@@ -633,7 +633,7 @@ class GREUH_Menu {
 	class GREUH_WorldQuality : GREUH_Label {
 		idc = 810;
 		y = ((BASE_Y + 0.66) * safezoneH) + safezoneY;
-		text = $STR_GREUH_ADJUST_TERRAIN_DETAILS;
+		text = QUOTE($STR_GREUH_ADJUST_TERRAIN_DETAILS);
 	};
 	class GREUH_ButtonWorld : GREUH_ButtonGeneric {
 		w = ((0.2 * safezoneW) / 4) - BORDERSIZE;
@@ -642,25 +642,25 @@ class GREUH_Menu {
 	class GREUH_ButtonWorldVeryLow : GREUH_ButtonWorld {
 		idc = 812;
 		x = 0.15 * safezoneW + safezoneX;
-		text = $STR_GREUH_VERY_LOW;
+		text = QUOTE($STR_GREUH_VERY_LOW);
 		action = "setTerrainGrid 50; hint 'Terrain details set to Very Low'";
 	};
 	class GREUH_ButtonWorldLow : GREUH_ButtonWorld {
 		idc = 813;
 		x = (0.15 * safezoneW + safezoneX) + (((0.2 * safezoneW) / 4) * 1);
-		text = $STR_GREUH_LOW;
+		text = QUOTE($STR_GREUH_LOW);
 		action = "setTerrainGrid 25; hint 'Terrain details set to Low'";
 	};
 	class GREUH_ButtonWorldNormal : GREUH_ButtonWorld {
 		idc = 814;
 		x = (0.15 * safezoneW + safezoneX) + (((0.2 * safezoneW) / 4) * 2);
-		text = $STR_GREUH_NORMAL;
+		text = QUOTE($STR_GREUH_NORMAL);
 		action = "setTerrainGrid 12.5; hint 'Terrain details set to Normal'";
 	};
 	class GREUH_ButtonWorldHigh : GREUH_ButtonWorld {
 		idc = 815;
 		x = (0.15 * safezoneW + safezoneX) + (((0.2 * safezoneW) / 4) * 3);
-		text = $STR_GREUH_HIGH;
+		text = QUOTE($STR_GREUH_HIGH);
 		action = "setTerrainGrid 3.125; hint 'Terrain details set to High'";
 	};
 	class GREUH_MarkersZone : GREUH_DefaultZone {
@@ -671,13 +671,13 @@ class GREUH_Menu {
 	class GREUH_LabelNametags : GREUH_RegularLabel {
 		idc = 961;
 		y = ((BASE_Y + 0.39) * safezoneH) + safezoneY;
-		text = $STR_GREUH_SHOW_PLAYER_NAMETAGS;
+		text = QUOTE($STR_GREUH_SHOW_PLAYER_NAMETAGS);
 	};
 	class GREUH_NametagsActive : GREUH_RegularLabel {
 		idc = 962;
 		style = ST_RIGHT;
 		colorText[] = COLOR_BRIGHTGREEN;
-		text = $STR_GREUH_ACTIVE;
+		text = QUOTE($STR_GREUH_ACTIVE);
 		x = 0.2 * safezoneW + safezoneX;
 		w = 0.1 * safezoneW;
 		y = ((BASE_Y + 0.39) * safezoneH) + safezoneY;
@@ -687,7 +687,7 @@ class GREUH_Menu {
 		w = ((0.08 * safezoneW) / 4);
 		y = ((BASE_Y + 0.39) * safezoneH) + safezoneY;
 		x = 0.305 * safezoneW + safezoneX;
-		text = $STR_GREUH_YES;
+		text = QUOTE($STR_GREUH_YES);
 		action = "show_nametags = true";
 	};
 	class GREUH_NametagsNo : GREUH_ButtonGeneric {
@@ -695,19 +695,19 @@ class GREUH_Menu {
 		w = ((0.08 * safezoneW) / 4);
 		y = ((BASE_Y + 0.39) * safezoneH) + safezoneY;
 		x = (0.32 + BORDERSIZE) * safezoneW + safezoneX;
-		text = $STR_GREUH_NO;
+		text = QUOTE($STR_GREUH_NO);
 		action = "show_nametags = false";
 	};
 	class GREUH_LabelMarkers : GREUH_RegularLabel {
 		idc = 911;
 		y = ((BASE_Y + 0.43) * safezoneH) + safezoneY;
-		text = $STR_GREUH_SHOW_TEAMMATES_ON_MAP;
+		text = QUOTE($STR_GREUH_SHOW_TEAMMATES_ON_MAP);
 	};
 	class GREUH_LabelMarkersActive : GREUH_RegularLabel {
 		idc = 912;
 		style = ST_RIGHT;
 		colorText[] = COLOR_BRIGHTGREEN;
-		text = $STR_GREUH_ACTIVE;
+		text = QUOTE($STR_GREUH_ACTIVE);
 		x = 0.2 * safezoneW + safezoneX;
 		w = 0.1 * safezoneW;
 		y = ((BASE_Y + 0.43) * safezoneH) + safezoneY;
@@ -717,7 +717,7 @@ class GREUH_Menu {
 		w = ((0.08 * safezoneW) / 4);
 		y = ((BASE_Y + 0.43) * safezoneH) + safezoneY;
 		x = 0.305 * safezoneW + safezoneX;
-		text = $STR_GREUH_YES;
+		text = QUOTE($STR_GREUH_YES);
 		action = "show_teammates = true";
 	};
 	class GREUH_TeammatesNo : GREUH_ButtonGeneric {
@@ -725,14 +725,14 @@ class GREUH_Menu {
 		w = ((0.08 * safezoneW) / 4);
 		y = ((BASE_Y + 0.43) * safezoneH) + safezoneY;
 		x = (0.32 + BORDERSIZE) * safezoneW + safezoneX;
-		text = $STR_GREUH_NO;
+		text = QUOTE($STR_GREUH_NO);
 		action = "show_teammates = false";
 	};
 
 	class GREUH_VehSound : GREUH_Label {
 		idc = 1101;
 		y = ((BASE_Y + 0.74) * safezoneH) + safezoneY;
-		text = $STR_GREUH_INVEHICLE_SOUND_VOLUME;
+		text = QUOTE($STR_GREUH_INVEHICLE_SOUND_VOLUME);
 	};
 	class GREUH_SliderVehSound {
 		idc = 1102;
@@ -742,7 +742,7 @@ class GREUH_Menu {
 		w = 0.16 * safezoneW;
 		y = ((BASE_Y + 0.785) * safezoneH) + safezoneY;
 		h = 0.025 * safezoneH;
-		text = $STR_GREUH_VIEW_DISTANCE;
+		text = QUOTE($STR_GREUH_VIEW_DISTANCE);
 		color[] = { 1, 1, 1, 1 };
 		coloractive[] = { 1, 1, 1, 1 };
 		onSliderPosChanged = "desired_vehvolume = (sliderPosition 1102)";
@@ -755,7 +755,7 @@ class GREUH_Menu {
 		y = ((BASE_Y + 0.775) * safezoneH) + safezoneY;
 		h = 0.03 * safezoneH;
 		colorBackground[] = COLOR_NOALPHA;
-		text = $STR_GREUH_TEST;
+		text = QUOTE($STR_GREUH_TEST);
 	};
 };
 
@@ -804,7 +804,7 @@ class GREUH_respawn {
 		y = 0.75 * safezoneH + safezoneY;
 		w = 0.1 * safezoneW;
 		h = 0.04 * safezoneH;
-		text = $STR_GREUH_RESPAWN;
+		text = QUOTE($STR_GREUH_RESPAWN);
 		action = "player setDamage 1";
 	};
 	class GREUH_ReplaceAI : GreuhButton {
@@ -813,7 +813,7 @@ class GREUH_respawn {
 		y = 0.8 * safezoneH + safezoneY;
 		w = 0.1 * safezoneW;
 		h = 0.04 * safezoneH;
-		text = $STR_GREUH_REPLACE_NEAREST_AI;
+		text = QUOTE($STR_GREUH_REPLACE_NEAREST_AI);
 		action = "replace_ai = 1";
 	};
 	class GREUH_Useless : GREUH_Respawn {
@@ -853,7 +853,7 @@ class GREUH_respawn {
 		y = 0.25 * safezoneH + safezoneY;
 		w = 0.4 * safezoneW;
 		h = 0.07 * safezoneH;
-		text = $STR_REVIVE_LABEL;
+		text = QUOTE($STR_REVIVE_LABEL);
 	};
 	class GREUH_BleedoutBar {
 		idc = 6699;
