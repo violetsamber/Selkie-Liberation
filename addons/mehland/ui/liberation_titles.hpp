@@ -18,7 +18,7 @@ class RscTitles {
         };
         class GenericLabel2 {
             idc = -1;
-            type =  QUOTE(CT_STATIC );
+            type =  QUOTE(CT_STATIC);
             style = ST_CENTER;
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
@@ -45,7 +45,7 @@ class RscTitles {
         };
         class Splash {
             idc = -1;
-            type =  QUOTE(CT_STATIC );
+            type =  QUOTE(CT_STATIC);
             style = ST_PICTURE;
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
@@ -59,7 +59,7 @@ class RscTitles {
         };
         class VersionLabel {
             idc = -1;
-            type =  QUOTE(CT_STATIC );
+            type =  QUOTE(CT_STATIC);
             style = ST_CENTER;
             shadow = 1;
             colorText[] = COLOR_WHITE;
@@ -81,13 +81,13 @@ class RscTitles {
         name = "fasttravel";
         duration = 4;
         idd = -1;
-        movingEnable = QUOTE( true);
+        movingEnable = QUOTE(true);
         controls[] = {
             QUOTE(OuterBackground),QUOTE(GenericLabel111)
         };
         class OuterBackground {
             idc = -1;
-            type =  QUOTE(CT_STATIC );
+            type =  QUOTE(CT_STATIC);
             style = ST_LEFT;
             colorText[] = COLOR_BLACK;
             colorBackground[] = COLOR_BLACK;
@@ -99,7 +99,7 @@ class RscTitles {
         };
         class GenericLabel111 {
             idc = -1;
-            type =  QUOTE(CT_STATIC );
+            type =  QUOTE(CT_STATIC);
             style = ST_CENTER;
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
@@ -114,7 +114,7 @@ class RscTitles {
         name = "KPLIB_overlay";
         duration = 999999;
         idd = 6666;
-        movingEnable = QUOTE( true);
+        movingEnable = QUOTE(true);
         onLoad = "uiNamespace setVariable ['KPLIB_overlay', _this select 0];";
         controls[] = {
             QUOTE(BGPicture),

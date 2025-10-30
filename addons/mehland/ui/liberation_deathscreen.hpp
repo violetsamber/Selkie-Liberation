@@ -18,7 +18,7 @@ class blackscreen {
   };
   class Skull {
         idc = 666;
-        type =  QUOTE(CT_STATIC );
+        type =  QUOTE(CT_STATIC);
         style = ST_PICTURE;
         colorText[] = { 1,1,1,0.15 };
         colorBackground[] = COLOR_NOALPHA;

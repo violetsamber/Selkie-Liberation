@@ -15,7 +15,7 @@
 #define CT_STRUCTURED_TEXT  13
 #define CT_CONTEXT_MENU     14
 #define CT_CONTROLS_GROUP   15
-#define CT_SHORTCUT_BUTTON  16 // Arma 2 - textured button
+#define CT_SHORTCUT_BUTTON  16// Arma 2 - textured button
 
 #define CT_XKEYDESC         40
 #define CT_XBUTTON          41
@@ -31,7 +31,7 @@
 #define CT_USER             99
 #define CT_MAP              100
 #define CT_MAP_MAIN         101
-#define CT_List_N_Box       102 // Arma 2 - N columns list box
+#define CT_List_N_Box       102// Arma 2 - N columns list box
 
 
 // Static styles
@@ -44,9 +44,6 @@
 #define ST_DOWN           0x04
 #define ST_UP             0x08
 #define ST_VCENTER        0x0c
-
-#define CT_MAP_MAIN 101
-#define ST_PICTURE 48
 
 #define ST_TYPE           0xF0
 #define ST_SINGLE         0

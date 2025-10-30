@@ -6,7 +6,7 @@ class liberation_menu {
 
     class Splash {
         idc = -1;
-        type =  QUOTE(CT_STATIC );
+        type =  QUOTE(CT_STATIC);
         style = ST_PICTURE;
         colorText[] = COLOR_WHITE;
         colorBackground[] = COLOR_NOALPHA;
