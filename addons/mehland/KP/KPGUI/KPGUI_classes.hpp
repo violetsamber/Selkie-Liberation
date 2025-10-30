@@ -941,9 +941,9 @@ class KPGUI_PRE_MapControl {
 
 // Title bar
 class KPGUI_PRE_DialogTitle: KPGUI_PRE_Title {
-    x = KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,1);
+    x = QUOTE(KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,1));
     y = safeZoneY + safeZoneH * KP_Y_VAL;
-    w = KP_GETWPLAIN(KP_WIDTH_VAL,1);
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL,1));
 };
 
 // Cross symbol
@@ -960,17 +960,17 @@ class KPGUI_PRE_DialogVersionIcon: KPGUI_PRE_VersionIcon {
 
 // Background
 class KPGUI_PRE_DialogBackground: KPGUI_PRE_Background {
-    x = KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,1);
+    x = QUOTE(KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,1));
     y = KP_GETY_AREA(KP_Y_VAL);
-    w = KP_GETWPLAIN(KP_WIDTH_VAL,1);
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL,1));
     h = safeZoneH * KP_HEIGHT_VAL;
 };
 
 // Button pos 1 in 4 button row
 class KPGUI_PRE_DialogButton: KPGUI_PRE_Button {
-    x = KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,4);
-    y = KP_GETY_BELOW(KP_Y_VAL,KP_HEIGHT_VAL);
-    w = KP_GETWPLAIN(KP_WIDTH_VAL,4);
+    x = QUOTE(KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,4));
+    y = QUOTE(KP_GETY_BELOW(KP_Y_VAL,KP_HEIGHT_VAL));
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL,4));
 };
 
 /*
@@ -979,9 +979,9 @@ class KPGUI_PRE_DialogButton: KPGUI_PRE_Button {
 
 // Title bar
 class KPGUI_PRE_DialogTitleL: KPGUI_PRE_Title {
-    x = KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,1);
+    x = QUOTE(KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,1));
     y = safeZoneY + safeZoneH * KP_Y_VAL_L;
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_L,1);
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_L,1));
 };
 
 // Cross symbol
@@ -998,17 +998,17 @@ class KPGUI_PRE_DialogVersionIconL: KPGUI_PRE_VersionIcon {
 
 // Background
 class KPGUI_PRE_DialogBackgroundL: KPGUI_PRE_Background {
-    x = KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,1);
+    x = QUOTE(KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,1));
     y = KP_GETY_AREA(KP_Y_VAL_L);
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_L,1);
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_L,1));
     h = safeZoneH * KP_HEIGHT_VAL_L;
 };
 
 // Button pos 1 in 4 button row
 class KPGUI_PRE_DialogButtonL: KPGUI_PRE_Button {
-    x = KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,4);
-    y = KP_GETY_BELOW(KP_Y_VAL_L,KP_HEIGHT_VAL_L);
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_L,4);
+    x = QUOTE(KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,4));
+    y = QUOTE(KP_GETY_BELOW(KP_Y_VAL_L,KP_HEIGHT_VAL_L));
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_L,4));
 };
 
 /*
@@ -1017,9 +1017,9 @@ class KPGUI_PRE_DialogButtonL: KPGUI_PRE_Button {
 
 // Title bar
 class KPGUI_PRE_DialogTitleC: KPGUI_PRE_Title {
-    x = KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1);
+    x = QUOTE(KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
     y = safeZoneY + safeZoneH * KP_Y_VAL_C;
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_C,1);
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_C,1));
 };
 
 // Cross symbol
@@ -1036,17 +1036,17 @@ class KPGUI_PRE_DialogVersionIconC: KPGUI_PRE_VersionIcon {
 
 // Background
 class KPGUI_PRE_DialogBackgroundC: KPGUI_PRE_Background {
-    x = KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1);
+    x = QUOTE(KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
     y = KP_GETY_AREA(KP_Y_VAL_C);
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_C,1);
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_C,1));
     h = safeZoneH * KP_HEIGHT_VAL_C;
 };
 
 // Button
 class KPGUI_PRE_DialogButtonC: KPGUI_PRE_Button {
-    x = KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1);
-    y = KP_GETY_BELOW(KP_Y_VAL_C,KP_HEIGHT_VAL_C);
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_C,1);
+    x = QUOTE(KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
+    y = QUOTE(KP_GETY_BELOW(KP_Y_VAL_C,KP_HEIGHT_VAL_C));
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_C,1));
 };
 
 /*
@@ -1055,9 +1055,9 @@ class KPGUI_PRE_DialogButtonC: KPGUI_PRE_Button {
 
 // Title bar
 class KPGUI_PRE_DialogTitle_LeftPanel: KPGUI_PRE_Title {
-    x = KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1);
+    x = QUOTE(KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1));
     y = safeZoneY + safeZoneH * KP_Y_VAL_LP;
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_LP,1);
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_LP,1));
 };
 
 // Cross symbol
@@ -1074,17 +1074,17 @@ class KPGUI_PRE_DialogVersionIcon_LeftPanel: KPGUI_PRE_VersionIcon {
 
 // Background
 class KPGUI_PRE_DialogBackground_LeftPanel: KPGUI_PRE_Background {
-    x = KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1);
+    x = QUOTE(KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1));
     y = KP_GETY_AREA(KP_Y_VAL_LP);
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_LP,1);
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_LP,1));
     h = safeZoneH * KP_HEIGHT_VAL_LP;
 };
 
 // Button
 class KPGUI_PRE_DialogButton_LeftPanel: KPGUI_PRE_Button {
-    x = KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1);
-    y = KP_GETY_BELOW(KP_Y_VAL_LP,KP_HEIGHT_VAL_LP);
-    w = KP_GETWPLAIN(KP_WIDTH_VAL_LP,1);
+    x = QUOTE(KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1));
+    y = QUOTE(KP_GETY_BELOW(KP_Y_VAL_LP,KP_HEIGHT_VAL_LP));
+    w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_LP,1));
 };
 
 /*
