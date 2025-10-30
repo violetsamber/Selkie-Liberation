@@ -7,7 +7,7 @@ class liberation_arsenal {
 
     objects[] = {};
 
-    class RecycleBG: BgPicture {
+    class RecycleBG: BGPicture {
         x = QUOTE((0.17 * safezoneW + safezoneX) - ( 2 * BORDERSIZE));
         y = QUOTE((0.1 * safezoneH + safezoneY) - (3 * BORDERSIZE));
         w = QUOTE((0.16 * safezoneW) + (4 * BORDERSIZE));

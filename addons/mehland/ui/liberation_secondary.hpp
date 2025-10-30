@@ -23,7 +23,7 @@ class liberation_secondary {
 
     objects[] = {};
 
-    class CamoBG: BgPicture {
+    class CamoBG: BGPicture {
         x = QUOTE((0.2 * safezoneW + safezoneX) - ( 2 * BORDERSIZE));
         y = QUOTE((0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE));
         w = QUOTE((0.6 * safezoneW) + (4 * BORDERSIZE));
@@ -58,7 +58,7 @@ class liberation_secondary {
         w = QUOTE((0.45 * safezoneW) - BORDERSIZE);
         h = QUOTE((0.5 * safezoneH) - BORDERSIZE);
     };
-    class MissionImage: BgPicture {
+    class MissionImage: BGPicture {
         idc = 106;
         x = QUOTE((0.2 * safezoneW + safezoneX));
         y = QUOTE((0.25 * safezoneH + safezoneY));

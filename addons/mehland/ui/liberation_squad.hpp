@@ -9,7 +9,7 @@ class liberation_squad {
 
     objects[] = {};
 
-    class RecycleBG: BgPicture {
+    class RecycleBG: BGPicture {
         x = QUOTE((0.2 * safezoneW + safezoneX) - (2 * BORDERSIZE));
         y = QUOTE((0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE));
         w = QUOTE((0.6 * safezoneW) + (4 * BORDERSIZE));
