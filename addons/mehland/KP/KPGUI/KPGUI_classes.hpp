@@ -67,10 +67,10 @@ class KPGUI_PRE_Title {
     tooltipColorText[] = {1, 1, 1, 1};
     tooltipColorBox[] = {1, 1, 1, 1};
     tooltipColorShade[] = {0, 0, 0, 0.65};
-    x = 0;
-    y = 0;
-    w = 0;
-    h = safeZoneH * KP_HEIGTH_TITLE;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(safeZoneH * KP_HEIGTH_TITLE);
     style = 0;
     shadow = 1;
     font = "RobotoCondensed";
@@ -100,10 +100,10 @@ class KPGUI_PRE_CloseCross {
     tooltipColorShade[] = {0, 0, 0, 0.65};
     tooltip = "QUOTE($STR_DISP_CLOSE)";
     idc = -1;
-    x = 0;
-    y = 0;
-    w = safeZoneW * 0.014;
-    h = safeZoneH * 0.025;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(safeZoneW * 0.014);
+    h = QUOTE(safeZoneH * 0.025);
     font = "RobotoCondensed";
     shadow = 2;
     sizeEx = KP_TEXT_M;
@@ -132,10 +132,10 @@ class KPGUI_PRE_Background {
     tooltipColorText[] = {1, 1, 1, 1};
     tooltipColorBox[] = {1, 1, 1, 1};
     tooltipColorShade[] = {0, 0, 0, 0.65};
-    x = 0;
-    y = 0;
-    w = 0;
-    h = 0;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(0);
     style = 0;
     shadow = 1;
     font = "RobotoCondensed";
@@ -157,10 +157,10 @@ class KPGUI_PRE_Text {
     tooltipColorText[] = {1, 1, 1, 1};
     tooltipColorBox[] = {1, 1, 1, 1};
     tooltipColorShade[] = {0, 0, 0, 0.65};
-    x = 0;
-    y = 0;
-    w = 0;
-    h = 0;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(0);
     style = 0;
     shadow = 1;
     font = "RobotoCondensed";
@@ -193,10 +193,10 @@ class KPGUI_PRE_ActiveText {
     tooltipColorBox[] = {1, 1, 1, 1};
     tooltipColorShade[] = {0, 0, 0, 0.65};
     idc = -1;
-    x = 0;
-    y = 0;
-    w = 0;
-    h = 0;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(0);
     font = "RobotoCondensed";
     shadow = 2;
     sizeEx = KP_TEXT_M;
@@ -245,10 +245,10 @@ class KPGUI_PRE_Button {
     soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1};
     idc = -1;
     style = 2;
-    x = 0;
-    y = 0;
-    w = 0;
-    h = safeZoneH * KP_HEIGTH_BUTTON;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(safeZoneH * KP_HEIGTH_BUTTON);
     shadow = 2;
     font = "RobotoCondensed";
     sizeEx = KP_TEXT_M;
@@ -286,10 +286,10 @@ class KPGUI_PRE_ControlsGroup {
     class Controls {};
     type = 15;
     idc = -1;
-    x = 0;
-    y = 0;
-    w = 0;
-    h = 0;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(0);
     shadow = 0;
     style = 16;
 };
@@ -339,10 +339,10 @@ class KPGUI_PRE_Combo {
     font = "RobotoCondensed";
     sizeEx = KP_TEXT_M;
     shadow = 0;
-    x = 0;
-    y = 0;
-    w = 0;
-    h = 0;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(0);
     arrowEmpty = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_ca.paa";
     arrowFull = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_active_ca.paa";
     wholeHeight = 0.45;
@@ -372,10 +372,10 @@ class KPGUI_PRE_CheckBox {
     deletable = 0;
     style = 2;
     checked = 0;
-    x = 0;
-    y = 0;
-    w = safeZoneW * 0.014;
-    h = safeZoneH * 0.025;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(safeZoneW * 0.014);
+    h = QUOTE(safeZoneH * 0.025);
     textureChecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
     textureUnchecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
     textureFocusedChecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
@@ -425,10 +425,10 @@ class KPGUI_PRE_ListBox {
         autoScrollEnabled = 1;
     };
     colorShadow[] = {0, 0, 0, 0.5};
-    x = 0;
-    y = 0;
-    w = 0;
-    h = 0;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(0);
     style = 16;
     font = "RobotoCondensed";
     sizeEx = KP_TEXT_M;
@@ -472,10 +472,10 @@ class KPGUI_PRE_ListNBox {
     font = "RobotoCondensed";
     sizeEx = KP_TEXT_M;
     period = 1.2;
-    x = 0;
-    y = 0;
-    w = 0;
-    h = 0;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0);
+    h = QUOTE(0);
 };
 
 // XListBox
@@ -484,8 +484,8 @@ class KPGUI_PRE_XListBox {
     fade = 0;
     idc = -1;
     type = 42;
-    x = 0.1;
-    y = 0.1;
+    x = QUOTE(0.1);
+    y = QUOTE(0.1);
     color[] = {1, 1, 1, 0.6};
     colorActive[] = {1, 1, 1, 1};
     colorDisabled[] = {1, 1, 1, 0.25};
@@ -507,8 +507,8 @@ class KPGUI_PRE_XListBox {
     arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
     arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
     border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
-    w = 0;
-    h = 0;
+    w = QUOTE(0);
+    h = QUOTE(0);
     font = "RobotoCondensed";
     sizeEx = KP_TEXT_M;
 };
@@ -527,10 +527,10 @@ class KPGUI_PRE_Slider {
     tooltipColorShade[] = {0, 0, 0, 0.65};
     style = 16 + 1024;
     shadow = 0;
-    x = 0;
-    y = 0;
-    h = 0;
-    w = 0;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    h = QUOTE(0);
+    w = QUOTE(0);
     arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
     arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
     border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
@@ -542,10 +542,10 @@ class KPGUI_PRE_EditBox {
     deletable = 0;
     fade = 0;
     type = 2;
-    x = 0;
-    y = 0;
-    w = 0.2;
-    h = 0.04;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0.2);
+    h = QUOTE(0.04);
     colorBackground[] = {0, 0, 0, 0.3};
     colorText[] = {0.95, 0.95, 0.95, 1};
     colorDisabled[] = {1, 1, 1, 0.25};
@@ -607,10 +607,10 @@ class KPGUI_PRE_MapControl {
     class Legend {
         colorBackground[] = {1, 1, 1, 0.5};
         color[] = {0, 0, 0, 1};
-        x = SafeZoneX + GUI_GRID_W;
-        y = SafeZoneY + safezoneH - 4.5 * GUI_GRID_H;
-        w = 10 * GUI_GRID_W;
-        h = 3.5 * GUI_GRID_H;
+        x = QUOTE(SafeZoneX + GUI_GRID_W);
+        y = QUOTE(SafeZoneY + safezoneH - 4.5 * GUI_GRID_H);
+        w = QUOTE(10 * GUI_GRID_W);
+        h = QUOTE(3.5 * GUI_GRID_H);
         font = "RobotoCondensed";
         sizeEx = GUI_TEXT_SIZE_SMALL;
     };
@@ -896,9 +896,9 @@ class KPGUI_PRE_MapControl {
     };
     moveOnEdges = 1;
     x = "SafeZoneXAbs";
-    y = SafeZoneY + 1.5 * GUI_GRID_H;
+    y = QUOTE(SafeZoneY + 1.5 * GUI_GRID_H);
     w = "SafeZoneWAbs";
-    h = SafeZoneH - 1.5 * GUI_GRID_H;
+    h = QUOTE(SafeZoneH - 1.5 * GUI_GRID_H);
     shadow = 0;
     ptsPerSquareSea = 5;
     ptsPerSquareTxt = 20;
@@ -942,19 +942,19 @@ class KPGUI_PRE_MapControl {
 // Title bar
 class KPGUI_PRE_DialogTitle: KPGUI_PRE_Title {
     x = QUOTE(KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,1));
-    y = safeZoneY + safeZoneH * KP_Y_VAL;
+    y = QUOTE(safeZoneY + safeZoneH * KP_Y_VAL);
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL,1));
 };
 
 // Cross symbol
 class KPGUI_PRE_DialogCross: KPGUI_PRE_CloseCross {
-    x = KP_GETX_CROSS(KP_X_VAL);
+    x = QUOTE(KP_GETX_CROSS(KP_X_VAL));
     y = QUOTE(KP_GETY_CROSS(KP_Y_VAL));
 };
 
 // Version info
 class KPGUI_PRE_DialogVersionIcon: KPGUI_PRE_VersionIcon {
-    x = safeZoneX + safeZoneW * (KP_X_VAL + KP_WIDTH_VAL - 0.04);
+    x = QUOTE(safeZoneX + safeZoneW * (KP_X_VAL + KP_WIDTH_VAL - 0.04));
     y = QUOTE(KP_GETY_CROSS(KP_Y_VAL));
 };
 
@@ -963,7 +963,7 @@ class KPGUI_PRE_DialogBackground: KPGUI_PRE_Background {
     x = QUOTE(KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,1));
     y = QUOTE(KP_GETY_AREA(KP_Y_VAL));
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL,1));
-    h = safeZoneH * KP_HEIGHT_VAL;
+    h = QUOTE(safeZoneH * KP_HEIGHT_VAL);
 };
 
 // Button pos 1 in 4 button row
@@ -980,19 +980,19 @@ class KPGUI_PRE_DialogButton: KPGUI_PRE_Button {
 // Title bar
 class KPGUI_PRE_DialogTitleL: KPGUI_PRE_Title {
     x = QUOTE(KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,1));
-    y = safeZoneY + safeZoneH * KP_Y_VAL_L;
+    y = QUOTE(safeZoneY + safeZoneH * KP_Y_VAL_L);
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_L,1));
 };
 
 // Cross symbol
 class KPGUI_PRE_DialogCrossL: KPGUI_PRE_CloseCross {
-    x = KP_GETX_CROSS(KP_X_VAL_L);
+    x = QUOTE(KP_GETX_CROSS(KP_X_VAL_L));
     y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_L));
 };
 
 // Version info
 class KPGUI_PRE_DialogVersionIconL: KPGUI_PRE_VersionIcon {
-    x = safeZoneX + safeZoneW * (KP_X_VAL_L + KP_WIDTH_VAL_L - 0.04);
+    x = QUOTE(safeZoneX + safeZoneW * (KP_X_VAL_L + KP_WIDTH_VAL_L - 0.04));
     y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_L));
 };
 
@@ -1001,7 +1001,7 @@ class KPGUI_PRE_DialogBackgroundL: KPGUI_PRE_Background {
     x = QUOTE(KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,1));
     y = QUOTE(KP_GETY_AREA(KP_Y_VAL_L));
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_L,1));
-    h = safeZoneH * KP_HEIGHT_VAL_L;
+    h = QUOTE(safeZoneH * KP_HEIGHT_VAL_L);
 };
 
 // Button pos 1 in 4 button row
@@ -1018,19 +1018,19 @@ class KPGUI_PRE_DialogButtonL: KPGUI_PRE_Button {
 // Title bar
 class KPGUI_PRE_DialogTitleC: KPGUI_PRE_Title {
     x = QUOTE(KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
-    y = safeZoneY + safeZoneH * KP_Y_VAL_C;
+    y = QUOTE(safeZoneY + safeZoneH * KP_Y_VAL_C);
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_C,1));
 };
 
 // Cross symbol
 class KPGUI_PRE_DialogCrossC: KPGUI_PRE_CloseCross {
-    x = safeZoneX + safeZoneW * (KP_X_VAL_C + KP_WIDTH_VAL_C - 0.02);
+    x = QUOTE(safeZoneX + safeZoneW * (KP_X_VAL_C + KP_WIDTH_VAL_C - 0.02));
     y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_C));
 };
 
 // Version info
 class KPGUI_PRE_DialogVersionIconC: KPGUI_PRE_VersionIcon {
-    x = safeZoneX + safeZoneW * (KP_X_VAL_C + KP_WIDTH_VAL_C - 0.04);
+    x = QUOTE(safeZoneX + safeZoneW * (KP_X_VAL_C + KP_WIDTH_VAL_C - 0.04));
     y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_C));
 };
 
@@ -1039,7 +1039,7 @@ class KPGUI_PRE_DialogBackgroundC: KPGUI_PRE_Background {
     x = QUOTE(KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
     y = QUOTE(KP_GETY_AREA(KP_Y_VAL_C));
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_C,1));
-    h = safeZoneH * KP_HEIGHT_VAL_C;
+    h = QUOTE(safeZoneH * KP_HEIGHT_VAL_C);
 };
 
 // Button
@@ -1056,19 +1056,19 @@ class KPGUI_PRE_DialogButtonC: KPGUI_PRE_Button {
 // Title bar
 class KPGUI_PRE_DialogTitle_LeftPanel: KPGUI_PRE_Title {
     x = QUOTE(KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1));
-    y = safeZoneY + safeZoneH * KP_Y_VAL_LP;
+    y = QUOTE(safeZoneY + safeZoneH * KP_Y_VAL_LP);
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_LP,1));
 };
 
 // Cross symbol
 class KPGUI_PRE_DialogCross_LeftPanel: KPGUI_PRE_CloseCross {
-    x = safeZoneX + safeZoneW * (KP_X_VAL_LP + KP_WIDTH_VAL_LP - 0.02);
+    x = QUOTE(safeZoneX + safeZoneW * (KP_X_VAL_LP + KP_WIDTH_VAL_LP - 0.02));
     y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_LP));
 };
 
 // Version info
 class KPGUI_PRE_DialogVersionIcon_LeftPanel: KPGUI_PRE_VersionIcon {
-    x = safeZoneX + safeZoneW * (KP_X_VAL_LP + KP_WIDTH_VAL_LP - 0.04);
+    x = QUOTE(safeZoneX + safeZoneW * (KP_X_VAL_LP + KP_WIDTH_VAL_LP - 0.04));
     y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_LP));
 };
 
@@ -1077,7 +1077,7 @@ class KPGUI_PRE_DialogBackground_LeftPanel: KPGUI_PRE_Background {
     x = QUOTE(KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1));
     y = QUOTE(KP_GETY_AREA(KP_Y_VAL_LP));
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_LP,1));
-    h = safeZoneH * KP_HEIGHT_VAL_LP;
+    h = QUOTE(safeZoneH * KP_HEIGHT_VAL_LP);
 };
 
 // Button

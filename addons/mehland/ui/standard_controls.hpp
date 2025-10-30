@@ -2,8 +2,8 @@ class kndr_MapControl {
     idc = 10023;
     type = CT_MAP_MAIN;
     style = ST_PICTURE;
-    x = 0.05; y = 0.05;
-    w = 0.90; h = 0.90;
+    x = QUOTE(0.05); y = QUOTE(0.05);
+    w = QUOTE(0.90); h = QUOTE(0.90);
     colorBackground[] = {0, 0, 0, 0};
     colorText[] = {0, 0, 0, 0};
     colorSea[] = {0.1, 0.3, 0.5, 0.25};
@@ -379,8 +379,8 @@ class StdButton {
     soundPush[] = {"\a3\Ui_f\data\Sound\CfgIngameUI\hintExpand", 0.891251, 1};
     soundClick[] = { "", 0, 1 };  // no sound
     soundEscape[] = { "", 0, 1 };  // no sound
-    x = 0.4 * safezoneW + safezoneX;
-    w = 0.2 * safezoneW; h = 0.03 * safezoneH;
+    x = QUOTE(0.4 * safezoneW + safezoneX);
+    w = QUOTE(0.2 * safezoneW); h = QUOTE(0.03 * safezoneH);
     text = "";
     action = "";
     shadow = 1;
@@ -466,10 +466,10 @@ class StdCombo {
     idc = -1;
     type = 4;
     style = 1;
-    x = 0;
-    y = 0;
-    w = 0.3;
-    h = 0.035;
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0.3);
+    h = QUOTE(0.035);
     colorSelect[] = COLOR_BRIGHTGREEN;
     colorText[] = COLOR_WHITE;
     colorBackground[] = COLOR_GREEN_NOALPHA;
@@ -510,10 +510,10 @@ class StdEdit {
     colorBackground[] = COLOR_GREEN_NOALPHA;
     colorBackgroundDisabled[] = COLOR_GREEN;
     colorBackgroundActive[] = COLOR_GREEN_NOALPHA;
-    x = 0;
-    y = 0;
-    w = 0.3;
-    h = (0.02 * safezoneH);
+    x = QUOTE(0);
+    y = QUOTE(0);
+    w = QUOTE(0.3);
+    h = QUOTE((0.02 * safezoneH));
     text = "";
     autocomplete = "";
     shadow = 0;
