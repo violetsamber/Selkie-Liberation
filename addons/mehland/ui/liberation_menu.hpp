@@ -20,7 +20,7 @@ class liberation_menu {
     };
     class Start {
         idc = 321;
-        type = CT_SHORTCUT_BUTTON;
+        type = QUOTE(CT_SHORTCUT_BUTTON);
         style = ST_CENTER;
         x = QUOTE((0.137 * safezoneW + safezoneX) - (BORDERSIZE));
         y = QUOTE((0.53 * safezoneH + safezoneY));

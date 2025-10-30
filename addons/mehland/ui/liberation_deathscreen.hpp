@@ -39,7 +39,8 @@ class blackscreen {
     font = FontM;
     sizeEx =  QUOTE(0.07 * safezoneH);
     shadow = 1;
-    x = QUOTE(0.3 * safezoneW + safezoneX); y= 0.25 * safezoneH + safezoneY;
+    x = QUOTE(0.3 * safezoneW + safezoneX); 
+    y = QUOTE(0.25 * safezoneH + safezoneY);
     w = QUOTE(0.4 * safezoneW); h = QUOTE(0.07 * safezoneH);
     text = QUOTE($STR_REVIVE_LABEL);
   };
