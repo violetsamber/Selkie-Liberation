@@ -166,7 +166,7 @@ while {true} do {
         if (_old_fullmap != fullmap) then {
             _old_fullmap = fullmap;
             if (fullmap % 2 == 1) then {
-                (DEPLOY_DISPLAY displayCtrl 251) ctrlSetPosition [ (_frame_pos select 0) + (_frame_pos select 2), (_frame_pos select 1), (0.6 * safezoneW), (_frame_pos select 3)];
+                (DEPLOY_DISPLAY displayCtrl 251) ctrlSetPosition [ (_frame_pos select 0) + (_frame_pos select 2), (_frame_pos select 1), (0.6 * safeZoneW), (_frame_pos select 3)];
             } else {
                 (DEPLOY_DISPLAY displayCtrl 251) ctrlSetPosition _standard_map_pos;
             };

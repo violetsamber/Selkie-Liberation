@@ -14,7 +14,7 @@ if (player isEqualTo ([] call KPLIB_fnc_getCommander) && !(serverCommandAvailabl
     [] call {
         if ((getPlayerUID player) in GRLIB_whitelisted_steamids) exitWith {_match = true;};
         if ((name player) in GRLIB_whitelisted_names) exitWith {_match = true;};
-        if (!((squadParams player) isEqualTo []) && {(((squadParams player) select 0) select 0) in GRLIB_whitelisted_tags}) exitWith {_match = true;};
+        if (((squadParams player) isNotEqualTo []) && {(((squadParams player) select 0) select 0) in GRLIB_whitelisted_tags}) exitWith {_match = true;};
     };
 
     if (!_match) then {

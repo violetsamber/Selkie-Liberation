@@ -11,7 +11,7 @@ while {GRLIB_endgame == 0} do {
 
     recalculate_sectors = false;
 
-    if (((count (allPlayers - entities "HeadlessClient_F")) > 0) && ((count KP_liberation_production) > 0)) then {
+    if ((allPlayers - entities "HeadlessClient_F" isNotEqualTo []) && ((count KP_liberation_production) > 0)) then {
         waitUntil {sleep 0.5; !sectors_recalculating};
         sectors_recalculating = true;
 
@@ -31,7 +31,7 @@ while {GRLIB_endgame == 0} do {
 
             private _storage = nearestObjects [(markerPos (_x select 1)), [KP_liberation_small_storage_building], 100];
             _storage = _storage select {(_x getVariable ["KP_liberation_storage_type",-1]) == 1};
-            if ((count _storage) > 0) then {
+            if (_storage isNotEqualTo []) then {
                 _storage = (_storage select 0);
                 _storageArray = [(getPosATL _storage),(getDir _storage),(vectorUpVisual _storage)];
 

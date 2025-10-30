@@ -40,10 +40,10 @@ while {(count (units _para_group)) < _maxCargo} do {
     [opfor_paratrooper, markerPos _spawnsector, _para_group] call KPLIB_fnc_createManagedUnit;
 };
 
-{removeBackpack _x; _x addBackPack "B_parachute"; _x moveInCargo _newvehicle;} forEach (units _para_group);
+{removeBackpack _x; _x addBackpack "B_parachute"; _x moveInCargo _newvehicle;} forEach (units _para_group);
 
-while {(count (waypoints _pilot_group)) != 0} do {deleteWaypoint ((waypoints _pilot_group) select 0);};
-while {(count (waypoints _para_group)) != 0} do {deleteWaypoint ((waypoints _para_group) select 0);};
+while {waypoints _pilot_group isNotEqualTo []} do {deleteWaypoint ((waypoints _pilot_group) select 0);};
+while {waypoints _para_group isNotEqualTo []} do {deleteWaypoint ((waypoints _para_group) select 0);};
 sleep 0.2;
 {_x doFollow leader _pilot_group} forEach units _pilot_group;
 {_x doFollow leader _para_group} forEach units _para_group;
@@ -97,15 +97,15 @@ _newvehicle flyInHeight 100;
 
 {
     unassignVehicle _x;
-    moveout _x;
+    moveOut _x;
     sleep 0.5;
 } forEach (units _para_group);
 
 _newvehicle flyInHeight 100;
 
 sleep 0.2;
-while {(count (waypoints _pilot_group)) != 0} do {deleteWaypoint ((waypoints _pilot_group) select 0);};
-while {(count (waypoints _para_group)) != 0} do {deleteWaypoint ((waypoints _para_group) select 0);};
+while {waypoints _pilot_group isNotEqualTo []} do {deleteWaypoint ((waypoints _pilot_group) select 0);};
+while {waypoints _para_group isNotEqualTo []} do {deleteWaypoint ((waypoints _para_group) select 0);};
 sleep 0.2;
 {_x doFollow leader _pilot_group} forEach units _pilot_group;
 {_x doFollow leader _para_group} forEach units _para_group;

@@ -27,7 +27,7 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
 
     {_x moveInCargo _transVeh} forEach (units _infGrp);
 
-    while {(count (waypoints _infGrp)) != 0} do {deleteWaypoint ((waypoints _infGrp) select 0);};
+    while {waypoints _infGrp isNotEqualTo []} do {deleteWaypoint ((waypoints _infGrp) select 0);};
 
     sleep 3;
 
@@ -53,7 +53,7 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
 
     sleep 5;
 
-    while {(count (waypoints _transGrp)) != 0} do {deleteWaypoint ((waypoints _transGrp) select 0);};
+    while {waypoints _transGrp isNotEqualTo []} do {deleteWaypoint ((waypoints _transGrp) select 0);};
 
     _transVehWp = _transGrp addWaypoint [_start_pos, 10];
     _transVehWp setWaypointType "MOVE";

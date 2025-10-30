@@ -30,7 +30,7 @@ if !(_sector in KPLIB_sectorIntelSpawned) then {
     KPLIB_sectorIntelSpawned pushBack _sector;
     private _buildings = (nearestObjects [markerPos _sector, KPLIB_intelBuildingClasses, _range]) select {alive _x};
 
-    if !(_buildings isEqualTo []) then {
+    if (_buildings isNotEqualTo []) then {
         private _positions = [];
         {_positions append _x;} forEach (_buildings apply {[_x] call BIS_fnc_buildingPositions});
 

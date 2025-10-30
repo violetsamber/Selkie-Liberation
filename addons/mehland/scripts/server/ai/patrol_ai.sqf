@@ -2,11 +2,11 @@ private _grp = _this select 0;
 private _waypoint = [];
 if ( isNil "reinforcements_sector_under_attack" ) then { reinforcements_sector_under_attack = "" };
 
-while { count (units _grp) > 0 } do {
+while { units _grp isNotEqualTo [] } do {
 
     if ( reinforcements_sector_under_attack != "" ) then {
 
-        while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
+        while {waypoints _grp isNotEqualTo []} do {deleteWaypoint ((waypoints _grp) select 0);};
         {_x doFollow leader _grp} forEach units _grp;
 
         _waypoint = _grp addWaypoint [markerPos reinforcements_sector_under_attack, 50];

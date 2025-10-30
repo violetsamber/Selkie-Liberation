@@ -56,7 +56,7 @@ _convoy_group setBehaviour "SAFE";
 _convoy_group setCombatMode "GREEN";
 _convoy_group setSpeedMode "LIMITED";
 
-while {(count (waypoints _convoy_group)) != 0} do {deleteWaypoint ((waypoints _convoy_group) select 0);};
+while {waypoints _convoy_group isNotEqualTo []} do {deleteWaypoint ((waypoints _convoy_group) select 0);};
 {_x doFollow leader _convoy_group} forEach units _convoy_group;
 
 _waypoint = _convoy_group addWaypoint [_convoy_destinations select 1, 0];
@@ -108,7 +108,7 @@ while { _mission_in_progress } do {
         _mission_in_progress = false;
     };
 
-    _convoy_marker setmarkerPos (getPos _transport_vehicle);
+    _convoy_marker setMarkerPos (getPos _transport_vehicle);
 
     if ( !_convoy_attacked ) then {
         {
@@ -124,17 +124,17 @@ while { _mission_in_progress } do {
             private _troop_driver_group = createGroup [GRLIB_side_enemy, true];
             [ driver _troop_vehicle ] joinSilent _troop_driver_group;
             sleep 1;
-            while {(count (waypoints _troop_driver_group)) != 0} do {deleteWaypoint ((waypoints _troop_driver_group) select 0);};
+            while {waypoints _troop_driver_group isNotEqualTo []} do {deleteWaypoint ((waypoints _troop_driver_group) select 0);};
             _waypoint = _troop_driver_group addWaypoint [getPos _troop_vehicle, 0];
             _waypoint setWaypointType "MOVE";
             sleep 3;
         };
 
         {
-            unAssignVehicle _x;
+            unassignVehicle _x;
             _x action ["eject", vehicle _x];
             _x action ["getout", vehicle _x];
-            unAssignVehicle _x;
+            unassignVehicle _x;
             sleep 0.7;
         } forEach (units _troops_group);
 

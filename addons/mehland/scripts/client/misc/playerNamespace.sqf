@@ -22,7 +22,7 @@ private _fobName = "";
 
 while {true} do {
     // FOB distance, name and position
-    if !(GRLIB_all_fobs isEqualTo []) then {
+    if (GRLIB_all_fobs isNotEqualTo []) then {
         _fobPos = [] call KPLIB_fnc_getNearestFob;
         _fobDist = player distance2D _fobPos;
         _fobName = ["", ["FOB", [_fobPos] call KPLIB_fnc_getFobName] joinString " "] select (_fobDist < GRLIB_fob_range);
@@ -44,12 +44,12 @@ while {true} do {
 
     // Is near an arsenal object
     if (KP_liberation_mobilearsenal) then {
-        player setVariable ["KPLIB_isNearArsenal", !(((player nearObjects [Arsenal_typeName, 5]) select {getObjectType _x >= 8}) isEqualTo [])];
+        player setVariable ["KPLIB_isNearArsenal", (((player nearObjects [Arsenal_typeName, 5]) select {getObjectType _x >= 8}) isNotEqualTo [])];
     };
 
     // Is near a mobile respawn
     if (KP_liberation_mobilerespawn) then {
-        player setVariable ["KPLIB_isNearMobRespawn", !((player nearEntities [[Respawn_truck_typeName, huron_typeName], 10]) isEqualTo [])];
+        player setVariable ["KPLIB_isNearMobRespawn", ((player nearEntities [[Respawn_truck_typeName, huron_typeName], 10]) isNotEqualTo [])];
     };
 
     // Is near startbase

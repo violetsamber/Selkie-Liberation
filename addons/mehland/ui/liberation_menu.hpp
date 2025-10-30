@@ -59,8 +59,8 @@ class liberation_menu {
         class ShortcutPos {
             Left = 0;
             Top = 0;
-            w = QUOTE(0);
-            h = QUOTE(0);
+            w = 0;
+            h = 0;
         };
         class TextPos {
             left = 0;

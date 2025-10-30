@@ -6,7 +6,7 @@ logiError = 0;
 
 private _storage_areas = (_nearfob nearObjects GRLIB_fob_range) select {(_x getVariable ["KP_liberation_storage_type",-1]) == 0};
 
-if ((count _storage_areas) == 0) exitWith {(localize "STR_LOGISTIC_CANTAFFORD") remoteExec ["hint",_clientID]; logiError = 1; _clientID publicVariableClient "logiError";};
+if (_storage_areas isEqualTo []) exitWith {(localize "STR_LOGISTIC_CANTAFFORD") remoteExec ["hint",_clientID]; logiError = 1; _clientID publicVariableClient "logiError";};
 
 private _price_s = 100;
 private _price_a = 0;

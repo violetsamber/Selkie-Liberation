@@ -12,8 +12,8 @@ if (KP_liberation_arsenalUsePreset) then {
     if (isNil "GRLIB_arsenal_backpacks") then {GRLIB_arsenal_backpacks = []};
     if (isNil "blacklisted_from_arsenal") then {blacklisted_from_arsenal = []};
 
-    if ((count GRLIB_arsenal_weapons) == 0) then {
-        if ((count blacklisted_from_arsenal) == 0) then {
+    if (GRLIB_arsenal_weapons isEqualTo []) then {
+        if (blacklisted_from_arsenal isEqualTo []) then {
             _weapons = _crawled select 0;
         } else {
             {if (!(_x in blacklisted_from_arsenal)) then {_weapons pushBack _x};} forEach (_crawled select 0);
@@ -43,8 +43,8 @@ if (KP_liberation_arsenalUsePreset) then {
         KP_liberation_allowed_items append _disposableLaunchers;
     };
 
-    if ((count GRLIB_arsenal_magazines) == 0) then {
-        if ((count blacklisted_from_arsenal) == 0) then {
+    if (GRLIB_arsenal_magazines isEqualTo []) then {
+        if (blacklisted_from_arsenal isEqualTo []) then {
             _magazines = _crawled select 1;
         } else {
             {if (!(_x in blacklisted_from_arsenal)) then {_magazines pushBack _x};} forEach (_crawled select 1);
@@ -56,8 +56,8 @@ if (KP_liberation_arsenalUsePreset) then {
         KP_liberation_allowed_items append GRLIB_arsenal_magazines;
     };
 
-    if ((count GRLIB_arsenal_items) == 0) then {
-        if ((count blacklisted_from_arsenal) == 0) then {
+    if (GRLIB_arsenal_items isEqualTo []) then {
+        if (blacklisted_from_arsenal isEqualTo []) then {
             _items = _crawled select 2;
         } else {
             {if (!(_x in blacklisted_from_arsenal)) then {_items pushBack _x};} forEach (_crawled select 2);
@@ -69,7 +69,7 @@ if (KP_liberation_arsenalUsePreset) then {
         KP_liberation_allowed_items append GRLIB_arsenal_items;
     };
 
-    if ((count GRLIB_arsenal_backpacks) == 0) then {
+    if (GRLIB_arsenal_backpacks isEqualTo []) then {
         if ((blacklisted_from_arsenal isEqualTo []) == 0) then {
             _backpacks = _crawled select 3;
         } else {

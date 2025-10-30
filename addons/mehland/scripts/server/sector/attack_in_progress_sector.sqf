@@ -12,7 +12,7 @@ if ( _sector in sectors_military ) then {
 };
 
 if ( GRLIB_blufor_defenders ) then {
-    _grp = creategroup [GRLIB_side_friendly, true];
+    _grp = createGroup [GRLIB_side_friendly, true];
     {
         [_x, markerPos _sector, _grp] call KPLIB_fnc_createManagedUnit;
     } forEach _squad_type;

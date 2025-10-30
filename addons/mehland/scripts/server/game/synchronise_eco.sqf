@@ -19,8 +19,8 @@ private _KP_liberation_logistics_old = [0];
 while {true} do {
 
     waitUntil {sleep 0.25;
-        !(_KP_liberation_production_old isEqualTo KP_liberation_production)
-        || !(_KP_liberation_logistics_old isEqualTo KP_liberation_logistics)
+        (_KP_liberation_production_old isNotEqualTo KP_liberation_production)
+        || (_KP_liberation_logistics_old isNotEqualTo KP_liberation_logistics)
     };
     {
         private _sector = _x;

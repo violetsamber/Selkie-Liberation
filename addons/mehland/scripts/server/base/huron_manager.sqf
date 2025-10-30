@@ -5,7 +5,7 @@ huron = objNull;
 
 // Detect possible huron from loaded save data
 private _savedHuron = vehicles select {(toLower (typeOf _x)) isEqualTo (toLower huron_typeName)};
-if !(_savedHuron isEqualTo []) then {
+if (_savedHuron isNotEqualTo []) then {
     huron = _savedHuron select 0;
 };
 

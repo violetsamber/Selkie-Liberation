@@ -73,7 +73,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 14;
-        importance = "1.5 * 14 * 0.05";
+        importance = "1.05";
         coefMin = 0.25;
         coefMax = 4.00;
     };
@@ -81,7 +81,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.55, 0.64, 0.43, 1.00};
         size = 14;
-        importance = "0.2 * 14 * 0.05";
+        importance = "0.14";
         coefMin = 0.25;
         coefMax = 4.00;
     };
@@ -89,7 +89,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.00, 1.00, 1.00};
         size = 10;
-        importance = "1 * 10 * 0.05";
+        importance = "0.5";
         coefMin = 0.25;
         coefMax = 4.00;
     };
@@ -105,7 +105,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 16;
-        importance = "0.7 * 16 * 0.05";
+        importance = "0.56";
         coefMin = 0.25;
         coefMax = 4.00;
     };
@@ -113,7 +113,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 16;
-        importance = "1 * 16 * 0.05";
+        importance = "0.8";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -121,7 +121,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 16;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -129,7 +129,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.55, 0.64, 0.43, 1};
         size = 16;
-        importance = 0.7 * 16 * 0.05;
+        importance = 0.56;
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -137,7 +137,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 16;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.25;
         coefMax = 4.00;
     };
@@ -145,7 +145,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {1.00, 0.35, 0.35, 1.00};
         size = 16;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.75;
         coefMax = 4.00;
     };
@@ -153,7 +153,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 12;
-        importance = "1 * 12 * 0.05";
+        importance = "0.6";
         coefMin = 0.25;
         coefMax = 4.00;
     };
@@ -161,7 +161,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.78, 0.00, 0.05, 1.00};
         size = 16;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.50;
         coefMax = 4;
     };
@@ -169,7 +169,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.78, 0.00, 0.05, 1.00};
         size = 20;
-        importance = "3 * 16 * 0.05";
+        importance = "2.4";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -177,7 +177,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 16;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.50;
         coefMax = 4.00;
     };
@@ -185,7 +185,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.55, 0.64, 0.43, 1};
         size = 12;
-        importance = 0.5 * 12 * 0.05;
+        importance = "0.3";
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -193,7 +193,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.78, 0, 0.05, 1};
         size = 16;
-        importance = 1.2 * 16 * 0.05;
+        importance = "0.96";
         coefMin = 1;
         coefMax = 4;
     };
@@ -201,7 +201,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 20;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -209,7 +209,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.55, 0.64, 0.43, 1.00};
         size = 12;
-        importance = "0.9 * 16 * 0.05";
+        importance = "0.72";
         coefMin = 0.25;
         coefMax = 4.00;
     };
@@ -217,7 +217,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.55, 0.64, 0.43, 1.00};
         size = 12;
-        importance = "0.6 * 12 * 0.05";
+        importance = "0.36";
         coefMin = 0.25;
         coefMax = 4.00;
     };
@@ -225,7 +225,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.55, 0.64, 0.43, 1};
         size = 16;
-        importance = 0.7 * 16 * 0.05;
+        importance = 0.56;
         coefMin = 0.25;
         coefMax = 4;
         iconCreated = "#(argb,8,8,3)color(1,1,1,1)";
@@ -240,14 +240,14 @@ class kndr_MapControl {
     class Tourism {
         icon = "";
         color[] = {0.78, 0.00, 0.05, 1.00};
-        size = 16; importance = "1 * 16 * 0.05";
+        size = 16; importance = "0.8";
         coefMin = 0.70;
         coefMax = 4.00;
     };
     class ShipWreck {
         icon = "";
         color[] = {0.78, 0.00, 0.05, 1.00};
-        size = 16; importance = "1 * 16 * 0.05";
+        size = 16; importance = "0.8";
         coefMin = 0.70;
         coefMax = 4.00;
     };
@@ -255,7 +255,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 20;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -263,7 +263,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 20;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -271,7 +271,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 20;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -279,7 +279,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0,0,0,0};
         size = 0;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0;
         coefMax = 0;
         lineWidthThin = 0;
@@ -293,7 +293,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 20;
-        importance = "2 * 16 * 0.05";
+        importance = "1.6";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -301,7 +301,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 16;
-        importance = "2.5 * 16 * 0.05";
+        importance = "2";
         coefMin = 0.50;
         coefMax = 4.00;
     };
@@ -309,7 +309,7 @@ class kndr_MapControl {
         icon = "";
         color[] = {0.00, 0.35, 0.70, 1.00};
         size = 32;
-        importance = "1.2 * 16 * 0.05";
+        importance = "0.96";
         coefMin = 0.90;
         coefMax = 4.00;
     };
@@ -466,8 +466,8 @@ class StdCombo {
     idc = -1;
     type = 4;
     style = 1;
-    x = QUOTE(0);
-    y = QUOTE(0);
+    x = 0;
+    y = 0;
     w = QUOTE(0.3);
     h = QUOTE(0.035);
     colorSelect[] = COLOR_BRIGHTGREEN;
@@ -510,8 +510,8 @@ class StdEdit {
     colorBackground[] = COLOR_GREEN_NOALPHA;
     colorBackgroundDisabled[] = COLOR_GREEN;
     colorBackgroundActive[] = COLOR_GREEN_NOALPHA;
-    x = QUOTE(0);
-    y = QUOTE(0);
+    x = 0;
+    y = 0;
     w = QUOTE(0.3);
     h = QUOTE((0.02 * safezoneH));
     text = "";

@@ -61,14 +61,14 @@ if (alive _unit) then {
         _unit setUnitPos "AUTO";
         _unit setCaptive false;
 
-        if ((!isNull objectParent _unit) && !(_unit isEqualTo (driver vehicle _unit))) then {
-            unAssignVehicle _unit;
+        if ((!isNull objectParent _unit) && (_unit isNotEqualTo (driver vehicle _unit))) then {
+            unassignVehicle _unit;
             _unit action ["eject", vehicle _unit];
             _unit action ["getout", vehicle _unit];
-            unAssignVehicle _unit;
+            unassignVehicle _unit;
         };
 
-        while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
+        while {waypoints _grp isNotEqualTo []} do {deleteWaypoint ((waypoints _grp) select 0);};
         {_x doFollow leader _grp} forEach units _grp;
 
         _possible_sectors = (sectors_allSectors - blufor_sectors);

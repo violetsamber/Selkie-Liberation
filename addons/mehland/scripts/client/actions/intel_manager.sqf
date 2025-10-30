@@ -1,6 +1,6 @@
 // TODO Remove this loop by adding the actions to the units/intel objects on spawn
 waitUntil {!isNil "GRLIB_permissions"};
-waitUntil {!(GRLIB_permissions isEqualTo []) || !GRLIB_permissions_param};
+waitUntil {(GRLIB_permissions isNotEqualTo []) || !GRLIB_permissions_param};
 
 private _near_people = [];
 private _near_intel = [];
@@ -12,7 +12,7 @@ while {true} do {
         _near_people = (getPosATL player) nearEntities [["Man"], 5];
         _near_intel = (getPosATL player) nearEntities [KPLIB_intelObjectClasses, 5];
         {
-            if ((captive _x) && !(_x in _actionned_captive_units) && !((side group _x) == GRLIB_side_friendly) && !(_x getVariable ["ACE_isUnconscious", false])) then {
+            if ((captive _x) && !(_x in _actionned_captive_units) && ((side group _x) != GRLIB_side_friendly) && !(_x getVariable ["ACE_isUnconscious", false])) then {
                 _x addAction ["<t color='#FFFF00'>" + localize "STR_SECONDARY_CAPTURE" + "</t>",{[_this select 0] join (group player);},"",-850,true,true,"","(vehicle player == player) && (side group _target != GRLIB_side_friendly) && (captive _target)"];
                 _actionned_captive_units pushBack _x;
             };

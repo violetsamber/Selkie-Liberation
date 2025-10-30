@@ -70,7 +70,7 @@ while { GRLIB_endgame == 0 } do {
 
         };
 
-        while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
+        while {waypoints _grp isNotEqualTo []} do {deleteWaypoint ((waypoints _grp) select 0);};
         {_x doFollow leader _grp} forEach units _grp;
 
         {
@@ -102,7 +102,7 @@ while { GRLIB_endgame == 0 } do {
             ((({alive _x} count (units _grp)) == 0) || (count ([getPos leader _grp, 4000] call KPLIB_fnc_getNearbyPlayers) == 0))
         };
 
-        if ( count (units _grp) > 0 ) then {
+        if ( units _grp isNotEqualTo [] ) then {
             if (count ([getPos leader _grp, 4000] call KPLIB_fnc_getNearbyPlayers) == 0) then {
 
                 if ( !(isNull _civveh) ) then {
@@ -116,5 +116,5 @@ while { GRLIB_endgame == 0 } do {
         };
     };
 
-    sleep 150 + (random (150));
+    sleep (150 + random (150));
 };
