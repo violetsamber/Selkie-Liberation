@@ -64,7 +64,7 @@ class liberation_build {
         colorText[] = {0, 0, 0, 1};
         colorBackground[] = {0, 0, 0, 1};
         font = FontM;
-        sizeEx = 0.023;
+        sizeEx =  QUOTE(0.023);
         y = QUOTE((0.2525 * safezoneH + safezoneY));
         w = QUOTE((0.02 * safezoneW));
         h = QUOTE((0.035 * safezoneH));
@@ -185,7 +185,7 @@ class liberation_build {
         colorText[] = {1, 1, 1, 1};
         colorBackground[] = {0, 0, 0, 1};
         font = FontM;
-        sizeEx = 0.023;
+        sizeEx =  QUOTE(0.023);
         y = QUOTE((0.32 * safezoneH + safezoneY));
         w = QUOTE((0.015 * safezoneW));
         h = QUOTE((0.025 * safezoneH));
@@ -281,7 +281,7 @@ class liberation_build {
         y = QUOTE((0.3 * safezoneH + safezoneY));
         w = QUOTE((0.2 * safezoneW));
         h = QUOTE((0.05 * safezoneH));
-        sizeEx = 0.03 * safezoneH;
+        sizeEx =  QUOTE(0.03 * safezoneH);
     };
 
     class BuildButton: StdButton {
@@ -290,7 +290,7 @@ class liberation_build {
         y = QUOTE((0.75 * safezoneH + safezoneY));
         w = QUOTE((0.1 * safezoneW));
         h = QUOTE((0.045 * safezoneH));
-        sizeEx = 0.03 * safezoneH;
+        sizeEx =  QUOTE(0.03 * safezoneH);
         text = QUOTE($STR_BUILD_BUTTON);
         action = "dobuild = 1;";
     };
@@ -300,7 +300,7 @@ class liberation_build {
         y = QUOTE((0.7 * safezoneH + safezoneY));
         w = QUOTE((0.1 * safezoneW));
         h = QUOTE((0.045 * safezoneH));
-        sizeEx = 0.02 * safezoneH;
+        sizeEx =  QUOTE(0.02 * safezoneH);
         text = QUOTE($STR_BUILD_CREW);
         action = "dobuild = 1; manned = true;";
     };
@@ -315,7 +315,7 @@ class liberation_build {
         h = QUOTE(0.05 * safezoneH);
         text= "";
         size = 0.02 * safezoneH;
-        sizeEx = 0.02 * safezoneH;
+        sizeEx =  QUOTE(0.02 * safezoneH);
         shadow = 2;
         font = FontM;
         color = "#e0e000";

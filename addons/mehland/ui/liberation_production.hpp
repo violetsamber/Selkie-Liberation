@@ -259,7 +259,7 @@ class liberation_production {
         type = CT_TOOLBOX;
         style = ST_CENTER;
         font = FontM;
-        sizeEx = 0.02 * safezoneH;
+        sizeEx =  QUOTE(0.02 * safezoneH);
         color[] = {0, 0, 0, 1};
         colorText[] = COLOR_WHITE;
         colorTextSelect[] = {0, 0.9, 0, 1};
@@ -279,7 +279,7 @@ class liberation_production {
     };
     class ButtonSaveSector: StdButton {
          idc = 758015;
-        sizeEx = 0.026 * safezoneH;
+        sizeEx =  QUOTE(0.026 * safezoneH);
         x = QUOTE((0.338 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.7128 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.153 * safezoneW) + BORDERSIZE);

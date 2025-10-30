@@ -76,7 +76,7 @@ class liberation_tutorial {
         y = QUOTE((0.75 * safezoneH + safezoneY));
         w = QUOTE((0.15 * safezoneW));
         h = QUOTE((0.05 * safezoneH));
-        sizeEx = 0.05 * safezoneH;
+        sizeEx =  QUOTE(0.05 * safezoneH);
         text = QUOTE($STR_TUTO_GOTIT);
         action = "howtoplay = 0";
     };
@@ -121,7 +121,7 @@ class liberation_tutorial {
                 h = QUOTE(0.5 * safezoneH);
                 text= "AAA";
                 size = 0.02 * safezoneH;
-                sizeEx = 0.02 * safezoneH;
+                sizeEx =  QUOTE(0.02 * safezoneH);
                 shadow = 2;
                 font = FontM;
                 color = "#e0e0e0";

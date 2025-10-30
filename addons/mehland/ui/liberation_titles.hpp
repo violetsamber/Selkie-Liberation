@@ -23,7 +23,7 @@ class RscTitles {
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
-            sizeEx = 0.035 * safezoneH;
+            sizeEx =  QUOTE(0.035 * safezoneH);
             x = QUOTE(0.3 * safezoneW + safezoneX);
             w = QUOTE(0.4 * safezoneW);
             y = QUOTE(0.65 * safezoneH + safezoneY);
@@ -50,7 +50,7 @@ class RscTitles {
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
-            sizeEx = 0.1 * safezoneH;
+            sizeEx =  QUOTE(0.1 * safezoneH);
             x = QUOTE(0.325 * safezoneW + safezoneX);
             w = QUOTE(0.35 * safezoneW);
             y = QUOTE(0.2 * safezoneH + safezoneY);
@@ -65,7 +65,7 @@ class RscTitles {
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
-            sizeEx = 0.035 * safezoneH;
+            sizeEx =  QUOTE(0.035 * safezoneH);
             x = QUOTE(0.45 * safezoneW + safezoneX);
             w = QUOTE(0.3 * safezoneW);
             y = QUOTE(0.65 * safezoneH + safezoneY);
@@ -92,7 +92,7 @@ class RscTitles {
             colorText[] = COLOR_BLACK;
             colorBackground[] = COLOR_BLACK;
             font = FontM;
-            sizeEx = 0.023;
+            sizeEx =  QUOTE(0.023);
             x = QUOTE(-3); y = QUOTE(-3);
             w = QUOTE(9);  h = QUOTE(9);
             text = "";
@@ -104,7 +104,7 @@ class RscTitles {
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
-            sizeEx = 0.03;
+            sizeEx =  QUOTE(0.03);
             x = QUOTE(0); y = QUOTE(0.75);
             w = QUOTE(1.0);  h = QUOTE(0.1);
             text = QUOTE($STR_DEPLOY_IN_PROGRESS);
@@ -140,7 +140,7 @@ class RscTitles {
             colorText[] = {0.8,0.8,0.8,0.9};
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
-            sizeEx = 0.5;
+            sizeEx =  QUOTE(0.5);
             x = QUOTE(0.95 * safezoneW + safezoneX);
             w = QUOTE(0.075 * safezoneW);
             y = QUOTE(0.395 * safezoneH + safezoneY);
@@ -160,7 +160,7 @@ class RscTitles {
             style = ST_RIGHT;
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
-            sizeEx = 0.022 * safezoneH;
+            sizeEx =  QUOTE(0.022 * safezoneH);
             x = QUOTE(0.905 * safezoneW + safezoneX);
             w = QUOTE(0.08 * safezoneW);
             y = QUOTE(0.5225 * safezoneH + safezoneY);
@@ -173,7 +173,7 @@ class RscTitles {
             type = CT_STATIC;
             style = ST_CENTER;
             colorText[] = {1,1,0,1};
-            sizeEx = 0.03 * safezoneH;
+            sizeEx =  QUOTE(0.03 * safezoneH);
             x = QUOTE(0 * safezoneW + safezoneX);
             w = QUOTE(1 * safezoneW);
             y = QUOTE(0.2 * safezoneH + safezoneY);
@@ -191,7 +191,7 @@ class RscTitles {
             colorText[] = {0.9,0.9,0.9,1};
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
-            sizeEx = 0.5;
+            sizeEx =  QUOTE(0.5);
             x = QUOTE(0.985 * safezoneW + safezoneX);
             w = QUOTE(0.012 * safezoneW);
             h = QUOTE(0.0213333333 * safezoneH);
@@ -371,7 +371,7 @@ class RscTitles {
             idc = -1;
             type =  CT_STATIC;
             font = FontM;
-            sizeEx = 0.023;
+            sizeEx =  QUOTE(0.023);
             text = "";
         };
         class CaptureFrame: CaptureFrameStandard {
@@ -408,7 +408,7 @@ class RscTitles {
             idc = 205;
             text = "";
             style = ST_RIGHT;
-            sizeEx = 0.024 * safezoneH;
+            sizeEx =  QUOTE(0.024 * safezoneH);
             x = QUOTE(0.8 * safezoneW + safezoneX);
             w = QUOTE(0.2 * safezoneW);
             y = QUOTE(0.33 * safezoneH + safezoneY);
@@ -426,7 +426,7 @@ class RscTitles {
             h = QUOTE(0.2 * safezoneH);
             text= "";
             size = 0.02 * safezoneH;
-            sizeEx = 0.02 * safezoneH;
+            sizeEx =  QUOTE(0.02 * safezoneH);
             shadow = 2;
             font = FontM;
             color = "#e0e000";
@@ -451,7 +451,7 @@ class RscTitles {
             idc = 402;
             text = "";
             style = ST_CENTER;
-            sizeEx = 0.022 * safezoneH;
+            sizeEx =  QUOTE(0.022 * safezoneH);
             x = QUOTE(0.9 * safezoneW + safezoneX);
             w = QUOTE(0.1 * safezoneW);
             y = QUOTE(0.2675 * safezoneH + safezoneY);
@@ -462,7 +462,7 @@ class RscTitles {
             idc = 403;
             text = "";
             style = ST_CENTER;
-            sizeEx = 0.026 * safezoneH;
+            sizeEx =  QUOTE(0.026 * safezoneH);
             x = QUOTE(0.9 * safezoneW + safezoneX);
             w = QUOTE(0.1 * safezoneW);
             y = QUOTE(0.29 * safezoneH + safezoneY);

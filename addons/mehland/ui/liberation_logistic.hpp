@@ -84,7 +84,7 @@ class liberation_logistic {
     };
     class ButtonCreateLogisticGroup: StdButton {
          idc = 75803;
-        sizeEx = 0.026 * safezoneH;
+        sizeEx =  QUOTE(0.026 * safezoneH);
         x = QUOTE((0.2 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.7128 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.055 * safezoneW) + BORDERSIZE);
@@ -94,7 +94,7 @@ class liberation_logistic {
     };
     class ButtonDeleteLogisticGroup: StdButton {
          idc = 75804;
-        sizeEx = 0.026 * safezoneH;
+        sizeEx =  QUOTE(0.026 * safezoneH);
         x = QUOTE((0.265 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.7128 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.055 * safezoneW) + BORDERSIZE);
@@ -259,7 +259,7 @@ class liberation_logistic {
     };
     class ACombo: StdCombo {
         idc = 758024;
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
         x = QUOTE((0.338 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.57 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.153 * safezoneW) + BORDERSIZE);
@@ -307,7 +307,7 @@ class liberation_logistic {
     };
     class BCombo: StdCombo {
         idc = 758029;
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
         x = QUOTE((0.338 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.66 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.153 * safezoneW) + BORDERSIZE);
@@ -346,7 +346,7 @@ class liberation_logistic {
     class ALabel: StdText {
         idc = 758033;
         style = ST_CENTER;
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
         x = QUOTE((0.338 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.57 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.153 * safezoneW) + BORDERSIZE);
@@ -356,7 +356,7 @@ class liberation_logistic {
     class BLabel: StdText {
         idc = 758034;
         style = ST_CENTER;
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
         x = QUOTE((0.338 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.66 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.153 * safezoneW) + BORDERSIZE);
@@ -365,7 +365,7 @@ class liberation_logistic {
     };
     class ButtonSaveLogistic: StdButton {
          idc = 758080;
-        sizeEx = 0.02 * safezoneH;
+        sizeEx =  QUOTE(0.02 * safezoneH);
         x = QUOTE((0.338 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.7128 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.153 * safezoneW) + BORDERSIZE);
@@ -375,7 +375,7 @@ class liberation_logistic {
     };
     class ButtonAbortLogistic: StdButton {
          idc = 758081;
-        sizeEx = 0.02 * safezoneH;
+        sizeEx =  QUOTE(0.02 * safezoneH);
         x = QUOTE((0.338 * safezoneW + safezoneX) - (0.5 * BORDERSIZE));
         y = QUOTE((0.7368 * safezoneH + safezoneY) - (0.75 * BORDERSIZE));
         w = QUOTE((0.153 * safezoneW) + BORDERSIZE);

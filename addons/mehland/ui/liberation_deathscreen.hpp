@@ -11,7 +11,7 @@ class blackscreen {
     colorText[] = COLOR_BLACK;
     colorBackground[] = COLOR_BLACK;
     font = FontM;
-    sizeEx = 0.023;
+    sizeEx =  QUOTE(0.023);
     x = QUOTE(-3); y = QUOTE(-3);
     w = QUOTE(9);  h = QUOTE(9);
     text = "";
@@ -23,7 +23,7 @@ class blackscreen {
         colorText[] = { 1,1,1,0.15 };
         colorBackground[] = COLOR_NOALPHA;
         font = FontM;
-        sizeEx = 0.1 * safezoneH;
+        sizeEx =  QUOTE(0.1 * safezoneH);
         x = QUOTE(0.3 * safezoneW + safezoneX);
         w = QUOTE(0.4 * safezoneW);
         y = QUOTE(0.2 * safezoneH + safezoneY);
@@ -37,7 +37,7 @@ class blackscreen {
     colorText[] = COLOR_WHITE;
     colorBackground[] = COLOR_NOALPHA;
     font = FontM;
-    sizeEx = 0.07 * safezoneH;
+    sizeEx =  QUOTE(0.07 * safezoneH);
     shadow = 1;
     x = QUOTE(0.3 * safezoneW + safezoneX); y= 0.25 * safezoneH + safezoneY;
     w = QUOTE(0.4 * safezoneW); h = QUOTE(0.07 * safezoneH);

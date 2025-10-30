@@ -99,7 +99,7 @@ class liberation_secondary {
         h = QUOTE((0.04 * safezoneH));
         y = QUOTE((0.755 * safezoneH + safezoneY));
         colorText[] = {0, 0.7, 1.0, 1.0};
-        sizeEx = 0.03 * safezoneH;
+        sizeEx =  QUOTE(0.03 * safezoneH);
         style = ST_CENTER;
     };
     class MissionBriefing {
@@ -143,7 +143,7 @@ class liberation_secondary {
                 h = QUOTE((0.5 * safezoneH) - BORDERSIZE );
                 text= "AAA";
                 size = 0.02 * safezoneH;
-                sizeEx = 0.02 * safezoneH;
+                sizeEx =  QUOTE(0.02 * safezoneH);
                 shadow = 2;
                 font = FontM;
                 color = "#e0e0e0";
@@ -158,7 +158,7 @@ class liberation_secondary {
         y = QUOTE((0.75 * safezoneH + safezoneY));
         w = QUOTE((0.1 * safezoneW));
         h = QUOTE((0.05 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_SECONDARY_OBJECTIVES_START);
         action = "dostartsecondary = 1;";
     };
@@ -168,7 +168,7 @@ class liberation_secondary {
         y = QUOTE((0.75 * safezoneH + safezoneY));
         w = QUOTE((0.1 * safezoneW));
         h = QUOTE((0.05 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0;";
     };

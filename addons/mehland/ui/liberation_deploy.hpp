@@ -54,7 +54,7 @@ class liberation_deploy {
         w = QUOTE((0.15 * safezoneW));
         h = QUOTE((0.03 * safezoneH));
         y = QUOTE(0.23 * safezoneH + safezoneY);
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
         text = QUOTE($STR_SPAWN_POINT);
     };
     class DeployList: StdListBox {
@@ -71,7 +71,7 @@ class liberation_deploy {
         w = QUOTE((0.15 * safezoneW));
         h = QUOTE((0.03 * safezoneH));
         y = QUOTE(0.16 * safezoneH + safezoneY);
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
         text = QUOTE($STR_LOADOUT);
     };
     class LoadoutsCombo: StdCombo {
@@ -80,7 +80,7 @@ class liberation_deploy {
         w = QUOTE(0.15 * safezoneW);
         y = QUOTE(0.19 * safezoneH + safezoneY);
         h = QUOTE(0.03 * safezoneH);
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
       };
     class DeployButton: StdButton {
         idc = 202;
@@ -88,7 +88,7 @@ class liberation_deploy {
         y = QUOTE((0.82 * safezoneH + safezoneY));
         w = QUOTE((0.15 * safezoneW));
         h = QUOTE((0.05 * safezoneH));
-        sizeEx = 0.05 * safezoneH;
+        sizeEx =  QUOTE(0.05 * safezoneH);
         text = QUOTE($STR_DEPLOY_BUTTON);
         action = "deploy = 1";
     };
@@ -98,7 +98,7 @@ class liberation_deploy {
         y = QUOTE((0.56 * safezoneH + safezoneY));
         w = QUOTE((0.015 * safezoneW));
         h = QUOTE((0.025 * safezoneH));
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
         text = "<>";
         action = "fullmap = fullmap + 1;";
     };

@@ -59,7 +59,7 @@ class liberation_recycle {
         colorText[] = {1, 1, 1, 1};
         colorBackground[] = {0, 0, 0, 1};
         font = FontM;
-        sizeEx = 0.023;
+        sizeEx =  QUOTE(0.023);
         y = QUOTE((0.5 * safezoneH + safezoneY));
         w = QUOTE((0.015 * safezoneW));
         h = QUOTE((0.025 * safezoneH));
@@ -114,7 +114,7 @@ class liberation_recycle {
         y = QUOTE((0.5 * safezoneH + safezoneY) - (0.5 * BORDERSIZE));
         w = QUOTE((0.1 * safezoneW));
         h = QUOTE((0.03 * safezoneH));
-        sizeEx = 0.03 * safezoneH;
+        sizeEx =  QUOTE(0.03 * safezoneH);
     };
     class LabelManpower: LabelNumber {
         idc = 131;
@@ -137,7 +137,7 @@ class liberation_recycle {
         y = QUOTE((0.55 * safezoneH + safezoneY));
         w = QUOTE((0.1 * safezoneW) - (BORDERSIZE));
         h = QUOTE((0.045 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_RECYCLING_PROCEED);
         action = "dorecycle = 1;";
     };
@@ -147,7 +147,7 @@ class liberation_recycle {
         y = QUOTE((0.55 * safezoneH + safezoneY));
         w = QUOTE((0.1 * safezoneW));
         h = QUOTE((0.045 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0";
     };

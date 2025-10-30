@@ -74,7 +74,7 @@ class KPGUI_PRE_Title {
     style = 0;
     shadow = 1;
     font = "RobotoCondensed";
-    sizeEx = KP_TEXT_XL;
+    sizeEx =  QUOTE(KP_TEXT_XL);
     linespacing = 1;
 };
 
@@ -106,7 +106,7 @@ class KPGUI_PRE_CloseCross {
     h = QUOTE(safeZoneH * 0.025);
     font = "RobotoCondensed";
     shadow = 2;
-    sizeEx = KP_TEXT_M;
+    sizeEx =  QUOTE(KP_TEXT_M);
     url = "";
     action = "closeDialog 0";
 };
@@ -139,7 +139,7 @@ class KPGUI_PRE_Background {
     style = 0;
     shadow = 1;
     font = "RobotoCondensed";
-    SizeEx = KP_TEXT_M;
+    SizeEx =  QUOTE(KP_TEXT_M);
     linespacing = 1;
 };
 
@@ -164,7 +164,7 @@ class KPGUI_PRE_Text {
     style = 0;
     shadow = 1;
     font = "RobotoCondensed";
-    SizeEx = KP_TEXT_M;
+    SizeEx =  QUOTE(KP_TEXT_M);
     linespacing = 1;
 };
 
@@ -199,7 +199,7 @@ class KPGUI_PRE_ActiveText {
     h = QUOTE(0);
     font = "RobotoCondensed";
     shadow = 2;
-    sizeEx = KP_TEXT_M;
+    sizeEx =  QUOTE(KP_TEXT_M);
     url = "";
 };
 
@@ -251,7 +251,7 @@ class KPGUI_PRE_Button {
     h = QUOTE(safeZoneH * KP_HEIGTH_BUTTON);
     shadow = 2;
     font = "RobotoCondensed";
-    sizeEx = KP_TEXT_M;
+    sizeEx =  QUOTE(KP_TEXT_M);
     url = "";
     offsetX = 0;
     offsetY = 0;
@@ -337,7 +337,7 @@ class KPGUI_PRE_Combo {
     colorActive[] = {1, 0, 0, 1};
     style = 16 + 512;
     font = "RobotoCondensed";
-    sizeEx = KP_TEXT_M;
+    sizeEx =  QUOTE(KP_TEXT_M);
     shadow = 0;
     x = QUOTE(0);
     y = QUOTE(0);
@@ -431,7 +431,7 @@ class KPGUI_PRE_ListBox {
     h = QUOTE(0);
     style = 16;
     font = "RobotoCondensed";
-    sizeEx = KP_TEXT_M;
+    sizeEx =  QUOTE(KP_TEXT_M);
     shadow = 0;
     period = 1.2;
     maxHistoryDelay = 1;
@@ -470,7 +470,7 @@ class KPGUI_PRE_ListNBox {
     style = 16;
     shadow = 0;
     font = "RobotoCondensed";
-    sizeEx = KP_TEXT_M;
+    sizeEx =  QUOTE(KP_TEXT_M);
     period = 1.2;
     x = QUOTE(0);
     y = QUOTE(0);
@@ -510,7 +510,7 @@ class KPGUI_PRE_XListBox {
     w = QUOTE(0);
     h = QUOTE(0);
     font = "RobotoCondensed";
-    sizeEx = KP_TEXT_M;
+    sizeEx =  QUOTE(KP_TEXT_M);
 };
 
 // Slider
@@ -564,7 +564,7 @@ class KPGUI_PRE_EditBox {
     style = 64;
     font = "RobotoCondensed";
     shadow = 2;
-    sizeEx = KP_TEXT_M;
+    sizeEx =  QUOTE(KP_TEXT_M);
     canModify = 1;
 };
 
@@ -579,7 +579,7 @@ class KPGUI_PRE_MapControl {
     colorOutside[] = {0, 0, 0, 1};
     colorText[] = {0, 0, 0, 1};
     font = "TahomaB";
-    sizeEx = 0.04;
+    sizeEx =  QUOTE(0.04);
     colorSea[] = {0.467, 0.631, 0.851, 0.5};
     colorForest[] = {0.624, 0.78, 0.388, 0.5};
     colorRocks[] = {0, 0, 0, 0.3};
@@ -612,7 +612,7 @@ class KPGUI_PRE_MapControl {
         w = QUOTE(10 * GUI_GRID_W);
         h = QUOTE(3.5 * GUI_GRID_H);
         font = "RobotoCondensed";
-        sizeEx = GUI_TEXT_SIZE_SMALL;
+        sizeEx =  QUOTE(GUI_TEXT_SIZE_SMALL);
     };
     class ActiveMarker {
         color[] = {0.3, 0.1, 0.9, 1};

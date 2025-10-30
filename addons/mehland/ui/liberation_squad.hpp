@@ -72,7 +72,7 @@ class liberation_squad {
         y = QUOTE((0.6 * safezoneH + safezoneY));
         w = QUOTE((0.12 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_RESUPPLY);
         tooltip = QUOTE($STR_RESUPPLY_TOOLTIP);
         action = "GRLIB_squadaction = 1";
@@ -83,7 +83,7 @@ class liberation_squad {
         y = QUOTE((0.65 * safezoneH + safezoneY));
         w = QUOTE((0.12 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_REMOVE_MEMBER);
         tooltip = QUOTE($STR_REMOVE_MEMBER_TOOLTIP);
         action = "GRLIB_squadaction = 2";
@@ -94,7 +94,7 @@ class liberation_squad {
         y = QUOTE((0.7 * safezoneH + safezoneY) );
         w = QUOTE((0.12 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_DEPLOY_ON_MEMBER);
         tooltip = QUOTE($STR_DEPLOY_ON_MEMBER_TOOLTIP);
         action = "GRLIB_squadaction = 3";
@@ -105,7 +105,7 @@ class liberation_squad {
         y = QUOTE((0.75 * safezoneH + safezoneY) );
         w = QUOTE((0.055 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_CONFIRM);
         action = "GRLIB_squadconfirm = 1";
     };
@@ -115,7 +115,7 @@ class liberation_squad {
         y = QUOTE((0.75 * safezoneH + safezoneY) );
         w = QUOTE((0.055 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_RECYCLING_CANCEL);
         action = "GRLIB_squadconfirm = 0";
     };
@@ -132,14 +132,14 @@ class liberation_squad {
         w = QUOTE((0.12 * safezoneW) - BORDERSIZE);
         h = QUOTE((0.03 * safezoneH));
         shadow = 2;
-        sizeEx = 0.018 * safezoneH;
+        sizeEx =  QUOTE(0.018 * safezoneH);
         text = "";
     };
     class NameLabel: StdSquadLabel {
         idc = 201;
         style = ST_CENTER;
         y = QUOTE(0.25 * safezoneH + safezoneY);
-        sizeEx = 0.022 * safezoneH;
+        sizeEx =  QUOTE(0.022 * safezoneH);
     };
     class ClassLabel: StdSquadLabel {
         idc = 202;
@@ -180,7 +180,7 @@ class liberation_squad {
         colorText[] = {1,1,1,1};
         colorBackground[] = {1,1,1,1};
         font = FontM;
-        sizeEx = 0.023;
+        sizeEx =  QUOTE(0.023);
         x = QUOTE(0.44 * safezoneW + safezoneX + ( 2 * BORDERSIZE));
         y = QUOTE((0.25 * safezoneH + safezoneY));
         w = QUOTE((0.36 * safezoneW) - ( 2 * BORDERSIZE) );
