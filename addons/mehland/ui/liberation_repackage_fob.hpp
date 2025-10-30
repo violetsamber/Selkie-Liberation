@@ -63,7 +63,7 @@ class liberation_repackage_fob {
         y = QUOTE((0.55 * safezoneH + safezoneY));
         w = QUOTE((0.08 * safezoneW) - (BORDERSIZE));
         h = QUOTE((0.045 * safezoneH));
-        sizeEx = 0.023 * safezoneH;
+        sizeEx =  QUOTE(0.023 * safezoneH);
         text = QUOTE($STR_FOBBOX);
         action = "dorepackage = 1;";
     };
@@ -73,7 +73,7 @@ class liberation_repackage_fob {
         y = QUOTE((0.55 * safezoneH + safezoneY));
         w = QUOTE((0.08 * safezoneW) - (BORDERSIZE));
         h = QUOTE((0.045 * safezoneH));
-        sizeEx = 0.023 * safezoneH;
+        sizeEx =  QUOTE(0.023 * safezoneH);
         text = QUOTE($STR_FOBTRUCK);
         action = "dorepackage = 2;";
     };
@@ -83,7 +83,7 @@ class liberation_repackage_fob {
         y = QUOTE((0.55 * safezoneH + safezoneY));
         w = QUOTE((0.08 * safezoneW));
         h = QUOTE((0.045 * safezoneH));
-        sizeEx = 0.023 * safezoneH;
+        sizeEx =  QUOTE(0.023 * safezoneH);
         text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0";
     };

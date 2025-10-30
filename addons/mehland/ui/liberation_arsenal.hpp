@@ -56,7 +56,7 @@ class liberation_arsenal {
         y = QUOTE((0.6 * safezoneH + safezoneY));
         w = QUOTE((0.14 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.03 * safezoneH;
+        sizeEx =  QUOTE(0.03 * safezoneH);
         text = QUOTE($STR_LOAD_LOADOUT);
         action = "load_loadout = 1;";
     };
@@ -66,7 +66,7 @@ class liberation_arsenal {
         y = QUOTE((0.65 * safezoneH + safezoneY));
         w = QUOTE((0.14 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.03 * safezoneH;
+        sizeEx =  QUOTE(0.03 * safezoneH);
         text = QUOTE($STR_EDIT_LOADOUT);
         action = "edit_loadout = 1;";
     };
@@ -76,7 +76,7 @@ class liberation_arsenal {
         y = QUOTE((0.7 * safezoneH + safezoneY));
         w = QUOTE((0.14 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.024 * safezoneH;
+        sizeEx =  QUOTE(0.024 * safezoneH);
         text = QUOTE($STR_MAKE_RESPAWN_LOADOUT);
         action = "respawn_loadout = 1;";
     };
@@ -86,7 +86,7 @@ class liberation_arsenal {
         w = QUOTE(0.14 * safezoneW);
         y = QUOTE(0.75 * safezoneH + safezoneY);
         h = QUOTE(0.04 * safezoneH);
-        sizeEx = 0.02 * safezoneH;
+        sizeEx =  QUOTE(0.02 * safezoneH);
       };
     class TransferButton: StdButton {
         idc = 204;
@@ -94,7 +94,7 @@ class liberation_arsenal {
         y = QUOTE((0.8 * safezoneH + safezoneY));
         w = QUOTE((0.14 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
-        sizeEx = 0.024 * safezoneH;
+        sizeEx =  QUOTE(0.024 * safezoneH);
         text = QUOTE($STR_LOAD_PLAYER_LOADOUT);
         action = "load_from_player = lbCurSel 203;";
     };

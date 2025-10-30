@@ -32,7 +32,7 @@ class kndr_MapControl {
     alphaFadeStartScale = 5;
     alphaFadeEndScale = 5;
     font = FontM;
-    sizeEx = 0.075;
+    sizeEx =  QUOTE(0.075);
     fontLabel = FontM;
     sizeExLabel = 0.075;
     fontGrid = FontM;
@@ -337,7 +337,7 @@ class RscText {
         colorBackground[] = {0, 0, 0, 0};
         colorText[] = {1, 1, 1, 1};
         font = "Bitstream";
-        sizeEx = 0.04;
+        sizeEx =  QUOTE(0.04);
 };
 class StdText {
     idc = -1;
@@ -346,13 +346,13 @@ class StdText {
     colorText[] = COLOR_WHITE;
     colorBackground[] = COLOR_NOALPHA;
     font = FontM;
-    sizeEx = 0.02 * safezoneH;
+    sizeEx =  QUOTE(0.02 * safezoneH);
     shadow = 2;
     text = "";
 };
 class StdHeader: StdText {
       style = ST_CENTER;
-    sizeEx = 0.03 * safezoneH;
+    sizeEx =  QUOTE(0.03 * safezoneH);
     colorBackground[] = COLOR_LIGHTGRAY;
 };
 class StdButton {
@@ -361,7 +361,7 @@ class StdButton {
     style = ST_CENTER;
     default = false;
     font = FontM;
-    sizeEx = 0.018 * safezoneH;
+    sizeEx =  QUOTE(0.018 * safezoneH);
     colorText[] = { 0, 0, 0, 1 };
     colorFocused[] = { 1, 1, 1, 1 };
     colorDisabled[] = { 0.2, 0.2, 0.2, 0.7 };
@@ -391,7 +391,7 @@ class StdBG {
         style = ST_SINGLE;
         colorText[] = COLOR_BLACK;
         font = FontM;
-        sizeEx = 0.023;
+        sizeEx =  QUOTE(0.023);
         text = "";
 };
 class StdListBox {
@@ -399,7 +399,7 @@ class StdListBox {
     type = 5;
     style = 0 + 0x10;
     font = FontM;
-    sizeEx = 0.018 * safezoneH;
+    sizeEx =  QUOTE(0.018 * safezoneH);
     rowHeight = 0.018 * safezoneH * 1.25;
     color[] = COLOR_LIGHTGRAY;
     colorText[] = COLOR_WHITE;
@@ -458,7 +458,7 @@ class BgPicture {
     colorText[] = {0.5, 0.4, 0.25, 0.6};
     colorBackground[] = {0, 0, 0, 1};
     font = FontM;
-    sizeEx = 0.023;
+    sizeEx =  QUOTE(0.023);
     moving = false;
     text = "res\camo03.jpg";
 };
@@ -482,7 +482,7 @@ class StdCombo {
     colorActive[] = COLOR_BRIGHTGREEN;
     colorDisabled[] = COLOR_GREEN;
     font = FontM;
-    sizeEx = 0.031;
+    sizeEx =  QUOTE(0.031);
     soundSelect[] = {"\a3\Ui_f\data\Sound\CfgIngameUI\hintExpand", 0.09, 1};
     soundExpand[] = {"\a3\Ui_f\data\Sound\CfgIngameUI\hintExpand", 0.09, 1};
     soundCollapse[] = {"\a3\Ui_f\data\Sound\CfgIngameUI\hintExpand", 0.09, 1};
@@ -503,7 +503,7 @@ class StdEdit {
     style = ST_RIGHT+ST_FRAME;
     default = false;
     font = FontM;
-    sizeEx = 0.018 * safezoneH;
+    sizeEx =  QUOTE(0.018 * safezoneH);
     colorText[] = COLOR_WHITE;
     colorSelection[] = COLOR_LIGHTGRAY;
     colorDisabled[] = COLOR_LIGHTGRAY;

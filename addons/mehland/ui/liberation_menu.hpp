@@ -11,7 +11,7 @@ class liberation_menu {
         colorText[] = COLOR_WHITE;
         colorBackground[] = COLOR_NOALPHA;
         font = FontM;
-        sizeEx = 0.1 * safezoneH;
+        sizeEx =  QUOTE(0.1 * safezoneH);
         x = QUOTE(0.08 * safezoneW + safezoneX);
         w = QUOTE(0.25 * safezoneW);
         y = QUOTE(0.15 * safezoneH + safezoneY);
@@ -26,7 +26,7 @@ class liberation_menu {
         y = QUOTE((0.53 * safezoneH + safezoneY));
         w = QUOTE((0.15 * safezoneW) - (BORDERSIZE));
         h = QUOTE((0.07 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         size = 0.025 * safezoneH;
         text = "";
         action = "dostartgame=1;";

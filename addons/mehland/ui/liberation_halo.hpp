@@ -53,7 +53,7 @@ class liberation_halo {
         y = QUOTE((0.8 * safezoneH + safezoneY));
         w = QUOTE((0.1 * safezoneW));
         h = QUOTE((0.05 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_HALO_PARAM);
         action = "dojump = 1;";
     };
@@ -63,7 +63,7 @@ class liberation_halo {
         y = QUOTE((0.8 * safezoneH + safezoneY));
         w = QUOTE((0.1 * safezoneW));
         h = QUOTE((0.05 * safezoneH));
-        sizeEx = 0.025 * safezoneH;
+        sizeEx =  QUOTE(0.025 * safezoneH);
         text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0;";
     };

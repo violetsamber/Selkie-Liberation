@@ -6,7 +6,7 @@ class liberation_endscreen {
 
     class EndText: StdText {
         shadow = 2;
-        sizeEx = 0.03 * safezoneH;
+        sizeEx =  QUOTE(0.03 * safezoneH);
         style = ST_LEFT;
         x = QUOTE((0.15 * safezoneW + safezoneX));
         w = QUOTE((0.8 * safezoneW));
@@ -14,7 +14,7 @@ class liberation_endscreen {
     };
     class Title: EndText {
         style = ST_CENTER;
-        sizeEx = 0.1 * safezoneH;
+        sizeEx =  QUOTE(0.1 * safezoneH);
         x = QUOTE((0.2 * safezoneW + safezoneX));
         y = QUOTE((0.17 * safezoneH + safezoneY));
         w = QUOTE((0.6 * safezoneW));
@@ -22,13 +22,13 @@ class liberation_endscreen {
         text = QUOTE($STR_VICTORY_TITLE);
     };
     class SubTitle: Title {
-        sizeEx = 0.04 * safezoneH;
+        sizeEx =  QUOTE(0.04 * safezoneH);
         y = QUOTE((0.24 * safezoneH + safezoneY));
         text = QUOTE($STR_VICTORY_TEXT);
     };
     class SubSubTitle: Title {
         idc = 690;
-        sizeEx = 0.035 * safezoneH;
+        sizeEx =  QUOTE(0.035 * safezoneH);
         y = QUOTE((0.28 * safezoneH + safezoneY));
         text = "";
     };
