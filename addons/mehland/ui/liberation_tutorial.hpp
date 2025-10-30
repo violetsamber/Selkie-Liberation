@@ -42,7 +42,7 @@ class liberation_tutorial {
         colorBackground[] = COLOR_GREEN_ALPHA;
         x = QUOTE((0.35 * safezoneW + safezoneX) + (4 * BORDERSIZE));
         y = QUOTE(0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE));
-        w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE ) );
+        w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE ));
         h = QUOTE(0.55 * safezoneH  + (3 * BORDERSIZE));
     };
     class InnerBG_F2: InnerBG2 {
@@ -86,7 +86,7 @@ class liberation_tutorial {
         style = 0;
         x = QUOTE((0.35 * safezoneW + safezoneX) + (4 * BORDERSIZE));
         y = QUOTE(0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE));
-        w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE ) );
+        w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE));
         h = QUOTE(0.55 * safezoneH  + (3 * BORDERSIZE));
         colorScrollbar[] = COLOR_WHITE;
         class VScrollbar {

@@ -140,7 +140,7 @@ class liberation_secondary {
                 x = QUOTE(0);
                 y = QUOTE(0);
                 w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE));
-                h = QUOTE((0.5 * safezoneH) - BORDERSIZE );
+                h = QUOTE((0.5 * safezoneH) - BORDERSIZE);
                 text= "AAA";
                 size = QUOTE(0.02 * safezoneH);
                 sizeEx =  QUOTE(0.02 * safezoneH);

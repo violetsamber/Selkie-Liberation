@@ -50,7 +50,7 @@ class liberation_permissions {
         x = QUOTE((0.2 * safezoneW + safezoneX)  - ( BORDERSIZE));
         y = QUOTE(0.2 * safezoneH + safezoneY);
         w = QUOTE((0.6 * safezoneW) +  (BORDERSIZE));
-        h = QUOTE(0.55 * safezoneH );
+        h = QUOTE(0.55 * safezoneH);
         colorScrollbar[] = COLOR_WHITE;
          class VScrollbar {
              color[] = COLOR_WHITE;

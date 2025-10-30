@@ -41,10 +41,10 @@ publicVariable "KPLIB_suppMod_arty";
     [KPLIB_suppMod_arty] call BIS_fnc_moduleSupportsInitProvider;
 
     // Hide the three HQ entities created at zero pos. BIS scripts only hides them local for the creator
-    waitUntil {!isNil "BIS_SUPP_HQ_WEST" && !isNil "BIS_SUPP_HQ_EAST" && !isNil "BIS_SUPP_HQ_GUER"};
+    waitUntil {!isNil "bis_supp_hq_west" && !isNil "bis_supp_hq_east" && !isNil "bis_supp_hq_guer"};
     {
         hideObjectGlobal _x;
-    } forEach [BIS_SUPP_HQ_WEST, BIS_SUPP_HQ_EAST, BIS_SUPP_HQ_GUER]
+    } forEach [bis_supp_hq_west, bis_supp_hq_east, bis_supp_hq_guer]
 };
 
 true

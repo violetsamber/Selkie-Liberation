@@ -91,7 +91,7 @@ class liberation_squad {
     class ReplaceButton: StdButton {
         idc = 212;
         x = QUOTE((0.2 * safezoneW + safezoneX));
-        y = QUOTE((0.7 * safezoneH + safezoneY) );
+        y = QUOTE((0.7 * safezoneH + safezoneY));
         w = QUOTE((0.12 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
         sizeEx =  QUOTE(0.025 * safezoneH);
@@ -102,7 +102,7 @@ class liberation_squad {
     class ConfirmButton: StdButton {
         idc = 213;
         x = QUOTE((0.2 * safezoneW + safezoneX));
-        y = QUOTE((0.75 * safezoneH + safezoneY) );
+        y = QUOTE((0.75 * safezoneH + safezoneY));
         w = QUOTE((0.055 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
         sizeEx =  QUOTE(0.025 * safezoneH);
@@ -112,7 +112,7 @@ class liberation_squad {
     class CancelButton: StdButton {
         idc = 214;
         x = QUOTE((0.265 * safezoneW + safezoneX));
-        y = QUOTE((0.75 * safezoneH + safezoneY) );
+        y = QUOTE((0.75 * safezoneH + safezoneY));
         w = QUOTE((0.055 * safezoneW));
         h = QUOTE((0.04 * safezoneH));
         sizeEx =  QUOTE(0.025 * safezoneH);
@@ -183,7 +183,7 @@ class liberation_squad {
         sizeEx =  QUOTE(0.023);
         x = QUOTE(0.44 * safezoneW + safezoneX + ( 2 * BORDERSIZE));
         y = QUOTE((0.25 * safezoneH + safezoneY));
-        w = QUOTE((0.36 * safezoneW) - ( 2 * BORDERSIZE) );
+        w = QUOTE((0.36 * safezoneW) - ( 2 * BORDERSIZE));
         h = QUOTE((0.55 * safezoneH));
         text = "#(argb,512,512,1)r2t(rtt,1.333)";
         moving = QUOTE(false);
