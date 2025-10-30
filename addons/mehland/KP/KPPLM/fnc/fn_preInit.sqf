@@ -18,10 +18,10 @@
 */
 
 // Check if CBA is running
-KPPLM_CBA = isClass (configFile >> "CfgPatches" >> "cba_main");
+kpplm_cba = isClass (configFile >> "CfgPatches" >> "cba_main");
 
 // Check if KP Ranks is running
-KPPLM_KPR = isClass (configFile >> "CfgPatches" >> "KP_Ranks");
+kpplm_kpr = isClass (configFile >> "CfgPatches" >> "KP_Ranks");
 
 // View distance on foot
 KPPLM_viewFoot = viewDistance;

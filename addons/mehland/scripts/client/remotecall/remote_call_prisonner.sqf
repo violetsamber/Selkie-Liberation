@@ -61,7 +61,7 @@ if (alive _unit) then {
         _unit setUnitPos "AUTO";
         _unit setCaptive false;
 
-        if ((vehicle _unit != _unit) && !(_unit isEqualTo (driver vehicle _unit))) then {
+        if ((!isNull objectParent _unit) && !(_unit isEqualTo (driver vehicle _unit))) then {
             unAssignVehicle _unit;
             _unit action ["eject", vehicle _unit];
             _unit action ["getout", vehicle _unit];

@@ -10,9 +10,9 @@ private _source = "";
 [format ["Resistance: %1", KP_liberation_preset_resistance], "MISSIONSTART"] call KPLIB_fnc_log;
 [format ["Civilians: %1", KP_liberation_preset_civilians], "MISSIONSTART"] call KPLIB_fnc_log;
 [format ["Arsenal: %1", KP_liberation_arsenal], "MISSIONSTART"] call KPLIB_fnc_log;
-[format ["CBA: %1", KPPLM_CBA], "MISSIONSTART"] call KPLIB_fnc_log;
+[format ["CBA: %1", kpplm_cba], "MISSIONSTART"] call KPLIB_fnc_log;
 [format ["ACE: %1", KP_liberation_ace], "MISSIONSTART"] call KPLIB_fnc_log;
-[format ["KP Ranks: %1", KPPLM_KPR], "MISSIONSTART"] call KPLIB_fnc_log;
+[format ["KP Ranks: %1", kpplm_kpr], "MISSIONSTART"] call KPLIB_fnc_log;
 ["------------------------------------", "MISSIONSTART"] call KPLIB_fnc_log;
 
 waitUntil {sleep 1; !isNil "active_sectors"};

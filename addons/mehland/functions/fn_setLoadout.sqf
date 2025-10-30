@@ -245,7 +245,7 @@ if(_currentWeapon!="") then {
 } forEach _addOrder;
 
 // select weapon and firing mode
-if(vehicle _target == _target && _currentWeapon != "" && _currentMode != "") then {
+if(isNull objectParent _target && _currentWeapon != "" && _currentMode != "") then {
     _muzzles = 0;
     while { (_currentWeapon != currentMuzzle _target || _currentMode != currentWeaponMode _target ) && _muzzles < 100 } do {
         _target action ["SWITCHWEAPON", _target, _target, _muzzles];
@@ -336,7 +336,7 @@ for "_i" from 1 to _placeholderCount do {
 
 
 // make loadout visible fix?
-if(vehicle _target == _target) then {
+if(isNull objectParent _target) then {
     //_target switchMove (getArray(configFile>>"CfgMovesMaleSdr">>"States">>animationState player>>"ConnectTo") select 0);
     _target setPosATL (getPosATL _target);
 };

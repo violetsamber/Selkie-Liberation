@@ -41,7 +41,7 @@ private _ctrlValueSound = _dialog displayCtrl 7580316;
 private _ctrlSliderSound = _dialog displayCtrl 7580317;
 
 // Display KP Ranks data or hide the player menu entries for the data
-if (KPPLM_KPR) then {
+if (kpplm_kpr) then {
     [] call KPPLM_fnc_showRankData;
 } else {
     {

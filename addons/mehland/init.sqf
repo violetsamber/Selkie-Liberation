@@ -16,7 +16,7 @@ if (!isServer) then {waitUntil {!isNil "KPLIB_initServer"};};
 [] call compileFinal preprocessFileLineNumbers "kp_objectInits.sqf";
 
 // Activate selected player menu. If CBA isn't loaded -> fallback to GREUH
-// if (KPPLM_CBA && KP_liberation_playermenu) then {
+// if (kpplm_cba && KP_liberation_playermenu) then {
 //     [] call KPPLM_fnc_postInit;
 // } else {
 //     [] execVM "GREUH\scripts\GREUH_activate.sqf";

@@ -66,7 +66,7 @@ if(count _this < 4) then {
 
 _saveMagsAmmo = "ammo" in _options;
 _isRepetitive = "repetitive" in _options;
-_isOnFoot = vehicle _target == _target;
+_isOnFoot = isNull objectParent _target;
 
 _currentWeapon = "";
 _currentMode = "";
