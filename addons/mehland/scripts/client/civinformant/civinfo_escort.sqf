@@ -25,7 +25,7 @@ waitUntil {sleep 5;
             _is_near_fob = true;
         };
     };
-    !alive _informant || (_is_near_fob && (vehicle _informant == _informant))
+    !alive _informant || (_is_near_fob && (isNull objectParent _informant))
 };
 
 if (alive _informant) then {

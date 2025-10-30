@@ -66,7 +66,7 @@ while { GRLIB_endgame == 0 } do {
                 if ( [ getpos (leader _grp) , 4000 , GRLIB_side_friendly ] call KPLIB_fnc_getUnitsCount == 0 ) then {
                     _patrol_continue = false;
                     {
-                        if ( vehicle _x != _x ) then {
+                        if ( !isNull objectParent _x ) then {
                             [(vehicle _x)] call KPLIB_fnc_cleanOpforVehicle;
                         };
                         deleteVehicle _x;

@@ -44,7 +44,7 @@ GRLIB_secondary_in_progress = 3; publicVariable "GRLIB_secondary_in_progress";
 diag_log format ["Starting Humanitarian Aid objective in %1",_objective_town];
 
 //while loop to wait until 2x supply crates have been brought to within 50m of objective
-while {_supplies_present == false} do {
+while {!_supplies_present} do {
 
 	_supplies_in_zone = [];
 	_objects_to_check = [];

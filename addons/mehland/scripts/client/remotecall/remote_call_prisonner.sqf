@@ -35,7 +35,7 @@ waitUntil { sleep 5;
         } forEach (allUnits select {!((toLower (typeof _x)) in KPLIB_o_inf_classes || (typeof _x) in militia_squad)});
     };
 
-    !alive _unit || !(_is_near_blufor) || (_is_near_fob && (vehicle _unit == _unit))
+    !alive _unit || !(_is_near_blufor) || (_is_near_fob && (isNull objectParent _unit))
 };
 
 if (alive _unit) then {

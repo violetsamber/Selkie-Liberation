@@ -163,7 +163,7 @@ while { GRLIB_endgame == 0 } do {
         if ( count (units _grp) > 0 ) then {
             if (count ([getpos leader _grp, 4000] call KPLIB_fnc_getNearbyPlayers) == 0) then {
                     {
-                        if ( vehicle _x != _x ) then {
+                        if ( !isNull objectParent _x ) then {
                             [(vehicle _x)] call KPLIB_fnc_cleanOpforVehicle;
                         };
                         deleteVehicle _x;

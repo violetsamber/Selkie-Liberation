@@ -63,11 +63,11 @@ while { dialog && alive player } do {
     };
 
     if ( !(isNull _selectedmember) ) then {
-        if ( _memberselection != lbCurSel 101 || _resupplied || ( ( vehicle _selectedmember == _selectedmember && _isvehicle ) || ( vehicle _selectedmember != _selectedmember && !_isvehicle ) ) ) then {
+        if ( _memberselection != lbCurSel 101 || _resupplied || ( ( isNull objectParent _selectedmember && _isvehicle ) || ( !isNull objectParent _selectedmember && !_isvehicle ) ) ) then {
             _memberselection = lbCurSel 101;
             _resupplied = false;
 
-            if (vehicle _selectedmember == _selectedmember) then {
+            if (isNull objectParent _selectedmember) then {
                 _targetobject attachTo [ _selectedmember, [0, 10, 0.05], "neck" ];
                 _squad_camera attachTo [ _selectedmember, [0, 0.25, 0.05], "neck" ];
                 _isvehicle = false;
@@ -127,13 +127,13 @@ while { dialog && alive player } do {
                 ctrlSetText [ 208, format ["%1: %2", localize 'STR_AMMO', 0 ] ];
             };
 
-            if ( vehicle _selectedmember == _selectedmember ) then {
+            if ( isNull objectParent _selectedmember ) then {
                 ctrlSetText [ 209, "" ];
             } else {
                 _vehstring = localize 'STR_PASSENGER';
-                if (driver vehicle _selectedmember == _selectedmember ) then { _vehstring = localize 'STR_DRIVER'; };
-                if (gunner vehicle _selectedmember == _selectedmember ) then { _vehstring = localize 'STR_GUNNER'; };
-                if (commander vehicle _selectedmember == _selectedmember ) then { _vehstring = localize 'STR_COMMANDER'; };
+                if (driver isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_DRIVER'; };
+                if (gunner isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_GUNNER'; };
+                if (commander isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_COMMANDER'; };
                 _vehstring = _vehstring + format [ " (%1)", getText (_cfgVehicles >> (typeof vehicle _selectedmember) >> "displayName") ];
                 ctrlSetText [ 209, _vehstring ];
             };
@@ -147,7 +147,7 @@ while { dialog && alive player } do {
     if ( GRLIB_squadaction == -1 ) then {
         ctrlEnable [ 213, false ];
         ctrlEnable [ 214, false ];
-        if ( !(isPlayer _selectedmember) && (vehicle _selectedmember == _selectedmember) ) then {
+        if ( !(isPlayer _selectedmember) && (isNull objectParent _selectedmember) ) then {
             ctrlEnable [ 210, true ];
             if ( leader group player == player ) then {
                 ctrlEnable [ 211, true ];

@@ -31,7 +31,7 @@ KP_liberation_respawn_mobile_done = false;
 while {true} do {
     waitUntil {
         sleep 0.2;
-        (GRLIB_force_redeploy || (player distance (markerPos GRLIB_respawn_marker) < 50)) && vehicle player == player && alive player && !dialog && howtoplay == 0
+        (GRLIB_force_redeploy || (player distance (markerPos GRLIB_respawn_marker) < 50)) &&isNull objectParent player&& alive player && !dialog && howtoplay == 0
     };
 
     private _backpack = backpack player;
@@ -56,7 +56,7 @@ while {true} do {
 
     waitUntil {dialog};
 
-    (DEPLOY_DISPLAY displayCtrl DEPLOY_LIST_IDC) ctrlAddEventHandler ["mouseButtonDblClick", {
+    (DEPLOY_DISPLAY displayCtrl DEPLOY_LIST_IDC) ctrlAddEventHandler ["MouseButtonDblClick", {
         if (ctrlEnabled (DEPLOY_DISPLAY displayCtrl DEPLOY_BUTTON_IDC)) then {
             deploy = 1;
         };

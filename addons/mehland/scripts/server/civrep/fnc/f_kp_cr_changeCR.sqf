@@ -13,8 +13,8 @@ if (_negative) then {
 KP_liberation_civ_rep = -100 max (KP_liberation_civ_rep min 100);
 
 // Set correct resistance standing
-private _resistanceEnemy = [0, 1] select (KP_liberation_civ_rep < 25);
-private _resistanceFriendly = [0, 1] select (KP_liberation_civ_rep >= -25);
+private _resistanceEnemy = parseNumber (KP_liberation_civ_rep < 25);
+private _resistanceFriendly = parseNumber (KP_liberation_civ_rep >= -25);
 
 GRLIB_side_resistance setFriend [GRLIB_side_enemy, _resistanceEnemy];
 GRLIB_side_enemy setFriend [GRLIB_side_resistance, _resistanceEnemy];
