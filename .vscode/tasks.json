@@ -1,0 +1,9 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "hemtt-check",
+        "command": "hemtt check", // Could be any other shell command
+        "args": [],
+        "type": "shell"
+    }]
+}
