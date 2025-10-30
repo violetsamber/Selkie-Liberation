@@ -949,19 +949,19 @@ class KPGUI_PRE_DialogTitle: KPGUI_PRE_Title {
 // Cross symbol
 class KPGUI_PRE_DialogCross: KPGUI_PRE_CloseCross {
     x = KP_GETX_CROSS(KP_X_VAL);
-    y = KP_GETY_CROSS(KP_Y_VAL);
+    y = QUOTE(KP_GETY_CROSS(KP_Y_VAL));
 };
 
 // Version info
 class KPGUI_PRE_DialogVersionIcon: KPGUI_PRE_VersionIcon {
     x = safeZoneX + safeZoneW * (KP_X_VAL + KP_WIDTH_VAL - 0.04);
-    y = KP_GETY_CROSS(KP_Y_VAL);
+    y = QUOTE(KP_GETY_CROSS(KP_Y_VAL));
 };
 
 // Background
 class KPGUI_PRE_DialogBackground: KPGUI_PRE_Background {
     x = QUOTE(KP_GETX(KP_X_VAL,KP_WIDTH_VAL,0,1));
-    y = KP_GETY_AREA(KP_Y_VAL);
+    y = QUOTE(KP_GETY_AREA(KP_Y_VAL));
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL,1));
     h = safeZoneH * KP_HEIGHT_VAL;
 };
@@ -987,19 +987,19 @@ class KPGUI_PRE_DialogTitleL: KPGUI_PRE_Title {
 // Cross symbol
 class KPGUI_PRE_DialogCrossL: KPGUI_PRE_CloseCross {
     x = KP_GETX_CROSS(KP_X_VAL_L);
-    y = KP_GETY_CROSS(KP_Y_VAL_L);
+    y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_L));
 };
 
 // Version info
 class KPGUI_PRE_DialogVersionIconL: KPGUI_PRE_VersionIcon {
     x = safeZoneX + safeZoneW * (KP_X_VAL_L + KP_WIDTH_VAL_L - 0.04);
-    y = KP_GETY_CROSS(KP_Y_VAL_L);
+    y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_L));
 };
 
 // Background
 class KPGUI_PRE_DialogBackgroundL: KPGUI_PRE_Background {
     x = QUOTE(KP_GETX(KP_X_VAL_L,KP_WIDTH_VAL_L,0,1));
-    y = KP_GETY_AREA(KP_Y_VAL_L);
+    y = QUOTE(KP_GETY_AREA(KP_Y_VAL_L));
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_L,1));
     h = safeZoneH * KP_HEIGHT_VAL_L;
 };
@@ -1025,19 +1025,19 @@ class KPGUI_PRE_DialogTitleC: KPGUI_PRE_Title {
 // Cross symbol
 class KPGUI_PRE_DialogCrossC: KPGUI_PRE_CloseCross {
     x = safeZoneX + safeZoneW * (KP_X_VAL_C + KP_WIDTH_VAL_C - 0.02);
-    y = KP_GETY_CROSS(KP_Y_VAL_C);
+    y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_C));
 };
 
 // Version info
 class KPGUI_PRE_DialogVersionIconC: KPGUI_PRE_VersionIcon {
     x = safeZoneX + safeZoneW * (KP_X_VAL_C + KP_WIDTH_VAL_C - 0.04);
-    y = KP_GETY_CROSS(KP_Y_VAL_C);
+    y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_C));
 };
 
 // Background
 class KPGUI_PRE_DialogBackgroundC: KPGUI_PRE_Background {
     x = QUOTE(KP_GETX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
-    y = KP_GETY_AREA(KP_Y_VAL_C);
+    y = QUOTE(KP_GETY_AREA(KP_Y_VAL_C));
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_C,1));
     h = safeZoneH * KP_HEIGHT_VAL_C;
 };
@@ -1063,19 +1063,19 @@ class KPGUI_PRE_DialogTitle_LeftPanel: KPGUI_PRE_Title {
 // Cross symbol
 class KPGUI_PRE_DialogCross_LeftPanel: KPGUI_PRE_CloseCross {
     x = safeZoneX + safeZoneW * (KP_X_VAL_LP + KP_WIDTH_VAL_LP - 0.02);
-    y = KP_GETY_CROSS(KP_Y_VAL_LP);
+    y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_LP));
 };
 
 // Version info
 class KPGUI_PRE_DialogVersionIcon_LeftPanel: KPGUI_PRE_VersionIcon {
     x = safeZoneX + safeZoneW * (KP_X_VAL_LP + KP_WIDTH_VAL_LP - 0.04);
-    y = KP_GETY_CROSS(KP_Y_VAL_LP);
+    y = QUOTE(KP_GETY_CROSS(KP_Y_VAL_LP));
 };
 
 // Background
 class KPGUI_PRE_DialogBackground_LeftPanel: KPGUI_PRE_Background {
     x = QUOTE(KP_GETX(KP_X_VAL_LP,KP_WIDTH_VAL_LP,0,1));
-    y = KP_GETY_AREA(KP_Y_VAL_LP);
+    y = QUOTE(KP_GETY_AREA(KP_Y_VAL_LP));
     w = QUOTE(KP_GETWPLAIN(KP_WIDTH_VAL_LP,1));
     h = safeZoneH * KP_HEIGHT_VAL_LP;
 };
