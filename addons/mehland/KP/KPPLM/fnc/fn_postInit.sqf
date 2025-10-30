@@ -18,7 +18,7 @@
         Module postInit finished [BOOL]
 */
 
-if (!KPPLM_CBA) exitWith {["CBA not loaded. Aborting initialization!"] call BIS_fnc_error; false};
+if (!kpplm_cba) exitWith {["CBA not loaded. Aborting initialization!"] call BIS_fnc_error; false};
 
 // Player section
 if (hasInterface) then {
