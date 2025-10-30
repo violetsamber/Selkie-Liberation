@@ -57,7 +57,7 @@
 
 /*
     Get Y coordinate
-    Example: KP_GETCY(KP_Y_VAL,KP_HEIGHT_VAL,3,8)
+    Example: QUOTE(KP_GETCY(KP_Y_VAL,KP_HEIGHT_VAL,3,8))
     KP_Y_VAL -> Top offset of the dialog top from the edge of the screen
     KP_HEIGHT_VAL -> Height of the area between title bar and bottom buttons in the dialog
     3 -> Coordinate of the 4th element position (0,1,2,3,etc.)

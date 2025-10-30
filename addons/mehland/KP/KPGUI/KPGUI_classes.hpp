@@ -171,7 +171,7 @@ class KPGUI_PRE_Text {
 // Inline Title
 class KPGUI_PRE_InlineTitle: KPGUI_PRE_Text {
     style = 2;
-    sizeEx = KP_TEXT_L;
+    sizeEx = QUOTE(KP_TEXT_L);
 };
 
 // Active Text
