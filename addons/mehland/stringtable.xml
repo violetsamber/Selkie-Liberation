@@ -4322,7 +4322,7 @@
         <Key ID="STR_PRODUCTION_CRATE">
             <Original>%1 Crate</Original>
             <German>%1 Kiste</German>
-            <Spanish>QUOTE($1) Caja</Spanish>
+            <Spanish>%1 Caja</Spanish>
             <Russian>%1 Ящик</Russian>
             <Italian>%1 Cassa</Italian>
             <Chinesesimp>%1箱</Chinesesimp>
