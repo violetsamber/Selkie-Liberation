@@ -12,8 +12,8 @@ class blackscreen {
     colorBackground[] = COLOR_BLACK;
     font = FontM;
     sizeEx = 0.023;
-    x = -3; y = -3;
-    w = 9;  h = 9;
+    x = QUOTE(-3); y = QUOTE(-3);
+    w = QUOTE(9);  h = QUOTE(9);
     text = "";
   };
   class Skull {
@@ -24,10 +24,10 @@ class blackscreen {
         colorBackground[] = COLOR_NOALPHA;
         font = FontM;
         sizeEx = 0.1 * safezoneH;
-        x = 0.3 * safezoneW + safezoneX;
-        w = 0.4 * safezoneW;
-        y = 0.2 * safezoneH + safezoneY;
-        h = 0.6 * safezoneH;
+        x = QUOTE(0.3 * safezoneW + safezoneX);
+        w = QUOTE(0.4 * safezoneW);
+        y = QUOTE(0.2 * safezoneH + safezoneY);
+        h = QUOTE(0.6 * safezoneH);
         text = "res\skull.paa";
       };
    class GREUH_WoundedLabel {
@@ -39,8 +39,8 @@ class blackscreen {
     font = FontM;
     sizeEx = 0.07 * safezoneH;
     shadow = 1;
-    x = 0.3 * safezoneW + safezoneX; y= 0.25 * safezoneH + safezoneY;
-    w = 0.4 * safezoneW; h = 0.07 * safezoneH;
+    x = QUOTE(0.3 * safezoneW + safezoneX); y= 0.25 * safezoneH + safezoneY;
+    w = QUOTE(0.4 * safezoneW); h = QUOTE(0.07 * safezoneH);
     text = QUOTE($STR_REVIVE_LABEL);
   };
 };

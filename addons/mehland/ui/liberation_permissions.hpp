@@ -9,37 +9,37 @@ class liberation_permissions {
 
     class OuterBG1: StdBG {
         colorBackground[] = COLOR_BROWN;
-        x = (0.2 * safezoneW + safezoneX) - (2 * BORDERSIZE);
-        y = (0.15 * safezoneH + safezoneY) - (3 * BORDERSIZE);
-        w = (0.6 * safezoneW) + (4 * BORDERSIZE);
-        h = (0.65 * safezoneH) + (6 * BORDERSIZE);
+        x = QUOTE((0.2 * safezoneW + safezoneX) - (2 * BORDERSIZE));
+        y = QUOTE((0.15 * safezoneH + safezoneY) - (3 * BORDERSIZE));
+        w = QUOTE((0.6 * safezoneW) + (4 * BORDERSIZE));
+        h = QUOTE((0.65 * safezoneH) + (6 * BORDERSIZE));
     };
     class OuterBG_F1: OuterBG1 {
         style = ST_FRAME;
     };
     class InnerBG1: OuterBG1 {
         colorBackground[] = COLOR_GREEN;
-        x = (0.2 * safezoneW + safezoneX)  - ( BORDERSIZE);
-        y = 0.2 * safezoneH + safezoneY - (1.5 * BORDERSIZE);
-        w = (0.6 * safezoneW) +  (2 * BORDERSIZE);
-        h = 0.55 * safezoneH  + (3 * BORDERSIZE);
+        x = QUOTE((0.2 * safezoneW + safezoneX)  - ( BORDERSIZE));
+        y = QUOTE(0.2 * safezoneH + safezoneY - (1.5 * BORDERSIZE));
+        w = QUOTE((0.6 * safezoneW) +  (2 * BORDERSIZE));
+        h = QUOTE(0.55 * safezoneH  + (3 * BORDERSIZE));
     };
     class InnerBG_F1: InnerBG1 {
         style = ST_FRAME;
     };
     class Header: StdHeader {
-        x = 0.2 * safezoneW + safezoneX - (BORDERSIZE);
-        y = 0.14 * safezoneH + safezoneY;
-        w = 0.6 * safezoneW + ( 2 * BORDERSIZE);
-        h = 0.05 * safezoneH - (BORDERSIZE);
+        x = QUOTE(0.2 * safezoneW + safezoneX - (BORDERSIZE));
+        y = QUOTE(0.14 * safezoneH + safezoneY);
+        w = QUOTE(0.6 * safezoneW + ( 2 * BORDERSIZE));
+        h = QUOTE(0.05 * safezoneH - (BORDERSIZE));
         text = QUOTE($STR_PERMISSIONS_TITLE);
     };
     class ButtonClose: StdButton {
         idc = 750;
-        x = 0.785 * safezoneW + safezoneX;
-        y = 0.145 * safezoneH + safezoneY;
-        w = 0.015 * safezoneW;
-        h = 0.02 * safezoneH;
+        x = QUOTE(0.785 * safezoneW + safezoneX);
+        y = QUOTE(0.145 * safezoneH + safezoneY);
+        w = QUOTE(0.015 * safezoneW);
+        h = QUOTE(0.02 * safezoneH);
         text = "X";
         action = "closeDialog 0";
     };
@@ -47,10 +47,10 @@ class liberation_permissions {
          type = 15;
          idc = 9969;
          style = 0;
-        x = (0.2 * safezoneW + safezoneX)  - ( BORDERSIZE);
-        y = 0.2 * safezoneH + safezoneY;
-        w = (0.6 * safezoneW) +  (BORDERSIZE);
-        h = 0.55 * safezoneH ;
+        x = QUOTE((0.2 * safezoneW + safezoneX)  - ( BORDERSIZE));
+        y = QUOTE(0.2 * safezoneH + safezoneY);
+        w = QUOTE((0.6 * safezoneW) +  (BORDERSIZE));
+        h = QUOTE(0.55 * safezoneH );
         colorScrollbar[] = COLOR_WHITE;
          class VScrollbar {
              color[] = COLOR_WHITE;
@@ -76,19 +76,19 @@ class liberation_permissions {
      };
      class ButtonSave: StdButton {
          idc = 751;
-        x = 0.4 * safezoneW + safezoneX;
-        y = 0.77 * safezoneH + safezoneY;
-        w = 0.09 * safezoneW;
-        h = 0.035 * safezoneH;
+        x = QUOTE(0.4 * safezoneW + safezoneX);
+        y = QUOTE(0.77 * safezoneH + safezoneY);
+        w = QUOTE(0.09 * safezoneW);
+        h = QUOTE(0.035 * safezoneH);
         text = QUOTE($STR_SAVE_CHANGES);
         action = "save_changes = 1";
     };
     class ButtonCancel: StdButton {
         idc = 752;
-        x = 0.5 * safezoneW + safezoneX;
-        y = 0.77 * safezoneH + safezoneY;
-        w = 0.09 * safezoneW;
-        h = 0.035 * safezoneH;
+        x = QUOTE(0.5 * safezoneW + safezoneX);
+        y = QUOTE(0.77 * safezoneH + safezoneY);
+        w = QUOTE(0.09 * safezoneW);
+        h = QUOTE(0.035 * safezoneH);
         text = QUOTE($STR_RECYCLING_CANCEL);
         action = "closeDialog 0";
     };

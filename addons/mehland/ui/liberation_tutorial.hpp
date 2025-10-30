@@ -10,72 +10,72 @@ class liberation_tutorial {
 
     class OuterBG1: StdBG {
         colorBackground[] = COLOR_BROWN;
-        x = (0.2 * safezoneW + safezoneX) - (2 * BORDERSIZE);
-        y = (0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE);
-        w = (0.15 * safezoneW) + (4 * BORDERSIZE);
-        h = (0.6 * safezoneH) + (6 * BORDERSIZE);
+        x = QUOTE((0.2 * safezoneW + safezoneX) - (2 * BORDERSIZE));
+        y = QUOTE((0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE));
+        w = QUOTE((0.15 * safezoneW) + (4 * BORDERSIZE));
+        h = QUOTE((0.6 * safezoneH) + (6 * BORDERSIZE));
     };
     class OuterBG_F1: OuterBG1 {
         style = ST_FRAME;
     };
     class OuterBG2: StdBG {
         colorBackground[] = COLOR_BROWN;
-        x = (0.35 * safezoneW + safezoneX) + (3 * BORDERSIZE);
-        y = (0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE);
-        w = (0.45 * safezoneW);
-        h = (0.6 * safezoneH) + (6 * BORDERSIZE);
+        x = QUOTE((0.35 * safezoneW + safezoneX) + (3 * BORDERSIZE));
+        y = QUOTE((0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE));
+        w = QUOTE((0.45 * safezoneW));
+        h = QUOTE((0.6 * safezoneH) + (6 * BORDERSIZE));
     };
     class OuterBG_F2: OuterBG2 {
         style = ST_FRAME;
     };
     class InnerBG1: OuterBG1 {
         colorBackground[] = COLOR_GREEN;
-        x = (0.2 * safezoneW + safezoneX)  - ( BORDERSIZE);
-        y = 0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE);
-        w = (0.15 * safezoneW) +  (2 * BORDERSIZE);
-        h = 0.55 * safezoneH  + (3 * BORDERSIZE);
+        x = QUOTE((0.2 * safezoneW + safezoneX)  - ( BORDERSIZE));
+        y = QUOTE(0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE));
+        w = QUOTE((0.15 * safezoneW) +  (2 * BORDERSIZE));
+        h = QUOTE(0.55 * safezoneH  + (3 * BORDERSIZE));
     };
     class InnerBG_F1: InnerBG1 {
         style = ST_FRAME;
     };
     class InnerBG2: OuterBG2 {
         colorBackground[] = COLOR_GREEN_ALPHA;
-        x = (0.35 * safezoneW + safezoneX) + (4 * BORDERSIZE);
-        y = 0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE);
-        w = (0.45 * safezoneW) - (2 * BORDERSIZE ) ;
-        h = 0.55 * safezoneH  + (3 * BORDERSIZE);
+        x = QUOTE((0.35 * safezoneW + safezoneX) + (4 * BORDERSIZE));
+        y = QUOTE(0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE));
+        w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE ) );
+        h = QUOTE(0.55 * safezoneH  + (3 * BORDERSIZE));
     };
     class InnerBG_F2: InnerBG2 {
         style = ST_FRAME;
     };
     class Header: StdHeader {
-        x = 0.2 * safezoneW + safezoneX - (BORDERSIZE);
-        y = 0.19 * safezoneH + safezoneY;
-        w = 0.15 * safezoneW + ( 2 * BORDERSIZE);
-        h = 0.05 * safezoneH - (BORDERSIZE);
+        x = QUOTE(0.2 * safezoneW + safezoneX - (BORDERSIZE));
+        y = QUOTE(0.19 * safezoneH + safezoneY);
+        w = QUOTE(0.15 * safezoneW + ( 2 * BORDERSIZE));
+        h = QUOTE(0.05 * safezoneH - (BORDERSIZE));
         text = QUOTE($STR_TUTO_TITLE);
     };
     class HeaderTuto: Header {
         idc = 514;
-        x = (0.35 * safezoneW + safezoneX) + ( 4 * BORDERSIZE);
-        w = (0.45 * safezoneW) - (2 * BORDERSIZE);
+        x = QUOTE((0.35 * safezoneW + safezoneX) + ( 4 * BORDERSIZE));
+        w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE));
         text = "1. Introduction";
     };
     class TutorialList: StdListBox {
         idc = 513;
-        x = 0.2 * safezoneW + safezoneX;
-        w = 0.15 * safezoneW;
-        y = 0.25 * safezoneH + safezoneY;
-        h = (0.5 * safezoneH) - (1.5 * BORDERSIZE);
+        x = QUOTE(0.2 * safezoneW + safezoneX);
+        w = QUOTE(0.15 * safezoneW);
+        y = QUOTE(0.25 * safezoneH + safezoneY);
+        h = QUOTE((0.5 * safezoneH) - (1.5 * BORDERSIZE));
         shadow = 2;
         onLBSelChanged="";
     };
     class CloseButton: StdButton {
         idc = 512;
-        x = (0.2 * safezoneW + safezoneX);
-        y = (0.75 * safezoneH + safezoneY);
-        w = (0.15 * safezoneW);
-        h = (0.05 * safezoneH);
+        x = QUOTE((0.2 * safezoneW + safezoneX));
+        y = QUOTE((0.75 * safezoneH + safezoneY));
+        w = QUOTE((0.15 * safezoneW));
+        h = QUOTE((0.05 * safezoneH));
         sizeEx = 0.05 * safezoneH;
         text = QUOTE($STR_TUTO_GOTIT);
         action = "howtoplay = 0";
@@ -84,10 +84,10 @@ class liberation_tutorial {
         type = 15;
         idc = -1;
         style = 0;
-        x = (0.35 * safezoneW + safezoneX) + (4 * BORDERSIZE);
-        y = 0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE);
-        w = (0.45 * safezoneW) - (2 * BORDERSIZE ) ;
-        h = 0.55 * safezoneH  + (3 * BORDERSIZE);
+        x = QUOTE((0.35 * safezoneW + safezoneX) + (4 * BORDERSIZE));
+        y = QUOTE(0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE));
+        w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE ) );
+        h = QUOTE(0.55 * safezoneH  + (3 * BORDERSIZE));
         colorScrollbar[] = COLOR_WHITE;
         class VScrollbar {
             color[] = COLOR_WHITE;
@@ -115,10 +115,10 @@ class liberation_tutorial {
                 type = CT_STRUCTURED_TEXT;
                 colorBackground[] = COLOR_NOALPHA;
                 style = ST_LEFT;
-                x = 0;
-                y = 0;
-                w = (0.45 * safezoneW) - (2 * BORDERSIZE);
-                h = 0.5 * safezoneH;
+                x = QUOTE(0);
+                y = QUOTE(0);
+                w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE));
+                h = QUOTE(0.5 * safezoneH);
                 text= "AAA";
                 size = 0.02 * safezoneH;
                 sizeEx = 0.02 * safezoneH;

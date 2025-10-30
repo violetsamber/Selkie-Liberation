@@ -12,20 +12,20 @@ class liberation_menu {
         colorBackground[] = COLOR_NOALPHA;
         font = FontM;
         sizeEx = 0.1 * safezoneH;
-        x = 0.08 * safezoneW + safezoneX;
-        w = 0.25 * safezoneW;
-        y = 0.15 * safezoneH + safezoneY;
-        h = 0.43 * safezoneH;
+        x = QUOTE(0.08 * safezoneW + safezoneX);
+        w = QUOTE(0.25 * safezoneW);
+        y = QUOTE(0.15 * safezoneH + safezoneY);
+        h = QUOTE(0.43 * safezoneH);
         text = "res\splash_libe2.paa";
     };
     class Start {
         idc = 321;
         type = CT_SHORTCUT_BUTTON;
         style = ST_CENTER;
-        x = (0.137 * safezoneW + safezoneX) - (BORDERSIZE);
-        y = (0.53 * safezoneH + safezoneY);
-        w = (0.15 * safezoneW) - (BORDERSIZE);
-        h = (0.07 * safezoneH);
+        x = QUOTE((0.137 * safezoneW + safezoneX) - (BORDERSIZE));
+        y = QUOTE((0.53 * safezoneH + safezoneY));
+        w = QUOTE((0.15 * safezoneW) - (BORDERSIZE));
+        h = QUOTE((0.07 * safezoneH));
         sizeEx = 0.025 * safezoneH;
         size = 0.025 * safezoneH;
         text = "";
@@ -59,8 +59,8 @@ class liberation_menu {
         class ShortcutPos {
             Left = 0;
             Top = 0;
-            w = 0;
-            h = 0;
+            w = QUOTE(0);
+            h = QUOTE(0);
         };
         class TextPos {
             left = 0;
@@ -71,7 +71,7 @@ class liberation_menu {
     };
     class Help: Start {
         idc = 322;
-        y = (0.62 * safezoneH + safezoneY);
+        y = QUOTE((0.62 * safezoneH + safezoneY));
         animTextureNormal = "res\btn_htp_spl_idl3.paa";
         animTextureDisabled = "res\btn_htp_spl_idl3.paa";
         animTextureOver = "res\btn_htp_spl_hov3.paa";
