@@ -9,8 +9,8 @@ switch (_notif_id) do {
         ["lib_civ_informant_start", [markertext ([10000, _pos] call KPLIB_fnc_getNearestSector)]] call BIS_fnc_showNotification;
         private _informant_marker = createMarkerLocal ["informantmarker", _pos];
         _informant_marker setMarkerColorLocal "ColorCIV";
-        _informant_marker setMarkerShape "ELLIPSE";
-        _informant_marker setMarkerBrush "FDiagonal";
+        _informant_marker setMarkerShapeLocal "ELLIPSE";
+        _informant_marker setMarkerBrushLocal "FDiagonal";
         _informant_marker setMarkerSize [500,500];
     };
     case 1: {
@@ -28,13 +28,13 @@ switch (_notif_id) do {
     case 4: {
         ["lib_civ_hvt_start", [markertext ([10000, _pos] call KPLIB_fnc_getNearestSector)]] call BIS_fnc_showNotification;
         private _marker = createMarker ["HVT_marker", _pos];
-        _marker setMarkerColor GRLIB_color_enemy_bright;
+        _marker setMarkerColorLocal GRLIB_color_enemy_bright;
         _marker setMarkerType "hd_unknown";
 
         private _marker_zone = createMarker ["HVT_zone", _pos];
-        _marker_zone setMarkerColor GRLIB_color_enemy_bright;
-        _marker_zone setMarkerShape "ELLIPSE";
-        _marker_zone setMarkerBrush "FDiagonal";
+        _marker_zone setMarkerColorLocal GRLIB_color_enemy_bright;
+        _marker_zone setMarkerShapeLocal "ELLIPSE";
+        _marker_zone setMarkerBrushLocal "FDiagonal";
         _marker_zone setMarkerSize [500,500];
     };
     case 5: {

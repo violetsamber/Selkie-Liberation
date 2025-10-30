@@ -82,8 +82,8 @@ private _troops_group = createGroup [GRLIB_side_enemy, true];
 {_x moveInCargo _troop_vehicle} foreach (units _troops_group);
 
 private _convoy_marker = createMarkerLocal [ format [ "convoymarker%1", round time], getpos _transport_vehicle ];
-_convoy_marker setMarkerText (localize "STR_SECONDARY_CSAT_CONVOY");
-_convoy_marker setMarkerType "o_armor";
+_convoy_marker setMarkerTextLocal (localize "STR_SECONDARY_CSAT_CONVOY");
+_convoy_marker setMarkerTypeLocal "o_armor";
 _convoy_marker setMarkerColor GRLIB_color_enemy_bright;
 
 private _convoy_marker_wp1 = createMarkerLocal [ format [ "convoymarkerwp1%1", round time], _convoy_destinations select 0];
@@ -91,9 +91,9 @@ private _convoy_marker_wp2 = createMarkerLocal [ format [ "convoymarkerwp2%1", r
 private _convoy_marker_wp3 = createMarkerLocal [ format [ "convoymarkerwp3%1", round time], _convoy_destinations select 2];
 
 {
-    _x setMarkerText (localize "STR_SECONDARY_CSAT_CONVOY_WP");
-    _x setMarkerType "o_armor";
-    _x setMarkerColor GRLIB_color_enemy_bright;
+    _x setMarkerTextLocal (localize "STR_SECONDARY_CSAT_CONVOY_WP");
+    _x setMarkerTypeLocal "o_armor";
+    _x setMarkerColorLocal GRLIB_color_enemy_bright;
     _x setMarkerSize [0.6, 0.6];
 } foreach [_convoy_marker_wp1, _convoy_marker_wp2, _convoy_marker_wp3];
 

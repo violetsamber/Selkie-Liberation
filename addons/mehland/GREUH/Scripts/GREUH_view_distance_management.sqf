@@ -17,7 +17,7 @@ while { true } do {
 		(round _olddistance_inf != round desiredviewdistance_inf)
 		|| (round _olddistance_veh != round desiredviewdistance_veh)
 		|| (round _olddistance_obj != round desiredviewdistance_obj)
-		|| ( (( vehicle player == player ) && _was_vehicle)
+		|| ( ((isNull objectParent player) && _was_vehicle)
 		|| (( !isNull objectParent player ) && !_was_vehicle) )
 		|| !(alive player)
 		|| ( round _olddesiredvolume != round desired_vehvolume)

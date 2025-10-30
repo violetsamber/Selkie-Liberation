@@ -52,7 +52,7 @@ if ( count _loadouts_data > 0 ) then {
 
 private _loadplayers = [];
 {
-    if ( !(name _x in [ "HC1", "HC2", "HC3" ]) )  then {
+    if ( !(name _x in [ "hc1", "hc2", "hc3" ]) )  then {
         _loadplayers pushback [ name _x, _x ];
     };
 } foreach ( allPlayers - [ player ] );
@@ -76,7 +76,7 @@ if ( count _loadplayers > 0 ) then {
     ctrlEnable [ 204, false ];
 };
 
-((findDisplay 5251) displayCtrl 201) ctrlAddEventHandler [ "mouseButtonDblClick" , { exit_on_load = 1; load_loadout = 1; } ];
+((findDisplay 5251) displayCtrl 201) ctrlAddEventHandler [ "MouseButtonDblClick" , { exit_on_load = 1; load_loadout = 1; } ];
 
 while { dialog && (alive player) && edit_loadout == 0 } do {
 
