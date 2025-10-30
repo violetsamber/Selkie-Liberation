@@ -214,8 +214,6 @@ taskManagement_drawDist = 5000;
     ----- Config Includes -----
 */
 
-
-
 class CfgDebriefing {
     #include "KPLIB_debriefs.hpp"
 };
