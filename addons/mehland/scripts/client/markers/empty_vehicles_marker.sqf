@@ -25,13 +25,13 @@ while { true } do {
 
     _markedveh = [];
     {
-        if (alive _x && (toLower (typeof _x)) in _vehtomark && (count (crew _x)) == 0 && (_x distance2d startbase) > 500) then {
-            _markedveh pushback _x;
+        if (alive _x && (toLower (typeOf _x)) in _vehtomark && (count (crew _x)) == 0 && (_x distance2D startbase) > 500) then {
+            _markedveh pushBack _x;
         };
-    } foreach vehicles;
+    } forEach vehicles;
 
     if ( count _markedveh != count _vehmarkers ) then {
-        { deleteMarkerLocal _x; } foreach _vehmarkers;
+        { deleteMarkerLocal _x; } forEach _vehmarkers;
         _vehmarkers = [];
 
         {
@@ -39,16 +39,16 @@ while { true } do {
             _marker setMarkerColorLocal "ColorKhaki";
             _marker setMarkerTypeLocal "mil_dot";
             _marker setMarkerSizeLocal [ 0.75, 0.75 ];
-            _vehmarkers pushback _marker;
-        } foreach _markedveh;
+            _vehmarkers pushBack _marker;
+        } forEach _markedveh;
     };
 
     {
         _marker = _vehmarkers select (_markedveh find _x);
-        _marker setMarkerPosLocal getpos _x;
-        _marker setMarkerTextLocal  (getText (_cfg >> typeOf _x >> "displayName"));
+        _marker setMarkerPosLocal getPos _x;
+        _marker setmarkerTextLocal  (getText (_cfg >> typeOf _x >> "displayName"));
 
-    } foreach _markedveh;
+    } forEach _markedveh;
 
     sleep 5;
 };

@@ -24,7 +24,7 @@ while { true } do {
 				if ( (isNull _nextobj) || !(alive _nextobj) ) then {
 					deleteMarkerLocal _nextmarker;
 				};
-			} foreach _marker_objs;
+			} forEach _marker_objs;
 
 			private _playableunits = [];
 			if ( count playableUnits > 0 ) then {
@@ -35,43 +35,43 @@ while { true } do {
 
 			{
 				if ( isNull objectParent _x ) then {
-					_marked_players pushbackUnique _x;
+					_marked_players pushBackUnique _x;
 				} else {
-					_marked_vehicles pushbackUnique (vehicle _x);
+					_marked_vehicles pushBackUnique (vehicle _x);
 				};
-			 } foreach _playableunits;
+			 } forEach _playableunits;
 
 			{
 				if ( alive _x && !(isPlayer _x) ) then {
 					if ( isNull objectParent _x ) then {
-						_marked_squadmates pushbackUnique _x;
+						_marked_squadmates pushBackUnique _x;
 					} else {
-						_marked_vehicles pushbackUnique (vehicle _x);
+						_marked_vehicles pushBackUnique (vehicle _x);
 					};
 				};
-			} foreach (units (group player));
+			} forEach (units (group player));
 
 			private _stuff_to_unmark = [];
 			{
 				if ( (!isNull objectParent _x) || !(alive _x) ) then {
-					_stuff_to_unmark pushback _x;
+					_stuff_to_unmark pushBack _x;
 					_marked_players = _marked_players - [_x];
 				};
-			} foreach _marked_players;
+			} forEach _marked_players;
 
 			{
 				if ( (!isNull objectParent _x) || !(alive _x) ) then {
-					_stuff_to_unmark pushback _x;
+					_stuff_to_unmark pushBack _x;
 					_marked_squadmates = _marked_squadmates - [_x];
 				};
-			} foreach _marked_squadmates;
+			} forEach _marked_squadmates;
 
 			{
 				if ( (count (crew _x) == 0) || !(alive _x) ) then {
-					_stuff_to_unmark pushback _x;
+					_stuff_to_unmark pushBack _x;
 					_marked_vehicles = _marked_vehicles - [_x];
 				};
-			} foreach _marked_vehicles;
+			} forEach _marked_vehicles;
 
 			{
 				private _nextmarker = _x getVariable [ "spotmarker", "" ];
@@ -79,14 +79,14 @@ while { true } do {
 					deleteMarkerLocal _nextmarker;
 					_x setVariable [ "spotmarker", "" ];
 				};
-			} foreach _stuff_to_unmark;
+			} forEach _stuff_to_unmark;
 
 			{
 				private _nextplayer = _x;
 				private _marker = _nextplayer getVariable [ "spotmarker", "" ];
 				if ( _marker == "" ) then {
-					_marker = ( createMarkerLocal [ format [ "playermarker%1", (allUnits find _x) * (time % 1000) * (floor (random 100)) ], getpos _nextplayer ] );
-					_marker_objs pushback [ _marker, _nextplayer ];
+					_marker = ( createMarkerLocal [ format [ "playermarker%1", (allUnits find _x) * (time % 1000) * (floor (random 100)) ], getPos _nextplayer ] );
+					_marker_objs pushBack [ _marker, _nextplayer ];
 					_nextplayer setVariable [ "spotmarker", _marker ];
 
 					private _playername = "";
@@ -94,7 +94,7 @@ while { true } do {
 						_playername = "[" + ((squadParams _nextplayer select 0) select 0) + "] ";
 					};
 					_playername = _playername + (name _nextplayer);
-					_marker setMarkerTextLocal _playername;
+					_marker setmarkerTextLocal _playername;
 
 					_marker setMarkerSizeLocal [ 0.75, 0.75 ];
 					_marker setMarkerColorLocal _color;
@@ -105,30 +105,30 @@ while { true } do {
 					_markertype = "MinefieldAP";
 				};
 				_marker setMarkerTypeLocal _markertype;
-			} foreach _marked_players;
+			} forEach _marked_players;
 
 			{
 				private _nextai = _x;
 				private _marker = _nextai getVariable [ "spotmarker", "" ];
 
 				if ( _marker == "" ) then {
-					_marker = ( createMarkerLocal [ format [ "squadaimarker%1", (allUnits find _x) * (time % 1000) * (floor (random 10000)) ], getpos _nextai ] );
-					_marker_objs pushback [ _marker, _nextai ];
+					_marker = ( createMarkerLocal [ format [ "squadaimarker%1", (allUnits find _x) * (time % 1000) * (floor (random 10000)) ], getPos _nextai ] );
+					_marker_objs pushBack [ _marker, _nextai ];
 					_nextai setVariable [ "spotmarker", _marker ];
 					_marker setMarkerTypeLocal "mil_triangle";
 					_marker setMarkerSizeLocal [ 0.6, 0.6 ];
 					_marker setMarkerColorLocal _color;
 				};
 
-				_marker setMarkerTextLocal format [ "%1", ( [ _nextai ] call KPLIB_fnc_getUnitPositionId )];
-			} foreach _marked_squadmates;
+				_marker setmarkerTextLocal format [ "%1", ( [ _nextai ] call KPLIB_fnc_getUnitPositionId )];
+			} forEach _marked_squadmates;
 
 			{
 				private _nextvehicle = _x;
 				private _marker = _nextvehicle getVariable [ "spotmarker", "" ];
 				if ( _marker == "" ) then {
-					_marker = ( createMarkerLocal [ format [ "vehiclemarker%1", (vehicles find _x) * (time % 1000) * (floor (random 10000)) ], getpos _nextvehicle ] );
-					_marker_objs pushback [ _marker, _nextvehicle ];
+					_marker = ( createMarkerLocal [ format [ "vehiclemarker%1", (vehicles find _x) * (time % 1000) * (floor (random 10000)) ], getPos _nextvehicle ] );
+					_marker_objs pushBack [ _marker, _nextvehicle ];
 					_nextvehicle setVariable [ "spotmarker", _marker ];
 					_marker setMarkerTypeLocal "mil_arrow2";
 					_marker setMarkerSizeLocal [0.75,0.75];
@@ -148,11 +148,11 @@ while { true } do {
 						_vehiclename = _vehiclename + ",";
 					};
 					_vehiclename = _vehiclename + " ";
-				} foreach  _datcrew;
+				} forEach  _datcrew;
 
 				_vehiclename = _vehiclename + "(" + getText (_cfg >> typeOf _nextvehicle >> "displayName") + ")";
-				_marker setMarkerTextLocal _vehiclename;
-			} foreach _marked_vehicles;
+				_marker setmarkerTextLocal _vehiclename;
+			} forEach _marked_vehicles;
 		};
 
 		private _markerunits = [] + _marked_players + _marked_squadmates + _marked_vehicles;
@@ -169,7 +169,7 @@ while { true } do {
 				};
 				_marker setMarkerDirLocal _mrkdir;
 			};
-		} foreach _markerunits;
+		} forEach _markerunits;
 
 		_ticks = _ticks + 1;
 

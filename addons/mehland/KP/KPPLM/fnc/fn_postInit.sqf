@@ -24,7 +24,7 @@ if (!kpplm_cba) exitWith {["CBA not loaded. Aborting initialization!"] call BIS_
 if (hasInterface) then {
     // Load settings, if available
     private _settings = profileNamespace getVariable ["KPPLM_Settings", []];
-    if !(_settings isEqualTo []) then {
+    if (_settings isEqualTo []) then {
         KPPLM_viewFoot = _settings select 0;
         KPPLM_viewVeh = _settings select 1;
         KPPLM_viewAir = _settings select 2;

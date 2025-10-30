@@ -21,11 +21,11 @@ params [
     ["_pos", getPos player, [[]], [2, 3]]
 ];
 
-private _sectors = sectors_allSectors select {((markerPos _x) distance2d _pos) < _radius};
+private _sectors = sectors_allSectors select {((markerPos _x) distance2D _pos) < _radius};
 
 if (_sectors isEqualTo []) exitWith {""};
 
-_sectors = _sectors apply {[(markerPos _x) distance2d _pos, _x]};
+_sectors = _sectors apply {[(markerPos _x) distance2D _pos, _x]};
 _sectors sort true;
 
 (_sectors select 0) select 1

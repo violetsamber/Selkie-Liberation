@@ -41,7 +41,7 @@ if !(_sector in KPLIB_sectorIntelSpawned) then {
             for "_i" from 1 to _amount do {
                 _spawnPos = _positions deleteAt (floor random (count _positions));
                 _obj = (selectRandom KPLIB_intelObjectClasses) createVehicle _spawnPos;
-                _obj setdir (random 360);
+                _obj setDir (random 360);
                 _obj setPosATL _spawnPos;
                 _obj allowDamage false;
             };

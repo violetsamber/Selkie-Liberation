@@ -153,5 +153,5 @@ if (KP_liberation_restart > 0) then {
         if (_x getVariable ["KPLIB_isBattleGroup",false]) then {
             [_x] call battlegroup_ai;
         }
-    } foreach allGroups;
+    } forEach allGroups;
 }] call CBA_fnc_addEventHandler;

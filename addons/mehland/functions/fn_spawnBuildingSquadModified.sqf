@@ -53,7 +53,7 @@ private _squadMax = 7;
     	_units pushBack _unit;
 	} forEach _positionArray;
 
-	if(count _units >= _amount) exitwith {
+	if(count _units >= _amount) exitWith {
 
 	}
 

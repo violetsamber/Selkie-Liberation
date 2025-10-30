@@ -1,13 +1,13 @@
 private [ "_huronlocal" ];
 
-"huronmarker" setMarkerTextLocal "Echo 419";
+"huronmarker" setmarkerTextLocal "Echo 419";
 
 while { true } do {
     _huronlocal = [] call KPLIB_fnc_potatoScan;
     if ( !( isNull _huronlocal) ) then {
-        "huronmarker" setmarkerposlocal (getpos _huronlocal);
+        "huronmarker" setMarkerPosLocal (getPos _huronlocal);
     } else {
-        "huronmarker" setmarkerposlocal markers_reset;
+        "huronmarker" setMarkerPosLocal markers_reset;
     };
     sleep 4.9;
 };

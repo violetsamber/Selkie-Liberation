@@ -21,22 +21,22 @@ while { cinematic_camera_started } do {
     if ( cinematic_camera_started ) then {
         camUseNVG false;
 
-        private _positions = [ getpos startbase ];
+        private _positions = [ getPos startbase ];
         if ( !first_camera_round ) then {
 
             if ( count GRLIB_all_fobs > 0 ) then {
                 for [ {_idx=0},{_idx < 2},{_idx=_idx+1} ] do {
-                    _positions pushback (selectRandom GRLIB_all_fobs);
+                    _positions pushBack (selectRandom GRLIB_all_fobs);
                 };
             };
 
             if ( count active_sectors > 0 ) then {
                 for [ {_idx=0},{_idx < 5},{_idx=_idx+1} ] do {
-                    _positions pushback (markerPos (selectRandom active_sectors));
+                    _positions pushBack (markerPos (selectRandom active_sectors));
                 };
             } else {
                 for [ {_idx=0},{_idx < 5},{_idx=_idx+1} ] do {
-                    _positions pushback (markerPos (selectRandom sectors_allSectors));
+                    _positions pushBack (markerPos (selectRandom sectors_allSectors));
                 };
             };
 
@@ -44,7 +44,7 @@ while { cinematic_camera_started } do {
                 _activeplayers = (allPlayers select {alive _x && (_x distance (markerPos GRLIB_respawn_marker)) > 100});
                 if ( count _activeplayers > 0 ) then {
                     for [ {_idx=0},{_idx < 3},{_idx=_idx+1} ] do {
-                        _positions pushback (getpos (selectRandom _activeplayers));
+                        _positions pushBack (getPos (selectRandom _activeplayers));
                     };
                 };
             };
@@ -68,8 +68,8 @@ while { cinematic_camera_started } do {
         };
 
         _cinematic_camera camSetTarget _camtarget;
-        private _startpos = [ ((getpos _camtarget) select 0) - 100, ((getpos _camtarget) select 1) + 350, 700 ];
-        private _endpos = [ ((getpos _camtarget) select 0) - 100, ((getpos _camtarget) select 1) - 230, 900 ];
+        private _startpos = [ ((getPos _camtarget) select 0) - 100, ((getPos _camtarget) select 1) + 350, 700 ];
+        private _endpos = [ ((getPos _camtarget) select 0) - 100, ((getPos _camtarget) select 1) - 230, 900 ];
         private _startfov = 0.7;
         private _endfov = 0.7;
 
@@ -82,70 +82,70 @@ while { cinematic_camera_started } do {
 
             switch ( _next_transition ) do {
                 case 0: {
-                    _startpos = [ ((getpos _camtarget) select 0) - 30, ((getpos _camtarget) select 1) - 50, 15 ];
-                    _endpos = [ ((getpos _camtarget) select 0) - 30, ((getpos _camtarget) select 1) + 50, 15 ];
+                    _startpos = [ ((getPos _camtarget) select 0) - 30, ((getPos _camtarget) select 1) - 50, 15 ];
+                    _endpos = [ ((getPos _camtarget) select 0) - 30, ((getPos _camtarget) select 1) + 50, 15 ];
                     _endfov = 0.8;
                 };
 
                 case 1: {
-                    _startpos = [ ((getpos _camtarget) select 0) + 5, ((getpos _camtarget) select 1) - 100, 1 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 5, ((getpos _camtarget) select 1) + 100, 40 ];
+                    _startpos = [ ((getPos _camtarget) select 0) + 5, ((getPos _camtarget) select 1) - 100, 1 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 5, ((getPos _camtarget) select 1) + 100, 40 ];
                     _endfov = 0.55;
                 };
 
                 case 2: {
-                    _startpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) - 50, 100 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) + 50, 100 ];
+                    _startpos = [ ((getPos _camtarget) select 0) + 50, ((getPos _camtarget) select 1) - 50, 100 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 50, ((getPos _camtarget) select 1) + 50, 100 ];
                     _startfov = 0.5;
                     _endfov = 0.3;
                 };
 
                 case 3: {
-                    _startpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) - 80, 2 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) + 80, 20 ];
+                    _startpos = [ ((getPos _camtarget) select 0) + 50, ((getPos _camtarget) select 1) - 80, 2 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 50, ((getPos _camtarget) select 1) + 80, 20 ];
                 };
 
                 case 4: {
-                    _startpos = [ ((getpos _camtarget) select 0) - 400, ((getpos _camtarget) select 1) + 400, 50 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 400, ((getpos _camtarget) select 1) + 400, 50 ];
+                    _startpos = [ ((getPos _camtarget) select 0) - 400, ((getPos _camtarget) select 1) + 400, 50 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 400, ((getPos _camtarget) select 1) + 400, 50 ];
                     _startfov = 0.25;
                     _endfov = 0.25;
                 };
 
                 case 5: {
-                    _startpos = [ ((getpos _camtarget) select 0) + 300, ((getpos _camtarget) select 1) - 100, 15 ];
-                    _endpos = [ ((getpos _camtarget) select 0) -300, ((getpos _camtarget) select 1) - 120, 15 ];
+                    _startpos = [ ((getPos _camtarget) select 0) + 300, ((getPos _camtarget) select 1) - 100, 15 ];
+                    _endpos = [ ((getPos _camtarget) select 0) -300, ((getPos _camtarget) select 1) - 120, 15 ];
                 };
 
                 case 6: {
-                    _startpos = [ ((getpos _camtarget) select 0) + 100, ((getpos _camtarget) select 1) - 100, 1 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 100, ((getpos _camtarget) select 1) - 100, 50 ];
+                    _startpos = [ ((getPos _camtarget) select 0) + 100, ((getPos _camtarget) select 1) - 100, 1 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 100, ((getPos _camtarget) select 1) - 100, 50 ];
                 };
 
                 case 7: {
-                    _startpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) - 50, 150 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 20, ((getpos _camtarget) select 1) - 20, 5 ];
+                    _startpos = [ ((getPos _camtarget) select 0) + 50, ((getPos _camtarget) select 1) - 50, 150 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 20, ((getPos _camtarget) select 1) - 20, 5 ];
                     _startfov = 0.6;
                     _endfov = 0.9;
                 };
 
                 case 8: {
-                    _startpos = [ ((getpos _camtarget) select 0) - 300, ((getpos _camtarget) select 1) - 80, 20 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 300, ((getpos _camtarget) select 1) + 120, 20 ];
+                    _startpos = [ ((getPos _camtarget) select 0) - 300, ((getPos _camtarget) select 1) - 80, 20 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 300, ((getPos _camtarget) select 1) + 120, 20 ];
                     _startfov = 0.55;
                     _endfov = 0.55;
                 };
 
                 case 9: {
-                    _startpos = [ ((getpos _camtarget) select 0) - 80, ((getpos _camtarget) select 1) - 300, 30 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 120, ((getpos _camtarget) select 1) + 300, 30 ];
+                    _startpos = [ ((getPos _camtarget) select 0) - 80, ((getPos _camtarget) select 1) - 300, 30 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 120, ((getPos _camtarget) select 1) + 300, 30 ];
                     _startfov = 0.65;
                     _endfov = 0.65;
                 };
 
                 case 10: {
-                    _startpos = [ ((getpos _camtarget) select 0) - 5, ((getpos _camtarget) select 1) + 30, 5 ];
-                    _endpos = [ ((getpos _camtarget) select 0) - 25, ((getpos _camtarget) select 1) -30, 150 ];
+                    _startpos = [ ((getPos _camtarget) select 0) - 5, ((getPos _camtarget) select 1) + 30, 5 ];
+                    _endpos = [ ((getPos _camtarget) select 0) - 25, ((getPos _camtarget) select 1) -30, 150 ];
                 };
 
                 case 11 : {
@@ -154,8 +154,8 @@ while { cinematic_camera_started } do {
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
                     _cinematic_camera camcommit 0;
-                    _startpos = [ ((getpos _camtarget) select 0) + 2, ((getpos _camtarget) select 1) -200, 25 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 2, ((getpos _camtarget) select 1) +200, 25 ];
+                    _startpos = [ ((getPos _camtarget) select 0) + 2, ((getPos _camtarget) select 1) -200, 25 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 2, ((getPos _camtarget) select 1) +200, 25 ];
                     _cinematic_camera setDir 0;
                     [ _cinematic_camera, -30, 0 ] call BIS_fnc_setPitchBank;
                 };
@@ -166,8 +166,8 @@ while { cinematic_camera_started } do {
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
                     _cinematic_camera camcommit 0;
-                    _startpos = [ ((getpos _camtarget) select 0) + 302 , ((getpos _camtarget) select 1) + 300, 50 ];
-                    _endpos = [ ((getpos _camtarget) select 0) - 198, ((getpos _camtarget) select 1) - 200, 50 ];
+                    _startpos = [ ((getPos _camtarget) select 0) + 302 , ((getPos _camtarget) select 1) + 300, 50 ];
+                    _endpos = [ ((getPos _camtarget) select 0) - 198, ((getPos _camtarget) select 1) - 200, 50 ];
                     _cinematic_camera setDir 225;
                     [ _cinematic_camera, -25, 0 ] call BIS_fnc_setPitchBank;
                 };
@@ -178,8 +178,8 @@ while { cinematic_camera_started } do {
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
                     _cinematic_camera camcommit 0;
-                    _startpos = [ ((getpos _camtarget) select 0) - 80 , ((getpos _camtarget) select 1) + 150, 20 ];
-                    _endpos = [ ((getpos _camtarget) select 0) - 80, ((getpos _camtarget) select 1) - 150, 20 ];
+                    _startpos = [ ((getPos _camtarget) select 0) - 80 , ((getPos _camtarget) select 1) + 150, 20 ];
+                    _endpos = [ ((getPos _camtarget) select 0) - 80, ((getPos _camtarget) select 1) - 150, 20 ];
                     _cinematic_camera setDir 90;
                     [ _cinematic_camera, -15, 0 ] call BIS_fnc_setPitchBank;
                 };
@@ -190,8 +190,8 @@ while { cinematic_camera_started } do {
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
                     _cinematic_camera camcommit 0;
-                    _startpos = [ ((getpos _camtarget) select 0) - 50 , ((getpos _camtarget) select 1) + 2, 30 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 150, ((getpos _camtarget) select 1) - 2, 30 ];
+                    _startpos = [ ((getPos _camtarget) select 0) - 50 , ((getPos _camtarget) select 1) + 2, 30 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 150, ((getPos _camtarget) select 1) - 2, 30 ];
                     _cinematic_camera setDir 270;
                     [ _cinematic_camera, -20, 0 ] call BIS_fnc_setPitchBank;
                     _startfov = 0.55;
@@ -204,8 +204,8 @@ while { cinematic_camera_started } do {
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
                     _cinematic_camera camcommit 0;
-                    _startpos = [ ((getpos _camtarget) select 0) - 150 , ((getpos _camtarget) select 1) + 5, 250 ];
-                    _endpos = [ ((getpos _camtarget) select 0) + 150, ((getpos _camtarget) select 1) + 5, 250 ];
+                    _startpos = [ ((getPos _camtarget) select 0) - 150 , ((getPos _camtarget) select 1) + 5, 250 ];
+                    _endpos = [ ((getPos _camtarget) select 0) + 150, ((getPos _camtarget) select 1) + 5, 250 ];
                     _cinematic_camera setDir 0;
                     [ _cinematic_camera, -88, 0 ] call BIS_fnc_setPitchBank;
                     _startfov = 0.3;
@@ -254,7 +254,7 @@ while { cinematic_camera_started } do {
                 } else {
                     _nearest_sector = [300, _position ] call KPLIB_fnc_getNearestSector;
                     if ( _nearest_sector != "" ) then {
-                        _nearest_sector = markertext _nearest_sector;
+                        _nearest_sector = markerText _nearest_sector;
                     } else {
                         _nearfobs = GRLIB_all_fobs select {_x distance _position < 300};
                         if ( count _nearfobs > 0 ) then {

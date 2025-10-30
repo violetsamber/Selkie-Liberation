@@ -7,7 +7,7 @@ while { count (units _grp) > 0 } do {
     if ( reinforcements_sector_under_attack != "" ) then {
 
         while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
-        {_x doFollow leader _grp} foreach units _grp;
+        {_x doFollow leader _grp} forEach units _grp;
 
         _waypoint = _grp addWaypoint [markerpos reinforcements_sector_under_attack, 50];
         _waypoint setWaypointType "MOVE";
@@ -30,15 +30,15 @@ while { count (units _grp) > 0 } do {
 
     if ( reinforcements_sector_under_attack == "" ) then {
         private _sectors_patrol = [];
-        private _patrol_startpos = getpos (leader _grp);
+        private _patrol_startpos = getPos (leader _grp);
         {
             if ( _patrol_startpos distance (markerpos _x) < 2500) then {
                 _sectors_patrol pushBack _x;
             };
-        } foreach (sectors_allSectors - blufor_sectors);
+        } forEach (sectors_allSectors - blufor_sectors);
 
         while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
-        {_x doFollow leader _grp} foreach units _grp;
+        {_x doFollow leader _grp} forEach units _grp;
 
         {
             _waypoint = _grp addWaypoint [markerpos _x, 300];
@@ -47,7 +47,7 @@ while { count (units _grp) > 0 } do {
             _waypoint setWaypointBehaviour "SAFE";
             _waypoint setWaypointCombatMode "YELLOW";
             _waypoint setWaypointCompletionRadius 30;
-        } foreach _sectors_patrol;
+        } forEach _sectors_patrol;
 
         _waypoint = _grp addWaypoint [_patrol_startpos, 300];
         _waypoint setWaypointType "MOVE";

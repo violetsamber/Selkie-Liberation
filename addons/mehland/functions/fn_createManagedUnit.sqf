@@ -31,7 +31,7 @@ private ["_unit"];
 isNil {
     // Create temp group, as we need to let the unit join the "correct side group".
     // If we use the "correct side group" for the createUnit, the group would switch to the side of the unit written in the config.
-    private _groupTemp = createGroup [CIVILIAN, true];
+    private _groupTemp = createGroup [GRLIB_side_civilian, true];
 
     _unit = _groupTemp createUnit [_type, _spawnPos, [], _placement, "FORM"];
     _unit addMPEventHandler ["MPKilled", {_this spawn kill_manager}];

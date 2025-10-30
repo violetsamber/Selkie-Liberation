@@ -66,7 +66,7 @@ while {true} do {
         if ( _x in sectors_capture ) then {
             _local_infantry_cap = _local_infantry_cap + (10 * GRLIB_resources_multiplier);
         };
-    } foreach blufor_sectors;
+    } forEach blufor_sectors;
 
     KP_liberation_fob_resources = _local_fob_resources;
     KP_liberation_supplies_global = _local_supplies_global;

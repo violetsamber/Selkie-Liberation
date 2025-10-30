@@ -15,7 +15,7 @@ if ( GRLIB_blufor_defenders ) then {
     _grp = creategroup [GRLIB_side_friendly, true];
     {
         [_x, markerPos _sector, _grp] call KPLIB_fnc_createManagedUnit;
-    } foreach _squad_type;
+    } forEach _squad_type;
     sleep 3;
     _grp setBehaviour "COMBAT";
 };
@@ -27,7 +27,7 @@ if ( _ownership == GRLIB_side_friendly ) exitWith {
     if ( GRLIB_blufor_defenders ) then {
         {
             if ( alive _x ) then { deleteVehicle _x };
-        } foreach units _grp;
+        } forEach units _grp;
     };
 };
 
@@ -68,7 +68,7 @@ if ( GRLIB_endgame == 0 ) then {
         } forEach KP_liberation_production;
     } else {
         [_sector, 3] remoteExec ["remote_call_sector"];
-        {[_x] spawn prisonner_ai;} foreach (((markerpos _sector) nearEntities ["Man", GRLIB_capture_size * 0.8]) select {side group _x == GRLIB_side_enemy});
+        {[_x] spawn prisonner_ai;} forEach (((markerpos _sector) nearEntities ["Man", GRLIB_capture_size * 0.8]) select {side group _x == GRLIB_side_enemy});
     };
 };
 
@@ -77,5 +77,5 @@ sleep 60;
 if ( GRLIB_blufor_defenders ) then {
     {
         if ( alive _x ) then { deleteVehicle _x };
-    } foreach units _grp;
+    } forEach units _grp;
 };

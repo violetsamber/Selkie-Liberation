@@ -26,7 +26,7 @@ if (KP_liberation_ace && KP_liberation_arsenal_type) then {
     if (!isNil "_saved_loadouts") then {
         {
             if (_counter % 2 == 0) then {
-                _loadouts_data pushback _x;
+                _loadouts_data pushBack _x;
             };
             _counter = _counter + 1;
         } forEach _saved_loadouts;
@@ -37,7 +37,7 @@ waitUntil { dialog };
 
 if ( count _loadouts_data > 0 ) then {
 
-    { lbAdd [201, _x param [0]]} foreach _loadouts_data;
+    { lbAdd [201, _x param [0]]} forEach _loadouts_data;
 
     if ( lbSize 201 > 0 ) then {
         ctrlEnable [ 202, true ];
@@ -53,9 +53,9 @@ if ( count _loadouts_data > 0 ) then {
 private _loadplayers = [];
 {
     if ( !(name _x in [ "hc1", "hc2", "hc3" ]) )  then {
-        _loadplayers pushback [ name _x, _x ];
+        _loadplayers pushBack [ name _x, _x ];
     };
-} foreach ( allPlayers - [ player ] );
+} forEach ( allPlayers - [ player ] );
 
 if ( count _loadplayers > 0 ) then {
 
@@ -69,7 +69,7 @@ if ( count _loadplayers > 0 ) then {
 
         lbAdd [ 203, _namestr ];
         lbSetCurSel [ 203, 0 ];
-    } foreach _loadplayers;
+    } forEach _loadplayers;
 
 } else {
     ctrlEnable [ 203, false ];

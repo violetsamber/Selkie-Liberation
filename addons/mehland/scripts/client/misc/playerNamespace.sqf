@@ -24,7 +24,7 @@ while {true} do {
     // FOB distance, name and position
     if !(GRLIB_all_fobs isEqualTo []) then {
         _fobPos = [] call KPLIB_fnc_getNearestFob;
-        _fobDist = player distance2d _fobPos;
+        _fobDist = player distance2D _fobPos;
         _fobName = ["", ["FOB", [_fobPos] call KPLIB_fnc_getFobName] joinString " "] select (_fobDist < GRLIB_fob_range);
     } else {
         _fobPos = [0, 0, 0];
@@ -40,7 +40,7 @@ while {true} do {
     player setVariable ["KPLIB_hasDirectAccess", (getPlayerUID player) in KP_liberation_commander_actions || {player == ([] call KPLIB_fnc_getCommander)} || {serverCommandAvailable "#kick"}];
 
     // Outside of startbase "safezone"
-    player setVariable ["KPLIB_isAwayFromStart", (player distance2d startbase) > 1000];
+    player setVariable ["KPLIB_isAwayFromStart", (player distance2D startbase) > 1000];
 
     // Is near an arsenal object
     if (KP_liberation_mobilearsenal) then {
@@ -53,7 +53,7 @@ while {true} do {
     };
 
     // Is near startbase
-    player setVariable ["KPLIB_isNearStart", (player distance2d startbase) < 200];
+    player setVariable ["KPLIB_isNearStart", (player distance2D startbase) < 200];
 
     // Nearest activated sector and possible production data
     player setVariable ["KPLIB_nearProd", KP_liberation_production param [KP_liberation_production findIf {(_x select 1) isEqualTo ([100] call KPLIB_fnc_getNearestSector)}, []]];

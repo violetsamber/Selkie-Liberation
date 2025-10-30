@@ -36,11 +36,11 @@ diag_log text "private _objects_to_build = [";
 {
     diag_log text format [
         "    [""%1"", [%2, %3, %4], %5],",
-        typeof _x,
-        ((getpos _x select 0) - (getpos _center select 0)) toFixed 2,
-        ((getpos _x select 1) - (getpos _center select 1)) toFixed 2,
-        (getposatl _x select 2) toFixed 2,
-        (getdir _x) toFixed 2
+        typeOf _x,
+        ((getPos _x select 0) - (getPos _center select 0)) toFixed 2,
+        ((getPos _x select 1) - (getPos _center select 1)) toFixed 2,
+        (getPosATL _x select 2) toFixed 2,
+        (getDir _x) toFixed 2
     ];
 } forEach ((nearestObjects [_center, ["All"], 40]) - ((nearestObjects [_center, ["Man","Animal"], 40]) + [_center]));
 diag_log text "];";
@@ -56,11 +56,11 @@ diag_log text "private _defenders_to_build = [";
 {
     diag_log text format [
         "    [""%1"", [%2, %3, %4], %5],",
-        typeof _x,
-        ((getpos _x select 0) - (getpos _center select 0)) toFixed 2,
-        ((getpos _x select 1) - (getpos _center select 1)) toFixed 2,
-        (getposatl _x select 2) toFixed 2,
-        (getdir _x) toFixed 2
+        typeOf _x,
+        ((getPos _x select 0) - (getPos _center select 0)) toFixed 2,
+        ((getPos _x select 1) - (getPos _center select 1)) toFixed 2,
+        (getPosATL _x select 2) toFixed 2,
+        (getDir _x) toFixed 2
     ];
 } forEach ((nearestObjects [_center, ["Man"], 40]) - ((nearestObjects [_center, [ "Animal" ], 40]) + [_center]));
 diag_log text "];";

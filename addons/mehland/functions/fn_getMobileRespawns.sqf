@@ -18,7 +18,7 @@
 private _respawn_trucks = vehicles select {
     (typeOf _x) in [Respawn_truck_typename, huron_typename] &&
     {alive _x} &&
-    {_x distance2d startbase > 500} &&
+    {_x distance2D startbase > 500} &&
     {abs (speed _x) < 5} &&
     {(isTouchingGround _x || {5 > ((getPos _x) select 2)})} &&
     {!surfaceIsWater (getPos _x)}

@@ -36,10 +36,10 @@ private _nextobject = objNull;
     _nextobject = _nextclass createVehicle _nextpos;
     _nextobject allowDamage false;
     _nextobject setVectorUp [0, 0, 1];
-    _nextobject setdir _nextdir;
+    _nextobject setDir _nextdir;
     _nextobject setpos _nextpos;
     _nextobject setVectorUp [0, 0, 1];
-    _nextobject setdir _nextdir;
+    _nextobject setDir _nextdir;
     _nextobject setpos _nextpos;
 
     _base_objects pushBack _nextobject;
@@ -65,10 +65,10 @@ sleep 1;
     _nextobject allowDamage false;
     _nextobject setVectorUp [0, 0, 1];
     _nextobject setpos _nextpos;
-    _nextobject setdir _nextdir;
+    _nextobject setDir _nextdir;
     _nextobject setVectorUp [0, 0, 1];
     _nextobject setpos _nextpos;
-    _nextobject setdir _nextdir;
+    _nextobject setDir _nextdir;
     _nextobject lock 2;
 
     _base_objectives pushBack _nextobject;
@@ -81,7 +81,7 @@ sleep 1;
 
 sleep 1;
 
-{_x setDamage 0; _x allowDamage true;} foreach (_base_objectives + _base_objects);
+{_x setDamage 0; _x allowDamage true;} forEach (_base_objectives + _base_objects);
 
 _grpdefenders = createGroup [GRLIB_side_enemy, true];
 _idxselected = [];
@@ -99,7 +99,7 @@ while {(count _idxselected) < _defenders_amount && (count _idxselected) < (count
 
     _nextpos = [((_base_position select 0) + (_nextpos select 0)), ((_base_position select 1) + (_nextpos select 1)), (_nextpos select 2)];
     private _nextDefender = [_nextclass, _nextpos, _grpdefenders, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
-    _nextDefender setdir _nextdir;
+    _nextDefender setDir _nextdir;
     _nextDefender setpos _nextpos;
     [_nextDefender] spawn building_defence_ai;
 } forEach _idxselected;

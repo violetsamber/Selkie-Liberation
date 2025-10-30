@@ -31,11 +31,11 @@ while {_move_is_disabled && local _unit && alive _unit && !(captive _unit)} do {
 
     if (_move_is_disabled) then {
         private _target = assignedTarget _unit;
-        if(!(isnull _target)) then {
-            private _vd = (getPosASL _target) vectorDiff (getpos _unit);
+        if(!(isNull _target)) then {
+            private _vd = (getPosASL _target) vectorDiff (getPos _unit);
             private _newdir = (_vd select 0) atan2 (_vd select 1);
             if (_newdir < 0) then {_dir = 360 + _newdir};
-            _unit setdir (_newdir);
+            _unit setDir (_newdir);
         };
     };
     sleep 5;

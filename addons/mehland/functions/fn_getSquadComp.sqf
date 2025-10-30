@@ -52,7 +52,7 @@ if (_type == "army") then {
 } else {
     private _multiplier = 1;
     if (GRLIB_unitcap < 1) then {_multiplier = GRLIB_unitcap;};
-    while {count _squadcomp < (10 * _multiplier)} do {_squadcomp pushback (selectRandom militia_squad)};
+    while {count _squadcomp < (10 * _multiplier)} do {_squadcomp pushBack (selectRandom militia_squad)};
 };
 
 _squadcomp

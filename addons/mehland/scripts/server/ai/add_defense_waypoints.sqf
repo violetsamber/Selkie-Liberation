@@ -1,6 +1,6 @@
 private _grp = _this select 0;
 private _flagpos = _this select 1;
-private _basepos = getpos (leader _grp);
+private _basepos = getPos (leader _grp);
 private _is_infantry = false;
 private _wpPositions = [];
 private _waypoint = [];
@@ -9,7 +9,7 @@ if (vehicle (leader _grp) == (leader _grp)) then {_is_infantry = true;};
 sleep 5;
 while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
 sleep 1;
-{_x doFollow leader _grp} foreach units _grp;
+{_x doFollow leader _grp} forEach units _grp;
 sleep 1;
 
 if (_is_infantry) then {
@@ -55,7 +55,7 @@ waitUntil {
 if ({alive _x} count (units _grp) > 0) then {
     while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0)};
     sleep 1;
-    {_x doFollow leader _grp} foreach units _grp;
+    {_x doFollow leader _grp} forEach units _grp;
     sleep 1;
     _wpPositions = [
         _basepos getPos [random 150, random 360],

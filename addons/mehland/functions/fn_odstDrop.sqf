@@ -7,9 +7,9 @@ params [
 
 if (_targetsector isEqualTo "") exitWith {false};
 
-private _targetpos = _targetsector;
-if (_targetpos isEqualType "") then {
-    _targetpos = markerPos _targetsector;
+private _targetPos = _targetsector;
+if (_targetPos isEqualType "") then {
+    _targetPos = markerPos _targetsector;
 };
 
 private _units = [
@@ -33,12 +33,12 @@ for "_i" from 1 to _teamCount do
 	_units append units _group;
 };
 
-private _ship = [_targetpos vectorAdd [0,100,0], 180, 2500, "OPTRE_Frigate_UNSC", GRLIB_side_enemy] call SciFiSupportPLUS_fnc_JumpShipIn;
+private _ship = [_targetPos vectorAdd [0,100,0], 180, 2500, "OPTRE_Frigate_UNSC", GRLIB_side_enemy] call SciFiSupportPLUS_fnc_JumpShipIn;
 
 sleep 5;
 
 [ 
-	_targetpos, 
+	_targetPos, 
 	_units, 
 	"Frigate", 
 	15, 

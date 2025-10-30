@@ -150,9 +150,9 @@ class FSM
                          "" \n
                          "// Get up to 3 nearest factory sectors" \n
                          "private _sectors = (" \n
-                         "    sectors_factory select {((markerPos _x) distance2d player) < 10000}" \n
+                         "    sectors_factory select {((markerPos _x) distance2D player) < 10000}" \n
                          ") apply {" \n
-                         "    [(markerPos _x) distance2d player, _x]" \n
+                         "    [(markerPos _x) distance2D player, _x]" \n
                          "};" \n
                          "_sectors sort true;" \n
                          "_sectors resize 3;" \n
@@ -232,7 +232,7 @@ class FSM
                                          "&& {" \n
                                          "    private _locations = [startbase];" \n
                                          "    _locations append GRLIB_all_fobs;" \n
-                                         "    !((_locations select {(_x distance2d player) < GRLIB_fob_range}) isEqualTo [])" \n
+                                         "    !((_locations select {(_x distance2D player) < GRLIB_fob_range}) isEqualTo [])" \n
                                          "}"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
@@ -843,7 +843,7 @@ class FSM
                          "// Get all POWs and wounded civs" \n
                          "private _pows = allUnits select {" \n
                          "    captive _x" \n
-                         "    && {((markerPos _factory) distance2d _x) < 250}" \n
+                         "    && {((markerPos _factory) distance2D _x) < 250}" \n
                          "};" \n
                          "" \n
                          "private _civs = [];" \n

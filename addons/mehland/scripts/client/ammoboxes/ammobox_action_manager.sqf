@@ -14,8 +14,8 @@ while {true} do {
 
     if ([5] call KPLIB_fnc_hasPermission) then {
 
-        _nearammoboxes = ((getpos player) nearEntities [KPLIB_crates, 10]);
-        _neartransporttrucks = ((getpos player) nearEntities [KPLIB_transport_classes, 10]);
+        _nearammoboxes = ((getPos player) nearEntities [KPLIB_crates, 10]);
+        _neartransporttrucks = ((getPos player) nearEntities [KPLIB_transport_classes, 10]);
         _nearstorageareas = nearestObjects [player, KPLIB_storageBuildings, 10];
 
         _checked_trucks = [];
@@ -27,7 +27,7 @@ while {true} do {
             if (!(_next_truck in _managed_trucks) && (_truck_load > 0)) then {
                     _action_id = _next_truck addAction ["<t color='#FFFF00'>" + localize "STR_ACTION_UNLOAD_BOX" + "</t>","scripts\client\ammoboxes\do_unload_truck.sqf","",-500,true,true,"","build_confirmed == 0 && (_this distance _target < 8) && (vehicle player == player)"];
                     _next_truck setVariable [ "GRLIB_ammo_truck_action", _action_id, false ];
-                    _managed_trucks pushback _next_truck;
+                    _managed_trucks pushBack _next_truck;
             };
 
             if ((_next_truck in _managed_trucks) && _truck_load == 0) then {
@@ -35,9 +35,9 @@ while {true} do {
                 _managed_trucks = _managed_trucks - [_next_truck];
             };
 
-            _checked_trucks pushback _next_truck;
+            _checked_trucks pushBack _next_truck;
 
-        } foreach _neartransporttrucks;
+        } forEach _neartransporttrucks;
 
         {
             _next_truck = _x;
@@ -46,7 +46,7 @@ while {true} do {
                 _next_truck removeAction ( _next_truck getVariable ["GRLIB_ammo_truck_action", -1]);
             }
 
-        } foreach _managed_trucks;
+        } forEach _managed_trucks;
 
         _checked_boxes = [];
 
@@ -61,11 +61,11 @@ while {true} do {
                 _next_box setVariable ["KP_crate_store_action", _b_action_id2, false];
                 _next_box setVariable ["KP_crate_value_action", _b_action_id3, false];
                 _next_box setVariable ["KP_crate_push_action", _b_action_id4, false];
-                _managed_boxes pushback _next_box;
+                _managed_boxes pushBack _next_box;
             };
 
-            _checked_boxes pushback _next_box;
-        } foreach _nearammoboxes;
+            _checked_boxes pushBack _next_box;
+        } forEach _nearammoboxes;
 
         {
             _next_box = _x;
@@ -76,7 +76,7 @@ while {true} do {
                 _next_box removeAction (_next_box getVariable ["KP_crate_value_action", -1]);
                 _next_box removeAction (_next_box getVariable ["KP_crate_push_action", -1]);
             }
-        } foreach _managed_boxes;
+        } forEach _managed_boxes;
 
         _checked_areas = [];
 
@@ -93,7 +93,7 @@ while {true} do {
                     _next_area setVariable ["KP_fuel_unstore_action", _action_id3, false];
                     _action_id4 = _next_area addAction ["<t color='#FFFF00'>" + localize "STR_ACTION_SORT_STORAGE" + "</t>",{[(_this select 0)] call KPLIB_fnc_sortStorage;},"",-507,true,true,"","build_confirmed == 0 && (_this distance _target < 12) && (vehicle player == player)"];
                     _next_area setVariable ["KP_storage_sort_action", _action_id4, false];
-                    _managed_areas pushback _next_area;
+                    _managed_areas pushBack _next_area;
             };
 
             if ((_next_area in _managed_areas) && _area_load == 0) then {
@@ -104,9 +104,9 @@ while {true} do {
                 _managed_areas = _managed_areas - [_next_area];
             };
 
-            _checked_areas pushback _next_area;
+            _checked_areas pushBack _next_area;
 
-        } foreach _nearstorageareas;
+        } forEach _nearstorageareas;
 
         {
             _next_area = _x;
@@ -118,7 +118,7 @@ while {true} do {
                 _next_area removeAction (_next_area getVariable ["KP_storage_sort_action", -1]);
             }
 
-        } foreach _managed_areas;
+        } forEach _managed_areas;
 
     };
 

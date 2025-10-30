@@ -28,20 +28,20 @@ if (_number > 0) then {
     [_sector, _radius, _number - 1] spawn ied_manager;
 };
 
-if (!(isnull _roadobj)) then {
+if (!(isNull _roadobj)) then {
 
-    _roadpos = getpos _roadobj;
+    _roadpos = getPos _roadobj;
     _ied_obj = createMine [_ied_type, _roadpos getPos [_spread, random 360], [], 0];
-    _ied_obj setdir (random 360);
+    _ied_obj setDir (random 360);
 
     if (KP_liberation_asymmetric_debug > 0) then {[format ["ied_manager.sqf -> IED %1 spawned at %2", _number, markerText _sector], "ASYMMETRIC"] remoteExecCall ["KPLIB_fnc_log", 2];};
 
     while {_sector in active_sectors && mineActive _ied_obj && !_goes_boom} do {
-        _nearinfantry = ((getpos _ied_obj) nearEntities ["Man", _activation_radius_infantry]) select {side _x == GRLIB_side_friendly};
-        _nearvehicles = ((getpos _ied_obj) nearEntities [["Car", "Tank", "Air"], _activation_radius_vehicles]) select {side _x == GRLIB_side_friendly};
+        _nearinfantry = ((getPos _ied_obj) nearEntities ["Man", _activation_radius_infantry]) select {side _x == GRLIB_side_friendly};
+        _nearvehicles = ((getPos _ied_obj) nearEntities [["Car", "Tank", "Air"], _activation_radius_vehicles]) select {side _x == GRLIB_side_friendly};
         if (count _nearinfantry >= _infantry_trigger || count _nearvehicles >= _vehicle_trigger) then {
             if (_ultra_strong) then {
-                "Bomb_04_F" createVehicle (getpos _ied_obj);
+                "Bomb_04_F" createVehicle (getPos _ied_obj);
                 deleteVehicle _ied_obj;
             } else {
                 _ied_obj setDamage 1;

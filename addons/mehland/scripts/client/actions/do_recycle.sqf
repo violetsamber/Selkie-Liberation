@@ -79,7 +79,7 @@ waitUntil {sleep 0.1; !dialog || !alive player || dorecycle != 0};
 
 if (dialog) then {closeDialog 0};
 
-if (dorecycle == 1 && !(isnull _vehToRecycle) && alive _vehToRecycle) then {
+if (dorecycle == 1 && !(isNull _vehToRecycle) && alive _vehToRecycle) then {
     if (!(KP_liberation_recycle_building_near) && ((_price_s + _price_a + _price_f) > 0)) exitWith {hint localize "STR_NORECBUILDING_ERROR";};
 
     private _storage_areas = (([] call KPLIB_fnc_getNearestFob) nearobjects (GRLIB_fob_range * 1.2)) select {(_x getVariable ["KP_liberation_storage_type",-1]) == 0};

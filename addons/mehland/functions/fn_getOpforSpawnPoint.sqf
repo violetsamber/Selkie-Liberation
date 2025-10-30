@@ -47,16 +47,16 @@ private ["_valid", "_current", "_distances"];
     // Shouldn't be too close to the current/last position of a secondary mission
     if (!isNil "secondary_objective_position" && _valid) then {
         if !(secondary_objective_position isEqualTo []) then {
-            _valid = !(((markerPos _current) distance2d secondary_objective_position) < 500);
+            _valid = !(((markerPos _current) distance2D secondary_objective_position) < 500);
         };
     };
 
     if (_valid) then {
         // Fetch distances to FOBs
-        _distances = (GRLIB_all_fobs apply {(markerPos _current) distance2d _x}) select {_x < _max};
+        _distances = (GRLIB_all_fobs apply {(markerPos _current) distance2D _x}) select {_x < _max};
 
         // Fetch distances to blufor sectors
-        _distances append ((blufor_sectors apply {(markerPos _current) distance2d (markerPos _x)}) select {_x < _max});
+        _distances append ((blufor_sectors apply {(markerPos _current) distance2D (markerPos _x)}) select {_x < _max});
 
         // Invalid, if all sectors and FOBs are further away than given max distance
         if (_distances isEqualTo []) then {

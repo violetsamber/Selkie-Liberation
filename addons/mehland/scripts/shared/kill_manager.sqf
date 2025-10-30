@@ -79,7 +79,7 @@ if (isServer) then {
             };
 
             // Killed by a player
-            if (isplayer _killer) then {
+            if (isPlayer _killer) then {
                 stats_opfor_killed_by_players = stats_opfor_killed_by_players + 1;
             };
         };
@@ -111,7 +111,7 @@ if (isServer) then {
                 };
 
                 // Killed by a player
-                if (isplayer _killer) then {
+                if (isPlayer _killer) then {
                     stats_resistance_teamkills_by_players = stats_resistance_teamkills_by_players + 1;
                 };
             };
@@ -135,11 +135,11 @@ if (isServer) then {
         };
     } else {
         // Enemy vehicle casualty
-        if ((toLower (typeof _unit)) in KPLIB_o_allVeh_classes) then {
+        if ((toLower (typeOf _unit)) in KPLIB_o_allVeh_classes) then {
             stats_opfor_vehicles_killed = stats_opfor_vehicles_killed + 1;
 
             // Destroyed by player
-            if (isplayer _killer) then {
+            if (isPlayer _killer) then {
                 stats_opfor_vehicles_killed_by_players = stats_opfor_vehicles_killed_by_players + 1;
             };
         } else {
@@ -148,7 +148,7 @@ if (isServer) then {
                 stats_civilian_vehicles_killed = stats_civilian_vehicles_killed + 1;
 
                 // Destroyed by player
-                if (isplayer _killer) then {
+                if (isPlayer _killer) then {
                     stats_civilian_vehicles_killed_by_players = stats_civilian_vehicles_killed_by_players + 1;
                 };
             } else {
@@ -167,7 +167,7 @@ if (isServer) then {
 };
 
 // Body/Wreck deletion after cleanup delay
-if (isServer && !isplayer _unit) then {
+if (isServer && !isPlayer _unit) then {
     sleep GRLIB_cleanup_delay;
     hidebody _unit;
     sleep 10;

@@ -17,7 +17,7 @@ private _position_count = count _positions;
 while {count _position_indexes < 10} do {
     private _nextposit = floor (random _position_count);
     if !(_nextposit in _position_indexes) then {
-        _position_indexes pushback _nextposit;
+        _position_indexes pushBack _nextposit;
     };
 };
 
@@ -37,7 +37,7 @@ if (KP_liberation_asymmetric_debug > 0) then {[format ["asym_sector_ambush.sqf -
 private _attack = false;
 
 while {(_sector in KP_liberation_asymmetric_sectors) && (!isNull _grp)} do {
-    private _blufor_near = {alive _x && side _x == GRLIB_side_friendly} count ((getpos (leader _grp)) nearEntities [["LAND"], 140]);
+    private _blufor_near = {alive _x && side _x == GRLIB_side_friendly} count ((getPos (leader _grp)) nearEntities [["LAND"], 140]);
     if ((_blufor_near > 0) && !_attack) then {
         _attack = true;
         {

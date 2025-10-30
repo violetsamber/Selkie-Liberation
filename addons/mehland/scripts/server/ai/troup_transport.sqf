@@ -6,8 +6,8 @@ if (isNull _transVeh) exitWith {};
 sleep 1;
 
 private _transGrp = (group (driver _transVeh));
-private _start_pos = getpos _transVeh;
-private _objPos =  [getpos _transVeh] call KPLIB_fnc_getNearestBluforObjective;
+private _start_pos = getPos _transVeh;
+private _objPos =  [getPos _transVeh] call KPLIB_fnc_getNearestBluforObjective;
 private _unload_distance = 500;
 private _crewcount = count crew _transVeh;
 
@@ -15,7 +15,7 @@ waitUntil {
     sleep 0.2;
     !(alive _transVeh) ||
     !(alive (driver _transVeh)) ||
-    (((_transVeh distance _objPos) < _unload_distance) && !(surfaceIsWater (getpos _transVeh)))
+    (((_transVeh distance _objPos) < _unload_distance) && !(surfaceIsWater (getPos _transVeh)))
 };
 
 if ((alive _transVeh) && (alive (driver _transVeh))) then {
@@ -23,7 +23,7 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
 
     {
         [_x, _start_pos, _infGrp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
-    } foreach ([] call KPLIB_fnc_getSquadCompTransport);
+    } forEach ([] call KPLIB_fnc_getSquadCompTransport);
 
     {_x moveInCargo _transVeh} forEach (units _infGrp);
 
@@ -31,11 +31,11 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
 
     sleep 3;
 
-    private _transVehWp =  _transGrp addWaypoint [getpos _transVeh, 0,0];
+    private _transVehWp =  _transGrp addWaypoint [getPos _transVeh, 0,0];
     _transVehWp setWaypointType "TR UNLOAD";
     _transVehWp setWaypointCompletionRadius 200;
 
-    private _infWp = _infGrp addWaypoint [getpos _transVeh, 0];
+    private _infWp = _infGrp addWaypoint [getPos _transVeh, 0];
     _infWp setWaypointType "GETOUT";
     _infWp setWaypointCompletionRadius 200;
 
@@ -45,7 +45,7 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
     _infGrp leaveVehicle _transVeh;
     (units _infGrp) allowGetIn false;
 
-    private _infWp_2 = _infGrp addWaypoint [getpos _transVeh, 250];
+    private _infWp_2 = _infGrp addWaypoint [getPos _transVeh, 250];
     _infWp_2 setWaypointType "MOVE";
     _infWp_2 setWaypointCompletionRadius 5;
 

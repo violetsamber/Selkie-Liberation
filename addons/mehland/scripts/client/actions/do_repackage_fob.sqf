@@ -22,7 +22,7 @@ if (dorepackage > 0) then {
     sleep 0.5;
 
     private _spawnpos = zeropos;
-    while {_spawnpos distance2d zeropos < 1000} do {
+    while {_spawnpos distance2D zeropos < 1000} do {
         _spawnpos = (getPos player) findEmptyPosition [10, 250, 'B_Heli_Transport_01_F'];
         if (_spawnpos isEqualTo []) then {_spawnpos = zeropos;};
     };

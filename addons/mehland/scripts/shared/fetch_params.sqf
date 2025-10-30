@@ -115,7 +115,7 @@ if(isServer) then {
     KP_serverParamsFetched = true;
     publicVariable "KP_serverParamsFetched";
 
-    [format ["----- Server finished parameter initialization - Time needed: %1 seconds", diag_ticktime - _start], "PARAM"] call KPLIB_fnc_log;
+    [format ["----- Server finished parameter initialization - Time needed: %1 seconds", diag_tickTime - _start], "PARAM"] call KPLIB_fnc_log;
 };
 
 // Fix for not working float values in mission params
