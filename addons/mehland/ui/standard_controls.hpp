@@ -341,7 +341,7 @@ class RscText {
 };
 class StdText {
     idc = -1;
-    type =  CT_STATIC;
+    type =  QUOTE(CT_STATIC);
     style = ST_LEFT;
     colorText[] = COLOR_WHITE;
     colorBackground[] = COLOR_NOALPHA;
@@ -387,7 +387,7 @@ class StdButton {
   };
 class StdBG {
         idc = -1;
-        type =  CT_STATIC;
+        type =  QUOTE(CT_STATIC);
         style = ST_SINGLE;
         colorText[] = COLOR_BLACK;
         font = FontM;
@@ -400,7 +400,7 @@ class StdListBox {
     style = 0 + 0x10;
     font = FontM;
     sizeEx =  QUOTE(0.018 * safezoneH);
-    rowHeight = 0.018 * safezoneH * 1.25;
+    rowHeight = QUOTE(0.018 * safezoneH * 1.25);
     color[] = COLOR_LIGHTGRAY;
     colorText[] = COLOR_WHITE;
     colorScrollbar[] = COLOR_BRIGHTGREEN;
@@ -459,7 +459,7 @@ class BgPicture {
     colorBackground[] = {0, 0, 0, 1};
     font = FontM;
     sizeEx =  QUOTE(0.023);
-    moving = false;
+    moving = QUOTE(false);
     text = "res\camo03.jpg";
 };
 class StdCombo {

@@ -12,13 +12,13 @@ class RscTitles {
         name = "intro1";
         duration = 4;
         idd = -1;
-        movingEnable = false;
+        movingEnable = QUOTE(false);
         controls[]= {
             GenericLabelShadow, GenericLabel2
         };
         class GenericLabel2 {
             idc = -1;
-            type =  CT_STATIC ;
+            type =  QUOTE(CT_STATIC );
             style = ST_CENTER;
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
@@ -39,13 +39,13 @@ class RscTitles {
         name = "intro2";
         duration = 7;
         idd = -1;
-        movingEnable = false;
+        movingEnable = QUOTE(false);
         controls[] = {
             VersionLabelShadow, Splash, VersionLabel
         };
         class Splash {
             idc = -1;
-            type =  CT_STATIC ;
+            type =  QUOTE(CT_STATIC );
             style = ST_PICTURE;
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
@@ -59,7 +59,7 @@ class RscTitles {
         };
         class VersionLabel {
             idc = -1;
-            type =  CT_STATIC ;
+            type =  QUOTE(CT_STATIC );
             style = ST_CENTER;
             shadow = 1;
             colorText[] = COLOR_WHITE;
@@ -81,13 +81,13 @@ class RscTitles {
         name = "fasttravel";
         duration = 4;
         idd = -1;
-        movingEnable = true;
+        movingEnable = QUOTE( true);
         controls[] = {
             OuterBackground,GenericLabel111
         };
         class OuterBackground {
             idc = -1;
-            type =  CT_STATIC ;
+            type =  QUOTE(CT_STATIC );
             style = ST_LEFT;
             colorText[] = COLOR_BLACK;
             colorBackground[] = COLOR_BLACK;
@@ -99,7 +99,7 @@ class RscTitles {
         };
         class GenericLabel111 {
             idc = -1;
-            type =  CT_STATIC ;
+            type =  QUOTE(CT_STATIC );
             style = ST_CENTER;
             colorText[] = COLOR_WHITE;
             colorBackground[] = COLOR_NOALPHA;
@@ -114,7 +114,7 @@ class RscTitles {
         name = "KPLIB_overlay";
         duration = 999999;
         idd = 6666;
-        movingEnable = true;
+        movingEnable = QUOTE( true);
         onLoad = "uiNamespace setVariable ['KPLIB_overlay', _this select 0];";
         controls[] = {
             BGPicture,
@@ -135,7 +135,7 @@ class RscTitles {
         };
         class BGPicture {
             idc = 758001;
-            type =  CT_STATIC;
+            type =  QUOTE(CT_STATIC);
             style = ST_PICTURE;
             colorText[] = {0.8,0.8,0.8,0.9};
             colorBackground[] = COLOR_NOALPHA;
@@ -156,7 +156,7 @@ class RscTitles {
         };
         class GenericLabel69 {
             idc = -1;
-            type =  CT_STATIC;
+            type =  QUOTE(CT_STATIC);
             style = ST_RIGHT;
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
@@ -186,7 +186,7 @@ class RscTitles {
         };
         class GenericPicture69 {
             idc = -1;
-            type =  CT_STATIC;
+            type =  QUOTE(CT_STATIC);
             style = ST_PICTURE;
             colorText[] = {0.9,0.9,0.9,1};
             colorBackground[] = COLOR_NOALPHA;
@@ -369,7 +369,7 @@ class RscTitles {
         };
         class CaptureFrameStandard {
             idc = -1;
-            type =  CT_STATIC;
+            type =  QUOTE(CT_STATIC);
             font = FontM;
             sizeEx =  QUOTE(0.023);
             text = "";
@@ -425,7 +425,7 @@ class RscTitles {
             y = QUOTE(0.8 * safezoneH + safezoneY);
             h = QUOTE(0.2 * safezoneH);
             text= "";
-            size = 0.02 * safezoneH;
+            size = QUOTE(0.02 * safezoneH);
             sizeEx =  QUOTE(0.02 * safezoneH);
             shadow = 2;
             font = FontM;

@@ -1,6 +1,6 @@
 class liberation_endscreen {
     idd = 5651;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controls[] = { "Title", "SubTitle", "SubSubTitle", "Line1", "Line2", "Line3", "Line4", "Line5", "Line6"  };
     objects[] = {};
 

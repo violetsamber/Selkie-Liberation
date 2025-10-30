@@ -1,12 +1,12 @@
 class blackscreen {
   idd = 5651;
-  movingEnable = false;
+  movingEnable = QUOTE(false);
   controls[]= {
     "OuterBackground", "Skull", "GREUH_WoundedLabel"
   };
   class OuterBackground {
     idc = -1;
-    type =  CT_STATIC;
+    type =  QUOTE(CT_STATIC);
     style = ST_LEFT;
     colorText[] = COLOR_BLACK;
     colorBackground[] = COLOR_BLACK;
@@ -18,7 +18,7 @@ class blackscreen {
   };
   class Skull {
         idc = 666;
-        type =  CT_STATIC ;
+        type =  QUOTE(CT_STATIC );
         style = ST_PICTURE;
         colorText[] = { 1,1,1,0.15 };
         colorBackground[] = COLOR_NOALPHA;
@@ -32,7 +32,7 @@ class blackscreen {
       };
    class GREUH_WoundedLabel {
     idc = 4867;
-    type =  CT_STATIC;
+    type =  QUOTE(CT_STATIC);
     style = ST_CENTER;
     colorText[] = COLOR_WHITE;
     colorBackground[] = COLOR_NOALPHA;

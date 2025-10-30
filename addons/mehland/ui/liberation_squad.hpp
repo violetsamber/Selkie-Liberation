@@ -1,6 +1,6 @@
 class liberation_squad {
     idd = 5155;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = {};
 
     controls[] = {"OuterBG", "RecycleBG","OuterBG_F", "InnerBG", "InnerBG_F", "OuterCenterPanel","Header","SquadList","DeployMap", "ButtonClose",
@@ -186,6 +186,6 @@ class liberation_squad {
         w = QUOTE((0.36 * safezoneW) - ( 2 * BORDERSIZE) );
         h = QUOTE((0.55 * safezoneH));
         text = "#(argb,512,512,1)r2t(rtt,1.333)";
-        moving = false;
+        moving = QUOTE(false);
     };
 };

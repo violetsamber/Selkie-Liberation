@@ -266,8 +266,8 @@ class KPGUI_PRE_InlineButton: KPGUI_PRE_Button {
     colorBackgroundDisabled[] = {0, 1, 0, 1};
     colorBackgroundActive[] = {0.3, 0.3, 0.3, 1};
     colorFocused[] = {0.25, 0.25, 0.25, 1};
-    offsetPressedX = safeZoneW * 0.0005;
-    offsetPressedY = safeZoneH * 0.001;
+    offsetPressedX =  QUOTE(safeZoneW * 0.0005);
+    offsetPressedY =  QUOTE(safeZoneH * 0.001);
 };
 
 // Controls group
@@ -917,15 +917,15 @@ class KPGUI_PRE_MapControl {
     alphaFadeStartScale = 2;
     alphaFadeEndScale = 2;
     fontLabel = "RobotoCondensed";
-    sizeExLabel = GUI_TEXT_SIZE_SMALL;
+    sizeExLabel =  QUOTE(GUI_TEXT_SIZE_SMALL);
     fontGrid = "TahomaB";
     sizeExGrid = 0.02;
     fontUnits = "TahomaB";
-    sizeExUnits = GUI_TEXT_SIZE_SMALL;
+    sizeExUnits =  QUOTE(GUI_TEXT_SIZE_SMALL);
     fontNames = "EtelkaNarrowMediumPro";
-    sizeExNames = GUI_TEXT_SIZE_SMALL * 2;
+    sizeExNames =  QUOTE(GUI_TEXT_SIZE_SMALL * 2);
     fontInfo = "RobotoCondensed";
-    sizeExInfo = GUI_TEXT_SIZE_SMALL;
+    sizeExInfo =  QUOTE(GUI_TEXT_SIZE_SMALL);
     fontLevel = "TahomaB";
     sizeExLevel = 0.02;
     text = "#(argb,8,8,3)color(1,1,1,1)";

@@ -1,6 +1,6 @@
 class liberation_arsenal {
     idd = 5251;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = {};
 
     controls[] = {"OuterBG", "RecycleBG","OuterBG_F", "InnerBG", "InnerBG_F", "Header","LoadoutList","EditButton","LoadButton", "RespawnButton", "TransferButton", "PlayersCombo", "ButtonClose"};

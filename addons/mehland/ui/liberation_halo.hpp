@@ -1,6 +1,6 @@
 class liberation_halo {
     idd = 5203;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = {};
 
     controls[] = {"OuterBG", "RecycleBG","OuterBG_F", "InnerBG", "InnerBG_F", "Header","JumpButton","CancelButton","DeployMap"};

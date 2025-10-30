@@ -1,6 +1,6 @@
 class liberation_tutorial {
     idd = 5353;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = {};
 
     controls[] = { "OuterBG2", "OuterBG_F2", "OuterBG1", "OuterBG_F1", "InnerBG1", "InnerBG_F1", "InnerBG2", "InnerBG_F2",
@@ -91,14 +91,14 @@ class liberation_tutorial {
         colorScrollbar[] = COLOR_WHITE;
         class VScrollbar {
             color[] = COLOR_WHITE;
-            width = 0.01 * safezoneW;
+            width = QUOTE(0.01 * safezoneW);
             autoScrollSpeed = -1;
             autoScrollDelay = 5;
             autoScrollRewind = 0;
         };
         class HScrollbar {
             color[] = COLOR_WHITE;
-            height = 0.012 * safezoneH;
+            height = QUOTE(0.012 * safezoneH);
         };
         class ScrollBar {
             color[] = COLOR_WHITE;
@@ -120,7 +120,7 @@ class liberation_tutorial {
                 w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE));
                 h = QUOTE(0.5 * safezoneH);
                 text= "AAA";
-                size = 0.02 * safezoneH;
+                size = QUOTE(0.02 * safezoneH);
                 sizeEx =  QUOTE(0.02 * safezoneH);
                 shadow = 2;
                 font = FontM;

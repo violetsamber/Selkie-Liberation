@@ -1,6 +1,6 @@
 class liberation_recycle {
     idd = 5751;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = { "OuterBG", "RecycleBG", "OuterBG_F", "InnerBG", "InnerBG_F" };
     controls[] = { "Header", "ButtonClose",
         "ManpowerImageShadow","AmmoImageShadow","FuelImageShadow",
@@ -63,7 +63,7 @@ class liberation_recycle {
         y = QUOTE((0.5 * safezoneH + safezoneY));
         w = QUOTE((0.015 * safezoneW));
         h = QUOTE((0.025 * safezoneH));
-        moving = false;
+        moving = QUOTE(false);
     };
     class ManpowerImage: IconImage {
         idc = 1085;

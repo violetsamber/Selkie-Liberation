@@ -1,6 +1,6 @@
 class liberation_build {
     idd = 5501;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = {};
 
     controls[] = {"OuterBG", "RecycleBG", "OuterBG_F", "InnerBG", "InnerBG_F", "Header",
@@ -68,7 +68,7 @@ class liberation_build {
         y = QUOTE((0.2525 * safezoneH + safezoneY));
         w = QUOTE((0.02 * safezoneW));
         h = QUOTE((0.035 * safezoneH));
-        moving = false;
+        moving = QUOTE(false);
     };
     class BuildTypeButton: StdButton {
         colorBackgroundActive[] = { 0,1,0,0.5 };
@@ -189,7 +189,7 @@ class liberation_build {
         y = QUOTE((0.32 * safezoneH + safezoneY));
         w = QUOTE((0.015 * safezoneW));
         h = QUOTE((0.025 * safezoneH));
-        moving = false;
+        moving = QUOTE(false);
     };
     class ManpowerImage: IconImage {
         x = QUOTE((0.5475 * safezoneW + safezoneX));
@@ -236,7 +236,7 @@ class liberation_build {
         };
         onLBSelChanged="";
         shadow = 2;
-        rowHeight = 1.25 * 0.018 * safezoneH;
+        rowHeight = QUOTE(1.25 * 0.018 * safezoneH);
         colorPicture[] = {1,1,1,1};
         colorPictureSelected[] = {0,1,0,1};
         colorPictureDisabled[] = {0.4,0.4,0.4,1};
@@ -272,7 +272,7 @@ class liberation_build {
         idc = 134;
         type = CT_STRUCTURED_TEXT;
         y = QUOTE((0.78 * safezoneH + safezoneY));
-        size = 0.02 * safezoneH;
+        size = QUOTE(0.02 * safezoneH);
         colorText[] = {0.8, 0.8, 0.8, 1};
     };
     class PageLabel: StdText {
@@ -314,7 +314,7 @@ class liberation_build {
         y = QUOTE(0.725 * safezoneH + safezoneY);
         h = QUOTE(0.05 * safezoneH);
         text= "";
-        size = 0.02 * safezoneH;
+        size = QUOTE(0.02 * safezoneH);
         sizeEx =  QUOTE(0.02 * safezoneH);
         shadow = 2;
         font = FontM;
