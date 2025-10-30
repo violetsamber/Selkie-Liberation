@@ -14,7 +14,7 @@ class RscTitles {
         idd = -1;
         movingEnable = QUOTE(false);
         controls[]= {
-            GenericLabelShadow, GenericLabel2
+            QUOTE(GenericLabelShadow), QUOTE(GenericLabel2)
         };
         class GenericLabel2 {
             idc = -1;
@@ -41,7 +41,7 @@ class RscTitles {
         idd = -1;
         movingEnable = QUOTE(false);
         controls[] = {
-            VersionLabelShadow, Splash, VersionLabel
+            QUOTE(VersionLabelShadow), QUOTE(Splash), QUOTE(VersionLabel)
         };
         class Splash {
             idc = -1;
@@ -83,7 +83,7 @@ class RscTitles {
         idd = -1;
         movingEnable = QUOTE( true);
         controls[] = {
-            OuterBackground,GenericLabel111
+            QUOTE(OuterBackground),QUOTE(GenericLabel111)
         };
         class OuterBackground {
             idc = -1;
@@ -117,21 +117,21 @@ class RscTitles {
         movingEnable = QUOTE( true);
         onLoad = "uiNamespace setVariable ['KPLIB_overlay', _this select 0];";
         controls[] = {
-            BGPicture,
-            PictureFOBShadow, PictureFOB, LabelFOB,
-            PictureSuppliesShadow, PictureSupplies, LabelSupplies,
-            PictureAmmoShadow, PictureAmmo, LabelAmmo,
-            PictureFuelShadow, PictureFuel, LabelFuel,
-            PictureCapShadow, PictureCap, LabelCap,
-            PictureHeliShadow, PictureHeli, LabelHeli,
-            PicturePlaneShadow, PicturePlane, LabelPlane,
-            PictureCombatReadinessShadow, PictureCombatReadiness, LabelCombatReadiness,
-            PictureCivRepShadow, PictureCivRep, LabelCivRep,
-            PictureIntelShadow, PictureIntel, LabelIntel,
-            BGPictureActiveSectors, BGPictureSector,
-            CaptureFrame_OPFOR, CaptureFrame_BLUFOR, CaptureFrame,
-            LabelPoint, CentralShadow, CentralLabel,
-            ActiveSectors, AlertBGPicture, AlertLabel, AlertTimer
+            QUOTE(BGPicture),
+            QUOTE(PictureFOBShadow), QUOTE(PictureFOB), QUOTE(LabelFOB),
+            QUOTE(PictureSuppliesShadow), QUOTE(PictureSupplies), QUOTE(LabelSupplies),
+            QUOTE(PictureAmmoShadow), QUOTE(PictureAmmo), QUOTE(LabelAmmo),
+            QUOTE(PictureFuelShadow), QUOTE(PictureFuel), QUOTE(LabelFuel),
+            QUOTE(PictureCapShadow), QUOTE(PictureCap), QUOTE(LabelCap),
+            QUOTE(PictureHeliShadow), QUOTE(PictureHeli), QUOTE(LabelHeli),
+            QUOTE(PicturePlaneShadow), QUOTE(PicturePlane), QUOTE(LabelPlane),
+            QUOTE(PictureCombatReadinessShadow), QUOTE(PictureCombatReadiness), QUOTE(LabelCombatReadiness),
+            QUOTE(PictureCivRepShadow), QUOTE(PictureCivRep), QUOTE(LabelCivRep),
+            QUOTE(PictureIntelShadow), QUOTE(PictureIntel), QUOTE(LabelIntel),
+            QUOTE(BGPictureActiveSectors), QUOTE(BGPictureSector),
+            QUOTE(CaptureFrame_OPFOR), QUOTE(CaptureFrame_BLUFOR), QUOTE(CaptureFrame),
+            QUOTE(LabelPoint), QUOTE(CentralShadow), QUOTE(CentralLabel),
+            QUOTE(ActiveSectors), QUOTE(AlertBGPicture), QUOTE(AlertLabel), QUOTE(AlertTimer)
         };
         class BGPicture {
             idc = 758001;

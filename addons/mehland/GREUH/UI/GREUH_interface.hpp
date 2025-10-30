@@ -320,7 +320,7 @@ class GREUH_Menu {
 	};
 	class GREUH_ButtonSquad : GREUH_ButtonGeneric {
 		x = QUOTE(0.3 * safezoneW + safezoneX + BORDERSIZE);
-		w = QUOTE(((0.2 * safezoneW) )/ 4) - BORDERSIZE;
+		w = QUOTE(((0.2 * safezoneW)/ 4) - BORDERSIZE);
 	};
 	class GREUH_ButtonJoin : GREUH_ButtonSquad {
 		idc = 511;
@@ -371,7 +371,7 @@ class GREUH_Menu {
 		style = ST_FRAME;
 	};
 	class GREUH_ButtonName : GREUH_ButtonGeneric {
-		w = QUOTE(((0.2 * safezoneW) )/ 5) - BORDERSIZE;
+		w = QUOTE(((0.2 * safezoneW)/ 5) - BORDERSIZE);
 		y = QUOTE(((BASE_Y + 0.19) * safezoneH) + safezoneY);
 	};
 	class GREUH_ButtonName_Rename : GREUH_ButtonName {
@@ -424,7 +424,7 @@ class GREUH_Menu {
 		style = ST_FRAME;
 	};
 	class GREUH_ButtonLeaderGen : GREUH_ButtonGeneric {
-		w = QUOTE(((0.2 * safezoneW) )/ 5) - BORDERSIZE;
+		w = QUOTE(((0.2 * safezoneW)/ 5) - BORDERSIZE);
 		y = QUOTE(((BASE_Y + 0.23) * safezoneH) + safezoneY);
 	};
 	class GREUH_ButtonLeader_Choose : GREUH_ButtonLeaderGen {
@@ -636,7 +636,7 @@ class GREUH_Menu {
 		text = QUOTE($STR_GREUH_ADJUST_TERRAIN_DETAILS);
 	};
 	class GREUH_ButtonWorld : GREUH_ButtonGeneric {
-		w = QUOTE(((0.2 * safezoneW) )/ 4) - BORDERSIZE;
+		w = QUOTE(((0.2 * safezoneW)/ 4) - BORDERSIZE);
 		y = QUOTE(((BASE_Y + 0.7) * safezoneH) + safezoneY);
 	};
 	class GREUH_ButtonWorldVeryLow : GREUH_ButtonWorld {
