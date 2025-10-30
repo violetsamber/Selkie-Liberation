@@ -1,6 +1,6 @@
 class liberation_secondary {
     idd = 6842;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = {
         "CamoBG",
         "OuterBG",
@@ -113,14 +113,14 @@ class liberation_secondary {
         colorScrollbar[] = COLOR_WHITE;
         class VScrollbar {
             color[] = COLOR_WHITE;
-            width = 0.01 * safezoneW;
+            width = QUOTE(0.01 * safezoneW);
         autoScrollSpeed = -1;
         autoScrollDelay = 5;
         autoScrollRewind = 0;
         };
         class HScrollbar {
             color[] = COLOR_WHITE;
-            height = 0.012 * safezoneH;
+            height = QUOTE(0.012 * safezoneH);
         };
         class ScrollBar {
         color[] = COLOR_WHITE;
@@ -142,7 +142,7 @@ class liberation_secondary {
                 w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE));
                 h = QUOTE((0.5 * safezoneH) - BORDERSIZE );
                 text= "AAA";
-                size = 0.02 * safezoneH;
+                size = QUOTE(0.02 * safezoneH);
                 sizeEx =  QUOTE(0.02 * safezoneH);
                 shadow = 2;
                 font = FontM;

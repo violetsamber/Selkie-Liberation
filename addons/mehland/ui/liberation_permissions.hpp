@@ -1,6 +1,6 @@
 class liberation_permissions {
     idd = 5118;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = {};
 
     controls[] = { "OuterBG1", "OuterBG_F1", "InnerBG1", "InnerBG_F1", "Header", "ButtonClose", "PermissionsControlGroup", "ButtonSave", "ButtonCancel" };
@@ -54,14 +54,14 @@ class liberation_permissions {
         colorScrollbar[] = COLOR_WHITE;
          class VScrollbar {
              color[] = COLOR_WHITE;
-             width = 0.01 * safezoneW;
+             width = QUOTE(0.01 * safezoneW);
             autoScrollSpeed = 5;
             autoScrollDelay = 25;
             autoScrollRewind = 0;
          };
          class HScrollbar {
              color[] = COLOR_WHITE;
-             height = 0.012 * safezoneH;
+             height = QUOTE(0.012 * safezoneH);
          };
          class ScrollBar {
             color[] = COLOR_WHITE;

@@ -91,7 +91,7 @@ class RscListBox {
 	style = 0 + 0x10;
 	font = FontM;
 	sizeEx = QUOTE(0.018 * safezoneH);
-	rowHeight = 0.02 * safezoneH;
+	rowHeight = QUOTE(0.02 * safezoneH);
 	color[] = COLOR_LIGHTGRAY;
 	colorText[] = COLOR_WHITE;
 	colorScrollbar[] = COLOR_BRIGHTGREEN;
@@ -161,7 +161,7 @@ class RscCombo {
 
 class GREUH_Menu {
 	idd = 5565;
-	movingEnable = false;
+	movingEnable = QUOTE(false);
 	controlsBackground[] = {};
 	controls[] = {"GREUH_OuterBG", "BGPicture", "GREUH_OuterBG_F","GREUH_InnerBG", "GREUH_InnerBG_F","GREUH_Header","GREUH_SquadLabel",
 	"GREUH_SquadZone","GREUH_PlatoonLabel","GREUH_ViewDistance","GREUH_WorldQuality",
@@ -186,7 +186,7 @@ class GREUH_Menu {
 		colorBackground[] = {0, 0, 0, 1};
 		font = FontM;
 		sizeEx = QUOTE(0.023);
-		moving = false;
+		moving = QUOTE(false);
 		text = "res\camo03.jpg";
 		x = QUOTE((0.15 * safezoneW + safezoneX) - ( 2 * BORDERSIZE));
 		y = QUOTE(((BASE_Y + 0.02) * safezoneH) + safezoneY - (3 * BORDERSIZE));
@@ -196,7 +196,7 @@ class GREUH_Menu {
 
 	class GREUH_OuterBG {
 		idc = -1;
-		type =  CT_STATIC;
+		type =  QUOTE(CT_STATIC);
 		style = ST_SINGLE;
 		colorText[] = COLOR_BLACK;
 		colorBackground[] = COLOR_BROWN;
@@ -223,7 +223,7 @@ class GREUH_Menu {
 	};
 	class GREUH_StdText {
 		idc = -1;
-		type =  CT_STATIC;
+		type =  QUOTE(CT_STATIC);
 		style = ST_LEFT;
 		colorText[] = COLOR_WHITE;
 		colorBackground[] = COLOR_NOALPHA;
@@ -247,7 +247,7 @@ class GREUH_Menu {
 		idc = -1;
 		type = CT_BUTTON;
 		style = ST_CENTER;
-		default = false;
+		default = QUOTE(false);
 		font = FontM;
 		sizeEx = QUOTE(0.018 * safezoneH);
 		colorText[] = { 0, 0, 0, 1 };
@@ -763,7 +763,7 @@ class GreuhButton {
 	idc = -1;
 	type = CT_BUTTON;
 	style = ST_CENTER;
-	default = false;
+	default = QUOTE(false);
 	font = FontM;
 	sizeEx = QUOTE(0.018 * safezoneH);
 	colorText[] = { 0, 0, 0, 1 };
@@ -794,7 +794,7 @@ class GreuhButton {
 
 class GREUH_respawn {
 	idd = 5566;
-	movingEnable = false;
+	movingEnable = QUOTE(false);
 	controlsBackground[] = {"GREUH_BleedoutBar_BG"};
 	controls[] = {"GREUH_BleedoutBar","GREUH_BleedoutBar_F","GREUH_Useless","GREUH_Respawn","GREUH_ReviveLabel","GREUH_WoundedLabel", "GREUH_ReplaceAI"};
 	objects[] = {};
@@ -827,7 +827,7 @@ class GREUH_respawn {
 	};
 	class GREUH_ReviveLabel {
 		idc = 5567;
-		type =  CT_STATIC;
+		type =  QUOTE(CT_STATIC);
 		style = ST_CENTER;
 		colorText[] = COLOR_WHITE;
 		colorBackground[] = COLOR_NOALPHA;
@@ -842,7 +842,7 @@ class GREUH_respawn {
 	};
 	class GREUH_WoundedLabel {
 		idc = 4567;
-		type =  CT_STATIC;
+		type =  QUOTE(CT_STATIC);
 		style = ST_CENTER;
 		colorText[] = COLOR_WHITE;
 		colorBackground[] = COLOR_NOALPHA;
@@ -857,7 +857,7 @@ class GREUH_respawn {
 	};
 	class GREUH_BleedoutBar {
 		idc = 6699;
-		type =  CT_STATIC;
+		type =  QUOTE(CT_STATIC);
 		style = ST_SINGLE;
 		colorText[] = COLOR_WHITE;
 		colorBackground[] = COLOR_BLEEDOUT;

@@ -1,6 +1,6 @@
 class liberation_repackage_fob {
     idd = 5755;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = { "OuterBG", "RecycleBG", "OuterBG_F", "InnerBG", "InnerBG_F" };
     controls[] = { "Header", "ButtonClose", "Infotext","TruckButton","BoxButton","CancelButton"};
     objects[] = {};

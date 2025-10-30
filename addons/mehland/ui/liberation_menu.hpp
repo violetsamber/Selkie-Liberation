@@ -1,12 +1,12 @@
 class liberation_menu {
     idd = 5651;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controls[] = { "Splash", "Start", "Help" };
     objects[] = {};
 
     class Splash {
         idc = -1;
-        type =  CT_STATIC ;
+        type =  QUOTE(CT_STATIC );
         style = ST_PICTURE;
         colorText[] = COLOR_WHITE;
         colorBackground[] = COLOR_NOALPHA;
@@ -27,7 +27,7 @@ class liberation_menu {
         w = QUOTE((0.15 * safezoneW) - (BORDERSIZE));
         h = QUOTE((0.07 * safezoneH));
         sizeEx =  QUOTE(0.025 * safezoneH);
-        size = 0.025 * safezoneH;
+        size = QUOTE(0.025 * safezoneH);
         text = "";
         action = "dostartgame=1;";
         textureNoShortcut = "res\btn_join_spl_idl3.paa";

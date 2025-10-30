@@ -1,6 +1,6 @@
 class liberation_logistic {
     idd = 75802;
-    movingEnable = false;
+    movingEnable = QUOTE(false);
     controlsBackground[] = {};
 
     controls[] = {
