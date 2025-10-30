@@ -258,7 +258,7 @@ class FSM
                          "    && {!(_x in _hcGrps)}" \n
                          "    && {!(((units _x) select {alive _x}) isEqualTo [])}" \n
                          "    && {!(_cmdr in (units _x))}" \n
-                         "    && {(((units _x) apply {str _x}) findIf {_x find ""BIS_SUPP_HQ_"" != -1}) isEqualTo -1}" \n
+                         "    && {(((units _x) apply {str _x}) findIf {_x find ""bis_supp_hq_"" != -1}) isEqualTo -1}" \n
                          "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -298,7 +298,7 @@ class FSM
                          "} forEach (_hcGrps select {" \n
                          "    ((units _x) findIf {alive _x}) == -1" \n
                          "    || {_cmdr in (units _x)}" \n
-                         "    || {(((units _x) apply {str _x}) findIf {_x find ""BIS_SUPP_HQ_"" != -1}) != -1}" \n
+                         "    || {(((units _x) apply {str _x}) findIf {_x find ""bis_supp_hq_"" != -1}) != -1}" \n
                          "});"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
