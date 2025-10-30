@@ -43,20 +43,20 @@ while { true } do {
                     _localgroup addGroupIcon [ _groupiconsize, [ 0,0 ] ];
                 };
 
-                _iconed_groups pushback _x;
+                _iconed_groups pushBack _x;
             };
         };
-    } foreach allGroups;
+    } forEach allGroups;
 
     {
         _color = [];
-        if ( isplayer leader _x ) then {
+        if ( isPlayer leader _x ) then {
             _color = [0.8,0.8,0,1];
         } else {
             _color = [0,0.3,0.8,1];
         };
         _x setGroupIconParams [_color,"",1,true];
-    } foreach _iconed_groups;
+    } forEach _iconed_groups;
 
     _ticks = _ticks + 1;
     if ( _ticks >= 15 ) then {

@@ -19,7 +19,7 @@ while {true} do {
 
     if ([4] call KPLIB_fnc_hasPermission) then {
         private _detected_vehicles = (getPos player) nearObjects veh_action_detect_distance select {
-            (((toLower (typeof _x)) in _recycleable_classnames && (({alive _x} count (crew _x)) == 0 || unitIsUAV _x) && (locked _x == 0 || locked _x == 1)) ||
+            (((toLower (typeOf _x)) in _recycleable_classnames && (({alive _x} count (crew _x)) == 0 || unitIsUAV _x) && (locked _x == 0 || locked _x == 1)) ||
             (toLower (typeOf _x)) in KPLIB_b_buildings_classes ||
             (((toLower (typeOf _x)) in KPLIB_storageBuildings) && ((_x getVariable ["KP_liberation_storage_type",-1]) == 0)) ||
             (toLower (typeOf _x)) in KPLIB_upgradeBuildings ||
@@ -31,8 +31,8 @@ while {true} do {
                 (((attachedObjects _x) select {!isNull _X}) isEqualTo [])
                 || ((typeOf _x) == "rhsusf_mkvsoc")
             ) &&
-            _x distance2d startbase > 1000 &&
-            (_x distance2d ([] call KPLIB_fnc_getNearestFob)) < GRLIB_fob_range &&
+            _x distance2D startbase > 1000 &&
+            (_x distance2D ([] call KPLIB_fnc_getNearestFob)) < GRLIB_fob_range &&
             (getObjectType _x) >= 8
         };
 
@@ -45,7 +45,7 @@ while {true} do {
 
             if (!_next_vehicle_already_in_list) then {
                 private _idact_next = _next_vehicle addAction ["<t color='#FFFF00'>" + localize "STR_RECYCLE" + "</t> <img size='2' image='res\ui_recycle.paa'/>", "scripts\client\actions\do_recycle.sqf", "", -900, true, true, "", "build_confirmed == 0 && ((_this distance2D _target) < veh_action_distance) && (vehicle player == player)"];
-                _recycleable_vehicles pushback [_next_vehicle, _idact_next] ;
+                _recycleable_vehicles pushBack [_next_vehicle, _idact_next] ;
             };
         } forEach _detected_vehicles;
 

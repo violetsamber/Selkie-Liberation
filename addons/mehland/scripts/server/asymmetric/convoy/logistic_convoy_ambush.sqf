@@ -105,7 +105,7 @@ while {(({alive _x} count (units _grp)) > 0) && (_waitingTime > 0)} do {
     private _player_near = false;
     {
         if (((_x distance _roadObj) < 250) && (alive _x)) exitWith {_player_near = true};
-    } foreach allPlayers;
+    } forEach allPlayers;
 
     if !(_player_near) then {
         _waitingTime = _waitingTime - 1;

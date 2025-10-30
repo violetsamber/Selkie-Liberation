@@ -31,7 +31,7 @@ while { GRLIB_endgame == 0 } do {
         _squad = [] call KPLIB_fnc_getSquadComp;
         {
             [_x, _sector_spawn_pos, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
-        } foreach _squad;
+        } forEach _squad;
     } else {
 
         private [ "_vehicle_object" ];
@@ -63,14 +63,14 @@ while { GRLIB_endgame == 0 } do {
             _patrol_continue = false;
         } else {
             if ( time - _started_time > 900 ) then {
-                if ( [ getpos (leader _grp) , 4000 , GRLIB_side_friendly ] call KPLIB_fnc_getUnitsCount == 0 ) then {
+                if ( [ getPos (leader _grp) , 4000 , GRLIB_side_friendly ] call KPLIB_fnc_getUnitsCount == 0 ) then {
                     _patrol_continue = false;
                     {
                         if ( !isNull objectParent _x ) then {
                             [(vehicle _x)] call KPLIB_fnc_cleanOpforVehicle;
                         };
                         deleteVehicle _x;
-                    } foreach (units _grp);
+                    } forEach (units _grp);
                 };
             };
         };

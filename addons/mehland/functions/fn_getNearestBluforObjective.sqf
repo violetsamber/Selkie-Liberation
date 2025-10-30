@@ -22,7 +22,7 @@ params [
 if (GRLIB_all_fobs isEqualTo [] && blufor_sectors isEqualTo []) exitWith {[]};
 
 private _objectives = GRLIB_all_fobs + (blufor_sectors apply {markerPos _x});
-_objectives = _objectives apply {[_x distance2d _pos, _x]};
+_objectives = _objectives apply {[_x distance2D _pos, _x]};
 _objectives sort true;
 
 (_objectives select 0) select 1

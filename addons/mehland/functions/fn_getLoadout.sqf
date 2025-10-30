@@ -48,7 +48,7 @@
 
 */
 
-private ["_target","_options","_saveMagsAmmo","_isRepetitive","_isOnFoot","_currentWeapon","_currentMode","_isFlashlightOn","_isIRLaserOn","_magazinesAmmo","_loadedMagazines","_saveWeaponMagazines","_getMagsAmmo","_backPackItems","_assignedItems","_data"];
+private ["_target","_options","_saveMagsAmmo","_isRepetitive","_isOnFoot","_currentWeapon","_currentMode","_isFlashlightOn","_isIRLaserOn","_magazinesAmmo","_loadedMagazines","_saveWeaponMagazines","_getMagsAmmo","_backpackItems","_assignedItems","_data"];
 
 _options = [];
 
@@ -165,11 +165,11 @@ if(_saveMagsAmmo) then {
 _cargo = getbackpackcargo (unitbackpack _target);
 _backpacks = [];
 {
-    for "_i" from 1 to ((_cargo select 1) select _foreachindex) do {
+    for "_i" from 1 to ((_cargo select 1) select _forEachindex) do {
         _backpacks set [count _backpacks, _x];
     };
-} foreach (_cargo select 0);
-_backPackItems = (backpackitems _target) + _backpacks;
+} forEach (_cargo select 0);
+_backpackItems = (backpackItems _target) + _backpacks;
 
 // get assigned items, headgear and goggles is not part of assignedItems
 _assignedItems = assignedItems _target;
@@ -281,7 +281,7 @@ _data = [
     [vestItems _target, "Vest"] call _getMagsAmmo, //10
 
     backpack _target, //11  ""
-    [_backPackItems, "Backpack"] call _getMagsAmmo, //12
+    [_backpackItems, "Backpack"] call _getMagsAmmo, //12
 
     _loadedMagazines, //13 (optional) [[primary mags],[handgun mags],[secondary mags],[other mags]]
     _currentWeapon, //14 (optional) ""

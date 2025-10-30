@@ -449,7 +449,7 @@ if (!isNil "_saveData") then {
             _object allowdamage false;
 
             // Reposition spawned object
-            _object setdir _dir;
+            _object setDir _dir;
             _object setVectorUp _vecUp;
             _object setPosATL _pos;
 

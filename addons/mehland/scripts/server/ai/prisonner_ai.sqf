@@ -11,7 +11,7 @@ if ((_unit isKindOf "Man") && (alive _unit) && (side group _unit == GRLIB_side_e
     if (alive _unit) then {
 
         removeAllWeapons _unit;
-        if (typeof _unit != pilot_classname) then {
+        if (typeOf _unit != pilot_classname) then {
             removeHeadgear _unit;
         };
         removeBackpack _unit;
@@ -29,7 +29,7 @@ if ((_unit isKindOf "Man") && (alive _unit) && (side group _unit == GRLIB_side_e
         } else {
             _unit disableAI "ANIM";
             _unit disableAI "MOVE";
-            _unit playmove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
+            _unit playMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
             sleep 2;
             _unit setCaptive true;
         };

@@ -2,7 +2,7 @@ params [ "_ammobox", ["_max_transport_distance", 15] ];
 private [ "_neartransporttrucks", "_truck_to_load", "_truck_load", "_next_truck", "_maxload", "_i" ];
 
 _maxload = 3;
-_neartransporttrucks = ((getpos _ammobox) nearEntities [KPLIB_transport_classes, _max_transport_distance]) select {alive _x && speed _x < 5 && ((getpos _x) select 2) < 5};
+_neartransporttrucks = ((getPos _ammobox) nearEntities [KPLIB_transport_classes, _max_transport_distance]) select {alive _x && speed _x < 5 && ((getPos _x) select 2) < 5};
 _truck_to_load = objNull;
 
 
@@ -11,11 +11,11 @@ _truck_to_load = objNull;
     _maxload = 0;
     _offsets = [];
     {
-        if ( _x select 0 == typeof _next_truck ) then {
+        if ( _x select 0 == typeOf _next_truck ) then {
             _maxload = (count _x) - 2;
-            for [ {_i=2}, {_i < (count _x) }, {_i=_i+1} ] do { _offsets pushback (_x select _i); };
+            for [ {_i=2}, {_i < (count _x) }, {_i=_i+1} ] do { _offsets pushBack (_x select _i); };
         };
-    } foreach KPLIB_transportConfigs;
+    } forEach KPLIB_transportConfigs;
 
     if ( isNull _truck_to_load ) then {
         _truck_load = _next_truck getVariable ["GRLIB_ammo_truck_load", 0];
@@ -29,7 +29,7 @@ _truck_to_load = objNull;
             };
         }
     };
-} foreach _neartransporttrucks;
+} forEach _neartransporttrucks;
 
 if ( isNull _truck_to_load && !isDedicated ) then {
     hint localize "STR_BOX_CANTLOAD";

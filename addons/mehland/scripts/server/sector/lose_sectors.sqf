@@ -13,7 +13,7 @@ while { GRLIB_endgame == 0 } do {
             [ _x ] call attack_in_progress_sector;
         };
         sleep 0.5;
-    } foreach blufor_sectors;
+    } forEach blufor_sectors;
 
     {
         _ownership = [ _x ] call KPLIB_fnc_getSectorOwnership;
@@ -21,7 +21,7 @@ while { GRLIB_endgame == 0 } do {
             [ _x ] call attack_in_progress_fob;
         };
         sleep 0.5;
-    } foreach GRLIB_all_fobs;
+    } forEach GRLIB_all_fobs;
 
     sleep 1;
 

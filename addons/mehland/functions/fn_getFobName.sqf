@@ -19,4 +19,4 @@ params [
     ["_fob", [0, 0, 0], [[]], [2, 3]]
 ];
 
-military_alphabet param [GRLIB_all_fobs findIf {(_x distance2d _fob) < 100}, ""]
+military_alphabet param [GRLIB_all_fobs findIf {(_x distance2D _fob) < 100}, ""]

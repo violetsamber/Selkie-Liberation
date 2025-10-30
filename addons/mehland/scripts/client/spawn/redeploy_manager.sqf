@@ -47,8 +47,8 @@ while {true} do {
 
     showCinemaBorder false;
     camUseNVG false;
-    respawn_camera = "camera" camCreate (getposATL startbase);
-    respawn_object = "Sign_Arrow_Blue_F" createVehicleLocal (getposATL startbase);
+    respawn_camera = "camera" camCreate (getPosATL startbase);
+    respawn_object = "Sign_Arrow_Blue_F" createVehicleLocal (getPosATL startbase);
     respawn_object hideObject true;
     respawn_camera camSetTarget respawn_object;
     respawn_camera cameraEffect ["internal","back"];
@@ -76,7 +76,7 @@ while {true} do {
         if (!isNil "_saved_loadouts") then {
             {
                 if (_counter % 2 == 0) then {
-                    _loadouts_data pushback _x;
+                    _loadouts_data pushBack _x;
                 };
                 _counter = _counter + 1;
             } forEach _saved_loadouts;
@@ -89,7 +89,7 @@ while {true} do {
 
     while {dialog && alive player && deploy == 0} do {
         // ARRAY - [[NAME, POSITION(, OBJECT)], ...]
-        KPLIB_respawnPositionsList = [[_basenamestr, getposATL startbase]];
+        KPLIB_respawnPositionsList = [[_basenamestr, getPosATL startbase]];
 
         {
             KPLIB_respawnPositionsList pushBack [
@@ -115,7 +115,7 @@ while {true} do {
         lbClear DEPLOY_LIST_IDC;
         {
             lbAdd [DEPLOY_LIST_IDC, (_x select 0)];
-        } foreach KPLIB_respawnPositionsList;
+        } forEach KPLIB_respawnPositionsList;
 
         if (lbCurSel DEPLOY_LIST_IDC == -1) then {
              lbSetCurSel [201, 0];
@@ -147,9 +147,9 @@ while {true} do {
                 };
             };
 
-            "spawn_marker" setMarkerPosLocal (getpos respawn_object);
+            "spawn_marker" setMarkerPosLocal (getPos respawn_object);
             ctrlMapAnimClear (DEPLOY_DISPLAY displayCtrl 251);
-            private _transition_map_pos = getpos respawn_object;
+            private _transition_map_pos = getPos respawn_object;
             private _fullscreen_map_offset = 4000;
             if(fullmap % 2 == 1) then {
                 _transition_map_pos = [(_transition_map_pos select 0) - _fullscreen_map_offset,  (_transition_map_pos select 1) + (_fullscreen_map_offset * 0.75), 0];
@@ -157,9 +157,9 @@ while {true} do {
             (DEPLOY_DISPLAY displayCtrl 251) ctrlMapAnimAdd [0, 0.3,_transition_map_pos];
             ctrlMapAnimCommit (DEPLOY_DISPLAY displayCtrl 251);
 
-            respawn_camera camSetPos [(getpos respawn_object select 0) - 70, (getpos respawn_object select 1) + _startdist, (getpos respawn_object select 2) + _alti];
+            respawn_camera camSetPos [(getPos respawn_object select 0) - 70, (getPos respawn_object select 1) + _startdist, (getPos respawn_object select 2) + _alti];
             respawn_camera camcommit 0;
-            respawn_camera camSetPos [(getpos respawn_object select 0) - 70, (getpos respawn_object select 1) - _enddist, (getpos respawn_object select 2) + _alti];
+            respawn_camera camSetPos [(getPos respawn_object select 0) - 70, (getPos respawn_object select 1) - _enddist, (getPos respawn_object select 2) + _alti];
             respawn_camera camcommit 90;
         };
 

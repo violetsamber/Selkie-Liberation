@@ -16,14 +16,14 @@ if ( GREUH_allow_customsquads ) then {
 	ctrlShow [501, false];
 } else {
 	ctrlShow [501, true];
-	{ ctrlShow [_x, false] } foreach _squadcontrols;
+	{ ctrlShow [_x, false] } forEach _squadcontrols;
 };
 
 if ( GREUH_allow_platoonview ) then {
 	ctrlShow [601, false];
 } else {
 	ctrlShow [601, true];
-	{ ctrlShow [_x, false] } foreach _platooncontrols;
+	{ ctrlShow [_x, false] } forEach _platooncontrols;
 };
 
 if ( GREUH_allow_viewdistance ) then {
@@ -40,21 +40,21 @@ if ( GREUH_allow_viewdistance ) then {
 	ctrlSetText [ 960, format ["%1",desired_fps] ];
 } else {
 	ctrlShow [701, true];
-	{ ctrlShow [_x, false] } foreach _viewcontrols;
+	{ ctrlShow [_x, false] } forEach _viewcontrols;
 };
 
 if ( GREUH_allow_worldquality ) then {
 	ctrlShow [801, false];
 } else {
 	ctrlShow [801, true];
-	{ ctrlShow [_x, false] } foreach _worldcontrols;
+	{ ctrlShow [_x, false] } forEach _worldcontrols;
 };
 
 if ( GREUH_allow_mapmarkers ) then {
 	ctrlShow [901, false];
 } else {
 	ctrlShow [901, true];
-	{ ctrlShow [_x, false] } foreach _markerscontrols;
+	{ ctrlShow [_x, false] } forEach _markerscontrols;
 };
 
 if ( true ) then {
@@ -66,17 +66,17 @@ if ( true ) then {
 while { dialog && alive player } do {
 
 	if ( renaming ) then {
-		{ ctrlEnable [_x, false] } foreach (_allbuttons);
-		{ ctrlShow [_x, true] } foreach _rename_controls;
-		{ ctrlShow [_x, false] } foreach _leader_controls;
+		{ ctrlEnable [_x, false] } forEach (_allbuttons);
+		{ ctrlShow [_x, true] } forEach _rename_controls;
+		{ ctrlShow [_x, false] } forEach _leader_controls;
 	} else {
 		if ( choosingleader ) then {
-			{ ctrlEnable [_x, false] } foreach _allbuttons;
-			{ ctrlShow [_x, false] } foreach _rename_controls;
-			{ ctrlShow [_x, true] } foreach _leader_controls;
+			{ ctrlEnable [_x, false] } forEach _allbuttons;
+			{ ctrlShow [_x, false] } forEach _rename_controls;
+			{ ctrlShow [_x, true] } forEach _leader_controls;
 		} else {
-			{ ctrlEnable [_x, true] } foreach _allbuttons;
-			{ ctrlShow [_x, false] } foreach (_rename_controls + _leader_controls);
+			{ ctrlEnable [_x, true] } forEach _allbuttons;
+			{ ctrlShow [_x, false] } forEach (_rename_controls + _leader_controls);
 			ctrlEnable [513,(leader (group player) == player)];
 			ctrlEnable [514,(leader (group player) == player)];
 		};
@@ -92,7 +92,7 @@ while { dialog && alive player } do {
 			_brakets = "";
 			if ( _x == group player ) then { _brakets = ">> "; };
 			lbAdd [515, format [ "%4%1 - %2 (%3)",groupId _x, name leader _x, count units _x,_brakets ]];
-		} foreach groups_list;
+		} forEach groups_list;
 	};
 
 	if ( GREUH_allow_viewdistance ) then {

@@ -23,9 +23,9 @@ params [
     ["_side", GRLIB_side_friendly, [sideEmpty]]
 ];
 
-private _amount = _side countSide ((_pos nearEntities ["Man", _radius]) select {!(captive _x) && ((getpos _x) select 2 < 500)});
+private _amount = _side countSide ((_pos nearEntities ["Man", _radius]) select {!(captive _x) && ((getPos _x) select 2 < 500)});
 {
     _amount = _amount + (_side countSide (crew _x));
-} forEach ((_pos nearEntities [["Car", "Tank", "Air", "Ship"], _radius]) select {((getpos _x) select 2 < 500) && count (crew _x) > 0});
+} forEach ((_pos nearEntities [["Car", "Tank", "Air", "Ship"], _radius]) select {((getPos _x) select 2 < 500) && count (crew _x) > 0});
 
 _amount

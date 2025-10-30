@@ -1,14 +1,14 @@
 private _convoy_destinations_markers = [];
 private _load_box_fnc = compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\do_load_box.sqf";
 
-while { count _convoy_destinations_markers < 3 } do { _convoy_destinations_markers pushback ([2000,999999,false] call KPLIB_fnc_getOpforSpawnPoint); };
+while { count _convoy_destinations_markers < 3 } do { _convoy_destinations_markers pushBack ([2000,999999,false] call KPLIB_fnc_getOpforSpawnPoint); };
 
 private _couldnt_spawn = false;
-{ if ( _x == "" ) exitWith { _couldnt_spawn = true; }; } foreach _convoy_destinations_markers;
+{ if ( _x == "" ) exitWith { _couldnt_spawn = true; }; } forEach _convoy_destinations_markers;
 if ( _couldnt_spawn ) exitWith {["Could not find enough map positions for convoy hijack mission", "ERROR"] call KPLIB_fnc_log;};
 
 private _convoy_destinations = [];
-{ _convoy_destinations pushback (markerPos _x); } foreach _convoy_destinations_markers;
+{ _convoy_destinations pushBack (markerPos _x); } forEach _convoy_destinations_markers;
 
 private _spawnpos = _convoy_destinations select 0;
 [4, _spawnpos] remoteExec ["remote_call_intel"];
@@ -20,7 +20,7 @@ private _transport_vehicle = [_spawnpos getPos [10, 180], opfor_ammobox_transpor
 private _boxes_amount = 0;
 {
     if ( _x select 0 == opfor_ammobox_transport ) exitWith { _boxes_amount = (count _x) - 2 };
-} foreach KPLIB_transportConfigs;
+} forEach KPLIB_transportConfigs;
 
 if ( _boxes_amount == 0 ) exitWith {["Opfor ammobox truck classname doesn't allow for ammobox transport, correct your preset and/or transport config", "ERROR"] call KPLIB_fnc_log;};
 
@@ -49,7 +49,7 @@ sleep 0.5;
 
 {
     _x addEventHandler ["HandleDamage", { private [ "_damage" ]; if ( side (_this select 3) != GRLIB_side_friendly ) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ];
-} foreach [ _scout_vehicle, _escort_vehicle, _transport_vehicle, _troop_vehicle ];
+} forEach [ _scout_vehicle, _escort_vehicle, _transport_vehicle, _troop_vehicle ];
 
 _convoy_group setFormation "FILE";
 _convoy_group setBehaviour "SAFE";
@@ -57,7 +57,7 @@ _convoy_group setCombatMode "GREEN";
 _convoy_group setSpeedMode "LIMITED";
 
 while {(count (waypoints _convoy_group)) != 0} do {deleteWaypoint ((waypoints _convoy_group) select 0);};
-{_x doFollow leader _convoy_group} foreach units _convoy_group;
+{_x doFollow leader _convoy_group} forEach units _convoy_group;
 
 _waypoint = _convoy_group addWaypoint [_convoy_destinations select 1, 0];
 _waypoint setWaypointType "MOVE";
@@ -78,11 +78,11 @@ _waypoint setWaypointCompletionRadius 50;
 private _troops_group = createGroup [GRLIB_side_enemy, true];
 {
     [_x, _spawnpos, _troops_group, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
-} foreach ([] call KPLIB_fnc_getSquadCompTransport);
-{_x moveInCargo _troop_vehicle} foreach (units _troops_group);
+} forEach ([] call KPLIB_fnc_getSquadCompTransport);
+{_x moveInCargo _troop_vehicle} forEach (units _troops_group);
 
-private _convoy_marker = createMarkerLocal [ format [ "convoymarker%1", round time], getpos _transport_vehicle ];
-_convoy_marker setMarkerTextLocal (localize "STR_SECONDARY_CSAT_CONVOY");
+private _convoy_marker = createMarkerLocal [ format [ "convoymarker%1", round time], getPos _transport_vehicle ];
+_convoy_marker setmarkerTextLocal (localize "STR_SECONDARY_CSAT_CONVOY");
 _convoy_marker setMarkerTypeLocal "o_armor";
 _convoy_marker setMarkerColor GRLIB_color_enemy_bright;
 
@@ -91,11 +91,11 @@ private _convoy_marker_wp2 = createMarkerLocal [ format [ "convoymarkerwp2%1", r
 private _convoy_marker_wp3 = createMarkerLocal [ format [ "convoymarkerwp3%1", round time], _convoy_destinations select 2];
 
 {
-    _x setMarkerTextLocal (localize "STR_SECONDARY_CSAT_CONVOY_WP");
+    _x setmarkerTextLocal (localize "STR_SECONDARY_CSAT_CONVOY_WP");
     _x setMarkerTypeLocal "o_armor";
     _x setMarkerColorLocal GRLIB_color_enemy_bright;
     _x setMarkerSize [0.6, 0.6];
-} foreach [_convoy_marker_wp1, _convoy_marker_wp2, _convoy_marker_wp3];
+} forEach [_convoy_marker_wp1, _convoy_marker_wp2, _convoy_marker_wp3];
 
 private _mission_in_progress = true;
 private _convoy_attacked = false;
@@ -108,12 +108,12 @@ while { _mission_in_progress } do {
         _mission_in_progress = false;
     };
 
-    _convoy_marker setMarkerPos (getpos _transport_vehicle);
+    _convoy_marker setMarkerPos (getPos _transport_vehicle);
 
     if ( !_convoy_attacked ) then {
         {
             if ( !(alive _x) || (damage _x > 0.3) || !(alive driver _x)) exitWith { _convoy_attacked = true; };
-        } foreach [_scout_vehicle, _escort_vehicle, _transport_vehicle, _troop_vehicle];
+        } forEach [_scout_vehicle, _escort_vehicle, _transport_vehicle, _troop_vehicle];
     };
 
     if ( _convoy_attacked && !_disembark_troops) then {
@@ -125,7 +125,7 @@ while { _mission_in_progress } do {
             [ driver _troop_vehicle ] joinSilent _troop_driver_group;
             sleep 1;
             while {(count (waypoints _troop_driver_group)) != 0} do {deleteWaypoint ((waypoints _troop_driver_group) select 0);};
-            _waypoint = _troop_driver_group addWaypoint [getpos _troop_vehicle, 0];
+            _waypoint = _troop_driver_group addWaypoint [getPos _troop_vehicle, 0];
             _waypoint setWaypointType "MOVE";
             sleep 3;
         };
@@ -136,7 +136,7 @@ while { _mission_in_progress } do {
             _x action ["getout", vehicle _x];
             unAssignVehicle _x;
             sleep 0.7;
-        } foreach (units _troops_group);
+        } forEach (units _troops_group);
 
         _troops_group setBehaviour "COMBAT";
         _troops_group setCombatMode "RED";
@@ -154,7 +154,7 @@ while { _mission_in_progress } do {
 sleep 20;
 
 deleteMarker _convoy_marker;
-{ deleteMarker _x } foreach [_convoy_marker_wp1, _convoy_marker_wp2, _convoy_marker_wp3 ];
+{ deleteMarker _x } forEach [_convoy_marker_wp1, _convoy_marker_wp2, _convoy_marker_wp3 ];
 
 [round(combat_readiness * 0.85)] call KPLIB_fnc_setCombatReadiness;
 

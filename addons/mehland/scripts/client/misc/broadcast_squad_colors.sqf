@@ -5,7 +5,7 @@ while { true } do {
             if ( _x getVariable ["GRLIB_squad_color", "MAIN"] != assignedTeam _x ) then {
                 _x setVariable ["GRLIB_squad_color", assignedTeam _x, true ];
             };
-        } foreach (units group player);
+        } forEach (units group player);
     };
 
     sleep 5;

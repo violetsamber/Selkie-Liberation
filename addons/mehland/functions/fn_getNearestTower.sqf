@@ -24,7 +24,7 @@ params [
 ];
 
 private _towers = [sectors_tower select {_x in blufor_sectors}, sectors_tower - blufor_sectors] select (_side == GRLIB_side_enemy);
-_towers = (_towers apply {[(markerPos _x) distance2d _pos, _x]}) select {(_x select 0) <= _radius};
+_towers = (_towers apply {[(markerPos _x) distance2D _pos, _x]}) select {(_x select 0) <= _radius};
 _towers sort true;
 
 (_towers select 0) select 1

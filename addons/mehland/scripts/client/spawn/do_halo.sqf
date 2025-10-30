@@ -8,13 +8,13 @@ if ( GRLIB_halo_param > 1 && ( GRLIB_last_halo_jump + ( GRLIB_halo_param * 60 ) 
 
 _dialog = createDialog "liberation_halo";
 dojump = 0;
-halo_position = getpos player;
+halo_position = getPos player;
 
 _backpackcontents = [];
 
 [ "halo_map_event", "onMapSingleClick", { halo_position = _pos } ] call BIS_fnc_addStackedEventHandler;
 
-"spawn_marker" setMarkerTextLocal (localize "STR_HALO_PARAM");
+"spawn_marker" setmarkerTextLocal (localize "STR_HALO_PARAM");
 
 waitUntil { dialog };
 while { dialog && alive player && dojump == 0 } do {
@@ -29,7 +29,7 @@ if ( dialog ) then {
 };
 
 "spawn_marker" setMarkerPosLocal markers_reset;
-"spawn_marker" setMarkerTextLocal "";
+"spawn_marker" setmarkerTextLocal "";
 
 [ "halo_map_event", "onMapSingleClick" ] call BIS_fnc_removeStackedEventHandler;
 

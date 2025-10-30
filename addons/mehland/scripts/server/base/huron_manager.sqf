@@ -12,11 +12,11 @@ if !(_savedHuron isEqualTo []) then {
 while {true} do {
     // Spawn new huron if not loaded or destroyed
     if !(alive huron) then {
-        huron = huron_typename createVehicle [(getposATL huronspawn) select 0, (getposATL huronspawn) select 1, ((getposATL huronspawn) select 2) + 0.2];
+        huron = huron_typename createVehicle [(getPosATL huronspawn) select 0, (getPosATL huronspawn) select 1, ((getPosATL huronspawn) select 2) + 0.2];
         huron enableSimulationGlobal false;
         huron allowdamage false;
         huron setDir (getDir huronspawn);
-        huron setPosATL (getposATL huronspawn);
+        huron setPosATL (getPosATL huronspawn);
         huron setDamage 0;
         sleep 0.5;
         huron enableSimulationGlobal true;

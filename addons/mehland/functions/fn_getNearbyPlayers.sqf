@@ -21,4 +21,4 @@ params [
     ["_radius", 100, [0]]
 ];
 
-allPlayers select {alive _x && {(_x distance2d _pos) < _radius}}
+allPlayers select {alive _x && {(_x distance2D _pos) < _radius}}

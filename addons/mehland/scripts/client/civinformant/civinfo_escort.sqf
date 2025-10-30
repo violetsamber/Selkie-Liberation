@@ -11,7 +11,7 @@ if !(alive _informant) exitWith {if (KP_liberation_civinfo_debug > 0) then {[for
 private _is_near_fob = false;
 
 sleep 1;
-_informant playmove "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";
+_informant playMove "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";
 sleep 2;
 _informant enableAI "ANIM";
 _informant enableAI "MOVE";
@@ -19,7 +19,7 @@ sleep 2;
 [_informant, ""] remoteExecCall ["switchMove"];
 
 waitUntil {sleep 5;
-    _nearestfob = [getpos _informant] call KPLIB_fnc_getNearestFob;
+    _nearestfob = [getPos _informant] call KPLIB_fnc_getNearestFob;
     if (count _nearestfob == 3) then {
         if ((_informant distance _nearestfob) < 30) then {
             _is_near_fob = true;
@@ -33,7 +33,7 @@ if (alive _informant) then {
         sleep 5;
         private _grp = createGroup [GRLIB_side_friendly, true];
         [_informant] joinSilent _grp;
-        _informant playmove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground";
+        _informant playMove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground";
         _informant disableAI "ANIM";
         _informant disableAI "MOVE";
         sleep 5;

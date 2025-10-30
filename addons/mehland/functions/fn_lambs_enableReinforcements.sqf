@@ -16,7 +16,7 @@ params [
     ["_grp", grpNull, [grpNull]]
 ];
 
-if (isNull _grp) exitwith {
+if (isNull _grp) exitWith {
     ["Attempted to set LAMBS Reinforcements on null group.", "ERROR"] remoteExecCall ["KPLIB_fnc_log", 2];
 };
 

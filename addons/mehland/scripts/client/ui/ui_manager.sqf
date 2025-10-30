@@ -148,7 +148,7 @@ while {true} do {
             //         _zone_size = GRLIB_capture_size * 1.4;
             //     };
 
-            //     "zone_capture" setmarkerposlocal (markerpos _nearest_active_sector);
+            //     "zone_capture" setMarkerPosLocal (markerpos _nearest_active_sector);
             //     _colorzone = "ColorGrey";
             //     if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly ) then { _colorzone = GRLIB_color_friendly };
             //     if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_enemy ) then { _colorzone = GRLIB_color_enemy };
@@ -172,7 +172,7 @@ while {true} do {
             //     "zone_capture" setMarkerSizeLocal [ _zone_size,_zone_size ];
             // } else {
             {(_overlay displayCtrl (_x)) ctrlShow false;} forEach _sectorcontrols;
-            "zone_capture" setmarkerposlocal markers_reset;
+            "zone_capture" setMarkerPosLocal markers_reset;
             // };
         };
     };

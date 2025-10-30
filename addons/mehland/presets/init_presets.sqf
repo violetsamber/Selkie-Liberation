@@ -1,7 +1,7 @@
 
 KPLIB_initPresets = false;
 
-private _start = diag_ticktime;
+private _start = diag_tickTime;
 if (isServer) then {
     ["----- Server starts preset initialization -----", "PRESETS"] call KPLIB_fnc_log;
     ["Not found vehicles listed below are not an issue in general. It just sorts out vehicles from not loaded mods.", "PRESETS"] call KPLIB_fnc_log;
@@ -384,4 +384,4 @@ KPLIB_sarFire = "test_EmptyObjectForFireBig";
 
 KPLIB_initPresets = true;
 
-if (isServer) then {[format ["----- Preset initialization finished. Time needed: %1 seconds -----", diag_ticktime - _start], "PRESETS"] call KPLIB_fnc_log;};
+if (isServer) then {[format ["----- Preset initialization finished. Time needed: %1 seconds -----", diag_tickTime - _start], "PRESETS"] call KPLIB_fnc_log;};

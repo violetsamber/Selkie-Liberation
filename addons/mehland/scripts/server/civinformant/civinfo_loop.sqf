@@ -31,7 +31,7 @@ while {true} do {
         } else {
             _informant disableAI "ANIM";
             _informant disableAI "MOVE";
-            _informant playmove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
+            _informant playMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
             sleep 2;
             _informant setCaptive true;
         };
@@ -45,7 +45,7 @@ while {true} do {
             private _player_near = false;
             {
                 if (((_x distance _informant) < 150) && (alive _x)) exitWith {_player_near = true};
-            } foreach allPlayers;
+            } forEach allPlayers;
 
             if !(_player_near) then {
                 _waiting_time = _waiting_time - 1;

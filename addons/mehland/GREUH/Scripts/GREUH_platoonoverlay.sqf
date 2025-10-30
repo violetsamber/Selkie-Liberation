@@ -26,12 +26,12 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 				_unitstocount = [];
 				{
 					if ( _x distance (leader group _x) < 300) then {
-						_unitstocount pushback _x;
-						_totalx = _totalx + (getpos _x select 0);
-						_totaly = _totaly + (getpos _x select 1);
-						_totalz = _totalz + (getpos _x select 2);
+						_unitstocount pushBack _x;
+						_totalx = _totalx + (getPos _x select 0);
+						_totaly = _totaly + (getPos _x select 1);
+						_totalz = _totalz + (getPos _x select 2);
 					};
-				} foreach units _x;
+				} forEach units _x;
 
 				if ( count _unitstocount > 0 ) then {
 					_totalx = _totalx / (count _unitstocount);
@@ -70,10 +70,10 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 
 				_color = [0.8,1,0.2,_alpha];
 				if ( _x == group player) then { _color = [1,0.9,0.3,_alpha] };
-				drawIcon3D [platoon_icon1, _color, _grouppos, _size / 2, _size / 2,0, format ["%1 - %2%3",groupID _x, name (leader _x),_distlabel], 2, 0.03 * _textalpha, "puristaMedium"];
+				drawIcon3D [platoon_icon1, _color, _grouppos, _size / 2, _size / 2,0, format ["%1 - %2%3",groupId _x, name (leader _x),_distlabel], 2, 0.03 * _textalpha, "puristaMedium"];
 				drawIcon3D [platoon_icon2, _color, _grouppos, _size, _size,0, "", 2, 0.04, "puristaMedium"];
 			};
-		} foreach GRLIB_overlay_groups;
+		} forEach GRLIB_overlay_groups;
 	};
 
 	if ( show_nametags ) then {
@@ -133,7 +133,7 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 
 			drawIcon3D [ _drawicon, _color, _iconpos , 0.75, 0.75,0, format [ "%1", _displayname] , 2, 0.032, "puristaMedium"];
 
-		} foreach GRLIB_nametag_units;
+		} forEach GRLIB_nametag_units;
 	};
 
 }] call BIS_fnc_addStackedEventHandler;

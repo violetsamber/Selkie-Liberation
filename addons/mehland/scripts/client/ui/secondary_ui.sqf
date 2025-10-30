@@ -8,7 +8,7 @@ waitUntil { dialog };
 
 {
     lbAdd [ 101, localize _x ];
-} foreach [
+} forEach [
     "STR_SECONDARY_MISSION0",
     "STR_SECONDARY_MISSION1",
     "STR_SECONDARY_MISSION2",

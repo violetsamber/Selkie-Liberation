@@ -14,10 +14,10 @@ while { GRLIB_endgame == 0 } do {
     _usable_sectors = [];
     {
         if ((([markerPos _x, 1000, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) == 0) && (count ([markerPos _x, 3500] call KPLIB_fnc_getNearbyPlayers) > 0)) then {
-            _usable_sectors pushback _x;
+            _usable_sectors pushBack _x;
         }
 
-    } foreach ((sectors_bigtown + sectors_capture + sectors_factory) - (active_sectors));
+    } forEach ((sectors_bigtown + sectors_capture + sectors_factory) - (active_sectors));
 
     if ( count _usable_sectors > 0 ) then {
         _spawnsector = selectRandom _usable_sectors;
@@ -37,7 +37,7 @@ while { GRLIB_endgame == 0 } do {
                 sleep 1;
             };
 
-            _spawnpos = getpos _nearestroad;
+            _spawnpos = getPos _nearestroad;
 
             [selectRandom civilians, _spawnpos, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
             _civveh = (selectRandom civilian_vehicles) createVehicle _spawnpos;
@@ -51,41 +51,41 @@ while { GRLIB_endgame == 0 } do {
 
         };
 
-        { _x addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != GRLIB_side_friendly ) && ( side (_this select 3) != GRLIB_side_enemy )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ]; } foreach units _grp;
+        { _x addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != GRLIB_side_friendly ) && ( side (_this select 3) != GRLIB_side_enemy )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ]; } forEach units _grp;
 
         _sectors_patrol = [];
-        _patrol_startpos = getpos (leader _grp);
+        _patrol_startpos = getPos (leader _grp);
         {
             if ((_patrol_startpos distance (markerpos _x) < 5000) && (count ([markerPos _x, 4000] call KPLIB_fnc_getNearbyPlayers) > 0)) then {
-                _sectors_patrol pushback _x;
+                _sectors_patrol pushBack _x;
             };
-        } foreach (sectors_bigtown + sectors_capture + sectors_factory);
+        } forEach (sectors_bigtown + sectors_capture + sectors_factory);
 
         _sectors_patrol_random = [];
         _sectorcount = count _sectors_patrol;
         while { count _sectors_patrol_random < _sectorcount } do {
             _nextsector = selectRandom _sectors_patrol;
-            _sectors_patrol_random pushback _nextsector;
+            _sectors_patrol_random pushBack _nextsector;
             _sectors_patrol = _sectors_patrol - [_nextsector];
 
         };
 
         while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
-        {_x doFollow leader _grp} foreach units _grp;
+        {_x doFollow leader _grp} forEach units _grp;
 
         {
             _nearestroad = [(markerPos _x) getPos [random(100), random(360)], 200, []] call BIS_fnc_nearestRoad;
             if ( isNull _nearestroad ) then {
                 _waypoint = _grp addWaypoint [ markerpos _x, 100 ];
             } else {
-                _waypoint = _grp addWaypoint [ getpos _nearestroad, 0 ];
+                _waypoint = _grp addWaypoint [ getPos _nearestroad, 0 ];
             };
             _waypoint setWaypointType "MOVE";
             _waypoint setWaypointSpeed _grpspeed;
             _waypoint setWaypointBehaviour "SAFE";
             _waypoint setWaypointCombatMode "BLUE";
             _waypoint setWaypointCompletionRadius 100;
-        } foreach _sectors_patrol_random;
+        } forEach _sectors_patrol_random;
 
         _waypoint = _grp addWaypoint [_patrol_startpos , 100];
         _waypoint setWaypointType "CYCLE";
@@ -99,11 +99,11 @@ while { GRLIB_endgame == 0 } do {
 
         waitUntil {
             sleep (30 + (random 30));
-            ((({alive _x} count (units _grp)) == 0) || (count ([getpos leader _grp, 4000] call KPLIB_fnc_getNearbyPlayers) == 0))
+            ((({alive _x} count (units _grp)) == 0) || (count ([getPos leader _grp, 4000] call KPLIB_fnc_getNearbyPlayers) == 0))
         };
 
         if ( count (units _grp) > 0 ) then {
-            if (count ([getpos leader _grp, 4000] call KPLIB_fnc_getNearbyPlayers) == 0) then {
+            if (count ([getPos leader _grp, 4000] call KPLIB_fnc_getNearbyPlayers) == 0) then {
 
                 if ( !(isNull _civveh) ) then {
                      if ( { ( alive _x ) && (side group _x == GRLIB_side_friendly ) } count (crew _civveh) == 0 ) then {
@@ -111,7 +111,7 @@ while { GRLIB_endgame == 0 } do {
                     };
                 };
 
-                { deletevehicle _x } foreach units _grp;
+                { deletevehicle _x } forEach units _grp;
             };
         };
     };

@@ -9,10 +9,10 @@ private _cfg = configFile >> "cfgVehicles";
 {
     _x params ["_vehicle", "_base"];
     private _marker = createMarkerLocal [format ["vehicleunlockmarker%1", _base], [(markerpos _base) select 0, ((markerpos _base) select 1) + 125]];
-    _marker setMarkerTextLocal (getText (_cfg >> _vehicle >> "displayName"));
+    _marker setmarkerTextLocal (getText (_cfg >> _vehicle >> "displayName"));
     _marker setMarkerColorLocal GRLIB_color_enemy;
     _marker setMarkerTypeLocal "mil_pickup";
-    _vehicle_unlock_markers pushback [_marker, _base];
+    _vehicle_unlock_markers pushBack [_marker, _base];
 } forEach GRLIB_vehicle_to_military_base_links;
 
 private _sector_count = -1;

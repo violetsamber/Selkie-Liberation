@@ -30,7 +30,7 @@ if (combat_readiness > 15) then {
             if ((_targetsector in active_sectors) && !(_targetsector in blufor_sectors) && !(_nearestower in blufor_sectors) && (!([] call KPLIB_fnc_isBigtownActive) || _targetsector in sectors_bigtown)) then {
                 reinforcements_sector_under_attack = _targetsector;
                 reinforcements_set = true;
-                ["lib_reinforcements",[markertext _targetsector]] remoteExec ["bis_fnc_shownotification"];
+                ["lib_reinforcements",[markerText _targetsector]] remoteExec ["bis_fnc_shownotification"];
                 if ((random combat_readiness) > (20 + (30 / GRLIB_csat_aggressivity))) then {
                     [_targetsector] spawn send_paratroopers;
                     [_targetsector] spawn send_paratroopers;

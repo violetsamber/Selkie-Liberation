@@ -15,7 +15,7 @@ for "_i" from 1 to 36 do {
     _fob_spheres pushBack ("Sign_Sphere100cm_F" createVehicleLocal [0, 0, 0]);
 };
 
-{ _x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"]; } foreach _object_spheres;
+{ _x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"]; } forEach _object_spheres;
 
 if (isNil "manned") then { manned = false };
 if (isNil "gridmode" ) then { gridmode = 0 };
@@ -46,7 +46,7 @@ while { true } do {
     };
 
     if(buildtype == 1 || buildtype == 8) then {
-        _pos = [(getpos player select 0) + 1,(getpos player select 1) + 1, 0];
+        _pos = [(getPos player select 0) + 1,(getPos player select 1) + 1, 0];
         _grp = group player;
         if ( manned ) then {
             _grp = createGroup GRLIB_side_friendly;
@@ -55,7 +55,7 @@ while { true } do {
         build_confirmed = 0;
     } else {
         if ( buildtype == 9 ) then {
-            _pos = [(getpos player select 0) + 1,(getpos player select 1) + 1, 0];
+            _pos = [(getPos player select 0) + 1,(getPos player select 1) + 1, 0];
             _grp = createGroup GRLIB_side_friendly;
             _grp setGroupId [format ["%1 %2",squads_names select buildindex, groupId _grp]];
             _idx = 0;
@@ -70,11 +70,11 @@ while { true } do {
                 };
                 _idx = _idx + 1;
 
-            } foreach _classname;
+            } forEach _classname;
             _grp setBehaviour "SAFE";
             build_confirmed = 0;
         } else {
-            _posfob = getpos player;
+            _posfob = getPos player;
             if (buildtype != 99) then {
                 _posfob = [] call KPLIB_fnc_getNearestFob;
             };
@@ -115,16 +115,16 @@ while { true } do {
                 _vehicle setObjectTextureGlobal [_i, '#(rgb,8,8,3)color(0,1,0,0.8)'];
             };
 
-            {_x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"];} foreach _object_spheres;
+            {_x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"];} forEach _object_spheres;
 
             while { build_confirmed == 1 && alive player } do {
-                _truedir = 90 - (getdir player);
+                _truedir = 90 - (getDir player);
                 if ((toLower (typeOf _vehicle)) in KPLIB_b_static_classes) then {
-                    _truepos = [((getposATL player) select 0) + (_dist * (cos _truedir)), ((getposATL player) select 1) + (_dist * (sin _truedir)),((getposATL player) select 2)];
+                    _truepos = [((getPosATL player) select 0) + (_dist * (cos _truedir)), ((getPosATL player) select 1) + (_dist * (sin _truedir)),((getPosATL player) select 2)];
                 } else {
-                    _truepos = [((getpos player) select 0) + (_dist * (cos _truedir)), ((getpos player) select 1) + (_dist * (sin _truedir)),0];
+                    _truepos = [((getPos player) select 0) + (_dist * (cos _truedir)), ((getPos player) select 1) + (_dist * (sin _truedir)),0];
                 };
-                _actualdir = ((getdir player) + build_rotation);
+                _actualdir = ((getDir player) + build_rotation);
                 if ( _classname == "Land_Cargo_Patrol_V1_F" || _classname == "Land_PortableLight_single_F" ) then { _actualdir = _actualdir + 180 };
                 if ( _classname == FOB_typename ) then { _actualdir = _actualdir + 270 };
 
@@ -143,7 +143,7 @@ while { true } do {
 
                 {
                     _x setPos (_truepos getPos [_dist, 10 * _forEachIndex]);
-                } foreach _object_spheres;
+                } forEach _object_spheres;
 
                 if !(buildtype isEqualTo 99) then {
                     {
@@ -151,7 +151,7 @@ while { true } do {
                     } forEach _fob_spheres;
                 };
 
-                _vehicle setdir _actualdir;
+                _vehicle setDir _actualdir;
 
                 _truepos = [_truepos select 0, _truepos select 1, (_truepos select 2) +  build_elevation];
 
@@ -172,29 +172,29 @@ while { true } do {
                 {
                     private _typeOfX = typeOf _x;
                     if ((_x isKindOf "Animal") || (_typeOfX in GRLIB_ignore_colisions_when_building) || (_typeOfX isKindOf "CAManBase") || (isPlayer _x) || (_x == _vehicle) || ((toLower (typeOf _vehicle)) in KPLIB_b_static_classes)) then {
-                        _remove_objects pushback _x;
+                        _remove_objects pushBack _x;
                     };
-                } foreach _near_objects;
+                } forEach _near_objects;
 
                 private _remove_objects_25 = [];
                 {
                     private _typeOfX = typeOf _x;
                     if ((_x isKindOf "Animal") || (_typeOfX in GRLIB_ignore_colisions_when_building) || (_typeOfX isKindOf "CAManBase") || (isPlayer _x) || (_x == _vehicle) || ((toLower (typeOf _vehicle)) in KPLIB_b_static_classes)) then {
-                        _remove_objects_25 pushback _x;
+                        _remove_objects_25 pushBack _x;
                     };
-                } foreach _near_objects_25;
+                } forEach _near_objects_25;
 
                 _near_objects = _near_objects - _remove_objects;
                 _near_objects_25 = _near_objects_25 - _remove_objects_25;
 
                 if ( count _near_objects == 0 ) then {
                     {
-                        _dist22 = 0.6 * (sizeOf (typeof _x));
+                        _dist22 = 0.6 * (sizeOf (typeOf _x));
                         if ( _dist22 < 1 ) then { _dist22 = 1 };
                         if (_truepos distance _x < _dist22) then {
-                            _near_objects pushback _x;
+                            _near_objects pushBack _x;
                         };
-                    } foreach _near_objects_25;
+                    } forEach _near_objects_25;
                 };
 
                 if ( count _near_objects != 0 ) then {
@@ -203,7 +203,7 @@ while { true } do {
                     GRLIB_conflicting_objects = [];
                 };
 
-                if (count _near_objects == 0 && ((_truepos distance _posfob) < _maxdist) && (  ((!surfaceIsWater _truepos) && (!surfaceIsWater getpos player)) || (_classname in boats_names) ) ) then {
+                if (count _near_objects == 0 && ((_truepos distance _posfob) < _maxdist) && (  ((!surfaceIsWater _truepos) && (!surfaceIsWater getPos player)) || (_classname in boats_names) ) ) then {
 
                     if ( ((buildtype == 6) || (buildtype == 99)) && ((gridmode % 2) == 1) ) then {
                         _vehicle setpos [round (_truepos select 0),round (_truepos select 1), _truepos select 2];
@@ -226,13 +226,13 @@ while { true } do {
                     if(build_invalid == 1) then {
                         GRLIB_ui_notif = "";
 
-                        {_x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"];} foreach _object_spheres;
+                        {_x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"];} forEach _object_spheres;
                     };
                     build_invalid = 0;
 
                 } else {
                     if ( build_invalid == 0 ) then {
-                        {_x setObjectTexture [0, "#(rgb,8,8,3)color(1,0,0,1)"];} foreach _object_spheres;
+                        {_x setObjectTexture [0, "#(rgb,8,8,3)color(1,0,0,1)"];} forEach _object_spheres;
                     };
                     _vehicle setpos _ghost_spot;
                     build_invalid = 1;
@@ -242,11 +242,11 @@ while { true } do {
                         if (_debug_colisions) then {
                             private [ "_objs_classnames" ];
                             _objs_classnames = [];
-                            { _objs_classnames pushback (typeof _x) } foreach _near_objects;
+                            { _objs_classnames pushBack (typeOf _x) } forEach _near_objects;
                             hint format [ "Colisions : %1", _objs_classnames ];
                         };
                     };
-                    if( ((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) && !(_classname in boats_names)) then {
+                    if( ((surfaceIsWater _truepos) || (surfaceIsWater getPos player)) && !(_classname in boats_names)) then {
                         GRLIB_ui_notif = localize "STR_BUILD_ERROR_WATER";
                     };
                     if((_truepos distance _posfob) > _maxdist) then {
@@ -296,13 +296,13 @@ while { true } do {
             };
 
             if ( build_confirmed == 2 ) then {
-                _vehpos = getpos _vehicle;
-                _vehdir = getdir _vehicle;
+                _vehpos = getPos _vehicle;
+                _vehdir = getDir _vehicle;
                 deleteVehicle _vehicle;
                 sleep 0.1;
                 _vehicle = _classname createVehicle _truepos;
                 _vehicle allowDamage false;
-                _vehicle setdir _vehdir;
+                _vehicle setDir _vehdir;
                 if ((toLower (typeOf _vehicle)) in KPLIB_b_static_classes) then {
                     _vehicle setPosATL _truepos;
                 } else {
@@ -333,7 +333,7 @@ while { true } do {
 
                 if(buildtype != 6) then {
                     _vehicle addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
-                    { _x addMPEventHandler ["MPKilled", {_this spawn kill_manager}]; } foreach (crew _vehicle);
+                    { _x addMPEventHandler ["MPKilled", {_this spawn kill_manager}]; } forEach (crew _vehicle);
                 };
             };
 
@@ -355,7 +355,7 @@ while { true } do {
             player removeAction _idactlower;
 
             if(buildtype == 99) then {
-                _new_fob = getpos player;
+                _new_fob = getPos player;
                 [_new_fob, false] remoteExec ["build_fob_remote_call",2];
                 buildtype = 1;
             };

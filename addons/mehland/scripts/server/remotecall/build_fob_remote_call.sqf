@@ -3,7 +3,7 @@ if (!isServer) exitWith {};
 params [ "_new_fob", "_create_fob_building" ];
 private [ "_fob_building", "_fob_pos" ];
 
-GRLIB_all_fobs pushback _new_fob;
+GRLIB_all_fobs pushBack _new_fob;
 publicVariable "GRLIB_all_fobs";
 
 if ( _create_fob_building ) then {

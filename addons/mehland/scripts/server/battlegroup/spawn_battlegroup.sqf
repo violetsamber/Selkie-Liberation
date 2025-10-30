@@ -52,7 +52,7 @@ if !(_spawn_marker isEqualTo "") then {
     } else {
         // private _vehicle_pool = [opfor_battlegroup_vehicles, opfor_battlegroup_vehicles_low_intensity] select (combat_readiness < 50);
         // while {count _selected_opfor_battlegroup < _target_size} do {
-        //     _selected_opfor_battlegroup pushback (selectRandom _vehicle_pool);
+        //     _selected_opfor_battlegroup pushBack (selectRandom _vehicle_pool);
         // };
 
         _selected_opfor_battlegroup = [

@@ -51,7 +51,7 @@ while {(alive _hvt) && _time_remaining > 0} do {
     private _player_near = false;
     {
         if (((_x distance _veh) < 1000) && (alive _x)) exitWith {_player_near = true};
-    } foreach allPlayers;
+    } forEach allPlayers;
 
     if !(_player_near) then {
         _time_remaining = _time_remaining - 1;

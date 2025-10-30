@@ -30,14 +30,14 @@ if (((_this select 3) select 0) == KP_liberation_small_storage_building) then {
     };
 
     while {build_confirmed == 1 && alive player} do {
-        _truedir = 90 - (getdir player);
-        _truepos = [((getpos player) select 0) + (_dist * (cos _truedir)), ((getpos player) select 1) + (_dist * (sin _truedir)),0];
+        _truedir = 90 - (getDir player);
+        _truepos = [((getPos player) select 0) + (_dist * (cos _truedir)), ((getPos player) select 1) + (_dist * (sin _truedir)),0];
 
-        if ((surfaceIsWater _truepos) || (surfaceIsWater getpos player) || ((_truepos distance _sectorpos) > 100)) then {
+        if ((surfaceIsWater _truepos) || (surfaceIsWater getPos player) || ((_truepos distance _sectorpos) > 100)) then {
             _building setpos _ghost_spot;
             build_invalid = 1;
 
-            if(((surfaceIsWater _truepos) || (surfaceIsWater getpos player))) then {
+            if(((surfaceIsWater _truepos) || (surfaceIsWater getPos player))) then {
                 GRLIB_ui_notif = localize "STR_BUILD_ERROR_WATER";
             };
 
@@ -45,7 +45,7 @@ if (((_this select 3) select 0) == KP_liberation_small_storage_building) then {
                 GRLIB_ui_notif = format [localize "STR_BUILD_ERROR_DISTANCE",100];
             };
         } else {
-            _building setdir (getDir player);
+            _building setDir (getDir player);
             _building setpos _truepos;
 
             if (KP_vector) then {
@@ -71,13 +71,13 @@ if (((_this select 3) select 0) == KP_liberation_small_storage_building) then {
     };
 
     if (build_confirmed == 2) then {
-        _vehpos = getpos _building;
-        _vehdir = getdir _building;
+        _vehpos = getPos _building;
+        _vehdir = getDir _building;
         deleteVehicle _building;
         sleep 0.1;
         _building = ((_this select 3) select 0) createVehicle _truepos;
         _building allowDamage false;
-        _building setdir _vehdir;
+        _building setDir _vehdir;
         _building setpos _truepos;
 
         if (KP_vector) then {

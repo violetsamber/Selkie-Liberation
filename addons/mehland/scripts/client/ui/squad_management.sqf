@@ -18,7 +18,7 @@ waitUntil { dialog };
 _targetobject = "Sign_Sphere100cm_F" createVehicleLocal [ 0, 0, 0 ];
 hideObject _targetobject;
 
-_squad_camera = "camera" camCreate (getpos player);
+_squad_camera = "camera" camCreate (getPos player);
 _squad_camera cameraEffect ["internal","back", "rtt"];
 _squad_camera camSetTarget  _targetobject;
 _squad_camera camcommit 0;
@@ -42,7 +42,7 @@ while { dialog && alive player } do {
                 _unitname = _unitname + ( name _x );
                 lbAdd [ 101, _unitname ];
             };
-        } foreach (units group player);
+        } forEach (units group player);
 
         if ( _firstloop ) then {
             lbSetCurSel [ 101, 0 ];
@@ -56,9 +56,9 @@ while { dialog && alive player } do {
     };
 
     if ( !(isNull _selectedmember) ) then {
-            "spawn_marker" setMarkerPosLocal (getpos _selectedmember);
+            "spawn_marker" setMarkerPosLocal (getPos _selectedmember);
             ctrlMapAnimClear ((findDisplay 5155) displayCtrl 100);
-            ((findDisplay 5155) displayCtrl 100) ctrlMapAnimAdd [0, 0.3, getpos _selectedmember];
+            ((findDisplay 5155) displayCtrl 100) ctrlMapAnimAdd [0, 0.3, getPos _selectedmember];
             ctrlMapAnimCommit ((findDisplay 5155) displayCtrl 100);
     };
 
@@ -87,7 +87,7 @@ while { dialog && alive player } do {
             _unitname = _unitname + ( name _selectedmember );
             ctrlSetText [ 201, _unitname];
 
-            ctrlSetText [ 202, getText (_cfgVehicles >> (typeof _selectedmember) >> "displayName") ];
+            ctrlSetText [ 202, getText (_cfgVehicles >> (typeOf _selectedmember) >> "displayName") ];
             ctrlSetText [ 203, format ["%1 %2%3", localize 'STR_HEALTH', round (100 - ((damage _selectedmember) * 100)), '%' ] ];
 
             ((findDisplay 5155) displayCtrl 203) ctrlSetTextColor [1,1,1,1];
@@ -103,7 +103,7 @@ while { dialog && alive player } do {
                 _primary_mags = 0;
                 if ( count primaryWeaponMagazine _selectedmember > 0 ) then {
                     _primary_mags = 1;
-                    { if ( ( _x select 0 ) == ( ( primaryWeaponMagazine _selectedmember ) select 0 ) ) then { _primary_mags = _primary_mags + 1; } } foreach (magazinesAmmo _selectedmember);
+                    { if ( ( _x select 0 ) == ( ( primaryWeaponMagazine _selectedmember ) select 0 ) ) then { _primary_mags = _primary_mags + 1; } } forEach (magazinesAmmo _selectedmember);
                 };
 
                 ctrlSetText [ 206, format ["%1: %2", localize 'STR_AMMO', _primary_mags ] ];
@@ -118,7 +118,7 @@ while { dialog && alive player } do {
                 _secondary_mags = 0;
                 if ( count secondaryWeaponMagazine _selectedmember > 0 ) then {
                     _secondary_mags = 1;
-                    { if ( ( _x select 0 ) == ( ( secondaryWeaponMagazine _selectedmember ) select 0 ) ) then { _secondary_mags = _secondary_mags + 1; } } foreach (magazinesAmmo _selectedmember);
+                    { if ( ( _x select 0 ) == ( ( secondaryWeaponMagazine _selectedmember ) select 0 ) ) then { _secondary_mags = _secondary_mags + 1; } } forEach (magazinesAmmo _selectedmember);
                 };
 
                 ctrlSetText [ 208, format ["%1: %2", localize 'STR_AMMO', _secondary_mags ] ];
@@ -134,12 +134,12 @@ while { dialog && alive player } do {
                 if (driver isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_DRIVER'; };
                 if (gunner isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_GUNNER'; };
                 if (commander isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_COMMANDER'; };
-                _vehstring = _vehstring + format [ " (%1)", getText (_cfgVehicles >> (typeof vehicle _selectedmember) >> "displayName") ];
+                _vehstring = _vehstring + format [ " (%1)", getText (_cfgVehicles >> (typeOf vehicle _selectedmember) >> "displayName") ];
                 ctrlSetText [ 209, _vehstring ];
             };
         };
     } else {
-        { ctrlSetText [ _x, "" ] } foreach [ 201, 202, 203, 204, 205, 206, 207, 208, 209 ];
+        { ctrlSetText [ _x, "" ] } forEach [ 201, 202, 203, 204, 205, 206, 207, 208, 209 ];
         GRLIB_squadconfirm = -1;
         GRLIB_squadaction = -1;
     };
@@ -176,7 +176,7 @@ while { dialog && alive player } do {
 
         if ( GRLIB_squadaction == 1 ) then {
 
-            _nearfob = [ getpos _selectedmember ] call KPLIB_fnc_getNearestFob;
+            _nearfob = [ getPos _selectedmember ] call KPLIB_fnc_getNearestFob;
             _fobdistance = 9999;
             if ( count _nearfob == 3 ) then {
                 _fobdistance = _selectedmember distance _nearfob;
@@ -187,7 +187,7 @@ while { dialog && alive player } do {
             if ( _fobdistance < 100 || count _nearsquad > 0 ) then {
 
                 _tempgmp = createGroup [GRLIB_side_friendly, true];
-                (typeof _selectedmember) createUnit [ markers_reset, _tempgmp,''];
+                (typeOf _selectedmember) createUnit [ markers_reset, _tempgmp,''];
                 [ (units _tempgmp) select 0, _selectedmember ] call KPLIB_fnc_swapInventory;
                 deleteVehicle ((units _tempgmp) select 0);
                 _selectedmember setDamage 0;
@@ -213,8 +213,8 @@ while { dialog && alive player } do {
                 [ _selectedmember, player ] call KPLIB_fnc_swapInventory;
             };
 
-            _destpos = getposATL _selectedmember;
-            _destdir = getdir _selectedmember;
+            _destpos = getPosATL _selectedmember;
+            _destdir = getDir _selectedmember;
 
             if ( damage _selectedmember > 0.4 ) then {
                 if ( damage _selectedmember < 0.7 ) then {

@@ -36,12 +36,12 @@ private ["_fobPos", "_fobObjects", "_grpUnits", "_fobMines"];
 {
     _fobPos = _x;
     _fobObjects = (_fobPos nearObjects (GRLIB_fob_range * 1.2)) select {
-        ((toLower (typeof _x)) in KPLIB_classnamesToSave) &&        // Exclude classnames which are not in the presets
+        ((toLower (typeOf _x)) in KPLIB_classnamesToSave) &&        // Exclude classnames which are not in the presets
         {alive _x} &&                                               // Exclude dead or broken objects
         {getObjectType _x >= 8} &&                                  // Exclude preplaced terrain objects
         {speed _x < 5} &&                                           // Exclude moving objects (like civilians driving through)
         {isNull attachedTo _x} &&                                   // Exclude attachTo'd objects
-        {((getpos _x) select 2) < 10} &&                            // Exclude hovering helicopters and the like
+        {((getPos _x) select 2) < 10} &&                            // Exclude hovering helicopters and the like
         {!(_x getVariable ["KP_liberation_edenObject", false])} &&  // Exclude all objects placed via editor in mission.sqm
         {!(_x getVariable ["KP_liberation_preplaced", false])} &&   // Exclude preplaced (e.g. little birds from carrier)
         {!((toLower (typeOf _x)) in KPLIB_crates)}                  // Exclude storage crates (those are handled separately)

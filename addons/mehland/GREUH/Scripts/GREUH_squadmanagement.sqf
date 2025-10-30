@@ -26,7 +26,7 @@ while { true } do {
 			case "rename" : {
 				if ( leader group player == player ) then {
 					renaming = true;
-					ctrlSetText [527, (groupid (group player))];
+					ctrlSetText [527, (groupId (group player))];
 					waitUntil { ((squadaction == "") || (squadname != "") || !(dialog) || !(alive player)) };
 					if ( alive player && dialog && ( squadname != "" )) then {
 						if ( (group player) in global_groups_renamed ) then {
@@ -54,13 +54,13 @@ while { true } do {
 						if ( isPlayer _x ) then {
 							_player_group_filtered = _player_group_filtered + [_x];
 						};
-					} foreach (units group player);
+					} forEach (units group player);
 
 					lbClear 567;
 					{
 
 						lbAdd [567, name _x ];
-					} foreach _player_group_filtered;
+					} forEach _player_group_filtered;
 
 					_count_units_grp_player = count (units group player);
 					waitUntil { ((squadaction == "") || (choose_squadleader >= 0) || !(dialog) || !(alive player) || (_count_units_grp_player != count (units group player))) };
@@ -78,18 +78,18 @@ while { true } do {
 		squadaction = "";
 	};
 
-	{ if ( (isplayer leader _x) && (side _x == side player) && !(_x in groups_list)) then { groups_list = groups_list + [_x] }; } foreach allGroups;
-	{ if (!(_x in allGroups) || (!isplayer leader _x)) then { groups_list = groups_list - [_x] }; } foreach groups_list;
+	{ if ( (isPlayer leader _x) && (side _x == side player) && !(_x in groups_list)) then { groups_list = groups_list + [_x] }; } forEach allGroups;
+	{ if (!(_x in allGroups) || (!isPlayer leader _x)) then { groups_list = groups_list - [_x] }; } forEach groups_list;
 
 	{
 		if (count global_groups_renamed != 0) then {
 			if (_x in global_groups_renamed) then {
-				if (groupid _x != global_group_ids select (global_groups_renamed find _x)) then {
-					_x setgroupid [(global_group_ids select (global_groups_renamed find _x))];
+				if (groupId _x != global_group_ids select (global_groups_renamed find _x)) then {
+					_x setGroupId [(global_group_ids select (global_groups_renamed find _x))];
 				};
 			};
 		};
-	} foreach groups_list;
+	} forEach groups_list;
 
 	if ( count global_new_leader != 0 ) then {
 		if ( group player == global_new_leader select 0 ) then {
