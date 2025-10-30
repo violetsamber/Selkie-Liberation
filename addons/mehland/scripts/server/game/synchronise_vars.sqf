@@ -40,7 +40,7 @@ private _air_weight_old = -1;
 
 while {true} do {
     waitUntil {sleep 0.25;
-        !(_KP_liberation_fob_resources_old isEqualTo KP_liberation_fob_resources)
+        (_KP_liberation_fob_resources_old isNotEqualTo KP_liberation_fob_resources)
         || _KP_liberation_supplies_global_old != KP_liberation_supplies_global
         || _KP_liberation_ammo_global_old != KP_liberation_ammo_global
         || _KP_liberation_fuel_global_old != KP_liberation_fuel_global

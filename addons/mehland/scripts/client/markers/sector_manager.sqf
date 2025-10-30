@@ -8,8 +8,8 @@ private _cfg = configFile >> "cfgVehicles";
 
 {
     _x params ["_vehicle", "_base"];
-    private _marker = createMarkerLocal [format ["vehicleunlockmarker%1", _base], [(markerpos _base) select 0, ((markerpos _base) select 1) + 125]];
-    _marker setmarkerTextLocal (getText (_cfg >> _vehicle >> "displayName"));
+    private _marker = createMarkerLocal [format ["vehicleunlockmarker%1", _base], [(markerPos _base) select 0, ((markerPos _base) select 1) + 125]];
+    _marker setMarkerTextLocal (getText (_cfg >> _vehicle >> "displayName"));
     _marker setMarkerColorLocal GRLIB_color_enemy;
     _marker setMarkerTypeLocal "mil_pickup";
     _vehicle_unlock_markers pushBack [_marker, _base];

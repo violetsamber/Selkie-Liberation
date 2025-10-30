@@ -53,10 +53,10 @@ while {dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
                 _entrytext = getText (_cfg >> _classnamevar >> "displayName");
 
                 switch (_classnamevar) do {
-                    case FOB_box_typename: {_entrytext = localize "STR_FOBBOX";};
-                    case Arsenal_typename: {if (KP_liberation_mobilearsenal) then {_entrytext = localize "STR_ARSENAL_BOX";};};
-                    case Respawn_truck_typename: {if (KP_liberation_mobilerespawn) then {_entrytext = localize "STR_RESPAWN_TRUCK";};};
-                    case FOB_truck_typename: {_entrytext = localize "STR_FOBTRUCK";};
+                    case FOB_box_typeName: {_entrytext = localize "STR_FOBBOX";};
+                    case Arsenal_typeName: {if (KP_liberation_mobilearsenal) then {_entrytext = localize "STR_ARSENAL_BOX";};};
+                    case Respawn_truck_typeName: {if (KP_liberation_mobilerespawn) then {_entrytext = localize "STR_RESPAWN_TRUCK";};};
+                    case FOB_truck_typeName: {_entrytext = localize "STR_FOBTRUCK";};
                     case "Flag_White_F": {_entrytext = localize "STR_INDIV_FLAG";};
                     case KP_liberation_small_storage_building: {_entrytext = localize "STR_SMALL_STORAGE";};
                     case KP_liberation_large_storage_building: {_entrytext = localize "STR_LARGE_STORAGE";};

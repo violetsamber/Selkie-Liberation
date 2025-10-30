@@ -6,7 +6,7 @@ GRLIB_buildoverlay_cfg = configFile >> "cfgVehicles";
 ["build_overlay", "onEachFrame", {
 
     if ( build_confirmed == 1 ) then {
-        if ( count GRLIB_conflicting_objects > 0 ) then {
+        if ( GRLIB_conflicting_objects isNotEqualTo [] ) then {
             {
                 if ( alive _x ) then {
                     drawIcon3D [ GRLIB_buildoverlay_icon, GRLIB_buildoverlay_color, [ (getPos _x) select 0, (getPos _x) select 1, 1.5],

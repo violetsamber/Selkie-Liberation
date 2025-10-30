@@ -23,7 +23,7 @@ private _hc = objNull;
     _hcArray pushBack [count (allUnits select {(owner _x) isEqualTo (owner _hc)}), _hc];
 } forEach (entities "HeadlessClient_F");
 
-if !(_hcArray isEqualTo []) then {
+if (_hcArray isNotEqualTo []) then {
     _hcArray sort true;
     (_hcArray select 0) select 1
 } else {

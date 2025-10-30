@@ -20,7 +20,7 @@ params [
     ["_fobPos", [], [[]]]
 ];
 
-private _buildings = [toLower FOB_typename];
+private _buildings = [toLower FOB_typeName];
 _buildings append KPLIB_b_buildings_classes;
 
 {

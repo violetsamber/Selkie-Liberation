@@ -10,14 +10,14 @@ if (dorepackage > 0) then {
 
     private _fob = [] call KPLIB_fnc_getNearestFob;
 
-    if !(_fob isEqualTo []) then {
+    if (_fob isNotEqualTo []) then {
         GRLIB_all_fobs = GRLIB_all_fobs - [_fob];
         KP_liberation_clearances deleteAt (KP_liberation_clearances findIf {(_x select 0) isEqualTo _fob});
         publicVariable "GRLIB_all_fobs";
         publicVariable "KP_liberation_clearances";
     };
 
-    {deleteVehicle _x} forEach (((getPos player) nearobjects [FOB_typename, 250]) select {getObjectType _x >= 8});
+    {deleteVehicle _x} forEach (((getPos player) nearObjects [FOB_typeName, 250]) select {getObjectType _x >= 8});
 
     sleep 0.5;
 
@@ -28,12 +28,12 @@ if (dorepackage > 0) then {
     };
 
     if (dorepackage == 1) then {
-        private _fobbox = FOB_box_typename createVehicle _spawnpos;
+        private _fobbox = FOB_box_typeName createVehicle _spawnpos;
         [_fobbox] call KPLIB_fnc_addObjectInit;
     };
 
     if (dorepackage == 2) then {
-        private _fobTruck = FOB_truck_typename createVehicle _spawnpos;
+        private _fobTruck = FOB_truck_typeName createVehicle _spawnpos;
         [_fobTruck] call KPLIB_fnc_addObjectInit;
     };
     hint localize "STR_FOB_REPACKAGE_HINT";

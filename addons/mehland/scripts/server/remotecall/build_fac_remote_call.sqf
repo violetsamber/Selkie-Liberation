@@ -24,7 +24,7 @@ switch (_fac) do {
 
             private _storage = nearestObjects [(markerPos (_x select 1)), [KP_liberation_small_storage_building], 100];
             _storage = _storage select {(_x getVariable ["KP_liberation_storage_type",-1]) == 1};
-            if ((count _storage) == 0) exitWith {};
+            if (_storage isEqualTo []) exitWith {};
             _storage = (_storage select 0);
             private _storedCrates = (attachedObjects _storage);
             reverse _storedCrates;

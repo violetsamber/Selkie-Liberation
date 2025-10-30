@@ -28,7 +28,7 @@ private _allCrates = [];
 private _allBlueGroups = allGroups select {
     (side _x == GRLIB_side_friendly) &&                 // Only blufor groups
     {isNull objectParent (leader _x)} &&                // Make sure it's an infantry group
-    {!(((units _x) select {alive _x}) isEqualTo [])}    // At least one unit has to be alive
+    {(((units _x) select {alive _x}) isNotEqualTo [])}    // At least one unit has to be alive
 };
 
 // Fetch all objects and AI groups near each FOB

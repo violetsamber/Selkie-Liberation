@@ -24,7 +24,7 @@ while { GRLIB_endgame == 0 } do {
         };
     };
 
-    _sector_spawn_pos = [(((markerpos _spawn_marker) select 0) - 500) + (random 1000),(((markerpos _spawn_marker) select 1) - 500) + (random 1000),0];
+    _sector_spawn_pos = [(((markerPos _spawn_marker) select 0) - 500) + (random 1000),(((markerPos _spawn_marker) select 1) - 500) + (random 1000),0];
 
     if (_is_infantry) then {
         _grp = createGroup [GRLIB_side_enemy, true];
@@ -35,7 +35,7 @@ while { GRLIB_endgame == 0 } do {
     } else {
 
         private [ "_vehicle_object" ];
-        if ((combat_readiness > 75) && ((random 100) > 85) && !(opfor_choppers isEqualTo [])) then {
+        if ((combat_readiness > 75) && ((random 100) > 85) && (opfor_choppers isEqualTo [])) then {
             _vehicle_object = [_sector_spawn_pos, selectRandom opfor_choppers] call KPLIB_fnc_spawnVehicle;
         } else {
             _vehicle_object = [_sector_spawn_pos, [] call KPLIB_fnc_getAdaptiveVehicle] call KPLIB_fnc_spawnVehicle;

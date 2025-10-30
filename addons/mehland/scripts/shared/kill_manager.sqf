@@ -29,8 +29,8 @@ if (isServer) then {
     if ((side _killer) == GRLIB_side_friendly) then {
 
         // Increase combat readiness for kills near a capital.
-        private _nearby_bigtown = sectors_bigtown select {!(_x in blufor_sectors) && (_unit distance (markerpos _x) < 250)};
-        if (count _nearby_bigtown > 0) then {
+        private _nearby_bigtown = sectors_bigtown select {!(_x in blufor_sectors) && (_unit distance (markerPos _x) < 250)};
+        if (_nearby_bigtown isNotEqualTo []) then {
             [0.5] call KPLIB_fnc_addCombatReadiness;
             stats_readiness_earned = stats_readiness_earned + (0.5);
         };
@@ -169,7 +169,7 @@ if (isServer) then {
 // Body/Wreck deletion after cleanup delay
 if (isServer && !isPlayer _unit) then {
     sleep GRLIB_cleanup_delay;
-    hidebody _unit;
+    hideBody _unit;
     sleep 10;
     deleteVehicle _unit;
 };

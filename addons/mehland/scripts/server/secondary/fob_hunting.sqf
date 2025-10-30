@@ -5,7 +5,7 @@ _spawn_marker = [2000,999999,false] call KPLIB_fnc_getOpforSpawnPoint;
 if (_spawn_marker == "") exitWith {["Could not find position for fob hunting mission", "ERROR"] call KPLIB_fnc_log;};
 
 used_positions pushBack _spawn_marker;
-_base_position = markerpos _spawn_marker;
+_base_position = markerPos _spawn_marker;
 _base_objects = [];
 _base_objectives = [];
 _base_defenders = [];
@@ -37,10 +37,10 @@ private _nextobject = objNull;
     _nextobject allowDamage false;
     _nextobject setVectorUp [0, 0, 1];
     _nextobject setDir _nextdir;
-    _nextobject setpos _nextpos;
+    _nextobject setPos _nextpos;
     _nextobject setVectorUp [0, 0, 1];
     _nextobject setDir _nextdir;
-    _nextobject setpos _nextpos;
+    _nextobject setPos _nextpos;
 
     _base_objects pushBack _nextobject;
     
@@ -64,10 +64,10 @@ sleep 1;
     _nextobject = _nextclass createVehicle _nextpos;
     _nextobject allowDamage false;
     _nextobject setVectorUp [0, 0, 1];
-    _nextobject setpos _nextpos;
+    _nextobject setPos _nextpos;
     _nextobject setDir _nextdir;
     _nextobject setVectorUp [0, 0, 1];
-    _nextobject setpos _nextpos;
+    _nextobject setPos _nextpos;
     _nextobject setDir _nextdir;
     _nextobject lock 2;
 
@@ -100,7 +100,7 @@ while {(count _idxselected) < _defenders_amount && (count _idxselected) < (count
     _nextpos = [((_base_position select 0) + (_nextpos select 0)), ((_base_position select 1) + (_nextpos select 1)), (_nextpos select 2)];
     private _nextDefender = [_nextclass, _nextpos, _grpdefenders, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
     _nextDefender setDir _nextdir;
-    _nextDefender setpos _nextpos;
+    _nextDefender setPos _nextpos;
     [_nextDefender] spawn building_defence_ai;
 } forEach _idxselected;
 

@@ -23,12 +23,12 @@ private _units = [
 	"Selkie_UNSC_ODST_Riflemaid_MA5"
 ];
 
-private _team = configfile >> "CfgGroups" >> "Indep" >> "Selkie_UNSC_Marines_ODST" >> "Infantry" >> "UNSC_ODST_AssaultSquad";
+private _team = configFile >> "CfgGroups" >> "Indep" >> "Selkie_UNSC_Marines_ODST" >> "Infantry" >> "UNSC_ODST_AssaultSquad";
 private _units = [];
 
 for "_i" from 1 to _teamCount do 
 {
-	private _group = [markerpos _spawnMarker, GRLIB_side_enemy, (_team)] call BIS_fnc_spawnGroup;
+	private _group = [markerPos _spawnMarker, GRLIB_side_enemy, (_team)] call BIS_fnc_spawnGroup;
 	[_group, 500, 15] spawn lambs_wp_fnc_taskRush;
 	_units append units _group;
 };

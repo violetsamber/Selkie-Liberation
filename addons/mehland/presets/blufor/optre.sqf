@@ -11,12 +11,12 @@
     The same classnames for different purposes may cause various unpredictable issues with player actions.
     Or not, just don't try!
 */
-FOB_typename = "Land_Cargo_HQ_V1_F";                                    // This is the main FOB HQ building.
-FOB_box_typename = "B_Slingload_01_Cargo_F";                            // This is the FOB as a container.
-FOB_truck_typename = "OPTRE_m1087_stallion_device_unsc";                                // This is the FOB as a vehicle.
-Arsenal_typename = "OPTRE_Weapon_Crate_Marines_S";                                   // This is the virtual arsenal as portable supply crates.
-Respawn_truck_typename = "OPTRE_M12_FAV_APC_MED";                        // This is the mobile respawn (and medical) truck.
-huron_typename = "14TH_D77H_TCI_ARMED";                       // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
+FOB_typeName = "Land_Cargo_HQ_V1_F";                                    // This is the main FOB HQ building.
+FOB_box_typeName = "B_Slingload_01_Cargo_F";                            // This is the FOB as a container.
+FOB_truck_typeName = "OPTRE_m1087_stallion_device_unsc";                                // This is the FOB as a vehicle.
+Arsenal_typeName = "OPTRE_Weapon_Crate_Marines_S";                                   // This is the virtual arsenal as portable supply crates.
+Respawn_truck_typeName = "OPTRE_M12_FAV_APC_MED";                        // This is the mobile respawn (and medical) truck.
+huron_typeName = "14TH_D77H_TCI_ARMED";                       // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
 crewman_classname = "OPTRE_UNSC_Marine_Soldier_Crewman";                                         // This defines the crew for vehicles.
 pilot_classname = "OPTRE_UNSC_Navy_Soldier_Olive";                                      // This defines the pilot for helicopters.
 KP_liberation_little_bird_classname = "OPTRE_UNSC_falcon";              // These are the little birds which spawn on the Freedom or at Chimera base.
@@ -289,10 +289,10 @@ support_vehicles = [
     [KP_liberation_ODST_building,400,0,0],
     [KP_liberation_heli_slot_building,200,0,0],
     [KP_liberation_plane_slot_building,400,0,0],
-    [Arsenal_typename,0,50,0],
-    [Respawn_truck_typename,100,0,25],
-    [FOB_box_typename,250,500,0],
-    [FOB_truck_typename,250,500,75],
+    [Arsenal_typeName,0,50,0],
+    [Respawn_truck_typeName,100,0,25],
+    [FOB_box_typeName,250,500,0],
+    [FOB_truck_typeName,250,500,75],
     ["OPTRE_m1087_stallion_unsc_resupply",0,200,50],
 	["OPTRE_m1087_stallion_unsc_refuel",0,0,250],
 	["OPTRE_m1087_stallion_unsc_repair",200,0,50],

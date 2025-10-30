@@ -33,7 +33,7 @@ if (hasInterface) then {
 };
 
 // All classnames of objects which should be saved
-KPLIB_classnamesToSave = [toLower FOB_typename, toLower huron_typename];
+KPLIB_classnamesToSave = [toLower FOB_typeName, toLower huron_typeName];
 
 /*
     --- Locals ---
@@ -44,7 +44,7 @@ private _aiGroups = [];
 // Current campaign date and time
 private _dateTime = [];
 // Vehicles which shouldn't be handled in the kill manager
-private _noKillHandler = [toLower FOB_typename, toLower huron_typename];
+private _noKillHandler = [toLower FOB_typeName, toLower huron_typeName];
 // All objects which should be loaded/saved
 private _objectsToSave = [];
 // All storages which are handled for resource persistence
@@ -341,7 +341,7 @@ if (!isNil "_saveData") then {
 
             // Create object without damage handling and simulation
             _object = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-            _object allowdamage false;
+            _object allowDamage false;
             _object enableSimulation false;
 
             // Add object to spawned objects collection
@@ -383,7 +383,7 @@ if (!isNil "_saveData") then {
     {
         _x enableSimulation true;
         _x setdamage 0;
-        _x allowdamage true;
+        _x allowDamage true;
     } forEach _spawnedObjects;
     ["Saved buildings and vehicles placed", "SAVE"] call KPLIB_fnc_log;
 
@@ -413,7 +413,7 @@ if (!isNil "_saveData") then {
 
             // Create object without damage handling and simulation
             _object = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-            _object allowdamage false;
+            _object allowDamage false;
             _object enableSimulation false;
 
             // Reposition spawned object
@@ -423,7 +423,7 @@ if (!isNil "_saveData") then {
             // Re-enable physics on spawned object
             _object setdamage 0;
             _object enableSimulation true;
-            _object allowdamage true;
+            _object allowDamage true;
 
             // Mark it as FOB storage
             _object setVariable ["KP_liberation_storage_type", 0, true];
@@ -446,7 +446,7 @@ if (!isNil "_saveData") then {
             // Create object without damage handling and simulation
             _object = createVehicle [KP_liberation_small_storage_building, _pos, [], 0, "CAN_COLLIDE"];
             _object enableSimulationGlobal false;
-            _object allowdamage false;
+            _object allowDamage false;
 
             // Reposition spawned object
             _object setDir _dir;
@@ -456,7 +456,7 @@ if (!isNil "_saveData") then {
             // Re-enable physics on spawned object
             _object setdamage 0;
             _object enableSimulation true;
-            _object allowdamage true;
+            _object allowDamage true;
 
             // Mark it as sector storage
             _object setVariable ["KP_liberation_storage_type", 1, true];

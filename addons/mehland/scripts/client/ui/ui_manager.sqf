@@ -99,7 +99,7 @@ while {true} do {
         if ((markerPos "opfor_capture_marker") distance markers_reset > 100 ) then {
 
             private [ "_attacked_string" ];
-            _attacked_string = [markerpos "opfor_capture_marker"] call KPLIB_fnc_getLocationName;
+            _attacked_string = [markerPos "opfor_capture_marker"] call KPLIB_fnc_getLocationName;
 
             (_overlay displayCtrl (401)) ctrlShow true;
             (_overlay displayCtrl (402)) ctrlSetText _attacked_string;
@@ -148,11 +148,11 @@ while {true} do {
             //         _zone_size = GRLIB_capture_size * 1.4;
             //     };
 
-            //     "zone_capture" setMarkerPosLocal (markerpos _nearest_active_sector);
+            //     "zone_capture" setMarkerPosLocal (markerPos _nearest_active_sector);
             //     _colorzone = "ColorGrey";
-            //     if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly ) then { _colorzone = GRLIB_color_friendly };
-            //     if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_enemy ) then { _colorzone = GRLIB_color_enemy };
-            //     if ( [ markerpos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_resistance ) then { _colorzone = "ColorCivilian" };
+            //     if ( [ markerPos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly ) then { _colorzone = GRLIB_color_friendly };
+            //     if ( [ markerPos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_enemy ) then { _colorzone = GRLIB_color_enemy };
+            //     if ( [ markerPos _nearest_active_sector, _zone_size ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_resistance ) then { _colorzone = "ColorCivilian" };
             //     "zone_capture" setmarkercolorlocal _colorzone;
 
             //     _ratio = [_nearest_active_sector] call KPLIB_fnc_getBluforRatio;

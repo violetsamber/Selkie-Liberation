@@ -14,7 +14,7 @@ _backpackcontents = [];
 
 [ "halo_map_event", "onMapSingleClick", { halo_position = _pos } ] call BIS_fnc_addStackedEventHandler;
 
-"spawn_marker" setmarkerTextLocal (localize "STR_HALO_PARAM");
+"spawn_marker" setMarkerTextLocal (localize "STR_HALO_PARAM");
 
 waitUntil { dialog };
 while { dialog && alive player && dojump == 0 } do {
@@ -29,7 +29,7 @@ if ( dialog ) then {
 };
 
 "spawn_marker" setMarkerPosLocal markers_reset;
-"spawn_marker" setmarkerTextLocal "";
+"spawn_marker" setMarkerTextLocal "";
 
 [ "halo_map_event", "onMapSingleClick" ] call BIS_fnc_removeStackedEventHandler;
 

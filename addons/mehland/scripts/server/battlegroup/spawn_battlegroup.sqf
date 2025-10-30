@@ -8,7 +8,7 @@ if (GRLIB_endgame == 1) exitWith {};
 
 _spawn_marker = [[2000, 1000] select _infOnly, 3000, false, markerPos _spawn_marker] call KPLIB_fnc_getOpforSpawnPoint;
 
-if !(_spawn_marker isEqualTo "") then {
+if (_spawn_marker isNotEqualTo "") then {
     GRLIB_last_battlegroup_time = diag_tickTime;
 
     private _bg_groups = [];
@@ -93,7 +93,7 @@ if !(_spawn_marker isEqualTo "") then {
     private ["_nextgrp", "_vehicle"];
     {
             _nextgrp = createGroup [GRLIB_side_enemy, true];
-            _vehicle = [markerpos _spawn_marker, _x] call KPLIB_fnc_spawnVehicle;
+            _vehicle = [markerPos _spawn_marker, _x] call KPLIB_fnc_spawnVehicle;
 
             sleep 0.5;
 

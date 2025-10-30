@@ -41,7 +41,7 @@ while { GRLIB_endgame == 0 } do {
 
             [selectRandom civilians, _spawnpos, _grp, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
             _civveh = (selectRandom civilian_vehicles) createVehicle _spawnpos;
-            _civveh setpos _spawnpos;
+            _civveh setPos _spawnpos;
             _civveh addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
             _civveh addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != GRLIB_side_friendly ) && ( side (_this select 3) != GRLIB_side_enemy )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ];
             ((units _grp) select 0) moveInDriver _civveh;
@@ -56,7 +56,7 @@ while { GRLIB_endgame == 0 } do {
         _sectors_patrol = [];
         _patrol_startpos = getPos (leader _grp);
         {
-            if ((_patrol_startpos distance (markerpos _x) < 5000) && (count ([markerPos _x, 4000] call KPLIB_fnc_getNearbyPlayers) > 0)) then {
+            if ((_patrol_startpos distance (markerPos _x) < 5000) && (count ([markerPos _x, 4000] call KPLIB_fnc_getNearbyPlayers) > 0)) then {
                 _sectors_patrol pushBack _x;
             };
         } forEach (sectors_bigtown + sectors_capture + sectors_factory);
@@ -76,7 +76,7 @@ while { GRLIB_endgame == 0 } do {
         {
             _nearestroad = [(markerPos _x) getPos [random(100), random(360)], 200, []] call BIS_fnc_nearestRoad;
             if ( isNull _nearestroad ) then {
-                _waypoint = _grp addWaypoint [ markerpos _x, 100 ];
+                _waypoint = _grp addWaypoint [ markerPos _x, 100 ];
             } else {
                 _waypoint = _grp addWaypoint [ getPos _nearestroad, 0 ];
             };
@@ -111,7 +111,7 @@ while { GRLIB_endgame == 0 } do {
                     };
                 };
 
-                { deletevehicle _x } forEach units _grp;
+                { deleteVehicle _x } forEach units _grp;
             };
         };
     };

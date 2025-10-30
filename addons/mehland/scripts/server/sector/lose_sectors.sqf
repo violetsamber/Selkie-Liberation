@@ -8,7 +8,7 @@ attack_in_progress = false;
 while { GRLIB_endgame == 0 } do {
 
     {
-        _ownership = [ markerpos _x ] call KPLIB_fnc_getSectorOwnership;
+        _ownership = [ markerPos _x ] call KPLIB_fnc_getSectorOwnership;
         if ( _ownership == GRLIB_side_enemy ) then {
             [ _x ] call attack_in_progress_sector;
         };

@@ -35,7 +35,7 @@ _civ addAction [
             "ACE_quikclot"
         ] arrayIntersect (vestItems _caller + uniformItems _caller + backpackItems _caller);
 
-        if !(_items isEqualTo []) then {
+        if (_items isNotEqualTo []) then {
             _caller removeItem (selectRandom _items);
             _target setDamage 0;
         } else {

@@ -9,7 +9,7 @@ private _targetPos = _targetsector;
 if (_targetPos isEqualType "") then {
     _targetPos = markerPos _targetsector;
 };
-private _spawnsector = ([sectors_airspawn, [_targetPos], {(markerpos _x) distance _input0}, "ASCEND"] call BIS_fnc_sortBy) select 0;
+private _spawnsector = ([sectors_airspawn, [_targetPos], {(markerPos _x) distance _input0}, "ASCEND"] call BIS_fnc_sortBy) select 0;
 private _newvehicle = objNull;
 private _pilot_group = grpNull;
 if (isNull _chopper_type) then {
@@ -19,7 +19,7 @@ if (isNull _chopper_type) then {
         _chopper_type = selectRandom opfor_troup_transports_air;
     };
 
-    _newvehicle = createVehicle [_chopper_type, markerpos _spawnsector, [], 0, "FLY"];
+    _newvehicle = createVehicle [_chopper_type, markerPos _spawnsector, [], 0, "FLY"];
     createVehicleCrew _newvehicle;
     sleep 0.1;
 
@@ -113,9 +113,9 @@ sleep 0.2;
 
 _newvehicle flyInHeight 100;
 
-// [_pilot_group, markerpos _spawnsector, 200, "MOVE", "CARELESS", "FULL", "STAG COLUMN", "this spawn "]
+// [_pilot_group, markerPos _spawnsector, 200, "MOVE", "CARELESS", "FULL", "STAG COLUMN", "this spawn "]
 
-_waypoint = _pilot_group addWaypoint [markerpos _spawnsector, 200];
+_waypoint = _pilot_group addWaypoint [markerPos _spawnsector, 200];
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointCombatMode "BLUE";
 _waypoint setWaypointType "MOVE";

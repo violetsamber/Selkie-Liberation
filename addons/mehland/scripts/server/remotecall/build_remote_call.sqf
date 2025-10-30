@@ -1,6 +1,6 @@
 if (!isServer) exitWith {};
 
-params ["_price_s", "_price_a", "_price_f", "_typename", "_localtype", "_storage_areas"];
+params ["_price_s", "_price_a", "_price_f", "_typeName", "_localtype", "_storage_areas"];
 
 if ((_price_s > 0) || (_price_a > 0) || (_price_f > 0)) then {
 
@@ -78,10 +78,10 @@ if ((_price_s > 0) || (_price_a > 0) || (_price_f > 0)) then {
     if ( _localtype == 9 ) then {
         stats_blufor_soldiers_recruited = stats_blufor_soldiers_recruited + 10;
     } else {
-        if ( _typename isKindOf "Man" ) then {
+        if ( _typeName isKindOf "Man" ) then {
             stats_blufor_soldiers_recruited = stats_blufor_soldiers_recruited + 1;
         } else {
-            if ( ! ( _typename isKindOf "Building" ) ) then {
+            if ( ! ( _typeName isKindOf "Building" ) ) then {
                 stats_blufor_vehicles_built = stats_blufor_vehicles_built + 1;
             };
         };

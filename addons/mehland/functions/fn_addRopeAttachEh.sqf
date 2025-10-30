@@ -22,11 +22,10 @@ params [
 ];
 
 if (isNull _obj) exitWith {["Null object given"] call BIS_fnc_error; false};
-configOf
 if (getNumber (configOf _obj >> "slingLoadMaxCargoMass") > 0) then {
     _obj addEventHandler ["RopeAttach", {
         params ["_heli", "_rope", "_cargo"];
-        if !((owner _heli) isEqualTo (owner _cargo)) then {
+        if ((owner _heli) isNotEqualTo (owner _cargo)) then {
             _cargo setOwner (owner _heli);
         };
     }];

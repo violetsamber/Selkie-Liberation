@@ -11,7 +11,7 @@ private _cinematic_pointer = "Sign_Arrow_Blue_F" createVehicleLocal [0,0,0];
 _cinematic_pointer hideObject true;
 _cinematic_camera camSetTarget _cinematic_pointer;
 _cinematic_camera cameraEffect ["internal","back"];
-_cinematic_camera camcommit 0;
+_cinematic_camera camCommit 0;
 if ( isNil "first_camera_round" ) then { first_camera_round = true; };
 
 while { cinematic_camera_started } do {
@@ -52,7 +52,7 @@ while { cinematic_camera_started } do {
         };
         _position = selectRandom (_positions - [_last_position]);
         _last_position = _position;
-        _cinematic_pointer setpos [ _position select 0, _position select 1, (_position select 2) + 7 ];
+        _cinematic_pointer setPos [ _position select 0, _position select 1, (_position select 2) + 7 ];
         private _nearentities = _position nearEntities [ "Man", 100 ];
         private _camtarget = _cinematic_pointer;
         if ( first_camera_round ) then {
@@ -153,7 +153,7 @@ while { cinematic_camera_started } do {
                     camDestroy _cinematic_camera;
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
-                    _cinematic_camera camcommit 0;
+                    _cinematic_camera camCommit 0;
                     _startpos = [ ((getPos _camtarget) select 0) + 2, ((getPos _camtarget) select 1) -200, 25 ];
                     _endpos = [ ((getPos _camtarget) select 0) + 2, ((getPos _camtarget) select 1) +200, 25 ];
                     _cinematic_camera setDir 0;
@@ -165,7 +165,7 @@ while { cinematic_camera_started } do {
                     camDestroy _cinematic_camera;
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
-                    _cinematic_camera camcommit 0;
+                    _cinematic_camera camCommit 0;
                     _startpos = [ ((getPos _camtarget) select 0) + 302 , ((getPos _camtarget) select 1) + 300, 50 ];
                     _endpos = [ ((getPos _camtarget) select 0) - 198, ((getPos _camtarget) select 1) - 200, 50 ];
                     _cinematic_camera setDir 225;
@@ -177,7 +177,7 @@ while { cinematic_camera_started } do {
                     camDestroy _cinematic_camera;
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
-                    _cinematic_camera camcommit 0;
+                    _cinematic_camera camCommit 0;
                     _startpos = [ ((getPos _camtarget) select 0) - 80 , ((getPos _camtarget) select 1) + 150, 20 ];
                     _endpos = [ ((getPos _camtarget) select 0) - 80, ((getPos _camtarget) select 1) - 150, 20 ];
                     _cinematic_camera setDir 90;
@@ -189,7 +189,7 @@ while { cinematic_camera_started } do {
                     camDestroy _cinematic_camera;
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
-                    _cinematic_camera camcommit 0;
+                    _cinematic_camera camCommit 0;
                     _startpos = [ ((getPos _camtarget) select 0) - 50 , ((getPos _camtarget) select 1) + 2, 30 ];
                     _endpos = [ ((getPos _camtarget) select 0) + 150, ((getPos _camtarget) select 1) - 2, 30 ];
                     _cinematic_camera setDir 270;
@@ -203,7 +203,7 @@ while { cinematic_camera_started } do {
                     camDestroy _cinematic_camera;
                     _cinematic_camera = "camera" camCreate [0,0,0];
                     _cinematic_camera cameraEffect ["internal","back"];
-                    _cinematic_camera camcommit 0;
+                    _cinematic_camera camCommit 0;
                     _startpos = [ ((getPos _camtarget) select 0) - 150 , ((getPos _camtarget) select 1) + 5, 250 ];
                     _endpos = [ ((getPos _camtarget) select 0) + 150, ((getPos _camtarget) select 1) + 5, 250 ];
                     _cinematic_camera setDir 0;
@@ -234,12 +234,12 @@ while { cinematic_camera_started } do {
         if ( isNil "howtoplay" ) then { howtoplay = 0; };
 
         if ( first_camera_round ) then {
-            _cinematic_camera camcommit 18;
+            _cinematic_camera camCommit 18;
         } else {
             if ( howtoplay == 0 ) then {
-                _cinematic_camera camcommit 10;
+                _cinematic_camera camCommit 10;
             } else {
-                _cinematic_camera camcommit 20;
+                _cinematic_camera camCommit 20;
             };
         };
         first_camera_round = false;
@@ -257,7 +257,7 @@ while { cinematic_camera_started } do {
                         _nearest_sector = markerText _nearest_sector;
                     } else {
                         _nearfobs = GRLIB_all_fobs select {_x distance _position < 300};
-                        if ( count _nearfobs > 0 ) then {
+                        if ( _nearfobs isNotEqualTo [] ) then {
                             _nearest_sector = format [ "FOB %1", military_alphabet select ( GRLIB_all_fobs find ( _nearfobs select 0 ) ) ];
                         };
                     };

@@ -71,7 +71,7 @@ _items = _items apply {toLower _x};
 // Check weapons stored in inventory containers
 {
     if (!isNull _x) then {_removedItems append ([_x] call KPLIB_fnc_checkWeaponCargo);};
-} forEach [uniformContainer player, vestcontainer player, backpackContainer player];
+} forEach [uniformContainer player, vestContainer player, backpackContainer player];
 
 // Check equipped weapons
 _items = (weapons player) apply {toLower ([_x] call BIS_fnc_baseWeapon)};
@@ -111,7 +111,7 @@ _items = _items apply {toLower _x};
 _removedItems = (_removedItems arrayIntersect _removedItems) - [""];
 
 // Show hint and log list, if something was found
-if !(_removedItems isEqualTo []) exitWith {
+if (_removedItems isNotEqualTo []) exitWith {
     [_removedItems] spawn {
         params ["_removedItems"];
         [format ["Found %1 at player %2", _removedItems, name player], "BLACKLIST"] remoteExecCall ["KPLIB_fnc_log", 2];

@@ -46,8 +46,8 @@ private ["_valid", "_current", "_distances"];
 
     // Shouldn't be too close to the current/last position of a secondary mission
     if (!isNil "secondary_objective_position" && _valid) then {
-        if !(secondary_objective_position isEqualTo []) then {
-            _valid = !(((markerPos _current) distance2D secondary_objective_position) < 500);
+        if (secondary_objective_position isNotEqualTo []) then {
+            _valid = (((markerPos _current) distance2D secondary_objective_position) > 500);
         };
     };
 
@@ -79,7 +79,7 @@ private ["_valid", "_current", "_distances"];
 
     // Make sure that there is no blufor unit inside min dist to spawn
     if (_valid) then {
-        if (([markerpos _current, _min, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0) then {
+        if (([markerPos _current, _min, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0) then {
             _valid = false;
         };
     };
@@ -100,7 +100,7 @@ if (_nearest) exitWith {
 };
 
 // Return nearest spawn point to given position, if provided
-if !(_pos isEqualTo [0, 0, 0]) exitWith {
+if (_pos isNotEqualTo [0, 0, 0]) exitWith {
     ([_possibleSpawns apply {_x select 1}, [_pos] , {_input0 distance (markerPos _x)} , "ASCEND"] call BIS_fnc_sortBy) select 0
 };
 

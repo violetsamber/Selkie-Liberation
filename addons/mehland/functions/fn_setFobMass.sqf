@@ -6,7 +6,7 @@
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
-        Sets mass of FOB box to Max slingload weight of "huron_typename" lowered by 100.
+        Sets mass of FOB box to Max slingload weight of "huron_typeName" lowered by 100.
         If max slingload mass is lower than 1000 its set to 1000.
         If it is higher than 3000 it's set to 3000.
 
@@ -23,7 +23,7 @@ params [
 
 if (isNull _box) exitWith {["Null object given"] call BIS_fnc_error; false};
 
-private _boxMass = getNumber(configFile >> "CfgVehicles" >> huron_typename >> "slingLoadMaxCargoMass") - 100;
+private _boxMass = getNumber(configFile >> "CfgVehicles" >> huron_typeName >> "slingLoadMaxCargoMass") - 100;
 _boxMass = 1000 max (_boxMass min 3000);
 
 if (local _box) then {

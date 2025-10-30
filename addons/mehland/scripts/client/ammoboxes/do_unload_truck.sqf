@@ -16,7 +16,7 @@ if ( _truck_to_unload getVariable ["GRLIB_ammo_truck_load", 0] > 0 ) then {
         [_next_box, false] remoteExec ["KPLIB_fnc_protectObject"];
         sleep 0.5;
         detach _next_box;
-        _next_box setpos (_truck_to_unload getPos [_offset, getDir _truck_to_unload]);
+        _next_box setPos (_truck_to_unload getPos [_offset, getDir _truck_to_unload]);
         _next_box setDir (getDir _truck_to_unload);
         _next_box setVelocity [0,0,0];
         _next_box setDamage 0;

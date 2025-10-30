@@ -21,7 +21,7 @@ _blufor_towns = [];
 } forEach blufor_sectors;
 
 // Check if town array is empty
-if(count _blufor_towns == 0) exitWith {
+if(_blufor_towns isEqualTo []) exitWith {
 	//if empty, throw error in log and call proper intel notification
 	["There are no friendly towns to spawn supplies at!", "ERROR"] call KPLIB_fnc_log; 
 	[11] remoteExec ["remote_call_intel"];

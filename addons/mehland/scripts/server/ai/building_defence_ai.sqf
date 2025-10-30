@@ -9,7 +9,7 @@ private _range = 40;
 
 while {_move_is_disabled && local _unit && alive _unit && !(captive _unit)} do {
 
-    if !(_sector isEqualTo "") then {
+    if (_sector isNotEqualTo "") then {
         _ratio = [_sector] call KPLIB_fnc_getBluforRatio;
     };
 
@@ -20,7 +20,7 @@ while {_move_is_disabled && local _unit && alive _unit && !(captive _unit)} do {
     if (_move_is_disabled &&
         {
             (_sector in blufor_sectors) ||
-            {!(_hostiles isEqualTo [])} ||
+            {(_hostiles isNotEqualTo [])} ||
             {damage _unit > 0.25}
         }
     ) then {

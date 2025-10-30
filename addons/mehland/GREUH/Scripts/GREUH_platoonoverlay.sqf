@@ -18,7 +18,7 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 	if ( show_platoon ) then {
 
 		{
-			if ( count units _x > 0 ) then {
+			if ( units _x isNotEqualTo [] ) then {
 				_totalx = 0;
 				_totaly = 0;
 				_totalz = 0;
@@ -33,7 +33,7 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 					};
 				} forEach units _x;
 
-				if ( count _unitstocount > 0 ) then {
+				if ( _unitstocount isNotEqualTo [] ) then {
 					_totalx = _totalx / (count _unitstocount);
 					_totaly = _totaly / (count _unitstocount);
 					_totalz = _totalz / (count _unitstocount);

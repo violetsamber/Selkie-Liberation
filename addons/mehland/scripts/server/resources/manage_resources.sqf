@@ -40,7 +40,7 @@ while {GRLIB_endgame == 0} do {
                     if ((_time - 1) < 1) then {
                         _time = KP_liberation_production_interval;
 
-                        if (((count (attachedObjects _storage)) < 12) && !((_x select 7) == 3)) then {
+                        if (((count (attachedObjects _storage)) < 12) && ((_x select 7) != 3)) then {
                             private _crateType = KP_liberation_supply_crate;
                             switch (_x select 7) do {
                                 case 1: {_crateType = KP_liberation_ammo_crate; stats_ammo_produced = stats_ammo_produced + 100;};

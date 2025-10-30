@@ -1,6 +1,6 @@
 private [ "_huronlocal" ];
 
-"huronmarker" setmarkerTextLocal "Echo 419";
+"huronmarker" setMarkerTextLocal "Echo 419";
 
 while { true } do {
     _huronlocal = [] call KPLIB_fnc_potatoScan;

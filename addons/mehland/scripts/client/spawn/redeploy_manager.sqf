@@ -52,7 +52,7 @@ while {true} do {
     respawn_object hideObject true;
     respawn_camera camSetTarget respawn_object;
     respawn_camera cameraEffect ["internal","back"];
-    respawn_camera camcommit 0;
+    respawn_camera camCommit 0;
 
     waitUntil {dialog};
 
@@ -158,9 +158,9 @@ while {true} do {
             ctrlMapAnimCommit (DEPLOY_DISPLAY displayCtrl 251);
 
             respawn_camera camSetPos [(getPos respawn_object select 0) - 70, (getPos respawn_object select 1) + _startdist, (getPos respawn_object select 2) + _alti];
-            respawn_camera camcommit 0;
+            respawn_camera camCommit 0;
             respawn_camera camSetPos [(getPos respawn_object select 0) - 70, (getPos respawn_object select 1) - _enddist, (getPos respawn_object select 2) + _alti];
-            respawn_camera camcommit 90;
+            respawn_camera camCommit 90;
         };
 
         if (_old_fullmap != fullmap) then {
@@ -182,11 +182,11 @@ while {true} do {
 
         if (count (KPLIB_respawnPositionsList select _idxchoice) == 3) then {
             private _truck = (KPLIB_respawnPositionsList select _idxchoice) select 2;
-            player setposATL (_truck getPos [5 + (random 3), random 360]);
+            player setPosATL (_truck getPos [5 + (random 3), random 360]);
             KP_liberation_respawn_mobile_done = true;
         } else {
             private _destpos = ((KPLIB_respawnPositionsList select _idxchoice) select 1);
-            player setposATL [((_destpos select 0) + 5) - (random 10),((_destpos select 1) + 5) - (random 10),(_destpos select 2)];
+            player setPosATL [((_destpos select 0) + 5) - (random 10),((_destpos select 1) + 5) - (random 10),(_destpos select 2)];
         };
 
         if ((lbCurSel 203) > 0) then {
