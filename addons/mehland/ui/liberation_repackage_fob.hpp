@@ -5,7 +5,7 @@ class liberation_repackage_fob {
     controls[] = { "Header", "ButtonClose", "Infotext","TruckButton","BoxButton","CancelButton"};
     objects[] = {};
 
-    class RecycleBG: BgPicture {
+    class RecycleBG: BGPicture {
         x = QUOTE((0.35 * safezoneW + safezoneX) - ( 2 * BORDERSIZE));
         y = QUOTE((0.4 * safezoneH + safezoneY) - (3 * BORDERSIZE));
         w = QUOTE((0.3 * safezoneW) + (4 * BORDERSIZE));

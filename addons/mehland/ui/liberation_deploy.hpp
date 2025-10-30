@@ -7,7 +7,7 @@ class liberation_deploy {
 
     objects[] = {};
 
-    class RecycleBG: BgPicture {
+    class RecycleBG: BGPicture {
         idc = 198;
         x = QUOTE((0.15 * safezoneW + safezoneX) - ( 2 * BORDERSIZE));
         y = QUOTE((0.12 * safezoneH + safezoneY) - (3 * BORDERSIZE));

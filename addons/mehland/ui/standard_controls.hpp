@@ -359,7 +359,7 @@ class StdButton {
       idc = -1;
     type = CT_BUTTON;
     style = ST_CENTER;
-    default = false;
+    default = QUOTE(false);
     font = FontM;
     sizeEx =  QUOTE(0.018 * safezoneH);
     colorText[] = { 0, 0, 0, 1 };
@@ -430,7 +430,7 @@ class StdListBox {
 };
 class StdListNBox: StdListBox {
     idc = -1;
-    type = CT_List_N_Box;
+    type = QUOTE(CT_List_N_Box);
     drawSideArrows = 0;
     idcLeft = -10;
     idcRight = -11;
@@ -451,7 +451,7 @@ class StdListNBox: StdListBox {
     };
     colorBackground[] = COLOR_GREEN;
 };
-class BgPicture {
+class BGPicture {
     idc = -1;
     type = CT_STATIC;
     style = ST_PICTURE;
@@ -501,7 +501,7 @@ class StdEdit {
     idc = -1;
     type = CT_EDIT;
     style = ST_RIGHT+ST_FRAME;
-    default = false;
+    default = QUOTE(false);
     font = FontM;
     sizeEx =  QUOTE(0.018 * safezoneH);
     colorText[] = COLOR_WHITE;
