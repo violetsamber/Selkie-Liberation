@@ -13,6 +13,8 @@
         https://community.bistudio.com/wiki/Description.ext
 */
 
+#include "\x\cba\addons\main\script_macros_common.hpp"
+
 /*
     ----- General -----
 */
@@ -33,7 +35,7 @@ author = "Violets, [GREUH] Zbug & McKeewa, KP Liberation Dev Team, FatRefrigerat
 */
 
 // Mission name displayed in the mission selection menu.
-briefingName = "QUOTE($STR_MISSION_TITLE)";
+briefingName = QUOTE($STR_MISSION_TITLE);
 
 // Path to image which will be displayed when the mission is highlighted on the mission selection screen.
 // Image should be .paa format and in 2:1 aspect ratio – ideally 1024x512 (Arma 3).
@@ -49,7 +51,7 @@ overviewText = "github.com/violetsamber/KP-Liberation-Mehland.mehland";
 
 // String (usually mission name) shown during mission loading.
 // The string is shown in a slightly larger font above the loadScreen.
-onLoadName = "QUOTE($STR_MISSION_TITLE)";
+onLoadName = QUOTE($STR_MISSION_TITLE);
 
 // You can define a picture to be shown while the mission is loaded.
 // The path is relative to the mission folder.
@@ -212,7 +214,7 @@ taskManagement_drawDist = 5000;
     ----- Config Includes -----
 */
 
-#include "\x\cba\addons\main\script_macros_common.hpp"
+
 
 class CfgDebriefing {
     #include "KPLIB_debriefs.hpp"
@@ -249,4 +251,3 @@ class CfgTaskDescriptions {
 #include "GREUH\UI\GREUH_interface.hpp"
 #include "KP\KPGUI\KPGUI_defines.hpp"
 #include "KP\KPPLM\ui\KPPLM_dialog.hpp"
-

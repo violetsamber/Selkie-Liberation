@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Hemtt Build",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "hemtt build",
+        },
+        {
+            "name": "Hemtt Check",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "hemtt check",
+        }
+    ]
+}
