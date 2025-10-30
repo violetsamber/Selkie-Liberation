@@ -6,7 +6,7 @@ private _KP_liberation_production_markers_old = [0];
 
 while {GRLIB_endgame == 0} do {
     waitUntil {sleep 5;
-        !(_KP_liberation_production_markers_old isEqualTo KP_liberation_production_markers)
+        (_KP_liberation_production_markers_old isNotEqualTo KP_liberation_production_markers)
     };
 
     {

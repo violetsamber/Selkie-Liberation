@@ -24,13 +24,13 @@ while { cinematic_camera_started } do {
         private _positions = [ getPos startbase ];
         if ( !first_camera_round ) then {
 
-            if ( count GRLIB_all_fobs > 0 ) then {
+            if ( GRLIB_all_fobs isNotEqualTo [] ) then {
                 for [ {_idx=0},{_idx < 2},{_idx=_idx+1} ] do {
                     _positions pushBack (selectRandom GRLIB_all_fobs);
                 };
             };
 
-            if ( count active_sectors > 0 ) then {
+            if ( active_sectors isNotEqualTo [] ) then {
                 for [ {_idx=0},{_idx < 5},{_idx=_idx+1} ] do {
                     _positions pushBack (markerPos (selectRandom active_sectors));
                 };
@@ -42,7 +42,7 @@ while { cinematic_camera_started } do {
 
             if ( GRLIB_endgame == 0 ) then {
                 _activeplayers = (allPlayers select {alive _x && (_x distance (markerPos GRLIB_respawn_marker)) > 100});
-                if ( count _activeplayers > 0 ) then {
+                if ( _activeplayers isNotEqualTo [] ) then {
                     for [ {_idx=0},{_idx < 3},{_idx=_idx+1} ] do {
                         _positions pushBack (getPos (selectRandom _activeplayers));
                     };
@@ -58,10 +58,10 @@ while { cinematic_camera_started } do {
         if ( first_camera_round ) then {
             _camtarget = startbase;
         } else {
-            if (count (_nearentities select {alive _x && isPlayer _x}) != 0) then {
+            if (_nearentities select {alive _x && isPlayer _x} isNotEqualTo []) then {
                 _camtarget = selectRandom (_nearentities select {alive _x && isPlayer _x});
             } else {
-                if (count (_nearentities select { alive _x }) != 0) then {
+                if (_nearentities select {alive _x} isNotEqualTo []) then {
                     _camtarget = selectRandom (_nearentities select {alive _x});
                 };
             };

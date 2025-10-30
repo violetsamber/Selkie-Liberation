@@ -101,7 +101,7 @@ while { dialog && alive player } do {
                 ctrlSetText [ 205, format ["%1: %2", localize 'STR_PRIMARY_WEAPON', getText (_cfgWeapons >> (primaryWeapon _selectedmember) >> "displayName") ] ];
 
                 _primary_mags = 0;
-                if ( count primaryWeaponMagazine _selectedmember > 0 ) then {
+                if ( primaryWeaponMagazine _selectedmember isNotEqualTo [] ) then {
                     _primary_mags = 1;
                     { if ( ( _x select 0 ) == ( ( primaryWeaponMagazine _selectedmember ) select 0 ) ) then { _primary_mags = _primary_mags + 1; } } forEach (magazinesAmmo _selectedmember);
                 };
@@ -116,7 +116,7 @@ while { dialog && alive player } do {
                 ctrlSetText [ 207, format ["%1: %2", localize 'STR_SECONDARY_WEAPON', getText (_cfgWeapons >> (secondaryWeapon _selectedmember) >> "displayName") ] ];
 
                 _secondary_mags = 0;
-                if ( count secondaryWeaponMagazine _selectedmember > 0 ) then {
+                if ( secondaryWeaponMagazine _selectedmember isNotEqualTo []) then {
                     _secondary_mags = 1;
                     { if ( ( _x select 0 ) == ( ( secondaryWeaponMagazine _selectedmember ) select 0 ) ) then { _secondary_mags = _secondary_mags + 1; } } forEach (magazinesAmmo _selectedmember);
                 };
@@ -131,9 +131,9 @@ while { dialog && alive player } do {
                 ctrlSetText [ 209, "" ];
             } else {
                 _vehstring = localize 'STR_PASSENGER';
-                if (driver isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_DRIVER'; };
-                if (gunner isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_GUNNER'; };
-                if (commander isNull objectParent _selectedmember ) then { _vehstring = localize 'STR_COMMANDER'; };
+                if (driver objectParent _selectedmember == _selectedmember) then { _vehstring = localize 'STR_DRIVER'; };
+                if (gunner objectParent _selectedmember == _selectedmember) then { _vehstring = localize 'STR_GUNNER'; };
+                if (commander objectParent _selectedmember == _selectedmember) then { _vehstring = localize 'STR_COMMANDER'; };
                 _vehstring = _vehstring + format [ " (%1)", getText (_cfgVehicles >> (typeOf vehicle _selectedmember) >> "displayName") ];
                 ctrlSetText [ 209, _vehstring ];
             };

@@ -7,7 +7,7 @@ _ownership = [ _thispos ] call KPLIB_fnc_getSectorOwnership;
 if ( _ownership != GRLIB_side_enemy ) exitWith {};
 
 if ( GRLIB_blufor_defenders ) then {
-    _grp = creategroup [GRLIB_side_friendly, true];
+    _grp = createGroup [GRLIB_side_friendly, true];
     {
         [_x, _thispos, _grp] call KPLIB_fnc_createManagedUnit;
     } forEach blufor_squad_inf;

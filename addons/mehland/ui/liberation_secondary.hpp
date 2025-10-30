@@ -137,8 +137,8 @@ class liberation_secondary {
                 type = CT_STRUCTURED_TEXT;
                 colorBackground[] = COLOR_NOALPHA;
                 style = ST_LEFT;
-                x = QUOTE(0);
-                y = QUOTE(0);
+                x = 0;
+                y = 0;
                 w = QUOTE((0.45 * safezoneW) - (2 * BORDERSIZE));
                 h = QUOTE((0.5 * safezoneH) - BORDERSIZE);
                 text= "AAA";

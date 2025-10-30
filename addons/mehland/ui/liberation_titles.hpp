@@ -93,8 +93,8 @@ class RscTitles {
             colorBackground[] = COLOR_BLACK;
             font = FontM;
             sizeEx =  QUOTE(0.023);
-            x = QUOTE(-3); y = QUOTE(-3);
-            w = QUOTE(9);  h = QUOTE(9);
+            x = -3; y = -3;
+            w = 9;  h = 9;
             text = "";
         };
         class GenericLabel111 {
@@ -105,7 +105,7 @@ class RscTitles {
             colorBackground[] = COLOR_NOALPHA;
             font = FontM;
             sizeEx =  QUOTE(0.03);
-            x = QUOTE(0); y = QUOTE(0.75);
+            x = 0; y = QUOTE(0.75);
             w = QUOTE(1.0);  h = QUOTE(0.1);
             text = QUOTE($STR_DEPLOY_IN_PROGRESS);
         };

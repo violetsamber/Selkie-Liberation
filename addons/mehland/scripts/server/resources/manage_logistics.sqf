@@ -9,7 +9,7 @@ KP_liberation_convoy_ambush_check = 0;
 private _start = 0;
 while {GRLIB_endgame == 0} do {
 
-    if (((count (allPlayers - entities "HeadlessClient_F")) > 0) && ((count KP_liberation_logistics) > 0)) then {
+    if ((allPlayers - entities "HeadlessClient_F" isNotEqualTo []) && ((count KP_liberation_logistics) > 0)) then {
         _start = diag_tickTime;
         if (KP_liberation_logistic_debug > 0) then {[format ["Logistic interval started: %1", diag_tickTime], "LOGISTIC"] call KPLIB_fnc_log;};
 
@@ -27,9 +27,9 @@ while {GRLIB_endgame == 0} do {
                         switch (_x select 9) do {case 2: {_x set [9,0];}; case 3: {_x set [9,1];};};
                         private _storage_areas = nearestObjects [(_x select _locPos), [KP_liberation_small_storage_building, KP_liberation_large_storage_building], 150];
 
-                        if (((_x select 9) == 0) && !((_x select 6) isEqualTo [0,0,0])) then {
+                        if (((_x select 9) == 0) && ((_x select 6) isNotEqualTo [0,0,0])) then {
 
-                            if ((count (_storage_areas)) == 0) exitWith {_x set [9,2];};
+                            if (_storage_areas isEqualTo []) exitWith {_x set [9,2];};
 
                             private _toProcess = ceil ((ceil (((_x select 6) select 0) / 100)) + (ceil (((_x select 6) select 1) / 100)) + (ceil (((_x select 6) select 2) / 100)));
                             if (_toProcess > 3) then {_toProcess = 3;};
@@ -116,9 +116,9 @@ while {GRLIB_endgame == 0} do {
                             _x set [9,1];
                         };
 
-                        if (((_x select 9) == 1) && !((_x select _locRes) isEqualTo [0,0,0])) then {
+                        if (((_x select 9) == 1) && ((_x select _locRes) isNotEqualTo [0,0,0])) then {
 
-                            if ((count (_storage_areas)) == 0) exitWith {_x set [9,3];};
+                            if (_storage_areas isEqualTo []) exitWith {_x set [9,3];};
 
                             private _supplyValue = 0;
                             private _ammoValue = 0;
@@ -291,7 +291,7 @@ while {GRLIB_endgame == 0} do {
                 case 4: {
                     if ((_x select 8) > 1) then {
 
-                        if (((_x select 8) <= ((ceil (((_x select 2) distance2D (_x select 3)) / 400)) - 3)) && ((_x select 8) >= 3) && !((_x select 6) isEqualTo [0,0,0]) && !KP_liberation_convoy_ambush_inProgress && (KP_liberation_civ_rep <= -25) && (((_x select 8) % 2) == 0)) then {
+                        if (((_x select 8) <= ((ceil (((_x select 2) distance2D (_x select 3)) / 400)) - 3)) && ((_x select 8) >= 3) && ((_x select 6) isNotEqualTo [0,0,0]) && !KP_liberation_convoy_ambush_inProgress && (KP_liberation_civ_rep <= -25) && (((_x select 8) % 2) == 0)) then {
                             private _dice = round (random 100);
                             private _chance = KP_liberation_convoy_ambush_chance;
                             if (chance > 0) then {
@@ -356,7 +356,7 @@ while {GRLIB_endgame == 0} do {
                         _x set [9,0];
                         private _storage_areas = nearestObjects [(_x select _locPos), [KP_liberation_small_storage_building, KP_liberation_large_storage_building], 150];
 
-                        if ((count (_storage_areas)) == 0) exitWith {_x set [9,2];};
+                        if (_storage_areas isEqualTo []) exitWith {_x set [9,2];};
 
                         private _toProcess = ceil ((ceil (((_x select 6) select 0) / 100)) + (ceil (((_x select 6) select 1) / 100)) + (ceil (((_x select 6) select 2) / 100)));
                         if (_toProcess > 3) then {_toProcess = 3;};

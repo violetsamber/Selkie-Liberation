@@ -19,7 +19,7 @@ private _toRemove = [];
 private _toAdd = [];
 
 while {true} do {
-    waitUntil {sleep 1; !(allCurators isEqualTo [])};
+    waitUntil {sleep 1; (allCurators isNotEqualTo [])};
 
     // Add units
     _valids = allUnits select {

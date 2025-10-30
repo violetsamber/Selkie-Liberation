@@ -43,7 +43,7 @@ private _patrolcorners = [
     [_x, _patrolcorners select 0, _grppatrol, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
 } forEach ([] call KPLIB_fnc_getSquadComp);
 
-while {(count (waypoints _grppatrol)) != 0} do {deleteWaypoint ((waypoints _grppatrol) select 0);};
+while {waypoints _grppatrol isNotEqualTo []} do {deleteWaypoint ((waypoints _grppatrol) select 0);};
 {
     private _nextcorner = _x;
     _waypoint = _grppatrol addWaypoint [_nextcorner,0];

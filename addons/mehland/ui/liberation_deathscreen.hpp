@@ -12,8 +12,8 @@ class blackscreen {
     colorBackground[] = COLOR_BLACK;
     font = FontM;
     sizeEx =  QUOTE(0.023);
-    x = QUOTE(-3); y = QUOTE(-3);
-    w = QUOTE(9);  h = QUOTE(9);
+    x = -3; y = -3;
+    w = 9;  h = 9;
     text = "";
   };
   class Skull {

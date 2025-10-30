@@ -28,7 +28,7 @@ if (GRLIB_all_fobs isEqualTo []) then {
             // If the FOB box has fallen into the sea or is destroyed, start again with spawning a new one
             waitUntil {
                 sleep 1;
-                !(alive _fobbox) || !(GRLIB_all_fobs isEqualTo []) || (((getPosASL _fobbox) select 2) < 0)
+                !(alive _fobbox) || (GRLIB_all_fobs isNotEqualTo []) || (((getPosASL _fobbox) select 2) < 0)
             };
             sleep 10;
         };
@@ -36,7 +36,7 @@ if (GRLIB_all_fobs isEqualTo []) then {
     };
 
     // Wait a short time before paradropping the start resource crates
-    waitUntil {sleep 1; !(GRLIB_all_fobs isEqualTo [])};
+    waitUntil {sleep 1; (GRLIB_all_fobs isNotEqualTo [])};
     if (KP_liberation_tutorial && {["KPLIB_Tasks_Tutorial_Fob"] call BIS_fnc_taskExists}) then {
         waitUntil {sleep 1; ["KPLIB_Tasks_Tutorial_Fob_02"] call BIS_fnc_taskCompleted};
         sleep 3;

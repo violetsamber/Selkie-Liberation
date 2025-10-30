@@ -89,7 +89,7 @@ while {dialog && (alive player)} do {
         saveConvoySettings = 0;
         if (((lbCurSel 758024) != -1) && ((lbCurSel 758029) != -1)) then {
             [_listselect, ((_logi_destinations select lbCurSel 758024) select 1), [parseNumber ctrlText 758025,parseNumber ctrlText 758026,parseNumber ctrlText 758027], ((_logi_destinations select lbCurSel 758029) select 1), [parseNumber ctrlText 758030,parseNumber ctrlText 758031,parseNumber ctrlText 758032], clientOwner] remoteExec ["save_logi_remote_call",2];
-            waitUntil {sleep 0.5; (!(_selectedGroup isEqualTo (KP_liberation_logistics select _listselect))) || (logiError == 1)};
+            waitUntil {sleep 0.5; ((_selectedGroup isNotEqualTo (KP_liberation_logistics select _listselect))) || (logiError == 1)};
         } else {
             hint localize "STR_LOGISTIC_SAVE_ERROR";
         };
@@ -98,7 +98,7 @@ while {dialog && (alive player)} do {
     if (convoyStandby == 1) then {
         convoyStandby = 0;
         [_listselect, clientOwner] remoteExec ["abort_logi_remote_call",2];
-        waitUntil {sleep 0.5; (!(_selectedGroup isEqualTo (KP_liberation_logistics select _listselect))) || (logiError == 1)};
+        waitUntil {sleep 0.5; ((_selectedGroup isNotEqualTo (KP_liberation_logistics select _listselect))) || (logiError == 1)};
     };
 
     logiError = 0;
@@ -178,7 +178,7 @@ while {dialog && (alive player)} do {
             lbAdd [758029, format ["%1 (%2/%3/%4)",(_x select 0), (_x select 2), (_x select 3), (_x select 4)]];
         } forEach _logi_destinations;
 
-        if (!((_selectedGroup select 2) isEqualTo [0,0,0])) then {
+        if (((_selectedGroup select 2) isNotEqualTo [0,0,0])) then {
             ctrlShow [758024,false];
             ctrlShow [758033,true];
             {
@@ -190,7 +190,7 @@ while {dialog && (alive player)} do {
             ctrlShow [758033,false];
         };
 
-        if (!((_selectedGroup select 3) isEqualTo [0,0,0])) then {
+        if (((_selectedGroup select 3) isNotEqualTo [0,0,0])) then {
             ctrlShow [758029,false];
             ctrlShow [758034,true];
             {

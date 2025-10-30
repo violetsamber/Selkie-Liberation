@@ -11,7 +11,7 @@ while { true } do {
     if ([5] call KPLIB_fnc_hasPermission) then {
 
         _detected_vehicles = ((getPos player) nearEntities [["Tank","APC","IFV","Car"], veh_action_distance]) select {
-            (count crew _x) == 0 &&
+            crew _x isEqualTo [] &&
             ((locked _x == 0 || locked _x == 1)) &&
             (_x distance startbase > 1000)
         };

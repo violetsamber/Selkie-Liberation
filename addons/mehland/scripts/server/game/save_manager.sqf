@@ -24,7 +24,7 @@ if (hasInterface) then {
     };
 } else {
     addMissionEventHandler ["HandleDisconnect", {
-        if !(allPlayers isEqualTo []) exitWith {false};
+        if (allPlayers isNotEqualTo []) exitWith {false};
         params ["_unit"];
         deleteVehicle _unit;
         ["Last player disconnected. Saving mission data.", "SAVE"] call KPLIB_fnc_log;
@@ -173,7 +173,7 @@ if (!isNil "_saveData") then {
     };
 
     if (((_saveData select 0) select 0) isEqualType 0) then {
-        [format ["Save data from version: %1", (_saveData select 0) joinstring "."], "SAVE"] call KPLIB_fnc_log;
+        [format ["Save data from version: %1", (_saveData select 0) joinString "."], "SAVE"] call KPLIB_fnc_log;
 
         _dateTime                                   = _saveData select  1;
         _objectsToSave                              = _saveData select  2;
@@ -382,7 +382,7 @@ if (!isNil "_saveData") then {
     // Re-enable physics on the spawned objects
     {
         _x enableSimulation true;
-        _x setdamage 0;
+        _x setDamage 0;
         _x allowDamage true;
     } forEach _spawnedObjects;
     ["Saved buildings and vehicles placed", "SAVE"] call KPLIB_fnc_log;
@@ -421,7 +421,7 @@ if (!isNil "_saveData") then {
             _object setVectorDirAndUp [_vecDir, _vecUp];
 
             // Re-enable physics on spawned object
-            _object setdamage 0;
+            _object setDamage 0;
             _object enableSimulation true;
             _object allowDamage true;
 
@@ -454,7 +454,7 @@ if (!isNil "_saveData") then {
             _object setPosATL _pos;
 
             // Re-enable physics on spawned object
-            _object setdamage 0;
+            _object setDamage 0;
             _object enableSimulation true;
             _object allowDamage true;
 

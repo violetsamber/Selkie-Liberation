@@ -41,8 +41,8 @@ class RscCombo {
 	idc = -1;
 	type = 4;
 	style = 1;
-	x = QUOTE(0);
-	y = QUOTE(0);
+	x = 0;
+	y = 0;
 	w = QUOTE(0.3);
 	h = QUOTE(0.035);
 	colorSelect[] = COLOR_BRIGHTGREEN;
@@ -733,10 +733,10 @@ class GREUH_respawn {
 	};
 	class GREUH_Useless : GREUH_Respawn {
 		idc = -1;
-		x = QUOTE(-5);
-		y = QUOTE(-5);
-		w = QUOTE(0.1);
-		h = QUOTE(0.1);
+		x = -5;
+		y = -5;
+		w = 0.1;
+		h = 0.1;
 		text = "";
 		action = "";
 	};

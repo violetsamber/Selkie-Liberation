@@ -16,7 +16,7 @@ while { GRLIB_cleanup_vehicles > 0 } do {
         if ( count _nearestfob == 3 ) then {
             if ( ( _nextvehicle distance _nearestfob > ( 1.2 * GRLIB_fob_range ) ) && ( _nextvehicle distance startbase > ( 1.2 * GRLIB_fob_range ) ) ) then {
                 if ((toLower (typeOf _nextvehicle)) in _cleanup_classnames) then {
-                    if ( count ( crew _nextvehicle ) == 0 ) then {
+                    if ( crew _nextvehicle isEqualTo [] ) then {
                         _nextvehicle setVariable [ "GRLIB_empty_vehicle_ticker", ( _nextvehicle getVariable [ "GRLIB_empty_vehicle_ticker", 0 ] ) + 1 ];
                         _reset_ticker = false;
                     };

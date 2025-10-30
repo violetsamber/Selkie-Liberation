@@ -57,7 +57,7 @@ private _loadplayers = [];
     };
 } forEach ( allPlayers - [ player ] );
 
-if ( count _loadplayers > 0 ) then {
+if ( _loadplayers isNotEqualTo [] ) then {
 
     {
         private _nextplayer = _x select 1;
@@ -132,7 +132,7 @@ if ( edit_loadout > 0 ) then {
     if (KP_liberation_arsenalUsePreset) then {
         uiSleep 5;
         private _arsenalDisplay = ["RSCDisplayArsenal", "ace_arsenal_display"] select (KP_liberation_ace && KP_liberation_arsenal_type);
-        waitUntil {sleep 1; isNull (uinamespace getvariable [_arsenalDisplay, displayNull])};
+        waitUntil {sleep 1; isNull (uiNamespace getVariable [_arsenalDisplay, displayNull])};
         [_backpack] call KPLIB_fnc_checkGear;
     };
 };

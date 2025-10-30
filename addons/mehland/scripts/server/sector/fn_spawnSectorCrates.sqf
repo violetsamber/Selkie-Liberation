@@ -37,7 +37,7 @@ if !(_sector in KPLIB_sectorCratesSpawned) then {
             _spawnPos = ((markerPos _sector) getPos [random 50, random 360]) findEmptyPosition [10, 40, KP_liberation_ammo_crate];
             if (_j isEqualTo 10) exitWith {};
         };
-        if !(_spawnPos isEqualTo []) then {
+        if (_spawnPos isNotEqualTo []) then {
             [selectRandom KPLIB_crates, 100, _spawnpos] call KPLIB_fnc_createCrate;
             _spawnPos = [];
         } else {

@@ -52,7 +52,7 @@ while {GRLIB_endgame == 0} do {
                 };
             };
 
-            if (!(_units_at_sector > 0) && (_sector in KP_liberation_asymmetric_sectors)) then {
+            if ((_units_at_sector < 0) && (_sector in KP_liberation_asymmetric_sectors)) then {
                 KP_liberation_asymmetric_sectors = KP_liberation_asymmetric_sectors - [_sector];
             };
         } forEach ((sectors_capture + sectors_bigtown) select {_x in blufor_sectors});

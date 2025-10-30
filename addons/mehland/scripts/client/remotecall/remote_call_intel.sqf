@@ -30,7 +30,7 @@ switch (_notiftype) do {
     case 5: {["lib_secondary_convoy_destroyed"] call BIS_fnc_showNotification;};
     case 6: {
         waitUntil {!isNil "secondary_objective_position_marker"};
-        waitUntil {count secondary_objective_position_marker > 0};
+        waitUntil {secondary_objective_position_marker isNotEqualTo []};
         waitUntil {secondary_objective_position_marker distance zeropos > 1000};
         ["lib_intel_sar", [markerText ([10000, secondary_objective_position_marker] call KPLIB_fnc_getNearestSector)]] call BIS_fnc_showNotification;
         _secondary_marker = createMarkerLocal ["secondarymarker", secondary_objective_position_marker];
@@ -58,7 +58,7 @@ switch (_notiftype) do {
     // civ-supplies mission
     case 9: {
         waitUntil {!isNil "secondary_objective_position_marker"};
-        waitUntil {count secondary_objective_position_marker > 0};
+        waitUntil {secondary_objective_position_marker isNotEqualTo []};
         waitUntil {secondary_objective_position_marker distance zeropos > 1000};
         ["lib_intel_civ_supplies", [markerText ([10000, secondary_objective_position_marker] call KPLIB_fnc_getNearestSector)]] call BIS_fnc_showNotification;
         _secondary_marker = createMarkerLocal ["secondarymarker", secondary_objective_position_marker];
