@@ -21,13 +21,13 @@ class KPPLM_dialog {
     class controlsBackground {
 
         class KP_DialogTitle: KPGUI_PRE_DialogTitleC {
-            text = "QUOTE($STR_KPPLM_TITLE)";
+            text = QUOTE($STR_KPPLM_TITLE);
         };
 
         class KP_DialogArea: KPGUI_PRE_DialogBackgroundC {};
 
         class KP_LabelPlayer: KPGUI_PRE_InlineTitle {
-            text = "QUOTE($STR_KPPLM_LABELPLAYER)";
+            text = QUOTE($STR_KPPLM_LABELPLAYER);
             x = QUOTE(KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,0,16));
             w = QUOTE(KP_GETW(KP_WIDTH_VAL_C,1));
@@ -36,7 +36,7 @@ class KPPLM_dialog {
 
         class KP_TextRank: KPGUI_PRE_Text {
             idc = 758031;
-            text = "QUOTE($STR_KPPLM_RANK)";
+            text = QUOTE($STR_KPPLM_RANK);
             x = QUOTE(KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,1,16));
             w = QUOTE(KP_GETW(KP_WIDTH_VAL_C,2));
@@ -45,13 +45,13 @@ class KPPLM_dialog {
 
         class KP_TextScore: KP_TextRank {
             idc = 758033;
-            text = "QUOTE($STR_KPPLM_SCORE)";
+            text = QUOTE($STR_KPPLM_SCORE);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,5,48));
         };
 
         class KP_TextPlaytime: KP_TextRank {
             idc = 758035;
-            text = "QUOTE($STR_KPPLM_PLAYTIME)";
+            text = QUOTE($STR_KPPLM_PLAYTIME);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,7,48));
         };
 
@@ -59,13 +59,13 @@ class KPPLM_dialog {
             idc = 758037;
             style = 2;
             colorText[] = {0.8, 0, 0, 0.75};
-            text = "QUOTE($STR_KPPLM_NORANKS)";
+            text = QUOTE($STR_KPPLM_NORANKS);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,3,32));
             sizeEx = QUOTE(KP_TEXT_L);
         };
 
         class KP_LabelGroups: KP_LabelPlayer {
-            text = "QUOTE($STR_KPPLM_LABELGROUPS)";
+            text = QUOTE($STR_KPPLM_LABELGROUPS);
             x = QUOTE(KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,0,1));
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,3,16));
             w = QUOTE(KP_GETW(KP_WIDTH_VAL_C,1));
@@ -73,12 +73,12 @@ class KPPLM_dialog {
         };
 
         class KP_LabelView: KP_LabelPlayer {
-            text = "QUOTE($STR_KPPLM_LABELVIEW)";
+            text = QUOTE($STR_KPPLM_LABELVIEW);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,1,2));
         };
 
         class KP_TextViewFoot: KPGUI_PRE_Text {
-            text = "QUOTE($STR_KPPLM_VIEWFOOT)";
+            text = QUOTE($STR_KPPLM_VIEWFOOT);
             x = QUOTE(KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,1,2));
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,9,16));
             w = QUOTE(KP_GETW(KP_WIDTH_VAL_C,2));
@@ -86,37 +86,37 @@ class KPPLM_dialog {
         };
 
         class KP_TextViewVehicle: KP_TextViewFoot {
-            text = "QUOTE($STR_KPPLM_VIEWVEHICLE)";
+            text = QUOTE($STR_KPPLM_VIEWVEHICLE);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,29,48));
         };
 
         class KP_TextViewAir: KP_TextViewFoot {
-            text = "QUOTE($STR_KPPLM_VIEWAIR)";
+            text = QUOTE($STR_KPPLM_VIEWAIR);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,31,48));
         };
 
         class KP_LabelMisc: KP_LabelPlayer {
-            text = "QUOTE($STR_KPPLM_LABELMISC)";
+            text = QUOTE($STR_KPPLM_LABELMISC);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,11,16));
         };
 
         class KP_TextTerrain: KP_TextRank {
-            text = "QUOTE($STR_KPPLM_TEXTTERRAIN)";
+            text = QUOTE($STR_KPPLM_TEXTTERRAIN);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,12,16));
         };
 
         class KP_TextTPV: KP_TextRank {
-            text = "QUOTE($STR_KPPLM_TEXTTPV)";
+            text = QUOTE($STR_KPPLM_TEXTTPV);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,19,24));
         };
 
         class KP_TextRadio: KP_TextRank {
-            text = "QUOTE($STR_KPPLM_TEXTRADIO)";
+            text = QUOTE($STR_KPPLM_TEXTRADIO);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,10,12));
         };
 
         class KP_TextSound: KP_TextRank {
-            text = "QUOTE($STR_KPPLM_TEXTSOUND)";
+            text = QUOTE($STR_KPPLM_TEXTSOUND);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,22,24));
         };
     };
@@ -124,7 +124,7 @@ class KPPLM_dialog {
     class controls {
 
         class KPPLM_Version: KPGUI_PRE_DialogVersionIconC {
-            tooltip = "QUOTE($STR_KPPLM_VERSION)";
+            tooltip = QUOTE($STR_KPPLM_VERSION);
         };
 
         class KP_PlayerRank: KPGUI_PRE_Text {
@@ -159,7 +159,7 @@ class KPPLM_dialog {
         };
 
         class KP_ButtonJoin: KPGUI_PRE_InlineButton {
-            text = "QUOTE($STR_KPPLM_JOIN)";
+            text = QUOTE($STR_KPPLM_JOIN);
             x = QUOTE(KP_GETCX(KP_X_VAL_C,KP_WIDTH_VAL_C,3,4));
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,4,16));
             w = QUOTE(KP_GETW(KP_WIDTH_VAL_C,4));
@@ -168,7 +168,7 @@ class KPPLM_dialog {
         };
 
         class KP_ButtonCreate: KP_ButtonJoin {
-            text = "QUOTE($STR_KPPLM_CREATE)";
+            text = QUOTE($STR_KPPLM_CREATE);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,17,48));
             onButtonClick = "[] call KPPLM_fnc_create";
         };
@@ -182,7 +182,7 @@ class KPPLM_dialog {
         };
 
         class KP_ButtonRename: KP_ButtonJoin {
-            text = "QUOTE($STR_KPPLM_RENAME)";
+            text = QUOTE($STR_KPPLM_RENAME);
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,11,24));
             h = QUOTE(KP_GETH(KP_HEIGHT_VAL_C,24));
             onButtonClick = "[] call KPPLM_fnc_rename";
@@ -236,12 +236,12 @@ class KPPLM_dialog {
             y = QUOTE(KP_GETCY(KP_Y_VAL_C,KP_HEIGHT_VAL_C,23,24));
             w = QUOTE(KP_GETW(KP_WIDTH_VAL_C,1));
             h = QUOTE(KP_GETH(KP_HEIGHT_VAL_C,24));
-            tooltip = "QUOTE($STR_KPPLM_TTSOUND)";
+            tooltip = QUOTE($STR_KPPLM_TTSOUND);
             onSliderPosChanged = "ctrlSetText [7580316, format ['%1%2', round (_this select 1), '%']]";
         };
 
         class KP_ApplyButton: KPGUI_PRE_DialogButtonC {
-            text = "QUOTE($STR_KPPLM_APPLY)";
+            text = QUOTE($STR_KPPLM_APPLY);
             onButtonClick = "[] call KPPLM_fnc_save";
         };
 
