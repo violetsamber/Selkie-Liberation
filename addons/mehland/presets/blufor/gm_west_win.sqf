@@ -12,12 +12,12 @@
     The same classnames for different purposes may cause various unpredictable issues with player actions.
     Or not, just don't try!
 */
-FOB_typename = "land_gm_tower_bt_6_fuest_80";                           // This is the main FOB HQ building.
-FOB_box_typename = "gm_ge_army_shelteraceI_command_win";                // This is the FOB as a container.
-FOB_truck_typename = "gm_ge_army_bpz2a0_win";                           // This is the FOB as a vehicle.
-Arsenal_typename = "B_supplyCrate_F";                                   // This is the virtual arsenal as portable supply crates.
-Respawn_truck_typename = "gm_ge_army_u1300l_medic_win_rc";              // This is the mobile respawn (and medical) truck.
-huron_typename = "gm_ge_army_ch53gs";                                   // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
+FOB_typeName = "land_gm_tower_bt_6_fuest_80";                           // This is the main FOB HQ building.
+FOB_box_typeName = "gm_ge_army_shelteraceI_command_win";                // This is the FOB as a container.
+FOB_truck_typeName = "gm_ge_army_bpz2a0_win";                           // This is the FOB as a vehicle.
+Arsenal_typeName = "B_supplyCrate_F";                                   // This is the virtual arsenal as portable supply crates.
+Respawn_truck_typeName = "gm_ge_army_u1300l_medic_win_rc";              // This is the mobile respawn (and medical) truck.
+huron_typeName = "gm_ge_army_ch53gs";                                   // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
 crewman_classname = "gm_ge_army_crew_mp2a1_80_win";                     // This defines the crew for vehicles.
 pilot_classname = "gm_ge_army_crew_mp2a1_80_win";                       // This defines the pilot for helicopters.
 KP_liberation_little_bird_classname = "gm_ge_army_bo105p1m_vbh_swooper";// These are the little birds which spawn on the Freedom or at Chimera base.
@@ -174,10 +174,10 @@ buildings = [
 ];
 
 support_vehicles = [
-    [Arsenal_typename,100,200,0],
-    [Respawn_truck_typename,200,0,100],
-    [FOB_box_typename,200,500,0],
-    [FOB_truck_typename,300,500,100],
+    [Arsenal_typeName,100,200,0],
+    [Respawn_truck_typeName,200,0,100],
+    [FOB_box_typeName,200,500,0],
+    [FOB_truck_typeName,300,500,100],
     [KP_liberation_small_storage_building,0,0,0],
     [KP_liberation_large_storage_building,0,0,0],
     [KP_liberation_recycle_building,250,0,0],

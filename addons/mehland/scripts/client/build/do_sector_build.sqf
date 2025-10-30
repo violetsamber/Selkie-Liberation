@@ -17,7 +17,7 @@ if (((_this select 3) select 0) == KP_liberation_small_storage_building) then {
     _ghost_spot = (markerPos "ghost_spot") findEmptyPosition [0,100];
 
     _building = ((_this select 3) select 0) createVehicleLocal _ghost_spot;
-    _building allowdamage false;
+    _building allowDamage false;
     _building setVehicleLock "LOCKED";
     _building enableSimulationGlobal false;
 
@@ -34,7 +34,7 @@ if (((_this select 3) select 0) == KP_liberation_small_storage_building) then {
         _truepos = [((getPos player) select 0) + (_dist * (cos _truedir)), ((getPos player) select 1) + (_dist * (sin _truedir)),0];
 
         if ((surfaceIsWater _truepos) || (surfaceIsWater getPos player) || ((_truepos distance _sectorpos) > 100)) then {
-            _building setpos _ghost_spot;
+            _building setPos _ghost_spot;
             build_invalid = 1;
 
             if(((surfaceIsWater _truepos) || (surfaceIsWater getPos player))) then {
@@ -46,7 +46,7 @@ if (((_this select 3) select 0) == KP_liberation_small_storage_building) then {
             };
         } else {
             _building setDir (getDir player);
-            _building setpos _truepos;
+            _building setPos _truepos;
 
             if (KP_vector) then {
                 _building setVectorUp [0,0,1];
@@ -78,7 +78,7 @@ if (((_this select 3) select 0) == KP_liberation_small_storage_building) then {
         _building = ((_this select 3) select 0) createVehicle _truepos;
         _building allowDamage false;
         _building setDir _vehdir;
-        _building setpos _truepos;
+        _building setPos _truepos;
 
         if (KP_vector) then {
             _building setVectorUp [0,0,1];

@@ -27,7 +27,7 @@ while { true } do {
 			} forEach _marker_objs;
 
 			private _playableunits = [];
-			if ( count playableUnits > 0 ) then {
+			if ( playableUnits isNotEqualTo [] ) then {
 				_playableunits = [ playableUnits, { (side (group _x)) == (side (group player)) } ] call BIS_fnc_conditionalSelect;
 			} else {
 				_playableunits = [ player ];
@@ -67,7 +67,7 @@ while { true } do {
 			} forEach _marked_squadmates;
 
 			{
-				if ( (count (crew _x) == 0) || !(alive _x) ) then {
+				if ( (crew _x isEqualTo []) || !(alive _x) ) then {
 					_stuff_to_unmark pushBack _x;
 					_marked_vehicles = _marked_vehicles - [_x];
 				};
@@ -94,7 +94,7 @@ while { true } do {
 						_playername = "[" + ((squadParams _nextplayer select 0) select 0) + "] ";
 					};
 					_playername = _playername + (name _nextplayer);
-					_marker setmarkerTextLocal _playername;
+					_marker setMarkerTextLocal _playername;
 
 					_marker setMarkerSizeLocal [ 0.75, 0.75 ];
 					_marker setMarkerColorLocal _color;
@@ -120,7 +120,7 @@ while { true } do {
 					_marker setMarkerColorLocal _color;
 				};
 
-				_marker setmarkerTextLocal format [ "%1", ( [ _nextai ] call KPLIB_fnc_getUnitPositionId )];
+				_marker setMarkerTextLocal format [ "%1", ( [ _nextai ] call KPLIB_fnc_getUnitPositionId )];
 			} forEach _marked_squadmates;
 
 			{
@@ -151,7 +151,7 @@ while { true } do {
 				} forEach  _datcrew;
 
 				_vehiclename = _vehiclename + "(" + getText (_cfg >> typeOf _nextvehicle >> "displayName") + ")";
-				_marker setmarkerTextLocal _vehiclename;
+				_marker setMarkerTextLocal _vehiclename;
 			} forEach _marked_vehicles;
 		};
 

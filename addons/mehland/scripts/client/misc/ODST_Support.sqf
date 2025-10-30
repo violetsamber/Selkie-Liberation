@@ -19,7 +19,7 @@
                         _nearestEnemy = player findNearestEnemy _grenadePos;
                         _nearestEnemyPos = getPosATL _nearestEnemy;
                         "odstMark" setMarkerPosLocal _nearestEnemyPos;
-			            [["OPTRE_UNSC_ODST_Soldier_TeamLeader","OPTRE_UNSC_ODST_Soldier_Scout","OPTRE_UNSC_ODST_Soldier_Rifleman_BR","OPTRE_UNSC_ODST_Soldier_Rifleman_AT","OPTRE_UNSC_ODST_Soldier_Paramedic","OPTRE_UNSC_ODST_Soldier_Automatic_Rifleman","OPTRE_UNSC_ODST_Soldier_Scout_Sniper","OPTRE_UNSC_ODST_Soldier_Rifleman_BR"],_grenadePos,["odstMark"],"patrol",WEST] remoteExec ["OPTRE_fnc_CS_ODSTHEV",2];
+			            [["OPTRE_UNSC_ODST_Soldier_TeamLeader","OPTRE_UNSC_ODST_Soldier_Scout","OPTRE_UNSC_ODST_Soldier_Rifleman_BR","OPTRE_UNSC_ODST_Soldier_Rifleman_AT","OPTRE_UNSC_ODST_Soldier_Paramedic","OPTRE_UNSC_ODST_Soldier_Automatic_Rifleman","OPTRE_UNSC_ODST_Soldier_Scout_Sniper","OPTRE_UNSC_ODST_Soldier_Rifleman_BR"],_grenadePos,["odstMark"],"patrol",GRLIB_side_friendly] remoteExec ["OPTRE_fnc_CS_ODSTHEV",2];
                         hint "ODST drop inbound!\nHelp is on the way."
                     };
                 } else {hint "ODST drop not approved.\nFriendly force strength would exceed capacity."};

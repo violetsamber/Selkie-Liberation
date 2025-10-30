@@ -25,7 +25,7 @@ while { true } do {
 
     _markedveh = [];
     {
-        if (alive _x && (toLower (typeOf _x)) in _vehtomark && (count (crew _x)) == 0 && (_x distance2D startbase) > 500) then {
+        if (alive _x && (toLower (typeOf _x)) in _vehtomark && crew _x isEqualTo [] && (_x distance2D startbase) > 500) then {
             _markedveh pushBack _x;
         };
     } forEach vehicles;
@@ -46,7 +46,7 @@ while { true } do {
     {
         _marker = _vehmarkers select (_markedveh find _x);
         _marker setMarkerPosLocal getPos _x;
-        _marker setmarkerTextLocal  (getText (_cfg >> typeOf _x >> "displayName"));
+        _marker setMarkerTextLocal  (getText (_cfg >> typeOf _x >> "displayName"));
 
     } forEach _markedveh;
 

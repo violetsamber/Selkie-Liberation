@@ -12,12 +12,12 @@
     The same classnames for different purposes may cause various unpredictable issues with player actions.
     Or not, just don't try!
 */
-FOB_typename = "land_gm_tower_bt_6_fuest_80";                           // This is the main FOB HQ building.
-FOB_box_typename = "gm_gc_army_brdm2um_win";                            // This is the FOB as a container/BRDM (due to lack of proper container transport in GM German EAST).
-FOB_truck_typename = "gm_gc_army_btr60pu12_win";                        // This is the FOB as a vehicle.
-Arsenal_typename = "B_supplyCrate_F";                                   // This is the virtual arsenal as portable supply crates.
-Respawn_truck_typename = "gm_gc_army_ural375d_medic_win";               // This is the mobile respawn (and medical) truck.
-huron_typename = "gm_gc_airforce_mi2t";                                 // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
+FOB_typeName = "land_gm_tower_bt_6_fuest_80";                           // This is the main FOB HQ building.
+FOB_box_typeName = "gm_gc_army_brdm2um_win";                            // This is the FOB as a container/BRDM (due to lack of proper container transport in GM German EAST).
+FOB_truck_typeName = "gm_gc_army_btr60pu12_win";                        // This is the FOB as a vehicle.
+Arsenal_typeName = "B_supplyCrate_F";                                   // This is the virtual arsenal as portable supply crates.
+Respawn_truck_typeName = "gm_gc_army_ural375d_medic_win";               // This is the mobile respawn (and medical) truck.
+huron_typeName = "gm_gc_airforce_mi2t";                                 // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
 crewman_classname = "gm_gc_army_crew_mpiaks74nk_80_blk";                // This defines the crew for vehicles.
 pilot_classname = "gm_gc_army_crew_mpiaks74nk_80_blk";                  // This defines the pilot for helicopters.
 KP_liberation_little_bird_classname = "gm_gc_bgs_p601";                 // Little birds replaced with unimog for container transportation.
@@ -168,10 +168,10 @@ buildings = [
 ];
 
 support_vehicles = [
-    [Arsenal_typename,100,200,0],
-    [Respawn_truck_typename,200,0,100],
-    [FOB_box_typename,200,500,0],
-    [FOB_truck_typename,300,500,100],
+    [Arsenal_typeName,100,200,0],
+    [Respawn_truck_typeName,200,0,100],
+    [FOB_box_typeName,200,500,0],
+    [FOB_truck_typeName,300,500,100],
     [KP_liberation_small_storage_building,0,0,0],
     [KP_liberation_large_storage_building,0,0,0],
     [KP_liberation_recycle_building,250,0,0],

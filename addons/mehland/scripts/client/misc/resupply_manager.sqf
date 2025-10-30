@@ -23,7 +23,7 @@ while { true } do {
         if ( effectiveCommander _veh == player ) then {
             if ( (speed _veh < _repair_speed) && (((getPosATL _veh) select 2) < _repair_altitude) ) then {
 
-                if ( count ( (getPos _veh) nearEntities [ vehicle_repair_sources , _resupply_dist] ) > 0 ) then {
+                if ( getPos _veh nearEntities [vehicle_repair_sources,_resupply_dist] isNotEqualTo [] ) then {
                     if ( damage _veh > 0 )  then {
                         _repaired = true;
                         _average_damage = (damage _veh) - _repair_amount;
@@ -32,7 +32,7 @@ while { true } do {
                     };
                 };
 
-                if ( ( count ( (getPos _veh) nearEntities [ vehicle_rearm_sources , _resupply_dist] ) > 0 ) && ( _rearm_ticker < _rearm_time ) ) then {
+                if ( getPos _veh nearEntities [vehicle_rearm_sources,_resupply_dist] isNotEqualTo [] && ( _rearm_ticker < _rearm_time ) ) then {
                     _rearmed = true;
                     _rearm_ticker = _rearm_ticker + 1;
                     if ( _rearm_ticker >= _rearm_time ) then {
@@ -40,7 +40,7 @@ while { true } do {
                     };
                 };
 
-                if ( count ( (getPos _veh) nearEntities [ vehicle_refuel_sources , _resupply_dist] ) > 0 ) then {
+                if ( getPos _veh nearEntities [vehicle_refuel_sources,_resupply_dist] isNotEqualTo [] ) then {
                     if ( fuel _veh < ( 1 - _refuel_amount ) )  then {
                         _refueled = true;
                         [_veh, (fuel _veh + _refuel_amount)] remoteExecCall ["setFuel", _veh];

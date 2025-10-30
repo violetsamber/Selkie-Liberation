@@ -297,7 +297,7 @@ KPLIB_crates            = [KP_liberation_supply_crate, KP_liberation_ammo_crate,
 KPLIB_airSlots          = [KP_liberation_heli_slot_building, KP_liberation_plane_slot_building];
 KPLIB_storageBuildings  = [KP_liberation_small_storage_building, KP_liberation_large_storage_building];
 KPLIB_upgradeBuildings  = [KP_liberation_recycle_building, KP_liberation_spartan_building, KP_liberation_ODST_building, KP_liberation_air_vehicle_building, KP_liberation_heli_slot_building, KP_liberation_plane_slot_building];
-KPLIB_aiResupplySources append [Respawn_truck_typename, huron_typename, Arsenal_typename];
+KPLIB_aiResupplySources append [Respawn_truck_typeName, huron_typeName, Arsenal_typeName];
 
 KPLIB_crates            = KPLIB_crates              apply {toLower _x};
 KPLIB_airSlots          = KPLIB_airSlots            apply {toLower _x};
@@ -309,7 +309,7 @@ KPLIB_aiResupplySources = KPLIB_aiResupplySources   apply {toLower _x};
     Classname collections
 */
 // All land vehicle classnames
-KPLIB_allLandVeh_classes = [[], [huron_typename]] select (huron_typename isKindOf "Air");;
+KPLIB_allLandVeh_classes = [[], [huron_typeName]] select (huron_typeName isKindOf "Air");;
 {
     KPLIB_allLandVeh_classes append _x;
 } forEach [
@@ -326,7 +326,7 @@ KPLIB_allLandVeh_classes = [[], [huron_typename]] select (huron_typename isKindO
 KPLIB_allLandVeh_classes = KPLIB_allLandVeh_classes arrayIntersect KPLIB_allLandVeh_classes;
 
 // All air vehicle classnames
-KPLIB_allAirVeh_classes = [[], [huron_typename]] select (huron_typename isKindOf "Air");
+KPLIB_allAirVeh_classes = [[], [huron_typeName]] select (huron_typeName isKindOf "Air");
 {
     KPLIB_allAirVeh_classes append _x;
 } forEach [opfor_choppers apply {toLower _x}, opfor_air apply {toLower _x}, KPLIB_b_air_classes, KPLIB_b_support_classes select {_x isKindOf "Air"}];
@@ -371,7 +371,7 @@ KPLIB_typeAirClasses   = +KPLIB_b_air_classes;
         case (_x isKindOf "Air"):   {KPLIB_typeAirClasses      pushBack _x};
         default                     {KPLIB_typeLightClasses    pushBack _x};
     };
-} forEach (KPLIB_b_support_classes + [toLower huron_typename]);
+} forEach (KPLIB_b_support_classes + [toLower huron_typeName]);
 
 // Military alphabet used for FOBs and convois
 military_alphabet = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-Ray", "Yankee", "Zulu"];

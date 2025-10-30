@@ -162,7 +162,7 @@ if(_saveMagsAmmo) then {
 };
 
 // get backpack items
-_cargo = getbackpackcargo (unitbackpack _target);
+_cargo = getBackpackCargo (unitBackpack _target);
 _backpacks = [];
 {
     for "_i" from 1 to ((_cargo select 1) select _forEachindex) do {

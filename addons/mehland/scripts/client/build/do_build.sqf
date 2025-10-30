@@ -32,7 +32,7 @@ while { true } do {
     build_invalid = 0;
     _classname = "";
     if ( buildtype == 99 ) then {
-        _classname = FOB_typename;
+        _classname = FOB_typeName;
     } else {
         _classname = ((KPLIB_buildList select buildtype) select buildindex) select 0;
         _price_s = ((KPLIB_buildList select buildtype) select buildindex) select 1;
@@ -40,7 +40,7 @@ while { true } do {
         _price_f = ((KPLIB_buildList select buildtype) select buildindex) select 3;
 
         _nearfob = [] call KPLIB_fnc_getNearestFob;
-        _storage_areas = (_nearfob nearobjects (GRLIB_fob_range * 2)) select {(_x getVariable ["KP_liberation_storage_type",-1]) == 0};
+        _storage_areas = (_nearfob nearObjects (GRLIB_fob_range * 2)) select {(_x getVariable ["KP_liberation_storage_type",-1]) == 0};
 
         [_price_s, _price_a, _price_f, _classname, buildtype, _storage_areas] remoteExec ["build_remote_call",2];
     };
@@ -102,7 +102,7 @@ while { true } do {
             _ghost_spot = (markerPos "ghost_spot") findEmptyPosition [0,100];
 
             _vehicle = _classname createVehicleLocal _ghost_spot;
-            _vehicle allowdamage false;
+            _vehicle allowDamage false;
             _vehicle setVehicleLock "LOCKED";
             _vehicle enableSimulationGlobal false;
             _vehicle setVariable ["KP_liberation_preplaced", true, true];
@@ -126,7 +126,7 @@ while { true } do {
                 };
                 _actualdir = ((getDir player) + build_rotation);
                 if ( _classname == "Land_Cargo_Patrol_V1_F" || _classname == "Land_PortableLight_single_F" ) then { _actualdir = _actualdir + 180 };
-                if ( _classname == FOB_typename ) then { _actualdir = _actualdir + 270 };
+                if ( _classname == FOB_typeName ) then { _actualdir = _actualdir + 270 };
 
                 while { _actualdir > 360 } do { _actualdir = _actualdir - 360 };
                 while { _actualdir < 0 } do { _actualdir = _actualdir + 360 };
@@ -145,7 +145,7 @@ while { true } do {
                     _x setPos (_truepos getPos [_dist, 10 * _forEachIndex]);
                 } forEach _object_spheres;
 
-                if !(buildtype isEqualTo 99) then {
+                if (buildtype isNotEqualTo 99) then {
                     {
                         _x setPos (_posfob getPos [GRLIB_fob_range, 10 * _forEachIndex])
                     } forEach _fob_spheres;
@@ -155,17 +155,17 @@ while { true } do {
 
                 _truepos = [_truepos select 0, _truepos select 1, (_truepos select 2) +  build_elevation];
 
-                _near_objects = (_truepos nearobjects ["AllVehicles", _dist]) ;
-                _near_objects = _near_objects + (_truepos nearobjects [FOB_box_typename, _dist]);
-                _near_objects = _near_objects + (_truepos nearobjects [Arsenal_typename, _dist]);
+                _near_objects = (_truepos nearObjects ["AllVehicles", _dist]) ;
+                _near_objects = _near_objects + (_truepos nearObjects [FOB_box_typeName, _dist]);
+                _near_objects = _near_objects + (_truepos nearObjects [Arsenal_typeName, _dist]);
 
-                _near_objects_25 = (_truepos nearobjects ["AllVehicles", 50]) ;
-                _near_objects_25 = _near_objects_25 + (_truepos nearobjects [FOB_box_typename, 50]);
-                _near_objects_25 = _near_objects_25 + (_truepos nearobjects [Arsenal_typename, 50]);
+                _near_objects_25 = (_truepos nearObjects ["AllVehicles", 50]) ;
+                _near_objects_25 = _near_objects_25 + (_truepos nearObjects [FOB_box_typeName, 50]);
+                _near_objects_25 = _near_objects_25 + (_truepos nearObjects [Arsenal_typeName, 50]);
 
                 if(	buildtype != 6 ) then {
-                    _near_objects = _near_objects + (_truepos nearobjects ["Static", _dist]);
-                    _near_objects_25 = _near_objects_25 + (_truepos nearobjects ["Static", 50]);
+                    _near_objects = _near_objects + (_truepos nearObjects ["Static", _dist]);
+                    _near_objects_25 = _near_objects_25 + (_truepos nearObjects ["Static", 50]);
                 };
 
                 private _remove_objects = [];
@@ -206,12 +206,12 @@ while { true } do {
                 if (count _near_objects == 0 && ((_truepos distance _posfob) < _maxdist) && (  ((!surfaceIsWater _truepos) && (!surfaceIsWater getPos player)) || (_classname in boats_names) ) ) then {
 
                     if ( ((buildtype == 6) || (buildtype == 99)) && ((gridmode % 2) == 1) ) then {
-                        _vehicle setpos [round (_truepos select 0),round (_truepos select 1), _truepos select 2];
+                        _vehicle setPos [round (_truepos select 0),round (_truepos select 1), _truepos select 2];
                     } else {
                         if ((toLower (typeOf _vehicle)) in KPLIB_b_static_classes) then {
                             _vehicle setPosATL _truepos;
                         } else {
-                            _vehicle setpos _truepos;
+                            _vehicle setPos _truepos;
                         };
                     };
                     if (buildtype == 6 || buildtype == 99 || (toLower _classname) in KPLIB_storageBuildings || _classname isEqualTo KP_liberation_recycle_building || _classname isEqualTo KP_liberation_air_vehicle_building || _classname isEqualTo KP_liberation_spartan_building || _classname isEqualTo KP_liberation_ODST_building) then {
@@ -234,7 +234,7 @@ while { true } do {
                     if ( build_invalid == 0 ) then {
                         {_x setObjectTexture [0, "#(rgb,8,8,3)color(1,0,0,1)"];} forEach _object_spheres;
                     };
-                    _vehicle setpos _ghost_spot;
+                    _vehicle setPos _ghost_spot;
                     build_invalid = 1;
                     if(count _near_objects > 0) then {
                         GRLIB_ui_notif = format [localize "STR_PLACEMENT_IMPOSSIBLE",count _near_objects, round _dist];
@@ -268,7 +268,7 @@ while { true } do {
                 _price_f = ((KPLIB_buildList select buildtype) select buildindex) select 3;
 
                 _nearfob = [] call KPLIB_fnc_getNearestFob;
-                _storage_areas = (_nearfob nearobjects (GRLIB_fob_range * 2)) select {(_x getVariable ["KP_liberation_storage_type",-1]) == 0};
+                _storage_areas = (_nearfob nearObjects (GRLIB_fob_range * 2)) select {(_x getVariable ["KP_liberation_storage_type",-1]) == 0};
 
                 _supplyCrates = ceil (_price_s / 100);
                 _ammoCrates = ceil (_price_a / 100);
@@ -306,7 +306,7 @@ while { true } do {
                 if ((toLower (typeOf _vehicle)) in KPLIB_b_static_classes) then {
                     _vehicle setPosATL _truepos;
                 } else {
-                    _vehicle setpos _truepos;
+                    _vehicle setPos _truepos;
                 };
 
                 [_vehicle] call KPLIB_fnc_addObjectInit;

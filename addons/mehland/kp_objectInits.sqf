@@ -39,13 +39,13 @@ KPLIB_objectInits = [
 
     // Add ViV and build action to FOB box/truck
     [
-        [FOB_box_typename, FOB_truck_typename],
+        [FOB_box_typeName, FOB_truck_typeName],
         {
             [_this] spawn {
                 params ["_fobBox"];
                 waitUntil {sleep 0.1; time > 0};
                 [_fobBox] call KPLIB_fnc_setFobMass;
-                if ((typeOf _fobBox) isEqualTo FOB_box_typename) then {
+                if ((typeOf _fobBox) isEqualTo FOB_box_typeName) then {
                     [_fobBox] call KPLIB_fnc_setFobMass;
                     [_fobBox] remoteExecCall ["KPLIB_fnc_setLoadableViV", 0, _fobBox];
                 };
@@ -56,7 +56,7 @@ KPLIB_objectInits = [
 
     // Add FOB building damage handler override and repack action
     [
-        [FOB_typename],
+        [FOB_typeName],
         {
             _this addEventHandler ["HandleDamage", {0}];
             [_this] spawn {
@@ -69,7 +69,7 @@ KPLIB_objectInits = [
 
     // Add ViV action to Arsenal crate
     [
-        [Arsenal_typename],
+        [Arsenal_typeName],
         {
             [_this] spawn {
                 params ["_arsenal"];

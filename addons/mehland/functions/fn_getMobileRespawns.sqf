@@ -16,7 +16,7 @@
 */
 
 private _respawn_trucks = vehicles select {
-    (typeOf _x) in [Respawn_truck_typename, huron_typename] &&
+    (typeOf _x) in [Respawn_truck_typeName, huron_typeName] &&
     {alive _x} &&
     {_x distance2D startbase > 500} &&
     {abs (speed _x) < 5} &&

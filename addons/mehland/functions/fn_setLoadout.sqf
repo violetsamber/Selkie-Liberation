@@ -80,7 +80,7 @@ _add = {
     _target = _this select 0;
     _item = _this select 1;
     _callback = _this select 2;
-    if(typename _item == "ARRAY") then {
+    if(typeName _item == "ARRAY") then {
         if(_item select 0 != "") then {
             if(_loadMagsAmmo) then {
                 _target addMagazine _item;
@@ -157,7 +157,7 @@ _addWeapon = {
             };
             if(count _loadedMagazines > 0) then {
                 _magazines = _loadedMagazines select _THIS(5); // get loaded magazines from saved loadout
-                if(typename _magazines != "ARRAY") then { // backwards compatibility, make sure _magazines is array
+                if(typeName _magazines != "ARRAY") then { // backwards compatibility, make sure _magazines is array
                     if(_magazines=="") then {
                         _magazines = [];
                     } else {
@@ -185,7 +185,7 @@ _addWeapon = {
                 };
             } forEach (_data select (1+_THIS(1))); // add weapon items
         } else {
-            systemchat format["%1 %2 doesn't exist",_THIS(2),_weapon];
+            systemChat format["%1 %2 doesn't exist",_THIS(2),_weapon];
             if (_currentWeapon == _weapon) then {
                 _currentWeapon = "";
                 _currentMode = "";
@@ -252,7 +252,7 @@ if(isNull objectParent _target && _currentWeapon != "" && _currentMode != "") th
         _muzzles = _muzzles + 1;
     };
     if(_muzzles >= 100) then {
-        systemchat format["mode %1 for %2 doesn't exist", _currentMode, _currentWeapon];
+        systemChat format["mode %1 for %2 doesn't exist", _currentMode, _currentWeapon];
         _currentMode = "";
     };
 } else {
@@ -283,7 +283,7 @@ if(_outfit != "") then {
             };
         };
     } else {
-        systemchat format["uniform %1 doesn't exist",_outfit];
+        systemChat format["uniform %1 doesn't exist",_outfit];
     };
 };
 
@@ -306,7 +306,7 @@ if(_outfit != "") then {
             };
         };
     } else {
-        systemchat format["vest %1 doesn't exist",_outfit];
+        systemChat format["vest %1 doesn't exist",_outfit];
     };
 };
 
@@ -325,7 +325,7 @@ if(_outfit != "") then {
             } forEach (_data select 12);
         };
     } else {
-        systemchat format["backpack %1 doesn't exist",_outfit];
+        systemChat format["backpack %1 doesn't exist",_outfit];
     };
 };
 

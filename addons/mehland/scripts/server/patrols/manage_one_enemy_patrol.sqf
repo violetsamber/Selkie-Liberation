@@ -114,7 +114,7 @@ while { GRLIB_endgame == 0 } do {
         _sectors_patrol = [];
         _patrol_startpos = getPos (leader _grp);
         {
-            if ((_patrol_startpos distance (markerpos _x) < 5000) && (count ([markerPos _x, 4000] call KPLIB_fnc_getNearbyPlayers) > 0)) then {
+            if ((_patrol_startpos distance (markerPos _x) < 5000) && (count ([markerPos _x, 4000] call KPLIB_fnc_getNearbyPlayers) > 0)) then {
                 _sectors_patrol pushBack _x;
             };
         } forEach ((sectors_bigtown + sectors_capture + sectors_factory) - blufor_sectors);
@@ -134,7 +134,7 @@ while { GRLIB_endgame == 0 } do {
         {
             _nearestroad = [(markerPos _x) getPos [random(100), random(360)], 200, []] call BIS_fnc_nearestRoad;
             if ( isNull _nearestroad ) then {
-                _waypoint = _grp addWaypoint [ markerpos _x, 100 ];
+                _waypoint = _grp addWaypoint [ markerPos _x, 100 ];
             } else {
                 _waypoint = _grp addWaypoint [ getPos _nearestroad, 0 ];
             };

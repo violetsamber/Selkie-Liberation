@@ -21,7 +21,7 @@ hideObject _targetobject;
 _squad_camera = "camera" camCreate (getPos player);
 _squad_camera cameraEffect ["internal","back", "rtt"];
 _squad_camera camSetTarget  _targetobject;
-_squad_camera camcommit 0;
+_squad_camera camCommit 0;
 "rtt" setPiPEffect [0];
 
 while { dialog && alive player } do {
@@ -76,7 +76,7 @@ while { dialog && alive player } do {
                 _squad_camera attachTo [ vehicle _selectedmember, [0, 0, 2]];
                 _isvehicle = true;
             };
-            _squad_camera camcommit 0;
+            _squad_camera camCommit 0;
 
             _unitname = format ["%1. ", [ _selectedmember ] call KPLIB_fnc_getUnitPositionId];
             if(isPlayer _selectedmember) then {

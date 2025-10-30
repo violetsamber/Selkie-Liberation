@@ -19,7 +19,7 @@ params [
     ["_pos", getPos player, [[]], [2, 3]]
 ];
 
-if !(GRLIB_all_fobs isEqualTo []) then {
+if (GRLIB_all_fobs isNotEqualTo []) then {
     private _fobs = GRLIB_all_fobs apply {[_pos distance2D _x, _x]};
     _fobs sort true;
     (_fobs select 0) select 1

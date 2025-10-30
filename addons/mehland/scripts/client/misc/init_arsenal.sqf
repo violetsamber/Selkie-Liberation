@@ -26,7 +26,7 @@ if (KP_liberation_arsenalUsePreset) then {
     };
 
     // Support for CBA disposable launchers, https://github.com/CBATeam/CBA_A3/wiki/Disposable-Launchers
-    if !(configProperties [configFile >> "CBA_DisposableLaunchers"] isEqualTo []) then {
+    if (configProperties [configFile >> "CBA_DisposableLaunchers"] isNotEqualTo []) then {
         private _disposableLaunchers = ["CBA_FakeLauncherMagazine"];
         {
             private _loadedLauncher = cba_disposable_LoadedLaunchers get _x;
@@ -70,7 +70,7 @@ if (KP_liberation_arsenalUsePreset) then {
     };
 
     if ((count GRLIB_arsenal_backpacks) == 0) then {
-        if ((count blacklisted_from_arsenal) == 0) then {
+        if ((blacklisted_from_arsenal isEqualTo []) == 0) then {
             _backpacks = _crawled select 3;
         } else {
             {if (!(_x in blacklisted_from_arsenal)) then {_backpacks pushBack _x};} forEach (_crawled select 3);

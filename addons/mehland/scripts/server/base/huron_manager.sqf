@@ -4,7 +4,7 @@ waitUntil {save_is_loaded};
 huron = objNull;
 
 // Detect possible huron from loaded save data
-private _savedHuron = vehicles select {(toLower (typeOf _x)) isEqualTo (toLower huron_typename)};
+private _savedHuron = vehicles select {(toLower (typeOf _x)) isEqualTo (toLower huron_typeName)};
 if !(_savedHuron isEqualTo []) then {
     huron = _savedHuron select 0;
 };
@@ -12,16 +12,16 @@ if !(_savedHuron isEqualTo []) then {
 while {true} do {
     // Spawn new huron if not loaded or destroyed
     if !(alive huron) then {
-        huron = huron_typename createVehicle [(getPosATL huronspawn) select 0, (getPosATL huronspawn) select 1, ((getPosATL huronspawn) select 2) + 0.2];
+        huron = huron_typeName createVehicle [(getPosATL huronspawn) select 0, (getPosATL huronspawn) select 1, ((getPosATL huronspawn) select 2) + 0.2];
         huron enableSimulationGlobal false;
-        huron allowdamage false;
+        huron allowDamage false;
         huron setDir (getDir huronspawn);
         huron setPosATL (getPosATL huronspawn);
         huron setDamage 0;
         sleep 0.5;
         huron enableSimulationGlobal true;
         huron setDamage 0;
-        huron allowdamage true;
+        huron allowDamage true;
         [huron] call KPLIB_fnc_addObjectInit;
     };
     [huron] call KPLIB_fnc_clearCargo;
@@ -35,6 +35,6 @@ while {true} do {
 
     // Delete wreck, if near startbase
     if (huron distance startbase < 500) then {
-        deletevehicle huron;
+        deleteVehicle huron;
     };
 };

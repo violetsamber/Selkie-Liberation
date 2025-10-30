@@ -12,12 +12,12 @@
     The same classnames for different purposes may cause various unpredictable issues with player actions.
     Or not, just don't try!
 */
-FOB_typename = "Land_Cargo_HQ_V4_F";                                    // This is the main FOB HQ building.
-FOB_box_typename = "B_Slingload_01_Cargo_F";                            // This is the FOB as a container.
-FOB_truck_typename = "B_T_Truck_01_box_F";                              // This is the FOB as a vehicle.
-Arsenal_typename = "B_supplyCrate_F";                                   // This is the virtual arsenal as portable supply crates.
-Respawn_truck_typename = "I_E_Truck_02_Medical_F";                      // This is the mobile respawn (and medical) truck.
-huron_typename = "B_Heli_Transport_03_unarmed_F";                       // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
+FOB_typeName = "Land_Cargo_HQ_V4_F";                                    // This is the main FOB HQ building.
+FOB_box_typeName = "B_Slingload_01_Cargo_F";                            // This is the FOB as a container.
+FOB_truck_typeName = "B_T_Truck_01_box_F";                              // This is the FOB as a vehicle.
+Arsenal_typeName = "B_supplyCrate_F";                                   // This is the virtual arsenal as portable supply crates.
+Respawn_truck_typeName = "I_E_Truck_02_Medical_F";                      // This is the mobile respawn (and medical) truck.
+huron_typeName = "B_Heli_Transport_03_unarmed_F";                       // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
 crewman_classname = "I_E_Crew_F";                                       // This defines the crew for vehicles.
 pilot_classname = "I_E_Helipilot_F";                                    // This defines the pilot for helicopters.
 KP_liberation_little_bird_classname = "B_Heli_Light_01_F";              // These are the little birds which spawn on the Freedom or at Chimera base.
@@ -212,16 +212,16 @@ buildings = [
 ];
 
 support_vehicles = [
-    [Respawn_truck_typename,200,0,100],
-    [FOB_box_typename,300,500,0],
-    [FOB_truck_typename,300,500,75],
+    [Respawn_truck_typeName,200,0,100],
+    [FOB_box_typeName,300,500,0],
+    [FOB_truck_typeName,300,500,75],
     [KP_liberation_small_storage_building,0,0,0],
     [KP_liberation_large_storage_building,0,0,0],
     [KP_liberation_recycle_building,200,100,0],
     [KP_liberation_air_vehicle_building,1000,0,0],
     [KP_liberation_heli_slot_building,250,0,0],
     [KP_liberation_plane_slot_building,500,0,0],
-    [Arsenal_typename,25,0,0],
+    [Arsenal_typeName,25,0,0],
     ["ACE_medicalSupplyCrate_advanced",10,0,0],
     ["Box_East_Support_F",10,0,0],
     ["Box_CSAT_Equip_F",10,0,0],

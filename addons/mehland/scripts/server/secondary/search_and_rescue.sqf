@@ -12,8 +12,8 @@ private _helowreckDir = (random 360);
 _helowreck setDir _helowreckDir;
 
 private _helofire = KPLIB_sarFire createVehicle (getPos _helowreck);
-_helofire setpos (getPos _helowreck);
-_helofire setpos (getPos _helowreck);
+_helofire setPos (getPos _helowreck);
+_helofire setPos (getPos _helowreck);
 
 private _pilotsGrp = createGroup [GRLIB_side_enemy, true];
 private _pilotsPos = (getPos _helowreck) getPos [25, random 360];
@@ -99,7 +99,7 @@ if ( _alive_crew_count == 0 ) then {
     [8] remoteExec ["remote_call_intel"];
     private _grp = createGroup [GRLIB_side_friendly, true];
     { [_x ] joinSilent _grp; } forEach _pilotUnits;
-    while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
+    while {waypoints _grp isNotEqualTo []} do {deleteWaypoint ((waypoints _grp) select 0);};
     {_x doFollow (leader _grp)} forEach units _grp;
     { [ _x ] spawn { sleep 600; deleteVehicle (_this select 0) } } forEach _pilotUnits;
 };

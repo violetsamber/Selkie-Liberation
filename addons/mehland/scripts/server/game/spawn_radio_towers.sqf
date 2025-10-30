@@ -14,8 +14,8 @@ private _tower = objNull;
     } else {
         _classname = (_saved select 0) select 1;
     };
-    _tower = _classname createVehicle (markerpos _x);
-    _tower setPos (markerpos _x);
+    _tower = _classname createVehicle (markerPos _x);
+    _tower setPos (markerPos _x);
     _tower setVectorUp [0, 0, 1];
     _tower addEventHandler ["HandleDamage", {0}];
 } forEach sectors_tower;

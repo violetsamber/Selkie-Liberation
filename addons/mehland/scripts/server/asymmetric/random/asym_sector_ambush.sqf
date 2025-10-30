@@ -25,7 +25,7 @@ private _grp = [(markerPos _sector)] call KPLIB_fnc_spawnGuerillaGroup;
 _grp setBehaviour "STEALTH";
 private _idxposit = 0;
 {
-    _x setpos (_positions select (_position_indexes select _idxposit));
+    _x setPos (_positions select (_position_indexes select _idxposit));
     _x setUnitPos "UP";
     doStop _x;
 
@@ -46,14 +46,14 @@ while {(_sector in KP_liberation_asymmetric_sectors) && (!isNull _grp)} do {
         (units _grp) doFollow (leader _grp);
         _grp setBehaviour "COMBAT";
         _grp setCombatMode "RED";
-        private _waypoint = _grp addWaypoint [markerpos _sector, 20];
+        private _waypoint = _grp addWaypoint [markerPos _sector, 20];
         _waypoint setWaypointType "SAD";
         _waypoint setWaypointSpeed "FULL";
-        _waypoint = _grp addWaypoint [markerpos _sector, 150];
+        _waypoint = _grp addWaypoint [markerPos _sector, 150];
         _waypoint setWaypointType "SAD";
-        _waypoint = _grp addWaypoint [markerpos _sector, 150];
+        _waypoint = _grp addWaypoint [markerPos _sector, 150];
         _waypoint setWaypointType "SAD";
-        _waypoint = _grp addWaypoint [markerpos _sector, 150];
+        _waypoint = _grp addWaypoint [markerPos _sector, 150];
         _waypoint setWaypointType "SAD";
     };
     sleep 1;

@@ -28,10 +28,10 @@ if ( GRLIB_deployment_cinematic ) then {
 
     _spawn_camera camSetTarget player;
     _spawn_camera camSetRelPos _startpos0;
-    _spawn_camera camcommit 0;
+    _spawn_camera camCommit 0;
 
     _spawn_camera camSetRelPos _startpos1;
-    _spawn_camera camcommit 0.5;
+    _spawn_camera camCommit 0.5;
 
     waitUntil { camCommitted _spawn_camera };
 
@@ -42,32 +42,32 @@ if ( GRLIB_deployment_cinematic ) then {
 if ( GRLIB_deployment_cinematic ) then {
 
     _spawn_camera camSetRelPos _endpos1;
-    _spawn_camera camcommit 1.75;
+    _spawn_camera camCommit 1.75;
 
     waitUntil { camCommitted _spawn_camera };
 
     _spawn_camera camSetRelPos _startpos2;
-    _spawn_camera camcommit 0.25;
+    _spawn_camera camCommit 0.25;
 
     waitUntil { camCommitted _spawn_camera };
 
     _spawn_camera camSetRelPos _endpos2;
-    _spawn_camera camcommit 1.75;
+    _spawn_camera camCommit 1.75;
 
     waitUntil { camCommitted _spawn_camera };
 
     _spawn_camera camSetRelPos _startpos3;
-    _spawn_camera camcommit 0.25;
+    _spawn_camera camCommit 0.25;
 
     waitUntil { camCommitted _spawn_camera };
 
     _spawn_camera camSetRelPos _endpos3;
-    _spawn_camera camcommit 1.75;
+    _spawn_camera camCommit 1.75;
 
     waitUntil { camCommitted _spawn_camera };
 
     _spawn_camera camSetRelPos [0,0.4,1.75];
-    _spawn_camera camcommit 1;
+    _spawn_camera camCommit 1;
 
     waitUntil { camCommitted _spawn_camera };
 

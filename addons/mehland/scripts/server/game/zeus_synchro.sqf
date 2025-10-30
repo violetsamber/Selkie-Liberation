@@ -1,7 +1,7 @@
-waitUntil {!isNil "huron_typename"};
+waitUntil {!isNil "huron_typeName"};
 
 // Classnames of objects which should be added as editable for Zeus
-private _vehicleClassnames = [toLower huron_typename];
+private _vehicleClassnames = [toLower huron_typeName];
 {
     _vehicleClassnames append _x;
 } forEach [
@@ -25,7 +25,7 @@ while {true} do {
     _valids = allUnits select {
         (alive _x)                                                                              // Alive
         && {
-            (KP_liberation_enemies_zeus && {!(side (group _x) isEqualTo GRLIB_side_civilian)})  // Not civilian side, if enemy adding is enabled
+            (KP_liberation_enemies_zeus && {(side (group _x) isNotEqualTo GRLIB_side_civilian)}) // Not civilian side, if enemy adding is enabled
             || {side (group _x) isEqualTo GRLIB_side_friendly}                                  // Player side if enemy adding is disabled
         }
         && {((str _x) find "BIS_SUPP_HQ_") isEqualTo -1}                                        // Not a HQ entity from support module

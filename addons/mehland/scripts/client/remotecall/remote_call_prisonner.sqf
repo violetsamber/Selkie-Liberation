@@ -77,7 +77,7 @@ if (alive _unit) then {
             _possible_sectors = [ _possible_sectors , [getPos _unit, 5000] , { (markerPos _x) distance _input0 } , 'ASCEND' ] call BIS_fnc_sortBy;
             if ( count _possible_sectors > 0 ) then {
                 _target_sector = _possible_sectors select 0;
-                _waypoint = _grp addWaypoint [markerpos _target_sector, 300];
+                _waypoint = _grp addWaypoint [markerPos _target_sector, 300];
                 _waypoint setWaypointType "MOVE";
                 _waypoint setWaypointSpeed "FULL";
             };

@@ -82,7 +82,7 @@ while { true } do {
 	{ if (!(_x in allGroups) || (!isPlayer leader _x)) then { groups_list = groups_list - [_x] }; } forEach groups_list;
 
 	{
-		if (count global_groups_renamed != 0) then {
+		if (global_groups_renamed isNotEqualTo []) then {
 			if (_x in global_groups_renamed) then {
 				if (groupId _x != global_group_ids select (global_groups_renamed find _x)) then {
 					_x setGroupId [(global_group_ids select (global_groups_renamed find _x))];
@@ -91,7 +91,7 @@ while { true } do {
 		};
 	} forEach groups_list;
 
-	if ( count global_new_leader != 0 ) then {
+	if ( global_new_leader isNotEqualTo [] ) then {
 		if ( group player == global_new_leader select 0 ) then {
 			(global_new_leader select 0) selectLeader (global_new_leader select 1);
 			hint format ["%1 is your new squad leader.",name (global_new_leader select 1)];

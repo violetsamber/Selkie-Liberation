@@ -17,7 +17,7 @@ while {true} do {
             _marker setMarkerTypeLocal "b_hq";
             _marker setMarkerSizeLocal [1.5, 1.5];
             _marker setMarkerPosLocal (GRLIB_all_fobs select _idx);
-            _marker setmarkerTextLocal format ["FOB %1",military_alphabet select _idx];
+            _marker setMarkerTextLocal format ["FOB %1",military_alphabet select _idx];
             _marker setMarkerColorLocal "ColorYellow";
             _markers pushBack _marker;
         };
@@ -41,7 +41,7 @@ while {true} do {
         if (count _respawn_trucks == count _markers_mobilespawns) then {
             for "_idx" from 0 to ((count _markers_mobilespawns) - 1) do {
                 (_markers_mobilespawns select _idx) setMarkerPosLocal getPos (_respawn_trucks select _idx);
-                (_markers_mobilespawns select _idx) setmarkerTextLocal format ["%1 %2", localize "STR_RESPAWN_TRUCK", mapGridPosition (_respawn_trucks select _idx)];
+                (_markers_mobilespawns select _idx) setMarkerTextLocal format ["%1 %2", localize "STR_RESPAWN_TRUCK", mapGridPosition (_respawn_trucks select _idx)];
             };
         };
     };

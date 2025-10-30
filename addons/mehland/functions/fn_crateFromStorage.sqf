@@ -34,7 +34,7 @@ if (isNull _storage) exitWith {["Null object given"] call BIS_fnc_error; false};
 private _i = 0;
 private _dir = (getDir _storage) - 180;
 private _unloadPos = _storage getPos [_unloadDist, _dir];
-while {!((nearestObjects [_unloadPos, KPLIB_crates, 1]) isEqualTo [])} do {
+while {((nearestObjects [_unloadPos, KPLIB_crates, 1]) isNotEqualTo [])} do {
     _i = _i + 1;
     _unloadPos = _storage getPos [_unloadDist + _i * 1.8, _dir];
 };
