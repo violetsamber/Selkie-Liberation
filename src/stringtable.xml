@@ -2847,9 +2847,6 @@
             <Chinesesimp>从敌人手中解放这个地区！战略是制胜关键！士兵们祝你们好运。</Chinesesimp>
             <Turkish>Bu bölgeyi düşman etkisinden kurtar! Strateji anahtardır! Bol şanslar askerler.</Turkish>
         </Key>
-        <Key ID="STR_MISSION_TITLE">
-            <Original>KP Lib - Selkie Edition v1.0</Original>
-        </Key>
         <Key ID="STR_MISSION_VERSION">
             <Original>v1.0</Original>
         </Key>

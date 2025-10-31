@@ -1,6 +1,6 @@
-name = "KP-Liberation"
+name = "Selkie-Liberation"
 author = "Violets, [GREUH] Zbug & McKeewa, KP Liberation Dev Team, FatRefrigerator"
-prefix = "kplib"
+prefix = "slklib"
 mainprefix = "z"
 
 [version]
@@ -8,6 +8,3 @@ major = 1
 minor = 0
 patch = 0
 build = 0
-
-[lints.stringtables.usage]
-options.ignore_duplicate = true

@@ -1,4 +1,4 @@
-class KPLIB {
+class COMMON_FUNCTIONS_NAMESPACE {
     class functions {
         file = "functions";
 
