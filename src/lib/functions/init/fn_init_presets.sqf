@@ -1,3 +1,4 @@
+params [];
 
 KPLIB_initPresets = false;
 
