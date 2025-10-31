@@ -3,6 +3,8 @@
     https://github.com/KillahPotatoes/KP-Liberation
 */
 
+params [];
+
 // Vehicle classnames which also function as ACE medical vehicles.
 KP_liberation_medical_vehicles = [
     "B_T_Truck_01_medical_F",

@@ -1,6 +1,6 @@
 class COMMON_FUNCTIONS_NAMESPACE {
     class functions {
-        file = "functions";
+        file = "lib\functions";
 
         class addActionsFob             {};
         class addActionsPlayer          {};
@@ -94,7 +94,7 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class deleteGroup               {};
     };
     class functions_curator {
-        file = "functions\curator";
+        file = "lib\functions\curator";
 
         class initCuratorHandlers       {
             postInit = 1;
@@ -102,10 +102,15 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class requestZeus               {};
     };
     class functions_ui {
-        file = "functions\ui";
+        file = "lib\functions\ui";
 
         class overlayUpdateResources    {};
     };
-    #include "scripts\client\CfgFunctions.hpp"
-    #include "scripts\server\CfgFunctions.hpp"
+    class functions_init {
+        file = "lib\functions\init";
+        class init_liberation_config    {};
+        class init_objectInits          {};
+        class init_fetch_params         {};
+        class init_presets              {};
+    };
 };

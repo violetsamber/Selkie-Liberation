@@ -23,6 +23,8 @@
         ];
 */
 
+params [];
+
 KPLIB_objectInits = [
     // Set KP logo on white flag
     [
