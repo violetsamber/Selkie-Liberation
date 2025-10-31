@@ -1,7 +1,7 @@
 // By Jonpas, CUP, Modified by DartRuffian
 // Renames all the pbos from the build to be MAINPREFIX_PREFIX_...
 // This is its own script to avoid issues with files being in use during different stages.
-print("Running Rename...");
+debug("Running Rename...");
 
 if HEMTT.mode() == "script" {
     fatal("rename_pbos can not be ran directly");
@@ -14,15 +14,21 @@ fn rename(file_path, folder_path) {
     let renamed_file = file_path.file_name();
     renamed_file.remove(`.pbo`);
     renamed_file.remove(`${global::prefix}_`);
-    renamed_file = `${global::prefix}_${renamed_file}.${renamed_file}.pbo`;
+
+    if(renamed_file == `mehland`){
+        renamed_file = `${global::prefix}_${renamed_file}.${renamed_file}.pbo`;
+    } else {
+        renamed_file = file_path.file_name();
+    }
+
     print(`File Name: ${renamed_file}`);
-    print(`File Path: ${file_path}`);
+    debug(`File Path: ${file_path}`);
 
     // Rename PREFIX_whatever.pbo -> MAINPREFIX_PREFIX_whatever.pbo
     if renamed_file.starts_with(global::prefix) {
         renamed_file = `${renamed_file}`;
         let renamed_file_path = folder_path.join(renamed_file);
-        print(`Renamed to: ${renamed_file_path}`);
+        debug(`Renamed to: ${renamed_file_path}`);
 
         if !file_path.move(renamed_file_path) {
             fatal(`Failed to rename '${file_path}' to '${renamed_file_path}'`);
