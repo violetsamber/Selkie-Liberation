@@ -14,12 +14,7 @@ fn rename(file_path, folder_path) {
     let renamed_file = file_path.file_name();
     renamed_file.remove(`.pbo`);
     renamed_file.remove(`${global::prefix}_`);
-
-    if(renamed_file == `mehland`){
-        renamed_file = `${global::prefix}_${renamed_file}.${renamed_file}.pbo`;
-    } else {
-        renamed_file = file_path.file_name();
-    }
+    renamed_file = `${global::prefix}_${renamed_file}.${renamed_file}.pbo`;
 
     print(`File Name: ${renamed_file}`);
     debug(`File Path: ${file_path}`);
