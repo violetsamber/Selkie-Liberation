@@ -1,6 +1,7 @@
 /*
     File: description.ext
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
+    Modified By: Violets - 
     Date: 2017-10-16
     Last Update: 2020-05-09
     License: MIT License - http://www.opensource.org/licenses/MIT
@@ -14,6 +15,8 @@
 */
 
 #include "\x\cba\addons\main\script_macros_common.hpp"
+#include "script_component.hpp"
+#include "common.hpp"
 
 /*
     ----- General -----
@@ -27,7 +30,7 @@ class Header {
 };
 
 // Name of Mission author(s) and contributors. Obviously you can only add and not (!) remove someone.
-author = "Violets, [GREUH] Zbug & McKeewa, KP Liberation Dev Team, FatRefrigerator";
+author = "Violets, KP Liberation Dev Team, [GREUH] Zbug & McKeewa, FatRefrigerator";
 
 
 /*
@@ -35,14 +38,14 @@ author = "Violets, [GREUH] Zbug & McKeewa, KP Liberation Dev Team, FatRefrigerat
 */
 
 // Mission name displayed in the mission selection menu.
-briefingName = QUOTE($STR_MISSION_TITLE);
+briefingName = QUOTE(COMPONENT_BEAUTIFIED);
 
 // Path to image which will be displayed when the mission is highlighted on the mission selection screen.
 // Image should be .paa format and in 2:1 aspect ratio – ideally 1024x512 (Arma 3).
 overviewPicture = "res\lib.paa";
 
 // Text to be displayed below the overviewPicture on the mission selection screen
-overviewText = "github.com/violetsamber/KP-Liberation-Mehland.mehland";
+overviewText = QUOTE(GITHUB_PAGE);
 
 
 /*
@@ -51,14 +54,14 @@ overviewText = "github.com/violetsamber/KP-Liberation-Mehland.mehland";
 
 // String (usually mission name) shown during mission loading.
 // The string is shown in a slightly larger font above the loadScreen.
-onLoadName = QUOTE($STR_MISSION_TITLE);
+onLoadName = QUOTE(COMPONENT_BEAUTIFIED);
 
 // You can define a picture to be shown while the mission is loaded.
 // The path is relative to the mission folder.
 loadScreen = "res\lib.paa";
 
 // Displays a message while the mission is loading below the loadScreen picture.
-onLoadMission = "github.com/violetsamber/KP-Liberation-Mehland.mehland";
+onLoadMission = QUOTE(GITHUB_PAGE);
 
 
 /*
