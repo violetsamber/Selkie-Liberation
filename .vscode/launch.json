@@ -2,10 +2,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Hemtt Build",
+            "name": "Hemtt Build (Linux)",
             "type": "f5anything",
             "request": "launch",
-            "command": "hemtt build",
+            "command": "build/build.sh",
+        },
+                {
+            "name": "Hemtt Release (Linux)",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "build/release.sh",
         },
         {
             "name": "Hemtt Check",

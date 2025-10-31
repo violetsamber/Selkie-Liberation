@@ -1,4 +1,4 @@
-let input = HEMTT_VFS.join("addons").join("core");
+let input = HEMTT_VFS.join("src");
 let output = HEMTT_VFS.join("addons").join("mehland");
 let items = input.list();
 
