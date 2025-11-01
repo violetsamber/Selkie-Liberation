@@ -1,3 +1,4 @@
+//fn_check_victory_conditions
 sleep 5;
 
 if ([] call KP_liberation_victoryCheck && GRLIB_endgame != 1) then {

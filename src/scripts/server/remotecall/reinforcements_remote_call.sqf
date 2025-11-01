@@ -1,2 +1,2 @@
 params ["_targetsector"];
-[_targetsector] spawn reinforcements_manager;
+[_targetsector] spawn KPLIB_server_fnc_reinforcements_manager;

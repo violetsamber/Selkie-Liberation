@@ -49,7 +49,7 @@ if ((random 100) <= KP_liberation_cr_wounded_chance || (count blufor_sectors) ==
 asymm_blocked_sectors pushBack [_liberated_sector, time];
 publicVariable "asymm_blocked_sectors";
 
-[] spawn check_victory_conditions;
+[] spawn KPLIB_server_fnc_check_victory_conditions;
 
 sleep 1;
 

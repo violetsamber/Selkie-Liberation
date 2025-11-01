@@ -13,12 +13,12 @@ waitUntil { sleep 0.3; count blufor_sectors > 3 };
 
 // if (worldName != "song_bin_tanh") then {
 //     {
-//         [_x, false] spawn manage_one_patrol;
+//         [_x, false] spawn KPLIB_server_fnc_manage_one_patrol;
 //         sleep 1;
 //     } forEach _combat_triggers;
 // };
 
 // {
-//     [_x, true] spawn manage_one_patrol;
+//     [_x, true] spawn KPLIB_server_fnc_manage_one_patrol;
 //     sleep 1;
 // } forEach _combat_triggers_infantry;
