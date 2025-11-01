@@ -22,7 +22,7 @@ params [
 ];
 
 if (_taskId isEqualTo "" || isNull _obj) exitWith {["Invalid parameters given"] call BIS_fnc_error; false};
-if (!canSuspend) exitWith {_this spawn KPLIB_fnc_handleTakePowTask};
+if (!canSuspend) exitWith {_this spawn KPLIB_client_fnc_handleTakePowTask};
 
 [
     allPlayers,

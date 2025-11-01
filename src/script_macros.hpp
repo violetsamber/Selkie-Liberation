@@ -12,6 +12,14 @@
 
 // ADD YOUR MACROS HERE
 
+#define GITHUB_PAGE github.com/violetsamber/Selkie-Liberation
+#define PROJECT_NAME_PRETTY Selkie Liberation
+
+#define COMMON_FUNCTIONS_NAMESPACE KPLIB
+#define COMMON_FUNCTIONS_NAMESPACE_INIT KPLIB_init
+#define COMMON_FUNCTIONS_NAMESPACE_SERVER KPLIB_server
+#define COMMON_FUNCTIONS_NAMESPACE_CLIENT KPLIB_client
+
 // Get parameter
 #define GET_PARAM(outVar, paramName, paramDefault)          outVar = [paramName,paramDefault] call KPLIB_fnc_getSaveableParam;\
                                                             publicVariable #outVar;\

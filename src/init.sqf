@@ -10,10 +10,10 @@ if (isDedicated) then {debug_source = "Server";} else {debug_source = name playe
 
 [] call KPLIB_fnc_initSectors;
 if (!isServer) then {waitUntil {!isNil "KPLIB_initServer"};};
-[] call KPLIB_fnc_init_fetch_params;
-[] call KPLIB_fnc_init_liberation_config;
-[] call KPLIB_fnc_init_presets;
-[] call KPLIB_fnc_init_objectInits;
+[] call KPLIB_init_fnc_fetch_params;
+[] call KPLIB_init_fnc_liberation_config;
+[] call KPLIB_init_fnc_presets;
+[] call KPLIB_init_fnc_objectInits;
 
 // Activate selected player menu. If CBA isn't loaded -> fallback to GREUH
 // if (kpplm_cba && KP_liberation_playermenu) then {

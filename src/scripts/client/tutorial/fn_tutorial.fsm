@@ -674,7 +674,7 @@ class FSM
                          "{" \n
                          "    _taskId = [""KPLIB_Tasks_Tutorial_Fob_03_"", _forEachIndex] joinString """";" \n
                          "    _crateTasks pushBack _taskId;" \n
-                         "    [_taskId, _x] call KPLIB_fnc_handleCrateStorageTask;" \n
+                         "    [_taskId, _x] call KPLIB_client_fnc_handleCrateStorageTask;" \n
                          "} forEach KPLIB_startCrates;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -860,13 +860,13 @@ class FSM
                          "{" \n
                          "    _taskId = [""KPLIB_Tasks_Tutorial_Sector_03_pow_"", _forEachIndex] joinString """";" \n
                          "    _careTasks pushBack _taskId;" \n
-                         "    [_taskId, _x] call KPLIB_fnc_handleTakePowTask;" \n
+                         "    [_taskId, _x] call KPLIB_client_fnc_handleTakePowTask;" \n
                          "} forEach _pows;" \n
                          "" \n
                          "{" \n
                          "    _taskId = [""KPLIB_Tasks_Tutorial_Sector_03_civ_"", _forEachIndex] joinString """";" \n
                          "    _careTasks pushBack _taskId;" \n
-                         "    [_taskId, _x] call KPLIB_fnc_handleHealCivTask;" \n
+                         "    [_taskId, _x] call KPLIB_client_fnc_handleHealCivTask;" \n
                          "} forEach _civs;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
