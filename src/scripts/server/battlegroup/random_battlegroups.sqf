@@ -1,4 +1,3 @@
-//random_battlegroups.sqf
 sleep (900 / GRLIB_csat_aggressivity);
 private _sleeptime = 0;
 while {GRLIB_csat_aggressivity > 0.9 && GRLIB_endgame == 0} do {

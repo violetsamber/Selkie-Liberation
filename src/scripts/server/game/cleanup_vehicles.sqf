@@ -1,4 +1,3 @@
-//cleanup_vehicles.sqf
 private [ "_nextvehicle", "_nearestfob", "_reset_ticker" ];
 
 _cleanup_classnames = [];
