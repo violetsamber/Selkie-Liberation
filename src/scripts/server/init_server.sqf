@@ -1,10 +1,3 @@
-// Sector
-attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
-attack_in_progress_sector = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_sector.sqf";
-ied_manager = compileFinal preprocessFileLineNumbers "scripts\server\sector\ied_manager.sqf";
-manage_one_sector = compileFinal preprocessFileLineNumbers "scripts\server\sector\manage_one_sector.sqf";
-wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\sector\wait_to_spawn_sector.sqf";
-
 // Globals
 active_sectors = []; publicVariable "active_sectors";
 
