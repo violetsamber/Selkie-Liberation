@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1537;
+		nextID=1551;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=419;
+		nextID=559;
 	};
 	class Camera
 	{
-		pos[]={1757.9689,252.66966,7677.7598};
-		dir[]={0.32741708,-0.69094443,-0.64452463};
-		up[]={0.31293768,0.7229023,-0.61602503};
-		aside[]={-0.89156747,-2.3795292e-07,-0.45291021};
+		pos[]={20254.668,23.12998,20295.402};
+		dir[]={-0.34211951,-0.62691164,0.69996542};
+		up[]={-0.27529266,0.77908558,0.5632391};
+		aside[]={0.89843351,9.0105459e-08,0.43912473};
 	};
 };
 binarizationWanted=0;
-sourceName="KP-Liberation-Mehland";
+sourceName="slklib-mehland";
 addons[]=
 {
 	"A3_Ui_F",
@@ -68,7 +68,7 @@ addons[]=
 	"A3_Structures_F_Bootcamp_VR_Blocks",
 	"OPTRE_UNSC_Structure_Secundus",
 	"OPTRE_BW_DoorConsole",
-	"Purple_Team_Armor",
+	"Kish_TREB",
 	"A3_Structures_F_Mark_VR_Shapes",
 	"14th_aux_mod",
 	"A3_Structures_F_Mil_Cargo",
@@ -180,7 +180,7 @@ class AddonsMetaData
 		{
 			className="OPTRE_Buildings_Camp";
 			name="OPTRE_Buildings_Camp";
-			author="Sanchez & Nightovizard";
+			author="A2S & 41st";
 		};
 		class Item15
 		{
@@ -230,8 +230,8 @@ class AddonsMetaData
 		};
 		class Item23
 		{
-			className="Purple_Team_Armor";
-			name="Purple_Team_Armor";
+			className="Kish_TREB";
+			name="Kish_TREB";
 		};
 		class Item24
 		{
