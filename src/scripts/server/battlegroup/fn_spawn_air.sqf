@@ -1,3 +1,4 @@
+//fnc_spawn_air
 params ["_first_objective"];
 
 if (opfor_air isEqualTo []) exitWith {false};

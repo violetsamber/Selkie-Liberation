@@ -78,15 +78,15 @@ if (_spawn_marker isNotEqualTo "") then {
         [_spawn_marker] spawn
         {
             params ["_spawn_marker"];
-            [_spawn_marker, [markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective, 3] call KPLIB_fnc_odstDrop; 
+            [_spawn_marker, [markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective, 3] call KPLIB_server_fnc_odstDrop; 
         };
 
         if (GRLIB_csat_aggressivity > 0.5) then {
-            [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_boat;
+            [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn KPLIB_server_fnc_spawn_boat;
         };
 
         // if (GRLIB_csat_aggressivity > 0.9) then {
-        //     [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_air;
+        //     [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn KPLIB_server_fnc_spawn_air;
         // };
     };
 

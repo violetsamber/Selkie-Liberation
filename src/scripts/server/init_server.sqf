@@ -1,8 +1,3 @@
-// Battlegroup
-spawn_air = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_air.sqf";
-spawn_boat = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_boat.sqf";
-spawn_battlegroup = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_battlegroup.sqf";
-
 // Game
 check_victory_conditions = compileFinal preprocessFileLineNumbers "scripts\server\game\check_victory_conditions.sqf";
 
@@ -33,11 +28,12 @@ execVM "scripts\server\base\startgame.sqf";
 execVM "scripts\server\base\huron_manager.sqf";
 execVM "scripts\server\base\startvehicle_spawn.sqf";
 [] call KPLIB_server_fnc_createSuppModules;
-execVM "scripts\server\battlegroup\counter_battlegroup.sqf";
-execVM "scripts\server\battlegroup\random_battlegroups.sqf";
-execVM "scripts\server\battlegroup\readiness_increase.sqf";
-execVM "scripts\server\game\apply_default_permissions.sqf";
-execVM "scripts\server\game\cleanup_vehicles.sqf";
+[] spawn KPLIB_server_fnc_counter_battlegroup;
+[] spawn KPLIB_server_fnc_random_battlegroups;
+[] spawn KPLIB_server_fnc_readiness_increase;
+[] spawn KPLIB_server_fnc_apply_default_permissions;
+[] spawn KPLIB_server_fnc_cleanup_vehicles;
+
 if (!KP_liberation_fog_param) then {execVM "scripts\server\game\fucking_set_fog.sqf";};
 execVM "scripts\server\game\manage_time.sqf";
 execVM "scripts\server\game\manage_weather.sqf";
