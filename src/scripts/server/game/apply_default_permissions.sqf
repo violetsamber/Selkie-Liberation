@@ -1,4 +1,3 @@
-//apply_default_permissions.sqf
 if (!GRLIB_permissions_param) exitWith {};
 
 waitUntil {!isNil "GRLIB_permissions"};

@@ -33,18 +33,18 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
 
     class server_battlegroup {
         file = "scripts\server\battlegroup";
-        class counter_battlegroup   {};
-        class random_battlegroups   {};
-        class readiness_increase    {};
+        // class counter_battlegroup   {};
+        // class random_battlegroups   {};
+        // class readiness_increase    {};
         class spawn_air             {};
         class spawn_battlegroup     {};
         class spawn_boat            {};
         class odstDrop              {};
     };
 
-    class server_game {
-        file = "scripts\server\game";
-        class apply_default_permissions {};
-        class cleanup_vehicles          {};
-    };
+    // class server_game {
+    //     file = "scripts\server\game";
+    //     class apply_default_permissions {};
+    //     class cleanup_vehicles          {};
+    // };
 };
