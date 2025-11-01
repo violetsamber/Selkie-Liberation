@@ -78,4 +78,9 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class fob_hunting       {};
         class search_and_rescue {};
     };
+
+    class server_civinformant {
+        file = "scripts\server\civinformant";
+        class civinfo_task {};
+    };
 };

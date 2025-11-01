@@ -28,5 +28,6 @@ class COMMON_FUNCTIONS_NAMESPACE_CLIENT {
         file = "scripts\client\misc";
         class kp_fuel_consumption {};
         class kp_vehicle_permissions {};
+        class init_markers {};
     };
 };
