@@ -36,6 +36,14 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class troup_transport       {};
     };
 
+    class server_asymmetric {
+        file = "scripts\server\asymmetric";
+        class logistic_convoy_ambush {};
+        class manage_asymied {};
+        class asym_sector_ambush {};
+        class sector_guerilla {};
+    };
+
     class server_battlegroup {
         file = "scripts\server\battlegroup";
         // class counter_battlegroup   {};

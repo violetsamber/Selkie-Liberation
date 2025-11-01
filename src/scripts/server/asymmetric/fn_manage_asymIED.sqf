@@ -28,7 +28,7 @@ if (!(isNull _roadobj)) then {
     _ied_obj = createMine [_ied_type, _roadpos getPos [_spread, random (360)], [], 0];
     _ied_obj setDir (random 360);
 
-    if (KP_liberation_asymmetric_debug > 0) then {[format ["manage_asymIED.sqf -> IED %1 spawned at %2", _count, markerText _sector], "ASYMMETRIC"] remoteExecCall ["KPLIB_fnc_log", 2];};
+    if (KP_liberation_asymmetric_debug > 0) then {[format ["KPLIB_server_fnc_manage_asymIED.sqf -> IED %1 spawned at %2", _count, markerText _sector], "ASYMMETRIC"] remoteExecCall ["KPLIB_fnc_log", 2];};
 
     while {(_sector in KP_liberation_asymmetric_sectors) && (mineActive _ied_obj) && !_goes_boom} do {
         _nearinfantry = ((getPos _ied_obj) nearEntities ["Man", _activation_radius_infantry]) select {side _x == GRLIB_side_friendly};
