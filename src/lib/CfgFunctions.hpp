@@ -90,7 +90,6 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class spawnRegularSquad         {};
         class spawnVehicle              {};
         class swapInventory             {};
-        class odstDrop                  {};
         class deleteGroup               {};
     };
     class functions_curator {

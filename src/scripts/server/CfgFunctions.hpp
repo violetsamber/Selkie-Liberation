@@ -27,7 +27,24 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class battlegroup_ai        {};
         class building_defence_ai   {};
         class patrol_ai             {};
-        class KPLIB_server_fnc_prisonner_ai          {};
+        class prisonner_ai          {};
         class troup_transport       {};
+    };
+
+    class server_battlegroup {
+        file = "scripts\server\battlegroup";
+        class counter_battlegroup   {};
+        class random_battlegroups   {};
+        class readiness_increase    {};
+        class spawn_air             {};
+        class spawn_battlegroup     {};
+        class spawn_boat            {};
+        class odstDrop              {};
+    };
+
+    class server_game {
+        file = "scripts\server\game";
+        class apply_default_permissions {};
+        class cleanup_vehicles          {};
     };
 };
