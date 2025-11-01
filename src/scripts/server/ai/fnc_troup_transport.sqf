@@ -1,3 +1,4 @@
+//troup_transport.sqf
 params [
     ["_transVeh", objNull, [objNull]]
 ];
@@ -65,5 +66,5 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
 
     sleep 10;
 
-    [_infGrp] spawn battlegroup_ai;
+    [_infGrp] spawn KPLIB_server_fnc_battlegroup_ai;
 };

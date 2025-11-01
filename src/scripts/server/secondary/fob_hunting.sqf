@@ -101,7 +101,7 @@ while {(count _idxselected) < _defenders_amount && (count _idxselected) < (count
     private _nextDefender = [_nextclass, _nextpos, _grpdefenders, "PRIVATE", 0.5] call KPLIB_fnc_createManagedUnit;
     _nextDefender setDir _nextdir;
     _nextDefender setPos _nextpos;
-    [_nextDefender] spawn building_defence_ai;
+    [_nextDefender] spawn KPLIB_server_fnc_building_defence_ai;
 } forEach _idxselected;
 
 private _sentryMax = ceil ((3 + (floor (random 4))) * (sqrt (GRLIB_unitcap)));

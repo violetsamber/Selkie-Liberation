@@ -44,8 +44,8 @@ while { GRLIB_endgame == 0 } do {
         sleep 0.5;
         _grp = group ((crew _vehicle_object) select 0);
     };
-
-    [_grp] spawn patrol_ai;
+    
+    [_grp] spawn KPLIB_server_fnc_patrol_ai;
 
     _started_time = time;
     _patrol_continue = true;

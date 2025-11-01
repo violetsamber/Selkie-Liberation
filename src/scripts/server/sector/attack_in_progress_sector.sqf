@@ -68,7 +68,7 @@ if ( GRLIB_endgame == 0 ) then {
         } forEach KP_liberation_production;
     } else {
         [_sector, 3] remoteExec ["remote_call_sector"];
-        {[_x] spawn prisonner_ai;} forEach (((markerPos _sector) nearEntities ["Man", GRLIB_capture_size * 0.8]) select {side group _x == GRLIB_side_enemy});
+        {[_x] spawn KPLIB_server_fnc_prisonner_ai;} forEach (((markerPos _sector) nearEntities ["Man", GRLIB_capture_size * 0.8]) select {side group _x == GRLIB_side_enemy});
     };
 };
 

@@ -1,3 +1,5 @@
+//patrol_ai.sqf
+
 private _grp = _this select 0;
 private _waypoint = [];
 if ( isNil "reinforcements_sector_under_attack" ) then { reinforcements_sector_under_attack = "" };

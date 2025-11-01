@@ -1,3 +1,5 @@
+//KPLIB_server_fnc_prisonner_ai.sqf
+
 params ["_unit", ["_force_surrender", false]];
 
 if ((!_force_surrender) && ((random 100) > GRLIB_surrender_chance)) exitWith {};

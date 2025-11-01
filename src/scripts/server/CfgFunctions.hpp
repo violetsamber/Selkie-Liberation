@@ -19,4 +19,15 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
 
         class createSuppModules             {};
     };
+
+    class server_ai {
+        file = "scripts\server\ai";
+        class add_civ_waypoints     {};
+        class add_defense_waypoints {};
+        class battlegroup_ai        {};
+        class building_defence_ai   {};
+        class patrol_ai             {};
+        class KPLIB_server_fnc_prisonner_ai          {};
+        class troup_transport       {};
+    };
 };
