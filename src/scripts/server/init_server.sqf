@@ -1,12 +1,3 @@
-// AI
-add_civ_waypoints = compileFinal preprocessFileLineNumbers "scripts\server\ai\add_civ_waypoints.sqf";
-add_defense_waypoints = compileFinal preprocessFileLineNumbers "scripts\server\ai\add_defense_waypoints.sqf";
-battlegroup_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\battlegroup_ai.sqf";
-building_defence_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\building_defence_ai.sqf";
-patrol_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\patrol_ai.sqf";
-prisonner_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\prisonner_ai.sqf";
-troup_transport = compileFinal preprocessFileLineNumbers "scripts\server\ai\troup_transport.sqf";
-
 // Battlegroup
 spawn_air = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_air.sqf";
 spawn_boat = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_boat.sqf";
@@ -151,7 +142,7 @@ if (KP_liberation_restart > 0) then {
 ["KPLIB_ResetBattleGroups", {
     {
         if (_x getVariable ["KPLIB_isBattleGroup",false]) then {
-            [_x] call battlegroup_ai;
+            [_x] call KPLIB_server_fnc_battlegroup_ai;
         }
     } forEach allGroups;
 }] call CBA_fnc_addEventHandler;

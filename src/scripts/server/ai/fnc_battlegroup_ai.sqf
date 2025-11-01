@@ -1,3 +1,4 @@
+//battlegroup_ai.sqf
 params [
     ["_grp", grpNull, [grpNull]]
 ];

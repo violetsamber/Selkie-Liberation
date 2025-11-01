@@ -49,7 +49,7 @@ private _squadMax = 7;
 		_unit = [selectRandom _classnames, _pos, _grp] call KPLIB_fnc_createManagedUnit;
     	_unit setDir (random 360);
     	_unit setPos (_x);
-    	[_unit, _sector] spawn building_defence_ai;
+    	[_unit, _sector] spawn KPLIB_server_fnc_building_defence_ai;
     	_units pushBack _unit;
 	} forEach _positionArray;
 

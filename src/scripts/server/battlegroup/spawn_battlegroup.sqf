@@ -37,7 +37,7 @@ if (_spawn_marker isNotEqualTo "") then {
             [selectRandom _infClasses, markerPos _spawn_marker, _grp] call KPLIB_fnc_createManagedUnit;
         };
         [_grp] call KPLIB_fnc_LAMBS_enableReinforcements;
-        [_grp] call battlegroup_ai;
+        [_grp] call KPLIB_server_fnc_battlegroup_ai;
         _grp setVariable ["KPLIB_isBattleGroup",true];
         };
 
@@ -98,14 +98,14 @@ if (_spawn_marker isNotEqualTo "") then {
             sleep 0.5;
 
             (crew _vehicle) joinSilent _nextgrp;
-            [_nextgrp] call battlegroup_ai;
+            [_nextgrp] call KPLIB_server_fnc_battlegroup_ai;
             _nextgrp setVariable ["KPLIB_isBattleGroup",true];
 
             if ((_x in opfor_troup_transports) && ([] call KPLIB_fnc_getOpforCap < GRLIB_battlegroup_cap)) then {
                 if (_vehicle isKindOf "Air") then {
                     [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective, _vehicle] spawn send_paratroopers;
                 } else {
-                    [_vehicle] spawn troup_transport;
+                    [_vehicle] spawn KPLIB_server_fnc_troup_transport;
                 };
             };
     } forEach _selected_opfor_battlegroup;

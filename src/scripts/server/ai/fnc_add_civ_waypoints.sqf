@@ -1,3 +1,5 @@
+//add_civ_waypoints.sqf
+
 private _grp = _this select 0;
 private _basepos = getPos (leader _grp);
 

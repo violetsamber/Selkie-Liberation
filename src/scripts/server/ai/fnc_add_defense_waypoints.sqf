@@ -1,3 +1,5 @@
+//add_defense_waypoints.sqf
+
 private _grp = _this select 0;
 private _flagpos = _this select 1;
 private _basepos = getPos (leader _grp);
