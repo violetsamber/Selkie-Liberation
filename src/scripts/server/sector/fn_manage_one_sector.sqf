@@ -46,7 +46,7 @@ if (_sector in active_sectors) exitWith {};
 active_sectors pushBack _sector; publicVariable "active_sectors";
 
 private _opforcount = [] call KPLIB_fnc_getOpforCap;
-[_sector, _opforcount] call wait_to_spawn_sector;
+[_sector, _opforcount] call KPLIB_server_fnc_wait_to_spawn_sector;
 
 if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0)) then {
 
@@ -286,7 +286,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
     };
 
     if (KP_liberation_asymmetric_debug > 0) then {[format ["Sector %1 (%2) - Range: %3 - Count: %4", (markerText _sector), _sector, _building_range, _iedcount], "ASYMMETRIC"] remoteExecCall ["KPLIB_fnc_log", 2];};
-    [_sector, _building_range, _iedcount] spawn ied_manager;
+    [_sector, _building_range, _iedcount] spawn KPLIB_server_fnc_ied_manager;
 
     if (_guerilla) then {
         [_sector] spawn sector_guerilla;

@@ -8,16 +8,21 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
     class server_sector {
         file = "scripts\server\sector";
 
-        class destroyFob                    {};
-        class sectorMonitor                 {ext = ".fsm";};
-        class spawnSectorCrates             {};
-        class spawnSectorIntel              {};
+        class destroyFob                {};
+        class sectorMonitor             {ext = ".fsm";};
+        class spawnSectorCrates         {};
+        class spawnSectorIntel          {};
+        class attack_in_progress_fob    {};
+        class attack_in_progress_sector {};
+        class ied_manager               {};
+        class manage_one_sector         {};
+        class wait_to_spawn_sector      {};
     };
 
     class server_support {
         file = "scripts\server\support";
 
-        class createSuppModules             {};
+        class createSuppModules {};
     };
 
     class server_ai {
