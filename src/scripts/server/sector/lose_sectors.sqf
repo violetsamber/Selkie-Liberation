@@ -10,7 +10,7 @@ while { GRLIB_endgame == 0 } do {
     {
         _ownership = [ markerPos _x ] call KPLIB_fnc_getSectorOwnership;
         if ( _ownership == GRLIB_side_enemy ) then {
-            [ _x ] call attack_in_progress_sector;
+            [ _x ] call KPLIB_server_fnc_attack_in_progress_sector;
         };
         sleep 0.5;
     } forEach blufor_sectors;
@@ -18,7 +18,7 @@ while { GRLIB_endgame == 0 } do {
     {
         _ownership = [ _x ] call KPLIB_fnc_getSectorOwnership;
         if ( _ownership == GRLIB_side_enemy ) then {
-            [ _x ] call attack_in_progress_fob;
+            [ _x ] call KPLIB_server_fnc_attack_in_progress_fob;
         };
         sleep 0.5;
     } forEach GRLIB_all_fobs;

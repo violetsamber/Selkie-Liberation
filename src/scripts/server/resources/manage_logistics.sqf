@@ -301,7 +301,7 @@ while {GRLIB_endgame == 0} do {
                             if (_dice <= _chance) then {
                                 private _convoy = +_x;
                                 sleep 0.1;
-                                [_convoy] spawn logistic_convoy_ambush;
+                                [_convoy] spawn KPLIB_server_fnc_logistic_convoy_ambush;
                                 waitUntil {sleep 0.1; KP_liberation_convoy_ambush_check != 0};
                                 if (KP_liberation_convoy_ambush_check == 2) then {
                                     _x set [1,0];

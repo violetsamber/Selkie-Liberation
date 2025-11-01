@@ -356,7 +356,7 @@ if (!isNil "_saveData") then {
 
             // Apply kill manager handling, if not excluded
             if !((toLower _class) in _noKillHandler) then {
-                _object addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
+                _object addMPEventHandler ["MPKilled", {_this spawn KPLIB_shared_fnc_kill_manager}];
             };
 
             // Set enemy vehicle as captured

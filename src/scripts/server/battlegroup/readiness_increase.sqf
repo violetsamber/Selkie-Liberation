@@ -1,3 +1,4 @@
+//fnc_readiness_increase
 waitUntil {!isNil "save_is_loaded" && {save_is_loaded}};
 
 while {true} do {

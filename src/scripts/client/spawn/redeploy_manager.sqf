@@ -210,7 +210,7 @@ while {true} do {
     };
 
     if (alive player && deploy == 1) then {
-        [_spawn_str] spawn spawn_camera;
+        [_spawn_str] spawn KPLIB_client_fnc_spawn_camera;
         if (KP_liberation_respawn_mobile_done) then {
             KP_liberation_respawn_time = time + KP_liberation_respawn_cooldown;
             KP_liberation_respawn_mobile_done = false;

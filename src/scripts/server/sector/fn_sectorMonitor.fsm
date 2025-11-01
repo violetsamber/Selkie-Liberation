@@ -278,19 +278,19 @@ class FSM
                          "" \n
                          "// Start sector manager on HC or server" \n
                          "if (isNull _hc) then {" \n
-                         "    [_sector] spawn manage_one_sector;" \n
+                         "    [_sector] spawn KPLIB_server_fnc_manage_one_sector;" \n
                          "} else {" \n
-                         "    [_sector] remoteExec [""manage_one_sector"", _hc];" \n
+                         "    [_sector] remoteExec [""KPLIB_server_fnc_manage_one_sector"", _hc];" \n
                          "};" \n
                          "" \n
                          "// Spawn resource crates" \n
                          "if (_sector in sectors_factory || _sector in sectors_capture) then {" \n
-                         "    [_sector] call KPLIB_fnc_spawnSectorCrates;" \n
+                         "    [_sector] call KPLIB_server_fnc_spawnSectorCrates;" \n
                          "};" \n
                          "" \n
                          "// Spawn intel items" \n
                          "if (_sector in sectors_military) then {" \n
-                         "    [_sector] call KPLIB_fnc_spawnSectorIntel;" \n
+                         "    [_sector] call KPLIB_server_fnc_spawnSectorIntel;" \n
                          "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links

@@ -3,7 +3,16 @@ author = "Violets, [GREUH] Zbug & McKeewa, KP Liberation Dev Team, FatRefrigerat
 prefix = "slklib"
 mainprefix = "z"
 
+# Configures what files (other than your mod) will be included in the final build.
+[files]
+include = [
+    "LICENSE",
+    "README.md"
+]
+
+# Configures whether git hash will be included in version numbers.
 [version]
+git_hash = 0
 major = 1
 minor = 0
 patch = 0

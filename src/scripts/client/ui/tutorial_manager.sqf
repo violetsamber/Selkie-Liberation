@@ -40,7 +40,7 @@ while { true } do {
 
     _dialog = createDialog "liberation_tutorial";
     if ( !cinematic_camera_started ) then {
-        [] spawn cinematic_camera;
+        [] spawn KPLIB_client_fnc_cinematic_camera;
     };
 
     waitUntil { dialog };

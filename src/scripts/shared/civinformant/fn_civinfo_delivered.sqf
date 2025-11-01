@@ -1,0 +1,19 @@
+params ["_informant"];
+
+if (isServer && alive _informant) then {
+    resources_intel = resources_intel + KP_liberation_civinfo_intel;
+    [2] spawn F_cr_changeCR;
+    [1] remoteExec ["KPLIB_shared_fnc_civinfo_notifications"];
+
+    sleep 6;
+
+    if ((random 100) <= KP_liberation_civinfo_task_chance) then {
+        private _hc = [] call KPLIB_fnc_getLessLoadedHC;
+
+        if (isNull _hc) then {
+            [] spawn KPLIB_server_fnc_civinfo_task;
+        } else {
+            [] remoteExec ["KPLIB_server_fnc_civinfo_task", _hc];
+        };
+    };
+};

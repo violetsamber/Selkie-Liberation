@@ -1,0 +1,8 @@
+# This file allows you to customize what lints HEMTT will use.
+# See https://hemtt.dev/configuration/lints.html for full documentation.
+
+# Example: Ban macros that are only used in debug.
+[sqf.banned_macros]
+options.release = [
+    "DEBUG_MODE_FULL", "DISABLE_COMPILE_CACHE"
+]

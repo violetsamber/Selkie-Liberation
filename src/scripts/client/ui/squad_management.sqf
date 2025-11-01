@@ -232,7 +232,7 @@ while { dialog && alive player } do {
 
             sleep 0.01;
 
-            [ localize 'STR_SQUAD_DEPLOY' ] spawn spawn_camera;
+            [ localize 'STR_SQUAD_DEPLOY' ] spawn KPLIB_client_fnc_spawn_camera;
 
         };
 

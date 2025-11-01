@@ -16,7 +16,6 @@
 
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "script_component.hpp"
-#include "common.hpp"
 
 /*
     ----- General -----
@@ -233,7 +232,10 @@ class CfgDiscordRichPresence {
 };
 
 class CfgFunctions {
-    #include "CfgFunctions.hpp"
+    #include "lib\CfgFunctions.hpp"
+    #include "scripts\client\CfgFunctions.hpp"
+    #include "scripts\server\CfgFunctions.hpp"
+    #include "scripts\shared\CfgFunctions.hpp"
     #include "KP\KPPLM\KPPLM_functions.hpp"
 };
 
