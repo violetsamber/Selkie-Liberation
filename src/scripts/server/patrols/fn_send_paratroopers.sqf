@@ -1,3 +1,4 @@
+//send_paratroopers.sqf
 params [
     ["_targetsector", "", ["",[]]],
     ["_chopper_type", objNull, [objNull]]

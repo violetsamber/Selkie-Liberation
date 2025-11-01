@@ -42,9 +42,18 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class odstDrop              {};
     };
 
-    // class server_game {
-    //     file = "scripts\server\game";
-    //     class apply_default_permissions {};
-    //     class cleanup_vehicles          {};
-    // };
+    class server_game {
+        file = "scripts\server\game";
+        // class apply_default_permissions {};
+        // class cleanup_vehicles          {};
+        class check_victory_conditions {};
+    };
+
+    class server_patrols {
+        class manage_one_civilian_patrol {};
+        class manage_one_enemy_patrol {};
+        class manage_one_patrol {};
+        class reinforcements_manager {};
+        class send_paratroopers {};
+    };
 };
