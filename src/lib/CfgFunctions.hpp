@@ -106,11 +106,15 @@ class COMMON_FUNCTIONS_NAMESPACE {
 
         class overlayUpdateResources    {};
     };
-    class functions_init {
+
+};
+
+class COMMON_FUNCTIONS_NAMESPACE_INIT {
+    class functions {
         file = "lib\functions\init";
-        class init_liberation_config    {};
-        class init_objectInits          {};
-        class init_fetch_params         {};
-        class init_presets              {};
+        class liberation_config    {};
+        class objectInits          {};
+        class fetch_params         {};
+        class presets              {};
     };
 };

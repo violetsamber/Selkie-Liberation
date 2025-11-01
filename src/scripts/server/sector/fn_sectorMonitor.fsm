@@ -285,12 +285,12 @@ class FSM
                          "" \n
                          "// Spawn resource crates" \n
                          "if (_sector in sectors_factory || _sector in sectors_capture) then {" \n
-                         "    [_sector] call KPLIB_fnc_spawnSectorCrates;" \n
+                         "    [_sector] call KPLIB_server_fnc_spawnSectorCrates;" \n
                          "};" \n
                          "" \n
                          "// Spawn intel items" \n
                          "if (_sector in sectors_military) then {" \n
-                         "    [_sector] call KPLIB_fnc_spawnSectorIntel;" \n
+                         "    [_sector] call KPLIB_server_fnc_spawnSectorIntel;" \n
                          "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
