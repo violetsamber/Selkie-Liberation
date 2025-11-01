@@ -53,7 +53,7 @@ private _addReportLine = {
     ];
 
     if (dialog) then {
-        [_control, _string] call write_credit_line;
+        [_control, _string] call KPLIB_client_fnc_write_credit_line;
         sleep ([_line_delay, _page_delay] select _pageEnd);
     };
 };
@@ -75,7 +75,7 @@ private _playtime_hours = floor ((_stats_playtime % 86400) / 3600);
 private _playtime_minutes = floor ((_stats_playtime % 3600) / 60);
 private _playtime_seconds = _stats_playtime % 60;
 
-[] spawn cinematic_camera;
+[] spawn KPLIB_client_fnc_cinematic_camera;
 
 private _dialog = createDialog "liberation_endscreen";
 waitUntil {dialog};
