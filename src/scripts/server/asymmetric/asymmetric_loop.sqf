@@ -43,10 +43,10 @@ while {GRLIB_endgame == 0} do {
                     private _ieds = round (([] call KPLIB_fnc_crGetMulti) * GRLIB_difficulty_modifier);
 
                     if (isNull _hc) then {
-                        [_sector, _ieds] spawn manage_asymIED;
+                        [_sector, _ieds] spawn KPLIB_server_fnc_manage_asymIED;
                         [_sector] spawn asym_sector_ambush;
                     } else {
-                        [_sector, _ieds] remoteExec ["manage_asymIED", _hc];
+                        [_sector, _ieds] remoteExec ["KPLIB_server_fnc_manage_asymIED", _hc];
                         [_sector] remoteExec ["asym_sector_ambush",_hc];
                     };
                 };
