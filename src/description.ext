@@ -235,6 +235,7 @@ class CfgFunctions {
     #include "lib\CfgFunctions.hpp"
     #include "scripts\client\CfgFunctions.hpp"
     #include "scripts\server\CfgFunctions.hpp"
+    #include "scripts\shared\CfgFunctions.hpp"
     #include "KP\KPPLM\KPPLM_functions.hpp"
 };
 
