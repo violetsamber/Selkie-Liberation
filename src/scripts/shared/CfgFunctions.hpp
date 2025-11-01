@@ -5,12 +5,12 @@ class COMMON_FUNCTIONS_NAMESPACE_SHARED {
     };
 
     class shared_asymm {
-        file = "scripts\asymmetric";
+        file = "scripts\shared\asymmetric";
         class asymm_notifications {};
     };
 
     class shared_civinformant {
-        file = "scripts\civinformant";
+        file = "scripts\shared\civinformant";
         class civinfo_delivered {};
         class civinfo_escort {};
         class civinfo_notifications {};
