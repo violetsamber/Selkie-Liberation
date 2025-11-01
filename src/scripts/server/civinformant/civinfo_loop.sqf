@@ -38,7 +38,7 @@ while {true} do {
 
         if (KP_liberation_civinfo_debug > 0) then {[format ["Informant %1 spawned on: %2 - Position: %3", name _informant, debug_source, getPos _informant], "CIVINFO"] remoteExecCall ["KPLIB_fnc_log", 2];};
 
-        [0, [((((getPos _informant) select 0) + 200) - random 400),((((getPos _informant) select 1) + 200) - random 400),0]] remoteExec ["civinfo_notifications"];
+        [0, [((((getPos _informant) select 0) + 200) - random 400),((((getPos _informant) select 1) + 200) - random 400),0]] remoteExec ["KPLIB_shared_fnc_civinfo_notifications"];
 
         while {alive _informant && ((side (group _informant)) == GRLIB_side_civilian) && _waiting_time > 0} do {
             uiSleep 1;
@@ -63,15 +63,15 @@ while {true} do {
                     _informant enableAI "MOVE";
                 };
                 sleep 1;
-                [_informant] remoteExec ["civinfo_escort"];
+                [_informant] remoteExec ["KPLIB_shared_fnc_civinfo_escort"];
             } else {
                 if (KP_liberation_civinfo_debug > 0) then {["Informant is dead", "CIVINFO"] remoteExecCall ["KPLIB_fnc_log", 2];};
-                [3] remoteExec ["civinfo_notifications"];
+                [3] remoteExec ["KPLIB_shared_fnc_civinfo_notifications"];
             };
         } else {
             deleteVehicle _informant;
             if (KP_liberation_civinfo_debug > 0) then {["Informant despawned", "CIVINFO"] remoteExecCall ["KPLIB_fnc_log", 2];};
-            [2] remoteExec ["civinfo_notifications"];
+            [2] remoteExec ["KPLIB_shared_fnc_civinfo_notifications"];
         };
     } else {
         if (KP_liberation_civinfo_debug > 0) then {["Informant spawn chance missed", "CIVINFO"] remoteExecCall ["KPLIB_fnc_log", 2];};

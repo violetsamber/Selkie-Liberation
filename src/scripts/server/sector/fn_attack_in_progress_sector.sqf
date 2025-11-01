@@ -31,7 +31,7 @@ if ( _ownership == GRLIB_side_friendly ) exitWith {
     };
 };
 
-[_sector, 1] remoteExec ["remote_call_sector"];
+[_sector, 1] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
 _attacktime = GRLIB_vulnerability_timer;
 
 while { _attacktime > 0 && ( _ownership == GRLIB_side_enemy || _ownership == GRLIB_side_resistance ) } do {
@@ -49,7 +49,7 @@ if ( GRLIB_endgame == 0 ) then {
     if ( _attacktime <= 1 && ( [markerPos _sector] call KPLIB_fnc_getSectorOwnership == GRLIB_side_enemy ) ) then {
         blufor_sectors = blufor_sectors - [ _sector ];
         publicVariable "blufor_sectors";
-        [_sector, 2] remoteExec ["remote_call_sector"];
+        [_sector, 2] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
         ["KPLIB_ResetBattleGroups"] call CBA_fnc_serverEvent;
         [] spawn KPLIB_fnc_doSave;
         stats_sectors_lost = stats_sectors_lost + 1;
@@ -67,7 +67,7 @@ if ( GRLIB_endgame == 0 ) then {
             };
         } forEach KP_liberation_production;
     } else {
-        [_sector, 3] remoteExec ["remote_call_sector"];
+        [_sector, 3] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
         {[_x] spawn KPLIB_server_fnc_prisonner_ai;} forEach (((markerPos _sector) nearEntities ["Man", GRLIB_capture_size * 0.8]) select {side group _x == GRLIB_side_enemy});
     };
 };

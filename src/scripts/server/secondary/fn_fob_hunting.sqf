@@ -133,7 +133,7 @@ publicVariable "secondary_objective_position_marker";
 sleep 1;
 
 GRLIB_secondary_in_progress = 0; publicVariable "GRLIB_secondary_in_progress";
-[2] remoteExec ["remote_call_intel"];
+[2] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 
 waitUntil {
     sleep 5;
@@ -147,6 +147,6 @@ sleep 1;
 [] spawn KPLIB_fnc_doSave;
 sleep 3;
 
-[3] remoteExec ["remote_call_intel"];
+[3] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 
 GRLIB_secondary_in_progress = -1; publicVariable "GRLIB_secondary_in_progress";

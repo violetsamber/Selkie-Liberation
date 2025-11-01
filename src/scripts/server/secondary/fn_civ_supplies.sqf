@@ -24,7 +24,7 @@ _blufor_towns = [];
 if(_blufor_towns isEqualTo []) exitWith {
 	//if empty, throw error in log and call proper intel notification
 	["There are no friendly towns to spawn supplies at!", "ERROR"] call KPLIB_fnc_log; 
-	[11] remoteExec ["remote_call_intel"];
+	[11] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 };
 
 _objective_town = selectRandom _blufor_towns;
@@ -38,7 +38,7 @@ sleep 1;
 
 //start secondary mission
 GRLIB_secondary_in_progress = 3; publicVariable "GRLIB_secondary_in_progress";
-[9] remoteExec ["remote_call_intel"];
+[9] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 
 //create note in log
 diag_log format ["Starting Humanitarian Aid objective in %1",_objective_town];
@@ -83,7 +83,7 @@ while {!_supplies_present} do {
 [KP_liberation_civ_supplies_impact] spawn F_cr_changeCR;
 
 //display end notificaiton
-[10] remoteExec ["remote_call_intel"];
+[10] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 
 //add +1 completed secondary mission for the campaign end screen
 stats_secondary_objectives = stats_secondary_objectives + 1;

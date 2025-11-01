@@ -20,7 +20,7 @@ if (isNull _roadObj) exitWith {
 
 KP_liberation_convoy_ambush_check = 2;
 KP_liberation_convoy_ambush_inProgress = true;
-[0, getPos _roadObj] remoteExec ["asymm_notifications"];
+[0, getPos _roadObj] remoteExec ["KPLIB_shared_fnc_asymm_notifications"];
 
 private _vehicleArray = [];
 for "_i" from 1 to (_convoy select 1) do {
@@ -116,7 +116,7 @@ if (KP_liberation_asymmetric_debug > 0) then {[format ["Logistic convoy %1 ambus
 KP_liberation_convoy_ambush_inProgress = false;
 
 if ((_waitingTime <= 0) && (({alive _x} count (units _grp)) > 0)) then {
-    [2] remoteExec ["asymm_notifications"];
+    [2] remoteExec ["KPLIB_shared_fnc_asymm_notifications"];
     private _gain = 0;
     {
         if (alive _x) then {
@@ -135,6 +135,6 @@ if ((_waitingTime <= 0) && (({alive _x} count (units _grp)) > 0)) then {
     KP_liberation_guerilla_strength = KP_liberation_guerilla_strength + _gain;
     if (KP_liberation_asymmetric_debug > 0) then {[format ["Logistic convoy %1 ambush: guerillas escaped", (_convoy select 0)], "ASYMMETRIC"] call KPLIB_fnc_log;};
 } else {
-    [1] remoteExec ["asymm_notifications"];
+    [1] remoteExec ["KPLIB_shared_fnc_asymm_notifications"];
     if (KP_liberation_asymmetric_debug > 0) then {[format ["Logistic convoy %1 ambush: guerillas defeated", (_convoy select 0)], "ASYMMETRIC"] call KPLIB_fnc_log;};
 };

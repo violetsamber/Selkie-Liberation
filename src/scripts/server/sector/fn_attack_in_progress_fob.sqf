@@ -29,7 +29,7 @@ if ( _ownership == GRLIB_side_friendly ) exitWith {
     };
 };
 
-[_thispos, 1] remoteExec ["remote_call_fob"];
+[_thispos, 1] remoteExec ["KPLIB_shared_fnc_remote_call_fob"];
 _attacktime = GRLIB_vulnerability_timer;
 
 while { _attacktime > 0 && ( _ownership == GRLIB_side_enemy || _ownership == GRLIB_side_resistance ) } do {
@@ -45,7 +45,7 @@ waitUntil {
 
 if ( GRLIB_endgame == 0 ) then {
     if ( _attacktime <= 1 && ( [ _thispos ] call KPLIB_fnc_getSectorOwnership == GRLIB_side_enemy ) ) then {
-        [_thispos, 2] remoteExec ["remote_call_fob"];
+        [_thispos, 2] remoteExec ["KPLIB_shared_fnc_remote_call_fob"];
         sleep 3;
         GRLIB_all_fobs = GRLIB_all_fobs - [_thispos];
         publicVariable "GRLIB_all_fobs";
@@ -54,7 +54,7 @@ if ( GRLIB_endgame == 0 ) then {
         [] spawn KPLIB_fnc_doSave;
         stats_fobs_lost = stats_fobs_lost + 1;
     } else {
-        [_thispos, 3] remoteExec ["remote_call_fob"];
+        [_thispos, 3] remoteExec ["KPLIB_shared_fnc_remote_call_fob"];
         {[_x] spawn KPLIB_server_fnc_prisonner_ai;} forEach ((_thispos nearEntities ["Man", GRLIB_capture_size * 0.8]) select {side group _x == GRLIB_side_enemy});
     };
 };

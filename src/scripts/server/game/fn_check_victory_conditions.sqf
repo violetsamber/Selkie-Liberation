@@ -50,7 +50,7 @@ if ([] call KP_liberation_victoryCheck && GRLIB_endgame != 1) then {
     publicstats pushBack stats_vehicles_recycled;
     publicstats pushBack _rabbits;
 
-    publicstats remoteExec ["remote_call_endgame"];
+    publicstats remoteExec ["KPLIB_shared_fnc_remote_call_endgame"];
 
     private _playtime_days = floor (stats_playtime / 86400);
     private _playtime_hours = floor ((stats_playtime % 86400) / 3600);

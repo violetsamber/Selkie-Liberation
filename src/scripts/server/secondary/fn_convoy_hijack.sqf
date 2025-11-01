@@ -11,7 +11,7 @@ private _convoy_destinations = [];
 { _convoy_destinations pushBack (markerPos _x); } forEach _convoy_destinations_markers;
 
 private _spawnpos = _convoy_destinations select 0;
-[4, _spawnpos] remoteExec ["remote_call_intel"];
+[4, _spawnpos] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 
 private _scout_vehicle = [_spawnpos getPos [30, 0], opfor_mrap, true, false] call KPLIB_fnc_spawnVehicle;
 private _escort_vehicle = [_spawnpos getPos [10, 0], selectRandom opfor_vehicles_low_intensity, true, false] call KPLIB_fnc_spawnVehicle;
@@ -159,7 +159,7 @@ deleteMarker _convoy_marker;
 [round(combat_readiness * 0.85)] call KPLIB_fnc_setCombatReadiness;
 
 stats_secondary_objectives = stats_secondary_objectives + 1;
-[5] remoteExec ["remote_call_intel"];
+[5] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 GRLIB_secondary_in_progress = -1; publicVariable "GRLIB_secondary_in_progress";
 sleep 1;
 [] spawn KPLIB_fnc_doSave;

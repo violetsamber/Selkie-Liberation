@@ -17,9 +17,9 @@ for "_i" from 1 to _boats_number do {
     _spawnPos = [(((_spawnPos select 0) + 5) - random 1), (((_spawnPos select 1) + 5) - random 1), 2];
     _boat = createVehicle [_class, _spawnPos, [], 0, "NONE"];
     createVehicleCrew _boat;
-    _boat addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
+    _boat addMPEventHandler ["MPKilled", {_this spawn KPLIB_shared_fnc_kill_manager}];
     [_boat] call KPLIB_fnc_addObjectInit;
-    {_x addMPEventHandler ["MPKilled", {_this spawn kill_manager}];} forEach (crew _boat);
+    {_x addMPEventHandler ["MPKilled", {_this spawn KPLIB_shared_fnc_kill_manager}];} forEach (crew _boat);
     (crew _boat) joinSilent _grp;
     sleep 1;
 };

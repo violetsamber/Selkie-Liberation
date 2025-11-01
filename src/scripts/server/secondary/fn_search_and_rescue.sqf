@@ -76,14 +76,14 @@ if ( combat_readiness < 50 ) then {
 private _vehtospawn = [];
 private _spawnchances = [75,50,15];
 {if (random 100 < _x) then {_vehtospawn pushBack (selectRandom _vehicle_pool);};} forEach _spawnchances;
-{([(getPos _helowreck) getPos [30 + (random 30), random 360], _x, true] call KPLIB_fnc_spawnVehicle) addMPEventHandler ['MPKilled', {_this spawn kill_manager}]; } forEach _vehtospawn;
+{([(getPos _helowreck) getPos [30 + (random 30), random 360], _x, true] call KPLIB_fnc_spawnVehicle) addMPEventHandler ['MPKilled', {_this spawn KPLIB_shared_fnc_kill_manager}]; } forEach _vehtospawn;
 
 secondary_objective_position = getPos _helowreck;
 secondary_objective_position_marker = secondary_objective_position getPos [800, random 360];
 publicVariable "secondary_objective_position_marker";
 sleep 1;
 GRLIB_secondary_in_progress = 2; publicVariable "GRLIB_secondary_in_progress";
-[6] remoteExec ["remote_call_intel"];
+[6] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 
 waitUntil {
     sleep 5;
@@ -94,9 +94,9 @@ sleep 5;
 
 private _alive_crew_count = { alive _x } count _pilotUnits;
 if ( _alive_crew_count == 0 ) then {
-    [7] remoteExec ["remote_call_intel"];
+    [7] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 } else {
-    [8] remoteExec ["remote_call_intel"];
+    [8] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
     private _grp = createGroup [GRLIB_side_friendly, true];
     { [_x ] joinSilent _grp; } forEach _pilotUnits;
     while {waypoints _grp isNotEqualTo []} do {deleteWaypoint ((waypoints _grp) select 0);};
