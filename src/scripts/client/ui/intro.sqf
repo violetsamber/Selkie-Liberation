@@ -2,7 +2,7 @@ if ( isNil "cinematic_camera_started" ) then { cinematic_camera_started = false 
 sleep 0.5;
 waitUntil { time > 0 };
 
-[] spawn cinematic_camera;
+[] spawn KPLIB_client_fnc_cinematic_camera;
 
 if ( GRLIB_introduction ) then {
 

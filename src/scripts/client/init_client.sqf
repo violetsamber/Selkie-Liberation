@@ -34,12 +34,6 @@ if (typeOf player == "VirtualSpectator_F") exitWith {
 
 // This causes the script error with not defined variable _display in File A3\functions_f_bootcamp\Inventory\fn_arsenal.sqf [BIS_fnc_arsenal], line 2122
 // ["Preload"] call BIS_fnc_arsenal;
-spawn_camera = compileFinal preprocessFileLineNumbers "scripts\client\spawn\spawn_camera.sqf";
-cinematic_camera = compileFinal preprocessFileLineNumbers "scripts\client\ui\cinematic_camera.sqf";
-write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\write_credit_line.sqf";
-do_load_box = compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\do_load_box.sqf";
-kp_fuel_consumption = compileFinal preprocessFileLineNumbers "scripts\client\misc\kp_fuel_consumption.sqf";
-kp_vehicle_permissions = compileFinal preprocessFileLineNumbers "scripts\client\misc\vehicle_permissions.sqf";
 
 execVM "scripts\client\actions\intel_manager.sqf";
 execVM "scripts\client\actions\recycle_manager.sqf";
@@ -70,11 +64,11 @@ execVM "scripts\client\ui\tutorial_manager.sqf";
 execVM "scripts\client\markers\update_production_sites.sqf";
 
 player addMPEventHandler ["MPKilled", {_this spawn KPLIB_shared_fnc_kill_manager;}];
-player addEventHandler ["GetInMan", {[_this select 2] spawn kp_fuel_consumption;}];
+player addEventHandler ["GetInMan", {[_this select 2] spawn KPLIB_client_fnc_kp_fuel_consumption;}];
 player addEventHandler ["GetInMan", {[_this select 2] call KPLIB_fnc_setVehicleSeized;}];
 player addEventHandler ["GetInMan", {[_this select 2] call KPLIB_fnc_setVehicleCaptured;}];
-player addEventHandler ["GetInMan", {[_this select 2] call kp_vehicle_permissions;}];
-player addEventHandler ["SeatSwitchedMan", {[_this select 2] call kp_vehicle_permissions;}];
+player addEventHandler ["GetInMan", {[_this select 2] call KPLIB_client_fnc_kp_vehicle_permissions;}];
+player addEventHandler ["SeatSwitchedMan", {[_this select 2] call KPLIB_client_fnc_kp_vehicle_permissions;}];
 player addEventHandler ["HandleRating", {if ((_this select 1) < 0) then {0};}];
 
 // Disable stamina, if selected in parameter

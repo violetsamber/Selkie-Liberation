@@ -1,5 +1,4 @@
 private _convoy_destinations_markers = [];
-private _load_box_fnc = compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\do_load_box.sqf";
 
 while { count _convoy_destinations_markers < 3 } do { _convoy_destinations_markers pushBack ([2000,999999,false] call KPLIB_fnc_getOpforSpawnPoint); };
 
@@ -33,7 +32,7 @@ while { _boxes_loaded < _boxes_amount } do {
     sleep 0.5;
     private _next_box = [KP_liberation_ammo_crate, 100, _spawnpos getPos [15, 135]] call KPLIB_fnc_createCrate;
     sleep 0.5;
-    [_next_box, 50] call _load_box_fnc;
+    [_next_box, 50] call KPLIB_client_fnc_do_load_box;
 };
 
 sleep 0.5;
