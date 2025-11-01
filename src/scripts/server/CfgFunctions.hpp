@@ -50,10 +50,19 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
     };
 
     class server_patrols {
+        file = "scripts\server\patrols";
         class manage_one_civilian_patrol {};
         class manage_one_enemy_patrol {};
         class manage_one_patrol {};
         class reinforcements_manager {};
         class send_paratroopers {};
+    };
+
+    class server_secondary {
+        file = "scripts\server\secondary";
+        class civ_supplies      {};
+        class convoy_hijack     {};
+        class fob_hunting       {};
+        class search_and_rescue {};
     };
 };
