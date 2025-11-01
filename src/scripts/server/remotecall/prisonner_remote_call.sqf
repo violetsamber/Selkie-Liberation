@@ -11,5 +11,5 @@ if (isServer) then {
     resources_intel = resources_intel + ( _yield + (round (random _yield)));
     stats_prisoners_captured = stats_prisoners_captured + 1;
 
-    [0] remoteExec ["remote_call_intel"];
+    [0] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];
 };

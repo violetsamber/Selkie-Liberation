@@ -16,7 +16,7 @@ if (_spawn_marker isNotEqualTo "") then {
     private _target_size = (round (GRLIB_battlegroup_size * ([] call KPLIB_fnc_getOpforFactor) * (sqrt GRLIB_csat_aggressivity))) min 16;
     if (combat_readiness < 60) then {_target_size = round (_target_size * 0.65);};
 
-    [_spawn_marker] remoteExec ["remote_call_battlegroup"];
+    [_spawn_marker] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
 
     if (worldName in KP_liberation_battlegroup_clearance) then {
         [markerPos _spawn_marker, 30] call KPLIB_fnc_createClearance;

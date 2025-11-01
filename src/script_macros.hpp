@@ -19,6 +19,7 @@
 #define COMMON_FUNCTIONS_NAMESPACE_INIT KPLIB_init
 #define COMMON_FUNCTIONS_NAMESPACE_SERVER KPLIB_server
 #define COMMON_FUNCTIONS_NAMESPACE_CLIENT KPLIB_client
+#define COMMON_FUNCTIONS_NAMESPACE_SHARED KPLIB_shared
 
 // Get parameter
 #define GET_PARAM(outVar, paramName, paramDefault)          outVar = [paramName,paramDefault] call KPLIB_fnc_getSaveableParam;\

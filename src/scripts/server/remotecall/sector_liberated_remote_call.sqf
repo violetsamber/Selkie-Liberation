@@ -12,7 +12,7 @@ switch (true) do {
 [_combat_readiness_increase] call KPLIB_fnc_addCombatReadiness;
 stats_readiness_earned = stats_readiness_earned + _combat_readiness_increase;
 
-[_liberated_sector, 0] remoteExecCall ["remote_call_sector"];
+[_liberated_sector, 0] remoteExecCall ["KPLIB_shared_fnc_remote_call_sector"];
 blufor_sectors pushBack _liberated_sector; publicVariable "blufor_sectors";
 stats_sectors_liberated = stats_sectors_liberated + 1;
 

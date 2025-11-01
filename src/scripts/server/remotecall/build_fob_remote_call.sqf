@@ -19,7 +19,7 @@ if ( _create_fob_building ) then {
 [] spawn KPLIB_fnc_doSave;
 
 sleep 3;
-[_new_fob, 0] remoteExec ["remote_call_fob"];
+[_new_fob, 0] remoteExec ["KPLIB_shared_fnc_remote_call_fob"];
 
 stats_fobs_built = stats_fobs_built + 1;
 

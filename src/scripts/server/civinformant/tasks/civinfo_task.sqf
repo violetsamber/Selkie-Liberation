@@ -42,7 +42,7 @@ if (KP_liberation_civinfo_debug > 0) then {[format ["civinfo_task.sqf -> vehicle
 
 private _marker_pos = [((((getPos _roadObj) select 0) + 200) - random 400),((((getPos _roadObj) select 1) + 200) - random 400),0];
 
-[4, _marker_pos] remoteExec ["civinfo_notifications"];
+[4, _marker_pos] remoteExec ["KPLIB_shared_fnc_civinfo_notifications"];
 
 private _time_remaining = KP_liberation_civinfo_task_duration;
 
@@ -64,7 +64,7 @@ if (KP_liberation_civinfo_debug > 0) then {[format ["civinfo_task.sqf -> loop ex
 if (alive _hvt) then {
     deleteVehicle _veh;
     {deleteVehicle _x} forEach (units _grp);
-    [6] remoteExec ["civinfo_notifications"];
+    [6] remoteExec ["KPLIB_shared_fnc_civinfo_notifications"];
     if (KP_liberation_civinfo_debug > 0) then {["civinfo_task.sqf -> Task despawned", "CIVINFO"] remoteExecCall ["KPLIB_fnc_log", 2];};
 } else {
     
@@ -73,6 +73,6 @@ if (alive _hvt) then {
     if (!isServer) then {
         publicVariableServer "combat_readiness";
     };
-    [5] remoteExec ["civinfo_notifications"];
+    [5] remoteExec ["KPLIB_shared_fnc_civinfo_notifications"];
     if (KP_liberation_civinfo_debug > 0) then {["civinfo_task.sqf -> Task ended with success", "CIVINFO"] remoteExecCall ["KPLIB_fnc_log", 2];};
 };

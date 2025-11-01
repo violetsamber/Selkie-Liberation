@@ -3,7 +3,7 @@ params ["_informant"];
 if (isServer && alive _informant) then {
     resources_intel = resources_intel + KP_liberation_civinfo_intel;
     [2] spawn F_cr_changeCR;
-    [1] remoteExec ["civinfo_notifications"];
+    [1] remoteExec ["KPLIB_shared_fnc_civinfo_notifications"];
 
     sleep 6;
 

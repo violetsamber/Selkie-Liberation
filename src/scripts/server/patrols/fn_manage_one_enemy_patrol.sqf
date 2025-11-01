@@ -53,7 +53,7 @@ while { GRLIB_endgame == 0 } do {
             _enemyVic = (_vicClassName) createVehicle _spawnpos;
             _enemyVic setPos _spawnpos;
             _enemyVic setDir _spawnDir;
-            _enemyVic addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
+            _enemyVic addMPEventHandler ['MPKilled', {_this spawn KPLIB_shared_fnc_kill_manager}];
 
             _grpspeed = "NORMAL";
             

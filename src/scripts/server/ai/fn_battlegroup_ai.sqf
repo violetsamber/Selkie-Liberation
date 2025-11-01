@@ -7,7 +7,7 @@ if (isNull _grp) exitWith {};
 
 private _objPos = [getPos (leader _grp)] call KPLIB_fnc_getNearestBluforObjective;
 
-[_objPos] remoteExec ["remote_call_incoming"];
+[_objPos] remoteExec ["KPLIB_shared_fnc_remote_call_incoming"];
 
 private _startpos = getPos (leader _grp);
 

@@ -48,7 +48,7 @@ if ((_unit isKindOf "Man") && (alive _unit) && (side group _unit == GRLIB_side_e
                 _unit setCaptive false;
             };
             sleep 1;
-            [_unit] remoteExec ["remote_call_prisonner", _unit];
+            [_unit] remoteExec ["KPLIB_shared_fnc_remote_call_prisonner", _unit];
         };
     };
 };
