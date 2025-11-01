@@ -1,4 +1,4 @@
-[] call compileFinal preprocessFileLineNumbers "scripts\client\misc\init_markers.sqf";
+[] call KPLIB_client_fnc_init_markers;
 switch (KP_liberation_arsenal) do {
     case  1: {[] call compileFinal preprocessFileLineNumbers "arsenal_presets\custom.sqf";};
     case  2: {[] call compileFinal preprocessFileLineNumbers "arsenal_presets\rhsusaf.sqf";};
