@@ -289,7 +289,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
     [_sector, _building_range, _iedcount] spawn KPLIB_server_fnc_ied_manager;
 
     if (_guerilla) then {
-        [_sector] spawn sector_guerilla;
+        [_sector] spawn KPLIB_server_fnc_sector_guerilla;
     };
 
     sleep 10;

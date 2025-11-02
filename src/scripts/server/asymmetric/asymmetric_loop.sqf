@@ -44,10 +44,10 @@ while {GRLIB_endgame == 0} do {
 
                     if (isNull _hc) then {
                         [_sector, _ieds] spawn KPLIB_server_fnc_manage_asymIED;
-                        [_sector] spawn asym_sector_ambush;
+                        [_sector] spawn KPLIB_server_fnc_asym_sector_ambush;
                     } else {
                         [_sector, _ieds] remoteExec ["KPLIB_server_fnc_manage_asymIED", _hc];
-                        [_sector] remoteExec ["asym_sector_ambush",_hc];
+                        [_sector] remoteExec ["KPLIB_server_fnc_asym_sector_ambush",_hc];
                     };
                 };
             };
