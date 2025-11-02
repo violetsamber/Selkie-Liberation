@@ -25,7 +25,7 @@ private _ied_marker = "";
 if (KP_liberation_asymmetric_debug > 0) then {[format ["ied_manager.sqf -> spawning IED %1 at %2", _number, markerText _sector], "ASYMMETRIC"] remoteExecCall ["KPLIB_fnc_log", 2];};
 
 if (_number > 0) then {
-    [_sector, _radius, _number - 1] spawn ied_manager;
+    [_sector, _radius, _number - 1] spawn KPLIB_server_fnc_ied_manager;
 };
 
 if (!(isNull _roadobj)) then {
