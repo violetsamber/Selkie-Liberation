@@ -27,7 +27,7 @@ while {true} do {
 
         {
             if !(_x in _actionned_intel_items) then {
-                _x addAction ["<t color='#FFFF00'>" + localize "STR_INTEL" + "</t>",{[_this select 0] remoteExecCall ["intel_remote_call", 2];},"",-849,true,true,"","(vehicle player == player)"];
+                _x addAction ["<t color='#FFFF00'>" + localize "STR_INTEL" + "</t>",{[_this select 0] remoteExecCall ["KPLIB_server_fnc_intel_remote_call", 2];},"",-849,true,true,"","(vehicle player == player)"];
                 _actionned_intel_items pushBack _x;
             };
         } forEach _near_intel;

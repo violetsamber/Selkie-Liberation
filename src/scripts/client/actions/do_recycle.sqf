@@ -98,6 +98,6 @@ if (dorecycle == 1 && !(isNull _vehToRecycle) && alive _vehToRecycle) then {
     if (_spaceSum < _crateSum) then {
         hint localize "STR_CANCEL_ERROR";
     } else {
-        [_vehToRecycle, _price_s, _price_a, _price_f, _storage_areas] remoteExec ["recycle_remote_call",2];
+        [_vehToRecycle, _price_s, _price_a, _price_f, _storage_areas] remoteExec ["KPLIB_server_fnc_recycle_remote_call",2];
     };
 };
