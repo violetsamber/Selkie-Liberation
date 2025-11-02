@@ -14,7 +14,7 @@ if (GRLIB_all_fobs isEqualTo []) then {
         };
 
         // Spawn first FOB on random valid spawnpoint
-        [markerPos (selectRandom _validPlaces), true] remoteExec ["build_fob_remote_call", 2];
+        [markerPos (selectRandom _validPlaces), true] remoteExec ["KPLIB_server_fnc_build_fob_remote_call", 2];
     } else {
         // Spawn FOB box and wait until the first FOB was built
         private _fobbox = objNull;
