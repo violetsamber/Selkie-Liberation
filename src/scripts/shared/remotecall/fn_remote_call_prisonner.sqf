@@ -50,7 +50,7 @@ if (alive _unit) then {
         _unit disableAI "MOVE";
         sleep 5;
         [_unit, "AidlPsitMstpSnonWnonDnon_ground00"] remoteExecCall ["switchMove"];
-        [_unit] remoteExec ["KPLIB_server_fnc_prisonner_remote_call",2];
+        [_unit] remoteExec ["KPLIB_shared_fnc_prisonner_remote_call",2];
         sleep 600;
         deleteVehicle _unit;
 

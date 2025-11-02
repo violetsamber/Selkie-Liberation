@@ -27,6 +27,17 @@ class COMMON_FUNCTIONS_NAMESPACE_SHARED {
 
     class shared_remotecall {
         file = "scripts\shared\remotecall";
+        class build_fac_remote_call {};
+        class build_fob_remote_call {};
+        class build_remote_call {};
+        class cancel_build_remote_call {};
+        class change_prod_remote_call {};
+        class intel_remote_call {};
+        class prisonner_remote_call {};
+        class recycle_remote_call {};
+        class reinforcements_remote_call {};
+        class sector_liberated_remote_call {};
+        class start_secondary_remote_call {};
         class remote_call_battlegroup {};
         class remote_call_endgame {};
         class remote_call_fob {};

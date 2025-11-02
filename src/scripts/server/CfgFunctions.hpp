@@ -83,19 +83,4 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         file = "scripts\server\civinformant";
         class civinfo_task {};
     };
-    
-    class server_remotecall {
-        file = "scripts\server\remotecall";
-        class build_fac_remote_call {};
-        class build_fob_remote_call {};
-        class build_remote_call {};
-        class cancel_build_remote_call {};
-        class change_prod_remote_call {};
-        class intel_remote_call {};
-        class prisonner_remote_call {};
-        class recycle_remote_call {};
-        class reinforcements_remote_call {};
-        class sector_liberated_remote_call {};
-        class start_secondary_remote_call {};
-    };
 };
