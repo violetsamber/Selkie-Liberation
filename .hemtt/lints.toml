@@ -6,3 +6,6 @@
 options.release = [
     "DEBUG_MODE_FULL", "DISABLE_COMPILE_CACHE"
 ]
+
+[stringtables.usage]
+options.ignore_duplicate = true
