@@ -1,0 +1,1 @@
+HEMTT.script("remove_core");
