@@ -102,5 +102,5 @@ if (((_this select 3) select 0) == KP_liberation_small_storage_building) then {
 
     build_confirmed = 0;
 } else {
-    [player getVariable ["KPLIB_nearProd", []], ((_this select 3) select 0), clientOwner] remoteExec ["KPLIB_server_fnc_build_fac_remote_call",2];
+    [player getVariable ["KPLIB_nearProd", []], ((_this select 3) select 0), clientOwner] remoteExec ["KPLIB_shared_fnc_build_fac_remote_call",2];
 };

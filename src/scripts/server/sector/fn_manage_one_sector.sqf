@@ -295,7 +295,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
     sleep 10;
 
     if ((_sector in sectors_factory) || (_sector in sectors_capture) || (_sector in sectors_bigtown) || (_sector in sectors_military)) then {
-        [_sector] remoteExec ["KPLIB_server_fnc_reinforcements_remote_call",2];
+        [_sector] remoteExec ["KPLIB_shared_fnc_reinforcements_remote_call",2];
     };
 
     if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - populating done", (markerText _sector), _sector], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
@@ -306,9 +306,9 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         // sector was captured
         if (([_sectorpos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly) && (GRLIB_endgame == 0)) then {
             if (isServer) then {
-                [_sector] spawn KPLIB_server_fnc_sector_liberated_remote_call;
+                [_sector] spawn KPLIB_shared_fnc_sector_liberated_remote_call;
             } else {
-                [_sector] remoteExec ["KPLIB_server_fnc_sector_liberated_remote_call",2];
+                [_sector] remoteExec ["KPLIB_shared_fnc_sector_liberated_remote_call",2];
             };
 
             _stopit = true;

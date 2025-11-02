@@ -42,7 +42,7 @@ while { true } do {
         _nearfob = [] call KPLIB_fnc_getNearestFob;
         _storage_areas = (_nearfob nearObjects (GRLIB_fob_range * 2)) select {(_x getVariable ["KP_liberation_storage_type",-1]) == 0};
 
-        [_price_s, _price_a, _price_f, _classname, buildtype, _storage_areas] remoteExec ["KPLIB_server_fnc_build_remote_call",2];
+        [_price_s, _price_a, _price_f, _classname, buildtype, _storage_areas] remoteExec ["KPLIB_shared_fnc_build_remote_call",2];
     };
 
     if(buildtype == 1 || buildtype == 8) then {
@@ -291,7 +291,7 @@ while { true } do {
                 if (_spaceSum < _crateSum) then {
                     hint localize "STR_CANCEL_ERROR";
                 } else {
-                    [_price_s, _price_a, _price_f, _storage_areas] remoteExec ["KPLIB_server_fnc_cancel_build_remote_call",2];
+                    [_price_s, _price_a, _price_f, _storage_areas] remoteExec ["KPLIB_shared_fnc_cancel_build_remote_call",2];
                 };
             };
 
@@ -356,7 +356,7 @@ while { true } do {
 
             if(buildtype == 99) then {
                 _new_fob = getPos player;
-                [_new_fob, false] remoteExec ["KPLIB_server_fnc_build_fob_remote_call",2];
+                [_new_fob, false] remoteExec ["KPLIB_shared_fnc_build_fob_remote_call",2];
                 buildtype = 1;
             };
             build_confirmed = 0;
