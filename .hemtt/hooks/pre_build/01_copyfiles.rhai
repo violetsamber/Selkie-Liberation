@@ -5,10 +5,10 @@ let items = input.list();
 let outputItems = output.list();
 
 for outputItem in outputItems {
-    print(`Copying files from: ${input} to ${outputItem}`);
     if(outputItem.file_name().contains(`core`)){
         continue;
     }
+    print(`Copying files from: ${input} to ${outputItem}`);
     for item in items {
         if(item.file_name().contains(`PBOPREFIX`)){
             continue;
