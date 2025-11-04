@@ -1,11 +1,14 @@
+#define MIN_SLEEPTIME 2700
+
 sleep (900 / GRLIB_csat_aggressivity);
 private _sleeptime = 0;
 while {GRLIB_csat_aggressivity > 0.9 && GRLIB_endgame == 0} do {
-    _sleeptime =  (1800 + (random 1800)) / (([] call KPLIB_fnc_getOpforFactor) * GRLIB_csat_aggressivity);
+    _sleeptime =  (3600 + (random 3600)) / (([] call KPLIB_fnc_getOpforFactor) * GRLIB_csat_aggressivity);
 
     if (combat_readiness >= 80) then {_sleeptime = _sleeptime * 0.75;};
     if (combat_readiness >= 90) then {_sleeptime = _sleeptime * 0.75;};
     if (combat_readiness >= 95) then {_sleeptime = _sleeptime * 0.75;};
+    _sleeptime = MIN_SLEEPTIME max _sleeptime;
 
     sleep _sleeptime;
 
