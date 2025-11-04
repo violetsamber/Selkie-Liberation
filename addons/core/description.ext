@@ -53,14 +53,14 @@ overviewText = QUOTE(GITHUB_PAGE);
 
 // String (usually mission name) shown during mission loading.
 // The string is shown in a slightly larger font above the loadScreen.
-onLoadName = QUOTE(COMPONENT_BEAUTIFIED VERSION_STR);
+onLoadName = QUOTE(COMPONENT_BEAUTIFIED);
 
 // You can define a picture to be shown while the mission is loaded.
 // The path is relative to the mission folder.
 loadScreen = "res\lib.paa";
 
 // Displays a message while the mission is loading below the loadScreen picture.
-onLoadMission = QUOTE(GITHUB_PAGE);
+onLoadMission = QUOTE(VERSION_STR | GITHUB_PAGE);
 
 
 /*
