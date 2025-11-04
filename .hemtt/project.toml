@@ -7,7 +7,8 @@ mainprefix = "z"
 [files]
 include = [
     "LICENSE",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
 ]
 
 # Configures whether git hash will be included in version numbers.
@@ -15,5 +16,5 @@ include = [
 git_hash = 0
 major = 1
 minor = 0
-patch = 0
+patch = 1
 build = 0
