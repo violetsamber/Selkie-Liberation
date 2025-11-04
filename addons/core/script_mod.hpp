@@ -8,6 +8,12 @@
 
 #include "script_version.hpp"
 
+#define VERSION     MAJOR.MINOR
+#define VERSION_STR MAJOR.MINOR.PATCH
+#define VERSION_AR  MAJOR,MINOR,PATCH,BUILD
+
+#define VERSION_CONFIG version = VERSION; versionStr = QUOTE(MAJOR.MINOR.PATCH); versionAr[] = {VERSION_AR}
+
 // Define requried CBA version.
 #define REQUIRED_VERSION 2.20
 
