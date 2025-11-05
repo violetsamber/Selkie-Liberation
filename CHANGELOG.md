@@ -1,3 +1,11 @@
+## 1.0.2
+ADDED:
+
+FIXED:
+- Not being able to abort logi routes
+
+CHANGED:
+
 ## 1.0.1
 
 ADDED:

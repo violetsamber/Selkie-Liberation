@@ -23,6 +23,7 @@ class COMMON_FUNCTIONS_NAMESPACE_SHARED {
         class del_logiGroup_remote_call {};
         class del_logiTruck_remote_call {};
         class save_logi_remote_call {};
+        class abort_logi_remote_call {};
     };
 
     class shared_remotecall {
