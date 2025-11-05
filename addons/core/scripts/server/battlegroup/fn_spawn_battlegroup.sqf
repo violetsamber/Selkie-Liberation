@@ -1,4 +1,5 @@
-// TODO Refactor and create function
+//fn_spawn_battlegroup.sqf
+
 params [
     ["_spawn_marker", "", [""]],
     ["_infOnly", false, [false]]

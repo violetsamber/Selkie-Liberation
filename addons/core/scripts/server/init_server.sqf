@@ -8,7 +8,7 @@ execVM "scripts\server\base\huron_manager.sqf";
 execVM "scripts\server\base\startvehicle_spawn.sqf";
 [] call KPLIB_server_fnc_createSuppModules;
 execVM "scripts\server\battlegroup\counter_battlegroup.sqf";
-execVM "scripts\server\battlegroup\random_battlegroups.sqf";
+[] call KPLIB_server_fnc_random_battlegroups;
 execVM "scripts\server\battlegroup\readiness_increase.sqf";
 execVM "scripts\server\game\apply_default_permissions.sqf";
 execVM "scripts\server\game\cleanup_vehicles.sqf";
