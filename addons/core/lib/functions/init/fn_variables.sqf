@@ -15,3 +15,7 @@
 */
 
 SLKLIB_combat_readiness = 0;
+
+SLKLIB_RandomBattlegroups_CurrentTimer = 0;
+SLKLIB_RandomBattlegroups_ActivateTime = 2700;
+SLKLIB_RandomBattlegroups_MinSleeptime = 2700;
