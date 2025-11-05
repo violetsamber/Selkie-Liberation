@@ -1,5 +1,4 @@
 #define MAINPREFIX z
-// Set your prefix here.
 #define PREFIX slklib
 #define SUBPREFIX addons
 
