@@ -70,7 +70,7 @@ armor_weight = 33;
 // Blufor sectors
 blufor_sectors = [];
 // Enemy combat readiness (0-100)
-combat_readiness = 0;
+SLKLIB_combat_readiness = 0;
 // All FOBs
 GRLIB_all_fobs = [];
 // Player permissions data
@@ -182,7 +182,7 @@ if (!isNil "_saveData") then {
         _weights                                    = _saveData select  5;
         _aiGroups                                   = _saveData select  6;
         blufor_sectors                              = _saveData select  7;
-        combat_readiness                            = _saveData select  8;
+        SLKLIB_combat_readiness                     = _saveData select  8;
         GRLIB_all_fobs                              = _saveData select  9;
         GRLIB_permissions                           = _saveData select 10;
         GRLIB_vehicle_to_military_base_links        = _saveData select 11;
@@ -244,7 +244,7 @@ if (!isNil "_saveData") then {
         GRLIB_all_fobs                              = _saveData select  1;
         _objectsToSave                              = _saveData select  2;
         _dateTime                                   = _saveData select  3;
-        combat_readiness                            = _saveData select  4;
+        SLKLIB_combat_readiness                     = _saveData select  4;
         _resourceStorages                           = _saveData select  5;
         KP_liberation_production                    = _saveData select  6;
         KP_liberation_logistics                     = _saveData select  7;

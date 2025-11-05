@@ -25,14 +25,14 @@ if (SLKLIB_RandomBattlegroups_CurrentTimer >= SLKLIB_RandomBattlegroups_Activate
 
     /*
     Is the playercount above the threshold for spawning a battlegroup
-    Is the combat_readiness above (60 - (5 * GRLIB_csat_aggressivity))
+    Is the SLKLIB_combat_readiness above (60 - (5 * GRLIB_csat_aggressivity))
     Is the Unitcap exceeded
     Is the FPS above 15
     */
 
     if (
         (count (allPlayers - entities "HeadlessClient_F") >= (6 / GRLIB_csat_aggressivity))
-        && {combat_readiness >= (60 - (5 * GRLIB_csat_aggressivity))}
+        && {SLKLIB_combat_readiness >= (60 - (5 * GRLIB_csat_aggressivity))}
         && {[] call KPLIB_fnc_getOpforCap < GRLIB_battlegroup_cap}
         && {diag_fps > SERVER_MIN_FPS}
     ) then {

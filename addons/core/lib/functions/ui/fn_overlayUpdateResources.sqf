@@ -46,15 +46,15 @@ if (_updateValues) then {
     (_overlay displayCtrl IDC_OVERLAY_RSC_LABEL_UNITCAP) ctrlSetText ([unitcap, "/", [] call KPLIB_fnc_getLocalCap] joinString "");
     (_overlay displayCtrl IDC_OVERLAY_RSC_LABEL_HELIPAD) ctrlSetText ([KP_liberation_heli_count, "/", KP_liberation_heli_slots] joinString "");
     (_overlay displayCtrl IDC_OVERLAY_RSC_LABEL_PLANE) ctrlSetText ([KP_liberation_plane_count, "/", KP_liberation_plane_slots] joinString "");
-    (_overlay displayCtrl IDC_OVERLAY_RSC_LABEL_ALERT) ctrlSetText ([round combat_readiness, "%"] joinString "");
+    (_overlay displayCtrl IDC_OVERLAY_RSC_LABEL_ALERT) ctrlSetText ([round SLKLIB_combat_readiness, "%"] joinString "");
     (_overlay displayCtrl IDC_OVERLAY_RSC_LABEL_CIVREP) ctrlSetText ([KP_liberation_civ_rep,"%"] joinString "");
     (_overlay displayCtrl IDC_OVERLAY_RSC_LABEL_INTEL) ctrlSetText str round resources_intel;
 
     private _color_readiness = [0.8,0.8,0.8,1];
-    if (combat_readiness >= 25) then {_color_readiness = [0.8,0.8,0,1]};
-    if (combat_readiness >= 50) then {_color_readiness = [0.8,0.6,0,1]};
-    if (combat_readiness >= 75) then {_color_readiness = [0.8,0.3,0,1]};
-    if (combat_readiness >= 100) then {_color_readiness = [0.8,0,0,1]};
+    if (SLKLIB_combat_readiness >= 25) then {_color_readiness = [0.8,0.8,0,1]};
+    if (SLKLIB_combat_readiness >= 50) then {_color_readiness = [0.8,0.6,0,1]};
+    if (SLKLIB_combat_readiness >= 75) then {_color_readiness = [0.8,0.3,0,1]};
+    if (SLKLIB_combat_readiness >= 100) then {_color_readiness = [0.8,0,0,1]};
 
     (_overlay displayCtrl IDC_OVERLAY_RSC_PIC_ALERT) ctrlSetTextColor _color_readiness;
     (_overlay displayCtrl IDC_OVERLAY_RSC_LABEL_ALERT) ctrlSetTextColor _color_readiness;

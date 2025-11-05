@@ -2,7 +2,7 @@ params ["_first_objective"];
 
 if (opfor_boat isEqualTo []) exitWith {false};
 
-private _boats_number = ((floor linearConversion [40, 100, combat_readiness, 1, 3]) min 3) max 0;
+private _boats_number = ((floor linearConversion [40, 100, (SLKLIB_combat_readiness), 1, 3]) min 3) max 0;
 
 if (_boats_number < 1) exitWith {};
 

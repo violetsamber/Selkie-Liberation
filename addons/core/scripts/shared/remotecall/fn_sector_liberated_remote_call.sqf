@@ -61,7 +61,7 @@ if (GRLIB_endgame == 0) then {
     if (
         !(_liberated_sector in sectors_tower)
         && {
-            (random (150 / (GRLIB_difficulty_modifier * GRLIB_csat_aggressivity))) < (combat_readiness - 15)
+            (random (150 / (GRLIB_difficulty_modifier * GRLIB_csat_aggressivity))) < (SLKLIB_combat_readiness - 15)
             || _liberated_sector in sectors_bigtown
         }
         && {[] call KPLIB_fnc_getOpforCap < GRLIB_battlegroup_cap}

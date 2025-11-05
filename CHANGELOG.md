@@ -5,6 +5,7 @@ FIXED:
 - Not being able to abort logi routes
 
 CHANGED:
+- combat_readiness to SLKLIB_combat_readiness
 
 ## 1.0.1
 
@@ -27,4 +28,4 @@ CHANGED:
 - Refactored entire project to use the hemtt build system
 - Refactored large amount of code to use the CFGFunctions system
 - Battlegroups changed to be static set of spawns for a proof of concept
-- Combat Readiness capped at the GRLIB_combat_readiness_cap
+- Combat Readiness capped at the SLKLIB_combat_readiness_cap

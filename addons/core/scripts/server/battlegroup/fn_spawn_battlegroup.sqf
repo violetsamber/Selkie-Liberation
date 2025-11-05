@@ -15,7 +15,7 @@ if (_spawn_marker isNotEqualTo "") then {
     private _bg_groups = [];
     private _selected_opfor_battlegroup = [];
     private _target_size = (round (GRLIB_battlegroup_size * ([] call KPLIB_fnc_getOpforFactor) * (sqrt GRLIB_csat_aggressivity))) min 16;
-    if (combat_readiness < 60) then {_target_size = round (_target_size * 0.65);};
+    if (SLKLIB_combat_readiness < 60) then {_target_size = round (_target_size * 0.65);};
 
     [_spawn_marker] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
 
@@ -25,7 +25,7 @@ if (_spawn_marker isNotEqualTo "") then {
 
     if (_infOnly) then {
         // Infantry units to choose from
-        private _infClasses = [KPLIB_o_inf_classes, militia_squad] select (combat_readiness < 50);
+        private _infClasses = [KPLIB_o_inf_classes, militia_squad] select (SLKLIB_combat_readiness < 50);
 
         // Adjust target size for infantry
         _target_size = 12 max (_target_size * 4);
@@ -51,7 +51,7 @@ if (_spawn_marker isNotEqualTo "") then {
         _target_size = count _selected_opfor_battlegroup;
 
     } else {
-        // private _vehicle_pool = [opfor_battlegroup_vehicles, opfor_battlegroup_vehicles_low_intensity] select (combat_readiness < 50);
+        // private _vehicle_pool = [opfor_battlegroup_vehicles, opfor_battlegroup_vehicles_low_intensity] select (SLKLIB_combat_readiness < 50);
         // while {count _selected_opfor_battlegroup < _target_size} do {
         //     _selected_opfor_battlegroup pushBack (selectRandom _vehicle_pool);
         // };

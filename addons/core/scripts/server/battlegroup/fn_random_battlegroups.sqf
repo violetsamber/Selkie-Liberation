@@ -34,9 +34,9 @@ SLKLIB_RandomBattlegroups_MinSleeptime = 2700;
 // while {GRLIB_csat_aggressivity > 0.9 && GRLIB_endgame == 0} do {
 
 //     _sleeptime =  (3600 + (random 3600)) / (([] call KPLIB_fnc_getOpforFactor) * GRLIB_csat_aggressivity);
-//     if (combat_readiness >= 80) then {_sleeptime = _sleeptime * 0.75;};
-//     if (combat_readiness >= 90) then {_sleeptime = _sleeptime * 0.75;};
-//     if (combat_readiness >= 95) then {_sleeptime = _sleeptime * 0.75;};
+//     if SLKLIB_combat_readiness >= 80) then {_sleeptime = _sleeptime * 0.75;};
+//     if SLKLIB_combat_readiness >= 90) then {_sleeptime = _sleeptime * 0.75;};
+//     if SLKLIB_combat_readiness >= 95) then {_sleeptime = _sleeptime * 0.75;};
 //     _sleeptime = MIN_SLEEPTIME max _sleeptime;
 
 //     sleep _sleeptime;
@@ -50,7 +50,7 @@ SLKLIB_RandomBattlegroups_MinSleeptime = 2700;
 
 //     if (
 //         (count (allPlayers - entities "HeadlessClient_F") >= (6 / GRLIB_csat_aggressivity))
-//         && {combat_readiness >= (60 - (5 * GRLIB_csat_aggressivity))}
+//         && {SLKLIB_combat_readiness >= (60 - (5 * GRLIB_csat_aggressivity))}
 //         && {[] call KPLIB_fnc_getOpforCap < GRLIB_battlegroup_cap}
 //         && {diag_fps > 15.0}
 //     ) then {
