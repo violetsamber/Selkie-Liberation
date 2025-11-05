@@ -155,7 +155,7 @@ sleep 20;
 deleteMarker _convoy_marker;
 { deleteMarker _x } forEach [_convoy_marker_wp1, _convoy_marker_wp2, _convoy_marker_wp3 ];
 
-[round(combat_readiness * 0.85)] call KPLIB_fnc_setCombatReadiness;
+[round (SLKLIB_combat_readiness * 0.85)] call KPLIB_fnc_setCombatReadiness;
 
 stats_secondary_objectives = stats_secondary_objectives + 1;
 [5] remoteExec ["KPLIB_shared_fnc_remote_call_intel"];

@@ -6,10 +6,10 @@
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
-        Adds combat_readiness varible and clamps its value to a max of GRLIB_combat_readiness_cap
+        Adds SLKLIB_combat_readiness varible and clamps its value to a max of SLKLIB_combat_readiness_cap
 
     Parameter(s):
-        _amount - Amount of combat_readiness to add
+        _amount - Amount of combat rediness to add
 
     Returns:
         none
@@ -19,5 +19,5 @@ params [
     ["_amount", 0, [0]]
 ];
 
-combat_readiness = 0 max (combat_readiness + _amount);
-combat_readiness = GRLIB_combat_readiness_cap min (combat_readiness + _amount);
+SLKLIB_combat_readiness = 0 max (SLKLIB_combat_readiness + _amount);
+SLKLIB_combat_readiness = SLKLIB_combat_readiness_cap min (SLKLIB_combat_readiness + _amount);

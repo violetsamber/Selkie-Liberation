@@ -69,7 +69,7 @@ for [ {_idx=0},{_idx < _nbsentry},{_idx=_idx+1} ] do {
 (opfor_transport_truck createVehicle ((getPos _helowreck) getPos [25, random 360])) setDir random 360;
 
 private _vehicle_pool = opfor_vehicles;
-if ( combat_readiness < 50 ) then {
+if (SLKLIB_combat_readiness < 50 ) then {
     _vehicle_pool = opfor_vehicles_low_intensity;
 };
 

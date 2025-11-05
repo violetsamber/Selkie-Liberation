@@ -15,4 +15,4 @@
         Vehicle classname [STRING]
 */
 
-selectRandom ([opfor_vehicles, opfor_vehicles_low_intensity] select (combat_readiness < 40))
+selectRandom ([opfor_vehicles, opfor_vehicles_low_intensity] select (SLKLIB_combat_readiness < 40))

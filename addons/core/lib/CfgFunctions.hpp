@@ -115,5 +115,6 @@ class COMMON_FUNCTIONS_NAMESPACE_INIT {
         class objectInits          {};
         class fetch_params         {};
         class presets              {};
+        class variables            {};
     };
 };

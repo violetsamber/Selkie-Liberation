@@ -1,3 +1,19 @@
+/*
+    File: fn_presets.sqf
+    Authors: Violets, KP Liberation Dev Team
+    Date: 2025-11-5
+    Last Update: 2025-11-5
+    License: MIT License - http://www.opensource.org/licenses/MIT
+
+    Description:
+        Initializes the presets
+
+    Parameter(s):
+        
+
+    Returns:
+*/
+
 params [];
 
 KPLIB_initPresets = false;

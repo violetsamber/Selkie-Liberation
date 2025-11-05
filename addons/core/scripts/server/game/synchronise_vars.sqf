@@ -1,3 +1,4 @@
+//synchronise_vars.sqf
 sync_vars = []; publicVariable "sync_vars";
 
 waitUntil{!isNil "save_is_loaded"};
@@ -5,7 +6,7 @@ waitUntil{!isNil "KP_liberation_fob_resources"};
 waitUntil{!isNil "KP_liberation_supplies_global"};
 waitUntil{!isNil "KP_liberation_ammo_global"};
 waitUntil{!isNil "KP_liberation_fuel_global"};
-waitUntil{!isNil "combat_readiness"};
+waitUntil{!isNil "SLKLIB_combat_readiness"};
 waitUntil{!isNil "unitcap"};
 waitUntil{!isNil "KP_liberation_heli_count"};
 waitUntil{!isNil "KP_liberation_plane_count"};
@@ -49,7 +50,7 @@ while {true} do {
         || _KP_liberation_plane_count_old != KP_liberation_plane_count
         || _KP_liberation_heli_slots_old != KP_liberation_heli_slots
         || _KP_liberation_plane_slots_old != KP_liberation_plane_slots
-        || _combat_readiness_old != combat_readiness
+        || _combat_readiness_old != SLKLIB_combat_readiness
         || _resources_intel_old != resources_intel
         || _infantry_cap_old != infantry_cap
         || _KP_liberation_civ_rep_old != KP_liberation_civ_rep
@@ -72,7 +73,7 @@ while {true} do {
         KP_liberation_plane_count,
         KP_liberation_heli_slots,
         KP_liberation_plane_slots,
-        combat_readiness,
+        SLKLIB_combat_readiness,
         resources_intel,
         infantry_cap,
         KP_liberation_civ_rep,
@@ -92,7 +93,7 @@ while {true} do {
     _KP_liberation_plane_count_old = KP_liberation_plane_count;
     _KP_liberation_heli_slots_old = KP_liberation_heli_slots;
     _KP_liberation_plane_slots_old = KP_liberation_plane_slots;
-    _combat_readiness_old = combat_readiness;
+    _combat_readiness_old = SLKLIB_combat_readiness;
     _resources_intel_old = resources_intel;
     _infantry_cap_old = infantry_cap;
     _KP_liberation_civ_rep_old = KP_liberation_civ_rep;

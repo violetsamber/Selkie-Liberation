@@ -191,7 +191,7 @@ private _weights = [
     _weights,
     _aiGroups,
     blufor_sectors,
-    combat_readiness,
+    SLKLIB_combat_readiness,
     GRLIB_all_fobs,
     GRLIB_permissions,
     GRLIB_vehicle_to_military_base_links,

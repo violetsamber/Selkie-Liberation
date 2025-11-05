@@ -12,7 +12,7 @@
 
 params ["_sector"];
 
-waitUntil {!isNil "combat_readiness"};
+waitUntil {!isNil "SLKLIB_combat_readiness"};
 
 [format ["Sector %1 (%2) activated - Managed on: %3", (markerText _sector), _sector, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 
@@ -51,7 +51,7 @@ private _opforcount = [] call KPLIB_fnc_getOpforCap;
 if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0)) then {
 
     if (_sector in sectors_bigtown) then {
-        if (combat_readiness < 30) then {_infsquad = "militia";};
+        if (SLKLIB_combat_readiness < 30) then {_infsquad = "militia";};
 
         _squad1 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         _squad2 = ([_infsquad] call KPLIB_fnc_getSquadComp);
@@ -90,7 +90,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
     };
 
     if (_sector in sectors_capture) then {
-        if (combat_readiness < 50) then {_infsquad = "militia";};
+        if (SLKLIB_combat_readiness < 50) then {_infsquad = "militia";};
 
         _squad1 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         if (GRLIB_unitcap >= 1.25) then {_squad2 = ([_infsquad] call KPLIB_fnc_getSquadComp);};
@@ -115,7 +115,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
             _guerilla = true;
         };
 
-        _building_ai_max = round ((floor (18 + (round (combat_readiness / 10 )))) * _popfactor);
+        _building_ai_max = round ((floor (18 + (round (SLKLIB_combat_readiness / 10 )))) * _popfactor);
         _building_range = MAX_BUILDING_RANGE_STANDARD;
 
         if (KP_liberation_civ_rep < 0) then {
@@ -145,12 +145,12 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
         _spawncivs = false;
 
-        _building_ai_max = round ((floor (18 + (round (combat_readiness / 4 )))) * _popfactor);
+        _building_ai_max = round ((floor (18 + (round (SLKLIB_combat_readiness / 4 )))) * _popfactor);
         _building_range = MAX_BUILDING_RANGE_STANDARD;
     };
 
     if (_sector in sectors_factory) then {
-        if (combat_readiness < 40) then {_infsquad = "militia";};
+        if (SLKLIB_combat_readiness < 40) then {_infsquad = "militia";};
 
         _squad1 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         if (GRLIB_unitcap >= 1.25) then {_squad2 = ([_infsquad] call KPLIB_fnc_getSquadComp);};
@@ -169,7 +169,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
             _guerilla = true;
         };
 
-        _building_ai_max = round ((floor (18 + (round (combat_readiness / 10 )))) * _popfactor);
+        _building_ai_max = round ((floor (18 + (round (SLKLIB_combat_readiness / 10 )))) * _popfactor);
         _building_range = MAX_BUILDING_RANGE_STANDARD;
 
         if (KP_liberation_civ_rep < 0) then {
@@ -182,7 +182,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
     if (_sector in sectors_tower) then {
         _squad1 = ([] call KPLIB_fnc_getSquadComp);
-        if (combat_readiness > 30) then {_squad2 = ([] call KPLIB_fnc_getSquadComp);};
+        if (SLKLIB_combat_readiness > 30) then {_squad2 = ([] call KPLIB_fnc_getSquadComp);};
         if (GRLIB_unitcap >= 1.5) then {_squad3 = ([] call KPLIB_fnc_getSquadComp);};
         _squad10 = ([_infsquad] call KPLIB_fnc_getSquadComp);
         _squad11 = ([_infsquad] call KPLIB_fnc_getSquadComp);
