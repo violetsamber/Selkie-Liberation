@@ -1,4 +1,19 @@
-//KPLIB_server_fnc_prisonner_ai.sqf
+/*
+    File: fn_prisonner_ai.sqf
+    Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
+    Date: 2025-11-01
+    Last Update: 2025-11-05
+    License: MIT License - http://www.opensource.org/licenses/MIT
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
 
 params ["_unit", ["_force_surrender", false]];
 

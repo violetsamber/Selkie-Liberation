@@ -1,4 +1,21 @@
-//battlegroup_ai.sqf
+/*
+    File: fn_battlegroup_ai.sqf
+    Authors: KP Liberation Dev Team - https://github.com/KillahPotatoes
+    Date: 2025-11-01
+    Last Update: 2025-11-05
+    License: MIT License - http://www.opensource.org/licenses/MIT
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
+
 params [
     ["_grp", grpNull, [grpNull]]
 ];
@@ -6,11 +23,7 @@ params [
 if (isNull _grp) exitWith {};
 
 private _objPos = [getPos (leader _grp)] call KPLIB_fnc_getNearestBluforObjective;
-
-[_objPos] remoteExec ["KPLIB_shared_fnc_remote_call_incoming"];
-
 private _startpos = getPos (leader _grp);
-
 
 private _waypoint = [];
 { deleteWaypoint _x } forEachReversed waypoints _grp;

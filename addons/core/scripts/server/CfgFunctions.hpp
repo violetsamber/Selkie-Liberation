@@ -47,12 +47,16 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
     class server_battlegroup {
         file = "scripts\server\battlegroup";
         // class counter_battlegroup   {};
-        class random_battlegroups   {};
+        class random_battlegroups      {};
         // class readiness_increase    {};
-        class spawn_air             {};
-        class spawn_battlegroup     {};
-        class spawn_boat            {};
-        class odstDrop              {};
+        class spawn_air                {};
+        class spawn_battlegroup        {};
+        class spawn_battlegroup_start  {};
+        class spawn_battlegroup_end    {};
+        class spawn_battlegroup_update {};
+        class spawn_boat               {};
+        class odstDrop                 {};
+
     };
 
     class server_rnd_battlegroup {
