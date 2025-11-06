@@ -21,9 +21,9 @@ params [
 
 ["[BATTLEGROUP] Update"] call KPLIB_fnc_log;
 
-[_pfh getVariable "_battlegroup_vehicles"] params [["_battlegroup_vehicles"], []];
-[_pfh getVariable "_battlegroup_infantry"] params [["_battlegroup_infantry"], []];
-[_pfh getVariable "_bg_groups"]            params [["_bg_groups"], []];
+[_pfh getVariable "_battlegroup_vehicles"] params [["_battlegroup_vehicles", []]];
+[_pfh getVariable "_battlegroup_infantry"] params [["_battlegroup_infantry", []]];
+[_pfh getVariable "_bg_groups"]            params [["_bg_groups", []]];
 
 private _spawnMarkerPos = _pfh getVariable "params" select 2;
 

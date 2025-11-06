@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_end.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-05
+    Last Update: 2025-11-06
     License: MIT License - http://www.opensource.org/licenses/MIT
     
     Description:
@@ -22,7 +22,7 @@ params [
 //systemChat format ["start! params: %1", _this getVariable "params"]; _test = 127;
 ["[BATTLEGROUP] Finishing battlegroup spawn."] call KPLIB_fnc_log;
 
-[_pfh getVariable "_bg_groups"] params [["_bg_groups"], []];
+[_pfh getVariable "_bg_groups"] params [["_bg_groups", []]];
 
 private _spawnMarkerPos = _pfh getVariable "params" select 2;
 
