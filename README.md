@@ -11,6 +11,7 @@ Heavily modified version of [KP Liberation](https://github.com/KillahPotatoes/KP
 #### Other
 - Reworked enemy patrol system
 - Reworked enemy garrison spawns (Enemies now spawn full squads in each building)
+- In progress modernization of the codebase to CBA and ACE standards in addition to performance improvements
 
 ## Roadmap
 - New AI Director based off of Left 4 Dead's with to help solve the difficulty balancing issues with varible play group sizes
