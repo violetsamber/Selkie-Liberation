@@ -2,7 +2,7 @@
 
 #include "script_component.hpp"
 
-["[XEH_SharedPreInit] SharedPreInit","INIT"] call KPLIB_fnc_log;
+["[XEH_sharedPreInit] sharedPreInit","INIT"] call KPLIB_fnc_log;
 
 PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
