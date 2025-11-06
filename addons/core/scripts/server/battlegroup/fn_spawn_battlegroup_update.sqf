@@ -21,13 +21,14 @@ params [
 
 ["[BATTLEGROUP] Update"] call KPLIB_fnc_log;
 
-[_pfh getVariable "_battlegroup_vehicles"] params [["_battlegroup_vehicles", []]];
-[_pfh getVariable "_battlegroup_infantry"] params [["_battlegroup_infantry", []]];
-[_pfh getVariable "_bg_groups"]            params [["_bg_groups", []]];
+[_pfh getVariable "_battlegroup_vehicles"] params [["_battlegroup_vehicles", [], [[]]]];
+[_pfh getVariable "_battlegroup_infantry"] params [["_battlegroup_infantry", [], [[]]]];
+[_pfh getVariable "_bg_groups"]            params [["_bg_groups", [], [[]]]];
 
 private _spawnMarkerPos = _pfh getVariable "params" select 2;
 
 private _isFinished = false;
+private _didSpawn = false;
 
 // //Spawn all infanty
 // for "_i" from 1 to _squadNumber do {
@@ -41,10 +42,25 @@ private _isFinished = false;
 //     _grp setVariable ["KPLIB_isBattleGroup",true];
 // };
 
+if(_battlegroup_infantry isNotEqualTo []) then {
+    
+    private _grp = createGroup [GRLIB_side_enemy, true];
 
-//Spawn all vehicles
+    {
+        [format ["[BATTLEGROUP] Spawning... Unit: %1 At: %2 Into: %3", _x, _spawnMarkerPos, _grp]] call KPLIB_fnc_log;
+        [_x, _spawnMarkerPos, _grp] call KPLIB_fnc_createManagedUnit;
+    } 
+    forEach (_battlegroup_infantry select 0);
 
-if(count _battlegroup_vehicles > 0) then {
+    [_grp] call KPLIB_fnc_LAMBS_enableReinforcements;
+    [_grp] call KPLIB_server_fnc_battlegroup_ai;
+    _grp setVariable ["KPLIB_isBattleGroup",true];
+
+    _battlegroup_infantry deleteAt 0;
+    _didSpawn = true;
+};
+
+if(_battlegroup_vehicles isNotEqualTo [] && !_didSpawn) then {
     private _vehicleClass = _battlegroup_vehicles select 0;
     [format ["[BATTLEGROUP] Spawning... %1", _vehicleClass]] call KPLIB_fnc_log;
 
@@ -68,7 +84,10 @@ if(count _battlegroup_vehicles > 0) then {
         };
     };
     _battlegroup_vehicles deleteAt 0;
-} else {
+    _didSpawn = true;
+};
+
+if(_battlegroup_vehicles isEqualTo [] && _battlegroup_infantry isEqualTo []) then {
     _isFinished = true;
 };
 

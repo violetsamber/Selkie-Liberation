@@ -1,4 +1,20 @@
-//send_paratroopers.sqf
+/*
+    File: fn_send_paratroopers.sqf
+    Authors: Violets
+    Date: 2025-11-01
+    Last Update: 2025-11-06
+    License: MIT License - http://www.opensource.org/licenses/MIT
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
 params [
     ["_targetsector", "", ["",[]]],
     ["_chopper_type", objNull, [objNull]]
