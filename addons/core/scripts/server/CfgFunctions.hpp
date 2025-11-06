@@ -30,6 +30,7 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class add_civ_waypoints     {};
         class add_defense_waypoints {};
         class battlegroup_ai        {};
+        class battlegroup_ai_create_waypoints {};
         class building_defence_ai   {};
         class patrol_ai             {};
         class prisonner_ai          {};
