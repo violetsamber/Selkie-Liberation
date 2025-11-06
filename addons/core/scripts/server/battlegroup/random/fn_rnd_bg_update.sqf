@@ -2,7 +2,7 @@
     File: fn_rnd_bg_update.sqf
     Author: Violets
     Date: 2025-11-5
-    Last Update: 2025-11-5
+    Last Update: 2025-11-06
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:

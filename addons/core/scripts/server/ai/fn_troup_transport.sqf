@@ -2,7 +2,7 @@
     File: fn_troup_transport.sqf
     Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2025-11-01
-    Last Update: 2025-11-05
+    Last Update: 2025-11-06
     License: MIT License - http://www.opensource.org/licenses/MIT
     
     Description:
@@ -82,5 +82,5 @@ if ((alive _transVeh) && (alive (driver _transVeh))) then {
 
     sleep 10;
 
-    [_infGrp] spawn KPLIB_server_fnc_battlegroup_ai;
+    [_infGrp] call KPLIB_server_fnc_battlegroup_ai;
 };

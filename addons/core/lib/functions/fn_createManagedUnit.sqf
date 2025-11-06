@@ -2,7 +2,7 @@
     File: fn_createManagedUnit.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2019-10-04
-    Last Update: 2019-12-04
+    Last Update: 2025-11-06
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -27,22 +27,20 @@ params [
     ["_placement", 0, [0]]
 ];
 
-private ["_unit"];
-isNil {
-    // Create temp group, as we need to let the unit join the "correct side group".
-    // If we use the "correct side group" for the createUnit, the group would switch to the side of the unit written in the config.
-    private _groupTemp = createGroup [GRLIB_side_civilian, true];
+private _unit = objNull;
+// Create temp group, as we need to let the unit join the "correct side group".
+// If we use the "correct side group" for the createUnit, the group would switch to the side of the unit written in the config.
+private _groupTemp = createGroup [GRLIB_side_civilian, true];
 
-    _unit = _groupTemp createUnit [_type, _spawnPos, [], _placement, "FORM"];
-    _unit addMPEventHandler ["MPKilled", {_this spawn KPLIB_shared_fnc_kill_manager}];
-    _unit setRank _rank;
+_unit = _groupTemp createUnit [_type, _spawnPos, [], _placement, "FORM"];
+_unit addMPEventHandler ["MPKilled", {_this spawn KPLIB_shared_fnc_kill_manager}];
+_unit setRank _rank;
 
-    // Join to target group to preserve Side
-    [_unit] joinSilent _group;
-    deleteGroup _groupTemp;
+// Join to target group to preserve Side
+[_unit] joinSilent _group;
+deleteGroup _groupTemp;
 
-    // Process KP object init
-    [_unit] call KPLIB_fnc_addObjectInit;
-};
+// Process KP object init
+[_unit] call KPLIB_fnc_addObjectInit;
 
 _unit
