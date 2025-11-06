@@ -2,7 +2,7 @@
     File: fn_spawnVehicle.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2019-12-03
-    Last Update: 2020-05-06
+    Last Update: 2025-11-05
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -25,8 +25,8 @@ params [
     ["_rndDir", true, [false]]
 ];
 
-if (_pos isEqualTo [0, 0, 0]) exitWith {["No or zero pos given"] call BIS_fnc_error; objNull};
-if (_classname isEqualTo "") exitWith {["Empty string given"] call BIS_fnc_error; objNull};
+if (_pos isEqualTo [0, 0, 0]) exitWith {["None or zero pos given"] call BIS_fnc_error; objNull};
+if (_classname isEqualTo "") exitWith {["Empty vehicle classname given"] call BIS_fnc_error; objNull};
 
 
 private _newvehicle = objNull;

@@ -1,3 +1,19 @@
+/*
+    File: fn_sector_liberated_remote_call.sqf
+    Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
+    Date: 2025-11-01
+    Last Update: 2025-11-05
+    License: MIT License - http://www.opensource.org/licenses/MIT
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _liberated_sector - Description sector that was liberated
+    
+    Returns:
+*/
+
 params ["_liberated_sector"];
 
 private _combat_readiness_increase = 0;
@@ -66,6 +82,6 @@ if (GRLIB_endgame == 0) then {
         }
         && {[] call KPLIB_fnc_getOpforCap < GRLIB_battlegroup_cap}
     ) then {
-        [_liberated_sector, (random 100) < 45] spawn KPLIB_server_fnc_spawn_battlegroup;
+        [_liberated_sector, (random 100) < 45] call KPLIB_server_fnc_spawn_battlegroup;
     };
 };

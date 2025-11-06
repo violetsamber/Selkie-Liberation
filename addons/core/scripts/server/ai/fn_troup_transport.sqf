@@ -1,4 +1,20 @@
-//troup_transport.sqf
+/*
+    File: fn_troup_transport.sqf
+    Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
+    Date: 2025-11-01
+    Last Update: 2025-11-05
+    License: MIT License - http://www.opensource.org/licenses/MIT
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
 params [
     ["_transVeh", objNull, [objNull]]
 ];

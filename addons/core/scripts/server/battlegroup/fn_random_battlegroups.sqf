@@ -2,7 +2,7 @@
     File: fn_random_battlegroups.sqf
     Author: Violets
     Date: 2025-11-5
-    Last Update: 2025-11-5
+    Last Update: 2025-11-05
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -26,7 +26,7 @@ SLKLIB_RandomBattlegroups_MinSleeptime = 2700;
 [
     { call KPLIB_server_fnc_rnd_bg_update; },
     RANDOM_BATTLEGROUPS_UPDATE_TIME
-] call CBA_fnc_createPerFrameHandlerObject;
+] call CBA_fnc_addPerFrameHandler;
 
 // sleep (900 / GRLIB_csat_aggressivity);
 // private _sleeptime = 0;
@@ -54,6 +54,6 @@ SLKLIB_RandomBattlegroups_MinSleeptime = 2700;
 //         && {[] call KPLIB_fnc_getOpforCap < GRLIB_battlegroup_cap}
 //         && {diag_fps > 15.0}
 //     ) then {
-//         ["", (random 100) < 25] spawn KPLIB_server_fnc_spawn_battlegroup;
+//         ["", (random 100) < 25] call KPLIB_server_fnc_spawn_battlegroup;
 //     };
 // };
