@@ -1,3 +1,18 @@
+/*
+    File: counter_battlegroup.sqf
+    Authors: KP Liberation Dev Team - https://github.com/KillahPotatoes
+    Date: 2025-11-5
+    Last Update: 2025-11-05
+    License: MIT License - http://www.opensource.org/licenses/MIT
+
+    Description:
+        Script that spawns enemy air when the armor weights or air weights get above 50
+
+    Parameter(s):
+
+    Returns:
+*/
+
 if (isNil "infantry_weight") then {infantry_weight = 33;};
 if (isNil "armor_weight") then {armor_weight = 33;};
 if (isNil "air_weight") then {air_weight = 33;};
@@ -36,3 +51,4 @@ while {GRLIB_csat_aggressivity >= 0.9 && GRLIB_endgame == 0} do {
         };
     };
 };
+

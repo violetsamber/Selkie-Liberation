@@ -1,13 +1,26 @@
-//fn_spawn_battlegroup.sqf
+/*
+    File: fn_spawn_battlegroup.sqf
+    Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
+    Date: 2025-11-5
+    Last Update: 2025-11-05
+    License: MIT License - http://www.opensource.org/licenses/MIT
+
+    Description:
+        Spawns a battlegroup at a marker at a target objective
+
+    Parameter(s):
+
+    Returns:
+*/
 
 params [
-    ["_spawn_marker", "", [""]],
+    ["_targetMarker", "", [""]],
     ["_infOnly", false, [false]]
 ];
 
 if (GRLIB_endgame == 1) exitWith {};
 
-_spawn_marker = [[2000, 1000] select _infOnly, 3000, false, markerPos _spawn_marker] call KPLIB_fnc_getOpforSpawnPoint;
+private _spawn_marker = [[2000, 1000] select _infOnly, 3000, false, markerPos _targetMarker] call KPLIB_fnc_getOpforSpawnPoint;
 
 if (_spawn_marker isNotEqualTo "") then {
     GRLIB_last_battlegroup_time = diag_tickTime;
