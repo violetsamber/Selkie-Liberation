@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_update.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-05
+    Last Update: 2025-11-06
     License: MIT License - http://www.opensource.org/licenses/MIT
     
     Description:
@@ -50,6 +50,10 @@ if(count _battlegroup_vehicles > 0) then {
 
     private _nextgrp = createGroup [GRLIB_side_enemy, true];
     private _vehicle = [_spawnMarkerPos, _vehicleClass] call KPLIB_fnc_spawnVehicle;
+
+    if (isNull _vehicle) exitWith { 
+        [format ["[BATTLEGROUP] Failed to spawn %1 at %2", _vehicleClass, _spawnMarkerPos]] call KPLIB_fnc_log;
+    };
 
     (crew _vehicle) joinSilent _nextgrp;
     [_nextgrp] call KPLIB_server_fnc_battlegroup_ai;
