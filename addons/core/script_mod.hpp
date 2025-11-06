@@ -3,7 +3,7 @@
 #define SUBPREFIX addons
 
 // Enables debug mode. Comment out on release.
-//#define DEBUG_MODE_FULL
+#define DEBUG_MODE_FULL
 
 #include "script_version.hpp"
 
