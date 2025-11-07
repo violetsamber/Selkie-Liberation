@@ -1,6 +1,6 @@
-params [];
+#include "../../FunctionsInclude.hpp"
 
-#include "../../../script_macros.hpp"
+params [];
 
 // Check if ACE is running
 if (isClass (configFile >> "CfgPatches" >> "ace_common")) then {KP_liberation_ace = true; ["ACE detected. Deactivating resupply script from Liberation.", "MOD"] call KPLIB_fnc_log;} else {KP_liberation_ace = false};

@@ -59,7 +59,7 @@ while { GRLIB_endgame == 0 } do {
 
     while { _patrol_continue } do {
         sleep 60;
-        if ( units _grp isEqualTo [] == 0  ) then {
+        if ( units _grp isEqualTo [] ) then {
             _patrol_continue = false;
         } else {
             if ( time - _started_time > 900 ) then {

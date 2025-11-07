@@ -2,7 +2,7 @@
     File: fn_crGlobalMsg.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2019-12-03
-    Last Update: 2020-04-17
+    Last Update: 2025-11-06
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -18,7 +18,7 @@
 
 params [
     ["_msgType", -1, [0]],
-    ["_data", [], []]
+    ["_data", [], [[""]]]
 ];
 
 if (KP_liberation_civrep_debug > 0) then {[format ["globalMsg called on: %1 - Parameters: [%2, %3]", debug_source, _msgType, _data], "CIVREP"] remoteExecCall ["KPLIB_fnc_log", 2];};
