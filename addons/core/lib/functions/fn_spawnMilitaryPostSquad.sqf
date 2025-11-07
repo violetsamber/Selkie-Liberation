@@ -2,7 +2,7 @@
     File: fn_spawnMilitaryPostSquad.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2019-12-03
-    Last Update: 2020-04-05
+    Last Update: 2025-11-06
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -20,6 +20,8 @@ params [
 ];
 
 if (_pos isEqualTo [0, 0, 0]) exitWith {["No or zero pos given"] call BIS_fnc_error; []};
+
+//TODO Add more military buildings and have a proper config for it
 
 // Get all military patrol towers near given position
 private _allPosts = (

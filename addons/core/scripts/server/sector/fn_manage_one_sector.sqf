@@ -1,3 +1,20 @@
+/*
+    File: fn_manage_one_sector.sqf
+    Authors: Violets, KP Liberation Dev Team
+    Date: 2025-11-01
+    Last Update: 2025-11-06
+    License: MIT License - http://www.opensource.org/licenses/MIT
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
 // base amount of sector lifetime tickets
 // if there are no enemies one ticket is removed every SECTOR_TICK_TIME seconds
 // 12 * 5 = 60s by default
@@ -50,6 +67,7 @@ private _opforcount = [] call KPLIB_fnc_getOpforCap;
 
 if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0)) then {
 
+    //Move specific sector logic to its own script
     if (_sector in sectors_bigtown) then {
         if (SLKLIB_combat_readiness < 30) then {_infsquad = "militia";};
 
@@ -89,6 +107,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         if (_iedcount > 16) then {_iedcount = 16};
     };
 
+    //Capture
     if (_sector in sectors_capture) then {
         if (SLKLIB_combat_readiness < 50) then {_infsquad = "militia";};
 
@@ -126,6 +145,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         if (_iedcount > 12) then {_iedcount = 12};
     };
 
+    //Military
     if (_sector in sectors_military) then {
         _squad1 = ([] call KPLIB_fnc_getSquadComp);
         _squad2 = ([] call KPLIB_fnc_getSquadComp);
@@ -149,6 +169,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         _building_range = MAX_BUILDING_RANGE_STANDARD;
     };
 
+    //Factory
     if (_sector in sectors_factory) then {
         if (SLKLIB_combat_readiness < 40) then {_infsquad = "militia";};
 
@@ -180,6 +201,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         if (_iedcount > 8) then {_iedcount = 8};
     };
 
+    //Tower
     if (_sector in sectors_tower) then {
         _squad1 = ([] call KPLIB_fnc_getSquadComp);
         if (SLKLIB_combat_readiness > 30) then {_squad2 = ([] call KPLIB_fnc_getSquadComp);};
@@ -201,10 +223,9 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
     if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector calculated -> _infsquad: %3 - _squad1: %4 - _squad2: %5 - _squad3: %6 - _squad4: %7 - _vehtospawn: %8 - _building_ai_max: %9 _squad10: %10 _squad11: %11 _squad12: %12 _squad13: %13 ", (markerText _sector), _sector, _infsquad, (count _squad1), (count _squad2), (count _squad3), (count _squad4), (count _vehtospawn), _building_ai_max, (count _squad10), (count _squad11), (count _squad12), (count _squad13)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
 
-    if (_building_ai_max > 0 && GRLIB_adaptive_opfor) then {
-        _building_ai_max = round (_building_ai_max * ([] call KPLIB_fnc_getOpforFactor));
-    };
 
+
+    //Spawn Vehicles
     {
         _vehicle = [_sectorpos, _x] call KPLIB_fnc_spawnVehicle;
         [group ((crew _vehicle) select 0),_sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
@@ -212,6 +233,12 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         {_managed_units pushBack _x;} forEach (crew _vehicle);
         sleep 0.25;
     } forEach _vehtospawn;
+
+    //Spawn garrisoned ai
+
+    if (_building_ai_max > 0 && GRLIB_adaptive_opfor) then {
+        _building_ai_max = round (_building_ai_max * ([] call KPLIB_fnc_getOpforFactor));
+    };
 
     if (_building_ai_max > 0) then {
         //Get all buildings withing _building_range
@@ -230,8 +257,10 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         };
     };
 
+    //Spawn special units in specific military buildings
     _managed_units = _managed_units + ([_sectorpos] call KPLIB_fnc_spawnMilitaryPostSquad);
 
+    //Spawn Squads
     if (count _squad1 > 0) then {
         _grp = [_sector, _squad1] call KPLIB_fnc_spawnRegularSquad;
         [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
@@ -280,7 +309,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         _managed_units = _managed_units + (units _grp);
     };
 
-
+    //Spawn Civilians
     if (_spawncivs && GRLIB_civilian_activity > 0) then {
         _managed_units = _managed_units + ([_sector] call KPLIB_fnc_spawnCivilians);
     };
@@ -288,12 +317,14 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
     if (KP_liberation_asymmetric_debug > 0) then {[format ["Sector %1 (%2) - Range: %3 - Count: %4", (markerText _sector), _sector, _building_range, _iedcount], "ASYMMETRIC"] remoteExecCall ["KPLIB_fnc_log", 2];};
     [_sector, _building_range, _iedcount] spawn KPLIB_server_fnc_ied_manager;
 
+    //Friendly Guerilla
     if (_guerilla) then {
         [_sector] spawn KPLIB_server_fnc_sector_guerilla;
     };
 
     sleep 10;
 
+    //Start reinforcement script
     if ((_sector in sectors_factory) || (_sector in sectors_capture) || (_sector in sectors_bigtown) || (_sector in sectors_military)) then {
         [_sector] remoteExec ["KPLIB_shared_fnc_reinforcements_remote_call",2];
     };
