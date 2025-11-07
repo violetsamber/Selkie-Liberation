@@ -79,8 +79,18 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class manage_one_enemy_patrol {};
         class manage_one_patrol {};
         class reinforcements_manager {};
-        class send_paratroopers {};
     };
+
+    class server_paratroopers {
+        file = "scripts\server\paratroopers";
+        class send_paratroopers_cargoGetOut {};
+        class send_paratroopers_spawn_troops {};
+        class send_paratroopers_spawn_vehicle {};
+        class send_paratroopers_waitUntilAtTarget {};
+        class send_paratroopers_waypoints_arrived {};
+        class send_paratroopers_waypoints_flyTo {};
+        class send_paratroopers {};
+    }
 
     class server_secondary {
         file = "scripts\server\secondary";
