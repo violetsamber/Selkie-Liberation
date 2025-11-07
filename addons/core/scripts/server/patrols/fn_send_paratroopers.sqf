@@ -99,11 +99,12 @@ add_waypoints_arrived
             };
             case 7: {
                 _return = [_this] call KPLIB_server_fnc_send_paratroopers_waypoints_arrived;
+                _stageIndex         = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
             };
-        };
-
-        if (_stageIndex >= 8) then {
-            _isFinished = true;
+            default {
+                _isFinished = true;
+            }
         };
     },
     0.5,

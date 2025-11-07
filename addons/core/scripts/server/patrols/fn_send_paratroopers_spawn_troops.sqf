@@ -16,6 +16,7 @@
 */
 
 #include "../FunctionsInclude.hpp"
+#include "send_paratroopers_macros.hpp"
 
 params [
     ["_pfh", objNull]
@@ -26,6 +27,8 @@ PFH_GETVAR(_pfh,"_vehicle",objNull)
 PFH_GETVAR(_pfh,"_maxCargo",0)
 PFH_GETVAR(_pfh,"_stageIndex",0)
 
+PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
+
 //Create paratroopers
 
 if (isNull _para_group) then {
@@ -34,7 +37,7 @@ if (isNull _para_group) then {
 };
 
 if((count (units _para_group)) < _maxCargo) then {
-    private _unit = [opfor_paratrooper, markerPos _spawnsector, _para_group] call KPLIB_fnc_createManagedUnit;
+    private _unit = [opfor_paratrooper, _spawnPos, _para_group] call KPLIB_fnc_createManagedUnit;
     removeBackpack _unit;
     _unit addBackpack "B_parachute";
     _unit moveInCargo _vehicle;

@@ -16,6 +16,7 @@
 */
 
 #include "../FunctionsInclude.hpp"
+#include "send_paratroopers_macros.hpp"
 
 params [
     ["_pfh", objNull],
@@ -24,8 +25,11 @@ params [
 ];
 
 PFH_GETVAR(_pfh,"_stageIndex",0)
+PFH_GETVAR(_pfh,"_vehicle",objNull)
 
-if (!(alive _newvehicle) || (damage _newvehicle > _maxDamage ) || (_newvehicle distance _targetPos < _minDistance )) then {
+PFH_GETPARAM(_pfh,_targetPos,PARA_VAR_TARGET_POS)
+
+if (!(alive _vehicle) || (damage _vehicle > _maxDamage ) || (_vehicle distance _targetPos < _minDistance )) then {
     INCREMENT(_stageIndex)
 };
 

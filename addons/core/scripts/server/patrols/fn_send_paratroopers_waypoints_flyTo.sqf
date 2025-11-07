@@ -22,6 +22,7 @@ params [
     ["_pfh", objNull]
 ];
 
+PFH_GETVAR(_pfh,"_vehicle",objNull)
 PFH_GETVAR(_pfh,"_para_group",grpNull)
 PFH_GETVAR(_pfh,"_pilot_group",grpNull)
 PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
@@ -61,7 +62,7 @@ switch (_stageWorkerIndex_0) do {
         _pilot_group setCurrentWaypoint [_para_group, 1];
         INCREMENT(_stageWorkerIndex_0)
     };
-    case 7: {
+    default {
         _stageWorkerIndex_0 = 0;
         INCREMENT(_stageIndex)
     };
