@@ -80,9 +80,12 @@ add_waypoints_arrived
             };
             case 3: { 
                 _return = [_this] call KPLIB_server_fnc_send_paratroopers_waypoints_flyTo;
+                _stageIndex         = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
             };
             case 4: { 
                 _return = [_this] call KPLIB_server_fnc_send_paratroopers_waitUntilAtTarget;
+                _stageIndex = _return select 0;
             };
             case 5: { 
                 _return = [_this] call KPLIB_server_fnc_send_paratroopers_cargoGetOut;

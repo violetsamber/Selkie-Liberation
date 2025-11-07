@@ -24,46 +24,47 @@ params [
 
 PFH_GETVAR(_pfh,"_para_group",grpNull)
 PFH_GETVAR(_pfh,"_pilot_group",grpNull)
+PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
+PFH_GETVAR(_pfh,"_stageIndex",0)
 
 PFH_GETPARAM(_pfh,_targetPos,PARA_VAR_TARGET_POS)
 
-_waypoint = _pilot_group addWaypoint [_targetPos, 25];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointSpeed "FULL";
-_waypoint setWaypointBehaviour "CARELESS";
-_waypoint setWaypointCombatMode "BLUE";
-_waypoint setWaypointCompletionRadius 100;
+switch (_stageWorkerIndex_0) do {
+    case 0: { 
+        _vehicle flyInHeight 100;
+        [_pilot_group, _targetPos, 25, "MOVE", "CARELESS", "BLUE", "FULL", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 1: {
+        [_pilot_group, _targetPos, 25, "MOVE", "CARELESS", "BLUE", "FULL", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 2: {
+        [_pilot_group, _targetPos, 700, "MOVE", "UNCHANGED", "NO CHANGE", "UNCHANGED", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 3: {
+        [_pilot_group, _targetPos, 700, "MOVE", "UNCHANGED", "NO CHANGE", "UNCHANGED", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 4: {
+        [_pilot_group, _targetPos, 700, "MOVE", "UNCHANGED", "NO CHANGE", "UNCHANGED", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
+        _pilot_group setCurrentWaypoint [_pilot_group, 1];
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 5: {
+        [_para_group, _targetPos, 100, "MOVE", "COMBAT", "YELLOW", "NORMAL", "NO CHANGE", "", [0,0,0], 50] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 6: {
+        [_para_group, _targetPos, 100, "MOVE", "UNCHANGED", "NO CHANGE", "UNCHANGED", "NO CHANGE", "", [0,0,0], 50] call CBA_fnc_addWaypoint;
+        _pilot_group setCurrentWaypoint [_para_group, 1];
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 7: {
+        _stageWorkerIndex_0 = 0;
+        INCREMENT(_stageIndex)
+    };
+};
 
-_waypoint = _pilot_group addWaypoint [_targetPos, 25];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointSpeed "FULL";
-_waypoint setWaypointBehaviour "CARELESS";
-_waypoint setWaypointCombatMode "BLUE";
-_waypoint setWaypointCompletionRadius 100;
-
-_waypoint = _pilot_group addWaypoint [_targetPos, 700];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointCompletionRadius 100;
-
-_waypoint = _pilot_group addWaypoint [_targetPos, 700];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointCompletionRadius 100;
-
-_waypoint = _pilot_group addWaypoint [_targetPos, 700];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointCompletionRadius 100;
-
-_pilot_group setCurrentWaypoint [_pilot_group, 1];
-
-_waypoint = _para_group addWaypoint [_targetPos, 100];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointSpeed "NORMAL";
-_waypoint setWaypointBehaviour "COMBAT";
-_waypoint setWaypointCombatMode "YELLOW";
-_waypoint setWaypointCompletionRadius 50;
-_waypoint = _para_group addWaypoint [_targetPos, 100];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointCompletionRadius 50;
-_pilot_group setCurrentWaypoint [_para_group, 1];
-
-_vehicle flyInHeight 100;
+[_stageIndex, _stageWorkerIndex_0]
