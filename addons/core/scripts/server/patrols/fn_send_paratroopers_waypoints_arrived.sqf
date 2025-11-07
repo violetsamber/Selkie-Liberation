@@ -15,6 +15,12 @@
         Function reached the end [BOOL]
 */
 
+
+
+
+
+
+
 _waypoint = _pilot_group addWaypoint [markerPos _spawnsector, 200];
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointCombatMode "BLUE";
