@@ -6,6 +6,9 @@ FIXED:
 
 CHANGED:
 - combat_readiness to SLKLIB_combat_readiness
+- refactored spawn battlegroup to CBA pfh, reducing stutter when spawning
+- refextored battlegroup ai smoothing out the calls over muliple frames reducing stutter
+- refactored send paratroopers to CBA pfh, reducing stutter when spawning
 
 ## 1.0.1
 
