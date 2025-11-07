@@ -15,12 +15,31 @@
         Function reached the end [BOOL]
 */
 
-//Create paratroopers
-private _para_group = createGroup [GRLIB_side_enemy, true];
-private _maxCargo = count fullCrew [_newvehicle, "cargo", true];
+#include "../FunctionsInclude.hpp"
 
-while {(count (units _para_group)) < _maxCargo} do {
-    [opfor_paratrooper, markerPos _spawnsector, _para_group] call KPLIB_fnc_createManagedUnit;
+params [
+    ["_pfh", objNull]
+];
+
+PFH_GETVAR(_pfh,"_para_group",grpNull)
+PFH_GETVAR(_pfh,"_vehicle",objNull)
+PFH_GETVAR(_pfh,"_maxCargo",0)
+PFH_GETVAR(_pfh,"_stageIndex",0)
+
+//Create paratroopers
+
+if (isNull _para_group) then {
+    _para_group = createGroup [GRLIB_side_enemy, true];
+    _maxCargo = count fullCrew [_vehicle, "cargo", true];
 };
 
-{removeBackpack _x; _x addBackpack "B_parachute"; _x moveInCargo _newvehicle;} forEach (units _para_group);
+if((count (units _para_group)) < _maxCargo) then {
+    private _unit = [opfor_paratrooper, markerPos _spawnsector, _para_group] call KPLIB_fnc_createManagedUnit;
+    removeBackpack _unit;
+    _unit addBackpack "B_parachute";
+    _unit moveInCargo _vehicle;
+} else {
+    INCREMENT(_stageIndex)
+};
+
+[_stageIndex, _para_group]
