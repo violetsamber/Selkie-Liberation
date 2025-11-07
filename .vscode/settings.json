@@ -35,7 +35,7 @@
         "autoHeader": "manualSave"
     },
     "psi-header.license-text": [
-        "MIT License - http://www.opensource.org/licenses/MIT"
+        "GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html"
     ],
     "psi-header.templates": [
         {
@@ -45,7 +45,7 @@
                 "Authors: ",
                 "Date: <<filecreated('YYYY-MM-DD')>>",
                 "Last Update:",
-                "License: MIT License - http://www.opensource.org/licenses/MIT",
+                "License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html",
                 "",
                 "Description:",
                 "    No description added yet.",
@@ -64,7 +64,7 @@
                 "Authors: ",
                 "Date: <<filecreated('YYYY-MM-DD')>>",
                 "Last Update:",
-                "License: MIT License - http://www.opensource.org/licenses/MIT",
+                "License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html",
                 "",
                 "Description:",
                 "    No description added yet."
