@@ -37,6 +37,7 @@
 #define LIB_DEBUG_LOG(x) [x] call KPLIB_fnc_debugLog;
 
 #define PFH_GETVAR(pfh,var,type) [pfh getVariable var] params [[var, type, [type]]];
+#define PFH_GETPARAM(pfh,var,index) private var = pfh getVariable "params" select index;
 #define INCREMENT(var) var = (1 + var);
 
 #define SERVER_MIN_FPS 30
