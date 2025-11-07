@@ -1,0 +1,5 @@
+#define PARA_VAR_TARGET_SECTOR 0
+#define PARA_VAR_TARGET_POS    1
+#define PARA_VAR_SPAWN_SECTOR  2
+#define PARA_VAR_SPAWN_POS     3
+#define PARA_VAR_VEHICLE       4

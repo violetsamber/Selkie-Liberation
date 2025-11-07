@@ -15,27 +15,44 @@
         Function reached the end [BOOL]
 */
 
+#include "../FunctionsInclude.hpp"
+#include "send_paratroopers_macros.hpp"
+
+params [
+    ["_pfh", objNull]
+];
+
+PFH_GETVAR(_pfh,"_para_group",grpNull)
+PFH_GETVAR(_pfh,"_pilot_group",grpNull)
+
+PFH_GETPARAM(_pfh,_targetPos,PARA_VAR_TARGET_POS)
+
 _waypoint = _pilot_group addWaypoint [_targetPos, 25];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointCombatMode "BLUE";
 _waypoint setWaypointCompletionRadius 100;
+
 _waypoint = _pilot_group addWaypoint [_targetPos, 25];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "CARELESS";
 _waypoint setWaypointCombatMode "BLUE";
 _waypoint setWaypointCompletionRadius 100;
+
 _waypoint = _pilot_group addWaypoint [_targetPos, 700];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointCompletionRadius 100;
+
 _waypoint = _pilot_group addWaypoint [_targetPos, 700];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointCompletionRadius 100;
+
 _waypoint = _pilot_group addWaypoint [_targetPos, 700];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointCompletionRadius 100;
+
 _pilot_group setCurrentWaypoint [_pilot_group, 1];
 
 _waypoint = _para_group addWaypoint [_targetPos, 100];
@@ -49,4 +66,4 @@ _waypoint setWaypointType "MOVE";
 _waypoint setWaypointCompletionRadius 50;
 _pilot_group setCurrentWaypoint [_para_group, 1];
 
-_newvehicle flyInHeight 100;
+_vehicle flyInHeight 100;

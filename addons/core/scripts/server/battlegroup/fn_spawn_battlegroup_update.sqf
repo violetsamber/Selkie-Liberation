@@ -15,17 +15,19 @@
         Function reached the end [BOOL]
 */
 
+#include "../FunctionsInclude.hpp"
+
 params [
     ["_pfh", objNull]
 ];
 
 ["[BATTLEGROUP] Update"] call KPLIB_fnc_log;
 
-[_pfh getVariable "_battlegroup_vehicles"] params [["_battlegroup_vehicles", [], [[]]]];
-[_pfh getVariable "_battlegroup_infantry"] params [["_battlegroup_infantry", [], [[]]]];
-[_pfh getVariable "_bg_groups"]            params [["_bg_groups", [], [[]]]];
+PFH_GETVAR(_pfh,"_battlegroup_vehicles",[])
+PFH_GETVAR(_pfh,"_battlegroup_infantry",[])
+PFH_GETVAR(_pfh,"_bg_groups",[])
 
-private _spawnMarkerPos = _pfh getVariable "params" select 2;
+PFH_GETPARAM(_pfh,_spawnMarkerPos,2)
 
 private _isFinished = false;
 private _didSpawn = false;
