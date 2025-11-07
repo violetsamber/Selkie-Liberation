@@ -73,5 +73,13 @@
     ],
     "todo-tree.general.statusBar": "tags",
     "todo-tree.tree.showCountsInTree": true,
-    "todo-tree.tree.flat": true
+    "todo-tree.tree.flat": true,
+    "filewatcher.commands": [
+        {
+            "match": "\\.sqf*",
+			"isAsync": true,
+            "vscodeTask": ["sqf-analyzer.restart"],
+			"event": "onFileChangeImmediate"
+        }
+    ]
 }
