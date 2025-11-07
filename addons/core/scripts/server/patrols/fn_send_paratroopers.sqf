@@ -88,7 +88,8 @@ add_waypoints_arrived
                 _stageIndex = _return select 0;
             };
             case 5: { 
-                _return = [_this] call KPLIB_server_fnc_send_paratroopers_cargoGetOut;
+                [_this] call KPLIB_server_fnc_send_paratroopers_cargoGetOut;
+                INCREMENT(_stageIndex)
             };
             case 6: {
                 [_pilot_group] call KPLIB_server_fnc_clearGrpWaypoints;
@@ -97,7 +98,7 @@ add_waypoints_arrived
                 INCREMENT(_stageIndex)
             };
             case 7: {
-                _return = [_this] call KPLIB_server_fnc_send_paratroopers_cargoGetOut;
+                _return = [_this] call KPLIB_server_fnc_send_paratroopers_waypoints_arrived;
             };
         };
 

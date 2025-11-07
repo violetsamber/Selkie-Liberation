@@ -14,6 +14,13 @@
     Returns:
         Function reached the end [BOOL]
 */
+#include "../FunctionsInclude.hpp"
+
+params [
+    ["_pfh", objNull]
+];
+
+PFH_GETVAR(_pfh,"_para_group",grpNull)
 
 {
     unassignVehicle _x;

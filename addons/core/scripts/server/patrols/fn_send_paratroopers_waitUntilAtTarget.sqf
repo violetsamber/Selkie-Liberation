@@ -15,7 +15,18 @@
         Function reached the end [BOOL]
 */
 
-//Wait until at the objective or damaged
-waitUntil {sleep 1;
-    !(alive _newvehicle) || (damage _newvehicle > 0.4 ) || (_newvehicle distance _targetPos < 400)
+#include "../FunctionsInclude.hpp"
+
+params [
+    ["_pfh", objNull],
+    ["_maxDamage", 0.4],
+    ["_minDistance", 400]
+];
+
+PFH_GETVAR(_pfh,"_stageIndex",0)
+
+if (!(alive _newvehicle) || (damage _newvehicle > _maxDamage ) || (_newvehicle distance _targetPos < _minDistance )) then {
+    INCREMENT(_stageIndex)
 };
+
+[_stageIndex]
