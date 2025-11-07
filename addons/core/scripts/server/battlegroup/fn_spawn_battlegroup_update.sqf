@@ -3,7 +3,7 @@
     Authors: Violets
     Date: 2025-11-05
     Last Update: 2025-11-06
-    License: MIT License - http://www.opensource.org/licenses/MIT
+    License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
         No description added yet.
@@ -31,18 +31,6 @@ PFH_GETPARAM(_pfh,_spawnMarkerPos,2)
 
 private _isFinished = false;
 private _didSpawn = false;
-
-// //Spawn all infanty
-// for "_i" from 1 to _squadNumber do {
-//     // Create infantry groups with up to 8 units per squad
-//     private _grp = createGroup [GRLIB_side_enemy, true];
-//     for "_i" from 0 to 7 do {
-//         [selectRandom _infClasses, markerPos _spawn_marker, _grp] call KPLIB_fnc_createManagedUnit;
-//     };
-//     [_grp] call KPLIB_fnc_LAMBS_enableReinforcements;
-//     [_grp] call KPLIB_server_fnc_battlegroup_ai;
-//     _grp setVariable ["KPLIB_isBattleGroup",true];
-// };
 
 if(_battlegroup_infantry isNotEqualTo []) then {
     
