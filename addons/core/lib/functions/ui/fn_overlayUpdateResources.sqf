@@ -1,9 +1,8 @@
-#include "script_components.hpp"
 /*
     File: fn_overlayUpdateResources.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2020-05-01
-    Last Update: 2020-08-25
+    Last Update: 2025-11-06
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -18,6 +17,8 @@
     Returns:
         Resources overlay visible [BOOL]
 */
+
+#include "script_components.hpp"
 
 params [
     ["_overlay", displayNull, [displayNull]],
