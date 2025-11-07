@@ -15,29 +15,38 @@
         Function reached the end [BOOL]
 */
 
+#include "../FunctionsInclude.hpp"
+#include "send_paratroopers_macros.hpp"
 
+params [
+    ["_pfh", objNull]
+];
 
+PFH_GETVAR(_pfh,"_vehicle",objNull)
+PFH_GETVAR(_pfh,"_para_group",grpNull)
+PFH_GETVAR(_pfh,"_pilot_group",grpNull)
+PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
+PFH_GETVAR(_pfh,"_stageIndex",0)
 
+PFH_GETPARAM(_pfh,_targetPos,PARA_VAR_TARGET_POS)
+PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
 
+switch (_stageWorkerIndex_0) do {
+    case 0: { 
+        _vehicle flyInHeight 100;
+        [_pilot_group, _spawnPos, 25, "MOVE", "CARELESS", "BLUE", "FULL", "NO CHANGE", "true", "[group this] call KPLIB_fnc_deleteGroup", [0,0,0], 250] call CBA_fnc_addWaypoint;
+        _pilot_group setCurrentWaypoint [_pilot_group, 1];
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 1: {
+        [_para_group] call KPLIB_server_fnc_battlegroup_ai;
+        _para_group setVariable ["KPLIB_isBattleGroup",true];
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    default {
+        _stageWorkerIndex_0 = 0;
+        INCREMENT(_stageIndex)
+    };
+};
 
-
-_waypoint = _pilot_group addWaypoint [markerPos _spawnsector, 200];
-_waypoint setWaypointBehaviour "CARELESS";
-_waypoint setWaypointCombatMode "BLUE";
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointStatements ["true", "[group this] call KPLIB_fnc_deleteGroup"];
-_waypoint setWaypointCompletionRadius 250;    
-
-_waypoint = _para_group addWaypoint [_targetPos, 100];
-_waypoint setWaypointType "SAD";
-_waypoint = _para_group addWaypoint [_targetPos, 100];
-_waypoint setWaypointType "SAD";
-_waypoint = _para_group addWaypoint [_targetPos, 100];
-_waypoint setWaypointType "SAD";
-_waypoint = _para_group addWaypoint [_targetPos, 100];
-_waypoint setWaypointType "SAD";
-_waypoint = _para_group addWaypoint [_targetPos, 100];
-_waypoint setWaypointType "SAD";
-_pilot_group setCurrentWaypoint [_para_group, 1];
-
-[_para_group, 500, 15] spawn lambs_wp_fnc_taskRush;
+[_stageIndex, _stageWorkerIndex_0]

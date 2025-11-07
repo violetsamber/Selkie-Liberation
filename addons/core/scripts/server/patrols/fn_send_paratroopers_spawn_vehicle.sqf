@@ -16,12 +16,15 @@
 */
 
 #include "../FunctionsInclude.hpp"
+#include "send_paratroopers_macros.hpp"
 
 params [
     ["_pfh", objNull]
 ];
 
 PFH_GETVAR(_pfh,"_vehicle",objNull)
+
+PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
 
 private _pilot_group = grpNull;
 
@@ -31,7 +34,7 @@ if (isNull _vehicle) then {
     private _vehicleType = selectRandom opfor_troup_transports_air;
 
     //Spawn Vehicle
-    _vehicle = createVehicle [_vehicleType, markerPos _spawnsector, [], 0, "FLY"];
+    _vehicle = createVehicle [_vehicleType, _spawnPos, [], 0, "FLY"];
     createVehicleCrew _vehicle;
 
     //Get Pilot Group
