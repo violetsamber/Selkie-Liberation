@@ -36,5 +36,8 @@
 #define LIB_LOG(x) [x] call KPLIB_fnc_log;
 #define LIB_DEBUG_LOG(x) [x] call KPLIB_fnc_debugLog;
 
+#define PFH_GETVAR(pfh,var,type) [pfh getVariable var] params [[var, type, [type]]];
+#define INCREMENT(var) var = (1 + var);
+
 #define SERVER_MIN_FPS 30
 #define RANDOM_BATTLEGROUPS_UPDATE_TIME 60

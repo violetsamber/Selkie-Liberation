@@ -15,26 +15,26 @@
         Function reached the end [BOOL]
 */
 
+#include "../FunctionsInclude.hpp"
+
 params [
     ["_pfh", objNull]
 ];
 
-[_pfh getVariable "_vehicle"] params [["_vehicle", objNull, [objNull]]];
+PFH_GETVAR(_pfh,"_vehicle",objNull)
 
-//Spawn Vehicle
-if (isNull _chopper_type) then {
+private _pilot_group = grpNull;
+
+if (isNull _vehicle) then {
+    
     //Get Vehicle to spawn
-    _chopper_type = selectRandom opfor_troup_transports_air;
-
-    while {!(_chopper_type in opfor_troup_transports)} do {
-        _chopper_type = selectRandom opfor_troup_transports_air;
-    };
+    private _vehicleType = selectRandom opfor_troup_transports_air;
 
     //Spawn Vehicle
-    _vehicle = createVehicle [_chopper_type, markerPos _spawnsector, [], 0, "FLY"];
+    _vehicle = createVehicle [_vehicleType, markerPos _spawnsector, [], 0, "FLY"];
     createVehicleCrew _vehicle;
-    sleep 0.1;
 
+    //Get Pilot Group
     _pilot_group = createGroup [GRLIB_side_enemy, true];
     (crew _vehicle) joinSilent _pilot_group;
 
@@ -42,9 +42,7 @@ if (isNull _chopper_type) then {
     {_x addMPEventHandler ["MPKilled", {_this spawn KPLIB_shared_fnc_kill_manager}];} forEach (crew _vehicle);
 
 } else {
-
     //Use Existing Vehicle
-    _vehicle = _chopper_type;
     _pilot_group = group _vehicle;
 };
 
