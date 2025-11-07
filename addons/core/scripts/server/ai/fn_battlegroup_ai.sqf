@@ -2,8 +2,8 @@
     File: fn_battlegroup_ai.sqf
     Authors: Violets
     Date: 2025-11-01
-    Last Update: 2025-11-05
-    License: MIT License - http://www.opensource.org/licenses/MIT
+    Last Update: 2025-11-06
+    License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
         No description added yet.
