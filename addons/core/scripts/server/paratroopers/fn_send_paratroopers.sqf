@@ -39,15 +39,57 @@ _targetPos = [_targetPos, 100] call KPLIB_fnc_getRandomPointInCircle;
 [
     {
         //Update
-        private _return = [_this, _isFinished, _stageIndex, _isStageFinished, _stageWorkerIndex_0, _vehicle, _pilot_group, _para_group, _maxCargo] call KPLIB_server_fnc_send_paratroopers_update;
-        _isFinished = _return select 0;
-        _stageIndex = _return select 1;
-        _isStageFinished = _return select 2;
-        _stageWorkerIndex_0 = _return select 3;
-        _vehicle = _return select 4;
-        _pilot_group = _return select 5;
-        _para_group = _return select 6;
-        _maxCargo = _return select 7;
+        private _return = [];
+
+        switch (_stageIndex) do
+        {
+            case 0: { 
+                _return = [_this] call KPLIB_server_fnc_send_paratroopers_spawn_vehicle; 
+                _vehicle = _return select 0;
+                _pilot_group = _return select 1;
+                INCREMENT(_stageIndex)
+            };
+            case 1: { 
+                _return = [_this] call KPLIB_server_fnc_send_paratroopers_spawn_troops;  
+                _stageIndex = _return select 0;
+                _para_group = _return select 1;
+                _maxCargo = _return select 2;
+            };
+            case 2: {
+                [_pilot_group] call KPLIB_fnc_clearGrpWaypoints;
+                [_para_group]  call KPLIB_fnc_clearGrpWaypoints;
+                _vehicle flyInHeight 100;
+                INCREMENT(_stageIndex)
+            };
+            case 3: { 
+                _return = [_this] call KPLIB_server_fnc_send_paratroopers_waypoints_flyTo;
+                _stageIndex         = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
+            };
+            case 4: { 
+                _return = [_this] call KPLIB_server_fnc_send_paratroopers_waitUntilAtTarget;
+                _stageIndex = _return select 0;
+            };
+            case 5: { 
+                _return = [_this] call KPLIB_server_fnc_send_paratroopers_cargoGetOut;
+                _stageIndex         = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
+            };
+            case 6: {
+                [_pilot_group] call KPLIB_fnc_clearGrpWaypoints;
+                [_para_group]  call KPLIB_fnc_clearGrpWaypoints;
+                _vehicle flyInHeight 100;
+                INCREMENT(_stageIndex)
+            };
+            case 7: {
+                _return = [_this] call KPLIB_server_fnc_send_paratroopers_waypoints_arrived;
+                _stageIndex         = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
+            };
+            default {
+                _isFinished = true;
+            }
+        };
     },
     0.5,
     [_targetsector, _targetPos, _spawnSector, _spawnPos, _vehicle],
