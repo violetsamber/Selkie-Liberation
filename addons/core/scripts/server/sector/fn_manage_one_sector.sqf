@@ -33,18 +33,18 @@ if (GRLIB_unitcap < 1) then {_popfactor = GRLIB_unitcap;};
 // waitUntil {!isNil "SLKLIB_combat_readiness"};
 
 //If already active dont activate again;
-if (_sector in active_sectors) exitWith {
-    [format ["Sector %1 (%2) WAS ALREADY ACTIVE - Managed on: %3", (markerText _sector), _sector, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+if (_sectorMarker in active_sectors) exitWith {
+    [format ["Sector %1 (%2) WAS ALREADY ACTIVE - Managed on: %3", (markerText _sectorMarker), _sectorMarker, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 };
 
 //Activate sector
-active_sectors pushBack _sector; publicVariable "active_sectors"; //TODO Change this to a function call
-[format ["Sector %1 (%2) activated - Managed on: %3", (markerText _sector), _sector, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+active_sectors pushBack _sectorMarker; publicVariable "active_sectors"; //TODO Change this to a function call
+[format ["Sector %1 (%2) activated - Managed on: %3", (markerText _sectorMarker), _sectorMarker, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 
 //Check if we can active
 private _opforcount = [] call KPLIB_fnc_getOpforCap;
-private _isSectorNotBlufor = !(_sector in blufor_sectors);
-private _isThereAnyBlueforUnitsInSector = (([markerPos _sector, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0);
+private _isSectorNotBlufor = !(_sectorMarker in blufor_sectors);
+private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0);
 
 if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then 
 {
@@ -65,7 +65,10 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         {
             case 0: {
                 //Wait To Spawn
-                _return = [_sectorMarker, _opforcount] call KPLIB_server_fnc_sector_wait_to_spawn;
+                _return = [_this] call KPLIB_server_fnc_sector_wait_to_spawn;
+
+                _isStageFinished = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
 
                 if(_isStageFinished) then {
                     _stageWorkerIndex_0 = 0;
@@ -75,28 +78,36 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
                 }
             };
             case 1: {
+                
+                PFH_GETPARAM(_this,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
+
                 //Bigtown
                 if (_sectorMarker in sectors_bigtown) then {
+                    [format ["Sector %1 (%2) - Setting up big town.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
                     _return = [_this] call KPLIB_server_fnc_sector_setup_bigtown;
                 };
 
                 //Smalltown
                 if (_sectorMarker in sectors_capture) then {
+                    [format ["Sector %1 (%2) - Setting up town.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
                     _return = [_this] call KPLIB_server_fnc_sector_setup_town;
                 };
 
                 //Military
                 if (_sectorMarker in sectors_military) then {
+                    [format ["Sector %1 (%2) - Setting up military.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
                     _return = [_this] call KPLIB_server_fnc_sector_setup_military;
                 };
 
                 //Factory
                 if (_sectorMarker in sectors_factory) then {
+                    [format ["Sector %1 (%2) - Setting up factory.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
                     _return = [_this] call KPLIB_server_fnc_sector_setup_factory;
                 };
 
                 //Tower
                 if (_sectorMarker in sectors_tower) then {
+                    [format ["Sector %1 (%2) - Setting up tower.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
                     _return = [_this] call KPLIB_server_fnc_sector_setup_tower;
                 };
 
@@ -109,6 +120,19 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
                 _building_range =     _return select 6;
                 _local_capture_size = _return select 7;
                 _iedcount =           _return select 8;
+
+                ["------------------------------------", "Sector Setup"] call KPLIB_fnc_log;
+                [format ["Sector: %1 (%2)", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["Squads: %1", _roamingToSpawn], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["Vehicles: %1", _vehToSpawn], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["ToSpawnCivs: %1", _spawnCivs], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["Guerilla: %1", _guerilla], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["Infsquad: %1", _infsquad], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["Building_ai_max: %1", _building_ai_max], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["Building_range: %1", _building_range], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["Local_capture_size: %1", _local_capture_size], "SECTORSPAWN"] call KPLIB_fnc_log;
+                [format ["Iedcount: %1", _iedcount], "SECTORSPAWN"] call KPLIB_fnc_log;
+                ["------------------------------------", "SECTORSPAWN"] call KPLIB_fnc_log;
 
                 INCREMENT(_stageIndex)
             };
@@ -212,8 +236,10 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
     },
     {
         //End
-        [format ["Sector %1 (%2) deactivated - Was managed on: %3", (markerText _sector), _sector, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
-        active_sectors = active_sectors - [_sector]; publicVariable "active_sectors";
+        PFH_GETPARAM(_this,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
+
+        [format ["Sector %1 (%2) deactivated - Was managed on: %3", (markerText _sectorMarker), _sectorMarker, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+        active_sectors = active_sectors - [_sectorMarker]; publicVariable "active_sectors";
     },
     {
         //Can Run 
