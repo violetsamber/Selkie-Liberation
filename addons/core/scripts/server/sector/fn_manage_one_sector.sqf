@@ -21,30 +21,11 @@
 params ["_sectorMarker"];
 
 private _sectorPos = markerPos _sectorMarker;
-//private _isSectorActive = true;
-private _spawncivs = false;
-private _building_ai_max = 0;
-private _infsquad = "army";
-private _building_range = 50;
-private _local_capture_size = GRLIB_capture_size;
-private _iedcount = 0;
 
 
 private _sector_despawn_tickets = BASE_TICKETS;
 private _maximum_additional_tickets = (KP_liberation_delayDespawnMax * 60 / SECTOR_TICK_TIME);
 private _popfactor = 1;
-private _guerilla = false;
-
-//ToSpawn
-private _civsToSpawn = [];
-private _vehToSpawn = [];
-private _roamingToSpawn = [];
-
-//Spawned
-private _roamingGroups = [];
-private _garrisonedGroups = [];
-private _civsGroups = [];
-private _vehGroups = [];
 
 private _managed_units = [];
 
@@ -63,6 +44,7 @@ active_sectors pushBack _sector; publicVariable "active_sectors"; //TODO Change 
 [format ["Sector %1 (%2) activated - Managed on: %3", (markerText _sector), _sector, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 
 //Check if we can active
+private _opforcount = [] call KPLIB_fnc_getOpforCap;
 private _isSectorNotBlufor = !(_sector in blufor_sectors);
 private _isThereAnyBlueforUnitsInSector = (([markerPos _sector, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0);
 
@@ -85,34 +67,44 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         {
             case 0: {
                 //Wait To Spawn
-                private _opforcount = [] call KPLIB_fnc_getOpforCap;
-                [_sector, _opforcount] call KPLIB_server_fnc_wait_to_spawn_sector;
+                [_sectorMarker, _opforcount] call KPLIB_server_fnc_wait_to_spawn_sector;
             };
             case 1: {
                 //Bigtown
-                if (_sector in sectors_bigtown) then {
+                if (_sectorMarker in sectors_bigtown) then {
                     _return = [_this] call KPLIB_server_fnc_sector_setup_bigtown;
                 };
 
-                //Capture
-                if (_sector in sectors_capture) then {
+                //Smalltown
+                if (_sectorMarker in sectors_capture) then {
                     _return = [_this] call KPLIB_server_fnc_sector_setup_town;
                 };
 
                 //Military
-                if (_sector in sectors_military) then {
+                if (_sectorMarker in sectors_military) then {
                     _return = [_this] call KPLIB_server_fnc_sector_setup_military;
                 };
 
                 //Factory
-                if (_sector in sectors_factory) then {
+                if (_sectorMarker in sectors_factory) then {
                     _return = [_this] call KPLIB_server_fnc_sector_setup_factory;
                 };
 
                 //Tower
-                if (_sector in sectors_tower) then {
+                if (_sectorMarker in sectors_tower) then {
                     _return = [_this] call KPLIB_server_fnc_sector_setup_tower;
                 };
+
+                _roamingToSpawn =     _return select 0;
+                _vehToSpawn =         _return select 1;
+                _spawnCivs =          _return select 2;
+                _guerilla =           _return select 3;
+                _infsquad=            _return select 4;
+                _building_ai_max =    _return select 5;
+                _building_range =     _return select 6;
+                _local_capture_size = _return select 7;
+                _iedcount =           _return select 8;
+
                 INCREMENT(_stageIndex)
             };
             case 0: {
@@ -162,7 +154,23 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
     {
         //Start
         _isFinished = false;
+        _isStageFinished = false;
         _stageIndex = 0;
+        _roamingToSpawn = []; 
+        _vehToSpawn = [];
+        _spawnCivs = false;
+        _guerilla = false;
+        _infsquad = "army";
+        _building_ai_max = 0;
+        _building_range = 50;
+        _local_capture_size = GRLIB_capture_size;
+        _iedcount = 0;
+
+        //Spawned
+        _roamingGroups = [];
+        _garrisonedGroups = [];
+        _civsGroups = [];
+        _vehGroups = [];
     },
     {
         //End
@@ -177,5 +185,18 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         //Can Exit
         _isFinished 
     },
-    ["_isFinished", "_stageIndex"]
+    [
+        "_isFinished", 
+        "_isStageFinished", 
+        "_stageIndex", 
+        "_roamingToSpawn", 
+        "_vehToSpawn",
+        "_spawnCivs",
+        "_guerilla",
+        "_infsquad",
+        "_building_ai_max",
+        "_building_range",
+        "_local_capture_size",
+        "_iedcount"
+    ]
 ] call CBA_fnc_createPerFrameHandlerObject;
