@@ -15,6 +15,18 @@
         Function reached the end [BOOL]
 */
 
+#include "../FunctionsInclude.hpp"
+#include "sector_macros.hpp"
+
+params [
+    ["_pfh", objNull]
+];
+
+//PFH_GETVAR(_pfh,"_vehicle",objNull)
+
+//PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
+
+
 if (SLKLIB_combat_readiness < 30) then {_infsquad = "militia";};
 
 _squad1 = ([_infsquad] call KPLIB_fnc_getSquadComp);
