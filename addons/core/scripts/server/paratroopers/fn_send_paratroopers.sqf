@@ -39,20 +39,28 @@ _targetPos = [_targetPos, 100] call KPLIB_fnc_getRandomPointInCircle;
 [
     {
         //Update
-        [_isFinished, _stageIndex, _isStageFinished, _stageWorkerIndex_0, _vehicle, _pilot_group, _para_group, _maxCargo] call KPLIB_server_fnc_send_paratroopers_update;
+        private _return = [_this, _isFinished, _stageIndex, _isStageFinished, _stageWorkerIndex_0, _vehicle, _pilot_group, _para_group, _maxCargo] call KPLIB_server_fnc_send_paratroopers_update;
+        _isFinished = _return select 0;
+        _stageIndex = _return select 1;
+        _isStageFinished = _return select 2;
+        _stageWorkerIndex_0 = _return select 3;
+        _vehicle = _return select 4;
+        _pilot_group = _return select 5;
+        _para_group = _return select 6;
+        _maxCargo = _return select 7;
     },
     0.5,
     [_targetsector, _targetPos, _spawnSector, _spawnPos, _vehicle],
     {
         //Start
-        private _isFinished = false;
-        private _isStageFinished = false;
-        private _stageIndex = 0;
-        private _stageWorkerIndex_0 = 0;
-        private _vehicle = _this getVariable "params" select PARA_VAR_VEHICLE;
-        private _pilot_group = grpNull;
-        private _para_group = grpNull;
-        private _maxCargo = 0;
+        _isFinished = false;
+        _isStageFinished = false;
+        _stageIndex = 0;
+        _stageWorkerIndex_0 = 0;
+        _vehicle = _this getVariable "params" select PARA_VAR_VEHICLE;
+        _pilot_group = grpNull;
+        _para_group = grpNull;
+        _maxCargo = 0;
     },
     {
         //End

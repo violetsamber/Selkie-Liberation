@@ -29,12 +29,15 @@ private _objPos = [_startPos] call KPLIB_fnc_getNearestBluforObjective;
 [
     { 
         private _return = [_this] call KPLIB_server_fnc_battlegroup_ai_create_waypoints;
-        private _isFinished = _return select 0;
-        private _index      = _return select 1;
+        _isFinished = _return select 0;
+        _index      = _return select 1;
     },
     0.25,
     [_grp, _objPos],
-    { private _isFinished = false; private _index = 0; },
+    { 
+        _isFinished = false;
+        _index = 0; 
+    },
     {},
     { !_isFinished },
     { _isFinished },
