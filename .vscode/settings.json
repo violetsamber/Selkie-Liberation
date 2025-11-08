@@ -79,7 +79,7 @@
             "match": "\\.sqf*",
 			"isAsync": true,
             "vscodeTask": ["sqf-analyzer.restart"],
-			"event": "onFileChangeImmediate"
+			"event": "onFileChange"
         }
     ]
 }

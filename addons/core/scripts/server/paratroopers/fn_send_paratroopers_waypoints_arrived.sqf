@@ -2,7 +2,7 @@
     File: fn_send_paratroopers_waypoints_arrived.sqf
     Authors: 
     Date: 2025-11-06
-    Last Update: 2025-11-06
+    Last Update: 2025-11-07
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -28,14 +28,14 @@ PFH_GETVAR(_pfh,"_pilot_group",grpNull)
 PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
 PFH_GETVAR(_pfh,"_stageIndex",0)
 
-PFH_GETPARAM(_pfh,_targetPos,PARA_VAR_TARGET_POS)
 PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
+
+[format ["[PARATROOPERS] Arrived workerIndex_0: %1 _spawnPos: %2", _stageWorkerIndex_0, _spawnPos]] call KPLIB_fnc_log;
 
 switch (_stageWorkerIndex_0) do {
     case 0: { 
+        [_pilot_group, _spawnPos, 0, "MOVE", "CARELESS", "BLUE", "FULL", "NO CHANGE", "[this call CBA_fnc_getGroup] call KPLIB_fnc_deleteGroup", [0,0,0], 400] call CBA_fnc_addWaypoint;
         _vehicle flyInHeight 100;
-        [_pilot_group, _spawnPos, 25, "MOVE", "CARELESS", "BLUE", "FULL", "NO CHANGE", "true", "[group this] call KPLIB_fnc_deleteGroup", [0,0,0], 250] call CBA_fnc_addWaypoint;
-        _pilot_group setCurrentWaypoint [_pilot_group, 1];
         INCREMENT(_stageWorkerIndex_0)
     };
     case 1: {

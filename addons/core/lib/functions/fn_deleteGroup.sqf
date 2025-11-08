@@ -1,5 +1,5 @@
 params [
-    ["_group", objNull]
+    ["_group", grpNull]
 ];
 
 if (isNull _group) exitWith {};

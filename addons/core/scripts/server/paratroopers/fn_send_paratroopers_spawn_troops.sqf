@@ -2,7 +2,7 @@
     File: fn_send_paratroopers_spawn_troops.sqf
     Authors: Violets
     Date: 2025-11-06
-    Last Update: 2025-11-06
+    Last Update: 2025-11-07
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -34,15 +34,22 @@ PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
 if (isNull _para_group) then {
     _para_group = createGroup [GRLIB_side_enemy, true];
     _maxCargo = count fullCrew [_vehicle, "cargo", true];
+    [format ["[PARATROOPERS] Creating Group: %1, Max Cargo: %2", _para_group, _maxCargo]] call KPLIB_fnc_log;
 };
 
-if((count (units _para_group)) < _maxCargo) then {
+private _unitCount = count (units _para_group);
+if(_unitCount < _maxCargo) then {
+    [format ["[PARATROOPERS] Spawning Paratrooper: %1", opfor_paratrooper]] call KPLIB_fnc_log;
+
     private _unit = [opfor_paratrooper, _spawnPos, _para_group] call KPLIB_fnc_createManagedUnit;
     removeBackpack _unit;
     _unit addBackpack "B_parachute";
+    _unit assignAsCargoIndex [_vehicle, _unitCount + 1];
     _unit moveInCargo _vehicle;
+    [_unit] allowGetIn true;
+    [_unit] orderGetIn true;
 } else {
     INCREMENT(_stageIndex)
 };
 
-[_stageIndex, _para_group]
+[_stageIndex, _para_group, _maxCargo]
