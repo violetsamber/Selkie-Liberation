@@ -2,7 +2,7 @@
     File: fn_manage_one_sector.sqf
     Authors: Violets, KP Liberation Dev Team
     Date: 2025-11-01
-    Last Update: 2025-11-07
+    Last Update: 2025-11-08
     License: MIT License - http://www.opensource.org/licenses/MIT
     
     Description:
@@ -26,8 +26,6 @@ private _sectorPos = markerPos _sectorMarker;
 private _sector_despawn_tickets = BASE_TICKETS;
 private _maximum_additional_tickets = (KP_liberation_delayDespawnMax * 60 / SECTOR_TICK_TIME);
 private _popfactor = 1;
-
-private _managed_units = [];
 
 if (GRLIB_unitcap < 1) then {_popfactor = GRLIB_unitcap;};
 
@@ -162,6 +160,7 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         _isStageFinished = false;
         _stageIndex = 0;
         _stageWorkerIndex_0 = 0;
+        _stageWorkerIndex_1 = 0;
 
         _roamingToSpawn = []; 
         _vehToSpawn = [];
@@ -172,6 +171,9 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         _building_range = 50;
         _local_capture_size = GRLIB_capture_size;
         _iedcount = 0;
+
+        _spawnBuildings = [];
+        _managed_units = [];
 
         //Spawned
         _roamingGroups = [];
@@ -197,6 +199,7 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         "_isStageFinished", 
         "_stageIndex",
         "_stageWorkerIndex_0",
+        "_stageWorkerIndex_1",
         "_roamingToSpawn", 
         "_vehToSpawn",
         "_spawnCivs",
@@ -205,6 +208,8 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         "_building_ai_max",
         "_building_range",
         "_local_capture_size",
-        "_iedcount"
+        "_iedcount",
+        "_spawnBuildings",
+        "_managed_units"
     ]
 ] call CBA_fnc_createPerFrameHandlerObject;
