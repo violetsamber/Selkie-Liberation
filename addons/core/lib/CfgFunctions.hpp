@@ -31,6 +31,7 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class getAdaptiveVehicle        {};
         class getAttackSizeName         {};
         class getBluforRatio            {};
+        class getBuildings              {};
         class getCommander              {};
         class getCrateHeight            {};
         class getFobName                {};
