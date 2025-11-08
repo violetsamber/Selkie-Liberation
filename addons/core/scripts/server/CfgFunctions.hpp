@@ -16,7 +16,23 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class attack_in_progress_sector {};
         class ied_manager               {};
         class manage_one_sector         {};
-        class wait_to_spawn_sector      {};
+        class sector_getMaxIEDCount     {};
+        class sector_setup_bigtown      {};
+        class sector_setup_town         {};
+        class sector_setup_tower        {};
+        class sector_setup_factory      {};
+        class sector_setup_military     {};
+        class sector_spawn_civilians    {};
+        class sector_spawn_garrison     {};
+        class sector_spawn_guerilla_attack    {};
+        class sector_spawn_ieds               {};
+        class sector_spawn_militaryPostGuard  {};
+        class sector_spawn_reinforcement_call {};
+        class sector_spawn_squads       {};
+        class sector_spawn_vehicles     {};
+        class sector_update             {};
+        class sector_wait_to_spawn      {};
+        class sector_willGuerillaSpawn  {};
     };
 
     class server_support {
