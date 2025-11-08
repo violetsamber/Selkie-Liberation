@@ -69,6 +69,8 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
 
                 if(_isStageFinished) then {
                     _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _isStageFinished = false;
                     INCREMENT(_stageIndex)
                 }
             };
@@ -110,41 +112,68 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
 
                 INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 2: {
                 //Spawn garrisoned ai
+
+                _return = [_this] call KPLIB_server_fnc_sector_spawn_garrison;
+
+                _isStageFinished = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
+                _spawnBuildings = _return select 2;
+                _managed_units = _return select 3;
+                _garrisonedGroups = _return select 4;
+                _building_ai_max = _return select 5;
+
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
-            case 0: {
+            case 3: {
                 //Spawn Squads
+                INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 4: {
                 //Spawn Vehicles
+                INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 5: {
                 //Spawn special units in specific military buildings
+                INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 6: {
                 //Spawn Civilians
+                INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 7: {
                 //Spawn IEDs
+                INCREMENT(_stageIndex)
             };
-            case 0: {
-                //Friendly Guerilla 
+            case 8: {
+                //Friendly Guerilla
+                INCREMENT(_stageIndex) 
             };
-            case 0: {
+            case 9: {
                 //Start reinforcement script
+                INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 10: {
                 //Spawn IEDs
+                INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 11: {
                 //Sector lifetime loop
+                INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 12: {
                 //Sector Taken
+                INCREMENT(_stageIndex)
             };
-            case 0: {
+            case 13: {
                 //Sector Despawning
+                INCREMENT(_stageIndex)
             };
             default {
                 _isFinished = true;

@@ -27,7 +27,6 @@ params [
 PFH_GETPARAM(_pfh,_sectorPos,PFH_PARAM_SECTOR_POS)
 
 PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
-PFH_GETVAR(_pfh,"_stageWorkerIndex_1",0)
 PFH_GETVAR(_pfh,"_building_ai_max",0)
 PFH_GETVAR(_pfh,"_infsquad","")
 PFH_GETVAR(_pfh,"_managed_units",[])
@@ -67,7 +66,7 @@ if(_stageWorkerIndex_0 == 0) then {
 //Spawn Units
 if(_stageWorkerIndex_0 >= 1) then {
 
-    private _classnames = [[] call KPLIB_fnc_getSquadComp, militia_squad] select (_type == "militia");
+    private _classnames = [_infsquad] call KPLIB_fnc_getSquadComp;
     private _unitCount = 0;
     {
         _unitCount = _unitCount + (count units _x);
@@ -122,5 +121,6 @@ _isStageFinished,
 _stageWorkerIndex_0,
 _spawnBuildings,
 _managed_units,
-_garrisonedGroups
+_garrisonedGroups,
+_building_ai_max
 ]
