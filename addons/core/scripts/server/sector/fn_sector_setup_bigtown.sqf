@@ -21,6 +21,8 @@
 #define SECTOR_MIN_SQUAD_COUNT 6
 #define SECTOR_MIN_VIC_COUNT 2
 
+#define READINESS_FOR_ARMY 30
+
 params [
     ["_pfh", objNull]
 ];
@@ -38,7 +40,7 @@ PFH_GETVAR(_pfh,"_iedcount",0)
 //PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
 
 //Squads
-if (SLKLIB_combat_readiness < 30) then {_infsquad = "militia";};
+if (SLKLIB_combat_readiness < READINESS_FOR_ARMY) then {_infsquad = "militia";};
 
 private _squadCount = SECTOR_MIN_SQUAD_COUNT; 
 
@@ -72,9 +74,7 @@ if (_infsquad == "army") then {
 _spawnCivs = true;
 
 //Gurilla
-if (((random 100) <= KP_liberation_resistance_sector_chance) && (([] call KPLIB_fnc_crGetMulti) > 0)) then {
-    _guerilla = true;
-};
+_guerilla = [] call KPLIB_server_fnc_sector_willGuerillaSpawn;
 
 //Garrison
 _building_ai_max = round (50 * _popfactor);
@@ -84,13 +84,7 @@ _building_range = MAX_BUILDING_RANGE_LARGE;
 _local_capture_size = _local_capture_size * 1.4;
 
 //IED Count
-if (KP_liberation_civ_rep < 0) then {
-    _iedcount = round (2 + (ceil (random 4)) * (round ((KP_liberation_civ_rep * -1) / 33)) * GRLIB_difficulty_modifier);
-} else {
-    _iedcount = 0;
-};
-if (_iedcount > 16) then {_iedcount = 16};
-
+_iedCount = [2,16,2,4] call KPLIB_server_fnc_sector_getMaxIEDCount;
 
 [
 _roamingToSpawn,
