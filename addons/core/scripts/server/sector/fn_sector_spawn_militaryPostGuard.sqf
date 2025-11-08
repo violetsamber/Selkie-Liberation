@@ -14,3 +14,5 @@
     Returns:
         Function reached the end [BOOL]
 */
+
+_managed_units = _managed_units + ([_sectorpos] call KPLIB_fnc_spawnMilitaryPostSquad);

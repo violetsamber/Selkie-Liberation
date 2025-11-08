@@ -15,43 +15,32 @@
         Function reached the end [BOOL]
 */
 
-// base amount of sector lifetime tickets
-// if there are no enemies one ticket is removed every SECTOR_TICK_TIME seconds
-// 12 * 5 = 60s by default
-#define BASE_TICKETS                12
-#define SECTOR_TICK_TIME            5
-// delay in minutes from which addional time will be added
-#define ADDITIONAL_TICKETS_DELAY    5
-
-#define MAX_BUILDING_UNITS 100
-#define MAX_BUILDING_RANGE_STANDARD 120
-#define MAX_BUILDING_RANGE_LARGE 200
+#include "../FunctionsInclude.hpp"
+#include "sector_macros.hpp"
 
 params ["_sector"];
 
-waitUntil {!isNil "SLKLIB_combat_readiness"};
+//This should be initialized at the start now
+// waitUntil {!isNil "SLKLIB_combat_readiness"};
 
 [format ["Sector %1 (%2) activated - Managed on: %3", (markerText _sector), _sector, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 
 private _sectorpos = markerPos _sector;
-private _stopit = false;
+private _isSectorActive = true;
 private _spawncivs = false;
 private _building_ai_max = 0;
 private _infsquad = "army";
 private _building_range = 50;
 private _local_capture_size = GRLIB_capture_size;
 private _iedcount = 0;
-private _vehtospawn = [];
+
 private _managed_units = [];
-private _squad1 = []; //TODO Refactor squds to be a single array of squads
-private _squad2 = [];
-private _squad3 = [];
-private _squad4 = [];
-private _squad10 = [];
-private _squad11 = [];
-private _squad12 = [];
-private _squad13 = [];
-private _minimum_building_positions = 5;
+
+private _vehtospawn = [];
+
+private _roamingSquads = [];
+private _garrisonedSquads = [];
+
 private _sector_despawn_tickets = BASE_TICKETS;
 private _maximum_additional_tickets = (KP_liberation_delayDespawnMax * 60 / SECTOR_TICK_TIME);
 private _popfactor = 1;
@@ -65,7 +54,14 @@ active_sectors pushBack _sector; publicVariable "active_sectors";
 private _opforcount = [] call KPLIB_fnc_getOpforCap;
 [_sector, _opforcount] call KPLIB_server_fnc_wait_to_spawn_sector;
 
-if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0)) then {
+
+//Check if we can active
+
+private _isSectorNotBlufor = !(_sector in blufor_sectors);
+private _isThereAnyBlueforUnitsInSector = (([markerPos _sector, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0);
+
+
+if ( ) then {
 
     //Move specific sector logic to its own script
     if (_sector in sectors_bigtown) then {
@@ -237,29 +233,29 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
     //Spawn garrisoned ai
 
-    if (_building_ai_max > 0 && GRLIB_adaptive_opfor) then {
-        _building_ai_max = round (_building_ai_max * ([] call KPLIB_fnc_getOpforFactor));
-    };
+    // if (_building_ai_max > 0 && GRLIB_adaptive_opfor) then {
+    //     _building_ai_max = round (_building_ai_max * ([] call KPLIB_fnc_getOpforFactor));
+    // };
 
-    if (_building_ai_max > 0) then {
-        //Get all buildings withing _building_range
-        _allbuildings = (nearestObjects [_sectorpos, ["House"], _building_range]) select {alive _x};
-        //For each of the buildings get their positions
-        _buildingpositions = [];
-        {
-            _buildingpositions = _buildingpositions + [([_x] call BIS_fnc_buildingPositions)];
-        } forEach _allbuildings;
+    // if (_building_ai_max > 0) then {
+    //     //Get all buildings withing _building_range
+    //     _allbuildings = (nearestObjects [_sectorpos, ["House"], _building_range]) select {alive _x};
+    //     //For each of the buildings get their positions
+    //     _buildingpositions = [];
+    //     {
+    //         _buildingpositions = _buildingpositions + [([_x] call BIS_fnc_buildingPositions)];
+    //     } forEach _allbuildings;
 
-        _largestBuildings = [_buildingpositions,[],{count _x},"DESCEND", {count _x > 4}] call BIS_fnc_sortBy;
+    //     _largestBuildings = [_buildingpositions,[],{count _x},"DESCEND", {count _x > 4}] call BIS_fnc_sortBy;
 
-        if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector found %3 building positions", (markerText _sector), _sector, (count _largestBuildings)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
-        if (count _largestBuildings > 1) then {
-            _managed_units = _managed_units + ([_infsquad, MAX_BUILDING_UNITS, _largestBuildings, _sector] call KPLIB_fnc_spawnBuildingSquadModified);
-        };
-    };
+    //     if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector found %3 building positions", (markerText _sector), _sector, (count _largestBuildings)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
+    //     if (count _largestBuildings > 1) then {
+    //         _managed_units = _managed_units + ([_infsquad, MAX_BUILDING_UNITS, _largestBuildings, _sector] call KPLIB_fnc_spawnBuildingSquadModified);
+    //     };
+    // };
 
     //Spawn special units in specific military buildings
-    _managed_units = _managed_units + ([_sectorpos] call KPLIB_fnc_spawnMilitaryPostSquad);
+    // _managed_units = _managed_units + ([_sectorpos] call KPLIB_fnc_spawnMilitaryPostSquad);
 
     //Spawn Squads
     // if (count _squad1 > 0) then {
@@ -335,7 +331,8 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
 
     // private _activationTime = time;
     // // sector lifetime loop
-    // while {!_stopit} do {
+    // while {_isSectorActive
+} do {
     //     // sector was captured
     //     if (([_sectorpos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly) && (GRLIB_endgame == 0)) then {
     //         if (isServer) then {
@@ -344,7 +341,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
     //             [_sector] remoteExec ["KPLIB_shared_fnc_sector_liberated_remote_call",2];
     //         };
 
-    //         _stopit = true;
+    //         _isSectorActive = false;
 
     //         {[_x] spawn KPLIB_server_fnc_prisonner_ai;} forEach ((markerPos _sector) nearEntities [["Man"], _local_capture_size * 1.2]);
 
@@ -390,7 +387,7 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
     //                 };
     //             } forEach _managed_units;
 
-    //             _stopit = true;
+    //             _isSectorActive = false;
     //             active_sectors = active_sectors - [_sector]; publicVariable "active_sectors";
     //         };
     //     };
