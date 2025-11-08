@@ -35,8 +35,20 @@ PFH_GETPARAM(_pfh,_targetPos,PARA_VAR_TARGET_POS)
 switch (_stageWorkerIndex_0) do {
     case 0: { 
         _vehicle flyInHeight 100;
-        [_pilot_group, _targetPos, 100, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 300] call CBA_fnc_addWaypoint;
+        [_pilot_group, _targetPos, 250, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 300] call CBA_fnc_addWaypoint;
         _pilot_group setCurrentWaypoint [_pilot_group, 1];
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 1: {
+        [_pilot_group, _targetPos, 250, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 300] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 2: {
+        [_pilot_group, _targetPos, 250, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 300] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 3: {
+        [_para_group, _targetPos, 10, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 0] call CBA_fnc_addWaypoint;
         INCREMENT(_stageWorkerIndex_0)
     };
     default {
