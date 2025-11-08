@@ -34,7 +34,7 @@ PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
 
 switch (_stageWorkerIndex_0) do {
     case 0: { 
-        [_pilot_group, _spawnPos, 0, "MOVE", "CARELESS", "BLUE", "FULL", "NO CHANGE", "[this call CBA_fnc_getGroup] call KPLIB_fnc_deleteGroup", [0,0,0], 400] call CBA_fnc_addWaypoint;
+        [_pilot_group, _spawnPos, 0, "MOVE", "CARELESS", "BLUE", "FULL", "NO CHANGE", "[this call CBA_fnc_getGroup] call KPLIB_fnc_deleteGroup", [0,0,0], 500] call CBA_fnc_addWaypoint;
         _vehicle flyInHeight 100;
         INCREMENT(_stageWorkerIndex_0)
     };
