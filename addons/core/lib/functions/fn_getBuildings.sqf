@@ -22,7 +22,7 @@ params [
 ];
 
 //Get all buildings withing _building_range
-private _allbuildings = (nearestObjects [_sectorpos, ["House"], _building_range]) select {alive _x};
+private _allbuildings = (nearestObjects [_sectorpos, ["House"], _building_range, true]) select {alive _x};
 //For each of the buildings get their positions
 private _buildingPositions = [];
 {

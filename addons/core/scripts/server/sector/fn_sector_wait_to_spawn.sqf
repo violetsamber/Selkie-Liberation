@@ -37,8 +37,6 @@
 #include "../FunctionsInclude.hpp"
 #include "sector_macros.hpp"
 
-#define TIME_TO_WAIT 60
-
 //TODO REFACTOR THIS MESS
 params ["_pfh"];
 
