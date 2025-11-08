@@ -37,7 +37,7 @@ PFH_GETVAR(_pfh,"_building_range",0)
 PFH_GETVAR(_pfh,"_local_capture_size",0)
 PFH_GETVAR(_pfh,"_iedcount",0)
 
-PFH_GETPARAM(_pfh, _popfactor, PFH_PARAM_POP_FACTOR)
+PFH_GETPARAM(_pfh,_popfactor,PFH_PARAM_POP_FACTOR)
 
 if (SLKLIB_combat_readiness < 40) then {_infsquad = "militia";};
 

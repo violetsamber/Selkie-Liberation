@@ -6,9 +6,12 @@
 // delay in minutes from which addional time will be added
 #define ADDITIONAL_TICKETS_DELAY    5
 
+#define TIME_TO_WAIT 15
+
 #define MAX_BUILDING_UNITS 100
 #define MAX_BUILDING_RANGE_STANDARD 120
 #define MAX_BUILDING_RANGE_LARGE 200
+#define BUILDING_SQUAD_MAX 8
 
 #define PFH_UPDATE_TIME 0.5
 #define PFH_PARAM_SECTOR_MARKER 0

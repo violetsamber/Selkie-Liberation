@@ -59,7 +59,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
 
 ["------------------------------------", "Sector Start"] call KPLIB_fnc_log;
 [format ["Sector: %1 (%2)", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] call KPLIB_fnc_log;
-[format ["Manged By: %1", debug_source], "SECTORSPAWN"] call KPLIB_fnc_log;
+[format ["Managed By: %1", debug_source], "SECTORSPAWN"] call KPLIB_fnc_log;
 [format ["Popfactor: %1", _popfactor], "SECTORSPAWN"] call KPLIB_fnc_log;
 ["------------------------------------", "SECTORSPAWN"] call KPLIB_fnc_log;
 
@@ -272,6 +272,10 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
         "_local_capture_size",
         "_iedcount",
         "_spawnBuildings",
-        "_managed_units"
+        "_managed_units",
+        "_roamingGroups",
+        "_garrisonedGroups",
+        "_civsGroups",
+        "_vehGroups"
     ]
 ] call CBA_fnc_createPerFrameHandlerObject;

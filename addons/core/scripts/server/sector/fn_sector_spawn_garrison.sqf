@@ -18,20 +18,20 @@
 #include "../FunctionsInclude.hpp"
 #include "sector_macros.hpp"
 
-#define SQUAD_MAX 8
-
 params [
     ["_pfh", objNull]
 ];
 
 PFH_GETPARAM(_pfh,_sectorPos,PFH_PARAM_SECTOR_POS)
 
+PFH_GETVAR(_pfh,"_sectorMarker","")
 PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
 PFH_GETVAR(_pfh,"_building_ai_max",0)
 PFH_GETVAR(_pfh,"_infsquad","")
 PFH_GETVAR(_pfh,"_managed_units",[])
 PFH_GETVAR(_pfh,"_spawnBuildings",[])
 PFH_GETVAR(_pfh,"_garrisonedGroups",[])
+PFH_GETVAR(_pfh,"_building_range",0)
 
 private _isStageFinished = false;
 
@@ -43,22 +43,23 @@ if(_stageWorkerIndex_0 == 0) then {
     };
 
     if (_building_ai_max > 0) then {
-        _spawnBuildings = [] call KPLIB_fnc_getBuildings;
+        _spawnBuildings = [_sectorPos,_building_range] call KPLIB_fnc_getBuildings;
 
         //Randomize positions
-        private newPositions = [];
+        private _newPositions = [];
         {
             private _positionArray = _x call BIS_fnc_arrayShuffle;
-            newPositions pushBack _positionArray;
+            _newPositions pushBack _positionArray;
         } foreach _spawnBuildings;
 
-        _spawnBuildings = newPositions;
+        _spawnBuildings = _newPositions;
 
-        [format ["Sector %1 (%2) - manage_one_sector found %3 building positions", (markerText _sector), _sector, (count _spawnBuildings)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+        [format ["Sector %1 (%2) - Spawn garrison found %3 buildings. ", (markerText _sectorMarker), _sectorMarker, (count _spawnBuildings)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
     };
 
     //Nowhere to spawn so skip spawning
     if(_building_ai_max <= 0 && count _spawnBuildings <= 0) then {
+        [format ["Sector %1 (%2) - No buildings found to spawn in. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
         _isStageFinished = true;
     }
 };
@@ -67,28 +68,33 @@ if(_stageWorkerIndex_0 == 0) then {
 if(_stageWorkerIndex_0 >= 1) then {
 
     private _classnames = [_infsquad] call KPLIB_fnc_getSquadComp;
-    private _unitCount = 0;
+    private _allUnitCount = 0;
     {
-        _unitCount = _unitCount + (count units _x);
+        _allUnitCount = _allUnitCount + (count units _x);
     } foreach _garrisonedGroups;
 
-    if (_unitCount < _building_ai_max) then {
-    
+    if (_allUnitCount < _building_ai_max) then {
         //Get First group that their building is not full or squad maxed or create a new one
         private _grp = grpNull;
         private _unit = objNull;
         private _pos = [];
         {
+            
             private _unitCount = count (units _x);
             private _posCount = count (_spawnBuildings select _forEachIndex);
+            
+            [format["Checking grp: %1 UnitCount: %2 PosCount: %3", _x,_unitCount,_posCount], "SECTORSPAWN"] call KPLIB_fnc_log;
 
-            if(_unitCount <= SQUAD_MAX || _unitCount <= _posCount) then {
+            if(_unitCount <= BUILDING_SQUAD_MAX || _unitCount <= _posCount) then {
                 _grp = _x;
+                [format ["Sector %1 (%2) - Picking group %3", (markerText _sectorMarker), _sectorMarker, _grp], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
             };
         } foreach _garrisonedGroups;
 
-        if(_grp == grpNull) then {
+        if(isNull _grp) then {
             _grp = createGroup [GRLIB_side_enemy, true];
+            _garrisonedGroups pushBack _grp;
+            [format ["Sector %1 (%2) - Creating group %3", (markerText _sectorMarker), _sectorMarker, _grp], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
         };
 
         //Get a position to spawn at and remove it
@@ -104,8 +110,12 @@ if(_stageWorkerIndex_0 >= 1) then {
             _isStageFinished = true;
         };
 
-        _unit = [selectRandom _classnames, _pos, _grp] call KPLIB_fnc_createManagedUnit;
+        
+        private _class = selectRandom _classnames;
+        _unit = [_class, _pos, _grp] call KPLIB_fnc_createManagedUnit;
         _managed_units pushBack _unit;
+
+        [format ["Sector %1 (%2) - %3 spawned at %4 into %5", (markerText _sectorMarker), _sectorMarker, _class, _pos, _grp], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 
     } else {
         _isStageFinished = true;
