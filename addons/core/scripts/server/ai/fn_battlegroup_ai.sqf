@@ -2,7 +2,7 @@
     File: fn_battlegroup_ai.sqf
     Authors: Violets
     Date: 2025-11-01
-    Last Update: 2025-11-06
+    Last Update: 2025-11-07
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -29,12 +29,12 @@ private _objPos = [_startPos] call KPLIB_fnc_getNearestBluforObjective;
 [
     { 
         private _return = [_this] call KPLIB_server_fnc_battlegroup_ai_create_waypoints;
-        _isFinished = _return select 0;
-        _index      = _return select 1;
+        private _isFinished = _return select 0;
+        private _index      = _return select 1;
     },
     0.25,
     [_grp, _objPos],
-    { _isFinished = false; _index = 0; },
+    { private _isFinished = false; private _index = 0; },
     {},
     { !_isFinished },
     { _isFinished },

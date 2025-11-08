@@ -14,6 +14,7 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class checkWeaponCargo          {};
         class cleanOpforVehicle         {};
         class clearCargo                {};
+        class clearGrpWaypoints         {};
         class crAddAceAction            {};
         class crateFromStorage          {};
         class crateToStorage            {};
