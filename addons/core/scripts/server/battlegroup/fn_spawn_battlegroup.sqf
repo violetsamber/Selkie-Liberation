@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup.sqf
     Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2025-11-5
-    Last Update: 2025-11-06
+    Last Update: 2025-11-08
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -54,7 +54,7 @@ if (worldName in KP_liberation_battlegroup_clearance) then {
         _battlegroup_vehicles = _return select 0;
         _battlegroup_infantry = _return select 1;
     },
-    { [_this ] call KPLIB_server_fnc_spawn_battlegroup_end; },
+    { [_this] call KPLIB_server_fnc_spawn_battlegroup_end; },
     { !_isFinished },
     { _isFinished },
     ["_isFinished", "_bg_groups", "_battlegroup_vehicles", "_battlegroup_infantry"]
