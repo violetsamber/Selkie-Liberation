@@ -1,3 +1,22 @@
+/*
+    File: fn_wait_to_spawn_sector.sqf
+    Authors: Violets
+    Date: 2025-11-01
+    Last Update: 2025-11-07
+    License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
+//TODO REFACTOR THIS MESS
+
 params ["_sector", "_opforcount"];
 
 private _start = diag_tickTime;
