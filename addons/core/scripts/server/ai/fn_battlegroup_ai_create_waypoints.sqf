@@ -28,7 +28,7 @@ PFH_GETPARAM(_pfh,_objPos,1)
 
 private _isFinished = false;
 
-[format ["[BATTLEGROU_AI] _index: %1", _index]] call KPLIB_fnc_log;
+[format ["[BATTLEGROUP_AI] _index: %1", _index]] call KPLIB_fnc_log;
 
 switch (_index) do
 {
