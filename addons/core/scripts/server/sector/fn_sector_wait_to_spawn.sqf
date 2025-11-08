@@ -32,48 +32,32 @@
         Function reached the end [BOOL]
 */
 
+ 
+
+#include "../FunctionsInclude.hpp"
+#include "sector_macros.hpp"
+
+#define TIME_TO_WAIT 60
+
 //TODO REFACTOR THIS MESS
-params ["_sector", "_opforcount"];
+params ["_sector"];
 
-private _start = diag_tickTime;
-[format ["Sector %1 (%2) - Waiting to spawn sector...", (markerText _sector), _sector], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+PFH_GETPARAM(_pfh,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
 
-private _corrected_size = [_opforcount] call KPLIB_fnc_getSectorRange;
-sleep 0.1;
-private _unitscount = [markerPos _sector, _corrected_size , GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount;
+PFH_GETVAR(_pfh,"_vehicle",objNull)
+PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
 
-if (_unitscount > 0 && _unitscount <= 10) then {
-    sleep 5;
-};
-sleep 0.1;
-
-_unitscount = [markerPos _sector, _corrected_size, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount;
-if (_unitscount > 0 && _unitscount <= 6) then {
-    sleep 5;
-};
-sleep 0.1;
-
-_unitscount = [markerPos _sector, _corrected_size, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount;
-if (_unitscount > 0 && _unitscount <= 4) then {
-    sleep 5;
-};
-sleep 0.1;
-
-_unitscount = [markerPos _sector, _corrected_size, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount;
-if (_unitscount > 0 && _unitscount <= 3) then {
-    sleep 5;
-};
-sleep 0.1;
-
-_unitscount = [markerPos _sector, _corrected_size, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount;
-if (_unitscount > 0 && _unitscount <= 2) then {
-    sleep 5;
-};
-sleep 0.1;
-
-_unitscount = [markerPos _sector, _corrected_size, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount;
-if (_unitscount == 1) then {
-    sleep 5;
+if(_stageWorkerIndex_0 == 0) then {
+    [format ["Sector %1 (%2) - Waiting to spawn sector...", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 };
 
-[format ["Sector %1 (%2) - Waiting done - Time needed: %3 seconds", (markerText _sector), _sector, diag_tickTime - _start], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+//Origional script tried to prevent the spawning a of sector if someone was passing through it
+if(TIME_TO_WAIT <= PFH_UPDATE_TIME * _stageWorkerIndex_0) then {
+    INCREMENT(_stageWorkerIndex_0)
+};
+
+if(TIME_TO_WAIT >= PFH_UPDATE_TIME * _stageWorkerIndex_0) then {
+    [format ["Sector %1 (%2) - Waiting done - Time needed: %3 seconds", (markerText _sectorMarker), _sectorMarker, PFH_UPDATE_TIME * _stageWorkerIndex_0], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+};
+
+[_isStageFinished,_stageWorkerIndex_0]

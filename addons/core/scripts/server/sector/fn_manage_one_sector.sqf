@@ -67,7 +67,12 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         {
             case 0: {
                 //Wait To Spawn
-                [_sectorMarker, _opforcount] call KPLIB_server_fnc_wait_to_spawn_sector;
+                _return = [_sectorMarker, _opforcount] call KPLIB_server_fnc_sector_wait_to_spawn;
+
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    INCREMENT(_stageIndex)
+                }
             };
             case 1: {
                 //Bigtown
@@ -149,13 +154,15 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         };
         
     },
-    0.5,
+    PFH_UPDATE_TIME,
     [_sectorMarker, _sectorPos],
     {
         //Start
         _isFinished = false;
         _isStageFinished = false;
         _stageIndex = 0;
+        _stageWorkerIndex_0 = 0;
+
         _roamingToSpawn = []; 
         _vehToSpawn = [];
         _spawnCivs = false;
@@ -188,7 +195,8 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
     [
         "_isFinished", 
         "_isStageFinished", 
-        "_stageIndex", 
+        "_stageIndex",
+        "_stageWorkerIndex_0",
         "_roamingToSpawn", 
         "_vehToSpawn",
         "_spawnCivs",
