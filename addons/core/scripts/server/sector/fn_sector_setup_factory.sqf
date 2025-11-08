@@ -46,8 +46,7 @@ private _squadCount = SECTOR_MIN_SQUAD_COUNT;
 if (GRLIB_unitcap >= 1.25) then { INCREMENT(_squadCount) };
 
 for "_i" from 1 to _squadCount do {
-    private _squadComp = [_infsquad] call KPLIB_fnc_getSquadComp;
-    _roamingToSpawn pushBack _squadComp;
+    _roamingToSpawn pushBack [_infsquad] call KPLIB_fnc_getSquadComp;
 };
 
 
@@ -59,9 +58,8 @@ if ((random 100) > 66) then { INCREMENT(_vehCount) };
 if ((random 100) > 33) then { INCREMENT(_vehCount) };
 if ((random 100) > 33) then { INCREMENT(_vehCount) };
 
-for "_i" from 1 to _squadCount do {
-    private _vehicleType = selectRandom militia_vehicles;
-    _vehToSpawn pushBack _vehicleType;
+for "_i" from 1 to _vehCount do {
+    _vehToSpawn pushBack selectRandom militia_vehicles;
 };
 
 //Civs
