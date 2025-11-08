@@ -1,5 +1,5 @@
 /*
-    File: fn_sector_spawn_bigtown.sqf
+    File: fn_sector_setup_bigtown.sqf
     Authors: Violets
     Date: 2025-11-07
     Last Update: 2025-11-07

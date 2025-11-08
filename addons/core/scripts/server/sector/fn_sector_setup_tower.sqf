@@ -1,5 +1,5 @@
 /*
-    File: fn_sector_spawn_tower.sqf
+    File: fn_sector_setup_tower.sqf
     Authors: Violets
     Date: 2025-11-07
     Last Update: 2025-11-07
