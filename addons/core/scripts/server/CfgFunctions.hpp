@@ -89,7 +89,6 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class send_paratroopers_waitUntilAtTarget {};
         class send_paratroopers_waypoints_arrived {};
         class send_paratroopers_waypoints_flyTo {};
-        class send_paratroopers_update {};
         class send_paratroopers {};
     };
 
