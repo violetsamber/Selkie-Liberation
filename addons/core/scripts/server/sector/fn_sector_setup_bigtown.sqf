@@ -2,7 +2,7 @@
     File: fn_sector_setup_bigtown.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-07
+    Last Update: 2025-11-08
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -37,7 +37,7 @@ PFH_GETVAR(_pfh,"_building_range",0)
 PFH_GETVAR(_pfh,"_local_capture_size",0)
 PFH_GETVAR(_pfh,"_iedcount",0)
 
-//PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
+PFH_GETPARAM(_pfh, _popfactor, PFH_PARAM_POP_FACTOR)
 
 //Squads
 if (SLKLIB_combat_readiness < READINESS_FOR_ARMY) then {_infsquad = "militia";};

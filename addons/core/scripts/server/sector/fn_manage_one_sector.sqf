@@ -34,27 +34,34 @@ if (GRLIB_unitcap < 1) then {_popfactor = GRLIB_unitcap;};
 
 //If already active dont activate again;
 if (_sectorMarker in active_sectors) exitWith {
-    [format ["Sector %1 (%2) WAS ALREADY ACTIVE - Managed on: %3", (markerText _sectorMarker), _sectorMarker, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+    [format ["Sector %1 (%2) IS ALREADY ACTIVE - Managed on: %3", (markerText _sectorMarker), _sectorMarker, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 };
 
 //Activate sector
 active_sectors pushBack _sectorMarker; publicVariable "active_sectors"; //TODO Change this to a function call
-[format ["Sector %1 (%2) activated - Managed on: %3", (markerText _sectorMarker), _sectorMarker, debug_source], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
 
 //Check if we can active
 private _opforcount = [] call KPLIB_fnc_getOpforCap;
 private _isSectorNotBlufor = !(_sectorMarker in blufor_sectors);
 private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcount] call KPLIB_fnc_getSectorRange, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) > 0);
 
-if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then 
-{
-    //Spawn
-    //Run!
-} else {
-    //Deactivate!
-    sleep 40;
+
+//TODO ADD THIS FUNCTIONALITY
+// if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then 
+// {
+//     //Spawn
+//     //Run!
+// } else {
+//     //Deactivate!
+//     sleep 40;
     
-};
+// };
+
+["------------------------------------", "Sector Start"] call KPLIB_fnc_log;
+[format ["Sector: %1 (%2)", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] call KPLIB_fnc_log;
+[format ["Manged By: %1", debug_source], "SECTORSPAWN"] call KPLIB_fnc_log;
+[format ["Popfactor: %1", _popfactor], "SECTORSPAWN"] call KPLIB_fnc_log;
+["------------------------------------", "SECTORSPAWN"] call KPLIB_fnc_log;
 
 [
     {
@@ -115,7 +122,7 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
                 _vehToSpawn =         _return select 1;
                 _spawnCivs =          _return select 2;
                 _guerilla =           _return select 3;
-                _infsquad=            _return select 4;
+                _infsquad =            _return select 4;
                 _building_ai_max =    _return select 5;
                 _building_range =     _return select 6;
                 _local_capture_size = _return select 7;
@@ -206,7 +213,7 @@ if (_isSectorNotBlufor && _isThereAnyBlueforUnitsInSector) then
         
     },
     PFH_UPDATE_TIME,
-    [_sectorMarker, _sectorPos],
+    [_sectorMarker, _sectorPos, _popfactor],
     {
         //Start
         _isFinished = false;
