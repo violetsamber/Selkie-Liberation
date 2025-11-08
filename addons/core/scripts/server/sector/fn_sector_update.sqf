@@ -35,7 +35,7 @@ while {!_stopit} do {
         active_sectors = active_sectors - [_sector]; publicVariable "active_sectors";
 
         sleep 600;
-
+        //TODO This should be handled by a garbage collector script
         {
             if (_x isKindOf "Man") then {
                 if (side group _x != GRLIB_side_friendly) then {
@@ -47,7 +47,10 @@ while {!_stopit} do {
                 };
             };
         } forEach _managed_units;
+        
     } else {
+
+        //Sector running logic
         if (([_sectorpos, (([_opforcount] call KPLIB_fnc_getSectorRange) + 300), GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) == 0) then {
             _sector_despawn_tickets = _sector_despawn_tickets - 1;
         } else {
@@ -75,6 +78,7 @@ while {!_stopit} do {
             _stopit = true;
             active_sectors = active_sectors - [_sector]; publicVariable "active_sectors";
         };
+
     };
     sleep SECTOR_TICK_TIME;
 };
