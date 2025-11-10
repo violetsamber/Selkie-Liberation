@@ -1,6 +1,6 @@
 /*
-    File: fn_getSectorType.sqf
-    Authors: 
+    File: fn_getNearestBluforMarker.sqf
+    Authors: Violets
     Date: 2025-11-10
     Last Update: 2025-11-10
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -16,14 +16,16 @@
 */
 
 params [
-    ["_sectorMarker", ""],
-    ["_index", 0]
+    ["_pos", [0, 0, 0], [[]], [2, 3]]
 ];
 
-private _return = sectors_hashmap getOrDefault [_sectorMarker, ["nil"]];
+private _bluPos = [_pos] call KPLIB_fnc_getNearestBluforObjective;
+private _bluMarker = "";
 
-if (_return select 0 == "nil") exitWith {
-    [format ["Sector Marker: [%1] is not in the sectors_hashmap.", _sectorMarker], "ERROR"] call KPLIB_fnc_log;
-};
+{
+    if([_bluPos, markerPos _x] call BIS_fnc_areEqual) exitWith {
+        _bluMarker = _x;
+    }
+} forEach blufor_sectors;
 
-_return select _index
+_bluMarker

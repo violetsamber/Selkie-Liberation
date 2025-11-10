@@ -43,6 +43,7 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class getMobileRespawns         {};
         class getNearbyPlayers          {};
         class getNearestBluforObjective {};
+        class getNearestBluforMarker    {};
         class getNearestFob             {};
         class getNearestSector          {};
         class getNearestTower           {};
