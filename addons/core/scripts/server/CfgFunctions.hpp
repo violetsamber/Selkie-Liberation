@@ -57,7 +57,7 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class spawn_battlegroup_update {};
         class spawn_boat               {};
         class odstDrop                 {};
-
+        class battlegroup_calculate_size {};
     };
 
     class server_rnd_battlegroup {

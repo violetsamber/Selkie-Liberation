@@ -63,6 +63,8 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class getUnitsCount             {};
         class getWeaponComponents       {};
         class getRandomPointInCircle    {};
+        class getTimeSinceLastBattlegroup {};
+        class getSectorValue            {};
         class handlePlacedZeusObject    {};
         class hasPermission             {};
         class initSectors               {};
