@@ -2,7 +2,7 @@
     File: fn_manage_one_sector.sqf
     Authors: Violets, KP Liberation Dev Team
     Date: 2025-11-01
-    Last Update: 2025-11-08
+    Last Update: 2025-11-09
     License: MIT License - http://www.opensource.org/licenses/MIT
     
     Description:
@@ -85,7 +85,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 }
             };
             case 1: {
-                
+                //Setup Sector Varibles
                 PFH_GETPARAM(_this,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
 
                 //Bigtown
