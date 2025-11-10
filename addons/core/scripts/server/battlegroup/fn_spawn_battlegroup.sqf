@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup.sqf
     Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2025-11-5
-    Last Update: 2025-11-08
+    Last Update: 2025-11-10
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -27,10 +27,13 @@ private _target_size = (round (GRLIB_battlegroup_size * ([] call KPLIB_fnc_getOp
 
 if (SLKLIB_combat_readiness < 60) then {_target_size = round (_target_size * 0.65);};
 
+private _battlegroupSize = [] call KPLIB_fnc_calculate_battlegroup_size;
+
 [_spawn_marker] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
 
 [format ["[BATTLEGROUP] Starting spawn with: _infOnly: %1, _spawn_marker: %2, _spawnMarkerPos: %3, _target_size: %4", _infOnly, _spawn_marker, _spawnMarkerPos, _target_size]] call KPLIB_fnc_log;
 
+//Look into adding clearance for all battlegroups so they can spawn easier and remove when they leave the area
 if (worldName in KP_liberation_battlegroup_clearance) then {
     [markerPos _spawn_marker, 30] call KPLIB_fnc_createClearance;
 };
