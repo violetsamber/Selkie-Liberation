@@ -1,6 +1,18 @@
 # Selkie Liberation
 
+<img 
+    style="display: block; 
+           margin-left: auto;
+           margin-right: auto;
+           width: 30%;"
+    src="./addons/core/res/selkie_lib.png"
+    alt="Selkie Logo">
+</img>
+
+<div style="text-align: center;">
 Heavily modified version of [KP Liberation](https://github.com/KillahPotatoes/KP-Liberation) for the Selkie arma unit.
+</div>
+
 
 ## Main New Features
 #### Higher base difficulty 

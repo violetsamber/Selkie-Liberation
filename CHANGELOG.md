@@ -1,5 +1,14 @@
+## 1.0.3
+ADDED:
+
+FIXED:
+
+CHANGED:
+- Reduced town spawn lag by adding sleep commands to town scripts
+
 ## 1.0.2
 ADDED:
+- Selkie Liberation logo thanks to: multicarinata
 
 FIXED:
 - Not being able to abort logi routes
