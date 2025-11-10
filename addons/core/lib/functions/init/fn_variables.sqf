@@ -21,3 +21,5 @@ SLKLIB_RandomBattlegroups_ActivateTime = 2700;
 
 SLKLIB_RandomBattlegroups_MinSleeptime = 2700;
 SLKLIB_RandomBattlegroups_MaxSleeptime = 3600;
+
+GRLIB_last_battlegroup_time = diag_tickTime;

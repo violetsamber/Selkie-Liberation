@@ -21,13 +21,18 @@ params [
 if (GRLIB_endgame == 1) exitWith {};
 
 private _spawn_marker = [[2000, 1000] select _infOnly, 3000, false, markerPos _targetMarker] call KPLIB_fnc_getOpforSpawnPoint;
+
+if(_targetMarker == "") then {
+    _targetMarker = [markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforMarker;
+};
+
 if (_spawn_marker isEqualTo "") then { ["No valid _spawn_marker!"] call BIS_fnc_error; false };
 private _spawnMarkerPos = markerPos _spawn_marker;
 private _target_size = (round (GRLIB_battlegroup_size * ([] call KPLIB_fnc_getOpforFactor) * (sqrt GRLIB_csat_aggressivity))) min 16;
 
 if (SLKLIB_combat_readiness < 60) then {_target_size = round (_target_size * 0.65);};
 
-private _battlegroupSize = [] call KPLIB_fnc_calculate_battlegroup_size;
+private _battlegroupSize = [_targetMarker] call KPLIB_server_fnc_battlegroup_calculate_size;
 
 [_spawn_marker] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
 
