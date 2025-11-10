@@ -1,19 +1,19 @@
 # Selkie Liberation
 
-<img 
-    style="display: block; 
-           margin-left: auto;
-           margin-right: auto;
-           width: 30%;"
-    src="./addons/core/res/selkie_lib.png"
-    alt="Selkie Logo">
-</img>
+<p align="center" width="100%">
+    <img 
+        src="./addons/core/res/selkie_lib.png"
+        alt="Selkie Logo"
+        width="33%"
+        >
+    </img>
+</p>
 
-<div style="text-align: center;">
-Heavily modified version of 
-<a href="https://github.com/KillahPotatoes/KP-Liberation">KP Liberation</a>
- for the Selkie arma unit.
-</div>
+<p align="center" width="100%">
+    Heavily modified version of 
+    <a href="https://github.com/KillahPotatoes/KP-Liberation">KP Liberation</a>
+    for the Selkie arma unit.
+</p>
 
 
 ## Main New Features
