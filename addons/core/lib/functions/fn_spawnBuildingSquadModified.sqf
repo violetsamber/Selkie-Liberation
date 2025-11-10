@@ -1,8 +1,8 @@
 /*
-    File: fn_spawnBuildingSquad.sqf
+    File: fn_spawnBuildingSquadModified.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes Modified by Violets Amber
     Date: 2019-12-03
-    Last Update: 2025-06-08
+    Last Update: 2025-11-10
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -51,6 +51,7 @@ private _squadMax = 7;
     	_unit setPos (_x);
     	[_unit, _sector] spawn KPLIB_server_fnc_building_defence_ai;
     	_units pushBack _unit;
+        sleep 0.2;
 	} forEach _positionArray;
 
 	if(count _units >= _amount) exitWith {

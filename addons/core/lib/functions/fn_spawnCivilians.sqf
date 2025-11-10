@@ -2,7 +2,7 @@
     File: fn_spawnCivilians.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2019-12-03
-    Last Update: 2020-04-05
+    Last Update: 2025-11-10
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -45,7 +45,7 @@ for "_i" from 1 to _amount do {
             _grp
         ] call KPLIB_fnc_createManagedUnit
     );
-
+    sleep 0.2;
     [_grp] call KPLIB_server_fnc_add_civ_waypoints;
 };
 
