@@ -2,7 +2,7 @@
     File: fn_spawnRegularSquad.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2019-12-03
-    Last Update: 2020-05-06
+    Last Update: 2025-11-10
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -45,6 +45,7 @@ private _grp = createGroup [GRLIB_side_enemy, true];
 {
     if (_forEachIndex < _corrected_amount) then {
         [_x, _spawnPos, _grp] call KPLIB_fnc_createManagedUnit;
+        sleep 0.2;
     };
 } forEach _classnames;
 

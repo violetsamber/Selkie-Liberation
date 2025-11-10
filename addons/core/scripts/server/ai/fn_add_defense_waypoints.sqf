@@ -1,4 +1,19 @@
-//add_defense_waypoints.sqf
+/*
+    File: fn_add_defense_waypoints.sqf
+    Authors: KP Liberation Team
+    Date: 2025-11-01
+    Last Update: 2025-11-10
+    License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
 
 private _grp = _this select 0;
 private _flagpos = _this select 1;
@@ -28,14 +43,17 @@ if (_is_infantry) then {
     _waypoint setWaypointCombatMode "YELLOW";
     _waypoint setWaypointSpeed "LIMITED";
     _waypoint setWaypointCompletionRadius 10;
+    sleep 0.1;
 
     _waypoint = _grp addWaypoint [_wpPositions select 1, 10];
     _waypoint setWaypointType "MOVE";
+    sleep 0.1;
     _waypoint = _grp addWaypoint [_wpPositions select 2, 10];
     _waypoint setWaypointType "MOVE";
+    sleep 0.1;
     _waypoint = _grp addWaypoint [_wpPositions select 3, 10];
     _waypoint setWaypointType "MOVE";
-
+    sleep 0.1;
     _waypoint = _grp addWaypoint [_wpPositions select 4, 10];
     _waypoint setWaypointType "CYCLE";
 } else {
@@ -70,6 +88,7 @@ if ({alive _x} count (units _grp) > 0) then {
     _waypoint setWaypointType "SAD";
     _waypoint setWaypointBehaviour "COMBAT";
     _waypoint setWaypointCombatMode "YELLOW";
+    sleep 0.1;
     if (_is_infantry) then {
         _waypoint setWaypointSpeed "NORMAL";
     } else {
@@ -77,10 +96,13 @@ if ({alive _x} count (units _grp) > 0) then {
     };
     _waypoint = _grp addWaypoint [_wpPositions select 1, 10];
     _waypoint setWaypointType "SAD";
+    sleep 0.1;
     _waypoint = _grp addWaypoint [_wpPositions select 2, 10];
     _waypoint setWaypointType "SAD";
+    sleep 0.1;
     _waypoint = _grp addWaypoint [_wpPositions select 3, 10];
     _waypoint setWaypointType "SAD";
+    sleep 0.1;
     _waypoint = _grp addWaypoint [_wpPositions select 4, 10];
     _waypoint setWaypointType "CYCLE";
     _grp setCurrentWaypoint [_grp, 0];
