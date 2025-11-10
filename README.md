@@ -10,7 +10,9 @@
 </img>
 
 <div style="text-align: center;">
-Heavily modified version of [KP Liberation](https://github.com/KillahPotatoes/KP-Liberation) for the Selkie arma unit.
+Heavily modified version of 
+<a href="https://github.com/KillahPotatoes/KP-Liberation">KP Liberation</a>
+ for the Selkie arma unit.
 </div>
 
 
