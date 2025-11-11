@@ -31,8 +31,8 @@ private _num_odst_drops = 0;
 //1-2 Pelican or Falcon Drops
 private _paradrops = [100,50];
 private _paradrop_veh = [
-    ["Selkie_Army_Falcon_Unarmed_Woodland",75], 
-    ["Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",25]
+    [QUOTE(SLK_UNSC_ARMY_FALCON_UNARMED_WOODLAND),75], 
+    [SLK_UNSC_MARINES_PELICAN_UNARMED_WOODLAND,25]
 ];
 
 _battlegroup_vehicles pushBack [_paradrops,_paradrop_veh] call KPLIB_pickRandomClasses; 
@@ -52,7 +52,7 @@ _battlegroup_vehicles pushBack [_transports,_transport_veh] call KPLIB_pickRando
 //~1 Air veh
 private _air = [50];
 private _air_veh = [
-    ["Selkie_Army_Falcon_Armed_Woodland",100]
+    [QUOTE(SLK_UNSC_ARMY_FALCON_ARMED_WOODLAND),100]
 ];
 
 _battlegroup_vehicles pushBack [_air,_air_veh] call KPLIB_pickRandomClasses; 

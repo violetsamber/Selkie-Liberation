@@ -1,1 +1,18 @@
 
+#define SLK_UNSC() Selkie_UNSC_
+#define SLK_UNSC_ARMY() SLK_UNSC()Army_
+#define WOODLAND() _Woodland
+#define SLK_UNSC_ARMY_MOD(var1) SLK_UNSC_ARMY()var1
+
+#define SLK_UNSC_ARMY_FALCON_UNARMED() SLK_UNSC_ARMY_MOD(Falcon_Unarmed)
+#define SLK_UNSC_ARMY_FALCON_ARMED() SLK_UNSC_ARMY_MOD(Falcon_Armed)
+
+//Use These
+#define SLK_UNSC_ARMY_FALCON_UNARMED_WOODLAND SLK_UNSC_ARMY_FALCON_UNARMED()_Woodland
+#define SLK_UNSC_ARMY_FALCON_ARMED_WOODLAND SLK_UNSC_ARMY_FALCON_ARMED()_WoodlandA
+//---
+
+//Use These
+#define SLK_UNSC_MARINES_PELICAN_UNARMED_WOODLAND QUOTE(Selkie_UNSC_Marines_Pelican_Unarmed_Halo3)
+#define SLK_UNSC_MARINES_PELICAN_ARMED_WOODLAND QUOTE(Selkie_UNSC_Marines_Pelican_Aarmed_Halo3)
+//---
