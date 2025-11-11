@@ -32,23 +32,26 @@ private _rand = 0;
 private _totalRand = 0;
 private _returnClasses = [];
 
-for "_i" from 0 to count _chancesToSpawn do {
-    if(random 100 > _i) then {
-        _class = "";
-        _rand = random 100;
-        _totalRand = 0;
+[format ["_chancesToSpawn: %1, _classes: %2", _chancesToSpawn, _classes]] call KPLIB_fnc_Log;
+private _spawnChances = (count _chancesToSpawn);  
 
-        {
-            ADD(_totalRand,_x select 1);
-            if(_rand < _totalRand) exitWith {
-                _class = _x select 0; 
-            };
-        } forEach _classes;
-
-        if(!([_class,""] call BIS_fnc_areEqual)) then {
-            _returnClasses pushBack _class;
-        };
-    };
+for "_i" from 0 to _spawnChances do { 
+	if(random 100 < (_chancesToSpawn select _i)) then { 
+		_class = ""; 
+		_rand = random 100;
+		_totalRand = 0; 
+ 
+		{
+			_totalRand = (_totalRand + (_x select 1));
+			if(_rand < _totalRand) exitWith { 
+				_class = _x select 0;  
+			}; 
+		} forEach _classes; 
+ 
+		if(!([_class,""] call BIS_fnc_areEqual)) then { 
+			_returnClasses pushBack _class; 
+		}; 
+	}; 
 };
 
 _returnClasses

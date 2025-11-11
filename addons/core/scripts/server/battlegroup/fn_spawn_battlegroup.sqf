@@ -61,9 +61,8 @@ if (worldName in KP_liberation_battlegroup_clearance) then {
         _bg_groups = [];
         _battlegroup_vehicles = [];
         _battlegroup_infantry = [];
-        _battlegroupSize = (_this getVariable "params" select PFH_PARAM_BATTLEGROUP_SIZE);
-    
-        private _return = [_this, _infOnly, _battlegroupSize] call KPLIB_server_fnc_spawn_battlegroup_start;
+        
+        private _return = [_this] call KPLIB_server_fnc_spawn_battlegroup_start;
         
         _battlegroup_vehicles = _return select 0;
         _battlegroup_infantry = _return select 1;

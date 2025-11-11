@@ -2,7 +2,7 @@
     File: fn_setup_battlegroup_huge.sqf
     Authors: Violets
     Date: 2025-11-10
-    Last Update: 2025-11-10
+    Last Update: 2025-11-11
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
