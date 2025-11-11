@@ -41,38 +41,43 @@ private _minSleep = SLKLIB_RandomBattlegroups_MinSleeptime;
 
 //Below minumum time penalty -1
 if(_timeSince < _minSleep) then {
-    ADD(_size,-1);
+    if(_timeSince < (_minSleep / 2)) then{
+        ADD(_size,-2);
+    } else {
+        ADD(_size,-1);
+    };
     [format ["Below min time penalty: -1 Size: %1",_size], "BATTLEGROUP"] call KPLIB_fnc_log;
-};
+} else {
+    //Min - Max [0,1,2]
+    //|Min 0|Center 1|Max 2|
 
-//Min - Max [0,1,2]
-//|Min 0|Center 1|Max 2|
+    private _sleepThirds = ((_maxSleep - _minSleep) / 3);
+    private _sleepFirstThird = (_minSleep + _sleepThirds);
+    private _sleepSecondThird = (_minSleep + (_sleepThirds * 2));
 
-private _sleepThirds = ((_maxSleep - _minSleep) / 3);
-private _sleepFirstThird = (_minSleep + _sleepThirds);
-private _sleepSecondThird = (_minSleep + (_sleepThirds * 2));
+    //Min 0
+    if(_timeSince > _minSleep && _timeSince < _sleepFirstThird) then {
+        //Do Nothing
+        [format ["Min Sleep: 0 Size: %1",_size], "BATTLEGROUP"] call KPLIB_fnc_log;
+    };
 
-//Min 0
-if(_timeSince > _minSleep && _timeSince < _sleepFirstThird) then {
-    //Do Nothing
-    [format ["Min Sleep: 0 Size: %1",_size], "BATTLEGROUP"] call KPLIB_fnc_log;
-};
+    //Center 1
+    if(_timeSince >= _sleepFirstThird && _timeSince < _sleepSecondThird) then {
+        ADD(_size,1);
+        [format ["Center Sleep: 1 Size: %1",_size], "BATTLEGROUP"] call KPLIB_fnc_log;
+    };
 
-//Center 1
-if(_timeSince >= _sleepFirstThird && _timeSince < _sleepSecondThird) then {
-    ADD(_size,1);
-    [format ["Center Sleep: 1 Size: %1",_size], "BATTLEGROUP"] call KPLIB_fnc_log;
-};
-
-//Max 2
-if(_timeSince >= _sleepSecondThird) then {
-    ADD(_size,2);
-    [format ["Max Sleep: 2 Size: %1",_size], "BATTLEGROUP"] call KPLIB_fnc_log;
+    //Max 2
+    if(_timeSince >= _sleepSecondThird) then {
+        ADD(_size,2);
+        [format ["Max Sleep: 2 Size: %1",_size], "BATTLEGROUP"] call KPLIB_fnc_log;
+    };
 };
 
 //Combat Readiness 0-100 [0.5x, 1x, 2x]
 
 private _readinessAddition = round (SLKLIB_combat_readiness / 50);
+//if(SLKLIB_combat_readiness < 25) then { _readinessAddition = -1 };
 ADD(_size,_readinessAddition);
 [format ["Readiness [%1] Add: %2 Size: %3",SLKLIB_combat_readiness, _readinessAddition,  _size], "BATTLEGROUP"] call KPLIB_fnc_log;
 
