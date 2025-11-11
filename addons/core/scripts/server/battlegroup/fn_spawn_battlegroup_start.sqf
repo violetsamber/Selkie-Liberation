@@ -60,16 +60,16 @@ if (_infOnly) then {
             _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
         };
         case 1: {
-            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupSmall;
         };
         case 2: {
-            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupMedium;
         };
         case 3: {
-            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupLarge;
         };
         case 4: {
-            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupHuge;
         };
         default {
             [format ["[WARNING] battlegroup size is %1 which is an invalid number.", _battlegroupSize],"BATTLEGROUP"] call KPLIB_fnc_log;
