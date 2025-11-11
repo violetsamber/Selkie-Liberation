@@ -27,6 +27,12 @@ private _num_odst_drops = 0;
 
 //Setup here
 
+//2-3 Pelican or Falcon Drops
+//1-2 LAAG
+//2 Transport Vics
+//~1-2 Air vic
+//Low chance of medium armor
+
 [
     _battlegroup_vehicles,
     _battlegroup_infantry,
