@@ -13,6 +13,8 @@
     Returns:
 */
 
+#include "battlegroup_macros.hpp"
+
 params [
     ["_targetMarker", "", [""]],
     ["_infOnly", false, [false]]
@@ -28,15 +30,18 @@ if(_targetMarker == "") then {
 
 if (_spawn_marker isEqualTo "") then { ["No valid _spawn_marker!"] call BIS_fnc_error; false };
 private _spawnMarkerPos = markerPos _spawn_marker;
-private _target_size = (round (GRLIB_battlegroup_size * ([] call KPLIB_fnc_getOpforFactor) * (sqrt GRLIB_csat_aggressivity))) min 16;
 
-if (SLKLIB_combat_readiness < 60) then {_target_size = round (_target_size * 0.65);};
+// private _target_size = (round (GRLIB_battlegroup_size * ([] call KPLIB_fnc_getOpforFactor) * (sqrt GRLIB_csat_aggressivity))) min 16;
+
+// if (SLKLIB_combat_readiness < 60) then {_target_size = round (_target_size * 0.65);};
 
 private _battlegroupSize = [_targetMarker] call KPLIB_server_fnc_battlegroup_calculate_size;
 
 [_spawn_marker] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
 
-[format ["[BATTLEGROUP] Starting spawn with: _infOnly: %1, _spawn_marker: %2, _spawnMarkerPos: %3, _target_size: %4", _infOnly, _spawn_marker, _spawnMarkerPos, _target_size]] call KPLIB_fnc_log;
+["----Starting Spawn Battlegroup----", "BATTLEGROUP"] call KPLIB_fnc_log;
+[format ["_infOnly: %1, _spawn_marker: %2, _spawnMarkerPos: %3, _target_size: %4", _infOnly, _spawn_marker, _spawnMarkerPos, _target_size], "BATTLEGROUP"] call KPLIB_fnc_log;
+[format ["_targetMarker: %1", _targetMarker], "BATTLEGROUP"] call KPLIB_fnc_log;
 
 //Look into adding clearance for all battlegroups so they can spawn easier and remove when they leave the area
 if (worldName in KP_liberation_battlegroup_clearance) then {
@@ -50,14 +55,15 @@ if (worldName in KP_liberation_battlegroup_clearance) then {
         _isFinished = _return select 1;
     },
     0.5,
-    [_infOnly, _spawn_marker, _spawnMarkerPos, _target_size],
+    [_infOnly, _spawn_marker, _spawnMarkerPos, _battlegroupSize],
     {
         _isFinished = false;
         _bg_groups = [];
         _battlegroup_vehicles = [];
         _battlegroup_infantry = [];
+        _battlegroupSize = (_this getVariable "params" select PFH_PARAM_BATTLEGROUP_SIZE);
     
-        private _return = [_this, _infOnly, _target_size] call KPLIB_server_fnc_spawn_battlegroup_start;
+        private _return = [_this, _infOnly, _battlegroupSize] call KPLIB_server_fnc_spawn_battlegroup_start;
         
         _battlegroup_vehicles = _return select 0;
         _battlegroup_infantry = _return select 1;

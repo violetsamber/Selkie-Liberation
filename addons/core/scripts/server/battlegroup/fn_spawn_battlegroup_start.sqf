@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_start.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-06
+    Last Update: 2025-11-10
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -15,16 +15,21 @@
         Function reached the end [BOOL]
 */
 
+#include "../FunctionsInclude.hpp"
+#include "battlegroup_macros.hpp"
+
 params [
     ["_pfh", objNull]
 ];
 
 ["[BATTLEGROUP] Starting battlegroup spawn."] call KPLIB_fnc_log;
-private _infOnly =     _pfh getVariable "params" select 0;
-private _target_size = _pfh getVariable "params" select 3;
+
+PFH_GETPARAM(_pfh,_infOnly,PFH_PARAM_INFONLY)
+PFH_GETPARAM(_pfh,_battlegroupSize,PFH_PARAM_BATTLEGROUP_SIZE)
 
 private _battlegroup_vehicles = [];
 private _battlegroup_infantry = [];
+private _num_odst_drops = 0;
 
 GRLIB_last_battlegroup_time = diag_tickTime;
 
@@ -33,8 +38,9 @@ if (_infOnly) then {
     private _infClasses = [KPLIB_o_inf_classes, militia_squad] select (SLKLIB_combat_readiness < 50);
 
     // Adjust target size for infantry
-    _target_size = 12 max (_target_size * 4);
-    private _squadNumber = round (_target_size/8);
+    ADD(_battlegroupSize, 1);
+
+    private _squadNumber = (_battlegroupSize * 2);
 
     for "_i" from 1 to _squadNumber do {
         private _grpList = [];
@@ -44,34 +50,35 @@ if (_infOnly) then {
         _battlegroup_infantry pushBack _grpList;
     };
 
-    _battlegroup_vehicles = [
-        "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
-        "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
-        "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
-        "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3"
-    ];
-
 } else {
 
-    _battlegroup_vehicles = [
-        "OPTRE_M808B_UNSC",
-        "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
-        "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
-        "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
-        "Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
-        "Selkie_UNSC_Marines_Hornet_Halo3",
-        "Selkie_UNSC_Marines_Hornet_Halo3",
-        "Selkie_UNSC_Marines_Bison_105mm_Halo3",
-        "Selkie_UNSC_Marines_Hog_Gauss_Halo3",
-        "Selkie_UNSC_Marines_Hog_LAAG_Halo3",
-        "Selkie_UNSC_Marines_Hog_LAAG_Halo3",
-        "Selkie_UNSC_Marines_Bison_Unarmed_Halo3",
-        "OPTRE_m1087_stallion_cover_unsc",
-        "OPTRE_m1087_stallion_cover_unsc",
-        "OPTRE_m1087_stallion_unsc",
-        "OPTRE_m1087_stallion_unsc"
-    ];
+    private _return = [];
 
+    switch (_battlegroupSize) do 
+    {
+        case 0: {
+            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+        };
+        case 1: {
+            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+        };
+        case 2: {
+            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+        };
+        case 3: {
+            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+        };
+        case 4: {
+            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+        };
+        default {
+            [format ["[WARNING] battlegroup size is %1 which is an invalid number.", _battlegroupSize],"BATTLEGROUP"] call KPLIB_fnc_log;
+        };
+    };
+
+    _battlegroup_vehicles = _return select 0;
+    _battlegroup_infantry = _return select 1;
+    _num_odst_drops = _return select 2;
 
     //TODO Handle diffrently
     // [_spawn_marker] spawn
