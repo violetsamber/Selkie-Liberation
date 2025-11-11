@@ -2,7 +2,7 @@
     File: fn_battlegroup_calculate_size.sqf
     Authors: Violets
     Date: 2025-11-10
-    Last Update: 2025-11-10
+    Last Update: 2025-11-11
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -115,7 +115,7 @@ switch (_sectorType) do {
 };
 
 //Random Factor [-1,0,1]
-private _randomAdd = ([-1,0,1] select (random 3));
+private _randomAdd = selectRandom [-1,0,1];
 ADD(_size,_randomAdd);
 [format ["Random: %1 Size: %2", _randomAdd, _size], "BATTLEGROUP"] call KPLIB_fnc_log;
 
