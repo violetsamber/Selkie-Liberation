@@ -33,7 +33,7 @@ private _paradrop_veh = [
     [SLK_UNSC_MARINES_PELICAN_UNARMED_WOODLAND,25]
 ];
 
-_battlegroup_vehicles pushBack ([_paradrops,_paradrop_veh] call KPLIB_fnc_pickRandomClasses); 
+_battlegroup_vehicles = (_battlegroup_vehicles + ([_paradrops,_paradrop_veh] call KPLIB_fnc_pickRandomClasses)); 
 
 //1 LAAG
 _battlegroup_vehicles pushBack SLK_UNSC_MARINES_HOG_LAAG_WOODLAND;
@@ -45,7 +45,7 @@ private _transport_veh = [
     [OPTRE_UNSC_STALLION,50]
 ];
 
-_battlegroup_vehicles pushBack ([_transports,_transport_veh] call KPLIB_fnc_pickRandomClasses); 
+_battlegroup_vehicles = (_battlegroup_vehicles + ([_transports,_transport_veh] call KPLIB_fnc_pickRandomClasses)); 
 
 //~1 Air veh
 private _air = [50];
@@ -53,7 +53,7 @@ private _air_veh = [
     [SLK_UNSC_ARMY_FALCON_ARMED_WOODLAND,100]
 ];
 
-_battlegroup_vehicles pushBack ([_air,_air_veh] call KPLIB_fnc_pickRandomClasses); 
+_battlegroup_vehicles = (_battlegroup_vehicles + ([_air,_air_veh] call KPLIB_fnc_pickRandomClasses)); 
 
 [
     _battlegroup_vehicles,
