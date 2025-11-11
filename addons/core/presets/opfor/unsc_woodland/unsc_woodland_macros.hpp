@@ -5,6 +5,8 @@
 #define OPTRE() OPTRE_
 #define STALLION() OPTRE()m1087_stallion_
 
+//--- Use these
+
 #define OPTRE_UNSC_STALLION_COVERED QUOTE(STALLION()cover_unsc)
 #define OPTRE_UNSC_STALLION QUOTE(STALLION()unsc)
 

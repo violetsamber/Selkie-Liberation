@@ -58,11 +58,6 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class spawn_boat               {};
         class odstDrop                 {};
         class battlegroup_calculate_size {};
-        class setup_battlegroup_tiny {};
-        class setup_battlegroup_small {};
-        class setup_battlegroup_medium {};
-        class setup_battlegroup_large {};
-        class setup_battlegroup_huge {};
     };
 
     class server_rnd_battlegroup {

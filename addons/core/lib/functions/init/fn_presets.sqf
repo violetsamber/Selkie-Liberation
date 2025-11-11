@@ -233,9 +233,6 @@ GRLIB_ignore_colisions_when_building = [
 ];
 
 //Get Battlgroups
-
-private _groupTypes = ["tiny","small","medium","large","huge"];
-
 switch (KP_liberation_preset_opfor) do {
     case 23: {
         SLKLIB_fnc_getBattlegroupTiny = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,tiny);

@@ -22,10 +22,10 @@ params [
     ["_pfh", objNull]
 ];
 
-["[BATTLEGROUP] Starting battlegroup spawn."] call KPLIB_fnc_log;
-
 PFH_GETPARAM(_pfh,_infOnly,PFH_PARAM_INFONLY)
 PFH_GETPARAM(_pfh,_battlegroupSize,PFH_PARAM_BATTLEGROUP_SIZE)
+
+[format["[BATTLEGROUP] Starting battlegroup setup. InfOnly: %1, Battlegroup Size %2", _infOnly, _battlegroupSize]] call KPLIB_fnc_log;
 
 private _battlegroup_vehicles = [];
 private _battlegroup_infantry = [];
@@ -60,16 +60,16 @@ if (_infOnly) then {
             _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
         };
         case 1: {
-            _return = [_pfh] call SLKLIB_fnc_getBattlegroupSmall;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
         };
         case 2: {
-            _return = [_pfh] call SLKLIB_fnc_getBattlegroupMedium;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
         };
         case 3: {
-            _return = [_pfh] call SLKLIB_fnc_getBattlegroupLarge;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
         };
         case 4: {
-            _return = [_pfh] call SLKLIB_fnc_getBattlegroupHuge;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
         };
         default {
             [format ["[WARNING] battlegroup size is %1 which is an invalid number.", _battlegroupSize],"BATTLEGROUP"] call KPLIB_fnc_log;
