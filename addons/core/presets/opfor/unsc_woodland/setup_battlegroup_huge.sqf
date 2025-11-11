@@ -15,7 +15,7 @@
         Function reached the end [BOOL]
 */
 
-#include "../FunctionsInclude.hpp"
+#include "FunctionsInclude.hpp"
 
 params [
     ["_pfh", objNull]

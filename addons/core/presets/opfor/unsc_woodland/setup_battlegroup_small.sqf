@@ -1,5 +1,5 @@
 /*
-    File: fn_setup_battlegroup_medium.sqf
+    File: fn_setup_battlegroup_small.sqf
     Authors: Violets
     Date: 2025-11-10
     Last Update: 2025-11-10
@@ -15,7 +15,7 @@
         Function reached the end [BOOL]
 */
 
-#include "../FunctionsInclude.hpp"
+#include "FunctionsInclude.hpp"
 
 params [
     ["_pfh", objNull]
@@ -27,12 +27,11 @@ private _num_odst_drops = 0;
 
 //Setup here
 
-//3-4 Pelican or Falcon Drops
-//2-3 Hogs (LAAG or Gauss)
-//3 Transport Vics
+//2-3 Pelican or Falcon Drops
+//1-2 LAAG
+//2 Transport Vics
 //~1-2 Air vic
-//Low chance of heavy armor
-//Medium of medium armor
+//Low chance of medium armor
 
 [
     _battlegroup_vehicles,

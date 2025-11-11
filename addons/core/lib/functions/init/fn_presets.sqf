@@ -2,7 +2,7 @@
     File: fn_presets.sqf
     Authors: Violets, KP Liberation Dev Team
     Date: 2025-11-5
-    Last Update: 2025-11-5
+    Last Update: 2025-11-11
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -13,6 +13,7 @@
 
     Returns:
 */
+#include "../../FunctionsInclude.hpp"
 
 params [];
 
@@ -85,7 +86,7 @@ switch (KP_liberation_preset_opfor) do {
     case 20: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\CUP_BAF_Woodland.sqf";};
     case 21: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\vn.sqf";};
     case 22: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\optre.sqf";};
-    case 23: {[] call compileFinal preprocessFileLineNumbers "presets\opfor\unsc_army_woodland.sqf";};
+    case 23: {[] call COMPILE_FINAL_OPFOR_PRESET(unsc_woodland);};
     default  {[] call compileFinal preprocessFileLineNumbers "presets\opfor\custom.sqf";};
 };
 
@@ -230,6 +231,21 @@ GRLIB_ignore_colisions_when_building = [
     "OPTRE_CTF_Flag_UNSCWhite",
     "OPTRE_CTF_Flag_UNSCRed"
 ];
+
+//Get Battlgroups
+
+private _groupTypes = ["tiny","small","medium","large","huge"];
+
+switch (KP_liberation_preset_opfor) do {
+    case 23: {
+        SLKLIB_fnc_getBattlegroupTiny = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,tiny);
+        SLKLIB_fnc_getBattlegroupSmall = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,small);
+        SLKLIB_fnc_getBattlegroupMedium = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,medium);
+        SLKLIB_fnc_getBattlegroupLarge = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,large);
+        SLKLIB_fnc_getBattlegroupHuge = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,huge);
+    };
+};
+
 
 /*
     Checking all preset arrays for missing mods and sort out not available classnames

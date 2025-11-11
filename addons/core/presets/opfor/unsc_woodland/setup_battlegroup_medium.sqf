@@ -1,5 +1,5 @@
 /*
-    File: fn_setup_battlegroup_large.sqf
+    File: fn_setup_battlegroup_medium.sqf
     Authors: Violets
     Date: 2025-11-10
     Last Update: 2025-11-10
@@ -15,7 +15,7 @@
         Function reached the end [BOOL]
 */
 
-#include "../FunctionsInclude.hpp"
+#include "FunctionsInclude.hpp"
 
 params [
     ["_pfh", objNull]
