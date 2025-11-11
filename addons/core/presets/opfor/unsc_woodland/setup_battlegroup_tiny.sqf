@@ -2,7 +2,7 @@
     File: fn_setup_battlegroup_tiny.sqf
     Authors: Violets
     Date: 2025-11-10
-    Last Update: 2025-11-10
+    Last Update: 2025-11-11
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -15,7 +15,7 @@
         Function reached the end [BOOL]
 */
 
-#include "../FunctionsInclude.hpp"
+#include "FunctionsInclude.hpp"
 
 //TODO Move these definitions to be per faction
 params [
@@ -35,10 +35,10 @@ private _paradrop_veh = [
     ["Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",25]
 ];
 
-_battlegroup_vehicles = pushBack [_paradrops,_paradrop_veh] call KPLIB_pickRandomClasses; 
+_battlegroup_vehicles pushBack [_paradrops,_paradrop_veh] call KPLIB_pickRandomClasses; 
 
 //1 LAAG
-_battlegroup_vehicles = pushBack "Selkie_UNSC_Marines_Hog_LAAG_Halo3";
+_battlegroup_vehicles pushBack "Selkie_UNSC_Marines_Hog_LAAG_Halo3";
 
 //1-2 Transport Vics
 private _transports = [100,25];
@@ -47,7 +47,7 @@ private _transport_veh = [
     ["OPTRE_m1087_stallion_unsc",50]
 ];
 
-_battlegroup_vehicles = pushBack [_transports,_transport_veh] call KPLIB_pickRandomClasses; 
+_battlegroup_vehicles pushBack [_transports,_transport_veh] call KPLIB_pickRandomClasses; 
 
 //~1 Air veh
 private _air = [50];
@@ -55,7 +55,7 @@ private _air_veh = [
     ["Selkie_Army_Falcon_Armed_Woodland",100]
 ];
 
-_battlegroup_vehicles = pushBack [_air,_air_veh] call KPLIB_pickRandomClasses; 
+_battlegroup_vehicles pushBack [_air,_air_veh] call KPLIB_pickRandomClasses; 
 
 [
     _battlegroup_vehicles,

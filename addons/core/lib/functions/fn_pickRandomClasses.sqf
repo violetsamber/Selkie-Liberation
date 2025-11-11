@@ -2,7 +2,7 @@
     File: fn_pickRandomClasses.sqf
     Authors: Violets
     Date: 2025-11-10
-    Last Update: 2025-11-10
+    Last Update: 2025-11-11
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -18,7 +18,7 @@
 #include "../FunctionsInclude.hpp"
 
 params [
-    ["_chancesToSpawn", []]
+    ["_chancesToSpawn", []],
     ["_classes", []]
 ];
 
@@ -33,13 +33,13 @@ private _totalRand = 0;
 private _returnClasses = [];
 
 for "_i" from 0 to count _chancesToSpawn do {
-    if(random 100 > _x){
+    if(random 100 > _i) then {
         _class = "";
         _rand = random 100;
         _totalRand = 0;
 
         {
-            ADD(_totalRand, _x select 1);
+            ADD(_totalRand,_x select 1);
             if(_rand < _totalRand) exitWith {
                 _class = _x select 0; 
             };
@@ -47,8 +47,8 @@ for "_i" from 0 to count _chancesToSpawn do {
 
         if(!([_class,""] call BIS_fnc_areEqual)) then {
             _returnClasses pushBack _class;
-        }
-    }
+        };
+    };
 };
 
 _returnClasses

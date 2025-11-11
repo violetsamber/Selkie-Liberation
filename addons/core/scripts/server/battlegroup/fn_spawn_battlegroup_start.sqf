@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_start.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-10
+    Last Update: 2025-11-11
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -38,7 +38,7 @@ if (_infOnly) then {
     private _infClasses = [KPLIB_o_inf_classes, militia_squad] select (SLKLIB_combat_readiness < 50);
 
     // Adjust target size for infantry
-    ADD(_battlegroupSize, 1);
+    ADD(_battlegroupSize,1);
 
     private _squadNumber = (_battlegroupSize * 2);
 
@@ -57,19 +57,19 @@ if (_infOnly) then {
     switch (_battlegroupSize) do 
     {
         case 0: {
-            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupTiny;
         };
         case 1: {
-            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupSmall;
         };
         case 2: {
-            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupMedium;
         };
         case 3: {
-            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupLarge;
         };
         case 4: {
-            _return = [_pfh] call KPLIB_server_fnc_setup_battlegroup_tiny;
+            _return = [_pfh] call SLKLIB_fnc_getBattlegroupHuge;
         };
         default {
             [format ["[WARNING] battlegroup size is %1 which is an invalid number.", _battlegroupSize],"BATTLEGROUP"] call KPLIB_fnc_log;

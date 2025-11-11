@@ -55,3 +55,10 @@
 
 #define BATTLEGROUP_TYPE_MIN 0
 #define BATTLEGROUP_TYPE_MAX 4
+
+#define COMPILE_FINAL_PRESET(var1,var2,var3) compileFinal preprocessFileLineNumbers QUOTE(presets\var1\var2\var3.sqf)
+
+#define COMPILE_FINAL_OPFOR_PRESET(var1) COMPILE_FINAL_PRESET(opfor,var1,setup_classes)
+#define COMPILE_FINAL_OPFOR_BATTLEGROUP(var1,var2) COMPILE_FINAL_PRESET(opfor,var1,setup_battlegroup_var2)
+
+//compileFinal preprocessFileLineNumbers presets\opfor\var1\setup_classes.sqf
