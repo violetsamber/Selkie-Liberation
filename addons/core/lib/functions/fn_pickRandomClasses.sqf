@@ -53,5 +53,5 @@ for "_i" from 0 to _spawnChances do {
 		}; 
 	}; 
 };
-
+[format ["_returnClasses: %1", _returnClasses]] call KPLIB_fnc_Log;
 _returnClasses
