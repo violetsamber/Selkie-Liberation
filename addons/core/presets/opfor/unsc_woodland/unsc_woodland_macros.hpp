@@ -17,7 +17,7 @@
 //--- Use These
 
 #define SLK_UNSC_ARMY_FALCON_UNARMED_WOODLAND QUOTE(SLK_UNSC_ARMY_MOD(Falcon_Unarmed_Woodland))
-#define SLK_UNSC_ARMY_FALCON_ARMED_WOODLAND QUOTE(SLK_UNSC_ARMY_MOD(Falcon_Armed_Woodland))
+#define SLK_UNSC_ARMY_FALCON_ARMED_WOODLAND QUOTE(SLK_UNSC_ARMY_MOD(Falcon_Armed_Woodland)##A)
 
 
 //---

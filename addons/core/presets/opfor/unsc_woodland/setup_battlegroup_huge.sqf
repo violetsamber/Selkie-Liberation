@@ -42,7 +42,7 @@ private _cars_veh = [
     [SLK_UNSC_MARINES_HOG_LAAG_WOODLAND,75],
     [SLK_UNSC_MARINES_HOG_GAUSS_WOODLAND,25]
 ];
-_battlegroup_vehicles pushBack (_battlegroup_vehicles + ([_cars,_cars_veh] call KPLIB_fnc_pickRandomClasses)); ;
+_battlegroup_vehicles = (_battlegroup_vehicles + ([_cars,_cars_veh] call KPLIB_fnc_pickRandomClasses)); ;
 
 //Low chance of heavy armor
 //Medium of medium armor
