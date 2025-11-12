@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_update.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-06
+    Last Update: 2025-11-12
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -52,6 +52,7 @@ if(_battlegroup_infantry isNotEqualTo []) then {
 
 if(_battlegroup_vehicles isNotEqualTo [] && !_didSpawn) then {
     private _vehicleClass = _battlegroup_vehicles select 0;
+    _battlegroup_vehicles deleteAt 0; //Remove Here in the case that the spawn fails at KPLIB_fnc_spawnVehicle
     [format ["[BATTLEGROUP] Spawning... %1", _vehicleClass]] call KPLIB_fnc_log;
 
     private _nextgrp = createGroup [GRLIB_side_enemy, true];
@@ -73,7 +74,6 @@ if(_battlegroup_vehicles isNotEqualTo [] && !_didSpawn) then {
             [_vehicle] spawn KPLIB_server_fnc_troup_transport;
         };
     };
-    _battlegroup_vehicles deleteAt 0;
     _didSpawn = true;
 };
 
