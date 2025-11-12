@@ -1,4 +1,4 @@
-#include "script_macros_common.hpp"
+#include "script_macros_mission.hpp"
 #include "script_debug.hpp"
 
 // Macros to easily call CBA functions. Can be removed if calling CBA functions directly is desired.

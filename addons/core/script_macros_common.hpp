@@ -1241,7 +1241,7 @@ Author:
 #define EXPLODE_7(ARRAY,A,B,C,D,E,F,G) EXPLODE_7_SYS(ARRAY,A,B,C,D,E,F,G); TRACE_7("EXPLODE_7, " + QUOTE(ARRAY),A,B,C,D,E,F,G)
 #define EXPLODE_7_PVT(ARRAY,A,B,C,D,E,F,G) ARRAY params [#A,#B,#C,#D,#E,#F,#G]; TRACE_7("EXPLODE_7, " + QUOTE(ARRAY),A,B,C,D,E,F,G)
 
-#define EXPLODE_8_SYS(ARRAY,A,B,C,D,E,F,G,H) EXPLODE_7_SYS(ARRAY,A,B,C,D,E,F,G); H = QUOTE(ARRAY param )[7]
+#define EXPLODE_8_SYS(ARRAY,A,B,C,D,E,F,G,H) EXPLODE_7_SYS(ARRAY,A,B,C,D,E,F,G); H = ARRAY param [7]
 #define EXPLODE_8(ARRAY,A,B,C,D,E,F,G,H) EXPLODE_8_SYS(ARRAY,A,B,C,D,E,F,G,H); TRACE_8("EXPLODE_8, " + QUOTE(ARRAY),A,B,C,D,E,F,G,H)
 #define EXPLODE_8_PVT(ARRAY,A,B,C,D,E,F,G,H) ARRAY params [#A,#B,#C,#D,#E,#F,#G,#H]; TRACE_8("EXPLODE_8, " + QUOTE(ARRAY),A,B,C,D,E,F,G,H)
 
@@ -1262,7 +1262,7 @@ Example:
         // Localized String (localize command must still be used with it)
         LSTRING(Example); // STR_CBA_Balls_Example;
         // Config String (note the $)
-        CSTRING(Example); // QUOTE($STR_CBA_Balls_Example);
+        CSTRING(Example); // $STR_CBA_Balls_Example;
     (end)
 
 Author:
@@ -1272,9 +1272,9 @@ Author:
 #define STRING_MACROS_GUARD
     #define LSTRING(var1) QUOTE(TRIPLES(STR,ADDON,var1))
     #define ELSTRING(var1,var2) QUOTE(TRIPLES(STR,DOUBLES(PREFIX,var1),var2))
-    #define CSTRING(var1) QUOTE(TRIPLES(QUOTE($STR),ADDON,var1))
-    #define ECSTRING(var1,var2) QUOTE(TRIPLES(QUOTE($STR),DOUBLES(PREFIX,var1),var2))
-    #define SUBCSTRING(var1) QUOTE(TRIPLES(QUOTE($STR),SUBADDON,var1))
+    #define CSTRING(var1) QUOTE(TRIPLES($STR,ADDON,var1))
+    #define ECSTRING(var1,var2) QUOTE(TRIPLES($STR,DOUBLES(PREFIX,var1),var2))
+    #define SUBCSTRING(var1) QUOTE(TRIPLES($STR,SUBADDON,var1))
 
     #define LLSTRING(var1) localize QUOTE(TRIPLES(STR,ADDON,var1))
     #define LELSTRING(var1,var2) localize QUOTE(TRIPLES(STR,DOUBLES(PREFIX,var1),var2))

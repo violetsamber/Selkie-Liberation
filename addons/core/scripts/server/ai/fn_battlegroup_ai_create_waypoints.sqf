@@ -2,7 +2,7 @@
     File: fn_battlegroup_ai_create_waypoints.sqf
     Authors: 
     Date: 2025-11-05
-    Last Update: 2025-11-07
+    Last Update: 2025-11-12
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -52,7 +52,7 @@ switch (_index) do
         [_grp, _objPos, 100, "CYCLE"] call CBA_fnc_addWaypoint;
         INCREMENT(_index)
     };
-    case default {
+    default {
         _isFinished = true;
     };
 };
