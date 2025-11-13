@@ -3,7 +3,7 @@
 
 //--------OPTRE-------
 #define OPTRE() OPTRE_
-#define OPTRE_STALLION() m1087_stallion_
+#define OPTRE_STALLION() OPTRE()m1087_stallion_
 #define OPTRE_ORYX() OPTRE()M493_
 
 //--- Use these

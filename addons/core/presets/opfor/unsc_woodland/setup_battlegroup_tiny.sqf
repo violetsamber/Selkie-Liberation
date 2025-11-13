@@ -2,7 +2,7 @@
     File: fn_setup_battlegroup_tiny.sqf
     Authors: Violets
     Date: 2025-11-10
-    Last Update: 2025-11-11
+    Last Update: 2025-11-13
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -33,7 +33,8 @@ private _paradrop_veh = [
     [SLK_UNSC_MARINES_PELICAN_UNARMED_WOODLAND,25]
 ];
 
-_battlegroup_vehicles = (_battlegroup_vehicles + ([_paradrops,_paradrop_veh] call KPLIB_fnc_pickRandomClasses)); 
+private _classes = ([_paradrops,_paradrop_veh] call KPLIB_fnc_pickRandomClasses);
+ADD(_battlegroup_vehicles,_classes);
 
 //1 LAAG
 _battlegroup_vehicles pushBack SLK_UNSC_MARINES_HOG_LAAG_WOODLAND;
@@ -45,7 +46,8 @@ private _transport_veh = [
     [OPTRE_UNSC_STALLION,50]
 ];
 
-_battlegroup_vehicles = (_battlegroup_vehicles + ([_transports,_transport_veh] call KPLIB_fnc_pickRandomClasses)); 
+_classes = ([_transports,_transport_veh] call KPLIB_fnc_pickRandomClasses);
+ADD(_battlegroup_vehicles,_classes);
 
 //~1 Air veh
 private _air = [50];
@@ -53,7 +55,8 @@ private _air_veh = [
     [SLK_UNSC_ARMY_FALCON_ARMED_WOODLAND,100]
 ];
 
-_battlegroup_vehicles = (_battlegroup_vehicles + ([_air,_air_veh] call KPLIB_fnc_pickRandomClasses)); 
+_classes = ([_air,_air_veh] call KPLIB_fnc_pickRandomClasses);
+ADD(_battlegroup_vehicles,_classes);
 
 [
     _battlegroup_vehicles,

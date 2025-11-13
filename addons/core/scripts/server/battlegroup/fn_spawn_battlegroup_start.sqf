@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_start.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-11
+    Last Update: 2025-11-13
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -79,6 +79,19 @@ if (_infOnly) then {
     _battlegroup_vehicles = _return select 0;
     _battlegroup_infantry = _return select 1;
     _num_odst_drops = _return select 2;
+
+    ["----Battlegroup Content----", "BATTLEGROUP"] call KPLIB_fnc_log;
+    ["_battlegroup_vehicles", "BATTLEGROUP"] call KPLIB_fnc_log;
+    {
+        [format ["%1", _x], "BATTLEGROUP"] call KPLIB_fnc_log;
+    } forEach _battlegroup_vehicles;
+    ["_battlegroup_infantry", "BATTLEGROUP"] call KPLIB_fnc_log;
+    {
+        [format ["%1", _x], "BATTLEGROUP"] call KPLIB_fnc_log;
+    } forEach _battlegroup_vehicles;
+    [format ["_num_odst_drops: %1", _num_odst_drops], "BATTLEGROUP"] call KPLIB_fnc_log;
+    ["----Battlegroup Content----", "BATTLEGROUP"] call KPLIB_fnc_log;
+    
 
     //TODO Handle diffrently
     // [_spawn_marker] spawn

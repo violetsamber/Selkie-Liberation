@@ -20,8 +20,8 @@
 //TODO Make these unit tested
 
 private _classes = [
-    [OPTRE_UNSC_STALLION_COVERED,"m1087_stallion_cover_unsc"],
-    [OPTRE_UNSC_STALLION,"m1087_stallion_unsc"],
+    [OPTRE_UNSC_STALLION_COVERED,"OPTRE_m1087_stallion_cover_unsc"],
+    [OPTRE_UNSC_STALLION,"OPTRE_m1087_stallion_unsc"],
     [OPTRE_ORYX_APC_AIE_RCWS,"OPTRE_M493_AIE_RCWS"],
     [OPTRE_ORYX_APC_M37_RCWS,"OPTRE_M493_M37_RCWS"],
     [OPTRE_SCORPION,"OPTRE_M808B_UNSC"],

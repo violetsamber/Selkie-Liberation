@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup.sqf
     Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2025-11-5
-    Last Update: 2025-11-11
+    Last Update: 2025-11-13
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -17,7 +17,8 @@
 
 params [
     ["_targetMarker", "", [""]],
-    ["_infOnly", false, [false]]
+    ["_infOnly", false, [false]],
+    ["_battlegroupSize", -1]
 ];
 
 if (GRLIB_endgame == 1) exitWith {};
@@ -35,13 +36,16 @@ private _spawnMarkerPos = markerPos _spawn_marker;
 
 // if (SLKLIB_combat_readiness < 60) then {_target_size = round (_target_size * 0.65);};
 
-private _battlegroupSize = [_targetMarker] call KPLIB_server_fnc_battlegroup_calculate_size;
+if(_battlegroupSize == -1) then {
+    _battlegroupSize = [_targetMarker] call KPLIB_server_fnc_battlegroup_calculate_size;
+};
 
 [_spawn_marker] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
 
 ["----Starting Spawn Battlegroup----", "BATTLEGROUP"] call KPLIB_fnc_log;
 [format ["_infOnly: %1, _spawn_marker: %2, _spawnMarkerPos: %3", _infOnly, _spawn_marker, _spawnMarkerPos], "BATTLEGROUP"] call KPLIB_fnc_log;
 [format ["_targetMarker: %1", _targetMarker], "BATTLEGROUP"] call KPLIB_fnc_log;
+[format ["_battlegroupSize %1", _battlegroupSize], "BATTLEGROUP"] call KPLIB_fnc_log;
 
 //Look into adding clearance for all battlegroups so they can spawn easier and remove when they leave the area
 if (worldName in KP_liberation_battlegroup_clearance) then {
