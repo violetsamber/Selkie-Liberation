@@ -1,9 +1,17 @@
 {
     "version": "2.0.0",
-    "tasks": [{
-        "label": "hemtt-check",
-        "command": "hemtt check", // Could be any other shell command
-        "args": [],
-        "type": "shell"
-    }]
+    "tasks": [
+        {
+            "label": "hemtt-check",
+            "command": "hemtt check",
+            "args": [],
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "label": "run-sqf",
+            "command": "./scripts/runsqf.sh ${file}",
+            "type": "shell",
+        }
+    ]
 }
