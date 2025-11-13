@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=100;
 	autoGroupingDist=10;
-	toggles=10;
+	toggles=1034;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=1551;
+		nextID=1553;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=573;
+		nextID=588;
 	};
 	class Camera
 	{
-		pos[]={19854.357,364.06931,19292.715};
-		dir[]={-0.59082246,-0.27069715,-0.76004732};
-		up[]={-0.16614169,0.96266007,-0.21372902};
-		aside[]={-0.78952271,4.3911859e-07,0.61373484};
+		pos[]={7921.6069,717.36865,4199.855};
+		dir[]={-0.062548503,-0.80238253,-0.59359819};
+		up[]={-0.084082395,0.5968079,-0.79796726};
+		aside[]={-0.99454504,-1.1100783e-06,0.10479511};
 	};
 };
 binarizationWanted=0;
@@ -297,7 +297,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=33;
+		items=34;
 		class Item0
 		{
 			dataType="Marker";
@@ -2083,13 +2083,13 @@ class Mission
 				class Item12
 				{
 					dataType="Marker";
-					position[]={14795.128,167.715,11904.515};
+					position[]={14791.676,30.501938,11898.737};
 					name="military_12";
 					text="Mehland International Airport";
 					type="o_support";
 					colorName="ColorEAST";
 					id=676;
-					atlOffset=143.625;
+					atlOffset=6.4119377;
 				};
 				class Item13
 				{
@@ -2159,7 +2159,7 @@ class Mission
 				};
 			};
 			id=183;
-			atlOffset=195.57573;
+			atlOffset=194.50368;
 		};
 		class Item21
 		{
@@ -2232,7 +2232,7 @@ class Mission
 					b=1.55;
 					angle=90;
 					id=649;
-					atlOffset=0.019999981;
+					atlOffset=0.00031900406;
 				};
 				class Item5
 				{
@@ -4152,11 +4152,11 @@ class Mission
 				class Item124
 				{
 					dataType="Marker";
-					position[]={12616.507,35.56052,9252.3486};
+					position[]={12760.825,35.478912,9308.1064};
 					name="opfor_point_126";
 					type="Empty";
 					id=974;
-					atlOffset=7.6293945e-06;
+					atlOffset=7.7129917;
 				};
 				class Item125
 				{
@@ -4268,7 +4268,7 @@ class Mission
 				};
 			};
 			id=221;
-			atlOffset=45.694508;
+			atlOffset=45.697609;
 		};
 		class Item25
 		{
@@ -18210,6 +18210,61 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item33
+		{
+			dataType="Layer";
+			name="Hide Blocking Road Objects";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={5278.4814,3.4301758,2071.6777};
+					};
+					areaSize[]={36.989014,0,9.7583008};
+					areaIsRectangle=1;
+					flags=1;
+					id=1551;
+					type="ModuleHideTerrainObjects_F";
+					atlOffset=0.41051984;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="#filter";
+							expression="_this setVariable [""#filter"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=15;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="#hideLocally";
+							expression="_this setVariable [""#hideLocally"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			id=1552;
+			atlOffset=0.41051984;
 		};
 	};
 	class Connections
