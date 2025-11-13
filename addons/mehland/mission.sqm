@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=559;
+		nextID=573;
 	};
 	class Camera
 	{
-		pos[]={20254.668,23.12998,20295.402};
-		dir[]={-0.34211951,-0.62691164,0.69996542};
-		up[]={-0.27529266,0.77908558,0.5632391};
-		aside[]={0.89843351,9.0105459e-08,0.43912473};
+		pos[]={19854.357,364.06931,19292.715};
+		dir[]={-0.59082246,-0.27069715,-0.76004732};
+		up[]={-0.16614169,0.96266007,-0.21372902};
+		aside[]={-0.78952271,4.3911859e-07,0.61373484};
 	};
 };
 binarizationWanted=0;
@@ -2232,7 +2232,7 @@ class Mission
 					b=1.55;
 					angle=90;
 					id=649;
-					atlOffset=0.00031900406;
+					atlOffset=0.019999981;
 				};
 				class Item5
 				{
@@ -3362,38 +3362,38 @@ class Mission
 				class Item36
 				{
 					dataType="Marker";
-					position[]={8624.7021,4.3600616,939.79517};
+					position[]={8635.8916,5.5083008,860.40771};
 					name="opfor_point_37";
 					type="Empty";
 					id=881;
-					atlOffset=7.6293945e-06;
+					atlOffset=-0.2528615;
 				};
 				class Item37
 				{
 					dataType="Marker";
-					position[]={8644.7891,4.9200182,1361.6899};
+					position[]={8606.8281,3.4057617,1351.72};
 					name="opfor_point_38";
 					type="Empty";
 					id=882;
-					atlOffset=7.6293945e-06;
+					atlOffset=-1.074368;
 				};
 				class Item38
 				{
 					dataType="Marker";
-					position[]={8935.0566,7.4320164,1482.7904};
+					position[]={10149.228,-7.2641602,829.63989};
 					name="opfor_point_39";
 					type="Empty";
 					id=883;
-					atlOffset=7.6293945e-06;
+					atlOffset=-39.296009;
 				};
 				class Item39
 				{
 					dataType="Marker";
-					position[]={7173.5791,20.400007,4384.6216};
+					position[]={6769.1953,39.504883,3863.4839};
 					name="opfor_point_40";
 					type="Empty";
 					id=884;
-					atlOffset=7.6293945e-06;
+					atlOffset=33.00581;
 				};
 				class Item40
 				{
@@ -3434,20 +3434,20 @@ class Mission
 				class Item44
 				{
 					dataType="Marker";
-					position[]={7399.2813,40.277882,3125.3525};
+					position[]={7312.2637,32.408203,3172.5647};
 					name="opfor_point_45";
 					type="Empty";
 					id=889;
-					atlOffset=7.6293945e-06;
+					atlOffset=-7.4126549;
 				};
 				class Item45
 				{
 					dataType="Marker";
-					position[]={7553.9951,29.574284,3724.615};
+					position[]={7555.0537,30.106934,3618.4277};
 					name="opfor_point_46";
 					type="Empty";
 					id=890;
-					atlOffset=7.6293945e-06;
+					atlOffset=0.4855175;
 				};
 				class Item46
 				{
