@@ -2,7 +2,7 @@
     File: setup_debug.sqf
     Authors: 
     Date: 2025-11-12
-    Last Update: 2025-11-12
+    Last Update: 2025-11-13
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -49,12 +49,21 @@ private _classes = [
     [SLK_UNSC_MARINES_PELICAN_ARMED_WOODLAND,"Selkie_UNSC_Marines_Pelican_Armed_Halo3"]
 ];
 
-["----UNSC_WOODLAND_DEBUG----"] call KPLIB_fnc_log;
+systemChat "----UNSC_WOODLAND_DEBUG----";
+private _testPassed = 0;
+private _testFailed = 0;
+
 {
     private _a = _x select 0;
     private _b = _x select 1;
-    private _isTrue = [_a,_b] call BIS_fnc_areEqual;
+    private _isTrue = (_a == _b);
     private _message = format["%1 is not equal to %2",_a,_b];
-    TEST_TRUE(_isTrue,_message);
+    if(!_isTrue) then {
+        systemChat _message;
+        INC(_testFailed)
+    } else {
+        INC(_testPassed)
+    };
 } forEach _classes;
-["----UNSC_WOODLAND_DEBUG----"] call KPLIB_fnc_log;
+systemChat format["Passed: %1 Failed: %2",_testPassed,_testFailed];;
+systemChat "----UNSC_WOODLAND_DEBUG----";
