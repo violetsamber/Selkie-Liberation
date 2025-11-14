@@ -2,7 +2,7 @@
     File: fn_presets.sqf
     Authors: Violets, KP Liberation Dev Team
     Date: 2025-11-5
-    Last Update: 2025-11-11
+    Last Update: 2025-11-13
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -240,6 +240,14 @@ switch (KP_liberation_preset_opfor) do {
         SLKLIB_fnc_getBattlegroupMedium = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,medium);
         SLKLIB_fnc_getBattlegroupLarge = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,large);
         SLKLIB_fnc_getBattlegroupHuge = COMPILE_FINAL_OPFOR_BATTLEGROUP(unsc_woodland,huge);
+    };
+};
+
+switch (KP_liberation_preset_opfor) do {
+    case 23: {
+        private _returnParatroopers = [] call COMPILE_FINAL_OPFOR_PARATROOPERS(unsc_woodland);
+        SLKLIB_opfor_paratroopers_h = _returnParatroopers select 0;
+        SLKLIB_opfor_paratroopers_a = _returnParatroopers select 1;
     };
 };
 
