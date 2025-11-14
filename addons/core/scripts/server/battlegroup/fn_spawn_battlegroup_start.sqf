@@ -112,4 +112,7 @@ if (_infOnly) then {
 };
 ["[BATTLEGROUP] Finished fn_spawn_battlegroup_start"] call KPLIB_fnc_log;
 
-[_battlegroup_vehicles, _battlegroup_infantry]
+[
+    _battlegroup_vehicles, 
+    _battlegroup_infantry
+]
