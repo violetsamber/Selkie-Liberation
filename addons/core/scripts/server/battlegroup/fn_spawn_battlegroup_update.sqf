@@ -28,9 +28,13 @@ PFH_GETVAR(_pfh,"_waitTimer",0)
 PFH_GETVAR(_pfh,"_stageIndex",0)
 PFH_GETVAR(_pfh,"_battlegroup_vehicles",[])
 PFH_GETVAR(_pfh,"_battlegroup_infantry",[])
+PFH_GETVAR(_pfh,"_num_odst_drops",0)
 PFH_GETVAR(_pfh,"_bg_groups",[])
+
 PFH_GETPARAM(_pfh,_waitTime,PFH_PARAM_WAIT_TIME)
-PFH_GETPARAM(_pfh,_spawnMarkerPos,2)
+PFH_GETPARAM(_pfh,_spawnMarker,PFH_PARAM_SPAWN_MARKER)
+PFH_GETPARAM(_pfh,_spawnMarkerPos,PFH_PARAM_SPAWN_POS)
+PFH_GETPARAM(_pfh,_targetMarker,PGH_PARAM_TARGET_MARKER)
 
 private _isFinished = false;
 
@@ -90,6 +94,12 @@ switch (_stageIndex) do {
         };
 
         if(_battlegroup_vehicles isEqualTo []) then {
+            INC(_stageIndex);
+        };
+    };
+    case 3: {
+        if(_num_odst_drops > 0) then {
+            [_spawnMarker,_targetMarker,_num_odst_drops] call KPLIB_server_fnc_odstDrop;
             INC(_stageIndex);
         };
     };

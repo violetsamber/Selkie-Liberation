@@ -2,7 +2,7 @@
     File: fn_setup_battlegroup_large.sqf
     Authors: Violets
     Date: 2025-11-10
-    Last Update: 2025-11-13
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -93,6 +93,8 @@ private _air_veh = [
 
 _classes = ([_air,_air_veh] call KPLIB_fnc_pickRandomClasses);
 ADD(_battlegroup_vehicles,_classes);
+
+_num_odst_drops = 2;
 
 [
     _battlegroup_vehicles,
