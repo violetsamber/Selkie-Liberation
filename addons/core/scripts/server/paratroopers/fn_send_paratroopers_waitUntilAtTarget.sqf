@@ -2,7 +2,7 @@
     File: fn_send_paratroopers_waitUntilAtTarget.sqf
     Authors: Violets
     Date: 2025-11-06
-    Last Update: 2025-11-07
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -21,7 +21,7 @@
 params [
     ["_pfh", objNull],
     ["_maxDamage", 0.4],
-    ["_minDistance", 400]
+    ["_minDistance", 500]
 ];
 
 PFH_GETVAR(_pfh,"_stageIndex",0)

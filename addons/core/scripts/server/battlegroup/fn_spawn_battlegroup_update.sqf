@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_update.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-13
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -81,8 +81,10 @@ switch (_stageIndex) do {
 
         if ((_vehicleClass in opfor_troup_transports) && ([] call KPLIB_fnc_getOpforCap < GRLIB_battlegroup_cap)) then {
             if (_vehicle isKindOf "Air") then {
+                _nextgrp setVariable ["KPLIB_isBattleGroup",false];
                 [[_spawnMarkerPos] call KPLIB_fnc_getNearestBluforObjective, _vehicle] call KPLIB_server_fnc_send_paratroopers;
             } else {
+                _nextgrp setVariable ["KPLIB_isBattleGroup",false];
                 [_vehicle] spawn KPLIB_server_fnc_troup_transport;
             };
         };
