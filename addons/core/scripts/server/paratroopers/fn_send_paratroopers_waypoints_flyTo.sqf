@@ -56,14 +56,14 @@ switch (_stageWorkerIndex_0) do {
         _pilot_group setCurrentWaypoint [_pilot_group, 1];
         INCREMENT(_stageWorkerIndex_0)
     };
-    // case 1: {
-    //     [_pilot_group, _targetPos, 100, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
-    //     INCREMENT(_stageWorkerIndex_0)
-    // };
-    // case 2: {
-    //     [_pilot_group, _targetPos, 100, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
-    //     INCREMENT(_stageWorkerIndex_0)
-    // };
+    case 1: {
+        [_pilot_group, _targetPos, 100, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
+    case 2: {
+        [_pilot_group, _targetPos, 100, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
+        INCREMENT(_stageWorkerIndex_0)
+    };
     case 2: {
         [_para_group, _targetPos, 10, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 0] call CBA_fnc_addWaypoint;
         INCREMENT(_stageWorkerIndex_0)
