@@ -33,7 +33,7 @@ PFH_GETPARAM(_pfh,_spawnPos,PARA_VAR_SPAWN_POS)
 
 if (isNull _para_group) then {
     _para_group = createGroup [GRLIB_side_enemy, true];
-    _maxCargo = ((_vehicle emptyPositions "") - 1);
+    _maxCargo = ((_vehicle emptyPositions "") - 2);
     // private _additional = count fullCrew [_vehicle, "gunner", true];
     // ADD(_maxCargo,_additional);
     [format ["[PARATROOPERS] Creating Group: %1, Max Cargo: %2", _para_group, _maxCargo]] call KPLIB_fnc_log;
@@ -42,7 +42,7 @@ if (isNull _para_group) then {
 private _unitCount = count (units _para_group);
 if(_unitCount <= _maxCargo) then {
     private _unitIndex = _unitCount;
-    _unitIndex = (_unitIndex min (count SLKLIB_opfor_paratroopers_a));
+    _unitIndex = (_unitIndex min ((count SLKLIB_opfor_paratroopers_a) - 1));
     private _unitClass = SLKLIB_opfor_paratroopers_a select _unitIndex;
 
     [format ["[PARATROOPERS] Spawning Paratrooper: %1", _unitClass]] call KPLIB_fnc_log;
