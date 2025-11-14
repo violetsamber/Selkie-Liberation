@@ -18,7 +18,8 @@
 params [
     ["_targetMarker", "", [""]],
     ["_infOnly", false, [false]],
-    ["_battlegroupSize", -1]
+    ["_battlegroupSize", -1],
+    ["_waitTime", -1]
 ];
 
 if (GRLIB_endgame == 1) exitWith {};
@@ -40,12 +41,18 @@ if(_battlegroupSize == -1) then {
     _battlegroupSize = [_targetMarker] call KPLIB_server_fnc_battlegroup_calculate_size;
 };
 
+if(_waitTime == -1) then {
+    _waitTime = ((_battlegroupSize + 1) * 90);
+};
+
+
 [_spawn_marker, _battlegroupSize] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
 
 ["----Starting Spawn Battlegroup----", "BATTLEGROUP"] call KPLIB_fnc_log;
 [format ["_infOnly: %1, _spawn_marker: %2, _spawnMarkerPos: %3", _infOnly, _spawn_marker, _spawnMarkerPos], "BATTLEGROUP"] call KPLIB_fnc_log;
 [format ["_targetMarker: %1", _targetMarker], "BATTLEGROUP"] call KPLIB_fnc_log;
 [format ["_battlegroupSize %1", _battlegroupSize], "BATTLEGROUP"] call KPLIB_fnc_log;
+[format ["_waitTime %1", _waitTime], "BATTLEGROUP"] call KPLIB_fnc_log;
 
 //Look into adding clearance for all battlegroups so they can spawn easier and remove when they leave the area
 if (worldName in KP_liberation_battlegroup_clearance) then {
@@ -57,14 +64,18 @@ if (worldName in KP_liberation_battlegroup_clearance) then {
         private _return = [_this, _spawnMarkerPos] call KPLIB_server_fnc_spawn_battlegroup_update;
         _bg_groups = _return select 0;
         _isFinished = _return select 1;
+        _waitTimer = _return select 2;
+        _stageIndex = _return select 3;
     },
     0.5,
-    [_infOnly, _spawn_marker, _spawnMarkerPos, _battlegroupSize],
+    [_infOnly, _spawn_marker, _spawnMarkerPos, _battlegroupSize, _waitTime],
     {
         _isFinished = false;
         _bg_groups = [];
         _battlegroup_vehicles = [];
         _battlegroup_infantry = [];
+        _waitTimer = 0;
+        _stageIndex = 0;
         
         private _return = [_this] call KPLIB_server_fnc_spawn_battlegroup_start;
         
@@ -74,5 +85,5 @@ if (worldName in KP_liberation_battlegroup_clearance) then {
     { [_this] call KPLIB_server_fnc_spawn_battlegroup_end; },
     { !_isFinished },
     { _isFinished },
-    ["_isFinished", "_bg_groups", "_battlegroup_vehicles", "_battlegroup_infantry"]
+    ["_isFinished", "_bg_groups", "_battlegroup_vehicles", "_battlegroup_infantry", "_waitTimer", "_stageIndex"]
 ] call CBA_fnc_createPerFrameHandlerObject;
