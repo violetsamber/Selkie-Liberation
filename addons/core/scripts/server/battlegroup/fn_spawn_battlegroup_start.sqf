@@ -31,8 +31,6 @@ private _battlegroup_vehicles = [];
 private _battlegroup_infantry = [];
 private _num_odst_drops = 0;
 
-GRLIB_last_battlegroup_time = diag_tickTime;
-
 if (_infOnly) then {
     // Infantry units to choose from
     private _infClasses = [KPLIB_o_inf_classes, militia_squad] select (SLKLIB_combat_readiness < 50);

@@ -54,6 +54,8 @@ if(_waitTime == -1) then {
 [format ["_battlegroupSize %1", _battlegroupSize], "BATTLEGROUP"] call KPLIB_fnc_log;
 [format ["_waitTime %1", _waitTime], "BATTLEGROUP"] call KPLIB_fnc_log;
 
+GRLIB_last_battlegroup_time = diag_tickTime;
+
 //Look into adding clearance for all battlegroups so they can spawn easier and remove when they leave the area
 if (worldName in KP_liberation_battlegroup_clearance) then {
     [markerPos _spawn_marker, 30] call KPLIB_fnc_createClearance;
