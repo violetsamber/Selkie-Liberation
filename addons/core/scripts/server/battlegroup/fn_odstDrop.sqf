@@ -1,3 +1,22 @@
+/*
+    File: fn_odstDrop.sqf
+    Authors: Violets, Stella
+    Date: 2025-11-01
+    Last Update: 2025-11-14
+    License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
+#include "../FunctionsInclude.hpp"
+#include "battlegroup_macros.hpp"
 
 params [
     ["_spawnMarker", "", ["",[]]],
@@ -12,16 +31,7 @@ if (_targetPos isEqualType "") then {
     _targetPos = markerPos _targetsector;
 };
 
-private _units = [
-	"Selkie_UNSC_ODST_TeamLeader", 
-	"Selkie_UNSC_ODST_Autoriflemaid", 
-	"Selkie_UNSC_ODST_Breacher", 
-	"Selkie_UNSC_ODST_Grenadier", 
-	"Selkie_UNSC_ODST_Corpsmaid", 
-	"Selkie_UNSC_ODST_MissileSpecialist", 
-	"Selkie_UNSC_ODST_Riflemaid_BR55", 
-	"Selkie_UNSC_ODST_Riflemaid_MA5"
-];
+private _units = +SLKLIB_opfor_odst_a;
 
 private _team = configFile >> "CfgGroups" >> "Indep" >> "Selkie_UNSC_Marines_ODST" >> "Infantry" >> "UNSC_ODST_AssaultSquad";
 private _units = [];
@@ -33,29 +43,58 @@ for "_i" from 1 to _teamCount do
 	_units append units _group;
 };
 
-private _ship = [_targetPos vectorAdd [0,100,0], 180, 2500, "OPTRE_Frigate_UNSC", GRLIB_side_enemy] call SciFiSupportPLUS_fnc_JumpShipIn;
+[
+	{
+		// PFH_GETVAR(_this,"_timer",[])
+		// PFH_GETVAR(_this,"_isFinished",[])
 
-sleep 5;
+		PFH_GETPARAM(_this,_targetPos,0)
+		PFH_GETPARAM(_this,_units,1)
 
-[ 
-	_targetPos, 
-	_units, 
-	"Frigate", 
-	15, 
-	3, 
-	-1,
-	2500, 
-	1500, 
-	1000, 
-	400, 
-	300, 
-	true, 
-	true, 
-	600, 
-	true 
-] call OPTRE_fnc_HEV;
+		//Update
+		if(_timer < 5) then {
+			[ 
+				_targetPos, 
+				_units, 
+				"Frigate", 
+				15, 
+				3, 
+				-1,
+				2500, 
+				1500, 
+				1000, 
+				400, 
+				300, 
+				true, 
+				true, 
+				600, 
+				true 
+			] call OPTRE_fnc_HEV;
+		};
 
+		if(_timer < 45) then {
+			ADD(_timer,5)
+		} else {
+			_isFinished = true;
+		};
+	},
+	5,
+	[_targetPos,_units],
+	{
+		//Start
+		_isFinished = false;
+		_timer = 0;
 
-sleep 45;
+		PFH_GETPARAM(_this,_targetPos,0)
 
-[_ship] call ScifiSupportPLUS_fnc_JumpOut;
+		_ship = [_targetPos vectorAdd [0,100,0], 180, 2500, "OPTRE_Frigate_UNSC", GRLIB_side_enemy] call SciFiSupportPLUS_fnc_JumpShipIn;
+	},
+	{
+		//End
+		[_ship] call ScifiSupportPLUS_fnc_JumpOut;
+	},
+	{!_isFinished},
+	{_isFinished},
+	["_isFinished", "_timer", "_ship"]
+
+] call CBA_fnc_createPerFrameHandlerObject;
