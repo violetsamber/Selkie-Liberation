@@ -2,7 +2,7 @@
     File: fn_send_paratroopers_spawn_troops.sqf
     Authors: Violets
     Date: 2025-11-06
-    Last Update: 2025-11-11
+    Last Update: 2025-11-13
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -41,9 +41,13 @@ if (isNull _para_group) then {
 
 private _unitCount = count (units _para_group);
 if(_unitCount <= _maxCargo) then {
-    [format ["[PARATROOPERS] Spawning Paratrooper: %1", opfor_paratrooper]] call KPLIB_fnc_log;
+    private _unitIndex = _unitCount;
+    _unitIndex = (_unitIndex min (count SLKLIB_opfor_paratroopers_a));
+    private _unitClass = SLKLIB_opfor_paratroopers_a select _unitIndex;
 
-    private _unit = [opfor_paratrooper, _spawnPos, _para_group] call KPLIB_fnc_createManagedUnit;
+    [format ["[PARATROOPERS] Spawning Paratrooper: %1", _unitClass]] call KPLIB_fnc_log;
+
+    private _unit = [_unitClass, _spawnPos, _para_group] call KPLIB_fnc_createManagedUnit;
     removeBackpack _unit;
     _unit addBackpack "B_parachute";
     _unit assignAsCargoIndex [_vehicle, _unitCount + 1];
