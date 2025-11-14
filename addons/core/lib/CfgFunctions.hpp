@@ -29,6 +29,7 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class fillStorage               {};
         class forceBluforCrew           {};
         class getAdaptiveVehicle        {};
+        class getAttackSizeName         {};
         class getBluforRatio            {};
         class getCommander              {};
         class getCrateHeight            {};
