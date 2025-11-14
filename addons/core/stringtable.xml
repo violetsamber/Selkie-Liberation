@@ -2943,8 +2943,23 @@
             <Chinesesimp>后勤车队受袭</Chinesesimp>
             <Turkish>Lojistik Konvoyu Baskını</Turkish>
         </Key>
+        <Key ID="STR_NOTIFICATION_BATTLEGROUP_SIZE_TEXT_0">
+            <Original>Tiny</Original>
+        </Key>
+        <Key ID="STR_NOTIFICATION_BATTLEGROUP_SIZE_TEXT_1">
+            <Original>Small</Original>
+        </Key>
+        <Key ID="STR_NOTIFICATION_BATTLEGROUP_SIZE_TEXT_2">
+            <Original>Medium</Original>
+        </Key>
+        <Key ID="STR_NOTIFICATION_BATTLEGROUP_SIZE_TEXT_3">
+            <Original>Large</Original>
+        </Key>
+        <Key ID="STR_NOTIFICATION_BATTLEGROUP_SIZE_TEXT_4">
+            <Original>Huge</Original>
+        </Key>
         <Key ID="STR_NOTIFICATION_BATTLEGROUP_TEXT">
-            <Original>Hostile forces spotted near %1.</Original>
+            <Original>%2 group of hostile forces spotted near %1.</Original>
             <Czech>Nepřátelské jednotky spatřeny poblíž %1</Czech>
             <French>Forces hostiles repérées près de %1.</French>
             <Spanish>Fuerzas hosstiles avistadas cerca de %1</Spanish>
@@ -3286,7 +3301,7 @@
             <Korean>도로에 적군 민병대 세력 발견!</Korean>
         </Key>
         <Key ID="STR_NOTIFICATION_INCOMING_TEXT">
-            <Original>Hostile forces are heading towards %1.</Original>
+            <Original>%2 group of hostile forces are heading towards %1.</Original>
             <Czech>Nepřátelské jednotky míří k %1.</Czech>
             <French>Les forces hostiles se dirigent vers %1.</French>
             <Spanish>Fuerzas hostiles acercándose a %1.</Spanish>

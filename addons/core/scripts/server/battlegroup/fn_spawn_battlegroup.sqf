@@ -40,7 +40,7 @@ if(_battlegroupSize == -1) then {
     _battlegroupSize = [_targetMarker] call KPLIB_server_fnc_battlegroup_calculate_size;
 };
 
-[_spawn_marker] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
+[_spawn_marker, _battlegroupSize] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
 
 ["----Starting Spawn Battlegroup----", "BATTLEGROUP"] call KPLIB_fnc_log;
 [format ["_infOnly: %1, _spawn_marker: %2, _spawnMarkerPos: %3", _infOnly, _spawn_marker, _spawnMarkerPos], "BATTLEGROUP"] call KPLIB_fnc_log;

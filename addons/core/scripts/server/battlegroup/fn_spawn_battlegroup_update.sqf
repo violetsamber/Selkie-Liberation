@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_update.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-12
+    Last Update: 2025-11-13
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -31,6 +31,7 @@ PFH_GETPARAM(_pfh,_spawnMarkerPos,2)
 
 private _isFinished = false;
 private _didSpawn = false;
+
 
 if(_battlegroup_infantry isNotEqualTo []) then {
     
