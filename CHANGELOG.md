@@ -1,7 +1,12 @@
 ## 1.0.3
 ADDED:
+- ODST drops added back
+- Unique class definition for paratroopers
+- Added battlegroup size notifications
+- Added defiend battlegroup compositions
 
 FIXED:
+- Paratrooper aircraft slowing down over the sector 
 
 CHANGED:
 - Reduced town spawn lag by adding sleep commands to town scripts
