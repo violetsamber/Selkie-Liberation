@@ -40,7 +40,7 @@ switch (_stageWorkerIndex_0) do {
         _targetDir = vectorNormalized _targetDir;
         _targetDir = _targetDir vectorMultiply 400;
 
-        private _wind = wind vectorMultiply 100;
+        private _wind = wind vectorMultiply 25;
 
         //Unsteerable parashutes seem to fall at a rate of 3 m/s
 
@@ -64,7 +64,7 @@ switch (_stageWorkerIndex_0) do {
         [_pilot_group, _targetPos, 100, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 100] call CBA_fnc_addWaypoint;
         INCREMENT(_stageWorkerIndex_0)
     };
-    case 2: {
+    case 3: {
         [_para_group, _targetPos, 10, "MOVE", "AWARE", "WHITE", "FULL", "NO CHANGE", "", [0,0,0], 0] call CBA_fnc_addWaypoint;
         INCREMENT(_stageWorkerIndex_0)
     };
