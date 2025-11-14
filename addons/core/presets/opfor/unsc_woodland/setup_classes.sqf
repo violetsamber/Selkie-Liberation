@@ -116,7 +116,6 @@ opfor_troup_transports_land = [
 
 opfor_troup_transports_air = [
 	"Selkie_UNSC_Army_Falcon_Unarmed_Woodland",
-	"Selkie_UNSC_Army_Pelican_Armed_Woodland",
 	"Selkie_UNSC_Marines_Pelican_Unarmed_Halo3",
 	"Selkie_UNSC_Marines_Pelican_Armed_Halo3"
 ];
