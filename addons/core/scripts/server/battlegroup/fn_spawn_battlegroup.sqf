@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup.sqf
     Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2025-11-5
-    Last Update: 2025-11-13
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -70,7 +70,7 @@ if (worldName in KP_liberation_battlegroup_clearance) then {
         _stageIndex = _return select 3;
     },
     0.5,
-    [_infOnly, _spawn_marker, _spawnMarkerPos, _battlegroupSize, _waitTime],
+    [_infOnly, _spawn_marker, _spawnMarkerPos, _battlegroupSize, _waitTime, _targetMarker],
     {
         _isFinished = false;
         _bg_groups = [];
@@ -78,14 +78,16 @@ if (worldName in KP_liberation_battlegroup_clearance) then {
         _battlegroup_infantry = [];
         _waitTimer = 0;
         _stageIndex = 0;
+        _num_odst_drops = 0;
         
         private _return = [_this] call KPLIB_server_fnc_spawn_battlegroup_start;
         
         _battlegroup_vehicles = _return select 0;
         _battlegroup_infantry = _return select 1;
+        _num_odst_drops = _return select 2;
     },
     { [_this] call KPLIB_server_fnc_spawn_battlegroup_end; },
     { !_isFinished },
     { _isFinished },
-    ["_isFinished", "_bg_groups", "_battlegroup_vehicles", "_battlegroup_infantry", "_waitTimer", "_stageIndex"]
+    ["_isFinished", "_bg_groups", "_battlegroup_vehicles", "_battlegroup_infantry", "_waitTimer", "_stageIndex", "_num_odst_drops"]
 ] call CBA_fnc_createPerFrameHandlerObject;
