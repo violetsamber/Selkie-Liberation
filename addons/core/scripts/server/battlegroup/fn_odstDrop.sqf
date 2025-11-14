@@ -52,7 +52,7 @@ for "_i" from 1 to _teamCount do
 		PFH_GETPARAM(_this,_units,1)
 
 		//Update
-		if(_timer < 5) then {
+		if(_timer < 10 && _timer > 0) then {
 			[ 
 				_targetPos, 
 				_units, 
@@ -87,7 +87,7 @@ for "_i" from 1 to _teamCount do
 
 		PFH_GETPARAM(_this,_targetPos,0)
 
-		_ship = [_targetPos vectorAdd [0,100,0], 180, 2500, "OPTRE_Frigate_UNSC", GRLIB_side_enemy] call SciFiSupportPLUS_fnc_JumpShipIn;
+		_ship = [_targetPos, 180, 2500, "OPTRE_Frigate_UNSC", GRLIB_side_enemy] call SciFiSupportPLUS_fnc_JumpShipIn;
 	},
 	{
 		//End
