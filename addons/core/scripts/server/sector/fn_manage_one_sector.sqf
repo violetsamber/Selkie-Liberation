@@ -2,7 +2,7 @@
     File: fn_manage_one_sector.sqf
     Authors: Violets, KP Liberation Dev Team
     Date: 2025-11-01
-    Last Update: 2025-11-14
+    Last Update: 2025-11-15
     License: MIT License - http://www.opensource.org/licenses/MIT
     
     Description:
@@ -122,11 +122,12 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _vehToSpawn =         _return select 1;
                 _spawnCivs =          _return select 2;
                 _guerilla =           _return select 3;
-                _infsquad =            _return select 4;
+                _infsquad =           _return select 4;
                 _building_ai_max =    _return select 5;
                 _building_range =     _return select 6;
                 _local_capture_size = _return select 7;
                 _iedcount =           _return select 8;
+                _civsSpread =         _return select 9;
 
                 ["------------------------------------", "Sector Setup"] call KPLIB_fnc_log;
                 [format ["Sector: %1 (%2)", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] call KPLIB_fnc_log;
@@ -202,11 +203,41 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 5: {
                 //Spawn special units in specific military buildings
-                INCREMENT(_stageIndex)
+                
+                _return = [_this] call KPLIB_server_fnc_sector_militaryPostGuard;
+
+                _isStageFinished = _return select 0;
+                _managed_units = _return select 1;
+                
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             case 6: {
                 //Spawn Civilians
-                INCREMENT(_stageIndex)
+                if(_spawnCivs > 0 && GRLIB_civilian_activity > 0)then{
+                    _return = [_this] call KPLIB_server_fnc_sector_spawn_civilians;
+
+                    _isStageFinished = _return select 0;
+                    _stageWorkerIndex_0 = _return select 1;
+                    _managed_units = _return select 2;
+                    _civsGroups = _return select 3;
+
+                } else{
+                    _isStageFinished = true;
+                };
+                
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             case 7: {
                 //Spawn IEDs
@@ -255,7 +286,8 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
 
         _roamingToSpawn = [];
         _vehToSpawn = [];
-        _spawnCivs = false;
+        _spawnCivs = 0;
+        _civsSpread = 1;
         _guerilla = false;
         _infsquad = "army";
         _building_ai_max = 0;
@@ -296,6 +328,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
         "_roamingToSpawn", 
         "_vehToSpawn",
         "_spawnCivs",
+        "_civsSpread",
         "_guerilla",
         "_infsquad",
         "_building_ai_max",

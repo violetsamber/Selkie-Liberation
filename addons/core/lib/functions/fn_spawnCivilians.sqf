@@ -2,7 +2,7 @@
     File: fn_spawnCivilians.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2019-12-03
-    Last Update: 2025-11-10
+    Last Update: 2025-11-15
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -24,7 +24,7 @@ if (_sector isEqualTo "") exitWith {["Empty string given"] call BIS_fnc_error; [
 private _civs = [];
 private _sPos = markerPos _sector;
 
-// Amount and spread depending if capital or city/factory
+//Amount and spread depending if capital or city/factory
 private _amount = round ((3 + (floor (random 7))) * GRLIB_civilian_activity);
 private _spread = 1;
 if (_sector in sectors_bigtown) then {

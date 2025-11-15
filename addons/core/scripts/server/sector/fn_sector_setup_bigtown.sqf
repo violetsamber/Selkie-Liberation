@@ -2,7 +2,7 @@
     File: fn_sector_setup_bigtown.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-08
+    Last Update: 2025-11-15
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -29,7 +29,8 @@ params [
 
 PFH_GETVAR(_pfh,"_roamingToSpawn",[[]])
 PFH_GETVAR(_pfh,"_vehToSpawn",[])
-PFH_GETVAR(_pfh,"_spawnCivs",false)
+PFH_GETVAR(_pfh,"_spawnCivs",0)
+PFH_GETVAR(_pfh,"_civsSpread",0)
 PFH_GETVAR(_pfh,"_guerilla",false)
 PFH_GETVAR(_pfh,"_infsquad","")
 PFH_GETVAR(_pfh,"_building_ai_max",0)
@@ -69,7 +70,9 @@ if (_infsquad == "army") then {
 };
 
 //Civs
-_spawnCivs = true;
+_spawnCivs = [SECTOR_TYPE_BIGTOWN] call KPLIB_fnc_getCivCount;
+
+_civsSpread = 2.5;
 
 //Gurilla
 _guerilla = [] call KPLIB_server_fnc_sector_willGuerillaSpawn;
@@ -93,5 +96,6 @@ _infsquad,
 _building_ai_max,
 _building_range,
 _local_capture_size,
-_iedcount
+_iedcount,
+_civsSpread
 ]

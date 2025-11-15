@@ -2,7 +2,7 @@
     File: fn_sector_setup_military.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-14
+    Last Update: 2025-11-15
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -29,7 +29,8 @@ params [
 
 PFH_GETVAR(_pfh,"_roamingToSpawn",[[]])
 PFH_GETVAR(_pfh,"_vehToSpawn",[])
-PFH_GETVAR(_pfh,"_spawnCivs",false)
+PFH_GETVAR(_pfh,"_spawnCivs",0)
+PFH_GETVAR(_pfh,"_civsSpread",0)
 PFH_GETVAR(_pfh,"_guerilla",false)
 PFH_GETVAR(_pfh,"_infsquad","")
 PFH_GETVAR(_pfh,"_building_ai_max",0)
@@ -64,7 +65,7 @@ for "_i" from 1 to _vehCount do {
 };
 
 //Civs
-_spawnCivs = false;
+_spawnCivs = 0;
 
 //Garrison
 _building_ai_max = round ((floor (18 + (round (SLKLIB_combat_readiness / 4 )))) * _popfactor);
@@ -79,5 +80,6 @@ _infsquad,
 _building_ai_max,
 _building_range,
 _local_capture_size,
-_iedcount
+_iedcount,
+_civsSpread
 ]

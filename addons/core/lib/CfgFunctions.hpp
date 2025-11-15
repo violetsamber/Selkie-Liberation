@@ -32,6 +32,7 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class getAttackSizeName         {};
         class getBluforRatio            {};
         class getBuildings              {};
+        class getCivCount               {};
         class getCommander              {};
         class getCrateHeight            {};
         class getFobName                {};
