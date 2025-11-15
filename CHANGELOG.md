@@ -12,6 +12,7 @@ FIXED:
 
 CHANGED:
 - Reduced town spawn lag by adding sleep commands to town scripts
+- Refactored town spawing and update loop to pfh
 
 ## 1.0.2
 ADDED:
