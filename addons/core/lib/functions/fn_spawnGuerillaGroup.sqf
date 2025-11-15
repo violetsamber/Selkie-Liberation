@@ -2,7 +2,7 @@
     File: fn_spawnGuerillaGroup.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2017-10-08
-    Last Update: 2025-11-06
+    Last Update: 2025-11-14
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -18,11 +18,15 @@
 
 params [
     ["_pos", [0, 0, 0], [[0,0,0]]],
-    ["_amount", 0, [0]]
+    ["_amount", 0, [0]],
+    ["_tier", -1]
 ];
 
 // Get tier and civilian reputation depending values
-private _tier = [] call KPLIB_fnc_getResistanceTier;
+if(_tier == -1) then {
+    _tier = [] call KPLIB_fnc_getResistanceTier;
+};
+
 private _cr_multi = [] call KPLIB_fnc_crGetMulti;
 if (_amount == 0) then {_amount = (6 + (round (random _cr_multi)) + (round (random _tier)));};
 private _weapons = missionNamespace getVariable ("KP_liberation_guerilla_weapons_" + str _tier);

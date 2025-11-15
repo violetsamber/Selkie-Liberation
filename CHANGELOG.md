@@ -4,6 +4,7 @@ ADDED:
 - Unique class definition for paratroopers
 - Added battlegroup size notifications
 - Added defiend battlegroup compositions
+- Added additional optre resistance gear 
 
 FIXED:
 - Paratrooper aircraft slowing down over the sector
