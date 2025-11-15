@@ -35,59 +35,98 @@ There are 3 tiers for every category. If the strength of the guerillas will incr
 ["Weaponclassname","Magazineclassname","magazine amount","optic","tripod"]
 You can leave optic and tripod empty with "" */
 KP_liberation_guerilla_weapons_1 = [
-    ["OPTRE_MA5AGL","OPTRE_60Rnd_762x51_Mag",4,"",""],
-    ["OPTRE_MA5A","OPTRE_60Rnd_762x51_Mag",4,"",""]
+    ["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
 ];
 
 KP_liberation_guerilla_weapons_2 = [
-    ["OPTRE_MA5AGL","OPTRE_60Rnd_762x51_Mag",4,"",""],
-    ["OPTRE_MA5AGL","OPTRE_60Rnd_762x51_Mag",4,"",""],
-    ["OPTRE_MA5A","OPTRE_60Rnd_762x51_Mag",4,"",""],
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
     ["OPTRE_M392_DMR","OPTRE_60Rnd_762x51_Mag",4,"OPTRE_M392_Scope",""],
     ["OPTRE_M73","OPTRE_100Rnd_95x40_Box_Tracer_Yellow",4,"",""],
-    ["OPTRE_M41_SSR_G","OPTRE_M41_Twin_HEAT_G",2,"",""]
+    ["launch_RPG32_green_F","RPG32_F",2,"",""],
 ];
 
 KP_liberation_guerilla_weapons_3 = [
-    ["OPTRE_MA5AGL","OPTRE_60Rnd_762x51_Mag",4,"",""],
-    ["OPTRE_MA5AGL","OPTRE_60Rnd_762x51_Mag",4,"",""],
-    ["OPTRE_MA5AGL","OPTRE_60Rnd_762x51_Mag",4,"",""],
-    ["OPTRE_MA5A","OPTRE_60Rnd_762x51_Mag",4,"",""],
+    ["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
     ["OPTRE_M392_DMR","OPTRE_60Rnd_762x51_Mag",4,"OPTRE_M392_Scope",""],
     ["OPTRE_M73","OPTRE_100Rnd_95x40_Box_Tracer_Yellow",4,"",""],
-    ["OPTRE_M41_SSR_G","OPTRE_M41_Twin_HEAT_G",2,"",""],	
+    ["launch_RPG32_green_F","RPG32_F",2,"",""],
     ["OPTRE_SRS99D","OPTRE_4Rnd_145x114_APFSDS_Mag",5,"OPTRE_SRS99_Scope",""],
-    ["OPTRE_BR55HB","OPTRE_36Rnd_95x40_Mag_Tracer_Yellow",5,"OPTRE_BR55HB_Scope",""],	
-    ["OPTRE_BR55HB","OPTRE_36Rnd_95x40_Mag_Tracer_Yellow",5,"OPTRE_BR55HB_Scope",""],	
-    ["OPTRE_BR55HB","OPTRE_36Rnd_95x40_Mag_Tracer_Yellow",5,"OPTRE_BR55HB_Scope",""]
-];
+    ["OPTRE_BR55","OPTRE_36Rnd_95x40_Mag_Tracer_Yellow",5,"OPTRE_BR55HB_Scope",""],	
+    ["OPTRE_BR55","OPTRE_36Rnd_95x40_Mag",5,"OPTRE_BR55HB_Scope",""],	
+    ["OPTRE_BR55","OPTRE_36Rnd_95x40_Mag_Tracer_Yellow",5,"OPTRE_BR55HB_Scope",""]
+
+	];
 
 // Uniforms
 KP_liberation_guerilla_uniforms_1 = [
-    "U_O_R_Gorka_01_F",
+    "OPTRE_Ins_URF_Combat_Flat_Uniform",
 	"OPTRE_Ins_ER_uniform_GAtan",
 	"U_C_CBRN_Suit_01_Blue_F",
 	"U_BG_Guerrilla_6_1",
 	"U_O_R_Gorka_01_black_F",
 	"OPTRE_Ins_ER_uniform_GAtan"
+	"OPTRE_UNSC_Army_Uniform_T_BLK_SlimLeg",
+	"OPTRE_UNSC_Army_Uniform_T3",
+	"OPTRE_UNSC_Army_Uniform_T3_DES",
+	"OPTRE_UNSC_Army_Uniform_T2_TRO",
+	"OPTRE_UNSC_Army_Uniform_T_URB",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black"
 ];
 
 KP_liberation_guerilla_uniforms_2 = [
-    "U_O_R_Gorka_01_F",
+    "OPTRE_Ins_URF_Combat_Flat_Uniform",
 	"OPTRE_Ins_ER_uniform_GAtan",
 	"U_C_CBRN_Suit_01_Blue_F",
 	"U_BG_Guerrilla_6_1",
 	"U_O_R_Gorka_01_black_F",
 	"OPTRE_Ins_ER_uniform_GAtan"
+	"OPTRE_UNSC_Army_Uniform_T_BLK_SlimLeg",
+	"OPTRE_UNSC_Army_Uniform_T3",
+	"OPTRE_UNSC_Army_Uniform_T3_DES",
+	"OPTRE_UNSC_Army_Uniform_T2_TRO",
+	"OPTRE_UNSC_Army_Uniform_T_URB",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black"
+
 ];
 
 KP_liberation_guerilla_uniforms_3 = [
-    "U_O_R_Gorka_01_F",
+    "OPTRE_Ins_URF_Combat_Flat_Uniform",
 	"OPTRE_Ins_ER_uniform_GAtan",
 	"U_C_CBRN_Suit_01_Blue_F",
 	"U_BG_Guerrilla_6_1",
 	"U_O_R_Gorka_01_black_F",
 	"OPTRE_Ins_ER_uniform_GAtan"
+	"OPTRE_UNSC_Army_Uniform_T_BLK_SlimLeg",
+	"OPTRE_UNSC_Army_Uniform_T3",
+	"OPTRE_UNSC_Army_Uniform_T3_DES",
+	"OPTRE_UNSC_Army_Uniform_T2_TRO",
+	"OPTRE_UNSC_Army_Uniform_T_URB",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black",
+	"OPTRE_Ins_ER_rolled_surplus_black"
+
 ];
 
 // Vests
@@ -96,16 +135,25 @@ KP_liberation_guerilla_vests_1 = [
 	"V_BandollierB_blk",
 	"V_Chestrig_blk",
 	"OPTRE_UNSC_M52A_Armor_Soft",
+	"OPTRE_UNSC_M52B_Armor_Vest_URB",
+	"OPTRE_UNSC_M52B_Armor_Vest_BRN",
+	"OPTRE_UNSC_M52B_Armor_Vest_URB",
+	"OPTRE_UNSC_M52B_Armor_Vest_DES",
 	"V_SmershVest_01_F"
 
 ];
 
 KP_liberation_guerilla_vests_2 = [
-    "V_SmershVest_01_F",
+    "U_TKE_Uniform",
 	"V_BandollierB_blk",
 	"V_Chestrig_blk",
 	"OPTRE_UNSC_M52A_Armor_Soft",
 	"V_SmershVest_01_F"
+	"OPTRE_UNSC_M52B_Armor_Vest_URB",
+	"OPTRE_UNSC_M52B_Armor_Vest_BRN",
+	"OPTRE_UNSC_M52B_Armor_Vest_URB",
+	"OPTRE_UNSC_M52B_Armor_Vest_DES"
+	
 
 ];
 
@@ -114,19 +162,167 @@ KP_liberation_guerilla_vests_3 = [
 	"V_BandollierB_blk",
 	"V_Chestrig_blk",
 	"OPTRE_UNSC_M52A_Armor_Soft",
+	"OPTRE_UNSC_M52A_Armor4_URB",
+	"OPTRE_UNSC_M52A_Armor4_WDL",
+	"OPTRE_UNSC_M52A_Armor4_TRO",
+	"OPTRE_UNSC_M52A_Armor4_OLI",
+	"OPTRE_UNSC_M52A_Armor4_URB",
+	"OPTRE_UNSC_M52A_Armor4_MAR",
+	"OPTRE_UNSC_M52B_Armor_Vest_URB",
+	"OPTRE_UNSC_M52B_Armor_Vest_BRN",
+	"OPTRE_UNSC_M52B_Armor_Vest_URB",
+	"OPTRE_UNSC_M52B_Armor_Vest_DES",
 	"V_SmershVest_01_F"
 
 ];
 
 // Headgear
 KP_liberation_guerilla_headgear_1 = [
-    "",
-    "",
-    "",
-    "",
+    "OPTRE_UNSC_CH252_Helmet_MAR",
+	"OPTRE_UNSC_CH252_Helmet_WDL",
+	"OPTRE_UNSC_CH252_Helmet_URB",
+	"OPTRE_UNSC_CH252_Helmet_OLI",
+	"OPTRE_UNSC_CH252_Helmet_TRO",
+	"OPTRE_FC_CH255_Helmet_URB_Visor",
+	"OPTRE_FC_CH255_Helmet_URB",
+	"OPTRE_FC_CH255_Helmet_Visor",
+	"OPTRE_CMA_Helmet",
+	"OPTRE_Ins_URF_Helmet2",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
     "H_Booniehat_khk",
 	"H_ShemagOpen_tan",
-	"H_PASGT_basic_black_F",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+	
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
 	"H_Shemag_olive_hs",
 	"OPTRE_h_PatrolCap_Brown",
 	"H_Beret_EAF_01_F",
@@ -136,26 +332,121 @@ KP_liberation_guerilla_headgear_1 = [
 ];
 
 KP_liberation_guerilla_headgear_2 = [
+
+	"OPTRE_UNSC_CH252_Helmet_MAR",
+	"OPTRE_UNSC_CH252_Helmet_WDL",
+	"OPTRE_UNSC_CH252_Helmet_URB",
+	"OPTRE_UNSC_CH252_Helmet_OLI",
+	"OPTRE_UNSC_CH252_Helmet_TRO",
+	"OPTRE_FC_CH255_Helmet_URB_Visor",
+	"OPTRE_FC_CH255_Helmet_URB",
+	"OPTRE_FC_CH255_Helmet_Visor",
+	"OPTRE_CMA_Helmet",
+	"OPTRE_Ins_URF_Helmet2",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
     "H_Booniehat_khk",
 	"H_ShemagOpen_tan",
-	"H_PASGT_basic_black_F",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+	
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
 	"H_Shemag_olive_hs",
 	"OPTRE_h_PatrolCap_Brown",
 	"H_Beret_EAF_01_F",
 	"H_Bandanna_cbr",
 	"H_Cap_blk"
+	
 
 ];
 
 KP_liberation_guerilla_headgear_3 = [
+	"",
+    "",
+    "",
+    "",
+	"OPTRE_UNSC_CH252_Helmet_MAR",
+	"OPTRE_UNSC_CH252_Helmet_WDL",
+	"OPTRE_UNSC_CH252_Helmet_URB",
+	"OPTRE_UNSC_CH252_Helmet_OLI",
+	"OPTRE_UNSC_CH252_Helmet_TRO",
+	"OPTRE_FC_CH255_Helmet_URB_Visor",
+	"OPTRE_FC_CH255_Helmet_URB",
+	"OPTRE_FC_CH255_Helmet_Visor",
+	"OPTRE_CMA_Helmet",
+	"OPTRE_Ins_URF_Helmet2",
+
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
     "H_Booniehat_khk",
 	"H_ShemagOpen_tan",
-	"H_PASGT_basic_black_F",
+	"H_Shemag_olive_hs",
+	"OPTRE_h_PatrolCap_Brown",
+	"H_Beret_EAF_01_F",
+	"H_Bandanna_cbr",
+	"H_Cap_blk",
+	
+	"",
+	"",
+	"",
+	"",
+	"OPTRE_CPD_Cap",
+	"OPTRE_UNSC_Watchcap",
+    "H_Booniehat_khk",
+	"H_ShemagOpen_tan",
 	"H_Shemag_olive_hs",
 	"OPTRE_h_PatrolCap_Brown",
 	"H_Beret_EAF_01_F",
 	"H_Bandanna_cbr",
 	"H_Cap_blk"
+
 
 ];
 
@@ -163,14 +454,6 @@ KP_liberation_guerilla_headgear_3 = [
 KP_liberation_guerilla_facegear = [
     "",
     "",
-    "",
     "G_Balaclava_blk",
-    "OPTRE_EyePiece",
-    "G_Bandanna_beast",
-    "G_Combat",
-	"G_Bandanna_blk",
-	"G_Bandanna_aviator",
-	"G_AirPurifyingRespirator_01_F",
-	"G_Bandanna_khk"
 
 ];
