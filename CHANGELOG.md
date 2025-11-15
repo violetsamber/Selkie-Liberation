@@ -6,7 +6,8 @@ ADDED:
 - Added defiend battlegroup compositions
 
 FIXED:
-- Paratrooper aircraft slowing down over the sector 
+- Paratrooper aircraft slowing down over the sector
+- Fixed optre resistance not spawning
 
 CHANGED:
 - Reduced town spawn lag by adding sleep commands to town scripts
