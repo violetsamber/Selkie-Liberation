@@ -300,6 +300,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _sector_despawn_tickets = _return select 2;
                 _maximum_additional_tickets = _return select 3;
                 _activationTime = _return select 4;
+                _isFinished = _return select 5;
                 
                 if(_isStageFinished) then {
                     [format ["Finished update."], "SECTOR"] call KPLIB_fnc_debugLog;

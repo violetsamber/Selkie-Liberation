@@ -49,7 +49,7 @@ if (GRLIB_unitcap >= 1) then { INCREMENT(_squadCount) };
 if (GRLIB_unitcap >= 1.5) then { INCREMENT(_squadCount) };
 
 for "_i" from 1 to _squadCount do {
-    _roamingToSpawn pushBack [_infsquad] call KPLIB_fnc_getSquadComp;
+    _roamingToSpawn pushBack ([_infsquad] call KPLIB_fnc_getSquadComp);
 };
 
 //Vehicles
@@ -60,7 +60,7 @@ if ((random 100) > (66 / GRLIB_difficulty_modifier)) then { INCREMENT(_vehCount)
 if ((random 100) > (50 / GRLIB_difficulty_modifier)) then { INCREMENT(_vehCount) };
 
 for "_i" from 1 to _vehCount do {
-    _vehToSpawn pushBack selectRandom militia_vehicles;
+    _vehToSpawn pushBack (selectRandom militia_vehicles);
 };
 
 if (_infsquad == "army") then {

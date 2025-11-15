@@ -49,11 +49,11 @@ if((random 100) > 95) then { INCREMENT(_vehCount) };
 if((random 100) > 95) then { INCREMENT(_vehCount) };
 
 for "_i" from 1 to _squadCount do {
-    _roamingToSpawn pushBack [_infsquad] call KPLIB_fnc_getSquadComp;
+    _roamingToSpawn pushBack ([_infsquad] call KPLIB_fnc_getSquadComp);
 };
 
 for "_i" from 1 to _vehCount do {
-    _vehToSpawn pushBack [] call KPLIB_fnc_getAdaptiveVehicle;
+    _vehToSpawn pushBack ([] call KPLIB_fnc_getAdaptiveVehicle);
 };
 
 //Civs

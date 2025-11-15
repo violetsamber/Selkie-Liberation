@@ -71,7 +71,7 @@ if (_infsquad == "army") then {
 };
 
 for "_i" from 1 to _vehCount do {
-    _vehToSpawn pushBack selectRandom militia_vehicles;
+    _vehToSpawn pushBack (selectRandom militia_vehicles);
 };
 
 //Civs
