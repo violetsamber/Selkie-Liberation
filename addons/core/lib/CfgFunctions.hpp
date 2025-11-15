@@ -75,6 +75,7 @@ class COMMON_FUNCTIONS_NAMESPACE {
         class isClassUAV                {};
         class isRadio                   {};
         class log                       {};
+        class debugLog                  {};
         class pickRandomClasses         {};
         class lambs_enableReinforcements{};
         class potatoScan                {};

@@ -150,10 +150,11 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
 
                 _isStageFinished = _return select 0;
                 _stageWorkerIndex_0 = _return select 1;
-                _spawnBuildings = _return select 2;
-                _managed_units = _return select 3;
-                _garrisonedGroups = _return select 4;
-                _building_ai_max = _return select 5;
+                _stageWorkerIndex_1 = _return select 2;
+                _spawnBuildings = _return select 3;
+                _managed_units = _return select 4;
+                _garrisonedGroups = _return select 5;
+                _building_ai_max = _return select 6;
 
                 if(_isStageFinished) then {
                     _stageWorkerIndex_0 = 0;
