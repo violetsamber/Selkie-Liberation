@@ -76,58 +76,58 @@ if(_stageWorkerIndex_0 >= 1) then {
     } forEach _spawnBuildings;
 
     //No More positions
-    if(_stageWorkerIndex_1 >= _building_ai_max || _totalBuildingPositions <= 0) exitWith {
+    if(_stageWorkerIndex_1 >= _building_ai_max || _totalBuildingPositions <= 0) then {
         [format ["Sector %1 (%2) - Finished spawning.", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] call KPLIB_fnc_log;
         _isStageFinished = true;
-    };
+    } else {
+        private _classnames = [_infsquad] call KPLIB_fnc_getSquadComp;
+        private _grp = grpNull;
+        private _unit = objNull;
+        private _pos = [];
+        private _building = 0;
+        private _currentBuildingPositions = [];
 
-    private _classnames = [_infsquad] call KPLIB_fnc_getSquadComp;
-    private _grp = grpNull;
-    private _unit = objNull;
-    private _pos = [];
-    private _building = 0;
-    private _currentBuildingPositions = [];
+        {
+            private _unitCount = count (units _x);
+            private _posCount = count (_spawnBuildings select _forEachIndex);
+            
+            [format["Checking grp: %1 UnitCount: %2 PosCount: %3", _x,_unitCount,_posCount], "SECTORSPAWN"] call KPLIB_fnc_debugLog;
 
-    {
-        private _unitCount = count (units _x);
-        private _posCount = count (_spawnBuildings select _forEachIndex);
+            if(_unitCount < BUILDING_SQUAD_MAX && _posCount > 0) then {
+                _grp = _x;
+                _building = _forEachIndex;
+                [format ["Sector %1 (%2) - Picking group %3 Picking building: %4", (markerText _sectorMarker), _sectorMarker, _grp, _spawnBuildings select _building], "SECTORSPAWN"] call KPLIB_fnc_debugLog;
+            };
+        } forEach _garrisonedGroups;
+
+        if(isNull _grp) then {
+            _grp = createGroup [GRLIB_side_enemy, true];
+            _garrisonedGroups pushBack _grp;
+            [format ["Sector %1 (%2) - Creating group %3", (markerText _sectorMarker), _sectorMarker, _grp], "SECTORSPAWN"] call KPLIB_fnc_log;
+        };
         
-        [format["Checking grp: %1 UnitCount: %2 PosCount: %3", _x,_unitCount,_posCount], "SECTORSPAWN"] call KPLIB_fnc_debugLog;
+        //Get a position to spawn at and remove it
+        _building = ((count _garrisonedGroups) - 1);
+        _currentBuildingPositions = _spawnBuildings select _building;
+        {
+            if((count _x) > 0) exitWith {
+                [format ["Sector %1 (%2) - Picking position: %3 in building %4", (markerText _sectorMarker), _sectorMarker, _x, _currentBuildingPositions], "SECTORSPAWN"] call KPLIB_fnc_debugLog;
+                _pos = _x;
+                _currentBuildingPositions deleteAt 0;
+            };
+        } forEach (_currentBuildingPositions);
+        
+        private _class = selectRandom _classnames;
+        _unit = [_class, _pos, _grp] call KPLIB_fnc_createManagedUnit;
+        _unit setDir (random 360);
+        _unit setPos (_pos);
+        [_unit, _sectorMarker] spawn KPLIB_server_fnc_building_defence_ai;
+        _managed_units pushBack _unit;
 
-        if(_unitCount < BUILDING_SQUAD_MAX && _posCount > 0) then {
-            _grp = _x;
-            _building = _forEachIndex;
-            [format ["Sector %1 (%2) - Picking group %3 Picking building: %4", (markerText _sectorMarker), _sectorMarker, _grp, _spawnBuildings select _building], "SECTORSPAWN"] call KPLIB_fnc_debugLog;
-        };
-    } forEach _garrisonedGroups;
+        INC(_stageWorkerIndex_1);
 
-    if(isNull _grp) then {
-        _grp = createGroup [GRLIB_side_enemy, true];
-        _garrisonedGroups pushBack _grp;
-        [format ["Sector %1 (%2) - Creating group %3", (markerText _sectorMarker), _sectorMarker, _grp], "SECTORSPAWN"] call KPLIB_fnc_log;
+        [format ["Sector %1 (%2) - %3 spawned at %4 into %5", (markerText _sectorMarker), _sectorMarker, _class, _pos, _grp], "SECTORSPAWN"] call KPLIB_fnc_debugLog;
     };
-    
-    //Get a position to spawn at and remove it
-    _building = ((count _garrisonedGroups) - 1);
-    _currentBuildingPositions = _spawnBuildings select _building;
-    {
-        if((count _x) > 0) exitWith {
-            [format ["Sector %1 (%2) - Picking position: %3 in building %4", (markerText _sectorMarker), _sectorMarker, _x, _currentBuildingPositions], "SECTORSPAWN"] call KPLIB_fnc_debugLog;
-            _pos = _x;
-            _currentBuildingPositions deleteAt 0;
-        };
-    } forEach (_currentBuildingPositions);
-    
-    private _class = selectRandom _classnames;
-    _unit = [_class, _pos, _grp] call KPLIB_fnc_createManagedUnit;
-    _unit setDir (random 360);
-    _unit setPos (_pos);
-    [_unit, _sectorMarker] spawn KPLIB_server_fnc_building_defence_ai;
-    _managed_units pushBack _unit;
-
-    INC(_stageWorkerIndex_1);
-
-    [format ["Sector %1 (%2) - %3 spawned at %4 into %5", (markerText _sectorMarker), _sectorMarker, _class, _pos, _grp], "SECTORSPAWN"] call KPLIB_fnc_debugLog;
 };
 
 INCREMENT(_stageWorkerIndex_0)
