@@ -2,7 +2,7 @@
     File: fn_manage_one_sector.sqf
     Authors: Violets, KP Liberation Dev Team
     Date: 2025-11-01
-    Last Update: 2025-11-09
+    Last Update: 2025-11-14
     License: MIT License - http://www.opensource.org/licenses/MIT
     
     Description:
@@ -196,7 +196,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 11: {
                 //Sector lifetime loop
-                INCREMENT(_stageIndex)
+                //INCREMENT(_stageIndex)
             };
             case 12: {
                 //Sector Taken
