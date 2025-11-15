@@ -2,7 +2,7 @@
     File: fn_sector_spawn_civilians.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-07
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -15,6 +15,9 @@
         Function reached the end [BOOL]
 */
 
-if (_spawncivs && GRLIB_civilian_activity > 0) then {
-    _managed_units = _managed_units + ([_sector] call KPLIB_fnc_spawnCivilians);
-};
+// private _sector = "";
+// private _spawncivs = flase;
+
+// if (_spawncivs && GRLIB_civilian_activity > 0) then {
+//     _managed_units = _managed_units + ([_sector] call KPLIB_fnc_spawnCivilians);
+// };

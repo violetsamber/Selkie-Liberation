@@ -25,6 +25,8 @@ PFH_GETPARAM(_pfh,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
 
 PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
 
+private _isStageFinished = false;
+
 private _timer = (PFH_UPDATE_TIME * _stageWorkerIndex_0);
 
 if(_stageWorkerIndex_0 == 0) then {
