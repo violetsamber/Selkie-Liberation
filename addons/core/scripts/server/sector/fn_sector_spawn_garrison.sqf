@@ -2,7 +2,7 @@
     File: fn_sector_spawn_garrison.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-08
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -23,8 +23,8 @@ params [
 ];
 
 PFH_GETPARAM(_pfh,_sectorPos,PFH_PARAM_SECTOR_POS)
+PFH_GETPARAM(_pfh,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
 
-PFH_GETVAR(_pfh,"_sectorMarker","")
 PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
 PFH_GETVAR(_pfh,"_building_ai_max",0)
 PFH_GETVAR(_pfh,"_infsquad","")
@@ -78,15 +78,17 @@ if(_stageWorkerIndex_0 >= 1) then {
         private _grp = grpNull;
         private _unit = objNull;
         private _pos = [];
+        private _building = 0;
+
         {
-            
             private _unitCount = count (units _x);
             private _posCount = count (_spawnBuildings select _forEachIndex);
             
             [format["Checking grp: %1 UnitCount: %2 PosCount: %3", _x,_unitCount,_posCount], "SECTORSPAWN"] call KPLIB_fnc_log;
 
-            if(_unitCount <= BUILDING_SQUAD_MAX || _unitCount <= _posCount) then {
+            if(_unitCount < BUILDING_SQUAD_MAX && _posCount > 0) then {
                 _grp = _x;
+                _building = _forEachIndex;
                 [format ["Sector %1 (%2) - Picking group %3", (markerText _sectorMarker), _sectorMarker, _grp], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
             };
         } foreach _garrisonedGroups;
@@ -103,7 +105,7 @@ if(_stageWorkerIndex_0 >= 1) then {
                 _pos = _x select 0;
                 _x deleteAt 0;
             };
-        } foreach _spawnBuildings;
+        } foreach (_spawnBuildings select _building);
 
         //No More positions
         if(_pos isEqualTo []) exitWith {
@@ -113,6 +115,9 @@ if(_stageWorkerIndex_0 >= 1) then {
         
         private _class = selectRandom _classnames;
         _unit = [_class, _pos, _grp] call KPLIB_fnc_createManagedUnit;
+    	_unit setDir (random 360);
+    	_unit setPos (_x);
+    	[_unit, _sectorMarker] spawn KPLIB_server_fnc_building_defence_ai;
         _managed_units pushBack _unit;
 
         [format ["Sector %1 (%2) - %3 spawned at %4 into %5", (markerText _sectorMarker), _sectorMarker, _class, _pos, _grp], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];

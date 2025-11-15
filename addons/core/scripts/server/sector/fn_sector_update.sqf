@@ -2,7 +2,7 @@
     File: fn_sector_update.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-07
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -14,6 +14,8 @@
     Returns:
         Function reached the end [BOOL]
 */
+#include "../FunctionsInclude.hpp"
+#include "sector_macros.hpp"
 
 private _activationTime = time;
 // sector lifetime loop

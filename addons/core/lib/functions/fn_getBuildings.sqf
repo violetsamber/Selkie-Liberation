@@ -2,7 +2,7 @@
     File: fn_getBuildings.sqf
     Authors: 
     Date: 2025-11-08
-    Last Update: 2025-11-08
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -26,7 +26,7 @@ private _allbuildings = (nearestObjects [_sectorpos, ["House"], _building_range,
 //For each of the buildings get their positions
 private _buildingPositions = [];
 {
-    _buildingPositions = _buildingPositions + [([_x] call BIS_fnc_buildingPositions)];
+    _buildingPositions pushBack [([_x] call BIS_fnc_buildingPositions)];
 } forEach _allbuildings;
 
 _buildings = [_buildingPositions,[],{count _x},"DESCEND", {count _x > _minPositions}] call BIS_fnc_sortBy;
