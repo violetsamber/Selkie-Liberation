@@ -32,7 +32,6 @@
                                                             [format ["%1: %2", paramName, outVar], "PARAM"] call KPLIB_fnc_log
 
 //Change to true to enable debug logging
-#define DEBUG_LOG true
 #define LIB_LOG(x) [x] call KPLIB_fnc_log;
 #define LIB_DEBUG_LOG(x) [x] call KPLIB_fnc_debugLog;
 

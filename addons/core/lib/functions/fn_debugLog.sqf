@@ -2,7 +2,7 @@
     File: fn_log.sqf
     Author: Violets
     Date: 2025-11-5
-    Last Update: 2025-11-06
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -17,9 +17,12 @@
 #include "../FunctionsInclude.hpp"
 
 params [
-    ["_text", "", [""]]
+    ["_text", "", [""]],
+    ["_tag", ""]
 ];
 
-if (DEBUG_LOG) exitWith {false};
+#ifdef DEBUG_MODE_FULL
 
-[_text, "DEBUG"] call KPLIB_fnc_log
+[format ["[DEBUG] %1", _text],  _tag] call KPLIB_fnc_log;
+
+#endif
