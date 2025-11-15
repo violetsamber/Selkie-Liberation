@@ -2,7 +2,7 @@
     File: fn_sector_spawn_guerilla_attack.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-14
+    Last Update: 2025-11-15
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -15,9 +15,21 @@
         Function reached the end [BOOL]
 */
 
-private _sector = "";
-private _guerilla = false;
+#include "../FunctionsInclude.hpp"
+#include "sector_macros.hpp"
+
+params [
+    ["_pfh", objNull]
+];
+
+PFH_GETPARAM(_pfh,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
+
+PFH_GETVAR(_pfh,"_guerilla",false)
 
 if (_guerilla) then {
-    [_sector] spawn KPLIB_server_fnc_sector_guerilla;
+    [_sectorMarker] spawn KPLIB_server_fnc_sector_guerilla;
 };
+
+[
+    true
+]

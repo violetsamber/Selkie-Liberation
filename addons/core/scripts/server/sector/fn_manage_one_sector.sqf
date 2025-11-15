@@ -88,34 +88,29 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 //Setup Sector Varibles
                 PFH_GETPARAM(_this,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
 
-                //Bigtown
-                if (_sectorMarker in sectors_bigtown) then {
-                    [format ["Sector %1 (%2) - Setting up big town.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
-                    _return = [_this] call KPLIB_server_fnc_sector_setup_bigtown;
-                };
+                private _sectorType = [_sectorMarker, SECTOR_HASHMAP_TYPE] call KPLIB_fnc_getSectorValue;
 
-                //Smalltown
-                if (_sectorMarker in sectors_capture) then {
-                    [format ["Sector %1 (%2) - Setting up town.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
-                    _return = [_this] call KPLIB_server_fnc_sector_setup_town;
-                };
-
-                //Military
-                if (_sectorMarker in sectors_military) then {
-                    [format ["Sector %1 (%2) - Setting up military.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
-                    _return = [_this] call KPLIB_server_fnc_sector_setup_military;
-                };
-
-                //Factory
-                if (_sectorMarker in sectors_factory) then {
-                    [format ["Sector %1 (%2) - Setting up factory.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
-                    _return = [_this] call KPLIB_server_fnc_sector_setup_factory;
-                };
-
-                //Tower
-                if (_sectorMarker in sectors_tower) then {
-                    [format ["Sector %1 (%2) - Setting up tower.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
-                    _return = [_this] call KPLIB_server_fnc_sector_setup_tower;
+                switch (_sectorType) do {
+                    case SECTOR_TYPE_BIGTOWN: {
+                        [format ["Sector %1 (%2) - Setting up big town.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+                        _return = [_this] call KPLIB_server_fnc_sector_setup_bigtown;
+                    };
+                    case SECTOR_TYPE_TOWN: {
+                        [format ["Sector %1 (%2) - Setting up town.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+                        _return = [_this] call KPLIB_server_fnc_sector_setup_town;
+                    };
+                    case SECTOR_TYPE_MILITARY: {
+                        [format ["Sector %1 (%2) - Setting up military.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+                        _return = [_this] call KPLIB_server_fnc_sector_setup_military;
+                    };
+                    case SECTOR_TYPE_FACTORY: {
+                        [format ["Sector %1 (%2) - Setting up factory.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+                        _return = [_this] call KPLIB_server_fnc_sector_setup_factory;
+                    };
+                    case SECTOR_TYPE_TOWER: {
+                        [format ["Sector %1 (%2) - Setting up tower.. ", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+                        _return = [_this] call KPLIB_server_fnc_sector_setup_tower;
+                    };
                 };
 
                 _roamingToSpawn =     _return select 0;
@@ -185,8 +180,8 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 4: {
                 //Spawn Vehicles
-                
-                ["Spawning military post update."] call KPLIB_fnc_debugLog;
+
+                ["Spawning military post update.", "SECTOR"] call KPLIB_fnc_debugLog;
                 _return = [_this] call KPLIB_server_fnc_sector_spawn_vehicles;
 
                 _isStageFinished = _return select 0;
@@ -204,7 +199,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 5: {
                 //Spawn special units in specific military buildings
-                ["Spawning military post update."] call KPLIB_fnc_debugLog;
+                ["Spawning military post update.", "SECTOR"] call KPLIB_fnc_debugLog;
                 _return = [_this] call KPLIB_server_fnc_sector_spawn_militaryPostGuard;
 
                 _isStageFinished = _return select 0;
@@ -220,7 +215,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 6: {
                 //Spawn Civilians
-                [format ["Spawning civ update: %1, %2", _spawnCivs, GRLIB_civilian_activity]] call KPLIB_fnc_debugLog;
+                [format ["Spawning civ update: %1, %2", _spawnCivs, GRLIB_civilian_activity], "SECTOR"] call KPLIB_fnc_debugLog;
                 if(_spawnCivs > 0 && GRLIB_civilian_activity > 0)then{
                     _return = [_this] call KPLIB_server_fnc_sector_spawn_civilians;
 
@@ -243,29 +238,59 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 7: {
                 //Spawn IEDs
-                INCREMENT(_stageIndex)
+                [format ["Spawning IED update: %1", _iedcount], "SECTOR"] call KPLIB_fnc_debugLog;
+                _return = [_this] call KPLIB_server_fnc_sector_spawn_ieds;
+
+                _isStageFinished = _return select 0;
+                
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             case 8: {
                 //Friendly Guerilla
-                INCREMENT(_stageIndex) 
+                [format ["Spawning guerilla update: %1", _guerilla], "SECTOR"] call KPLIB_fnc_debugLog;
+                _return = [_this] call KPLIB_server_fnc_sector_spawn_guerilla_attack;
+
+                _isStageFinished = _return select 0;
+                
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             case 9: {
                 //Start reinforcement script
-                INCREMENT(_stageIndex)
+                [format ["Start reinforcement update: %1", _guerilla], "SECTOR"] call KPLIB_fnc_debugLog;
+
+                _return = [_this] call KPLIB_server_fnc_sector_spawn_reinforcement_call;
+
+                _isStageFinished = _return select 0;
+                
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             case 10: {
-                //Spawn IEDs
-                INCREMENT(_stageIndex)
-            };
-            case 11: {
                 //Sector lifetime loop
                 //INCREMENT(_stageIndex)
             };
-            case 12: {
+            case 11: {
                 //Sector Taken
                 INCREMENT(_stageIndex)
             };
-            case 13: {
+            case 12: {
                 //Sector Despawning
                 INCREMENT(_stageIndex)
             };
