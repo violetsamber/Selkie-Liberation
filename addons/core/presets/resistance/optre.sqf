@@ -6,6 +6,9 @@
     - None
 */
 
+SLKLIB_guerilla_RPG = "launch_RPG32_green_F";
+SLKLIB_guerilla_RPG_Ammo = "RPG32_F";
+
 /* Classnames of the guerilla faction which is friendly or hostile, depending on the civil reputation
 Standard loadout of the units will be replaced with a scripted one, which depends on the guerilla strength, after spawn */
 KP_liberation_guerilla_units = [
