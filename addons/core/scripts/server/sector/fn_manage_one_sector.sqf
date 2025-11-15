@@ -177,6 +177,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 if(_isStageFinished) then {
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
                     _isStageFinished = false;
                     INCREMENT(_stageIndex)
                 };
