@@ -2,7 +2,7 @@
     File: fn_add_defense_waypoints.sqf
     Authors: KP Liberation Team
     Date: 2025-11-01
-    Last Update: 2025-11-10
+    Last Update: 2025-11-15
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -15,12 +15,17 @@
         Function reached the end [BOOL]
 */
 
-private _grp = _this select 0;
-private _flagpos = _this select 1;
+params [
+    ["_grp", grpNull],
+    ["_flagpos", [0,0,0]],
+    ["_radius", 100]
+];
+
 private _basepos = getPos (leader _grp);
 private _is_infantry = false;
 private _wpPositions = [];
 private _waypoint = [];
+
 if (vehicle (leader _grp) == (leader _grp)) then {_is_infantry = true;};
 
 sleep 5;
