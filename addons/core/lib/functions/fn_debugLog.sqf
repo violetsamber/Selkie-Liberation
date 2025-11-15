@@ -1,8 +1,8 @@
 /*
-    File: fn_log.sqf
+    File: debugLog.sqf
     Author: Violets
     Date: 2025-11-5
-    Last Update: 2025-11-14
+    Last Update: 2025-11-15
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -18,7 +18,7 @@
 
 params [
     ["_text", "", [""]],
-    ["_tag", ""]
+    ["_tag", "INFO"]
 ];
 
 #ifdef DEBUG_MODE_FULL
