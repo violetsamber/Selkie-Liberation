@@ -35,6 +35,8 @@ private _isStageFinished = false;
 private _grp = grpNull;
 private _unit = objNull;
 
+
+[format ["Spawning civ update: _stageWorkerIndex_0: %1, _spawnCivs: %2", _stageWorkerIndex_0, _spawnCivs]] call KPLIB_fnc_debugLog;
 if(_stageWorkerIndex_0 < _spawnCivs) then {
     
     _grp = createGroup [GRLIB_side_civilian, true];

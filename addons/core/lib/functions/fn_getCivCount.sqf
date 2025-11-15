@@ -25,6 +25,6 @@ private _amount = round ((3 + (floor (random 7))) * GRLIB_civilian_activity);
 if (_sectorType == SECTOR_TYPE_BIGTOWN) then {
     _amount = _amount + 10;
 };
-_amount = _amount * (sqrt (GRLIB_unitcap));
+_amount = round (_amount * (sqrt (GRLIB_unitcap)));
 
 _amount

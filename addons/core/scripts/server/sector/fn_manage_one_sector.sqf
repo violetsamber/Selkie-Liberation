@@ -186,6 +186,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             case 4: {
                 //Spawn Vehicles
                 
+                ["Spawning military post update."] call KPLIB_fnc_debugLog;
                 _return = [_this] call KPLIB_server_fnc_sector_spawn_vehicles;
 
                 _isStageFinished = _return select 0;
@@ -203,8 +204,8 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 5: {
                 //Spawn special units in specific military buildings
-                
-                _return = [_this] call KPLIB_server_fnc_sector_militaryPostGuard;
+                ["Spawning military post update."] call KPLIB_fnc_debugLog;
+                _return = [_this] call KPLIB_server_fnc_sector_spawn_militaryPostGuard;
 
                 _isStageFinished = _return select 0;
                 _managed_units = _return select 1;
@@ -219,6 +220,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 6: {
                 //Spawn Civilians
+                [format ["Spawning civ update: %1, %2", _spawnCivs, GRLIB_civilian_activity]] call KPLIB_fnc_debugLog;
                 if(_spawnCivs > 0 && GRLIB_civilian_activity > 0)then{
                     _return = [_this] call KPLIB_server_fnc_sector_spawn_civilians;
 
