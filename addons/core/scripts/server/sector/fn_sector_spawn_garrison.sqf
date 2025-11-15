@@ -50,7 +50,7 @@ if(_stageWorkerIndex_0 == 0) then {
         {
             private _positionArray = _x call BIS_fnc_arrayShuffle;
             _newPositions pushBack _positionArray;
-        } foreach _spawnBuildings;
+        } forEach _spawnBuildings;
 
         _spawnBuildings = _newPositions;
 
@@ -71,7 +71,7 @@ if(_stageWorkerIndex_0 >= 1) then {
     private _allUnitCount = 0;
     {
         _allUnitCount = _allUnitCount + (count units _x);
-    } foreach _garrisonedGroups;
+    } forEach _garrisonedGroups;
 
     if (_allUnitCount < _building_ai_max) then {
         //Get First group that their building is not full or squad maxed or create a new one
@@ -89,9 +89,9 @@ if(_stageWorkerIndex_0 >= 1) then {
             if(_unitCount < BUILDING_SQUAD_MAX && _posCount > 0) then {
                 _grp = _x;
                 _building = _forEachIndex;
-                [format ["Sector %1 (%2) - Picking group %3", (markerText _sectorMarker), _sectorMarker, _grp], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+                [format ["Sector %1 (%2) - Picking group %3 Picking building: %4", (markerText _sectorMarker), _sectorMarker, _grp, _spawnBuildings select _building], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
             };
-        } foreach _garrisonedGroups;
+        } forEach _garrisonedGroups;
 
         if(isNull _grp) then {
             _grp = createGroup [GRLIB_side_enemy, true];
@@ -101,14 +101,16 @@ if(_stageWorkerIndex_0 >= 1) then {
 
         //Get a position to spawn at and remove it
         {
-            if(count _x > 0) exitWith {
-                _pos = _x select 0;
-                _x deleteAt 0;
+            if((count _x) > 0) exitWith {
+                [format ["Sector %1 (%2) - Picking position: %3 in building %4", (markerText _sectorMarker), _sectorMarker, _x, _spawnBuildings select _building], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+                _pos = _x;
+                (_spawnBuildings select _building) deleteAt 0;
             };
-        } foreach (_spawnBuildings select _building);
+        } forEach (_spawnBuildings select _building);
 
         //No More positions
         if(_pos isEqualTo []) exitWith {
+            [format ["Sector %1 (%2) - Finished spawning.", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
             _isStageFinished = true;
         };
 
@@ -116,7 +118,7 @@ if(_stageWorkerIndex_0 >= 1) then {
         private _class = selectRandom _classnames;
         _unit = [_class, _pos, _grp] call KPLIB_fnc_createManagedUnit;
     	_unit setDir (random 360);
-    	_unit setPos (_x);
+    	_unit setPos (_pos);
     	[_unit, _sectorMarker] spawn KPLIB_server_fnc_building_defence_ai;
         _managed_units pushBack _unit;
 
