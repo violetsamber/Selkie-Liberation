@@ -64,3 +64,6 @@
 #define COMPILE_FINAL_OPFOR_BATTLEGROUP(var1,var2) COMPILE_FINAL_PRESET(opfor,var1,setup_battlegroup_##var2)
 
 //compileFinal preprocessFileLineNumbers presets\opfor\var1\setup_classes.sqf
+
+#define KPLIB_SQUADTYPE_ARMY "army"
+#define KPLIB_SQUADTYPE_MILITIA "militia"
