@@ -69,6 +69,7 @@ for "_i" from 1 to _amount do {
     // Add weapon
     _weapon = selectRandom _weapons;
     _unit addWeapon (_weapon select 0);
+    _unit addPrimaryWeaponItem (_weapon select 2);
     for "_i" from 1 to (_weapon select 2) do {_unit addItemToVest (_weapon select 1);};
     _unit addPrimaryWeaponItem (_weapon select 3);
     _unit addPrimaryWeaponItem (_weapon select 4);

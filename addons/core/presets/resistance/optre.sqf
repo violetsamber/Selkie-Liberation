@@ -134,10 +134,10 @@ KP_liberation_guerilla_vests_1 = [
 	"V_BandollierB_blk",
 	"V_Chestrig_blk",
 	"OPTRE_UNSC_M52A_Armor_Soft",
-	"OPTRE_UNSC_M52B_Armor_Vest_URB",
-	"OPTRE_UNSC_M52B_Armor_Vest_BRN",
-	"OPTRE_UNSC_M52B_Armor_Vest_URB",
-	"OPTRE_UNSC_M52B_Armor_Vest_DES",
+	"OPTRE_FC_M52B_Armor_Vest_URB",
+	"OPTRE_FC_M52B_Armor_Vest_BRN",
+	"OPTRE_FC_M52B_Armor_Vest_URB",
+	"OPTRE_FC_M52B_Armor_Vest_DES",
 	"V_SmershVest_01_F"
 ];
 
@@ -147,11 +147,10 @@ KP_liberation_guerilla_vests_2 = [
 	"V_Chestrig_blk",
 	"OPTRE_UNSC_M52A_Armor_Soft",
 	"V_SmershVest_01_F",
-	"OPTRE_UNSC_M52B_Armor_Vest_URB",
-	"OPTRE_UNSC_M52B_Armor_Vest_BRN",
-	"OPTRE_UNSC_M52B_Armor_Vest_URB",
-	"OPTRE_UNSC_M52B_Armor_Vest_DES"
-	
+	"OPTRE_FC_M52B_Armor_Vest_URB",
+	"OPTRE_FC_M52B_Armor_Vest_BRN",
+	"OPTRE_FC_M52B_Armor_Vest_URB",
+	"OPTRE_FC_M52B_Armor_Vest_DES"
 
 ];
 
@@ -166,10 +165,10 @@ KP_liberation_guerilla_vests_3 = [
 	"OPTRE_UNSC_M52A_Armor4_OLI",
 	"OPTRE_UNSC_M52A_Armor4_URB",
 	"OPTRE_UNSC_M52A_Armor4_MAR",
-	"OPTRE_UNSC_M52B_Armor_Vest_URB",
-	"OPTRE_UNSC_M52B_Armor_Vest_BRN",
-	"OPTRE_UNSC_M52B_Armor_Vest_URB",
-	"OPTRE_UNSC_M52B_Armor_Vest_DES",
+	"OPTRE_FC_M52B_Armor_Vest_URB",
+	"OPTRE_FC_M52B_Armor_Vest_BRN",
+	"OPTRE_FC_M52B_Armor_Vest_URB",
+	"OPTRE_FC_M52B_Armor_Vest_DES",
 	"V_SmershVest_01_F"
 
 ];
