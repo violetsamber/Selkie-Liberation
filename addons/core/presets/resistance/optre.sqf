@@ -39,7 +39,10 @@ There are 3 tiers for every category. If the strength of the guerillas will incr
 You can leave optic and tripod empty with "" */
 KP_liberation_guerilla_weapons_1 = [
     ["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag",8,"",""],
-	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""]
+	["OPTRE_MA5A","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag",8,"",""],
+	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
+	["OPTRE_M73","OPTRE_100Rnd_95x40_Box_Tracer_Yellow",4,"",""]
 ];
 
 KP_liberation_guerilla_weapons_2 = [
@@ -52,8 +55,8 @@ KP_liberation_guerilla_weapons_2 = [
 	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag",8,"",""],
 	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
     ["OPTRE_M392_DMR","OPTRE_60Rnd_762x51_Mag",4,"OPTRE_M392_Scope",""],
-    ["OPTRE_M73","OPTRE_100Rnd_95x40_Box_Tracer_Yellow",4,"",""],
-    ["launch_RPG32_green_F","RPG32_F",2,"",""]
+    ["OPTRE_M73","OPTRE_100Rnd_95x40_Box_Tracer_Yellow",4,"",""]
+
 ];
 
 KP_liberation_guerilla_weapons_3 = [
@@ -67,7 +70,6 @@ KP_liberation_guerilla_weapons_3 = [
 	["OPTRE_MA5AGL","OPTRE_32Rnd_762x51_Mag_Tracer_Yellow",8,"",""],
     ["OPTRE_M392_DMR","OPTRE_60Rnd_762x51_Mag",4,"OPTRE_M392_Scope",""],
     ["OPTRE_M73","OPTRE_100Rnd_95x40_Box_Tracer_Yellow",4,"",""],
-    ["launch_RPG32_green_F","RPG32_F",2,"",""],
     ["OPTRE_SRS99D","OPTRE_4Rnd_145x114_APFSDS_Mag",5,"OPTRE_SRS99_Scope",""],
     ["OPTRE_BR55","OPTRE_36Rnd_95x40_Mag_Tracer_Yellow",5,"OPTRE_BR55HB_Scope",""],	
     ["OPTRE_BR55","OPTRE_36Rnd_95x40_Mag",5,"OPTRE_BR55HB_Scope",""],	
@@ -82,8 +84,8 @@ KP_liberation_guerilla_uniforms_1 = [
 	"U_BG_Guerrilla_6_1",
 	"U_O_R_Gorka_01_black_F",
 	"OPTRE_Ins_ER_uniform_GAtan",
-	"OPTRE_UNSC_Army_Uniform_T_BLK_SlimLeg",
-	"OPTRE_UNSC_Army_Uniform_T3",
+	"OPTRE_UNSC_Marine_Uniform_T_BLK_SlimLeg",
+	"OPTRE_UNSC_Marine_Uniform_T3",
 	"OPTRE_UNSC_Army_Uniform_T3_DES",
 	"OPTRE_UNSC_Army_Uniform_T2_TRO",
 	"OPTRE_UNSC_Army_Uniform_T_URB",
@@ -100,8 +102,8 @@ KP_liberation_guerilla_uniforms_2 = [
 	"U_BG_Guerrilla_6_1",
 	"U_O_R_Gorka_01_black_F",
 	"OPTRE_Ins_ER_uniform_GAtan",
-	"OPTRE_UNSC_Army_Uniform_T_BLK_SlimLeg",
-	"OPTRE_UNSC_Army_Uniform_T3",
+	"OPTRE_UNSC_Marine_Uniform_T_BLK_SlimLeg",
+	"OPTRE_UNSC_Marine_Uniform_T3",
 	"OPTRE_UNSC_Army_Uniform_T3_DES",
 	"OPTRE_UNSC_Army_Uniform_T2_TRO",
 	"OPTRE_UNSC_Army_Uniform_T_URB",
@@ -119,8 +121,8 @@ KP_liberation_guerilla_uniforms_3 = [
 	"U_BG_Guerrilla_6_1",
 	"U_O_R_Gorka_01_black_F",
 	"OPTRE_Ins_ER_uniform_GAtan",
-	"OPTRE_UNSC_Army_Uniform_T_BLK_SlimLeg",
-	"OPTRE_UNSC_Army_Uniform_T3",
+	"OPTRE_UNSC_Marine_Uniform_T_BLK_SlimLeg",
+	"OPTRE_UNSC_Marine_Uniform_T3",
 	"OPTRE_UNSC_Army_Uniform_T3_DES",
 	"OPTRE_UNSC_Army_Uniform_T2_TRO",
 	"OPTRE_UNSC_Army_Uniform_T_URB",
@@ -286,34 +288,6 @@ KP_liberation_guerilla_headgear_1 = [
 	"H_Beret_EAF_01_F",
 	"H_Bandanna_cbr",
 	"H_Cap_blk",
-
-	"",
-	"",
-	"",
-	"",
-	"OPTRE_CPD_Cap",
-	"OPTRE_UNSC_Watchcap",
-    "H_Booniehat_khk",
-	"H_ShemagOpen_tan",
-	"H_Shemag_olive_hs",
-	"OPTRE_h_PatrolCap_Brown",
-	"H_Beret_EAF_01_F",
-	"H_Bandanna_cbr",
-	"H_Cap_blk",
-
-	"",
-	"",
-	"",
-	"",
-	"OPTRE_CPD_Cap",
-	"OPTRE_UNSC_Watchcap",
-    "H_Booniehat_khk",
-	"H_ShemagOpen_tan",
-	"H_Shemag_olive_hs",
-	"OPTRE_h_PatrolCap_Brown",
-	"H_Beret_EAF_01_F",
-	"H_Bandanna_cbr",
-	"H_Cap_blk",
 	
 	"",
 	"",
@@ -358,38 +332,6 @@ KP_liberation_guerilla_headgear_2 = [
 	"H_Bandanna_cbr",
 	"H_Cap_blk",
 
-	"",
-	"",
-	"",
-	"",
-	"OPTRE_CPD_Cap",
-	"OPTRE_UNSC_Watchcap",
-    "H_Booniehat_khk",
-	"H_ShemagOpen_tan",
-	"H_Shemag_olive_hs",
-	"OPTRE_h_PatrolCap_Brown",
-	"H_Beret_EAF_01_F",
-	"H_Bandanna_cbr",
-	"H_Cap_blk",
-
-	"",
-	"",
-	"",
-	"",
-	"OPTRE_CPD_Cap",
-	"OPTRE_UNSC_Watchcap",
-    "H_Booniehat_khk",
-	"H_ShemagOpen_tan",
-	"H_Shemag_olive_hs",
-	"OPTRE_h_PatrolCap_Brown",
-	"H_Beret_EAF_01_F",
-	"H_Bandanna_cbr",
-	"H_Cap_blk",
-	
-	"",
-	"",
-	"",
-	"",
 	"OPTRE_CPD_Cap",
 	"OPTRE_UNSC_Watchcap",
     "H_Booniehat_khk",
@@ -404,10 +346,6 @@ KP_liberation_guerilla_headgear_2 = [
 ];
 
 KP_liberation_guerilla_headgear_3 = [
-	"",
-    "",
-    "",
-    "",
 	"OPTRE_UNSC_CH252_Helmet_MAR",
 	"OPTRE_UNSC_CH252_Helmet_WDL",
 	"OPTRE_UNSC_CH252_Helmet_URB",
@@ -419,34 +357,10 @@ KP_liberation_guerilla_headgear_3 = [
 	"OPTRE_CMA_Helmet",
 	"OPTRE_Ins_URF_Helmet2",
 
-	"",
-	"",
-	"",
-	"",
 	"OPTRE_CPD_Cap",
 	"OPTRE_UNSC_Watchcap",
-    "H_Booniehat_khk",
-	"H_ShemagOpen_tan",
-	"H_Shemag_olive_hs",
 	"OPTRE_h_PatrolCap_Brown",
-	"H_Beret_EAF_01_F",
-	"H_Bandanna_cbr",
-	"H_Cap_blk",
-	
-	"",
-	"",
-	"",
-	"",
-	"OPTRE_CPD_Cap",
-	"OPTRE_UNSC_Watchcap",
-    "H_Booniehat_khk",
-	"H_ShemagOpen_tan",
-	"H_Shemag_olive_hs",
-	"OPTRE_h_PatrolCap_Brown",
-	"H_Beret_EAF_01_F",
-	"H_Bandanna_cbr",
 	"H_Cap_blk"
-
 
 ];
 
