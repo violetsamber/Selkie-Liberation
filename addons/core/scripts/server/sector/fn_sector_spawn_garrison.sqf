@@ -67,6 +67,12 @@ if(_stageWorkerIndex_0 == 0) then {
 //Spawn Units
 if(_stageWorkerIndex_0 >= 1) then {
 
+    //No More positions
+    if(_pos isEqualTo []) exitWith {
+        [format ["Sector %1 (%2) - Finished spawning.", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+        _isStageFinished = true;
+    };
+
     private _classnames = [_infsquad] call KPLIB_fnc_getSquadComp;
     private _allUnitCount = 0;
     {
@@ -79,6 +85,7 @@ if(_stageWorkerIndex_0 >= 1) then {
         private _unit = objNull;
         private _pos = [];
         private _building = 0;
+        private _currentBuildingPositions = [];
 
         {
             private _unitCount = count (units _x);
@@ -98,22 +105,17 @@ if(_stageWorkerIndex_0 >= 1) then {
             _garrisonedGroups pushBack _grp;
             [format ["Sector %1 (%2) - Creating group %3", (markerText _sectorMarker), _sectorMarker, _grp], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
         };
-
+        
         //Get a position to spawn at and remove it
+        _building = ((count _garrisonedGroups) - 1);
+        _currentBuildingPositions = _spawnBuildings select _building;
         {
             if((count _x) > 0) exitWith {
-                [format ["Sector %1 (%2) - Picking position: %3 in building %4", (markerText _sectorMarker), _sectorMarker, _x, _spawnBuildings select _building], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
+                [format ["Sector %1 (%2) - Picking position: %3 in building %4", (markerText _sectorMarker), _sectorMarker, _x, _currentBuildingPositions], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
                 _pos = _x;
-                (_spawnBuildings select _building) deleteAt 0;
+                _currentBuildingPositions deleteAt 0;
             };
-        } forEach (_spawnBuildings select _building);
-
-        //No More positions
-        if(_pos isEqualTo []) exitWith {
-            [format ["Sector %1 (%2) - Finished spawning.", (markerText _sectorMarker), _sectorMarker], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];
-            _isStageFinished = true;
-        };
-
+        } forEach (_currentBuildingPositions);
         
         private _class = selectRandom _classnames;
         _unit = [_class, _pos, _grp] call KPLIB_fnc_createManagedUnit;
