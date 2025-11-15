@@ -37,6 +37,9 @@ if(_stageWorkerIndex_0 < count _vehToSpawn)then{
     _vehicle = [_sectorpos, _vehtospawn] call KPLIB_fnc_spawnVehicle;
     [[_vehicle] call CBA_fnc_getGroup,_sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
     _vehGroups pushBack _vehicle;
+
+    [format["Spawning Vehicle %1", _vehtospawn], "SECTOR"] call KPLIB_fnc_debugLog;
+
     _managed_units pushBack _vehicle;
     {_managed_units pushBack _x;} forEach (crew _vehicle);
     INC(_stageWorkerIndex_0);
