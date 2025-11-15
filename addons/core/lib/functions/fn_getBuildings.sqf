@@ -26,9 +26,14 @@ private _allbuildings = (nearestObjects [_sectorpos, ["House"], _building_range,
 //For each of the buildings get their positions
 private _buildingPositions = [];
 {
-    _buildingPositions pushBack [([_x] call BIS_fnc_buildingPositions)];
+    private _positions = ([_x] call BIS_fnc_buildingPositions);
+    _buildingPositions pushBack _positions;
 } forEach _allbuildings;
 
 _buildings = [_buildingPositions,[],{count _x},"DESCEND", {count _x > _minPositions}] call BIS_fnc_sortBy;
+
+{
+    [format ["Found building positions: %1 ", _x]] call KPLIB_fnc_log;
+} forEach _buildings;
 
 _buildings
