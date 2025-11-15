@@ -2,7 +2,7 @@
     File: fn_sector_update.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-14
+    Last Update: 2025-11-15
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -14,78 +14,72 @@
     Returns:
         Function reached the end [BOOL]
 */
+
 #include "../FunctionsInclude.hpp"
 #include "sector_macros.hpp"
 
-// private _sector_despawn_tickets = 0;
-// private _maximum_additional_tickets = 0;
-// private _sector = "";
-// private _managed_units = [];
+params [
+    ["_pfh", objNull]
+];
 
-// private _activationTime = time;
-// // sector lifetime loop
-// while {!_stopit} do {
-//     // sector was captured
-//     if (([_sectorpos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly) && (GRLIB_endgame == 0)) then {
-//         if (isServer) then {
-//             [_sector] spawn KPLIB_shared_fnc_sector_liberated_remote_call;
-//         } else {
-//             [_sector] remoteExec ["KPLIB_shared_fnc_sector_liberated_remote_call",2];
-//         };
+PFH_GETPARAM(_pfh,_sectorPos,PFH_PARAM_SECTOR_POS)
+PFH_GETPARAM(_pfh,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
+PFH_GETPARAM(_pfh,_opforcount,PFH_PARAM_OPFORCOUNT)
 
-//         _stopit = true;
+PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
+PFH_GETVAR(_pfh,"_managed_units",[])
+PFH_GETVAR(_pfh,"_sector_despawn_tickets",0)
+PFH_GETVAR(_pfh,"_maximum_additional_tickets",0)
+PFH_GETVAR(_pfh,"_activationTime",0)
+PFH_GETVAR(_pfh,"_local_capture_size",0)
 
-//         {[_x] spawn KPLIB_server_fnc_prisonner_ai;} forEach ((markerPos _sector) nearEntities [["Man"], _local_capture_size * 1.2]);
+private _isStageFinished = true;
 
-//         sleep 60;
 
-//         active_sectors = active_sectors - [_sector]; publicVariable "active_sectors";
+//Wait to update sector
+if(_stageWorkerIndex_0 < SECTOR_TICK_TIME) then {
+    ADD(_stageWorkerIndex_0,PFH_UPDATE_TIME);
+} else {
+    _stageWorkerIndex_0 = 0;
 
-//         sleep 600;
-//         //TODO This should be handled by a garbage collector script
-//         {
-//             if (_x isKindOf "Man") then {
-//                 if (side group _x != GRLIB_side_friendly) then {
-//                     deleteVehicle _x;
-//                 };
-//             } else {
-//                 if (!isNull _x) then {
-//                     [_x] call KPLIB_fnc_cleanOpforVehicle;
-//                 };
-//             };
-//         } forEach _managed_units;
-        
-//     } else {
+    if (([_sectorpos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly) && (GRLIB_endgame == 0)) then {
+        _isStageFinished = true;
+    } else {
+        //Sector running logic
+        if (([_sectorpos, (([_opforcount] call KPLIB_fnc_getSectorRange) + 300), GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) == 0) then {
+            _sector_despawn_tickets = _sector_despawn_tickets - 1;
+        } else {
+            // start counting running minutes after ADDITIONAL_TICKETS_DELAY
+            private _runningMinutes = (floor ((time - _activationTime) / 60)) - ADDITIONAL_TICKETS_DELAY;
+            private _additionalTickets = (_runningMinutes * BASE_TICKETS);
 
-//         //Sector running logic
-//         if (([_sectorpos, (([_opforcount] call KPLIB_fnc_getSectorRange) + 300), GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount) == 0) then {
-//             _sector_despawn_tickets = _sector_despawn_tickets - 1;
-//         } else {
-//             // start counting running minutes after ADDITIONAL_TICKETS_DELAY
-//             private _runningMinutes = (floor ((time - _activationTime) / 60)) - ADDITIONAL_TICKETS_DELAY;
-//             private _additionalTickets = (_runningMinutes * BASE_TICKETS);
+            // clamp from 0 to "_maximum_additional_tickets"
+            _additionalTickets = (_additionalTickets max 0) min _maximum_additional_tickets;
 
-//             // clamp from 0 to "_maximum_additional_tickets"
-//             _additionalTickets = (_additionalTickets max 0) min _maximum_additional_tickets;
+            _sector_despawn_tickets = BASE_TICKETS + _additionalTickets;
+        };
 
-//             _sector_despawn_tickets = BASE_TICKETS + _additionalTickets;
-//         };
+        if (_sector_despawn_tickets <= 0) then {
+            {
+                if (_x isKindOf "Man") then {
+                    deleteVehicle _x;
+                } else {
+                    if (!isNull _x) then {
+                        [_x] call KPLIB_fnc_cleanOpforVehicle;
+                    };
+                };
+            } forEach _managed_units;
 
-//         if (_sector_despawn_tickets <= 0) then {
-//             {
-//                 if (_x isKindOf "Man") then {
-//                     deleteVehicle _x;
-//                 } else {
-//                     if (!isNull _x) then {
-//                         [_x] call KPLIB_fnc_cleanOpforVehicle;
-//                     };
-//                 };
-//             } forEach _managed_units;
+            _isStageFinished = true;
+            active_sectors = active_sectors - [_sectorMarker]; publicVariable "active_sectors";
+        };
+    };
+};
 
-//             _stopit = true;
-//             active_sectors = active_sectors - [_sector]; publicVariable "active_sectors";
-//         };
-
-//     };
-//     sleep SECTOR_TICK_TIME;
-// };
+[
+    _isStageFinished,
+    _stageWorkerIndex_0,
+    _sector_despawn_tickets,
+    _maximum_additional_tickets,
+    _activationTime
+]

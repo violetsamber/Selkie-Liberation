@@ -268,7 +268,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 9: {
                 //Start reinforcement script
-                [format ["Start reinforcement update: %1", _guerilla], "SECTOR"] call KPLIB_fnc_debugLog;
+                [format ["Start reinforcement update. "], "SECTOR"] call KPLIB_fnc_debugLog;
 
                 _return = [_this] call KPLIB_server_fnc_sector_spawn_reinforcement_call;
 
@@ -284,15 +284,36 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 10: {
                 //Sector lifetime loop
-                //INCREMENT(_stageIndex)
+                
+                _return = [_this] call KPLIB_server_fnc_sector_update;
+
+                _isStageFinished = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
+                _sector_despawn_tickets = _return select 2;
+                _maximum_additional_tickets = _return select 3;
+                _activationTime = _return select 4;
+                
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             case 11: {
-                //Sector Taken
-                INCREMENT(_stageIndex)
-            };
-            case 12: {
-                //Sector Despawning
-                INCREMENT(_stageIndex)
+                //Sector Cleanup
+                _return = [_this] call KPLIB_server_fnc_sector_cleanup;
+
+                _isStageFinished = _return select 0;
+                
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             default {
                 _isFinished = true;
@@ -301,7 +322,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
         
     },
     PFH_UPDATE_TIME,
-    [_sectorMarker, _sectorPos, _popfactor],
+    [_sectorMarker, _sectorPos, _popfactor, _opforcount],
     {
         //Start
         _isFinished = false;
@@ -324,6 +345,10 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
 
         _spawnBuildings = [];
         _managed_units = [];
+
+        _sector_despawn_tickets = 0;
+        _maximum_additional_tickets = 0;
+        _activationTime = time;
 
         //Spawned
         _roamingGroups = [];
@@ -368,6 +393,9 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
         "_garrisonedGroups",
         "_civsGroups",
         "_vehGroups",
-        "_squadToSpawn"
+        "_squadToSpawn",
+        "_sector_despawn_tickets",
+        "_maximum_additional_tickets",
+        "_activationTime"
     ]
 ] call CBA_fnc_createPerFrameHandlerObject;
