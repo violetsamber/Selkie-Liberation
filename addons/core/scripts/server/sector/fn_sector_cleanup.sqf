@@ -58,7 +58,6 @@ if (([_sectorPos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLI
         case 2: {
             if(_stageWorkerIndex_1 < 60) then {
                 ADD(_stageWorkerIndex_1,PFH_UPDATE_TIME);
-                _stageWorkerIndex_1 = 0;
             } else {
                 [format ["Cleaning up all managed units."], "SECTOR"] call KPLIB_fnc_debugLog;
                 //TODO This should be handled by a garbage collector script
@@ -74,6 +73,7 @@ if (([_sectorPos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLI
                         };
                     };
                 } forEach _managed_units;
+                _stageWorkerIndex_1 = 0;
                 INC(_stageWorkerIndex_0);
             };
         };
