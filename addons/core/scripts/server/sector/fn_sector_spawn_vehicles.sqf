@@ -15,11 +15,38 @@
         Function reached the end [BOOL]
 */
 
-// _vehtospawn = _vehtospawn select {!(isNil "_x")};
-// {
-//     _vehicle = [_sectorpos, _x] call KPLIB_fnc_spawnVehicle;
-//     [group ((crew _vehicle) select 0),_sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units pushBack _vehicle;
-//     {_managed_units pushBack _x;} forEach (crew _vehicle);
-//     sleep 0.25;
-// } forEach _vehtospawn;
+#include "../FunctionsInclude.hpp"
+#include "sector_macros.hpp"
+
+params [
+    ["_pfh", objNull]
+];
+
+PFH_GETPARAM(_pfh,_sectorPos,PFH_PARAM_SECTOR_POS)
+PFH_GETPARAM(_pfh,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
+
+PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
+PFH_GETVAR(_pfh,"_managed_units",[])
+PFH_GETVAR(_pfh,"_vehGroups",[])
+PFH_GETVAR(_pfh,"_vehToSpawn",[])
+
+private _isStageFinished = false;
+
+if(_stageWorkerIndex_0 < count _vehToSpawn)then{
+    _vehtospawn = _vehtospawn select _stageWorkerIndex_0;
+    _vehicle = [_sectorpos, _vehtospawn] call KPLIB_fnc_spawnVehicle;
+    [group ((crew _vehicle) select 0),_sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
+    _vehGroups pushBack _vehicle;
+    _managed_units pushBack _vehicle;
+    {_managed_units pushBack _x;} forEach (crew _vehicle);
+    INC(_stageWorkerIndex_0);
+} else {
+    _isStageFinished = true;
+};
+
+[
+    _isStageFinished,
+    _stageWorkerIndex_0,
+    _managed_units,
+    _vehGroups
+]

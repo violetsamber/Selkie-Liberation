@@ -184,7 +184,21 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 4: {
                 //Spawn Vehicles
-                INCREMENT(_stageIndex)
+                
+                _return = [_this] call KPLIB_server_fnc_sector_spawn_vehicles;
+
+                _isStageFinished = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
+                _managed_units = _return select 2;
+                _vehGroups = _return select 3;
+
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _squadToSpawn = [];
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             case 5: {
                 //Spawn special units in specific military buildings
