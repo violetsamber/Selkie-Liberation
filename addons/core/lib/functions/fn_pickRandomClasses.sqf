@@ -2,17 +2,18 @@
     File: fn_pickRandomClasses.sqf
     Authors: Violets
     Date: 2025-11-10
-    Last Update: 2025-11-11
+    Last Update: 2025-11-14
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
-        No description added yet.
+        Used to create an array of strings randomly picked with weights
     
     Parameter(s):
-        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+        _chancesToSpawn -- Array of ints from 0 - 100 used to have a chance of picking a class
+		_classes -- Array of Arrays of string int pairs string being a class and int being a 0 - 100 chance of spawning
     
     Returns:
-        Function reached the end [BOOL]
+        Array of strings
 */
 
 #include "../FunctionsInclude.hpp"
