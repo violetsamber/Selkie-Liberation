@@ -22,8 +22,6 @@ params [
     ["_pfh", objNull]
 ];
 
-["[BATTLEGROUP] Update"] call KPLIB_fnc_log;
-
 PFH_GETVAR(_pfh,"_waitTimer",0)
 PFH_GETVAR(_pfh,"_stageIndex",0)
 PFH_GETVAR(_pfh,"_battlegroup_vehicles",[])
