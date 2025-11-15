@@ -100,7 +100,7 @@ switch (KP_liberation_preset_resistance) do {
     case  7: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\CUP_TakiLocals.sqf";};
     case  8: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\CUP_NAPA.sqf";};
     case  9: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\vn.sqf";};
-    case  9: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\optre.sqf";};
+    case  10: {[] call compileFinal preprocessFileLineNumbers "presets\resistance\optre.sqf";};
     default  {[] call compileFinal preprocessFileLineNumbers "presets\resistance\custom.sqf";};
 };
 
@@ -248,12 +248,6 @@ switch (KP_liberation_preset_opfor) do {
         private _returnParatroopers = [] call COMPILE_FINAL_OPFOR_ODST(unsc_woodland);
         SLKLIB_opfor_odst_h = _returnParatroopers select 0;
         SLKLIB_opfor_odst_a = _returnParatroopers select 1;
-    };
-};
-
-switch (KP_liberation_preset_opfor) do {
-    case 23: {
-
     };
 };
 
