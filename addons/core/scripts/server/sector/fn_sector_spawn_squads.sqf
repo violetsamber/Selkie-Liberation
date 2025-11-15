@@ -15,54 +15,66 @@
         Function reached the end [BOOL]
 */
 
-private _managed_units = [];
-private _sectorpos = [];
-private _grp = grpNull;
+#include "../FunctionsInclude.hpp"
+#include "sector_macros.hpp"
 
-// if (count _squad1 > 0) then {
-//     _grp = [_sector, _squad1] call KPLIB_fnc_spawnRegularSquad;
-//     [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units = _managed_units + (units _grp);
-// };
+params [
+    ["_pfh", objNull]
+];
 
-// if (count _squad2 > 0) then {
-//     _grp = [_sector, _squad2] call KPLIB_fnc_spawnRegularSquad;
-//     [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units = _managed_units + (units _grp);
-// };
+PFH_GETPARAM(_pfh,_sectorPos,PFH_PARAM_SECTOR_POS)
+PFH_GETPARAM(_pfh,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
 
-// if (count _squad3 > 0) then {
-//     _grp = [_sector, _squad3] call KPLIB_fnc_spawnRegularSquad;
-//     [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units = _managed_units + (units _grp);
-// };
+PFH_GETVAR(_pfh,"_stageWorkerIndex_0",0)
+PFH_GETVAR(_pfh,"_managed_units",[])
+PFH_GETVAR(_pfh,"_roamingToSpawn",[])
+PFH_GETVAR(_pfh,"_roamingGroups",[])
+PFH_GETVAR(_pfh,"_squadToSpawn",[])
+PFH_GETVAR(_pfh,"_infsquad","")
+// PFH_GETVAR(_pfh,"_stageWorkerIndex_1",0)
+private _isStageFinished = false;
 
-// if (count _squad4 > 0) then {
-//     _grp = [_sector, _squad4] call KPLIB_fnc_spawnRegularSquad;
-//     [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units = _managed_units + (units _grp);
-// };
+//[format ["Trying to spawn... _stageWorkerIndex_0: %1",_stageWorkerIndex_0], "SECTOR"] call KPLIB_fnc_debugLog;
+if(_stageWorkerIndex_0 < (count _roamingToSpawn)) then {
+    //Get a squad or spawn a squad
+    
 
-// if (count _squad10 > 0) then {
-//     _grp = [_sector, _squad10] call KPLIB_fnc_spawnRegularSquad;
-//     [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units = _managed_units + (units _grp);
-// };
+    private _grp = grpNull;
+    private _unit = objNull;
+    private _class = "";
 
-// if (count _squad11 > 0) then {
-//     _grp = [_sector, _squad11] call KPLIB_fnc_spawnRegularSquad;
-//     [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units = _managed_units + (units _grp);
-// };
+    if((count _roamingGroups) >= (_stageWorkerIndex_0 + 1)) then {
+        _grp = _roamingGroups select _stageWorkerIndex_0;
+        [format ["Selected grp: %1",_grp], "SECTOR"] call KPLIB_fnc_debugLog;
+    } else {
+        _grp = createGroup [GRLIB_side_enemy, true];
+        _squadToSpawn =  +(_roamingToSpawn select _stageWorkerIndex_0);
+        _roamingGroups pushBack _grp;
+        [format ["Created grp: %1",_grp], "SECTOR"] call KPLIB_fnc_debugLog;
+    };
 
-// if (count _squad12 > 0) then {
-//     _grp = [_sector, _squad12] call KPLIB_fnc_spawnRegularSquad;
-//     [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units = _managed_units + (units _grp);
-// };
+    _class = _squadToSpawn select 0;
+    _squadToSpawn deleteAt 0;
 
-// if (count _squad13 > 0) then {
-//     _grp = [_sector, _squad13] call KPLIB_fnc_spawnRegularSquad;
-//     [_grp, _sectorpos] spawn KPLIB_server_fnc_add_defense_waypoints;
-//     _managed_units = _managed_units + (units _grp);
-// };
+    _unit = [_class, _sectorPos, _grp] call KPLIB_fnc_createManagedUnit;
+    _managed_units pushBack _unit;
+
+    [format ["Spawned unit: %1", _class], "SECTOR"] call KPLIB_fnc_debugLog;
+
+    if((count units _grp) >= ROAMING_SQUAD_MAX)then{
+        INC(_stageWorkerIndex_0);
+        [_grp, _sectorPos] spawn KPLIB_server_fnc_add_defense_waypoints;
+        [format ["Grp full: %1", _grp], "SECTOR"] call KPLIB_fnc_debugLog;
+    };
+} else {
+    _isStageFinished = true;
+    ["Squads finished spawning", "SECTOR"] call KPLIB_fnc_log;
+};
+
+[
+    _isStageFinished,
+    _stageWorkerIndex_0,
+    _managed_units,
+    _roamingGroups,
+    _squadToSpawn
+]

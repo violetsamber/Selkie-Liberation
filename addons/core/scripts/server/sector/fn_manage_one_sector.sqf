@@ -165,7 +165,21 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
             };
             case 3: {
                 //Spawn Squads
-                INCREMENT(_stageIndex)
+
+                _return = [_this] call KPLIB_server_fnc_sector_spawn_squads;
+
+                _isStageFinished = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
+                _managed_units = _return select 2;
+                _roamingGroups = _return select 3;
+                _squadToSpawn = _return select 4;
+
+                if(_isStageFinished) then {
+                    _stageWorkerIndex_0 = 0;
+                    _stageWorkerIndex_1 = 0;
+                    _isStageFinished = false;
+                    INCREMENT(_stageIndex)
+                };
             };
             case 4: {
                 //Spawn Vehicles
@@ -222,8 +236,9 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
         _stageIndex = 0;
         _stageWorkerIndex_0 = 0;
         _stageWorkerIndex_1 = 0;
+        _squadToSpawn = [];
 
-        _roamingToSpawn = []; 
+        _roamingToSpawn = [];
         _vehToSpawn = [];
         _spawnCivs = false;
         _guerilla = false;
@@ -277,6 +292,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
         "_roamingGroups",
         "_garrisonedGroups",
         "_civsGroups",
-        "_vehGroups"
+        "_vehGroups",
+        "_squadToSpawn"
     ]
 ] call CBA_fnc_createPerFrameHandlerObject;
