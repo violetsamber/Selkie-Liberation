@@ -69,7 +69,7 @@ for "_i" from 1 to _amount do {
     // Add weapon
     _weapon = selectRandom _weapons;
     _unit addWeapon (_weapon select 0);
-    _unit addPrimaryWeaponItem (_weapon select 2);
+    _unit addPrimaryWeaponItem (_weapon select 1);
     for "_i" from 1 to (_weapon select 2) do {_unit addItemToVest (_weapon select 1);};
     _unit addPrimaryWeaponItem (_weapon select 3);
     _unit addPrimaryWeaponItem (_weapon select 4);
@@ -77,8 +77,8 @@ for "_i" from 1 to _amount do {
     // Add possible RPG launcher
     if ((_tier > 1) && ((random 100) <= KP_liberation_resistance_at_chance)) then {
         _unit addBackpack "B_FieldPack_cbr";
-        for "_i" from 1 to 3 do {_unit addItemToBackpack "RPG7_F";};
-        _unit addWeapon "launch_RPG7_F";
+        for "_i" from 1 to 3 do {_unit addItemToBackpack SLKLIB_guerilla_RPG_Ammo;};
+        _unit addWeapon SLKLIB_guerilla_RPG;
     };
 };
 
