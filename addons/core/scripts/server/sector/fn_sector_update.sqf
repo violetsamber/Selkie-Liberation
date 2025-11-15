@@ -34,6 +34,7 @@ PFH_GETVAR(_pfh,"_activationTime",0)
 PFH_GETVAR(_pfh,"_local_capture_size",0)
 
 private _isStageFinished = false;
+private _isFinished = false;
 
 //Wait to update sector
 if(_stageWorkerIndex_0 < SECTOR_TICK_TIME) then {
@@ -59,6 +60,8 @@ if(_stageWorkerIndex_0 < SECTOR_TICK_TIME) then {
             _sector_despawn_tickets = BASE_TICKETS + _additionalTickets;
         };
 
+        [format ["Tickets update. "], "SECTOR"] call KPLIB_fnc_debugLog;
+
         if (_sector_despawn_tickets <= 0) then {
             {
                 if (_x isKindOf "Man") then {
@@ -71,6 +74,7 @@ if(_stageWorkerIndex_0 < SECTOR_TICK_TIME) then {
             } forEach _managed_units;
 
             _isStageFinished = true;
+            _isFinished = true;
             active_sectors = active_sectors - [_sectorMarker]; publicVariable "active_sectors";
         };
     };
@@ -81,5 +85,6 @@ if(_stageWorkerIndex_0 < SECTOR_TICK_TIME) then {
     _stageWorkerIndex_0,
     _sector_despawn_tickets,
     _maximum_additional_tickets,
-    _activationTime
+    _activationTime,
+    _isFinished
 ]
