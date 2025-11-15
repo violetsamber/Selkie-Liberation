@@ -31,6 +31,7 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class sector_spawn_squads       {};
         class sector_spawn_vehicles     {};
         class sector_update             {};
+        class sector_cleanup            {};
         class sector_wait_to_spawn      {};
         class sector_willGuerillaSpawn  {};
     };

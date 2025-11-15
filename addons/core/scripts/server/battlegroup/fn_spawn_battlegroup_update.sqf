@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_update.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-14
+    Last Update: 2025-11-15
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -42,7 +42,7 @@ switch (_stageIndex) do {
     case 0: {
 
         if(_waitTimer <= _waitTime) then {
-            [format ["[BATTLEGROUP] _waitTimer: %1 | _waitTime %2", _waitTimer, _waitTime]] call KPLIB_fnc_log;
+            //[format ["[BATTLEGROUP] _waitTimer: %1 | _waitTime %2", _waitTimer, _waitTime]] call KPLIB_fnc_debugLog;
             ADD(_waitTimer,PFH_UPDATE_TIME);
         } else {
             INC(_stageIndex);
@@ -51,7 +51,7 @@ switch (_stageIndex) do {
     case 1: {
         private _grp = createGroup [GRLIB_side_enemy, true];
         {
-            [format ["[BATTLEGROUP] Spawning... Unit: %1 At: %2 Into: %3", _x, _spawnMarkerPos, _grp]] call KPLIB_fnc_log;
+            [format ["[BATTLEGROUP] Spawning... Unit: %1 At: %2 Into: %3", _x, _spawnMarkerPos, _grp]] call KPLIB_fnc_debugLog;
             [_x, _spawnMarkerPos, _grp] call KPLIB_fnc_createManagedUnit;
         } 
         forEach (_battlegroup_infantry select 0);
@@ -69,7 +69,7 @@ switch (_stageIndex) do {
     case 2: {
         private _vehicleClass = _battlegroup_vehicles select 0;
         _battlegroup_vehicles deleteAt 0; //Remove Here in the case that the spawn fails at KPLIB_fnc_spawnVehicle
-        [format ["[BATTLEGROUP] Spawning... %1", _vehicleClass]] call KPLIB_fnc_log;
+        [format ["[BATTLEGROUP] Spawning... %1", _vehicleClass]] call KPLIB_fnc_debugLog;
 
         private _nextgrp = createGroup [GRLIB_side_enemy, true];
         private _vehicle = [_spawnMarkerPos, _vehicleClass] call KPLIB_fnc_spawnVehicle;

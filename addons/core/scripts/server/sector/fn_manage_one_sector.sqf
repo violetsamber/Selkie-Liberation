@@ -78,6 +78,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _stageWorkerIndex_0 = _return select 1;
 
                 if(_isStageFinished) then {
+                    [format ["Wait spawn finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _isStageFinished = false;
@@ -153,6 +154,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _building_ai_max = _return select 6;
 
                 if(_isStageFinished) then {
+                    [format ["Garrison spawn finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _isStageFinished = false;
@@ -171,6 +173,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _squadToSpawn = _return select 4;
 
                 if(_isStageFinished) then {
+                    [format ["Squads spawn finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _squadToSpawn = [];
@@ -190,6 +193,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _vehGroups = _return select 3;
 
                 if(_isStageFinished) then {
+                    [format ["Vehicles spawn finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _squadToSpawn = [];
@@ -206,6 +210,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _managed_units = _return select 1;
                 
                 if(_isStageFinished) then {
+                    [format ["Military post spawn finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _squadToSpawn = [];
@@ -229,6 +234,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 };
                 
                 if(_isStageFinished) then {
+                    [format ["Civ spawn finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _squadToSpawn = [];
@@ -244,6 +250,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _isStageFinished = _return select 0;
                 
                 if(_isStageFinished) then {
+                    [format ["Spawning IED finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _squadToSpawn = [];
@@ -259,6 +266,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _isStageFinished = _return select 0;
                 
                 if(_isStageFinished) then {
+                    [format ["Spawning guerilla finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _squadToSpawn = [];
@@ -294,6 +302,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _activationTime = _return select 4;
                 
                 if(_isStageFinished) then {
+                    [format ["Finished update."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _squadToSpawn = [];
@@ -306,8 +315,11 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 _return = [_this] call KPLIB_server_fnc_sector_cleanup;
 
                 _isStageFinished = _return select 0;
+                _stageWorkerIndex_0 = _return select 1;
+                _stageWorkerIndex_1 = _return select 2;
                 
                 if(_isStageFinished) then {
+                    [format ["Finished cleanup."], "SECTOR"] call KPLIB_fnc_debugLog;
                     _stageWorkerIndex_0 = 0;
                     _stageWorkerIndex_1 = 0;
                     _squadToSpawn = [];
@@ -316,6 +328,7 @@ private _isThereAnyBlueforUnitsInSector = (([markerPos _sectorMarker, [_opforcou
                 };
             };
             default {
+                [format ["Sector Finished."], "SECTOR"] call KPLIB_fnc_debugLog;
                 _isFinished = true;
             };
         };
