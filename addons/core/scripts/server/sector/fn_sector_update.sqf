@@ -33,13 +33,13 @@ PFH_GETVAR(_pfh,"_maximum_additional_tickets",0)
 PFH_GETVAR(_pfh,"_activationTime",0)
 PFH_GETVAR(_pfh,"_local_capture_size",0)
 
-private _isStageFinished = true;
-
+private _isStageFinished = false;
 
 //Wait to update sector
 if(_stageWorkerIndex_0 < SECTOR_TICK_TIME) then {
     ADD(_stageWorkerIndex_0,PFH_UPDATE_TIME);
 } else {
+    [format ["Sector update."], "SECTOR"] call KPLIB_fnc_debugLog;
     _stageWorkerIndex_0 = 0;
 
     if (([_sectorpos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly) && (GRLIB_endgame == 0)) then {

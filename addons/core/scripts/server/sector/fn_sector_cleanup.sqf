@@ -31,30 +31,36 @@ PFH_GETVAR(_pfh,"_stageWorkerIndex_1",0)
 PFH_GETVAR(_pfh,"_local_capture_size",0)
 PFH_GETVAR(_pfh,"_managed_units",[])
 
+private _isStageFinished = false;
+
 if (([_sectorPos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLIB_side_friendly) && (GRLIB_endgame == 0)) then {
     switch (_stageWorkerIndex_0) do {
         case 0: {
+            [format ["Calling capture."], "SECTOR"] call KPLIB_fnc_debugLog;
             if (isServer) then {
                 [_sectorMarker] spawn KPLIB_shared_fnc_sector_liberated_remote_call;
             } else {
                 [_sectorMarker] remoteExec ["KPLIB_shared_fnc_sector_liberated_remote_call",2];
             };
             {[_x] spawn KPLIB_server_fnc_prisonner_ai;} forEach ((markerPos _sectorMarker) nearEntities [["Man"], _local_capture_size * 1.2]);
+            INC(_stageWorkerIndex_0);
         };
         case 1: {
-            sleep 60;
             if(_stageWorkerIndex_1 < 60) then {
                 ADD(_stageWorkerIndex_1,PFH_UPDATE_TIME);
             } else {
+                [format ["Remove from active sectors."], "SECTOR"] call KPLIB_fnc_debugLog;
                 active_sectors = active_sectors - [_sectorMarker]; publicVariable "active_sectors";
                 _stageWorkerIndex_1 = 0;
+                INC(_stageWorkerIndex_0);
             }
         };
         case 2: {
-            if(_stageWorkerIndex_1 < 600) then {
+            if(_stageWorkerIndex_1 < 60) then {
                 ADD(_stageWorkerIndex_1,PFH_UPDATE_TIME);
                 _stageWorkerIndex_1 = 0;
             } else {
+                [format ["Cleaning up all managed units."], "SECTOR"] call KPLIB_fnc_debugLog;
                 //TODO This should be handled by a garbage collector script
                 //TODO optimize
                 {
@@ -68,7 +74,17 @@ if (([_sectorPos, _local_capture_size] call KPLIB_fnc_getSectorOwnership == GRLI
                         };
                     };
                 } forEach _managed_units;
+                INC(_stageWorkerIndex_0);
             };
         };
+        default {
+            _isStageFinished = true;
+        }
     };
-}
+};
+
+[
+    _isStageFinished,
+    _stageWorkerIndex_0,
+    _stageWorkerIndex_1
+]
