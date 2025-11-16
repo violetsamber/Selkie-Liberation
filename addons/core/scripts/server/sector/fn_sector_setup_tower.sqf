@@ -2,7 +2,7 @@
     File: fn_sector_setup_tower.sqf
     Authors: Violets
     Date: 2025-11-07
-    Last Update: 2025-11-15
+    Last Update: 2025-11-16
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -18,7 +18,7 @@
 #include "../FunctionsInclude.hpp"
 #include "sector_macros.hpp"
 
-#define SECTOR_MIN_SQUAD_COUNT 5
+#define SECTOR_MIN_SQUAD_COUNT 2
 #define SECTOR_MIN_VIC_COUNT 0
 
 #define READINESS_FOR_ARMY 30
