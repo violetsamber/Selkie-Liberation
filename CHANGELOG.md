@@ -5,6 +5,8 @@ FIXED:
 
 CHANGED:
 - Reduced tower min squad spawn counts to 2
+- Reduced required CR for random battlegroups by half
+- Moved notification for where the attack is going to be to the start
 
 
 ## 1.0.3
