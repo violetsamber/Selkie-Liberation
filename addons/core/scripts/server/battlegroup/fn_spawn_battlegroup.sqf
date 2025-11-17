@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup.sqf
     Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2025-11-5
-    Last Update: 2025-11-14
+    Last Update: 2025-11-17
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -47,6 +47,9 @@ if(_waitTime == -1) then {
 
 
 [_spawn_marker, _battlegroupSize] remoteExec ["KPLIB_shared_fnc_remote_call_battlegroup"];
+
+private _targetPos = [_spawnMarkerPos] call KPLIB_fnc_getNearestBluforObjective;
+[_targetPos,_battlegroupSize] remoteExec ["KPLIB_shared_fnc_remote_call_incoming"];
 
 ["----Starting Spawn Battlegroup----", "BATTLEGROUP"] call KPLIB_fnc_log;
 [format ["_infOnly: %1, _spawn_marker: %2, _spawnMarkerPos: %3", _infOnly, _spawn_marker, _spawnMarkerPos], "BATTLEGROUP"] call KPLIB_fnc_log;

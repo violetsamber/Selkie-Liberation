@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_end.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-13
+    Last Update: 2025-11-17
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -27,10 +27,6 @@ PFH_GETPARAM(_pfh,_spawnMarkerPos,PFH_PARAM_SPAWN_POS)
 
 //systemChat format ["start! params: %1", _this getVariable "params"]; _test = 127;
 [ format ["[BATTLEGROUP] Finishing battlegroup spawn. %1", _spawnMarkerPos] ] call KPLIB_fnc_log;
-
-private _targetPos = [_spawnMarkerPos] call KPLIB_fnc_getNearestBluforObjective;
-
-[_targetPos,_battlegroupSize] remoteExec ["KPLIB_shared_fnc_remote_call_incoming"];
 
 //Reduce combat readiness
 [-(round (count _bg_groups + random (count _bg_groups)))] call KPLIB_fnc_addCombatReadiness;

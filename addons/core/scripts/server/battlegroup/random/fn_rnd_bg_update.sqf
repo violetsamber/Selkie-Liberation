@@ -2,7 +2,7 @@
     File: fn_rnd_bg_update.sqf
     Author: Violets
     Date: 2025-11-5
-    Last Update: 2025-11-08
+    Last Update: 2025-11-17
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -32,7 +32,7 @@ if (SLKLIB_RandomBattlegroups_CurrentTimer >= SLKLIB_RandomBattlegroups_Activate
 
     if (
         (count (allPlayers - entities "HeadlessClient_F") >= (6 / GRLIB_csat_aggressivity)) &&
-        (SLKLIB_combat_readiness >= (60 - (5 * GRLIB_csat_aggressivity))) &&
+        (SLKLIB_combat_readiness >= (30 - (5 * GRLIB_csat_aggressivity))) &&
         ([] call KPLIB_fnc_getOpforCap < GRLIB_battlegroup_cap) &&
         (diag_fps > SERVER_MIN_FPS)
     ) then {
