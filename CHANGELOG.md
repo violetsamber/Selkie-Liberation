@@ -1,3 +1,10 @@
+## 1.0.5
+ADDED:
+
+FIXED:
+
+CHANGED:
+
 ## 1.0.4
 ADDED:
 
