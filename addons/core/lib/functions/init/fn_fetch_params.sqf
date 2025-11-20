@@ -95,7 +95,7 @@ if(isServer) then {
     GET_PARAM_BOOL(KP_liberation_clear_cargo,"ClearCargo",1);
     GET_PARAM(KP_liberation_allowEnemiesInImmobile,"AllowEnemiesInImmobile",50);
     GET_PARAM(KP_liberation_delayDespawnMax,"DelayDespawnMax",5);
-    GET_PARAM_BOOL(KP_liberation_limited_zeus,"LimitedZeus",1);
+    GET_PARAM_BOOL(KP_liberation_limited_zeus,"LimitedZeus",0);
     GET_PARAM_BOOL(KP_liberation_commander_zeus,"CommanderZeus",1);
     GET_PARAM_BOOL(KP_liberation_enemies_zeus,"ZeusAddEnemies",1);
     GET_PARAM_BOOL(KP_liberation_high_command,"HighCommand",1);
