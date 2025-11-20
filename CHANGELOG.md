@@ -2,8 +2,12 @@
 ADDED:
 
 FIXED:
+- Fixed _battlgroup_infantry and _battlegroup_vehicles arrays being edited but not saved to the PFH
+- Crates not being carrayable
 
 CHANGED:
+- Disable Friendly AI ODST support
+- Removed Squad colors broadcast script as its obsolete in current arma
 
 ## 1.0.4
 ADDED:

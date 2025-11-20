@@ -2,7 +2,7 @@
     File: fn_crateFromStorage.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2017-03-27
-    Last Update: 2020-04-25
+    Last Update: 2025-11-19
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -52,7 +52,7 @@ detach _crate;
 [_crate, true] call KPLIB_fnc_clearCargo;
 _crate setPos _unloadPos;
 [_crate, true] remoteExec ["enableRopeAttach"];
-if (KP_liberation_ace) then {[_crate, true, [0, 1.5, 0], 0] remoteExec ["ace_dragging_fnc_setCarryable"];};
+if (KP_liberation_ace) then {[_crate, true, [0, 1.5, 0], 0, true, true] call ace_dragging_fnc_setCarryable;};
 
 // Fill the possible gap in the storage area
 reverse _storedCrates;

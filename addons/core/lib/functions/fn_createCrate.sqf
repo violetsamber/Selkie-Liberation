@@ -2,7 +2,7 @@
     File: fn_createCrate.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2017-10-11
-    Last Update: 2020-04-25
+    Last Update: 2025-11-19
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -36,7 +36,7 @@ _crate setVariable ["KP_liberation_crate_value", _amount, true];
 [_crate, true] call KPLIB_fnc_clearCargo;
 
 // Add ACE carry functionality
-if (KP_liberation_ace) then {[_crate, true, [0, 1.5, 0], 0] remoteExec ["ace_dragging_fnc_setCarryable"];};
+if (KP_liberation_ace) then {[_crate, true, [0, 1.5, 0], 0, true, true] call ace_dragging_fnc_setCarryable;};
 
 // Process KP object init
 [_crate] call KPLIB_fnc_addObjectInit;
