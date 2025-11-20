@@ -1,3 +1,20 @@
+/*
+    File: redeploy_manager.sqf
+    Authors: KP Liberation Dev Team
+    Date: 2025-11-01
+    Last Update: 2025-11-20
+    License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
 #define DEPLOY_DISPLAY (findDisplay 5201)
 #define DEPLOY_LIST_IDC 201
 #define DEPLOY_BUTTON_IDC 202
@@ -23,7 +40,7 @@ waitUntil {introDone};
 waitUntil {!isNil "cinematic_camera_stop"};
 waitUntil {cinematic_camera_stop};
 
-private _basenamestr = "Serve While Hot";
+private _basenamestr = "Serve While Hot"; //TODO MOVE THIS TO STRING TABLES
 
 KP_liberation_respawn_time = time;
 KP_liberation_respawn_mobile_done = false;
