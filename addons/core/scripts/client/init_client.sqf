@@ -49,7 +49,6 @@ execVM "scripts\client\markers\hostile_groups.sqf";
 if (KP_liberation_mapmarkers) then {execVM "scripts\client\markers\huron_marker.sqf";} else {deleteMarkerLocal "huronmarker"};
 execVM "scripts\client\markers\sector_manager.sqf";
 execVM "scripts\client\markers\spot_timer.sqf";
-execVM "scripts\client\misc\broadcast_squad_colors.sqf";
 execVM "scripts\client\misc\init_arsenal.sqf";
 execVM "scripts\client\misc\permissions_warning.sqf";
 execVM "scripts\client\misc\ODST_Support.sqf";
