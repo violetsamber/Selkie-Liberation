@@ -16,7 +16,7 @@ class liberation_menu {
         w = QUOTE(0.25 * safezoneW);
         y = QUOTE(0.15 * safezoneH + safezoneY);
         h = QUOTE(0.43 * safezoneH);
-        text = "res\splash_libe2.paa";
+        text = "res\lib.paa";
     };
     class Start {
         idc = 321;

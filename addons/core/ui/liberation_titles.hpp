@@ -55,7 +55,7 @@ class RscTitles {
             w = QUOTE(0.35 * safezoneW);
             y = QUOTE(0.2 * safezoneH + safezoneY);
             h = QUOTE(0.6 * safezoneH);
-            text = "res\splash_libe2.paa";
+            text = "res\lib.paa";
         };
         class VersionLabel {
             idc = -1;
