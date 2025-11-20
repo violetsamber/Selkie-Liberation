@@ -42,7 +42,6 @@ if(isServer) then {
     // Mission Options
     ["--- Mission Options ---", "PARAM"] call KPLIB_fnc_log;
     GET_PARAM(GRLIB_unitcap,"Unitcap",2);
-    GET_PARAM(GRLIB_difficulty_modifier,"Difficulty",2);
     GET_PARAM(GRLIB_csat_aggressivity,"Aggressivity",2);
     GET_PARAM_BOOL(GRLIB_adaptive_opfor,"AdaptToPlayercount",1);
     GET_PARAM(GRLIB_civilian_activity,"Civilians",1);
@@ -131,17 +130,7 @@ switch (GRLIB_unitcap) do {
     default {GRLIB_unitcap = 1;};
 };
 
-switch (GRLIB_difficulty_modifier) do {
-    case 0: {GRLIB_difficulty_modifier = 0.5;};
-    case 1: {GRLIB_difficulty_modifier = 0.75;};
-    case 2: {GRLIB_difficulty_modifier = 1;};
-    case 3: {GRLIB_difficulty_modifier = 1.25;};
-    case 4: {GRLIB_difficulty_modifier = 1.5;};
-    case 5: {GRLIB_difficulty_modifier = 2;};
-    case 6: {GRLIB_difficulty_modifier = 4;};
-    case 7: {GRLIB_difficulty_modifier = 10;};
-    default {GRLIB_difficulty_modifier = 1;};
-};
+GRLIB_difficulty_modifier = "SLKLIB_difficulty_modifier" call CBA_settings_fnc_get;
 
 switch (GRLIB_csat_aggressivity) do {
     case 0: {GRLIB_csat_aggressivity = 0.25;};
@@ -219,19 +208,6 @@ if (!isDedicated && hasInterface) then {
     private _param = localize "STR_PARAMS_UNITCAP";
     private _value = (format ["%1", GRLIB_unitcap * 100]) + "%";
     private _text = format ["<font color='#ff8000'>%1</font><br />%2<br /><br />", _param, _value];
-
-    _param = localize "STR_PARAMS_DIFFICULTY";
-    switch (GRLIB_difficulty_modifier) do {
-        case 0.75: {_value = localize "STR_PARAMS_DIFFICULTY2";};
-        case 1: {_value = localize "STR_PARAMS_DIFFICULTY3";};
-        case 1.25: {_value = localize "STR_PARAMS_DIFFICULTY4";};
-        case 1.5: {_value = localize "STR_PARAMS_DIFFICULTY5";};
-        case 2: {_value = localize "STR_PARAMS_DIFFICULTY6";};
-        case 4: {_value = localize "STR_PARAMS_DIFFICULTY7";};
-        case 10: {_value = localize "STR_PARAMS_DIFFICULTY8";};
-        default {_value = localize "STR_PARAMS_DIFFICULTY1";};
-    };
-    _text = _text + format ["<font color='#ff8000'>%1</font><br />%2<br /><br />", _param, _value];
 
     _param = localize "STR_AGGRESSIVITY_PARAM";
     switch (GRLIB_csat_aggressivity) do {
