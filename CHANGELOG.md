@@ -8,6 +8,8 @@ FIXED:
 CHANGED:
 - Disable Friendly AI ODST support
 - Removed Squad colors broadcast script as its obsolete in current arma
+- Replaced main menu music with halo music
+- Reduced filesize by optimizing some images and removing extra
 
 ## 1.0.4
 ADDED:
