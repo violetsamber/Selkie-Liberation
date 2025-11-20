@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup_update.sqf
     Authors: Violets
     Date: 2025-11-05
-    Last Update: 2025-11-15
+    Last Update: 2025-11-19
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -53,12 +53,13 @@ switch (_stageIndex) do {
             [_x, _spawnMarkerPos, _grp] call KPLIB_fnc_createManagedUnit;
         } 
         forEach (_battlegroup_infantry select 0);
-
+        _battlegroup_infantry deleteAt 0;
+        
         [_grp] call KPLIB_fnc_LAMBS_enableReinforcements;
         [_grp] call KPLIB_server_fnc_battlegroup_ai;
         _grp setVariable ["KPLIB_isBattleGroup",true];
 
-        _battlegroup_infantry deleteAt 0;
+        
 
         if(_battlegroup_infantry isEqualTo []) then {
             INC(_stageIndex);
@@ -111,5 +112,7 @@ switch (_stageIndex) do {
     _bg_groups, 
     _isFinished,
     _waitTimer,
-    _stageIndex
+    _stageIndex,
+    _battlegroup_vehicles,
+    _battlegroup_infantry
 ]

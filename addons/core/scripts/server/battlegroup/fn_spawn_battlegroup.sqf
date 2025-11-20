@@ -2,7 +2,7 @@
     File: fn_spawn_battlegroup.sqf
     Authors: Violets, KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2025-11-5
-    Last Update: 2025-11-17
+    Last Update: 2025-11-19
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
 
     Description:
@@ -71,6 +71,8 @@ if (worldName in KP_liberation_battlegroup_clearance) then {
         _isFinished = _return select 1;
         _waitTimer = _return select 2;
         _stageIndex = _return select 3;
+        _battlegroup_vehicles = _return select 4;
+        _battlegroup_infantry = _return select 5;
     },
     0.5,
     [_infOnly, _spawn_marker, _spawnMarkerPos, _battlegroupSize, _waitTime, _targetMarker],
