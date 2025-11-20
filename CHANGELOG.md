@@ -2,8 +2,9 @@
 ADDED:
 
 FIXED:
-- Fixed _battlgroup_infantry and _battlegroup_vehicles arrays being edited but not saved to the PFH
+- _battlgroup_infantry and _battlegroup_vehicles arrays being edited but not saved to the PFH
 - Crates not being carrayable
+- Loadout not loading
 
 CHANGED:
 - Disable Friendly AI ODST support
