@@ -51,7 +51,7 @@ execVM "scripts\client\markers\sector_manager.sqf";
 execVM "scripts\client\markers\spot_timer.sqf";
 execVM "scripts\client\misc\init_arsenal.sqf";
 execVM "scripts\client\misc\permissions_warning.sqf";
-execVM "scripts\client\misc\ODST_Support.sqf";
+//execVM "scripts\client\misc\ODST_Support.sqf"; Disable as we are not using this. Replace this with Support UI
 if (!KP_liberation_ace) then {execVM "scripts\client\misc\resupply_manager.sqf";};
 execVM "scripts\client\misc\secondary_jip.sqf";
 execVM "scripts\client\misc\synchronise_vars.sqf";
