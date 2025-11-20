@@ -1,3 +1,22 @@
+/*
+    File: sector_manager.sqf
+    Authors: KP Liberation Dev Team
+    Date: 2025-11-01
+    Last Update: 2025-11-20
+    License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
+//TODO Refactor this and make a custom event handler that runs whenever the blufor_sectors array changes
+
 waitUntil {!isNil "save_is_loaded"};
 waitUntil {!isNil "GRLIB_vehicle_to_military_base_links"};
 waitUntil {!isNil "blufor_sectors"};

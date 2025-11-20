@@ -1,3 +1,21 @@
+/*
+    File: spot_timer.sqf
+    Authors: KP Liberation Dev Team
+    Date: 2025-11-01
+    Last Update: 2025-11-20
+    License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
+    
+    Description:
+        No description added yet.
+    
+    Parameter(s):
+        _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
+    
+    Returns:
+        Function reached the end [BOOL]
+*/
+
+//TODO This is likely the notifications stuff for the spotted opfor enemies, this will likely be removed with the notifications refactor to the modern task system
 createMarkerLocal ["opfor_bg_marker", markers_reset];
 "opfor_bg_marker" setMarkerTypeLocal "mil_unknown";
 "opfor_bg_marker" setMarkerColorLocal GRLIB_color_enemy_bright;
