@@ -13,7 +13,7 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class spawnSectorCrates         {};
         class spawnSectorIntel          {};
         class attack_in_progress_fob    {};
-        class attack_in_progress_sector {};
+        
         class ied_manager               {};
         class manage_one_sector         {};
         class sector_getMaxIEDCount     {};
@@ -34,6 +34,11 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
         class sector_cleanup            {};
         class sector_wait_to_spawn      {};
         class sector_willGuerillaSpawn  {};
+    };
+
+    class server_sector_attacked {
+        file = "scripts\server\sector\attacked";
+        class attack_in_progress_sector {};
     };
 
     class server_support {
