@@ -2,7 +2,7 @@
     File: fn_handlePlacedZeusObject.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2020-04-11
-    Last Update: 2020-04-25
+    Last Update: 2025-11-19
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -45,7 +45,7 @@ if !(_crate) then {
     _obj setMass 500;
     _obj setVariable ["KP_liberation_crate_value", 100, true];
     [_obj, true] call KPLIB_fnc_clearCargo;
-    if (KP_liberation_ace) then {[_obj, true, [0, 1.5, 0], 0] remoteExec ["ace_dragging_fnc_setCarryable"];};
+    if (KP_liberation_ace) then {[_obj, true, [0, 1.5, 0], 0, true, true] call ace_dragging_fnc_setCarryable;};
 };
 
 // Add object init codes

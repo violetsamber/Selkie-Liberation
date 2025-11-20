@@ -2,7 +2,7 @@
     File: fn_crateToStorage.sqf
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2017-03-27
-    Last Update: 2020-04-23
+    Last Update: 2025-11-19
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -42,7 +42,7 @@ if (!isNull _storage) then {
     // Store crate
     _crate attachTo [_storage, [(_storage_positions select _crates_count) select 0, (_storage_positions select _crates_count) select 1, _height]];
     [_crate, false] remoteExec ["enableRopeAttach"];
-    if(KP_liberation_ace) then {[_crate, false, [0, 1.5, 0], 0] remoteExec ["ace_dragging_fnc_setCarryable"];};
+    if (KP_liberation_ace) then {[_crate, true, [0, 1.5, 0], 0, true, true] call ace_dragging_fnc_setCarryable;};
 
     // Update sector resource values, if requested
     if (_update) then {
