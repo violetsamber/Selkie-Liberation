@@ -83,7 +83,7 @@ publicVariable "SLKLIB_sectors_under_attack";
                 //Spawn defenders
                 private _unitCount = (count units _grp);
                 if (GRLIB_blufor_defenders &&  _unitCount < (count _squad_type)) then {
-                    private _class = (_squad_type select _unitCount); 
+                    private _class = (_squad_type select _unitCount);
                     [format["Stage finished. 2 | Group: %1, UnitCount: %2, Class: %3, Pos: %4", _grp, _unitCount, _class, _sectorPos],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
                     [_class, _sectorPos, _grp] call KPLIB_fnc_createManagedUnit;
                 } else {
@@ -101,7 +101,10 @@ publicVariable "SLKLIB_sectors_under_attack";
                     ADD(_timer,PFH_UPDATE_TIME);
                 } else {
                     _isStageFinished = true;
+                    
                     [format["Stage finished. 4 "],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
+                    _taskID = ["LIB_Defend", "", format ["DEFEND: %1", _sectorName], _sectorPos] call KPLIB_server_fnc_taskCreate;
+
                     [_sectorMarker, 1] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
                 };
 
@@ -137,11 +140,19 @@ publicVariable "SLKLIB_sectors_under_attack";
                 if ((_attacktime > 0) && ( _ownership == GRLIB_side_enemy || _ownership == GRLIB_side_resistance)) then {
 
                     private _blufor = [_sectorPos, GRLIB_capture_size, GRLIB_side_friendly] call KPLIB_fnc_getUnitsCount;
+
+                    //Check for blufor here and pause timer if they are
                     if(_blufor <= 0) then {
                         _attacktime = _attacktime - PFH_UPDATE_TIME;
-                    }
-                    //Check for blufor here and pause timer if they are
+                        private _timeLeft = [_attacktime] call KPLIB_fnc_secondsToTimer;
+                        [_taskID, "", format ["DEFEND: %1", _timeLeft]] call KPLIB_server_fnc_taskSetDescription;
+                    };
 
+                    if(_blufor > 0 && _lastBlufor <= 0) then {
+                        [_taskID, "", format ["DEFEND: CONTESTED"]] call KPLIB_server_fnc_taskSetDescription;
+                    };
+                    
+                    _lastBlufor = _blufor;
                 } else {
                     [format["Finished 6 | Ownership: %1 Attack Time: %2", _ownership, _attacktime],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
                     _isStageFinished = true;
@@ -174,7 +185,11 @@ publicVariable "SLKLIB_sectors_under_attack";
                         [format["Lost Sector: %1", _sectorMarker],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
                         blufor_sectors = blufor_sectors - [ _sectorMarker ];
                         publicVariable "blufor_sectors";
+                        
                         [_sectorMarker, 2] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
+                        [_taskID, "", format ["DEFEND: %1", _sectorName]] call KPLIB_server_fnc_taskSetDescription;
+                        [_taskID,"LIB_Defend","FAILED"] call KPLIB_server_fnc_taskSetState;
+
                         ["KPLIB_ResetBattleGroups"] call CBA_fnc_serverEvent;
                         [] spawn KPLIB_fnc_doSave;
                         stats_sectors_lost = stats_sectors_lost + 1;
@@ -193,6 +208,8 @@ publicVariable "SLKLIB_sectors_under_attack";
                         } forEach KP_liberation_production;
                     } else {
                         [_sectorMarker, 3] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
+                        [_taskID, "", format ["DEFEND: %1", _sectorName]] call KPLIB_server_fnc_taskSetDescription;
+                        [_taskID,"LIB_Defend","SUCCEEDED"] call KPLIB_server_fnc_taskSetState;
                         {[_x] spawn KPLIB_server_fnc_prisonner_ai;} forEach (((_sectorPos) nearEntities ["Man", GRLIB_capture_size * 0.8]) select {side group _x == GRLIB_side_enemy});
                     };
                 };
@@ -242,6 +259,11 @@ publicVariable "SLKLIB_sectors_under_attack";
         _attacktime = GRLIB_vulnerability_timer;
         _squad_type = [];
         _grp = grpNull;
+        _taskID = "";
+        _lastBlufor = 0;
+
+        PFH_GETPARAM(_this,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
+        _sectorName = [_sectorMarker,SECTOR_HASHMAP_NAME] call KPLIB_fnc_getSectorValue;
 
         [format["%1 is under attack. %2", _sectorMarker, _attacktime],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
     },
@@ -256,5 +278,5 @@ publicVariable "SLKLIB_sectors_under_attack";
     },
     { !_isFinished },
     { _isFinished },
-    ["_isFinished", "_isStageFinished", "_stageIndex", "_timer", "_squad_type", "_grp", "_attacktime"]
+    ["_isFinished", "_isStageFinished", "_stageIndex", "_timer", "_squad_type", "_grp", "_attacktime", "_taskID", "_lastBlufor", "_sectorName"]
 ] call CBA_fnc_createPerFrameHandlerObject; 

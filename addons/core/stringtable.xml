@@ -6740,6 +6740,9 @@
             <Chinesesimp>回收的载具： %1</Chinesesimp>
             <Turkish>Geri dönüşüm olan araçlar: %1</Turkish>
         </Key>
+        <Key ID="STR_TASK_DEFEND_SECTOR_TITLE">
+            <Original>DEFEND THE SECTOR</Original>
+        </Key>
         <Key ID="STR_TUTORIAL_CIVILIAN">
             <Original>Wounded Civilian</Original>
             <Czech>Zraněný civilista</Czech>

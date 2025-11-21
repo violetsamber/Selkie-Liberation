@@ -230,6 +230,27 @@ class CfgDiscordRichPresence {
     useTimeElapsed=1;
 };
 
+class CfgTaskTypes {
+
+	class LIB_Capture {
+		icon	= "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa";
+		icon3D	= "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa";
+	};
+
+    class LIB_Defend {
+        icon	= "\a3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa";
+		icon3D	= "\a3\ui_f\data\igui\cfg\simpletasks\types\defend_ca.paa";
+    };
+};
+
+// class CfgTaskDescriptions
+// {
+// 	class LIB_Defend {
+// 		title = "STR_HYP_TASKS_INFILTRATE_TITLE";
+// 		description = "STR_HYP_TASKS_INFILTRATE_DESCRIPTION";
+// 	};
+// };
+
 class CfgFunctions {
     #include "lib\CfgFunctions.hpp"
     #include "scripts\client\CfgFunctions.hpp"
