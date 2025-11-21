@@ -43,8 +43,16 @@ class COMMON_FUNCTIONS_NAMESPACE_SERVER {
 
     class server_support {
         file = "scripts\server\support";
-
         class createSuppModules {};
+    };
+
+    class server_tasks {
+        file = "scripts\server\tasks";
+        class taskCreate {};
+        class taskDelete {};
+        class taskSetDescription {};
+        class taskSetState {};
+        class taskUpdate {};
     };
 
     class server_ai {

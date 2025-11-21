@@ -1,7 +1,11 @@
 // Globals
 active_sectors = []; publicVariable "active_sectors";
+
 SLKLIB_sectors_under_attack = []; publicVariable "SLKLIB_sectors_under_attack";
 
+SLKLIB_tasksData = [];
+SLKLIB_activeTasks = []; publicVariable "SLKLIB_activeTasks";
+SLKLIB_taskCount = 0; publicVariable "SLKLIB_taskCount";
 
 //TODO Change the logic of the below sqf files so they are not using execVM
 execVM "scripts\server\base\startgame.sqf";

@@ -30,4 +30,14 @@ class COMMON_FUNCTIONS_NAMESPACE_CLIENT {
         class kp_vehicle_permissions {};
         class init_markers {};
     };
+
+    class client_notifications {
+        file = "scripts\client\notifications";
+        class notificationHandler;
+    };
+
+    class client_tasks {
+        file = "scripts\client\tasks";
+        class taskUpdateHandler;
+    };
 };
