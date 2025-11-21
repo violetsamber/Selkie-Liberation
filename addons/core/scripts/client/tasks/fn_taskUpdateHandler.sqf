@@ -44,6 +44,3 @@ if(!hasInterface) exitWith { true };
     }
 ] call CBA_fnc_waitUntilAndExecute;
 
-//Defense success notification not working
-//Task notification still showing
-
