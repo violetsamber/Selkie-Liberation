@@ -1,5 +1,6 @@
 // Globals
 active_sectors = []; publicVariable "active_sectors";
+SLKLIB_sectors_under_attack = []; publicVariable "SLKLIB_sectors_under_attack";
 
 
 //TODO Change the logic of the below sqf files so they are not using execVM
