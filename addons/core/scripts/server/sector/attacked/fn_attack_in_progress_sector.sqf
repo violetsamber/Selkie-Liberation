@@ -2,7 +2,7 @@
     File: fn_attack_in_progress_sector.sqf
     Authors: Violets, KP Liberation Team
     Date: 2025-11-01
-    Last Update: 2025-11-20
+    Last Update: 2025-11-21
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -27,19 +27,20 @@ publicVariable "SLKLIB_sectors_under_attack";
 
 [
     {
+        private _return = [];
+
         PFH_GETPARAM(_this,_sectorPos,PFH_PARAM_SECTOR_POS)
         PFH_GETPARAM(_this,_sectorMarker,PFH_PARAM_SECTOR_MARKER)
 
         switch (_stageIndex) do {
             case 0: {
-                if(_timer < 5) then {
-                    ADD(_timer,PFH_UPDATE_TIME);
-                } else {
-                    [format["Stage finished. 0"],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
-                    _isStageFinished = true;
-                };
+                
+                _return = [_timer, 5, PFH_UPDATE_TIME] call KPLIB_shared_fnc_waitTime;
+                _isStageFinished = _return select 0;
+                _timer = _return select 1;
 
                 if(_isStageFinished) then {
+                    [format["Stage finished. 0"],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
                     INC(_stageIndex);
                     _isStageFinished = false;
                     _timer = 0;
@@ -97,18 +98,17 @@ publicVariable "SLKLIB_sectors_under_attack";
                 };
             };
             case 4: {
-                if(_timer < 60) then {
-                    ADD(_timer,PFH_UPDATE_TIME);
-                } else {
-                    _isStageFinished = true;
-                    
-                    [format["Stage finished. 4 "],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
-                    _taskID = ["LIB_Defend", "", format ["DEFEND: %1", _sectorName], _sectorPos] call KPLIB_server_fnc_taskCreate;
 
-                    [_sectorMarker, 1] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
-                };
+                _return = [_timer, 60, PFH_UPDATE_TIME] call KPLIB_shared_fnc_waitTime;
+                _isStageFinished = _return select 0;
+                _timer = _return select 1;
 
                 if(_isStageFinished) then {
+
+                    [format["Stage finished. 4 "],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
+                    _taskID = ["LIB_Defend", "", format ["DEFEND: %1", _sectorName], _sectorPos] call KPLIB_server_fnc_taskCreate;
+                    [_sectorMarker, 1] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
+
                     INC(_stageIndex);
                     _isStageFinished = false;
                     _timer = 0;
@@ -224,10 +224,12 @@ publicVariable "SLKLIB_sectors_under_attack";
                 };
             };
             case 9: {
-                if(_timer < 60) then {
-                    ADD(_timer,PFH_UPDATE_TIME);
-                } else {
-                    _isStageFinished = true;
+                _return = [_timer, 60, PFH_UPDATE_TIME] call KPLIB_shared_fnc_waitTime;
+                _isStageFinished = _return select 0;
+                _timer = _return select 1;
+
+                if(_isStageFinished) then {
+
                     [format["Clean up."],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
                     
                     if ( GRLIB_blufor_defenders ) then {
@@ -235,9 +237,7 @@ publicVariable "SLKLIB_sectors_under_attack";
                             if ( alive _x ) then { deleteVehicle _x };
                         } forEach units _grp;
                     };
-                };
 
-                if(_isStageFinished) then {
                     INC(_stageIndex);
                     _isStageFinished = false;
                     _timer = 0;

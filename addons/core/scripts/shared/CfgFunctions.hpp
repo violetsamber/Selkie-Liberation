@@ -16,6 +16,11 @@ class COMMON_FUNCTIONS_NAMESPACE_SHARED {
         class civinfo_notifications {};
     };
 
+    class shared_pfh {
+        file = "scripts\shared\pfh";
+        class waitTime {};
+    };
+
     class shared_remotecall_ailogistics {
         file = "scripts\shared\remotecall\ailogistics";
         class add_logiGroup_remote_call {};
