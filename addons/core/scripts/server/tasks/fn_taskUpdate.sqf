@@ -54,3 +54,4 @@ if (_state isEqualTo "DELETED") exitWith {
 
 if !(_state in ["SUCCEEDED", "FAILED"]) exitWith { ERROR_2("Bad state %1 for task ID %2",_state,_taskId) };
 (SLKLIB_tasksData#_taskIndex) set [2, _state];
+[_taskID,_taskType,_state] remoteExecCall ["KPLIB_client_fnc_taskUpdateHandler"];

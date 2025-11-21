@@ -6105,8 +6105,14 @@
             <Chinesesimp>短暂夜晚</Chinesesimp>
             <Turkish>Kısa geceler</Turkish>
         </Key>
-        <Key ID="STR_SLKLIB_NOTIFICATION_ATTACKED">
+        <Key ID="STR_SLKLIB_NOTIFICATION_FRIENDLY_SECTOR_ATTACKED">
             <Original>Friendly sector attacked</Original>
+        </Key>
+        <Key ID="STR_SLKLIB_NOTIFICATION_FRIENDLY_SECTOR_DEFENDED">
+            <Original>Friendly sector defended</Original>
+        </Key>
+        <Key ID="STR_SLKLIB_NOTIFICATION_FRIENDLY_SECTOR_LOST">
+            <Original>Friendly sector lost</Original>
         </Key>
         <Key ID="STR_SLKLIB_SETTINGS_NOTIFICATIONS">
             <Original>Notifications</Original>
