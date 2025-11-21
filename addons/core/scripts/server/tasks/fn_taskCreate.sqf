@@ -2,7 +2,7 @@
     File: fn_taskCreate.sqf
     Authors: Violets
     Date: 2025-11-20
-    Last Update: 2025-11-20
+    Last Update: 2025-11-21
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -39,7 +39,7 @@ private _taskId = _taskType + str SLKLIB_taskCount;
     _pos,
     _state,
     _priority,
-    true,
+    false,
     _taskType
 ] call BIS_fnc_taskCreate;
 

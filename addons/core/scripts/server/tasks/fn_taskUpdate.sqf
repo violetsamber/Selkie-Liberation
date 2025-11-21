@@ -2,7 +2,7 @@
     File: fn_taskUpdate.sqf
     Authors: Violets, Antistasi Team
     Date: 2025-11-20
-    Last Update: 2025-11-20
+    Last Update: 2025-11-21
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
@@ -38,9 +38,9 @@ if (_state isEqualTo "CREATED") exitWith
     if (_taskIndex != -1) exitWith { ERROR_1("Non-unique task ID %1 created",_taskId) };
     SLKLIB_tasksData pushBack [_taskId, _taskType, "CREATED", serverTime];
 
-    if (SLKLIB_activeTasks find _taskType != -1) exitWith { ERROR_1("Task type %1 already active",_taskType) };
+    //if (SLKLIB_activeTasks find _taskType != -1) exitWith { ERROR_1("Task type %1 already active",_taskType) };
     SLKLIB_activeTasks pushBack _taskType; publicVariable "SLKLIB_activeTasks";
-    [_taskID,_taskType,_state] remoteExecCall ["KPLIB_client_fnc_taskUpdateHandler", -2];
+    [_taskID,_taskType,_state] remoteExecCall ["KPLIB_client_fnc_taskUpdateHandler"];
 };
 
 if (_taskIndex == -1) exitWith { ERROR_2("Task ID %1 not found for state %2",_taskId,_state) };
@@ -49,7 +49,7 @@ if (_state isEqualTo "DELETED") exitWith {
     SLKLIB_tasksData deleteAt _taskIndex;
     if (SLKLIB_tasksData findIf { (_x#1) isEqualTo _taskType } != -1) exitWith {};				// non-unique task type
     SLKLIB_activeTasks deleteAt (SLKLIB_activeTasks find _taskType); publicVariable "SLKLIB_activeTasks";
-    [_taskID,_taskType,_state] remoteExecCall ["KPLIB_client_fnc_taskUpdateHandler", -2];
+    [_taskID,_taskType,_state] remoteExecCall ["KPLIB_client_fnc_taskUpdateHandler"];
 };
 
 if !(_state in ["SUCCEEDED", "FAILED"]) exitWith { ERROR_2("Bad state %1 for task ID %2",_state,_taskId) };

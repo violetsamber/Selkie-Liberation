@@ -6105,6 +6105,12 @@
             <Chinesesimp>短暂夜晚</Chinesesimp>
             <Turkish>Kısa geceler</Turkish>
         </Key>
+        <Key ID="STR_SLKLIB_NOTIFICATION_ATTACKED">
+            <Original>Friendly sector attacked</Original>
+        </Key>
+        <Key ID="STR_SLKLIB_SETTINGS_NOTIFICATIONS">
+            <Original>Notifications</Original>
+        </Key>
         <Key ID="STR_SMALL_STORAGE">
             <Original>Small storage area</Original>
             <Czech>Malá skladovací plocha</Czech>
@@ -6741,7 +6747,7 @@
             <Turkish>Geri dönüşüm olan araçlar: %1</Turkish>
         </Key>
         <Key ID="STR_TASK_DEFEND_SECTOR_TITLE">
-            <Original>DEFEND THE SECTOR</Original>
+            <Original>DEFEND: %1</Original>
         </Key>
         <Key ID="STR_TUTORIAL_CIVILIAN">
             <Original>Wounded Civilian</Original>
