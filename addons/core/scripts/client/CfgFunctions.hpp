@@ -33,7 +33,7 @@ class COMMON_FUNCTIONS_NAMESPACE_CLIENT {
 
     class client_notifications {
         file = "scripts\client\notifications";
-        class notificationHandler;
+        class taskNotificationHandler;
     };
 
     class client_tasks {

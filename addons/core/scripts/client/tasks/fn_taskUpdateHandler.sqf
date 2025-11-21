@@ -25,9 +25,6 @@ params [
 
 //Notifications dont need to run on headless clients or the server
 if(!hasInterface) exitWith { true };
-
-[format ["Task Updated. TaskID: %1 TaskType: %2 State: %3", _taskID, _taskType, _state]] call KPLIB_fnc_debugLog;
-
 [
     {
         [_this select 0] call BIS_fnc_taskExists
@@ -38,7 +35,7 @@ if(!hasInterface) exitWith { true };
             _this select 0,
             _this select 1,
             _this select 2
-        ] call KPLIB_client_fnc_notificationHandler;
+        ] call KPLIB_client_fnc_taskNotificationHandler;
     },
     [_taskId,_taskType,_state],
     5,
@@ -46,3 +43,7 @@ if(!hasInterface) exitWith { true };
         [format ["TaskID: %1 did not show up!",_this select 0],"ERROR"] call KPLIB_fnc_log;
     }
 ] call CBA_fnc_waitUntilAndExecute;
+
+//Defense success notification not working
+//Task notification still showing
+

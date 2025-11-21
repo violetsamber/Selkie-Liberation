@@ -25,10 +25,28 @@ PREP_RECOMPILE_END;
 ] call CBA_fnc_addSetting;
 
 [
-    "SLKLIB_notification_attacked", 
+    "SLKLIB_notification_friendly_sector_attacked",
     "CHECKBOX",
-    ["STR_SLKLIB_NOTIFICATION_ATTACKED", ""],
+    ["STR_SLKLIB_NOTIFICATION_FRIENDLY_SECTOR_ATTACKED", ""],
     [QUOTE(PROJECT_NAME_PRETTY), "STR_SLKLIB_SETTINGS_NOTIFICATIONS"],
-    [[1, 0], ["STR_PARAMS_ENABLED","STR_PARAMS_DISABLED"], 1],
+    true,
+    2
+] call CBA_fnc_addSetting;
+
+[
+    "SLKLIB_notification_friendly_sector_lost", 
+    "CHECKBOX",
+    ["STR_SLKLIB_NOTIFICATION_FRIENDLY_SECTOR_LOST", ""],
+    [QUOTE(PROJECT_NAME_PRETTY), "STR_SLKLIB_SETTINGS_NOTIFICATIONS"],
+    true,
+    2
+] call CBA_fnc_addSetting;
+
+[
+    "SLKLIB_notification_friendly_sector_defended", 
+    "CHECKBOX",
+    ["STR_SLKLIB_NOTIFICATION_FRIENDLY_SECTOR_DEFENDED", ""],
+    [QUOTE(PROJECT_NAME_PRETTY), "STR_SLKLIB_SETTINGS_NOTIFICATIONS"],
+    true,
     2
 ] call CBA_fnc_addSetting;
