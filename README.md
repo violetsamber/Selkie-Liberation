@@ -15,6 +15,16 @@
     for the Selkie arma unit.
 </p>
 
+<p align="center" width="100%">
+    Support Violets on Kofi:
+    <a href="https://ko-fi.com/violetsamber">Kofi</a>
+    <img 
+        src="https://storage.ko-fi.com/cdn/logomarkLogo.png"
+        alt="Selkie Logo"
+        width="16px"
+        >
+    </img>
+</p>
 
 ## Main New Features
 #### Higher base difficulty 
