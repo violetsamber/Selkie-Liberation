@@ -104,10 +104,6 @@ publicVariable "SLKLIB_sectors_under_attack";
                 _timer = _return select 1;
 
                 if(_isStageFinished) then {
-
-                    [format["Stage finished. 4 "],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
-                    _taskID = ["LIB_Defend", "", format ["DEFEND: %1", _sectorName], _sectorPos] call KPLIB_server_fnc_taskCreate;
-
                     INC(_stageIndex);
                     _isStageFinished = false;
                     _timer = 0;
@@ -124,6 +120,9 @@ publicVariable "SLKLIB_sectors_under_attack";
                     };
                     [format["Finished 5 | Ownership: %1", _ownership],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
                     _isFinished = true;
+                } else {
+                    [format["Stage finished. 4 "],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
+                    _taskID = ["LIB_Defend", "", format ["DEFEND: %1", _sectorName], _sectorPos] call KPLIB_server_fnc_taskCreate;
                 };
 
                 _isStageFinished = true;
