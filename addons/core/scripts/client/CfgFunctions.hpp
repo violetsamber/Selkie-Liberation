@@ -33,16 +33,16 @@ class COMMON_FUNCTIONS_NAMESPACE_CLIENT {
 
     class client_notifications {
         file = "scripts\client\notifications";
-        class taskNotificationHandler;
+        class taskNotificationHandler {};
     };
 
     class client_tasks {
         file = "scripts\client\tasks";
-        class taskUpdateHandler;
+        class taskUpdateHandler {};
     };
 
     class client_debug {
         file = "scripts\client\debug";
-        class setSectorDefenseTime;  
+        class setSectorDefenseTime {};  
     };
 };
