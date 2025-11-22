@@ -107,7 +107,6 @@ publicVariable "SLKLIB_sectors_under_attack";
 
                     [format["Stage finished. 4 "],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
                     _taskID = ["LIB_Defend", "", format ["DEFEND: %1", _sectorName], _sectorPos] call KPLIB_server_fnc_taskCreate;
-                    [_sectorMarker, 1] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
 
                     INC(_stageIndex);
                     _isStageFinished = false;
@@ -186,7 +185,6 @@ publicVariable "SLKLIB_sectors_under_attack";
                         blufor_sectors = blufor_sectors - [ _sectorMarker ];
                         publicVariable "blufor_sectors";
                         
-                        [_sectorMarker, 2] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
                         [_taskID, "", format ["DEFEND: %1", _sectorName]] call KPLIB_server_fnc_taskSetDescription;
                         [_taskID,"LIB_Defend","FAILED"] call KPLIB_server_fnc_taskSetState;
 
@@ -207,7 +205,6 @@ publicVariable "SLKLIB_sectors_under_attack";
                             };
                         } forEach KP_liberation_production;
                     } else {
-                        [_sectorMarker, 3] remoteExec ["KPLIB_shared_fnc_remote_call_sector"];
                         [_taskID, "", format ["DEFEND: %1", _sectorName]] call KPLIB_server_fnc_taskSetDescription;
                         [_taskID,"LIB_Defend","SUCCEEDED"] call KPLIB_server_fnc_taskSetState;
                         {[_x] spawn KPLIB_server_fnc_prisonner_ai;} forEach (((_sectorPos) nearEntities ["Man", GRLIB_capture_size * 0.8]) select {side group _x == GRLIB_side_enemy});
