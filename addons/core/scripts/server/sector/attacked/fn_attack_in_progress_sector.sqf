@@ -82,8 +82,8 @@ publicVariable "SLKLIB_sectors_under_attack";
             };
             case 3: {
                 //Spawn defenders
-                private _unitCount = (count units _grp);
                 if (GRLIB_blufor_defenders &&  _unitCount < (count _squad_type)) then {
+                    INC(_unitCount);
                     private _class = (_squad_type select _unitCount);
                     [format["Stage finished. 2 | Group: %1, UnitCount: %2, Class: %3, Pos: %4", _grp, _unitCount, _class, _sectorPos],"SECTOR ATTACK"] call KPLIB_fnc_debugLog;
                     [_class, _sectorPos, _grp] call KPLIB_fnc_createManagedUnit;
@@ -256,6 +256,7 @@ publicVariable "SLKLIB_sectors_under_attack";
         _isStageFinished = false;
         _stageIndex = 0;
         _timer = 0;
+        _unitCount = 0;
         _attacktime = GRLIB_vulnerability_timer;
         _squad_type = [];
         _grp = grpNull;
@@ -278,5 +279,5 @@ publicVariable "SLKLIB_sectors_under_attack";
     },
     { !_isFinished },
     { _isFinished },
-    ["_isFinished", "_isStageFinished", "_stageIndex", "_timer", "_squad_type", "_grp", "_attacktime", "_taskID", "_lastBlufor", "_sectorName"]
+    ["_isFinished", "_isStageFinished", "_stageIndex", "_timer", "_unitCount", "_squad_type", "_grp", "_attacktime", "_taskID", "_lastBlufor", "_sectorName"]
 ] call CBA_fnc_createPerFrameHandlerObject; 
