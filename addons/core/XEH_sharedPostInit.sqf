@@ -11,3 +11,8 @@
 ["spawnbattlegroup", {
     [] call KPLIB_server_fnc_spawn_battlegroup;
 }, "admin"] call CBA_fnc_registerChatCommand;
+
+//Debug Commands
+["defensetime", {
+    [_this select 0] call KPLIB_client_fnc_setSectorDefenseTime;
+}, "admin"] call CBA_fnc_registerChatCommand;

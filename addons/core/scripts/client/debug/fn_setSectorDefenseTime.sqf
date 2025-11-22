@@ -1,12 +1,12 @@
 /*
-    File: fn_waitTime.sqf
+    File: fn_setSectorDefenseTime.sqf
     Authors: Violets
     Date: 2025-11-21
     Last Update: 2025-11-21
     License: GNU GENERAL PUBLIC LICENSE - https://www.gnu.org/licenses/gpl-3.0.en.html
     
     Description:
-        PFH module to wait for the passed time before saying its finished
+        No description added yet.
     
     Parameter(s):
         _localVariable - Description [DATATYPE, defaults to DEFAULTVALUE]
@@ -14,24 +14,12 @@
     Returns:
         Function reached the end [BOOL]
 */
-
-#include "../FunctionsInclude.hpp"
-
 params [
-    ["_timer", 0],
-    ["_waitTime", 1],
-    ["_updateTime", 1]
+    ["_time", 0]
 ];
 
-private _isTimeUp = false;
+if(_time < 1) exitWith { false };
+[format["Set sector defense time: %1",_time], "DEBUG"] call KPLIB_fnc_log;
 
-if(_timer < _waitTime) then {
-    ADD(_timer,_updateTime);
-} else {
-    _isTimeUp = true;
-};
-
-[
-    _isTimeUp,
-    _timer
-]
+GRLIB_vulnerability_timer = _time;
+publicVariable "GRLIB_vulnerability_timer";

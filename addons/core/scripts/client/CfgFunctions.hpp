@@ -40,4 +40,9 @@ class COMMON_FUNCTIONS_NAMESPACE_CLIENT {
         file = "scripts\client\tasks";
         class taskUpdateHandler;
     };
+
+    class client_debug {
+        file = "scripts\client\debug";
+        class setSectorDefenseTime;  
+    };
 };
