@@ -1,5 +1,8 @@
 ## 1.0.5
 ADDED:
+- When in a sector under attack pause the capture timer
+- Use arma task system for defending sectors
+- Setting to turn off defend sector notification
 
 FIXED:
 - _battlgroup_infantry and _battlegroup_vehicles arrays being edited but not saved to the PFH
