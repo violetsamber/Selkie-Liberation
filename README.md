@@ -26,6 +26,8 @@
     </img>
 </p>
 
+Active repo is now at https://codeberg.org/Atelier-Selkie/Selkie-Liberation
+
 ## Main New Features
 #### Higher base difficulty 
 - Currently aimed towards ~15 players for a single objective when running ACE3 Medical and [KAT - Advanced Medical](https://steamcommunity.com/workshop/filedetails/?id=2020940806) and [AFL](https://steamcommunity.com/sharedfiles/filedetails/?id=351398948) as infantry with the full suite of medical features enabled
